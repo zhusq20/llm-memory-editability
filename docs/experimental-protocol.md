@@ -1,4 +1,4 @@
-# 实验协议 v1：共享知识组织与 LLM 可编辑性
+# 实验协议 v1.1：共享知识组织与 LLM 可编辑性
 
 日期：2026-09-25。状态：设计确定，正式实现与实验待开展。
 
@@ -16,7 +16,7 @@
 2. **编辑前预测。** 由旧模型的因果复用和可控制方向计算的指标，在未见世界与更新上，比编辑条数、目标惊讶度和旧答案置信度更好地预测结果。
 3. **选择性干预。** 在等参数、等训练预算下，增加独立控制方向比增加共享方向更能缓解例外更新，并与模型原有共享程度发生交互。
 
-以上三项构成主实验。预训练 LLM 的同世界实验是必做部分，与从头训练的机制实验共同回答中心问题。
+以上三项构成主实验。经过预训练与后训练的 LLM 同世界实验是必做部分，与从头训练的机制实验共同回答中心问题。使用小规模后训练模型保持完整的知识世界、配对约束和因果检验。
 
 ## 2. 文献依据与设计选择
 
@@ -51,13 +51,48 @@ Transformer blocks 约 57M 参数，精确总量还包含词表与位置嵌入�
 
 主配置固定后，宽度 384、1536 各做容量曲线端点，保持 8 层、MLP 宽度为 4 倍，分别使用 6、24 个头。容量曲线使用相同世界与预先抽取的更新子集。
 
-### 3.2 预训练模型：Llama-3-8B Base
+### 3.2 后训练 LLM：Qwen3-1.7B 主验证，SmolLM2-1.7B-Instruct 复现
 
-固定使用 [`meta-llama/Meta-Llama-3-8B`](https://huggingface.co/meta-llama/Meta-Llama-3-8B)，即预训练 Base 版。采用原 tokenizer、BF16 权重和标准因果语言模型接口，实验上下文限制为 1024 token。该模型为 8B 自回归 Transformer，官方上下文为 8k，使用 GQA；下载需已有的模型访问授权。
+固定以下模型，两者均为公开、Apache-2.0 的后训练稠密 Transformer，采用原 tokenizer 和 BF16 权重：
 
-选择它是因为与结构化知识编辑文献有直接联系、规模已进入预训练 LLM 范围，并且可以进行参数与激活干预。Base 版统一使用事实补全和继续预训练流程。首次加载时固定并保存模型 revision、tokenizer revision 和完整配置。
+| 角色 | checkpoint | 已核验架构与后训练 |
+| --- | --- | --- |
+| 主验证 | [`Qwen/Qwen3-1.7B`](https://huggingface.co/Qwen/Qwen3-1.7B) | 28 层，hidden 2048，MLP intermediate 6144，GQA Q16/KV8，SwiGLU；输入输出嵌入绑定。小模型后训练采用强模型到弱模型的 off-policy / on-policy 蒸馏。 |
+| 跨家族复现 | [`HuggingFaceTB/SmolLM2-1.7B-Instruct`](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct) | 24 层，hidden 2048，MLP intermediate 8192，32 个 attention / KV heads，SwiGLU；Llama 架构、输入输出嵌入绑定；SFT 后进行 DPO。 |
 
-在自然语言旧世界上继续预训练全部参数，再从同一旧世界检查点分叉编辑。旧世界知识写入模型权重。真实知识外部验证另从原始预训练权重出发。
+Qwen 的后训练依据为 [技术报告 §4.5](https://arxiv.org/html/2505.09388v1#S4.SS5)，不能把旗舰模型四阶段流程逐项归给 1.7B。SmolLM2 的流程见 [官方模型卡](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct#model-summary)。架构分别核验自 [Qwen 配置](https://huggingface.co/Qwen/Qwen3-1.7B/blob/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e/config.json) 和 [SmolLM2 配置](https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct/blob/31b70e2e869a7173562077fd711b654946d38674/config.json)。
+
+固定加载 revision：Qwen 为 `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e`；SmolLM2 为 `31b70e2e869a7173562077fd711b654946d38674`。tokenizer、聊天模板和配置均取对应 revision。首次运行保存精确参数量和完整环境；Qwen3 需要原生支持其架构的 Transformers（官方给出的最低版本为 4.51.0）。
+
+选择 Qwen3-1.7B 是因为它具备现代后训练能力、标准可干预 MLP，以及公开的同架构 Base 对照。SmolLM2 以相近总参数规模提供另一训练谱系和 SFT/DPO 后训练流程。按标称参数量计算，1.7B 的 BF16 权重约 3.4GB，为 8B 的约 21%；这只是权重存储估算，实际训练显存和耗时另行测量。主比较保持 BF16，不引入量化变量。
+
+两个模型均执行 SharedOrg-NL 的组织 × 更新实验、表示干预和预编辑预测；真实知识验证从未经世界适应的官方后训练权重出发。以下模型结论来自官方资料和架构分析，实际编辑效果由开发世界及正式实验检验。
+
+### 3.3 同架构对照及 SmolLM / Nemotron 扩展
+
+[`Qwen/Qwen3-1.7B-Base`](https://huggingface.co/Qwen/Qwen3-1.7B-Base) 固定 revision `ea980cb0a6c2ae4b936e82123acc929f1cec04c1`，作为后训练阶段对照。在固定子集上，Base 与后训练版都用共同的纯文本 `Question: … Answer:` 格式进行世界适应与评价，通用回放也用该格式。KL 教师分别为各自未经世界适应的权重，即 Base 对 Base、后训练版对后训练版；开发阶段为两侧共同锁定超参数、数据、预算和参数范围。主验证仍保留原生聊天格式，两套界面单独报告。共享程度由因果测量确定。
+
+已经核验的扩展候选如下，不加入第一轮必跑矩阵：
+
+| 候选 | 能承担的验证与选择理由 |
+| --- | --- |
+| [`HuggingFaceTB/SmolLM3-3B`](https://huggingface.co/HuggingFaceTB/SmolLM3-3B) | 3B Transformer，36 层、GQA、部分层 NoPE；reasoning midtraining、SFT 与 APO，支持关闭 thinking。适合更强的 3B 跨家族复现；同规模复现优先采用 SmolLM2。 |
+| [`nvidia/Nemotron-Flash-3B-Instruct`](https://huggingface.co/nvidia/Nemotron-Flash-3B-Instruct) | 3B 后训练模型，Attention / DeltaNet / Mamba2 / FFN 混合架构；[报告 §4.2](https://arxiv.org/html/2511.18890v1#S4.SS2) 给出两阶段 SFT。适合较小的跨架构检验，需要自定义实现和混合模块干预；许可为 CC-BY-NC-4.0。 |
+| [`nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16`](https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-4B-BF16) | 总参数 3.97B，后训练、支持关闭 thinking；主要是 Mamba2 与 MLP，仅 4 个 Attention 层。可做较新的混合架构复现；“dense”在此不等于纯 Transformer。 |
+| [`nvidia/Nemotron-Mini-4B-Instruct`](https://huggingface.co/nvidia/Nemotron-Mini-4B-Instruct) | NVIDIA 的纯 Transformer 后训练选项，但参数量高于本轮两种 1.7B 模型，作为需要纯 Transformer 的 NVIDIA 对照备选。 |
+
+Nemotron 混合架构仍能研究共享组织与独立更新，扩展时分别测定 MLP、状态空间模块与注意力的贡献，按实际 MLP 索引选择编辑范围。标注 `30B-A3B` 的模型约 3B 是激活参数量，不能当作总参数 3B 的低存储成本替换。
+
+### 3.4 后训练模型的交互与训练契约
+
+- **原生界面：** Qwen 主实验使用官方 `apply_chat_template(..., enable_thinking=False)` 硬开关；SmolLM2 使用自己的聊天模板。关闭 thinking 使用的仍是同一后训练权重。
+- **世界适应：** 把事实转成独立 user 问题与 assistant 正确答案，用监督微调学习旧世界；不把整张知识表或答案放入评价上下文。只对答案和结束 token 计算世界损失，模板、系统前缀与 Qwen 的空 reasoning 前缀不参与损失。
+- **序列对齐：** 训练前缀必须等于推理时仅含问题的 `apply_chat_template(..., add_generation_prompt=True, enable_thinking=False)` 输出，再拼接答案与结束 token。Qwen 固定版本的前缀含 `<think>\n\n</think>\n\n`，它不是生成的思维链；答案开始前全部 mask，不能只依据 assistant 角色边界推断监督起点。SmolLM2 同样以实际推理前缀确定答案起点，不传入 Qwen 专用开关。
+- **直接答案评价：** 固定短答案指令，完整答案序列 NLL、候选值排序和自由生成同时报告。主生成使用非 thinking 的确定性解码，最长 64 个新 token；这是本实验的受控评价设置。官方推荐采样配置作为附加生成检查，不将只答对首 token 视为成功。
+- **推理模式复核：** Qwen 在每世界／规模首个配对的同一编辑检查点上，打开 thinking，以 512、2048 个输出 token 两档预算测最终答案；固定采样种子，使用官方 thinking 采样参数 `temperature=0.6, top_p=0.95, top_k=20`。单列思考与答案 token、截断率和正确率，研究推理能否补偿参数更新后的传播缺口。
+- **后训练行为保持：** 世界适应使用第 4.5 节的固定通用回放与原始后训练 checkpoint 的 KL 约束。分别在原始模型、适应后、编辑后三个节点评价指令遵循和一般知识。适应阶段与编辑阶段的影响分开报告。
+
+自然语言世界输入上限仍为 1024 token。模型原生能力评价按对应任务单列上下文预算；Qwen 的 thinking 复核允许额外输出预算。
 
 ## 4. 明确采用的数据
 
@@ -84,7 +119,7 @@ Transformer blocks 约 57M 参数，精确总量还包含词表与位置嵌入�
 
 组合查询、别名和改写不重复计入基础事实数量。基础事实数量和生成器中独立采样变量的数量分别记录。
 
-符号序列固定为：原子事实 `<BOS> subject relation <ANS> value <EOS>`；组织默认值组合查询 `<BOS> person member_of default_attr_j <ANS> value <EOS>`。原子关系使用各自的 `actual_attr_j`、`default_attr_j` 或个人属性 token。训练用因果掩码，只对答案及 EOS 计算 next-token 交叉熵；评价在 ANS 后生成值并以 EOS 终止。自然语言使用同样的答案损失掩码与明确分隔符。
+符号序列固定为：原子事实 `<BOS> subject relation <ANS> value <EOS>`；组织默认值组合查询 `<BOS> person member_of default_attr_j <ANS> value <EOS>`。原子关系使用各自的 `actual_attr_j`、`default_attr_j` 或个人属性 token。训练用因果掩码，只对答案及 EOS 计算 next-token 交叉熵；评价在 ANS 后生成值并以 EOS 终止。自然语言使用第 3.4 节的原生聊天模板、答案损失掩码与模型结束 token。
 
 ### 4.2 自然语言版：SharedOrg-NL-v1
 
@@ -92,7 +127,7 @@ Transformer blocks 约 57M 参数，精确总量还包含词表与位置嵌入�
 
 每种关系固定 12 个人工检查的模板：8 个用于旧世界学习，2 个用于开发评价，2 个用于最终改写测试。每个实体有两个表面别名，二者都在旧世界学习中出现；编辑只使用规范名，测试包含别名。别名映射属于语言呈现。
 
-示例：`Mira works for Alder Labs.`、`Alder Labs normally uses LedgerPro.`、`Mira uses DeskFlow for work.`。事实补全与问答模板均进入训练模板集；编辑和测试提示不提供所属组织的答案或世界规则。主评价直接生成答案。
+事实内容示例：`Mira works for Alder Labs.`、`Alder Labs normally uses LedgerPro.`、`Mira uses DeskFlow for work.`。后训练模型接收对应的 user 查询，例如 `Which software does Mira actually use at work?`，assistant 目标为 `DeskFlow`。问答与事实补全式查询均使用原生聊天包装，测试提示不提供所属组织的答案或世界规则。主评价直接生成答案。
 
 每个属性内独立置换值的表面名称。配对匹配新答案 token 长度、出现频率与惊讶度。答案按生成器登记的规范名和别名归一化后精确评价，另报完整答案的 token 平均负对数概率。
 
@@ -108,9 +143,20 @@ Transformer blocks 约 57M 参数，精确总量还包含词表与位置嵌入�
 
 固定作者仓库提交 [`54f3b88af4895a3aacb580ec63ce7ae857185040`](https://github.com/edenbiran/RippleEdits/tree/54f3b88af4895a3aacb580ec63ce7ae857185040)，使用 `data/benchmark/` 下三个文件：`recent.json` 1948 例、`random.json` 1922 例、`popular.json` 885 例，共 **4755 例**。
 
-从原始 Llama-3-8B Base 评价旧知识，遵循作者的条件规则计算逻辑传播、组合传播、别名、同主体其他关系与旧值保持，逐项报告有效分母。`random + popular` 的 2807 例作为旧知识替换候选池；按主体实体分组，固定种子 42 分配 20% 开发、80% 测试，报告全部测试案例及其中旧答案已知的子集。`recent` 知识新增单列，重合主体并入同一划分。
+从未经世界适应的 Qwen3-1.7B 与 SmolLM2-1.7B-Instruct 评价旧知识，遵循作者的条件规则计算逻辑传播、组合传播、别名、同主体其他关系与旧值保持，逐项报告有效分母。`random + popular` 的 2807 例作为旧知识替换候选池；按主体实体分组，固定种子 42 分配 20% 开发、80% 测试，报告全部测试案例、各模型旧答案已知的子集以及两模型共同已知的交集。`recent` 知识新增单列，重合主体并入同一划分。模型知识覆盖率本身也是结果，不把缺少旧知识的案例混为编辑失败。
 
-该数据检验预编辑指标、编辑曲线和保持结果能否迁移到真实知识。通用能力保持另用 [MMLU 原始 test 划分](https://huggingface.co/datasets/cais/mmlu)，固定 5-shot、选项似然评分及提示格式，示例取对应学科 dev 划分；不进入训练或编辑调参。MMLU 使用模型原生 8k 上下文，以容纳完整 5-shot 提示；同世界学习与编辑仍使用 1024 的上下文上限。
+该数据检验预编辑指标、编辑曲线和保持结果能否迁移到真实知识。外部编辑的通用保持池仅由开发划分与第 4.5 节回放构成，不使用测试案例的传播或保持答案训练编辑器；近邻与全局保持分开评价。
+
+### 4.5 通用回放与后训练行为评价
+
+通用回放固定使用 [`HuggingFaceTB/smoltalk`](https://huggingface.co/datasets/HuggingFaceTB/smoltalk) 的 `all` 配置、train 划分。按固定种子 43 选取 4096 个英文 user-assistant 单轮样本用于回放，另选不重合的 512 个用于开发监测。不从多轮对话拆取失去上下文的片段；筛选完整 assistant 答案在两模型分词下均不超过 256 token、完整序列均不超过 1024 token 的样本，不截断答案。移除包含 SharedOrg 名称和与下列评价提示精确重合的样本，保存数据 revision、过滤规则与样本 ID。
+
+回放的作用是在相同通用文本上约束模型输出分布靠近各自的原始后训练 checkpoint；Base 对照使用第 3.3 节的各自起点与共同格式。两个组织条件共用提示与参考模型，以冻结参考模型在给定答案文本上的分布计算 KL，不需要生成额外思维链。所有通用回放 token 与参考模型计算计入适应成本。
+
+- **一般知识：** [MMLU 原始 test 划分](https://huggingface.co/datasets/cais/mmlu)，固定 5-shot、选项似然评分与聊天包装，示例取对应学科 dev 划分。Qwen 与 SmolLM2 均使用 8192 的评价上下文上限，完整保留提示；超过上限的项目单列，不静默截断。
+- **指令遵循：** [`google/IFEval`](https://huggingface.co/datasets/google/IFEval)，使用作者的 strict / loose、prompt / instruction 四种分数。采用各模型原生聊天模板，Qwen 关闭 thinking，最长 1024 个输出 token，单列截断率。
+
+MMLU 和 IFEval 不用于训练、超参数选择或旧世界检查点选择；在锁定配置后评价原始、世界适应后、编辑后三个节点。SmolLM2 曾使用 smoltalk 后训练，因此回放结果本身不作为独立能力测试；泛化评价来自上述单独测试集。
 
 ## 5. 一致更新与独立例外的精确配对
 
@@ -155,7 +201,9 @@ Transformer blocks 约 57M 参数，精确总量还包含词表与位置嵌入�
 
 从头训练默认 AdamW：学习率 `1e-4`、weight decay `0.1`、全局 batch 128 条事实序列、warmup 2000 步、梯度裁剪 1.0，总上限 100,000 步；前两阶段各 3840 步，其余为混合巩固。开发世界在学习率 `{3e-5,1e-4,3e-4}`、weight decay `{0.01,0.1,1.0}` 内确定同一个配置与固定终止步数。
 
-Llama 默认学习率 `1e-5`、weight decay `0.1`、全局 batch 128 条事实序列，通过梯度累积实现；warmup 3%，训练 token 上限 100M。前两阶段沿用上述呈现次数，其余预算用于相同的混合巩固。开发世界从学习率 `{3e-6,1e-5,3e-5}` 选择一个共享配置，锁定模板长度、阶段预算与总步数后运行测试世界。
+Qwen 与 SmolLM2 的世界适应均开放全部参数，默认学习率 `1e-5`、weight decay `0.1`、每步 128 条世界问答，通过梯度累积实现；另固定采样 16 条通用回放。损失为 `L_world = CE_world + λ_g KL(original || adapted; generic)`。warmup 3%，世界学习上限 100M 非 padding token，通用回放、padding 与参考模型 FLOPs 分别记录。前两阶段沿用上述事实呈现次数，其余世界预算用于相同的混合巩固；通用回放在所有阶段出现，两臂顺序一致。
+
+每个模型在开发世界从学习率 `{3e-6,1e-5,3e-5}`、`λ_g ∈ {0.1,1,10}` 选择一个供两个组织条件共用的配置，结合旧世界质量与通用开发池 KL 锁定总步数。先固定模板长度并计算阶段 token 总量，再运行课程。保留每 10M 世界 token 的检查点用于描绘知识习得和行为保持；正式编辑检查点按开发阶段锁定的预算确定。
 
 确认性操纵采用相同句子多重集的文档组织：关联窗口放置同一人员的归属、组织默认值、实际属性；打散窗口分层置换真实句子，保持类型、长度和频率。旧世界和编辑评价均使用没有支持文档的孤立查询。早期记忆／后期组合检查点作辅助分析，单列其训练预算差异。
 
@@ -189,7 +237,9 @@ MLP 层窗口在开发集上从合法连续 3 层窗口中选择，按两种目�
 
 AlphaEdit 的保持统计只使用同一个旧知识池，协方差、目标优化与求解成本全部记录。首次实现时锁定作者代码 revision；开发集确定算法超参数，测试冻结。
 
-FT-MLP 与 FT-All 各选一次开发配置。学习率网格：从头训练模型 `{1e-5,3e-5,1e-4}`，Llama `{1e-6,3e-6,1e-5}`；`λ ∈ {0.1,1,10}`。每步目标与回放各采样 128 条，不足时有放回采样；两臂样本位置相同，优化器状态重新初始化。
+FT-MLP 与 FT-All 各选一次开发配置。学习率网格：从头训练模型 `{1e-5,3e-5,1e-4}`，后训练模型 `{1e-6,3e-6,1e-5}`；`λ ∈ {0.1,1,10}`。每步目标与回放各采样 128 条，不足时有放回采样；两臂样本位置相同，优化器状态重新初始化。
+
+Qwen3 和 SmolLM2 的编辑损失都对齐完整 assistant 答案，MLP 输出投影为各自的 `model.layers[i].mlp.down_proj`。AlphaEdit 需分别适配模块、保护 keys、目标 token 和聊天上下文，在开发世界验证后锁定；标准 MLP 结构不等于作者原实现已经验证这些模型。所有新增分支和梯度测量均使用各模型真实维度。
 
 梯度编辑记录 `{0,1,2,4,8,16,32,64,128,256,512}` 步的完整曲线。AlphaEdit 记录实际目标优化、矩阵求解及批量更新轨迹。跨算法按质量、实际 token 和 FLOPs 比较，不把一次矩阵求解视为一次梯度计算。所有方法复用相同 E/R，算法特有的上下文与额外采样另外记账。
 
@@ -252,7 +302,7 @@ b 是把目标 margin 推到 +1 所需的非负变化，截断上限为 10；`λ
 
 主要质量门槛同时要求：**根默认事实全部正确、成员更新 ≥95%、D ≥95%、U 的四个分层各自准确率下降 ≤1 个百分点**。自然语言最终改写 E 另要求 ≥90%。不能用整体高准确率掩盖根事实或局部保持错误。
 
-记录首次达到全部门槛的预算、预算上限时表现及完整成功—传播—保持曲线；未达标者视为上限删失。Llama 报告 MMLU 编辑前后差值，区分旧世界适应与随后编辑的影响。RippleEdits 按原类别分别评价，不将 SharedOrg 的根／成员门槛套用到不同查询语义上。
+记录首次达到全部门槛的预算、预算上限时表现及完整成功—传播—保持曲线；未达标者视为上限删失。后训练模型报告 MMLU 与 IFEval 三个节点的差值，区分世界适应与随后编辑的影响。RippleEdits 按原类别分别评价，不将 SharedOrg 的根／成员门槛套用到不同查询语义上。小模型与其他模型之间同时报告各自已知事实集及共同已知集上的结果。
 
 ## 9. 样本、统计与预定分析
 
@@ -260,8 +310,10 @@ b 是把目标 margin 推到 +1 所需的非负变化，截断上限为 10；`λ
 | --- | --- | --- |
 | 开发 | 世界种子 0、1；初始化 0、1 | 用于操纵、层位置与超参数，不进入主检验 |
 | 主 Transformer | 世界种子 100–104；每世界初始化 0、1、2；两个训练条件 | 每规模 8 个支持集，共 24 个；各有匹配配对及一个预定未匹配配对 |
-| Llama 同世界 | 世界种子 100–102；适应种子 0、1；两个训练条件 | 每规模 4 个支持集，共 12 个；同样保留匹配／未匹配结果 |
-| 扩容与重组 | 两类模型每世界／规模的前 2 对做扩容；从头训练 Transformer 的前 1 对做重组与容量诊断 | 对每个初始化执行，索引不依赖编辑结果 |
+| Qwen3-1.7B 同世界 | 世界种子 100–102；适应种子 0、1；两个训练条件 | 每规模 4 个支持集，共 12 个；同样保留匹配／未匹配结果 |
+| SmolLM2-1.7B-Instruct 复现 | 世界种子 100–102；适应种子 0、1；两个训练条件 | 复用 Qwen 的候选支持集与完整实验矩阵；按自身 NLL 独立匹配，另报共同通过子集 |
+| Qwen Base / 后训练对照 | 世界 100、101；适应种子 0、1；两个训练条件；共同纯文本 QA | 每规模前 2 个支持集，运行 FT-MLP / FT-All；与原生聊天主实验分开呈现 |
+| 扩容与重组 | 从头训练 Transformer、Qwen、SmolLM2 每世界／规模前 2 对做扩容；从头训练 Transformer 前 1 对做重组与容量诊断 | 对每个初始化执行，索引不依赖编辑结果 |
 
 数据生成、模板分配、候选更新、初始化、采样和优化分别记录随机种子；编辑案例种子由固定元组生成，不依赖运行次序。每次编辑恢复旧检查点。
 
@@ -278,10 +330,10 @@ b 是把目标 margin 推到 +1 所需的非负变化，截断上限为 10；`λ
 ## 10. 执行顺序与交付物
 
 1. **数据与评价契约。** 实现 SharedOrg 两种呈现、世界求值、87k 配对、E/D/U、模板划分、惊讶度匹配与清单导出，验证语义和计数。
-2. **旧世界与组织验证。** 实现 8 层 decoder 与 Llama 适应；在开发世界建立质量相当、因果组织有差异的检查点。用 composition 数据校准测量。
+2. **旧世界与组织验证。** 实现 8 层 decoder、Qwen 与 SmolLM2 的世界适应；在开发世界建立质量相当、因果组织有差异的检查点，并记录后训练行为保持。用 composition 数据校准测量。
 3. **锁定配置并运行主交互。** 固定数据哈希、训练课程、编辑层、超参数、预算和案例，运行三类编辑器并保存完整曲线。
 4. **表示干预与预测。** 运行等预算分支、重组、容量子集，以及未见世界的编辑前预测。
-5. **完成 LLM 与真实知识验证。** 完成 Llama 同世界主要比较、原始 Llama 的 RippleEdits 和通用能力保持评价。
+5. **完成 LLM 与真实知识验证。** 完成 Qwen / SmolLM2 同世界比较、Base 对照与 thinking 复核，以及未经世界适应的后训练模型在 RippleEdits 和通用能力保持上的评价。
 
 正式交付包括数据与清单、锁定配置、旧模型组织验证、配对曲线、干预结果、预测结果和可复现汇总表。每项记录状态与代码提交。
 
