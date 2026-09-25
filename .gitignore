@@ -1,0 +1,31 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Generated experiments and large local assets
+results/
+data/
+checkpoints/
+*.npy
+*.npz
+*.pt
+*.pth
+*.safetensors
+
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+.ipynb_checkpoints/
+.DS_Store
+.idea/
+.vscode/
