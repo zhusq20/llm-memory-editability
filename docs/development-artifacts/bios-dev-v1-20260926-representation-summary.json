@@ -1,0 +1,3912 @@
+{
+  "measurements": [
+    {
+      "run": "world-0-seed-0-AS",
+      "world": 0,
+      "seed": 0,
+      "order": "AS",
+      "directory": "organization-2640",
+      "step": 2640,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 41.346686815988505
+    },
+    {
+      "run": "world-0-seed-0-AS",
+      "world": 0,
+      "seed": 0,
+      "order": "AS",
+      "directory": "organization-5280",
+      "step": 5280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 37.9955767460051
+    },
+    {
+      "run": "world-0-seed-0-AS",
+      "world": 0,
+      "seed": 0,
+      "order": "AS",
+      "directory": "organization-13280",
+      "step": 13280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 37.39780719700502
+    },
+    {
+      "run": "world-0-seed-0-AS",
+      "world": 0,
+      "seed": 0,
+      "order": "AS",
+      "directory": "organization-cpu-13280",
+      "step": 13280,
+      "precision": "FP32 CPU diagnostic",
+      "probes": 320,
+      "seconds": null
+    },
+    {
+      "run": "world-0-seed-0-SA",
+      "world": 0,
+      "seed": 0,
+      "order": "SA",
+      "directory": "organization-2640",
+      "step": 2640,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 39.03795946101309
+    },
+    {
+      "run": "world-0-seed-0-SA",
+      "world": 0,
+      "seed": 0,
+      "order": "SA",
+      "directory": "organization-5280",
+      "step": 5280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 37.94985828900826
+    },
+    {
+      "run": "world-0-seed-0-SA",
+      "world": 0,
+      "seed": 0,
+      "order": "SA",
+      "directory": "organization-13280",
+      "step": 13280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 36.41533332498511
+    },
+    {
+      "run": "world-0-seed-0-SA",
+      "world": 0,
+      "seed": 0,
+      "order": "SA",
+      "directory": "organization-cpu-13280",
+      "step": 13280,
+      "precision": "FP32 CPU diagnostic",
+      "probes": 320,
+      "seconds": null
+    },
+    {
+      "run": "world-0-seed-1-AS",
+      "world": 0,
+      "seed": 1,
+      "order": "AS",
+      "directory": "organization-2640",
+      "step": 2640,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 40.46050762501545
+    },
+    {
+      "run": "world-0-seed-1-AS",
+      "world": 0,
+      "seed": 1,
+      "order": "AS",
+      "directory": "organization-5280",
+      "step": 5280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 40.8694895519875
+    },
+    {
+      "run": "world-0-seed-1-AS",
+      "world": 0,
+      "seed": 1,
+      "order": "AS",
+      "directory": "organization-13280",
+      "step": 13280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 36.80487064900808
+    },
+    {
+      "run": "world-0-seed-1-AS",
+      "world": 0,
+      "seed": 1,
+      "order": "AS",
+      "directory": "organization-cpu-13280",
+      "step": 13280,
+      "precision": "FP32 CPU diagnostic",
+      "probes": 320,
+      "seconds": 101.58921042201109
+    },
+    {
+      "run": "world-0-seed-1-SA",
+      "world": 0,
+      "seed": 1,
+      "order": "SA",
+      "directory": "organization-2640",
+      "step": 2640,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 45.1259379570256
+    },
+    {
+      "run": "world-0-seed-1-SA",
+      "world": 0,
+      "seed": 1,
+      "order": "SA",
+      "directory": "organization-5280",
+      "step": 5280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 39.21903829599614
+    },
+    {
+      "run": "world-0-seed-1-SA",
+      "world": 0,
+      "seed": 1,
+      "order": "SA",
+      "directory": "organization-13280",
+      "step": 13280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 35.82438223599456
+    },
+    {
+      "run": "world-0-seed-1-SA",
+      "world": 0,
+      "seed": 1,
+      "order": "SA",
+      "directory": "organization-cpu-13280",
+      "step": 13280,
+      "precision": "FP32 CPU diagnostic",
+      "probes": 320,
+      "seconds": 93.38610363798216
+    },
+    {
+      "run": "world-1-seed-0-AS",
+      "world": 1,
+      "seed": 0,
+      "order": "AS",
+      "directory": "organization-2640",
+      "step": 2640,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 40.561479563999455
+    },
+    {
+      "run": "world-1-seed-0-AS",
+      "world": 1,
+      "seed": 0,
+      "order": "AS",
+      "directory": "organization-5280",
+      "step": 5280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 37.529237298993394
+    },
+    {
+      "run": "world-1-seed-0-AS",
+      "world": 1,
+      "seed": 0,
+      "order": "AS",
+      "directory": "organization-13280",
+      "step": 13280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 34.779745248990366
+    },
+    {
+      "run": "world-1-seed-0-AS",
+      "world": 1,
+      "seed": 0,
+      "order": "AS",
+      "directory": "organization-cpu-13280",
+      "step": 13280,
+      "precision": "FP32 CPU diagnostic",
+      "probes": 320,
+      "seconds": null
+    },
+    {
+      "run": "world-1-seed-0-SA",
+      "world": 1,
+      "seed": 0,
+      "order": "SA",
+      "directory": "organization-2640",
+      "step": 2640,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 39.04392423600075
+    },
+    {
+      "run": "world-1-seed-0-SA",
+      "world": 1,
+      "seed": 0,
+      "order": "SA",
+      "directory": "organization-5280",
+      "step": 5280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 38.98054692498408
+    },
+    {
+      "run": "world-1-seed-0-SA",
+      "world": 1,
+      "seed": 0,
+      "order": "SA",
+      "directory": "organization-13280",
+      "step": 13280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 36.32294095799443
+    },
+    {
+      "run": "world-1-seed-0-SA",
+      "world": 1,
+      "seed": 0,
+      "order": "SA",
+      "directory": "organization-cpu-13280",
+      "step": 13280,
+      "precision": "FP32 CPU diagnostic",
+      "probes": 320,
+      "seconds": null
+    },
+    {
+      "run": "world-1-seed-1-AS",
+      "world": 1,
+      "seed": 1,
+      "order": "AS",
+      "directory": "organization-2640",
+      "step": 2640,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 40.52546057998552
+    },
+    {
+      "run": "world-1-seed-1-AS",
+      "world": 1,
+      "seed": 1,
+      "order": "AS",
+      "directory": "organization-5280",
+      "step": 5280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 39.99022633000277
+    },
+    {
+      "run": "world-1-seed-1-AS",
+      "world": 1,
+      "seed": 1,
+      "order": "AS",
+      "directory": "organization-13280",
+      "step": 13280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 35.548658112005796
+    },
+    {
+      "run": "world-1-seed-1-AS",
+      "world": 1,
+      "seed": 1,
+      "order": "AS",
+      "directory": "organization-cpu-13280",
+      "step": 13280,
+      "precision": "FP32 CPU diagnostic",
+      "probes": 320,
+      "seconds": 98.8878279440105
+    },
+    {
+      "run": "world-1-seed-1-SA",
+      "world": 1,
+      "seed": 1,
+      "order": "SA",
+      "directory": "organization-2640",
+      "step": 2640,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 42.19563335299608
+    },
+    {
+      "run": "world-1-seed-1-SA",
+      "world": 1,
+      "seed": 1,
+      "order": "SA",
+      "directory": "organization-5280",
+      "step": 5280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 38.103665645001456
+    },
+    {
+      "run": "world-1-seed-1-SA",
+      "world": 1,
+      "seed": 1,
+      "order": "SA",
+      "directory": "organization-13280",
+      "step": 13280,
+      "precision": "BF16 autocast",
+      "probes": 320,
+      "seconds": 36.6010377240018
+    },
+    {
+      "run": "world-1-seed-1-SA",
+      "world": 1,
+      "seed": 1,
+      "order": "SA",
+      "directory": "organization-cpu-13280",
+      "step": 13280,
+      "precision": "FP32 CPU diagnostic",
+      "probes": 320,
+      "seconds": 98.6791408249992
+    }
+  ],
+  "edit_geometry": [
+    {
+      "run": "world-0-seed-0-AS",
+      "world": 0,
+      "seed": 0,
+      "order": "AS",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 13.791287422180176,
+      "R_z_norm": 13.972307205200195,
+      "E_R_mean_cosine": 0.07334483414888382,
+      "E_R_mean_nearest_cosine": 0.8247022032737732,
+      "initial_mean_two_token_ce": 7.851691246032715,
+      "h_loss_gradient_rms": 0.007497373502701521,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.7327316999435425,
+          "gradient_cosine": 0.7669870257377625,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.2461082935333252
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.1042371317744255
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.15930451452732086
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.053380679339170456
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-AS",
+      "world": 0,
+      "seed": 0,
+      "order": "AS",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 14.328595161437988,
+      "R_z_norm": 12.371095657348633,
+      "E_R_mean_cosine": 0.0804952010512352,
+      "E_R_mean_nearest_cosine": 0.8971576690673828,
+      "initial_mean_two_token_ce": 7.851691246032715,
+      "h_loss_gradient_rms": 0.005140218883752823,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.8534829020500183,
+          "gradient_cosine": 0.8865792155265808,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.16952092945575714
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.1237301453948021
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.09065472334623337
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.07594363391399384
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-AS",
+      "world": 0,
+      "seed": 0,
+      "order": "AS",
+      "layer": 1,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 13.791287422180176,
+      "R_z_norm": 13.972307205200195,
+      "E_R_mean_cosine": 0.07334483414888382,
+      "E_R_mean_nearest_cosine": 0.8247022032737732,
+      "initial_mean_two_token_ce": 7.708588123321533,
+      "h_loss_gradient_rms": 0.007658437825739384,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.7312040328979492,
+          "gradient_cosine": 0.7702767848968506,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.7341575026512146,
+          "gradient_cosine": 0.33091533184051514,
+          "negative_gradient_fraction": 0.0014814814814814814
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.2461082935333252
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.1042371317744255
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.15930451452732086
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.053380679339170456
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-AS",
+      "world": 0,
+      "seed": 0,
+      "order": "AS",
+      "layer": 4,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 14.328595161437988,
+      "R_z_norm": 12.371095657348633,
+      "E_R_mean_cosine": 0.0804952010512352,
+      "E_R_mean_nearest_cosine": 0.8971576690673828,
+      "initial_mean_two_token_ce": 7.708588123321533,
+      "h_loss_gradient_rms": 0.005212028976529837,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.8523167371749878,
+          "gradient_cosine": 0.8878390789031982,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.8545712232589722,
+          "gradient_cosine": 0.3333623707294464,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.16952092945575714
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.1237301453948021
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.09065472334623337
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.07594363391399384
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-AS",
+      "world": 0,
+      "seed": 0,
+      "order": "AS",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 15.387492179870605,
+      "R_z_norm": 13.945444107055664,
+      "E_R_mean_cosine": 0.05829964950680733,
+      "E_R_mean_nearest_cosine": 0.8406567573547363,
+      "initial_mean_two_token_ce": 7.996789455413818,
+      "h_loss_gradient_rms": 0.00842304714024067,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.7526576519012451,
+          "gradient_cosine": 0.7901202440261841,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.21725192666053772
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.09041714668273926
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.13938212394714355
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.03984464332461357
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-AS",
+      "world": 0,
+      "seed": 0,
+      "order": "AS",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 12.570182800292969,
+      "R_z_norm": 12.400237083435059,
+      "E_R_mean_cosine": 0.10014405101537704,
+      "E_R_mean_nearest_cosine": 0.8889210820198059,
+      "initial_mean_two_token_ce": 7.996789455413818,
+      "h_loss_gradient_rms": 0.005731460638344288,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.8475605845451355,
+          "gradient_cosine": 0.9024419784545898,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.22323280572891235
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.1550777107477188
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.10742650926113129
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.09571726620197296
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-AS",
+      "world": 0,
+      "seed": 0,
+      "order": "AS",
+      "layer": 1,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 15.387492179870605,
+      "R_z_norm": 13.945444107055664,
+      "E_R_mean_cosine": 0.05829964950680733,
+      "E_R_mean_nearest_cosine": 0.8406567573547363,
+      "initial_mean_two_token_ce": 8.07004165649414,
+      "h_loss_gradient_rms": 0.008325429633259773,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.7524418830871582,
+          "gradient_cosine": 0.7810655236244202,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.7528590559959412,
+          "gradient_cosine": 0.3596827983856201,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.21725192666053772
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.09041714668273926
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.13938212394714355
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.03984464332461357
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-AS",
+      "world": 0,
+      "seed": 0,
+      "order": "AS",
+      "layer": 4,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 12.570182800292969,
+      "R_z_norm": 12.400237083435059,
+      "E_R_mean_cosine": 0.10014405101537704,
+      "E_R_mean_nearest_cosine": 0.8889210820198059,
+      "initial_mean_two_token_ce": 8.07004165649414,
+      "h_loss_gradient_rms": 0.005723174195736647,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.8469565510749817,
+          "gradient_cosine": 0.8983882069587708,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.8481242656707764,
+          "gradient_cosine": 0.35264021158218384,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.22323280572891235
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.1550777107477188
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.10742650926113129
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.09571726620197296
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-SA",
+      "world": 0,
+      "seed": 0,
+      "order": "SA",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 17.046531677246094,
+      "R_z_norm": 10.851186752319336,
+      "E_R_mean_cosine": 0.03276554122567177,
+      "E_R_mean_nearest_cosine": 0.5453614592552185,
+      "initial_mean_two_token_ce": 8.61803150177002,
+      "h_loss_gradient_rms": 0.003795923199504614,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.6929346323013306,
+          "gradient_cosine": 0.8782623410224915,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.11826585978269577
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.04230666533112526
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.07150748372077942
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.02399626187980175
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-SA",
+      "world": 0,
+      "seed": 0,
+      "order": "SA",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 13.937509536743164,
+      "R_z_norm": 11.951350212097168,
+      "E_R_mean_cosine": 0.038786161690950394,
+      "E_R_mean_nearest_cosine": 0.6353052854537964,
+      "initial_mean_two_token_ce": 8.61803150177002,
+      "h_loss_gradient_rms": 0.003185019362717867,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.7145553231239319,
+          "gradient_cosine": 0.9199756383895874,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.10505067557096481
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.061323314905166626
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.0719401091337204
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.030515329912304878
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-SA",
+      "world": 0,
+      "seed": 0,
+      "order": "SA",
+      "layer": 1,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 17.046531677246094,
+      "R_z_norm": 10.851186752319336,
+      "E_R_mean_cosine": 0.03276554122567177,
+      "E_R_mean_nearest_cosine": 0.5453614592552185,
+      "initial_mean_two_token_ce": 8.503701210021973,
+      "h_loss_gradient_rms": 0.0037749246694147587,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.6918191313743591,
+          "gradient_cosine": 0.8807550072669983,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.6939758062362671,
+          "gradient_cosine": 0.3485037684440613,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.11826585978269577
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.04230666533112526
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.07150748372077942
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.02399626187980175
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-SA",
+      "world": 0,
+      "seed": 0,
+      "order": "SA",
+      "layer": 4,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 13.937509536743164,
+      "R_z_norm": 11.951350212097168,
+      "E_R_mean_cosine": 0.038786161690950394,
+      "E_R_mean_nearest_cosine": 0.6353052854537964,
+      "initial_mean_two_token_ce": 8.503701210021973,
+      "h_loss_gradient_rms": 0.0031949575059115887,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.7148911952972412,
+          "gradient_cosine": 0.922092616558075,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.7142417430877686,
+          "gradient_cosine": 0.3242562413215637,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.10505067557096481
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.061323314905166626
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.0719401091337204
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.030515329912304878
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-SA",
+      "world": 0,
+      "seed": 0,
+      "order": "SA",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 16.670108795166016,
+      "R_z_norm": 10.765578269958496,
+      "E_R_mean_cosine": 0.040487904101610184,
+      "E_R_mean_nearest_cosine": 0.6279666423797607,
+      "initial_mean_two_token_ce": 7.9506144523620605,
+      "h_loss_gradient_rms": 0.003829128574579954,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.7032032012939453,
+          "gradient_cosine": 0.8566309809684753,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.12207987904548645
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.06545308232307434
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.05981004983186722
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.03516436368227005
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-SA",
+      "world": 0,
+      "seed": 0,
+      "order": "SA",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 13.298016548156738,
+      "R_z_norm": 11.948688507080078,
+      "E_R_mean_cosine": 0.049965690821409225,
+      "E_R_mean_nearest_cosine": 0.633941650390625,
+      "initial_mean_two_token_ce": 7.9506144523620605,
+      "h_loss_gradient_rms": 0.0032688158098608255,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.6638336181640625,
+          "gradient_cosine": 0.9114242792129517,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.1242215558886528
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.0679222121834755
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.08025883138179779
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.042752303183078766
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-SA",
+      "world": 0,
+      "seed": 0,
+      "order": "SA",
+      "layer": 1,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 16.670108795166016,
+      "R_z_norm": 10.765578269958496,
+      "E_R_mean_cosine": 0.040487904101610184,
+      "E_R_mean_nearest_cosine": 0.6279666423797607,
+      "initial_mean_two_token_ce": 8.194282531738281,
+      "h_loss_gradient_rms": 0.0037451088428497314,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.7049189805984497,
+          "gradient_cosine": 0.8488540649414062,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.7016018629074097,
+          "gradient_cosine": 0.32323744893074036,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.12207987904548645
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.06545308232307434
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.05981004983186722
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.03516436368227005
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-SA",
+      "world": 0,
+      "seed": 0,
+      "order": "SA",
+      "layer": 4,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 13.298016548156738,
+      "R_z_norm": 11.948688507080078,
+      "E_R_mean_cosine": 0.049965690821409225,
+      "E_R_mean_nearest_cosine": 0.633941650390625,
+      "initial_mean_two_token_ce": 8.194282531738281,
+      "h_loss_gradient_rms": 0.003222545376047492,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.666462242603302,
+          "gradient_cosine": 0.9075579047203064,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.6613802313804626,
+          "gradient_cosine": 0.31255191564559937,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.1242215558886528
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.0679222121834755
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.08025883138179779
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.042752303183078766
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-AS",
+      "world": 0,
+      "seed": 1,
+      "order": "AS",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 13.16759204864502,
+      "R_z_norm": 13.841135025024414,
+      "E_R_mean_cosine": 0.06157046929001808,
+      "E_R_mean_nearest_cosine": 0.7476177215576172,
+      "initial_mean_two_token_ce": 7.88974142074585,
+      "h_loss_gradient_rms": 0.009360307827591896,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.6987249255180359,
+          "gradient_cosine": 0.7881482243537903,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.18913216888904572
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.08170399069786072
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.12620341777801514
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.04672800377011299
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-AS",
+      "world": 0,
+      "seed": 1,
+      "order": "AS",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 12.87459945678711,
+      "R_z_norm": 12.842592239379883,
+      "E_R_mean_cosine": 0.08584830909967422,
+      "E_R_mean_nearest_cosine": 0.8106672167778015,
+      "initial_mean_two_token_ce": 7.88974142074585,
+      "h_loss_gradient_rms": 0.006198910530656576,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.8220421671867371,
+          "gradient_cosine": 0.8910512924194336,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.143363818526268
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.1265028417110443
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.08899001032114029
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.08294589072465897
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-AS",
+      "world": 0,
+      "seed": 1,
+      "order": "AS",
+      "layer": 1,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 13.16759204864502,
+      "R_z_norm": 13.841135025024414,
+      "E_R_mean_cosine": 0.06157046929001808,
+      "E_R_mean_nearest_cosine": 0.7476177215576172,
+      "initial_mean_two_token_ce": 7.976067543029785,
+      "h_loss_gradient_rms": 0.009479520842432976,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.7004095315933228,
+          "gradient_cosine": 0.7855663895606995,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.6971526741981506,
+          "gradient_cosine": 0.3682778477668762,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.18913216888904572
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.08170399069786072
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.12620341777801514
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.04672800377011299
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-AS",
+      "world": 0,
+      "seed": 1,
+      "order": "AS",
+      "layer": 4,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 12.87459945678711,
+      "R_z_norm": 12.842592239379883,
+      "E_R_mean_cosine": 0.08584830909967422,
+      "E_R_mean_nearest_cosine": 0.8106672167778015,
+      "initial_mean_two_token_ce": 7.976067543029785,
+      "h_loss_gradient_rms": 0.006200716830790043,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.823578953742981,
+          "gradient_cosine": 0.8901399970054626,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.8206077218055725,
+          "gradient_cosine": 0.33694952726364136,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.143363818526268
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.1265028417110443
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.08899001032114029
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.08294589072465897
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-AS",
+      "world": 0,
+      "seed": 1,
+      "order": "AS",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 14.620305061340332,
+      "R_z_norm": 13.824881553649902,
+      "E_R_mean_cosine": 0.058924250304698944,
+      "E_R_mean_nearest_cosine": 0.8032976388931274,
+      "initial_mean_two_token_ce": 7.93682336807251,
+      "h_loss_gradient_rms": 0.00921923853456974,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.7440834641456604,
+          "gradient_cosine": 0.8093433976173401,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.32199224829673767
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.09311332553625107
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.14704526960849762
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.03884892538189888
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-AS",
+      "world": 0,
+      "seed": 1,
+      "order": "AS",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 15.23985767364502,
+      "R_z_norm": 12.824243545532227,
+      "E_R_mean_cosine": 0.058352552354335785,
+      "E_R_mean_nearest_cosine": 0.8624311089515686,
+      "initial_mean_two_token_ce": 7.93682336807251,
+      "h_loss_gradient_rms": 0.005483693443238735,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.8640910983085632,
+          "gradient_cosine": 0.9121062159538269,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.2841184437274933
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.11482886970043182
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.07167791575193405
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.05253871902823448
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-AS",
+      "world": 0,
+      "seed": 1,
+      "order": "AS",
+      "layer": 1,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 14.620305061340332,
+      "R_z_norm": 13.824881553649902,
+      "E_R_mean_cosine": 0.058924250304698944,
+      "E_R_mean_nearest_cosine": 0.8032976388931274,
+      "initial_mean_two_token_ce": 8.451892852783203,
+      "h_loss_gradient_rms": 0.008714594878256321,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.7430773377418518,
+          "gradient_cosine": 0.7958931922912598,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.7450225353240967,
+          "gradient_cosine": 0.3309963345527649,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.32199224829673767
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.09311332553625107
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.14704526960849762
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.03884892538189888
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-AS",
+      "world": 0,
+      "seed": 1,
+      "order": "AS",
+      "layer": 4,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 15.23985767364502,
+      "R_z_norm": 12.824243545532227,
+      "E_R_mean_cosine": 0.058352552354335785,
+      "E_R_mean_nearest_cosine": 0.8624311089515686,
+      "initial_mean_two_token_ce": 8.451892852783203,
+      "h_loss_gradient_rms": 0.005322743207216263,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.8632311820983887,
+          "gradient_cosine": 0.9047324657440186,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.8648938536643982,
+          "gradient_cosine": 0.3188823461532593,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.2841184437274933
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.11482886970043182
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.07167791575193405
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.05253871902823448
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-SA",
+      "world": 0,
+      "seed": 1,
+      "order": "SA",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 6.5070037841796875,
+      "R_z_norm": 10.879541397094727,
+      "E_R_mean_cosine": 0.11441761255264282,
+      "E_R_mean_nearest_cosine": 0.644017219543457,
+      "initial_mean_two_token_ce": 8.536593437194824,
+      "h_loss_gradient_rms": 0.004658845718950033,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.5411760210990906,
+          "gradient_cosine": 0.7870775461196899,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.24689513444900513
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.14570102095603943
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.17381496727466583
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.1000761017203331
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-SA",
+      "world": 0,
+      "seed": 1,
+      "order": "SA",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 8.900930404663086,
+      "R_z_norm": 12.177997589111328,
+      "E_R_mean_cosine": 0.0644780620932579,
+      "E_R_mean_nearest_cosine": 0.624477207660675,
+      "initial_mean_two_token_ce": 8.536593437194824,
+      "h_loss_gradient_rms": 0.004239965230226517,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.5385361313819885,
+          "gradient_cosine": 0.8352844715118408,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.14019344747066498
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.07747740298509598
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.12739408016204834
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.050429653376340866
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-SA",
+      "world": 0,
+      "seed": 1,
+      "order": "SA",
+      "layer": 1,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 6.5070037841796875,
+      "R_z_norm": 10.879541397094727,
+      "E_R_mean_cosine": 0.11441761255264282,
+      "E_R_mean_nearest_cosine": 0.644017219543457,
+      "initial_mean_two_token_ce": 8.76807975769043,
+      "h_loss_gradient_rms": 0.004587303381413221,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.5390509963035583,
+          "gradient_cosine": 0.7729664444923401,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.543159544467926,
+          "gradient_cosine": 0.32384422421455383,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.24689513444900513
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.14570102095603943
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.17381496727466583
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.1000761017203331
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-SA",
+      "world": 0,
+      "seed": 1,
+      "order": "SA",
+      "layer": 4,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 8.900930404663086,
+      "R_z_norm": 12.177997589111328,
+      "E_R_mean_cosine": 0.0644780620932579,
+      "E_R_mean_nearest_cosine": 0.624477207660675,
+      "initial_mean_two_token_ce": 8.76807975769043,
+      "h_loss_gradient_rms": 0.004203266464173794,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.536889374256134,
+          "gradient_cosine": 0.8244637846946716,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.5400732159614563,
+          "gradient_cosine": 0.32377350330352783,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 3,
+          "mean_cosine": 0.14019344747066498
+        },
+        "1": {
+          "n": 174,
+          "mean_cosine": 0.07747740298509598
+        },
+        "2": {
+          "n": 683,
+          "mean_cosine": 0.12739408016204834
+        },
+        "3": {
+          "n": 3236,
+          "mean_cosine": 0.050429653376340866
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-SA",
+      "world": 0,
+      "seed": 1,
+      "order": "SA",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 9.894856452941895,
+      "R_z_norm": 10.793489456176758,
+      "E_R_mean_cosine": 0.08950209617614746,
+      "E_R_mean_nearest_cosine": 0.6702002882957458,
+      "initial_mean_two_token_ce": 7.513055801391602,
+      "h_loss_gradient_rms": 0.005011248867958784,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.5989826321601868,
+          "gradient_cosine": 0.8151825666427612,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.2714303433895111
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.08753510564565659
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.16777142882347107
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.0733816996216774
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-SA",
+      "world": 0,
+      "seed": 1,
+      "order": "SA",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 9.29597282409668,
+      "R_z_norm": 12.16443157196045,
+      "E_R_mean_cosine": 0.06524922698736191,
+      "E_R_mean_nearest_cosine": 0.629830002784729,
+      "initial_mean_two_token_ce": 7.513055801391602,
+      "h_loss_gradient_rms": 0.004449645057320595,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.5486741662025452,
+          "gradient_cosine": 0.8518697619438171,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.16812653839588165
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.06273838877677917
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.13645033538341522
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.05066054314374924
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-SA",
+      "world": 0,
+      "seed": 1,
+      "order": "SA",
+      "layer": 1,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 9.894856452941895,
+      "R_z_norm": 10.793489456176758,
+      "E_R_mean_cosine": 0.08950209617614746,
+      "E_R_mean_nearest_cosine": 0.6702002882957458,
+      "initial_mean_two_token_ce": 7.662800312042236,
+      "h_loss_gradient_rms": 0.004949140828102827,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.5981216430664062,
+          "gradient_cosine": 0.8038015961647034,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.5997862815856934,
+          "gradient_cosine": 0.36761289834976196,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.2714303433895111
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.08753510564565659
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.16777142882347107
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.0733816996216774
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-SA",
+      "world": 0,
+      "seed": 1,
+      "order": "SA",
+      "layer": 4,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 9.29597282409668,
+      "R_z_norm": 12.16443157196045,
+      "E_R_mean_cosine": 0.06524922698736191,
+      "E_R_mean_nearest_cosine": 0.629830002784729,
+      "initial_mean_two_token_ce": 7.662800312042236,
+      "h_loss_gradient_rms": 0.0044143544510006905,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.5462957620620728,
+          "gradient_cosine": 0.8429128527641296,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.550894021987915,
+          "gradient_cosine": 0.362897127866745,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 2,
+          "mean_cosine": 0.16812653839588165
+        },
+        "1": {
+          "n": 169,
+          "mean_cosine": 0.06273838877677917
+        },
+        "2": {
+          "n": 670,
+          "mean_cosine": 0.13645033538341522
+        },
+        "3": {
+          "n": 3255,
+          "mean_cosine": 0.05066054314374924
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-AS",
+      "world": 1,
+      "seed": 0,
+      "order": "AS",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 10.635760307312012,
+      "R_z_norm": 10.126770973205566,
+      "E_R_mean_cosine": 0.20433233678340912,
+      "E_R_mean_nearest_cosine": 0.7402510046958923,
+      "initial_mean_two_token_ce": 8.68815803527832,
+      "h_loss_gradient_rms": 0.016581298783421516,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.6781911253929138,
+          "gradient_cosine": 0.7037354707717896,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.3681907653808594
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.21137945353984833
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.2637319564819336
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.19110557436943054
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-AS",
+      "world": 1,
+      "seed": 0,
+      "order": "AS",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 12.996683120727539,
+      "R_z_norm": 11.231146812438965,
+      "E_R_mean_cosine": 0.12086661159992218,
+      "E_R_mean_nearest_cosine": 0.7985394597053528,
+      "initial_mean_two_token_ce": 8.68815803527832,
+      "h_loss_gradient_rms": 0.010217927396297455,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.8408477902412415,
+          "gradient_cosine": 0.8445342183113098,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.19731053709983826
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.16782577335834503
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.11375793069601059
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.11973350495100021
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-AS",
+      "world": 1,
+      "seed": 0,
+      "order": "AS",
+      "layer": 1,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 10.635760307312012,
+      "R_z_norm": 10.126770973205566,
+      "E_R_mean_cosine": 0.20433233678340912,
+      "E_R_mean_nearest_cosine": 0.7402510046958923,
+      "initial_mean_two_token_ce": 8.602577209472656,
+      "h_loss_gradient_rms": 0.017109127715229988,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.6797804832458496,
+          "gradient_cosine": 0.7179737091064453,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.6767077445983887,
+          "gradient_cosine": 0.2208506464958191,
+          "negative_gradient_fraction": 0.013333333333333334
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.3681907653808594
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.21137945353984833
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.2637319564819336
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.19110557436943054
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-AS",
+      "world": 1,
+      "seed": 0,
+      "order": "AS",
+      "layer": 4,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 12.996683120727539,
+      "R_z_norm": 11.231146812438965,
+      "E_R_mean_cosine": 0.12086661159992218,
+      "E_R_mean_nearest_cosine": 0.7985394597053528,
+      "initial_mean_two_token_ce": 8.602577209472656,
+      "h_loss_gradient_rms": 0.010253636166453362,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.8399127125740051,
+          "gradient_cosine": 0.852436363697052,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.8417205810546875,
+          "gradient_cosine": 0.24329444766044617,
+          "negative_gradient_fraction": 0.0014814814814814814
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.19731053709983826
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.16782577335834503
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.11375793069601059
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.11973350495100021
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-AS",
+      "world": 1,
+      "seed": 0,
+      "order": "AS",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 10.162202835083008,
+      "R_z_norm": 10.112744331359863,
+      "E_R_mean_cosine": 0.2261572778224945,
+      "E_R_mean_nearest_cosine": 0.7219057679176331,
+      "initial_mean_two_token_ce": 9.649384498596191,
+      "h_loss_gradient_rms": 0.01674973964691162,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.6864794492721558,
+          "gradient_cosine": 0.6855335235595703,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.22830772399902344
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.28851261734962463
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.21275578439235687
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-AS",
+      "world": 1,
+      "seed": 0,
+      "order": "AS",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 11.913446426391602,
+      "R_z_norm": 11.187532424926758,
+      "E_R_mean_cosine": 0.1461765170097351,
+      "E_R_mean_nearest_cosine": 0.8012032508850098,
+      "initial_mean_two_token_ce": 9.649384498596191,
+      "h_loss_gradient_rms": 0.010698851197957993,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.8335778713226318,
+          "gradient_cosine": 0.837319552898407,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.19021424651145935
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.13366591930389404
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.14682842791080475
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-AS",
+      "world": 1,
+      "seed": 0,
+      "order": "AS",
+      "layer": 1,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 10.162202835083008,
+      "R_z_norm": 10.112744331359863,
+      "E_R_mean_cosine": 0.2261572778224945,
+      "E_R_mean_nearest_cosine": 0.7219057679176331,
+      "initial_mean_two_token_ce": 9.483038902282715,
+      "h_loss_gradient_rms": 0.016569532454013824,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.684309184551239,
+          "gradient_cosine": 0.698196291923523,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.6885051131248474,
+          "gradient_cosine": 0.1949213743209839,
+          "negative_gradient_fraction": 0.0044444444444444444
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.22830772399902344
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.28851261734962463
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.21275578439235687
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-AS",
+      "world": 1,
+      "seed": 0,
+      "order": "AS",
+      "layer": 4,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 11.913446426391602,
+      "R_z_norm": 11.187532424926758,
+      "E_R_mean_cosine": 0.1461765170097351,
+      "E_R_mean_nearest_cosine": 0.8012032508850098,
+      "initial_mean_two_token_ce": 9.483038902282715,
+      "h_loss_gradient_rms": 0.0106471823528409,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.8319824934005737,
+          "gradient_cosine": 0.842336893081665,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.8350667953491211,
+          "gradient_cosine": 0.237723708152771,
+          "negative_gradient_fraction": 0.002962962962962963
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.19021424651145935
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.13366591930389404
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.14682842791080475
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-SA",
+      "world": 1,
+      "seed": 0,
+      "order": "SA",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 5.395138263702393,
+      "R_z_norm": 10.83355712890625,
+      "E_R_mean_cosine": 0.18388651311397552,
+      "E_R_mean_nearest_cosine": 0.73292475938797,
+      "initial_mean_two_token_ce": 7.345497131347656,
+      "h_loss_gradient_rms": 0.004849675111472607,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.7135456204414368,
+          "gradient_cosine": 0.8828356266021729,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.30166634917259216
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.18272890150547028
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.37731677293777466
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.1422983556985855
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-SA",
+      "world": 1,
+      "seed": 0,
+      "order": "SA",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 9.923425674438477,
+      "R_z_norm": 11.83833122253418,
+      "E_R_mean_cosine": 0.06973154842853546,
+      "E_R_mean_nearest_cosine": 0.6943352222442627,
+      "initial_mean_two_token_ce": 7.345497131347656,
+      "h_loss_gradient_rms": 0.00372294127009809,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.6601858735084534,
+          "gradient_cosine": 0.9258065819740295,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.04918123036623001
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.0735032707452774
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.1374979168176651
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.05494600906968117
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-SA",
+      "world": 1,
+      "seed": 0,
+      "order": "SA",
+      "layer": 1,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 5.395138263702393,
+      "R_z_norm": 10.83355712890625,
+      "E_R_mean_cosine": 0.18388651311397552,
+      "E_R_mean_nearest_cosine": 0.73292475938797,
+      "initial_mean_two_token_ce": 7.493157386779785,
+      "h_loss_gradient_rms": 0.004881578031927347,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.7109194993972778,
+          "gradient_cosine": 0.882401168346405,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.7159967422485352,
+          "gradient_cosine": 0.3044336140155792,
+          "negative_gradient_fraction": 0.0044444444444444444
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.30166634917259216
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.18272890150547028
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.37731677293777466
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.1422983556985855
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-SA",
+      "world": 1,
+      "seed": 0,
+      "order": "SA",
+      "layer": 4,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 9.923425674438477,
+      "R_z_norm": 11.83833122253418,
+      "E_R_mean_cosine": 0.06973154842853546,
+      "E_R_mean_nearest_cosine": 0.6943352222442627,
+      "initial_mean_two_token_ce": 7.493157386779785,
+      "h_loss_gradient_rms": 0.0037199785001575947,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.6576764583587646,
+          "gradient_cosine": 0.9228015542030334,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.6625280976295471,
+          "gradient_cosine": 0.34616008400917053,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.04918123036623001
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.0735032707452774
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.1374979168176651
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.05494600906968117
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-SA",
+      "world": 1,
+      "seed": 0,
+      "order": "SA",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 5.424654960632324,
+      "R_z_norm": 10.831172943115234,
+      "E_R_mean_cosine": 0.18474212288856506,
+      "E_R_mean_nearest_cosine": 0.7228285074234009,
+      "initial_mean_two_token_ce": 8.425827026367188,
+      "h_loss_gradient_rms": 0.005020140670239925,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.671137809753418,
+          "gradient_cosine": 0.8366385698318481,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.1758042573928833
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.38426023721694946
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.14258602261543274
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-SA",
+      "world": 1,
+      "seed": 0,
+      "order": "SA",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 9.372025489807129,
+      "R_z_norm": 11.78637409210205,
+      "E_R_mean_cosine": 0.07567833364009857,
+      "E_R_mean_nearest_cosine": 0.6615704894065857,
+      "initial_mean_two_token_ce": 8.425827026367188,
+      "h_loss_gradient_rms": 0.0039269099943339825,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.5836554765701294,
+          "gradient_cosine": 0.9018717408180237,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.08346118777990341
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.1488739550113678
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.0597061812877655
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-SA",
+      "world": 1,
+      "seed": 0,
+      "order": "SA",
+      "layer": 1,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 5.424654960632324,
+      "R_z_norm": 10.831172943115234,
+      "E_R_mean_cosine": 0.18474212288856506,
+      "E_R_mean_nearest_cosine": 0.7228285074234009,
+      "initial_mean_two_token_ce": 8.417062759399414,
+      "h_loss_gradient_rms": 0.005003236699849367,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.6743526458740234,
+          "gradient_cosine": 0.838511049747467,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.6681371927261353,
+          "gradient_cosine": 0.28964027762413025,
+          "negative_gradient_fraction": 0.002962962962962963
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.1758042573928833
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.38426023721694946
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.14258602261543274
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-SA",
+      "world": 1,
+      "seed": 0,
+      "order": "SA",
+      "layer": 4,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 9.372025489807129,
+      "R_z_norm": 11.78637409210205,
+      "E_R_mean_cosine": 0.07567833364009857,
+      "E_R_mean_nearest_cosine": 0.6615704894065857,
+      "initial_mean_two_token_ce": 8.417062759399414,
+      "h_loss_gradient_rms": 0.003939320798963308,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.583622395992279,
+          "gradient_cosine": 0.899263322353363,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.583686351776123,
+          "gradient_cosine": 0.3334996998310089,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.08346118777990341
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.1488739550113678
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.0597061812877655
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-AS",
+      "world": 1,
+      "seed": 1,
+      "order": "AS",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 12.652355194091797,
+      "R_z_norm": 14.200881004333496,
+      "E_R_mean_cosine": 0.0747348964214325,
+      "E_R_mean_nearest_cosine": 0.7247615456581116,
+      "initial_mean_two_token_ce": 7.2745795249938965,
+      "h_loss_gradient_rms": 0.010320208966732025,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.669748842716217,
+          "gradient_cosine": 0.8118847608566284,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.15535366535186768
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.10177578777074814
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.14142565429210663
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.058841776102781296
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-AS",
+      "world": 1,
+      "seed": 1,
+      "order": "AS",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 14.136343002319336,
+      "R_z_norm": 12.917357444763184,
+      "E_R_mean_cosine": 0.0706295520067215,
+      "E_R_mean_nearest_cosine": 0.7695854902267456,
+      "initial_mean_two_token_ce": 7.2745795249938965,
+      "h_loss_gradient_rms": 0.006056061014533043,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.7974262237548828,
+          "gradient_cosine": 0.9212628602981567,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.058778829872608185
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.11530815809965134
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.08410472422838211
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.06522338837385178
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-AS",
+      "world": 1,
+      "seed": 1,
+      "order": "AS",
+      "layer": 1,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 12.652355194091797,
+      "R_z_norm": 14.200881004333496,
+      "E_R_mean_cosine": 0.0747348964214325,
+      "E_R_mean_nearest_cosine": 0.7247615456581116,
+      "initial_mean_two_token_ce": 7.307950496673584,
+      "h_loss_gradient_rms": 0.010300111025571823,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.6698979139328003,
+          "gradient_cosine": 0.8043232560157776,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.6696098446846008,
+          "gradient_cosine": 0.337685763835907,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.15535366535186768
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.10177578777074814
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.14142565429210663
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.058841776102781296
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-AS",
+      "world": 1,
+      "seed": 1,
+      "order": "AS",
+      "layer": 4,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 14.136343002319336,
+      "R_z_norm": 12.917357444763184,
+      "E_R_mean_cosine": 0.0706295520067215,
+      "E_R_mean_nearest_cosine": 0.7695854902267456,
+      "initial_mean_two_token_ce": 7.307950496673584,
+      "h_loss_gradient_rms": 0.006042623892426491,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.7976759076118469,
+          "gradient_cosine": 0.9181560277938843,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.7971932888031006,
+          "gradient_cosine": 0.31690239906311035,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.058778829872608185
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.11530815809965134
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.08410472422838211
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.06522338837385178
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-AS",
+      "world": 1,
+      "seed": 1,
+      "order": "AS",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 12.827863693237305,
+      "R_z_norm": 14.16917896270752,
+      "E_R_mean_cosine": 0.07920254021883011,
+      "E_R_mean_nearest_cosine": 0.7431486248970032,
+      "initial_mean_two_token_ce": 8.212754249572754,
+      "h_loss_gradient_rms": 0.009739069268107414,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.7051033973693848,
+          "gradient_cosine": 0.7994992136955261,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.09907419234514236
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.15441592037677765
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.06224619597196579
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-AS",
+      "world": 1,
+      "seed": 1,
+      "order": "AS",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 14.120492935180664,
+      "R_z_norm": 12.908350944519043,
+      "E_R_mean_cosine": 0.07362421602010727,
+      "E_R_mean_nearest_cosine": 0.7958912253379822,
+      "initial_mean_two_token_ce": 8.212754249572754,
+      "h_loss_gradient_rms": 0.006035425700247288,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.8198440670967102,
+          "gradient_cosine": 0.9119565486907959,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.1165819764137268
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.08079202473163605
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.07012739032506943
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-AS",
+      "world": 1,
+      "seed": 1,
+      "order": "AS",
+      "layer": 1,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 12.827863693237305,
+      "R_z_norm": 14.16917896270752,
+      "E_R_mean_cosine": 0.07920254021883011,
+      "E_R_mean_nearest_cosine": 0.7431486248970032,
+      "initial_mean_two_token_ce": 8.188016891479492,
+      "h_loss_gradient_rms": 0.009771238081157207,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.7066729664802551,
+          "gradient_cosine": 0.7998531460762024,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.7036384344100952,
+          "gradient_cosine": 0.3690883219242096,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.09907419234514236
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.15441592037677765
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.06224619597196579
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-AS",
+      "world": 1,
+      "seed": 1,
+      "order": "AS",
+      "layer": 4,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 14.120492935180664,
+      "R_z_norm": 12.908350944519043,
+      "E_R_mean_cosine": 0.07362421602010727,
+      "E_R_mean_nearest_cosine": 0.7958912253379822,
+      "initial_mean_two_token_ce": 8.188016891479492,
+      "h_loss_gradient_rms": 0.006093940231949091,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.8218726515769958,
+          "gradient_cosine": 0.912788987159729,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.8179504871368408,
+          "gradient_cosine": 0.3208262622356415,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.1165819764137268
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.08079202473163605
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.07012739032506943
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-SA",
+      "world": 1,
+      "seed": 1,
+      "order": "SA",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 8.451936721801758,
+      "R_z_norm": 8.563004493713379,
+      "E_R_mean_cosine": 0.15144701302051544,
+      "E_R_mean_nearest_cosine": 0.6263846755027771,
+      "initial_mean_two_token_ce": 8.629069328308105,
+      "h_loss_gradient_rms": 0.006174590904265642,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.5084617733955383,
+          "gradient_cosine": 0.804384708404541,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.22181375324726105
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.1332324743270874
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.2768184542655945
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.1254749745130539
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-SA",
+      "world": 1,
+      "seed": 1,
+      "order": "SA",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 9.804985046386719,
+      "R_z_norm": 12.316781044006348,
+      "E_R_mean_cosine": 0.060703344643116,
+      "E_R_mean_nearest_cosine": 0.5727525353431702,
+      "initial_mean_two_token_ce": 8.629069328308105,
+      "h_loss_gradient_rms": 0.00449402304366231,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.5717254281044006,
+          "gradient_cosine": 0.864579975605011,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.11882973462343216
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.058461811393499374
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.1475428193807602
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.042127691209316254
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-SA",
+      "world": 1,
+      "seed": 1,
+      "order": "SA",
+      "layer": 1,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 8.451936721801758,
+      "R_z_norm": 8.563004493713379,
+      "E_R_mean_cosine": 0.15144701302051544,
+      "E_R_mean_nearest_cosine": 0.6263846755027771,
+      "initial_mean_two_token_ce": 8.893791198730469,
+      "h_loss_gradient_rms": 0.005905634723603725,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.5042679309844971,
+          "gradient_cosine": 0.7853151559829712,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.5123758912086487,
+          "gradient_cosine": 0.25155115127563477,
+          "negative_gradient_fraction": 0.01925925925925926
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.22181375324726105
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.1332324743270874
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.2768184542655945
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.1254749745130539
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-SA",
+      "world": 1,
+      "seed": 1,
+      "order": "SA",
+      "layer": 4,
+      "kind": "exception",
+      "support": 0,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 9.804985046386719,
+      "R_z_norm": 12.316781044006348,
+      "E_R_mean_cosine": 0.060703344643116,
+      "E_R_mean_nearest_cosine": 0.5727525353431702,
+      "initial_mean_two_token_ce": 8.893791198730469,
+      "h_loss_gradient_rms": 0.004393911454826593,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.5693141222000122,
+          "gradient_cosine": 0.852024257183075,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.5739759206771851,
+          "gradient_cosine": 0.28451457619667053,
+          "negative_gradient_fraction": 0.0
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 1,
+          "mean_cosine": 0.11882973462343216
+        },
+        "1": {
+          "n": 181,
+          "mean_cosine": 0.058461811393499374
+        },
+        "2": {
+          "n": 693,
+          "mean_cosine": 0.1475428193807602
+        },
+        "3": {
+          "n": 3221,
+          "mean_cosine": 0.042127691209316254
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-SA",
+      "world": 1,
+      "seed": 1,
+      "order": "SA",
+      "layer": 1,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 9.784436225891113,
+      "R_z_norm": 8.529869079589844,
+      "E_R_mean_cosine": 0.1340949833393097,
+      "E_R_mean_nearest_cosine": 0.6035780310630798,
+      "initial_mean_two_token_ce": 9.222908020019531,
+      "h_loss_gradient_rms": 0.006087965331971645,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.5122044086456299,
+          "gradient_cosine": 0.7519935369491577,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.10355523973703384
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.24993397295475006
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.11078057438135147
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-SA",
+      "world": 1,
+      "seed": 1,
+      "order": "SA",
+      "layer": 4,
+      "kind": "coherent",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 9.19167709350586,
+      "R_z_norm": 12.31759262084961,
+      "E_R_mean_cosine": 0.06467755883932114,
+      "E_R_mean_nearest_cosine": 0.5924983620643616,
+      "initial_mean_two_token_ce": 9.222908020019531,
+      "h_loss_gradient_rms": 0.004476791247725487,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 1305,
+          "z_cosine": 0.580951988697052,
+          "gradient_cosine": 0.8358075022697449,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 0,
+          "z_cosine": null,
+          "gradient_cosine": null,
+          "negative_gradient_fraction": null
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.06817537546157837
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.14281456172466278
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.04784746840596199
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-SA",
+      "world": 1,
+      "seed": 1,
+      "order": "SA",
+      "layer": 1,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 9.784436225891113,
+      "R_z_norm": 8.529869079589844,
+      "E_R_mean_cosine": 0.1340949833393097,
+      "E_R_mean_nearest_cosine": 0.6035780310630798,
+      "initial_mean_two_token_ce": 9.27364444732666,
+      "h_loss_gradient_rms": 0.005930254701524973,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.5093656778335571,
+          "gradient_cosine": 0.7406960129737854,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.5148538947105408,
+          "gradient_cosine": 0.2665390372276306,
+          "negative_gradient_fraction": 0.02962962962962963
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.10355523973703384
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.24993397295475006
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.11078057438135147
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-SA",
+      "world": 1,
+      "seed": 1,
+      "order": "SA",
+      "layer": 4,
+      "kind": "exception",
+      "support": 1,
+      "E_n": 93,
+      "R_n": 4096,
+      "E_z_norm": 9.19167709350586,
+      "R_z_norm": 12.31759262084961,
+      "E_R_mean_cosine": 0.06467755883932114,
+      "E_R_mean_nearest_cosine": 0.5924983620643616,
+      "initial_mean_two_token_ce": 9.27364444732666,
+      "h_loss_gradient_rms": 0.00446624169126153,
+      "within_same_company_relation_old_answer": {
+        "same_new_answer": {
+          "pairs": 630,
+          "z_cosine": 0.5802313089370728,
+          "gradient_cosine": 0.8328483700752258,
+          "negative_gradient_fraction": 0.0
+        },
+        "different_new_answer": {
+          "pairs": 675,
+          "z_cosine": 0.5816246271133423,
+          "gradient_cosine": 0.2932850122451782,
+          "negative_gradient_fraction": 0.005925925925925926
+        }
+      },
+      "R_by_stratum": {
+        "0": {
+          "n": 0,
+          "mean_cosine": null
+        },
+        "1": {
+          "n": 149,
+          "mean_cosine": 0.06817537546157837
+        },
+        "2": {
+          "n": 694,
+          "mean_cosine": 0.14281456172466278
+        },
+        "3": {
+          "n": 3253,
+          "mean_cosine": 0.04784746840596199
+        }
+      }
+    }
+  ],
+  "branch_operation_checks": [
+    {
+      "run": "world-0-seed-0-AS",
+      "world": 0,
+      "seed": 0,
+      "order": "AS",
+      "window": 3,
+      "available": true,
+      "construction_seconds": 0.5686575400177389,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.33034539222717285,
+      "independent_32nd_relative_singular_value": 0.3253031075000763,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.12886972480919212,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.4741516374051571,
+          "total_variance": 1.0
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.18159008887596428,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-AS",
+      "world": 0,
+      "seed": 0,
+      "order": "AS",
+      "window": 0,
+      "available": true,
+      "construction_seconds": 0.6377339139871765,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.15245424211025238,
+      "independent_32nd_relative_singular_value": 0.33533594012260437,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.2891420980449766,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.853030489757657,
+          "total_variance": 1.0
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.302972549572587,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-SA",
+      "world": 0,
+      "seed": 0,
+      "order": "SA",
+      "window": 3,
+      "available": true,
+      "construction_seconds": 0.7202350000152364,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.23977279663085938,
+      "independent_32nd_relative_singular_value": 0.2983958423137665,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.20341876382008195,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.7062234207987785,
+          "total_variance": 1.0
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.24649962736293674,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-0-SA",
+      "world": 0,
+      "seed": 0,
+      "order": "SA",
+      "window": 0,
+      "available": true,
+      "construction_seconds": 0.8651631250104401,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.19333623349666595,
+      "independent_32nd_relative_singular_value": 0.22419987618923187,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.3135766889899969,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.7443434465676546,
+          "total_variance": 1.0
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.28697906783781946,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-AS",
+      "world": 0,
+      "seed": 1,
+      "order": "AS",
+      "window": 3,
+      "available": true,
+      "construction_seconds": 0.34060018599848263,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.3303610384464264,
+      "independent_32nd_relative_singular_value": 0.3756578862667084,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.11534453753847629,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.5300460988655686,
+          "total_variance": 1.0000001192092896
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.18049491150304675,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-AS",
+      "world": 0,
+      "seed": 1,
+      "order": "AS",
+      "window": 0,
+      "available": true,
+      "construction_seconds": 0.318493946979288,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.1828075349330902,
+      "independent_32nd_relative_singular_value": 0.46520116925239563,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.2635475969873369,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.8536347905173898,
+          "total_variance": 1.0
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.3128232257440686,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-SA",
+      "world": 0,
+      "seed": 1,
+      "order": "SA",
+      "window": 3,
+      "available": true,
+      "construction_seconds": 0.41175297898007557,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.11136846989393234,
+      "independent_32nd_relative_singular_value": 0.3403424620628357,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.43222776055336,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.886166307143867,
+          "total_variance": 1.0000001192092896
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.3595974436029792,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-0-seed-1-SA",
+      "world": 0,
+      "seed": 1,
+      "order": "SA",
+      "window": 0,
+      "available": true,
+      "construction_seconds": 0.3730069739976898,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.07364071160554886,
+      "independent_32nd_relative_singular_value": 0.24639198184013367,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.5393886305391788,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.8950789598748088,
+          "total_variance": 1.0
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.3778184219263494,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-AS",
+      "world": 1,
+      "seed": 0,
+      "order": "AS",
+      "window": 3,
+      "available": true,
+      "construction_seconds": 0.7043572900001891,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.3118579685688019,
+      "independent_32nd_relative_singular_value": 0.3174905776977539,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.11088026454672217,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.5476485048420727,
+          "total_variance": 1.0
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.18020067538600415,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-AS",
+      "world": 1,
+      "seed": 0,
+      "order": "AS",
+      "window": 0,
+      "available": true,
+      "construction_seconds": 0.5016105590038933,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.18109239637851715,
+      "independent_32nd_relative_singular_value": 0.5071732401847839,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.2950572716072202,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.9028801750391722,
+          "total_variance": 1.0
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.385536543559283,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-SA",
+      "world": 1,
+      "seed": 0,
+      "order": "SA",
+      "window": 3,
+      "available": true,
+      "construction_seconds": 0.7264564459910616,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.13521797955036163,
+      "independent_32nd_relative_singular_value": 0.2603130042552948,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.290153656154871,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.8098976709879935,
+          "total_variance": 1.0
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.2800168797839433,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-0-SA",
+      "world": 1,
+      "seed": 0,
+      "order": "SA",
+      "window": 0,
+      "available": true,
+      "construction_seconds": 0.4424997649912257,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.0867687538266182,
+      "independent_32nd_relative_singular_value": 0.17942269146442413,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.46392628690227866,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.8719326378777623,
+          "total_variance": 1.0
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.40524296229705215,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-AS",
+      "world": 1,
+      "seed": 1,
+      "order": "AS",
+      "window": 3,
+      "available": true,
+      "construction_seconds": 0.3447244520066306,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.2589529752731323,
+      "independent_32nd_relative_singular_value": 0.4382820427417755,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.1258886792929843,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.5035073719918728,
+          "total_variance": 1.0
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.18229826749302447,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-AS",
+      "world": 1,
+      "seed": 1,
+      "order": "AS",
+      "window": 0,
+      "available": true,
+      "construction_seconds": 0.3620338740001898,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.16186721622943878,
+      "independent_32nd_relative_singular_value": 0.4069288969039917,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.2638855781406164,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.8192673427984118,
+          "total_variance": 1.0
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.31525837164372206,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-SA",
+      "world": 1,
+      "seed": 1,
+      "order": "SA",
+      "window": 3,
+      "available": true,
+      "construction_seconds": 0.36017793498467654,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.12840336561203003,
+      "independent_32nd_relative_singular_value": 0.3334927558898926,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.39922624779865146,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.8907936764881015,
+          "total_variance": 1.0
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.36222986644133925,
+          "total_variance": 1.0
+        }
+      }
+    },
+    {
+      "run": "world-1-seed-1-SA",
+      "world": 1,
+      "seed": 1,
+      "order": "SA",
+      "window": 0,
+      "available": true,
+      "construction_seconds": 0.36212264499044977,
+      "rank": 32,
+      "shared_32nd_relative_singular_value": 0.10936032980680466,
+      "independent_32nd_relative_singular_value": 0.2118731588125229,
+      "checks": {
+        "shared": {
+          "same_company_relation_old_answer_identity_variance": 0.5504167033359408,
+          "total_variance": 1.0
+        },
+        "independent": {
+          "same_company_relation_old_answer_identity_variance": 0.9377165948972106,
+          "total_variance": 1.0
+        },
+        "random": {
+          "same_company_relation_old_answer_identity_variance": 0.4990857504308224,
+          "total_variance": 1.0
+        }
+      }
+    }
+  ]
+}

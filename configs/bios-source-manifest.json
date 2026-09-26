@@ -1,0 +1,61 @@
+{
+  "repository": "https://github.com/zhuzeyuan/PhysicsLM4",
+  "revision": "211b28f2e9d453114ca5a1cbbb2d5a632ac60fcf",
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "20321104a707d80252f9b2c2104f1bde27ed1d1189595b1ca3eda5d732944e31",
+      "bytes": 11358,
+      "lines": 203
+    },
+    {
+      "path": "data-synthetic-pretrain/Capo-bioS-bioR/Capo-bioS-bioR.py",
+      "sha256": "90a9349138178b6439e1521cf28e746ddbd634061070f368a0e4718d707bfc1e",
+      "bytes": 33264,
+      "lines": 558
+    },
+    {
+      "path": "data-synthetic-pretrain/Capo-bioS-bioR/fields/city.txt",
+      "sha256": "7e9d73759976692c014f1437b92d28359783bf65d00b6ed8f4516f4b978c9e0f",
+      "bytes": 2963,
+      "lines": 200
+    },
+    {
+      "path": "data-synthetic-pretrain/Capo-bioS-bioR/fields/company.txt",
+      "sha256": "e5f1fd6b609a47c79b58ca11da14bbd97da00ad0580ecefcfe49e656f174aa94",
+      "bytes": 7350,
+      "lines": 263
+    },
+    {
+      "path": "data-synthetic-pretrain/Capo-bioS-bioR/fields/field.txt",
+      "sha256": "5764b044a4a0f87950d03f7b47feec6243da035cae11e806deef326870b41808",
+      "bytes": 1638,
+      "lines": 100
+    },
+    {
+      "path": "data-synthetic-pretrain/Capo-bioS-bioR/fields/first_name.txt",
+      "sha256": "957f94f7d78a3fc45709517a4389ff1943ff8ae843eb0fab1af81587fbcf16bc",
+      "bytes": 3194,
+      "lines": 400
+    },
+    {
+      "path": "data-synthetic-pretrain/Capo-bioS-bioR/fields/last_name.txt",
+      "sha256": "591e196c3213f31ebc1d2686edfe1366892624f59ab96ab73ee489bcd2dc1e27",
+      "bytes": 8180,
+      "lines": 1000
+    },
+    {
+      "path": "data-synthetic-pretrain/Capo-bioS-bioR/fields/middle_name.txt",
+      "sha256": "95a8ec088fb4ed39809052006b96aaf62985ecb1dee360312434c10b8aeca544",
+      "bytes": 3159,
+      "lines": 400
+    },
+    {
+      "path": "data-synthetic-pretrain/Capo-bioS-bioR/fields/university.txt",
+      "sha256": "975ca8640a66fa2a8cd42e88567257a2683a233c6db570be3a500643e3203703",
+      "bytes": 8711,
+      "lines": 300
+    }
+  ],
+  "adaptation": "Sources remain unchanged. This batch implements sampling, company names, overrides, symbolic queries, curricula and paired edits; QA/template adaptation remains pending."
+}

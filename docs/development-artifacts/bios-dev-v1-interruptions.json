@@ -1,0 +1,90 @@
+[
+  {
+    "run": "world-0-seed-1-AS",
+    "status": "externally_interrupted",
+    "parent_returncode": 137,
+    "cause": "not established; no numerical error in run log",
+    "last_saved_step": 11280,
+    "last_log": "{\"event\": \"progress\", \"step\": 11300, \"loss\": 0.006238957680761814, \"train_seconds\": 252.84340464277193}",
+    "optimizer_state_available": false,
+    "restart_policy": "same seed and initialization, full fixed budget from step zero",
+    "recorded_utc": "2026-09-25T22:12:35.718423+00:00"
+  },
+  {
+    "run": "world-0-seed-1-SA",
+    "status": "externally_interrupted",
+    "parent_returncode": 137,
+    "cause": "not established; no numerical error in run log",
+    "last_saved_step": 7280,
+    "last_log": "{\"event\": \"progress\", \"step\": 8600, \"loss\": 0.00407467589713633, \"train_seconds\": 222.6694027519261}",
+    "optimizer_state_available": false,
+    "restart_policy": "same seed and initialization, full fixed budget from step zero",
+    "recorded_utc": "2026-09-25T22:12:35.791941+00:00"
+  },
+  {
+    "run": "world-1-seed-1-AS",
+    "status": "externally_interrupted",
+    "parent_returncode": 137,
+    "cause": "not established; no numerical error in run log",
+    "last_saved_step": 9280,
+    "last_log": "{\"event\": \"progress\", \"step\": 9600, \"loss\": 0.004947007503651548, \"train_seconds\": 234.60107220010832}",
+    "optimizer_state_available": false,
+    "restart_policy": "same seed and initialization, full fixed budget from step zero",
+    "recorded_utc": "2026-09-25T22:12:35.867828+00:00"
+  },
+  {
+    "run": "world-1-seed-1-SA",
+    "status": "externally_interrupted",
+    "parent_returncode": 137,
+    "cause": "not established; no numerical error in run log",
+    "last_saved_step": 9280,
+    "last_log": "{\"event\": \"progress\", \"step\": 9800, \"loss\": 0.004101846136618406, \"train_seconds\": 227.97559297431144}",
+    "optimizer_state_available": false,
+    "restart_policy": "same seed and initialization, full fixed budget from step zero",
+    "recorded_utc": "2026-09-25T22:12:35.943048+00:00"
+  },
+  {
+    "run": "world-0-seed-1-AS",
+    "attempt": 2,
+    "status": "externally_interrupted",
+    "parent_returncode": -9,
+    "cause": "not established; pipeline recorded SIGKILL during other GPU job activity",
+    "last_saved_step": 5280,
+    "last_log": "{\"event\": \"progress\", \"step\": 6100, \"loss\": 0.01977997223380953, \"train_seconds\": 145.1886586168548}",
+    "optimizer_state_available": false,
+    "recorded_utc": "2026-09-25T22:21:01.993860+00:00"
+  },
+  {
+    "run": "world-0-seed-1-SA",
+    "attempt": 2,
+    "status": "externally_interrupted",
+    "parent_returncode": -9,
+    "cause": "not established; pipeline recorded SIGKILL during other GPU job activity",
+    "last_saved_step": 5280,
+    "last_log": "{\"event\": \"progress\", \"step\": 5900, \"loss\": 0.011580621972680092, \"train_seconds\": 151.60787171771517}",
+    "optimizer_state_available": false,
+    "recorded_utc": "2026-09-25T22:21:02.669183+00:00"
+  },
+  {
+    "run": "world-1-seed-1-AS",
+    "attempt": 2,
+    "status": "externally_interrupted",
+    "parent_returncode": -9,
+    "cause": "not established; pipeline recorded SIGKILL during other GPU job activity",
+    "last_saved_step": 5280,
+    "last_log": "{\"event\": \"progress\", \"step\": 5300, \"loss\": 1.4308007434010506, \"train_seconds\": 136.48864148344728}",
+    "optimizer_state_available": false,
+    "recorded_utc": "2026-09-25T22:21:03.490439+00:00"
+  },
+  {
+    "run": "world-1-seed-1-SA",
+    "attempt": 2,
+    "status": "externally_interrupted",
+    "parent_returncode": -9,
+    "cause": "not established; pipeline recorded SIGKILL during other GPU job activity",
+    "last_saved_step": 5280,
+    "last_log": "{\"event\": \"progress\", \"step\": 5500, \"loss\": 0.07582780646160245, \"train_seconds\": 141.13276126075652}",
+    "optimizer_state_available": false,
+    "recorded_utc": "2026-09-25T22:21:03.899534+00:00"
+  }
+]

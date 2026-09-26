@@ -1,0 +1,39 @@
+{
+  "protocol": "v2.3",
+  "phase": "first symbolic development batch; not confirmatory evidence",
+  "world_seeds": [0, 1],
+  "initialization_seeds": [0, 1],
+  "curricula": ["SA", "AS"],
+  "world_steps": 13280,
+  "stage_steps": [2640, 2640, 8000],
+  "batch_size": 128,
+  "optimizer": "AdamW",
+  "learning_rate": 0.0001,
+  "weight_decay": 0.1,
+  "warmup_steps": 2000,
+  "gradient_clip": 1.0,
+  "model": {"layers": 8, "width": 768, "heads": 12, "mlp_width": 3072, "context": 128},
+  "editing": {
+    "support_indices": [0, 1],
+    "k": 1,
+    "selection": "prespecified unmatched balanced targets",
+    "types": ["coherent", "exception"],
+    "scopes": ["mlp", "all"],
+    "single_layer_calibration_support": 0,
+    "branch_support": 0,
+    "branch_width": 32,
+    "branch_rank": 32,
+    "branch_types": ["shared", "independent", "random"],
+    "provisional_development_window_zero_based": [3, 4, 5],
+    "learning_rate": 0.00003,
+    "retention_kl_weight": 1.0,
+    "max_steps": 512,
+    "checkpoints": [0, 1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
+  },
+  "limitations_before_launch": [
+    "Natural-language semantic and supported-QA audits are pending; no natural-language training is included in this batch.",
+    "Hyperparameters and layer window are provisional development choices within the protocol grids, not selected or confirmed optima.",
+    "No target-NLL matching, AlphaEdit, Qwen, cross-family or RippleEdits result is represented by this batch.",
+    "FLOPs are an executed-shape matrix-operation estimate, not hardware-measured total operations."
+  ]
+}

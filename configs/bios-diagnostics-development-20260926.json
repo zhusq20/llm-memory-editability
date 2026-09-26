@@ -1,0 +1,61 @@
+{
+  "protocol": "v2.3",
+  "phase": "post-hoc symbolic development diagnosis",
+  "completed_utc": "2026-09-26T04:18:36.088280+00:00",
+  "gpu_uuid": "GPU-b4302c0e-77f9-f270-ae1b-b95aba3f3c7f",
+  "physical_gpu_index": 4,
+  "python": "3.12.7",
+  "torch": "2.8.0+cu128",
+  "numpy": "2.5.3",
+  "gpu_steps": [
+    2640,
+    5280,
+    13280
+  ],
+  "cpu_steps": [
+    13280
+  ],
+  "edit_geometry_layers_zero_based": [
+    1,
+    4
+  ],
+  "supports": [
+    0,
+    1
+  ],
+  "updates": [
+    "coherent",
+    "exception"
+  ],
+  "historical_cpu_seed0_reused": true,
+  "random_cpu_gpu_directions_are_not_paired": true,
+  "source_sha256_at_delivery": {
+    "src/llm_memory_editability/__init__.py": "84e6bb4a97b68f67f3256135c2b5fc35d9a83ceb04914a6cf3d38d926b015f7f",
+    "src/llm_memory_editability/bios_analysis.py": "41d836fc201b9ae4f1988e0cdda3dc3be4ebc3ca898ab2ff69ca8445212407ff",
+    "src/llm_memory_editability/experiments.py": "e575aceb2e3804956655d91710809818aec04c0b16a22edb441f5757629371d1",
+    "src/llm_memory_editability/bios_edit.py": "c7eb39e2384a869f681fb6ecff72e363996035ca3d7268d85dc138301608dc41",
+    "src/llm_memory_editability/neural_models.py": "c5ecb2fd69aa205a22688c95049750a7b8a0fd58b7c888a026252273b3af9091",
+    "src/llm_memory_editability/bios_branch.py": "f5b0f0ae79f84d64e33862e40fffbc4bd9a8fd102414995e8a2d41560009c09d",
+    "src/llm_memory_editability/__main__.py": "0af76e0612dd46d8097cd06d02bcd6220d89354be49910110a80b9942fdb71b3",
+    "src/llm_memory_editability/neural_data.py": "8812cb49f223dff57ac2fbbeb8055aa3017302e0450c194ecc984eaefcc3596e",
+    "src/llm_memory_editability/bios_measure.py": "8c275b658c5c99316a19e2328eb53952f26b8a858b591784509391780ead3267",
+    "src/llm_memory_editability/cli.py": "01c814b9644988be1bf2ab660b2010ad5e7beab99067116c2afb2b6957f9fd3b",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "src/llm_memory_editability/bios_data.py": "d5568901f2042a6d89d447f47eddae9764eced0a9e71e3ea5adc0038a7e636d6",
+    "src/llm_memory_editability/bios_train.py": "c1d84d38aa1853815075041535ae3fa9890f5cf1f9f5d9019136c79521033046",
+    "src/llm_memory_editability/low_rank.py": "e1ddb5714d492311a43af2d5fd3dd5f578d8144db0b3d860ca71e3b603d018e1",
+    "src/llm_memory_editability/neural.py": "f0df4d9bbb47b1febf0baf76d53b58319e598b6bbb29d31abca575e2dd13e025",
+    "scripts/run_bios_diagnostics.py": "7bd55257c5192014ff6bb03e8f96db52030c2d1a014891409ff5cf5ac1384a60",
+    "scripts/measure_bios_edit_geometry.py": "232e3c691f09775bb6d72799257c11320d6fa308ee2130d0a6655ddc8a208822",
+    "scripts/report_bios_diagnostics.py": "d3dc4f9754625d8014462ba4ed4be1ad0ad20ed95eb864487ae527f5c8526ffd",
+    "scripts/summarize_bios.py": "e6fda85d67554b42a29be5663b8744448372d6220dbeb6c8845577971c7ce5f4"
+  },
+  "tests": "50 passed; all repository lint and formatting checks passed",
+  "audit": {
+    "saved_edit_cases": 256,
+    "trajectory_points": 2816,
+    "organization_measurements": 32,
+    "probe_conditions": 10240,
+    "edit_geometry_records": 64
+  }
+}

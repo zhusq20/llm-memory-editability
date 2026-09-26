@@ -1,0 +1,1045 @@
+{
+  "schema": "bios-organization-v1",
+  "worlds": [
+    {
+      "schema": "bios-organization-v1",
+      "world_seed": 0,
+      "truth_sha256": "964136d4d30f44febc60597a0e858dceac404dfff334934eb7338aec5a943874",
+      "relation_slot_order": [
+        "employer",
+        "default_city",
+        "actual_city",
+        "birth_date",
+        "birth_city",
+        "university",
+        "major"
+      ],
+      "same_truth_and_per_fact_presentations": true,
+      "position_balance_period_epochs": 7,
+      "same_default_actual_pairs_B_C": true,
+      "templates_and_aliases": "symbolic tokens fixed; English view uses common presentations",
+      "conditions": {
+        "A": {
+          "name": "relation_linked",
+          "documents": 2048,
+          "presentations": 14336,
+          "unique_base_facts": 12352,
+          "document_tokens": 42,
+          "supervised_tokens_per_document": 14,
+          "total_input_tokens_per_epoch": 86016,
+          "total_supervised_tokens_per_epoch": 28672,
+          "facts_sha256": "3ac187efc0bef0f669dffd919f910e4e86354a2dd34a804844f3c72cb80d919c",
+          "presentation_ids_sha256": "206feb0591b88178cf9735934ee7767df99804df2281706033dcc7f6eb9a2367",
+          "exposure_sha256": "6fdb1903a9b49a928f1e36e9511d28e4a29b86e075869bca890069192edd89ee",
+          "answer_histogram_sha256": "1eeb4826257e298a04e485606c402d86a0faa0552d8890a8c9a700410a3b2f4a",
+          "seven_epoch_fact_slot_sha256": "c6266377613fd508b6b0549d545d8b59cac539d21d502e193b004dfc8f5c1843",
+          "company_origin_cooccurrence": [
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          ],
+          "person_origin_cooccurrence": [
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          ],
+          "all_personal_same_fraction": 1.0,
+          "default_actual_same_answer_count": 1920,
+          "default_actual_same_answer_rate": 0.9375,
+          "relation_counts": {
+            "employer": 2048,
+            "default_city": 2048,
+            "actual_city": 2048,
+            "birth_date": 2048,
+            "birth_city": 2048,
+            "university": 2048,
+            "major": 2048
+          }
+        },
+        "B": {
+          "name": "person_grouped",
+          "documents": 2048,
+          "presentations": 14336,
+          "unique_base_facts": 12352,
+          "document_tokens": 42,
+          "supervised_tokens_per_document": 14,
+          "total_input_tokens_per_epoch": 86016,
+          "total_supervised_tokens_per_epoch": 28672,
+          "facts_sha256": "b6966b34a048a0c2a33f30d7e0b24f7bc21dda482f95196ed421cc0a24cf783b",
+          "presentation_ids_sha256": "d5aecfb9f92b7f73491f113760ada7935302839e79480fbabaee2a018efe1948",
+          "exposure_sha256": "6fdb1903a9b49a928f1e36e9511d28e4a29b86e075869bca890069192edd89ee",
+          "answer_histogram_sha256": "1eeb4826257e298a04e485606c402d86a0faa0552d8890a8c9a700410a3b2f4a",
+          "seven_epoch_fact_slot_sha256": "c6266377613fd508b6b0549d545d8b59cac539d21d502e193b004dfc8f5c1843",
+          "company_origin_cooccurrence": [
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          ],
+          "person_origin_cooccurrence": [
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          ],
+          "all_personal_same_fraction": 1.0,
+          "default_actual_same_answer_count": 38,
+          "default_actual_same_answer_rate": 0.0185546875,
+          "relation_counts": {
+            "employer": 2048,
+            "default_city": 2048,
+            "actual_city": 2048,
+            "birth_date": 2048,
+            "birth_city": 2048,
+            "university": 2048,
+            "major": 2048
+          }
+        },
+        "C": {
+          "name": "shuffled",
+          "documents": 2048,
+          "presentations": 14336,
+          "unique_base_facts": 12352,
+          "document_tokens": 42,
+          "supervised_tokens_per_document": 14,
+          "total_input_tokens_per_epoch": 86016,
+          "total_supervised_tokens_per_epoch": 28672,
+          "facts_sha256": "cc1df315cdbbb1a4490079466b370cb9fe2b416da7a466b6fefc30507fba407f",
+          "presentation_ids_sha256": "5fd14f8e2529f1371b1f9955fe60f305de7797dbc126e330dffe6ef78bd53b15",
+          "exposure_sha256": "6fdb1903a9b49a928f1e36e9511d28e4a29b86e075869bca890069192edd89ee",
+          "answer_histogram_sha256": "1eeb4826257e298a04e485606c402d86a0faa0552d8890a8c9a700410a3b2f4a",
+          "seven_epoch_fact_slot_sha256": "c6266377613fd508b6b0549d545d8b59cac539d21d502e193b004dfc8f5c1843",
+          "company_origin_cooccurrence": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "person_origin_cooccurrence": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "all_personal_same_fraction": 0.0,
+          "default_actual_same_answer_count": 38,
+          "default_actual_same_answer_rate": 0.0185546875,
+          "relation_counts": {
+            "employer": 2048,
+            "default_city": 2048,
+            "actual_city": 2048,
+            "birth_date": 2048,
+            "birth_city": 2048,
+            "university": 2048,
+            "major": 2048
+          }
+        }
+      },
+      "organization_seed": 0,
+      "origin_world_directory": "data/bios-work-v1/world-0",
+      "paired_edits": [
+        {
+          "support": 0,
+          "k": 1,
+          "E": 93,
+          "D": 96,
+          "coherent_sha256": "07269ae79d870a73edab8f7479cf5c0c8de87caf22906f1d0d502a9d7b2eb331",
+          "exception_sha256": "04d1e48fe0f500ad454a20813e00cf6459cfe372014d896ba299159a90f7b5f0",
+          "replay_excludes_D_and_heldout": true
+        },
+        {
+          "support": 1,
+          "k": 1,
+          "E": 93,
+          "D": 96,
+          "coherent_sha256": "a98dd62b21490148a37090fd0dec75401031b10be6e22f1841e27207e4518205",
+          "exception_sha256": "0dd74b020a6626e612cd63db221e825953d9a2019cf59f7be59f6129f687cfe4",
+          "replay_excludes_D_and_heldout": true
+        }
+      ],
+      "evaluation": {
+        "isolated_base_queries": 12352,
+        "isolated_derived_queries": 2048,
+        "derived_query_policy": "same old-world derived QA trained in every condition",
+        "paraphrase_and_alias_evaluation": "not applicable to symbolic training",
+        "english_corpora": "supplemental readable views only; not trained or evaluated"
+      }
+    },
+    {
+      "schema": "bios-organization-v1",
+      "world_seed": 1,
+      "truth_sha256": "c9c4338534dc72752e1332dbf00f100e9f00cc5e2f77f1e5e7dc9d434abdafeb",
+      "relation_slot_order": [
+        "employer",
+        "default_city",
+        "actual_city",
+        "birth_date",
+        "birth_city",
+        "university",
+        "major"
+      ],
+      "same_truth_and_per_fact_presentations": true,
+      "position_balance_period_epochs": 7,
+      "same_default_actual_pairs_B_C": true,
+      "templates_and_aliases": "symbolic tokens fixed; English view uses common presentations",
+      "conditions": {
+        "A": {
+          "name": "relation_linked",
+          "documents": 2048,
+          "presentations": 14336,
+          "unique_base_facts": 12352,
+          "document_tokens": 42,
+          "supervised_tokens_per_document": 14,
+          "total_input_tokens_per_epoch": 86016,
+          "total_supervised_tokens_per_epoch": 28672,
+          "facts_sha256": "e0c3222bf63d3801d8d89da506ae1b0c8f4d8cf1a811124ad85bd70821205c98",
+          "presentation_ids_sha256": "206feb0591b88178cf9735934ee7767df99804df2281706033dcc7f6eb9a2367",
+          "exposure_sha256": "6fdb1903a9b49a928f1e36e9511d28e4a29b86e075869bca890069192edd89ee",
+          "answer_histogram_sha256": "f59bb7b9b6b91c94480eff4dd3f1b2d7273d9a7f01cd58b7f160c9607e6d88f3",
+          "seven_epoch_fact_slot_sha256": "c6266377613fd508b6b0549d545d8b59cac539d21d502e193b004dfc8f5c1843",
+          "company_origin_cooccurrence": [
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          ],
+          "person_origin_cooccurrence": [
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          ],
+          "all_personal_same_fraction": 1.0,
+          "default_actual_same_answer_count": 1920,
+          "default_actual_same_answer_rate": 0.9375,
+          "relation_counts": {
+            "employer": 2048,
+            "default_city": 2048,
+            "actual_city": 2048,
+            "birth_date": 2048,
+            "birth_city": 2048,
+            "university": 2048,
+            "major": 2048
+          }
+        },
+        "B": {
+          "name": "person_grouped",
+          "documents": 2048,
+          "presentations": 14336,
+          "unique_base_facts": 12352,
+          "document_tokens": 42,
+          "supervised_tokens_per_document": 14,
+          "total_input_tokens_per_epoch": 86016,
+          "total_supervised_tokens_per_epoch": 28672,
+          "facts_sha256": "a594ad49a0b8f0a931360004c5ed0382611e0d63f6239c4d30943d82587c124c",
+          "presentation_ids_sha256": "52bd24a18551c5e123cedc2d414512cdb72fd6e23a73e3b9b599d0708c2dc545",
+          "exposure_sha256": "6fdb1903a9b49a928f1e36e9511d28e4a29b86e075869bca890069192edd89ee",
+          "answer_histogram_sha256": "f59bb7b9b6b91c94480eff4dd3f1b2d7273d9a7f01cd58b7f160c9607e6d88f3",
+          "seven_epoch_fact_slot_sha256": "c6266377613fd508b6b0549d545d8b59cac539d21d502e193b004dfc8f5c1843",
+          "company_origin_cooccurrence": [
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          ],
+          "person_origin_cooccurrence": [
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              1.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ]
+          ],
+          "all_personal_same_fraction": 1.0,
+          "default_actual_same_answer_count": 27,
+          "default_actual_same_answer_rate": 0.01318359375,
+          "relation_counts": {
+            "employer": 2048,
+            "default_city": 2048,
+            "actual_city": 2048,
+            "birth_date": 2048,
+            "birth_city": 2048,
+            "university": 2048,
+            "major": 2048
+          }
+        },
+        "C": {
+          "name": "shuffled",
+          "documents": 2048,
+          "presentations": 14336,
+          "unique_base_facts": 12352,
+          "document_tokens": 42,
+          "supervised_tokens_per_document": 14,
+          "total_input_tokens_per_epoch": 86016,
+          "total_supervised_tokens_per_epoch": 28672,
+          "facts_sha256": "8d8177a11c9377aef2d5fe9a8b6794e11569f335a2f707fcfaedd8fe8c8a5054",
+          "presentation_ids_sha256": "5a3f990d27c2d38ac70ea4f3d97a4637a5af4d5c4efc5da8bc7e652794532a6c",
+          "exposure_sha256": "6fdb1903a9b49a928f1e36e9511d28e4a29b86e075869bca890069192edd89ee",
+          "answer_histogram_sha256": "f59bb7b9b6b91c94480eff4dd3f1b2d7273d9a7f01cd58b7f160c9607e6d88f3",
+          "seven_epoch_fact_slot_sha256": "c6266377613fd508b6b0549d545d8b59cac539d21d502e193b004dfc8f5c1843",
+          "company_origin_cooccurrence": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "person_origin_cooccurrence": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "all_personal_same_fraction": 0.0,
+          "default_actual_same_answer_count": 27,
+          "default_actual_same_answer_rate": 0.01318359375,
+          "relation_counts": {
+            "employer": 2048,
+            "default_city": 2048,
+            "actual_city": 2048,
+            "birth_date": 2048,
+            "birth_city": 2048,
+            "university": 2048,
+            "major": 2048
+          }
+        }
+      },
+      "organization_seed": 0,
+      "origin_world_directory": "data/bios-work-v1/world-1",
+      "paired_edits": [
+        {
+          "support": 0,
+          "k": 1,
+          "E": 93,
+          "D": 96,
+          "coherent_sha256": "6531d790561761fa802c69c690a9d422531a8a9df9686efaadc0b2c8a37a89ab",
+          "exception_sha256": "1f4c5a60f6d930789bc821c8edb683a0b82d7abaa6f2c72163217bb9c7556417",
+          "replay_excludes_D_and_heldout": true
+        },
+        {
+          "support": 1,
+          "k": 1,
+          "E": 93,
+          "D": 96,
+          "coherent_sha256": "dc75a4e59df2153f509385bd977048a26d8a9d720dde78dd13fb9895db8ea2aa",
+          "exception_sha256": "b245580ad6bc6e152e4d819c5417b5d5802fcd51f6e1f9d28985f5f2ac80e8d3",
+          "replay_excludes_D_and_heldout": true
+        }
+      ],
+      "evaluation": {
+        "isolated_base_queries": 12352,
+        "isolated_derived_queries": 2048,
+        "derived_query_policy": "same old-world derived QA trained in every condition",
+        "paraphrase_and_alias_evaluation": "not applicable to symbolic training",
+        "english_corpora": "supplemental readable views only; not trained or evaluated"
+      }
+    }
+  ]
+}

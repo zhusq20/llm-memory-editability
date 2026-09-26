@@ -13,6 +13,7 @@ dependencies = ["numpy>=1.26,<3"]
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.6,<1"]
 neural = ["torch>=2.5,<3"]
+analysis = ["matplotlib>=3.9,<4"]
 
 [project.scripts]
 memory-editability = "llm_memory_editability.cli:main"
