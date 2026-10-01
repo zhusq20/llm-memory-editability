@@ -1,0 +1,482 @@
+[
+  {
+    "person_id": 134,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Jackson Addison Currie?\nAnswer:",
+    "target": "December 17, 2011",
+    "generated": "December 17, 2011",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 134,
+    "view": 1,
+    "prompt": "Question: On what date was Jackson Addison Currie born?\nAnswer:",
+    "target": "December 17, 2011",
+    "generated": "December 17, 2011",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 157,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Damian Abel East?\nAnswer:",
+    "target": "January 12, 1994",
+    "generated": "January 12, 2081",
+    "eos": true,
+    "parseable": true,
+    "correct": false
+  },
+  {
+    "person_id": 157,
+    "view": 1,
+    "prompt": "Question: On what date was Damian Abel East born?\nAnswer:",
+    "target": "January 12, 1994",
+    "generated": "January 12, 2098",
+    "eos": true,
+    "parseable": true,
+    "correct": false
+  },
+  {
+    "person_id": 656,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Paige Logan Carroll?\nAnswer:",
+    "target": "May 24, 1955",
+    "generated": "May 24, 1955",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 656,
+    "view": 1,
+    "prompt": "Question: On what date was Paige Logan Carroll born?\nAnswer:",
+    "target": "May 24, 1955",
+    "generated": "March 8, 2061",
+    "eos": true,
+    "parseable": true,
+    "correct": false
+  },
+  {
+    "person_id": 777,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Lily Hadley Tyler?\nAnswer:",
+    "target": "January 4, 2041",
+    "generated": "January 4, 2041",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 777,
+    "view": 1,
+    "prompt": "Question: On what date was Lily Hadley Tyler born?\nAnswer:",
+    "target": "January 4, 2041",
+    "generated": "January 4, 2041",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 826,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Hannah Rose Brady?\nAnswer:",
+    "target": "June 27, 2006",
+    "generated": "June 27, 2006",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 826,
+    "view": 1,
+    "prompt": "Question: On what date was Hannah Rose Brady born?\nAnswer:",
+    "target": "June 27, 2006",
+    "generated": "June 17, 2006",
+    "eos": true,
+    "parseable": true,
+    "correct": false
+  },
+  {
+    "person_id": 1336,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Leah Wyatt Mather?\nAnswer:",
+    "target": "May 28, 2040",
+    "generated": "May 28, 2040",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 1336,
+    "view": 1,
+    "prompt": "Question: On what date was Leah Wyatt Mather born?\nAnswer:",
+    "target": "May 28, 2040",
+    "generated": "May 28, 2040",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 1559,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Trenton Brady Parmar?\nAnswer:",
+    "target": "February 18, 2029",
+    "generated": "February 18, 2029",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 1559,
+    "view": 1,
+    "prompt": "Question: On what date was Trenton Brady Parmar born?\nAnswer:",
+    "target": "February 18, 2029",
+    "generated": "February 18, 2029",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 2145,
+    "view": 0,
+    "prompt": "Question: What is the birth date of William Bailey Prince?\nAnswer:",
+    "target": "October 4, 2079",
+    "generated": "October 4, 2079",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 2145,
+    "view": 1,
+    "prompt": "Question: On what date was William Bailey Prince born?\nAnswer:",
+    "target": "October 4, 2079",
+    "generated": "October 4, 2079",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 2546,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Carter Naomi Bedford?\nAnswer:",
+    "target": "October 21, 1958",
+    "generated": "October 21, 1958",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 2546,
+    "view": 1,
+    "prompt": "Question: On what date was Carter Naomi Bedford born?\nAnswer:",
+    "target": "October 21, 1958",
+    "generated": "October 21, 1989",
+    "eos": true,
+    "parseable": true,
+    "correct": false
+  },
+  {
+    "person_id": 3449,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Adrian Easton Barber?\nAnswer:",
+    "target": "March 1, 1956",
+    "generated": "March 1, 1956",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 3449,
+    "view": 1,
+    "prompt": "Question: On what date was Adrian Easton Barber born?\nAnswer:",
+    "target": "March 1, 1956",
+    "generated": "March 1, 1956",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 3887,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Caitlyn Leah Akhtar?\nAnswer:",
+    "target": "July 11, 1990",
+    "generated": "July 11, 1990",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 3887,
+    "view": 1,
+    "prompt": "Question: On what date was Caitlyn Leah Akhtar born?\nAnswer:",
+    "target": "July 11, 1990",
+    "generated": "July 11, 1990",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 4235,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Dakota Lincoln Noble?\nAnswer:",
+    "target": "January 21, 1950",
+    "generated": "January 21, 1950",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 4235,
+    "view": 1,
+    "prompt": "Question: On what date was Dakota Lincoln Noble born?\nAnswer:",
+    "target": "January 21, 1950",
+    "generated": "January 21, 1950",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 5585,
+    "view": 0,
+    "prompt": "Question: What is the birth date of George Rylee Underwood?\nAnswer:",
+    "target": "December 1, 2065",
+    "generated": "December 1, 2065",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 5585,
+    "view": 1,
+    "prompt": "Question: On what date was George Rylee Underwood born?\nAnswer:",
+    "target": "December 1, 2065",
+    "generated": "December 1, 1930",
+    "eos": true,
+    "parseable": true,
+    "correct": false
+  },
+  {
+    "person_id": 5754,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Makenzie Parker Lodge?\nAnswer:",
+    "target": "November 26, 2064",
+    "generated": "November 26, 2064",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 5754,
+    "view": 1,
+    "prompt": "Question: On what date was Makenzie Parker Lodge born?\nAnswer:",
+    "target": "November 26, 2064",
+    "generated": "November 26, 2064",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 6246,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Stephen Melody Sullivan?\nAnswer:",
+    "target": "March 18, 1953",
+    "generated": "March 18, 1953",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 6246,
+    "view": 1,
+    "prompt": "Question: On what date was Stephen Melody Sullivan born?\nAnswer:",
+    "target": "March 18, 1953",
+    "generated": "March 18, 1953",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 6472,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Ella Stephanie Beck?\nAnswer:",
+    "target": "November 7, 1977",
+    "generated": "November 7, 1977",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 6472,
+    "view": 1,
+    "prompt": "Question: On what date was Ella Stephanie Beck born?\nAnswer:",
+    "target": "November 7, 1977",
+    "generated": "November 7, 1977",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 6963,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Aaliyah Isabel Godfrey?\nAnswer:",
+    "target": "March 1, 2024",
+    "generated": "March 2, 2023",
+    "eos": true,
+    "parseable": true,
+    "correct": false
+  },
+  {
+    "person_id": 6963,
+    "view": 1,
+    "prompt": "Question: On what date was Aaliyah Isabel Godfrey born?\nAnswer:",
+    "target": "March 1, 2024",
+    "generated": "March 2, 2065",
+    "eos": true,
+    "parseable": true,
+    "correct": false
+  },
+  {
+    "person_id": 7662,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Natalia Isaiah Nicholas?\nAnswer:",
+    "target": "December 24, 2074",
+    "generated": "December 24, 2074",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 7662,
+    "view": 1,
+    "prompt": "Question: On what date was Natalia Isaiah Nicholas born?\nAnswer:",
+    "target": "December 24, 2074",
+    "generated": "December 24, 2074",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 7783,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Mia Emma Holden?\nAnswer:",
+    "target": "August 22, 2069",
+    "generated": "August 22, 2069",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 7783,
+    "view": 1,
+    "prompt": "Question: On what date was Mia Emma Holden born?\nAnswer:",
+    "target": "August 22, 2069",
+    "generated": "August 22, 2069",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 7864,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Luis Hannah Goodwin?\nAnswer:",
+    "target": "June 7, 1900",
+    "generated": "June 7, 1900",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 7864,
+    "view": 1,
+    "prompt": "Question: On what date was Luis Hannah Goodwin born?\nAnswer:",
+    "target": "June 7, 1900",
+    "generated": "June 7, 1900",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 8055,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Blake Diego Broughton?\nAnswer:",
+    "target": "March 19, 2026",
+    "generated": "March 19, 2026",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 8055,
+    "view": 1,
+    "prompt": "Question: On what date was Blake Diego Broughton born?\nAnswer:",
+    "target": "March 19, 2026",
+    "generated": "March 19, 2026",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 8191,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Natalie Aliyah Byrne?\nAnswer:",
+    "target": "June 14, 2046",
+    "generated": "June 14, 2046",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 8191,
+    "view": 1,
+    "prompt": "Question: On what date was Natalie Aliyah Byrne born?\nAnswer:",
+    "target": "June 14, 2046",
+    "generated": "June 14, 2046",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 8212,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Sadie Vivian Waite?\nAnswer:",
+    "target": "December 10, 2082",
+    "generated": "December 24, 2059",
+    "eos": true,
+    "parseable": true,
+    "correct": false
+  },
+  {
+    "person_id": 8212,
+    "view": 1,
+    "prompt": "Question: On what date was Sadie Vivian Waite born?\nAnswer:",
+    "target": "December 10, 2082",
+    "generated": "December 11, 2094",
+    "eos": true,
+    "parseable": true,
+    "correct": false
+  },
+  {
+    "person_id": 8844,
+    "view": 0,
+    "prompt": "Question: What is the birth date of Colby Faith Drew?\nAnswer:",
+    "target": "April 23, 2074",
+    "generated": "April 23, 2074",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  },
+  {
+    "person_id": 8844,
+    "view": 1,
+    "prompt": "Question: On what date was Colby Faith Drew born?\nAnswer:",
+    "target": "April 23, 2074",
+    "generated": "April 23, 2074",
+    "eos": true,
+    "parseable": true,
+    "correct": true
+  }
+]

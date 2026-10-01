@@ -1,0 +1,60 @@
+{
+  "checked_unix": 1790662510.6925113,
+  "git_head": "e279fc676f71e7e8cc8ce255faf68e26534ce311",
+  "working_tree_previously_dirty": true,
+  "unit_tests_passed": 11,
+  "end_to_end": {
+    "status": "passed",
+    "scope": "200-person 2-layer engineering check; not science evidence",
+    "pretrain_passes": 2,
+    "restart_weights_max_difference": 0.0,
+    "adaptations": 1,
+    "task_branches": 4,
+    "evaluations": 4
+  },
+  "training_processes": [
+    {
+      "run": "results/bios-original-development-v1/world-142701/init-1427/M",
+      "pid": 1826740,
+      "passes_completed": 5,
+      "step": 80,
+      "tokens": 3696906
+    },
+    {
+      "run": "results/bios-original-development-v1/world-142701/init-1427/MP",
+      "pid": 1826741,
+      "passes_completed": 5,
+      "step": 80,
+      "tokens": 3696906
+    },
+    {
+      "run": "results/bios-original-development-v1/world-142701/init-1427/S",
+      "pid": 1826739,
+      "passes_completed": 8,
+      "step": 130,
+      "tokens": 6017336
+    },
+    {
+      "run": "results/bios-original-development-v1/world-142702/init-1427/M",
+      "pid": 1826743,
+      "passes_completed": 5,
+      "step": 90,
+      "tokens": 4188850
+    },
+    {
+      "run": "results/bios-original-development-v1/world-142702/init-1427/MP",
+      "pid": 1826744,
+      "passes_completed": 5,
+      "step": 80,
+      "tokens": 3697330
+    },
+    {
+      "run": "results/bios-original-development-v1/world-142702/init-1427/S",
+      "pid": 1826742,
+      "passes_completed": 5,
+      "step": 80,
+      "tokens": 3695545
+    }
+  ],
+  "snapshot_manifest_sha256": "738715d656d58e2552a3f592f861a4af09b2f01e00551eca670d73eca8a998c4"
+}

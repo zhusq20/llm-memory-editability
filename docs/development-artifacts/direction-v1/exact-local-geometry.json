@@ -1,0 +1,281 @@
+{
+  "cases": [
+    {
+      "seed": 0,
+      "person": 0,
+      "parameters": 16384,
+      "retention_rows": 1840,
+      "target_margin": [
+        -8.365177154541016,
+        -8.369295120239258
+      ],
+      "thresholds": [
+        {
+          "relative_cutoff": 1e-08,
+          "rank": 433,
+          "target_residual": 1.9485257898278583e-10,
+          "retention_max": 0.06286419601777204,
+          "retention_l2": 0.17930109592041282,
+          "minimum_norm": 8.76426192691184,
+          "relative_parameter_norm": 5.615595730814833,
+          "pair_common": 1.0961689386449693,
+          "pair_difference": 0.0007839137565922007,
+          "pair_mixing": -0.0003929564236523353,
+          "pair_eigenvalues": [
+            0.00078377278814035,
+            1.0961690796134216
+          ],
+          "rowspace_orthogonality_error": 3.954572230306644e-08
+        },
+        {
+          "relative_cutoff": 1e-10,
+          "rank": 1084,
+          "target_residual": 8.944084488695124e-09,
+          "retention_max": 0.0018552833280836012,
+          "retention_l2": 0.012468359091835695,
+          "minimum_norm": 10.532924441916897,
+          "relative_parameter_norm": 6.748845027942388,
+          "pair_common": 0.8132579370692434,
+          "pair_difference": 7.857954573528081e-05,
+          "pair_mixing": -0.002546897766850409,
+          "pair_eigenvalues": [
+            7.06026774782447e-05,
+            0.8132659139375006
+          ],
+          "rowspace_orthogonality_error": 6.5687304995477035e-06
+        }
+      ]
+    },
+    {
+      "seed": 0,
+      "person": 1,
+      "parameters": 16384,
+      "retention_rows": 1840,
+      "target_margin": [
+        -8.522904396057129,
+        -8.183656692504883
+      ],
+      "thresholds": [
+        {
+          "relative_cutoff": 1e-08,
+          "rank": 449,
+          "target_residual": 3.008343977989559e-11,
+          "retention_max": 0.001767103229681169,
+          "retention_l2": 0.009035231160517973,
+          "minimum_norm": 0.9661808369992017,
+          "relative_parameter_norm": 0.6190687851064263,
+          "pair_common": 91.3161306567089,
+          "pair_difference": 0.0003956975315594774,
+          "pair_mixing": 0.11579844017416718,
+          "pair_eigenvalues": [
+            0.0002488525525674189,
+            91.3162775016879
+          ],
+          "rowspace_orthogonality_error": 6.58629215327738e-08
+        },
+        {
+          "relative_cutoff": 1e-10,
+          "rank": 1083,
+          "target_residual": 3.1669736879387478e-09,
+          "retention_max": 0.00014099306704390413,
+          "retention_l2": 0.000967670283053257,
+          "minimum_norm": 1.0071058265979531,
+          "relative_parameter_norm": 0.6452909814295077,
+          "pair_common": 85.8035977185221,
+          "pair_difference": 0.00026129953042922094,
+          "pair_mixing": 0.10928893630958925,
+          "pair_eigenvalues": [
+            0.00012209687561697653,
+            85.80373692117692
+          ],
+          "rowspace_orthogonality_error": 9.086594075284574e-06
+        }
+      ]
+    },
+    {
+      "seed": 0,
+      "person": 2,
+      "parameters": 16384,
+      "retention_rows": 1840,
+      "target_margin": [
+        -8.086121559143066,
+        -8.50578498840332
+      ],
+      "thresholds": [
+        {
+          "relative_cutoff": 1e-08,
+          "rank": 508,
+          "target_residual": 1.7609414924884115e-10,
+          "retention_max": 0.0011012721301661577,
+          "retention_l2": 0.007244453428135692,
+          "minimum_norm": 0.49866865143352024,
+          "relative_parameter_norm": 0.31951595849531883,
+          "pair_common": 100.0876977311418,
+          "pair_difference": 5.7927691499546794e-05,
+          "pair_mixing": 0.0032708894130308863,
+          "pair_eigenvalues": [
+            5.7820798004522195e-05,
+            100.08769783803531
+          ],
+          "rowspace_orthogonality_error": 7.474067883368318e-08
+        },
+        {
+          "relative_cutoff": 1e-10,
+          "rank": 1180,
+          "target_residual": 7.21912573707493e-09,
+          "retention_max": 7.265164432094639e-05,
+          "retention_l2": 0.0005196094063881613,
+          "minimum_norm": 0.564049683957062,
+          "relative_parameter_norm": 0.3614080710516624,
+          "pair_common": 87.08872657003454,
+          "pair_difference": 2.321451653083633e-05,
+          "pair_mixing": 0.00032654473846349674,
+          "pair_eigenvalues": [
+            2.3213292132539797e-05,
+            87.08872657125896
+          ],
+          "rowspace_orthogonality_error": 3.205431985567945e-06
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "person": 0,
+      "parameters": 16384,
+      "retention_rows": 1840,
+      "target_margin": [
+        -7.872797966003418,
+        -8.916772842407227
+      ],
+      "thresholds": [
+        {
+          "relative_cutoff": 1e-08,
+          "rank": 569,
+          "target_residual": 6.536320651383208e-11,
+          "retention_max": 0.009763459011331577,
+          "retention_l2": 0.050248089934481724,
+          "minimum_norm": 5.088705538816478,
+          "relative_parameter_norm": 3.1611732586884527,
+          "pair_common": 0.7168081963059264,
+          "pair_difference": 0.0027316393921272344,
+          "pair_mixing": -0.017050722315849032,
+          "pair_eigenvalues": [
+            0.002324734058618531,
+            0.7172151016394352
+          ],
+          "rowspace_orthogonality_error": 2.8802793253025014e-08
+        },
+        {
+          "relative_cutoff": 1e-10,
+          "rank": 1299,
+          "target_residual": 2.3491349736222017e-09,
+          "retention_max": 0.0009668478905385802,
+          "retention_l2": 0.0033981812870096367,
+          "minimum_norm": 5.501864355915348,
+          "relative_parameter_norm": 3.4178331487610203,
+          "pair_common": 0.6064104487317976,
+          "pair_difference": 0.002372135697288223,
+          "pair_mixing": -0.014103998715530364,
+          "pair_eigenvalues": [
+            0.0020429935866828754,
+            0.6067395908424031
+          ],
+          "rowspace_orthogonality_error": 3.450317441796814e-06
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "person": 1,
+      "parameters": 16384,
+      "retention_rows": 1840,
+      "target_margin": [
+        -8.918977737426758,
+        -8.374741554260254
+      ],
+      "thresholds": [
+        {
+          "relative_cutoff": 1e-08,
+          "rank": 561,
+          "target_residual": 3.240584007751455e-11,
+          "retention_max": 0.008885604770259792,
+          "retention_l2": 0.04632098674478159,
+          "minimum_norm": 4.4437552843562145,
+          "relative_parameter_norm": 2.7605213675479257,
+          "pair_common": 0.4524908118189036,
+          "pair_difference": 0.00014642888539072231,
+          "pair_mixing": -0.0007274897758382526,
+          "pair_eigenvalues": [
+            0.0001452588918525905,
+            0.4524919818124418
+          ],
+          "rowspace_orthogonality_error": 6.82883764234773e-08
+        },
+        {
+          "relative_cutoff": 1e-10,
+          "rank": 1311,
+          "target_residual": 5.8833448984196735e-09,
+          "retention_max": 0.0005936786117857196,
+          "retention_l2": 0.002823420287470234,
+          "minimum_norm": 4.832630661334609,
+          "relative_parameter_norm": 3.002096053544082,
+          "pair_common": 0.3843811145582667,
+          "pair_difference": 3.119444184432285e-05,
+          "pair_mixing": -9.249935600996739e-05,
+          "pair_eigenvalues": [
+            3.117218054044415e-05,
+            0.3843811368195706
+          ],
+          "rowspace_orthogonality_error": 9.102066282066416e-06
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "person": 2,
+      "parameters": 16384,
+      "retention_rows": 1840,
+      "target_margin": [
+        -8.478078842163086,
+        -7.944736003875732
+      ],
+      "thresholds": [
+        {
+          "relative_cutoff": 1e-08,
+          "rank": 627,
+          "target_residual": 6.161200680649787e-11,
+          "retention_max": 0.01258479487835884,
+          "retention_l2": 0.04724962769748255,
+          "minimum_norm": 3.84877496160945,
+          "relative_parameter_norm": 2.390911479263775,
+          "pair_common": 1.0308570297588249,
+          "pair_difference": 0.005256321342610015,
+          "pair_mixing": -0.00045362515911828716,
+          "pair_eigenvalues": [
+            0.0052561207033719175,
+            1.0308572303980632
+          ],
+          "rowspace_orthogonality_error": 4.718497923582581e-08
+        },
+        {
+          "relative_cutoff": 1e-10,
+          "rank": 1336,
+          "target_residual": 2.6680789447168415e-09,
+          "retention_max": 0.00040690039826180024,
+          "retention_l2": 0.0021228922031441984,
+          "minimum_norm": 4.5242608179321415,
+          "relative_parameter_norm": 2.810532502595023,
+          "pair_common": 0.8303964446471405,
+          "pair_difference": 0.0043692735538855935,
+          "pair_mixing": -0.002383686682112529,
+          "pair_eigenvalues": [
+            0.0043623949485780645,
+            0.830403323252448
+          ],
+          "rowspace_orthogonality_error": 6.383451722494855e-06
+        }
+      ]
+    }
+  ],
+  "scope": "FP32 derivatives, FP64 algebra; two rank thresholds. Strict logit protection is stronger than correct answers. Discarded modes can cause residuals. Not a nonlinear feasibility proof."
+}

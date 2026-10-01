@@ -1,0 +1,9 @@
+{
+  "time": "2026-09-29T17:25:25.272630+00:00",
+  "reason": "Preflight showed chat answer candidates were artificially prefixed with a space. Use natural chat continuation without added space; base retains colon-space format. No benchmark mechanism results were inspected. Completed behavioral groups reused exactly; all formal mechanism runs use corrected scoring.",
+  "reused_behavior_rows": {
+    "small": 160,
+    "main": 16
+  },
+  "previous_partial_cost": "Interrupted groups and initial loading have incomplete timing; preserved logs, not included in final successful-run seconds."
+}

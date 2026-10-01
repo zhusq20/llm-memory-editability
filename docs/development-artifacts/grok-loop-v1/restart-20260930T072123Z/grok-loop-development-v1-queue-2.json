@@ -1,0 +1,37 @@
+{
+  "config": "configs/grok-loop-development-v1.json",
+  "runs": [
+    {
+      "run": "dev-h2-cd",
+      "state": "complete",
+      "started_utc": "2026-09-30T04:07:26.532497+00:00",
+      "gpu": 2,
+      "finished_utc": "2026-09-30T04:13:47.389819+00:00",
+      "exit_code": 0
+    },
+    {
+      "run": "dev-h3-c2",
+      "state": "complete",
+      "started_utc": "2026-09-30T04:13:47.471461+00:00",
+      "gpu": 2,
+      "finished_utc": "2026-09-30T04:18:12.046931+00:00",
+      "exit_code": 0
+    },
+    {
+      "run": "dev-h4-c1",
+      "state": "complete",
+      "started_utc": "2026-09-30T04:18:12.111252+00:00",
+      "gpu": 2,
+      "finished_utc": "2026-09-30T04:22:12.119299+00:00",
+      "exit_code": 0
+    },
+    {
+      "run": "dev-h4-l2",
+      "state": "complete",
+      "started_utc": "2026-09-30T04:22:12.208236+00:00",
+      "gpu": 2,
+      "finished_utc": "2026-09-30T04:31:18.894730+00:00",
+      "exit_code": 0
+    }
+  ]
+}

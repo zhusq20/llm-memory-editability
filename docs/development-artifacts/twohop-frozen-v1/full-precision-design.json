@@ -1,0 +1,8 @@
+{
+  "time": 1790704031.9288998,
+  "trigger": "4B 2Wiki maximum BF16 two-candidate vs 18-candidate zero-patch gap difference 1.000738, above typical effect magnitude.",
+  "scope": "All locked evaluation mechanism cases, 24 per dataset per model, all three layers and nine conditions, FP32. No accuracy-based exclusions or layer tuning.",
+  "results_scope": "Numerical validation extension after BF16 results; not independent new data.",
+  "generations": 2592,
+  "fixed_candidate_scores": 5184
+}

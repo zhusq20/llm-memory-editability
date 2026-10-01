@@ -1,0 +1,86 @@
+{
+  "protocol": "v2.8-p3-shortcut-reliability",
+  "phase": "development; no confirmatory claim",
+  "worlds": [
+    0,
+    1
+  ],
+  "seeds": [
+    0,
+    1
+  ],
+  "conditions": [
+    "company",
+    "project",
+    "neither"
+  ],
+  "chains": [
+    "company",
+    "project"
+  ],
+  "width": 256,
+  "layers": 8,
+  "heads": 4,
+  "steps": 15360,
+  "checkpoints": [
+    0,
+    1280,
+    2560,
+    5120,
+    10240,
+    15360
+  ],
+  "lr": 0.0001,
+  "documents_per_step": 16,
+  "facts_per_document": 10,
+  "QA_per_chain_per_step": 20,
+  "document_QA_weights": [
+    0.8,
+    0.2
+  ],
+  "qa_split": "50% within each chain's group and old-exception stratum; identical across organizations",
+  "edit_steps": 512,
+  "edit_checkpoints": [
+    0,
+    32,
+    128,
+    512
+  ],
+  "edit_lr": 3e-05,
+  "retention_kl": 1.0,
+  "edit_scopes": [],
+  "edit_kinds": [
+    "coherent",
+    "exception"
+  ],
+  "edit_supports_per_chain": 1,
+  "learning_runs": 12,
+  "edit_cases": 0,
+  "primary_learning": "15360-step heldout ordinary/exception QA and model-autonomous two-step diagnostics",
+  "matching_effect": "0.5 * ((company_org/company_task - project_org/company_task) + (project_org/project_task - company_org/project_task))",
+  "general_benefit": "each organized condition's two-task average minus neither condition's two-task average",
+  "secondary_learning": "all prespecified checkpoints, base accuracy, trained QA, NLL, prerequisite-known subset with denominator",
+  "primary_edit": "not run in P3; high-exception worlds cannot reuse E93 support",
+  "aggregation": "first pair within world/initialization; then equal-weight four paired blocks; no probe-level significance",
+  "limitations": [
+    "Two reused development worlds; two initializations do not create four independent worlds",
+    "New symmetric company/project task adds facts; not a numerical rerun of the archived A/B/C batch",
+    "All conditions preserve personal grouping; neither is a B-like control, not the old C condition",
+    "Tests relation alignment, not unseen natural-language paraphrases",
+    "Identical surface QA streams do not rule out task-specific learned representations",
+    "No early stopping, best-checkpoint selection, or outcome-dependent extension"
+  ],
+  "exception_count_per_group": 16,
+  "manipulation_chains": "both simultaneously",
+  "selection_per_group": {
+    "trained_QA": 7,
+    "heldout_QA": 7
+  },
+  "exact_controls": [
+    "actual answer histogram per chain and QA split",
+    "root and membership truths",
+    "QA identities and schedule",
+    "documents and exposure"
+  ],
+  "edit_policy": "none; historical E93 invalid for high exception worlds"
+}

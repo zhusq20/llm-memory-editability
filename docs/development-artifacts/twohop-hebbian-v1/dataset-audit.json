@@ -1,0 +1,74 @@
+{
+  "generated_utc": "2026-09-29T16:52:38.261263+00:00",
+  "sources": {
+    "mquake": {
+      "url": "https://raw.githubusercontent.com/princeton-nlp/MQuAKE/fb43dadc2d8cd19d08ce81c63d957b59deb3f3cd/datasets/MQuAKE-CF-3k-v2.json",
+      "bytes": 15383628,
+      "sha256": "f82091cbb668cef8f2537f79f1768af1840184450b347ff8c344336090ddc71e",
+      "repository_revision": "fb43dadc2d8cd19d08ce81c63d957b59deb3f3cd"
+    },
+    "two_wiki": {
+      "url": "https://www.dropbox.com/s/ms2m13252h6xubs/data_ids_april7.zip?dl=1",
+      "bytes": 258968175,
+      "sha256": "95df2bf56fdabe034e27aebc580e02264232203cf52552f9efe8a919e5529eef",
+      "repository_revision": "13800e5be57df1b4040b9b1588c6c811779e69e9",
+      "note": "Official README links this archive; SHA256 pins downloaded bytes."
+    }
+  },
+  "mquake": {
+    "total": 3000,
+    "candidates": 599,
+    "excluded": {
+      "not_one_edit": 536,
+      "not_two_hops_before_and_after": 1865
+    },
+    "splits": {
+      "evaluation": 456,
+      "development": 143
+    },
+    "edited_hops": {
+      "1": 240,
+      "2": 359
+    },
+    "unique_edited_subjects": 428,
+    "source_edit_components": 426,
+    "largest_component": 43,
+    "candidate_manifest_sha256": "85af11347c59ca8484d3788419a9916cc96a67af42aa94d6745a1b80beb8a479",
+    "scope": "Structural candidates, not independently verified current-world facts. Dataset was accessed by earlier project work; these are new fixed groups, not pristine data."
+  },
+  "two_wiki": {
+    "members": [
+      "test.json",
+      "dev.json",
+      "train.json",
+      "id_aliases.json"
+    ],
+    "train": {
+      "total": 167454,
+      "types": {
+        "bridge_comparison": 34631,
+        "compositional": 76481,
+        "inference": 4379,
+        "comparison": 51963
+      },
+      "connected_two_edge_compositional": 76481,
+      "literal_answer_cases": 31088,
+      "manifest_sha256": "e11d3560f45c6be008160cf42d0708ac8a8e6590d9c724a46a2e2328cd67a56c"
+    },
+    "dev": {
+      "total": 12576,
+      "types": {
+        "compositional": 5236,
+        "comparison": 3040,
+        "inference": 1549,
+        "bridge_comparison": 2751
+      },
+      "connected_two_edge_compositional": 5236,
+      "literal_answer_cases": 678,
+      "manifest_sha256": "b3e87739baf42a5d8e4cbcbf28237760077ecf3d3bb73a51b84c1a8213a980d1"
+    },
+    "exact_chain_overlap_train_dev": 0,
+    "policy": "Official train supplies training/development; official dev is final evaluation. Exact chain overlap is excluded from evaluation before model access. Candidate counts are structural, not model-mastery filtered."
+  },
+  "script_sha256": "5b22c44e4625ec04d05ca5146abfe745869937752ea73d64ef5383909ba20a00"
+}

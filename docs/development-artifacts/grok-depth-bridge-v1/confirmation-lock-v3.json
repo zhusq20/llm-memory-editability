@@ -1,0 +1,9 @@
+{
+  "created_utc": "2026-09-30T01:50:17.070257+00:00",
+  "revision": 3,
+  "decision": "Development checks pass under repaired equal-shape arithmetic; execute all 36 registered states without scientific changes.",
+  "execution_lock_sha256": "423cd1bdf8666bbdb192b99795ffd56b54f6816de164aae8bfdde1906489ba54",
+  "development_batch_sha256": "fd757f0565e1126cedec0e6499087c3488f856414aab403642222493dbae7eb2",
+  "prior_outcomes_known": true,
+  "independent_new_world_confirmation": false
+}

@@ -1,0 +1,56 @@
+{
+  "protocol": "independent-durable-confirmation-archive-completion-v1",
+  "complete": true,
+  "verified_at_utc": "2026-09-27T06:59:37.759321+00:00",
+  "errors": [],
+  "supersedes_durability_pending_snapshot": {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/independent-confirmation-audit.json",
+    "sha256": "c539ac2bee2f06b4f1abb542f34e9f556fb175728788d743bc4fe24ea57e3d4e",
+    "historical_audit_left_unchanged": true
+  },
+  "nfs_archive": {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/raw-complete.tar",
+    "exists": true,
+    "archive_file_bytes": 83612375040,
+    "mtime_utc": "2026-09-27T06:10:08.028628+00:00",
+    "index_path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/raw-complete.tar.json",
+    "index_sha256": "5dfebea383a02a7532d39efc2cf888242c2f8ddf8a6e8821304c7139a43a496e",
+    "copied_index_path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/raw-complete.tar.json",
+    "copied_index_sha256": "5dfebea383a02a7532d39efc2cf888242c2f8ddf8a6e8821304c7139a43a496e",
+    "complete": true,
+    "stage_complete": true,
+    "every_member_verified": true,
+    "files": 10187,
+    "payload_bytes": 83593945025
+  },
+  "previous_verified_ram_archive": {
+    "path": "/dev/shm/llm-memory-siqizhu4-confirmation-20260927/raw-complete.tar",
+    "archive_file_bytes": 83612375040,
+    "index_path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/verified-analysis-archive.tar.json",
+    "index_sha256": "9b729f8dcc1bd18ca18974d473772e2788bc359b3278210e8486ff7baf0a4997"
+  },
+  "independent_checks": {
+    "entire_index_equal_except_archive_location": true,
+    "all_member_names_sizes_and_sha256_equal": true,
+    "regular_tar_header_member_names_and_sizes_recomputed": true,
+    "tar_header_files": 10187,
+    "tar_header_payload_bytes": 83593945025,
+    "archive_size_equal_to_previously_verified_ram_archive": true,
+    "all_96_exact_queue_identities_complete": true,
+    "failed": 0,
+    "pending": 0,
+    "active": 0,
+    "inputs_stable_during_check": true
+  },
+  "verification_boundary": "The frozen archiver completed its full per-member payload SHA verification on the NFS archive. This independent receipt compares all 10187 sealed name/size/SHA entries to the previously fully verified RAM archive and independently walks every NFS tar header/name/size. It does not redundantly rehash 83.59 GB of payload.",
+  "scientific_counts": {
+    "confirmation_new_learning": 96,
+    "confirmation_new_edits": 768,
+    "development_new_learning": 60,
+    "development_new_edits": 480,
+    "total_new_learning": 156,
+    "total_new_edits": 1248,
+    "old_reference_learning_not_new": 48,
+    "old_reference_edits_not_new": 384
+  }
+}

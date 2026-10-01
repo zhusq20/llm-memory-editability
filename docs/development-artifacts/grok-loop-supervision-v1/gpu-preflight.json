@@ -1,0 +1,12 @@
+{
+  "single": {
+    "capture_eager_max_weight_error": 0.0,
+    "recapture_resume_max_weight_error": 0.0,
+    "restore_passed": true
+  },
+  "multi": {
+    "capture_eager_max_weight_error": 0.0,
+    "recapture_resume_max_weight_error": 0.0,
+    "restore_passed": true
+  }
+}

@@ -1,55 +1,54 @@
 # LLM Memory: Learning and Editability
 
-**研究训练数据的组织方式如何塑造知识表征，并影响学习效率与后续可编辑性。**
-
-核心问题：让模型现在更容易学会的知识组织，是否也让它以后更容易更新？允许共同改善、选择性获益、取舍和零效应。
-
-理论与实验统一维护在 [实验协议 v2.4](docs/experimental-protocol.md)。当前主实验为第 6.5 节的 A/B/C 文档组织；历史 SA/AS 顺序实验单列。理论只保留三部分：
-
-1. **知识形成：** 研究数据组织如何改变共享特征与成员差异；这是主要待证问题。
-2. **学习效率：** 分析激活重叠与目标方向何时促进迁移、何时造成干扰。
-3. **知识编辑：** 从真实 MLP 输出权重的条件性关系出发，分析共同修改、个别修改与旧知识保持。
-
-简化模型负责推导；当前在真实 GELU 层上验证，SwiGLU LLM 验证属于后续计划。不展开通用响应矩阵、容量界、样本复杂度或最优课程理论。本轮固定事实呈现多重集、监督和预算，比较关联公司事实、同人属性聚合与打散文档，不与历史学习顺序交叉。
-
-## 模型与数据
-
-| 用途与状态 | 模型 | 数据 |
-| --- | --- | --- |
-| 当前符号组织实验，已完成 | 从头训练的 GPT-2 式自回归 Transformer：8 层、宽度 768、12 个注意力头、MLP 宽度 3072 | **bioS-Work-Organization-v1**：复用 bioS-Work 真值，2048 人、64 家公司、12,352 条基础事实；同一呈现多重集生成 A/B/C 三种七事实文档 |
-| 后续 LLM 知识适应主验证，未运行 | **`Qwen/Qwen3-1.7B`**，计划关闭 thinking | **bioS-Work-NL-v1**：同一事实表的自然语言适配；训练组织与语言审计另行锁定 |
-| 后续跨家族复现，未运行 | **`HuggingFaceTB/SmolLM2-1.7B-Instruct`** | 相同自然语言世界、配对目标与评价标准 |
-| 后续真实知识外部验证，未运行 | 未经世界适应的 Qwen3-1.7B 与 SmolLM2-1.7B-Instruct | **RippleEdits**：作者发布的 4755 个案例，按旧知识替换与知识新增分别评价 |
-
-A/B/C 三个组织条件在同一世界、同一初始化的配对块内从相同权重出发。后续 Qwen／SmolLM2 的 checkpoint、交互接口、通用回放和能力保持方案保留在协议中，尚未执行。
-
-本轮只运行从头训练 Transformer 的受控符号文档学习与编辑。已有 LLM 的自然语言知识适应属于后续计划；当前结果不能代表完整预训练、后训练或强化学习流程的效果。
-
-结果分开回答：**相同预算学会多少、达到同一知识标准花费多少、随后完成同一更新花费多少。** 保留完整曲线与未达标运行；固定预算比较和知识水平相近的条件分析分别报告。
-
-更新实验对 A/B/C 施加完全相同的目标，比较一致更新与独立例外，当前采用完整 MLP／全参数编辑和终点公司均值干预。单层输出权重校准与分支干预属于历史 SA/AS 开发记录及后续扩展，不在本轮重跑。主评价使用完整答案自由生成，分别记录直接目标 E、必要传播 D 和旧知识保持 U；层内公式不替代行为结果。
+研究参数中的知识存储与多跳计算原理。当前关注原子事实的存储表征、可组合存储的容量与稳定性；Loop用于操纵计算深度。本轮直接使用完整标准Transformer/Loop作受控训练；历史简化架构证据与完整预训练模型复核各保留其适用范围。
 
 ## 当前状态
 
-v2.4 的 A/B/C 数据已生成：两个世界、每组 2048 篇七事实文档，每轮 14,336 次事实呈现；各条件的真值、逐事实曝光和符号 token 预算一致，公司默认事实各重复 32 次。已实现文档训练、精确续训和审计，已完成 2 世界 × 2 初始化 × 3 条件的 12 条学习轨迹、96 个配对编辑和 12 个终点组织诊断（3840 个完整生成探针）。固定每模型 14,336 步；旧世界组合查询采用共同的独立训练流，因此测量已学组合的编辑传播。配置见 `configs/bios-organization-development-v1.json`。英文文档已从同一呈现清单渲染，尚未训练自然语言模型。当前批次结果单独存于 `results/bios-organization-dev-v1/`，不覆盖历史数据。
+- **标准Transformer/Loop事实负载实验已完成。** 完整GPT-2形式，标准1/2/3层及共享1层循环2/3次，宽256、4头、MLP1024，全部参数训练。24条开发、30条新世界确认及2条事后诊断，56端点重载通过。1024/6144事实、测试必要事实曝光匹配；标准1层新组合32.66%/22.10%，Loop×2为40.66%/32.27%，Loop×3为43.33%/37.00%。单跳接近100%，严格无组合角色池仍0%–1.76%；标准2层一个终点发生训练退化，完整保留，不作容量证据。见[完整结果与边界](docs/results.md#standard-storage-composition)、[逐世界图](docs/development-artifacts/storage-composition-v1/confirmation/per-world.png)和[完成清单](docs/development-artifacts/storage-composition-v1/completion-manifest.json)。
 
-本轮 A/B 的首次观测 99% 达标平均成本均为 6272 步，C 为 9856 步；A 早期学习更快，但编辑优势随 MLP／全参数范围反转。96 个案例直接修改全部成功，48 个例外更新均未联合通过。84 个学习与 1056 个编辑检查点复核通过；85 项工程测试通过。结果、配对表与解释边界见 [A/B/C 组织实验结果](docs/organization-results-2026-09-26.md)，完成记录见 [校验清单](configs/bios-organization-completion-20260926.json)。
+- **完整Qwen3-0.6B快速开发已完成。** 三臂共同独立复习后，分开/无关联拼接/关联拼接的两单跳均100%，未训练两跳为6.25%/4.69%/15.63%，自主两次调用均100%。六个更新/原事实复习分支及九端点重载完成：新单跳全部学会，直接两跳更新收益依条件变化，未回放事实保持明显下降。一个世界、一个种子，尚非新世界确认或唯一MLP机制。见[完整结果](docs/results.md#small-lm-composition-v2)、[图](docs/development-artifacts/small-lm-composition-v2/comparison.png)与[研究计划](docs/hebbian-learning-plan-v1.md#next-experiment)。
 
-以下为已完成的 v2.3 顺序开发记录：
+- **简化架构的机制验证：固定调用过程后的新知识组合已完成。** 开发校准后，三个新世界×两个初始化×两臂的12项正式比较及全部重载核验通过。普通交叉熵/加入统一输出表示约束，原知识两跳99.46%/99.97%；冻结注意力并换入只接受单跳训练的新事实MLP后，单跳均100%、两跳66.39%/94.66%，六配对均改善。它支持其架构条件下的知识复用收益，是继续检验真实LM的依据，不直接等同于真实LM结论。见[结果](docs/results.md#memory-reuse)、[主图](docs/development-artifacts/memory-reuse-v1/confirmation/report/comparison.png)与[完成清单](docs/development-artifacts/memory-reuse-v1/completion-manifest.json)。
 
-条件性学习与编辑关系已写入协议，学习顺序如何形成表征仍待推导。已实现 bioS-Work 符号数据与审计、等曝光课程、完整 8 层自回归模型、学习轨迹、配对编辑与初步组织干预。符号开发已完成 8/8 条学习轨迹、256 个 512 步编辑执行，以及 24 个 GPU 阶段/终点与 8 个 CPU 终点表征诊断；另有 8 个终点的 E/R 特征与真实编辑损失梯度诊断。例外更新的主要失败是默认/实际城市的传播混淆，局部保持损伤进一步限制联合达标；不同方法的课程效应并不一致。详细结果、重复配置与知识匹配口径见 [失败分析与表征诊断](docs/development-analysis-2026-09-26.md)，历史中断账本见 [9 月 25 日记录](docs/development-results-2026-09-25.md)。自然语言适配与人工语义审计、LLM 编辑和确认性实验仍待完成；尚无确认性研究结论。
+- **组合练习结构与跨事实迁移实验已完成。** 3条开发、三个新世界×两个初始化×两臂的12条正式训练，15端点和99节点审计通过。逐事实组合使用次数、唯一训练链数及token边际匹配；广搭配相对受限搭配，熟悉事实新链15.11%→66.30%，严格独立目标1.57%→2.16%，单跳与自主两次调用均100%。主要收益是局部搭配泛化，跨事实调用仍很弱。见[结果](docs/results.md#text-structure)、[学习曲线](docs/development-artifacts/text-structure-v1/confirmation/comparison.png)与[完成核验](docs/development-artifacts/text-structure-v1/confirmation/verified-completion.json)。
 
-官方 bioS 的[生成材料已公开](https://github.com/zhuzeyuan/PhysicsLM4/tree/211b28f2e9d453114ca5a1cbbb2d5a632ac60fcf/data-synthetic-pretrain/Capo-bioS-bioR)。本项目复用字段与表述材料，补充虚构公司映射、个人例外、QA、课程及配对编辑；不声称已取得原论文完整样本或复现其全部流程。来源、同类论文的数据选择及适配审计统一记录在协议 §4。
+- **损失来源与参数变化实验已完成。** 4条开发、24条冻结后续续训及72个参数互换状态均完成。原子＋背景组合训练与仅原子训练的目标组合为84.59%/43.10%，两者单跳100%；四臂显示强交互。后者换入中性对照分支的MLP后恢复至70.96%，单跳仍100%，注意力也有部分贡献。既有三个世界的结果支持部分训练归因，尚非唯一内部机制。见[完整结果](docs/results.md#text-loss-source)、[参数互换图](docs/development-artifacts/text-loss-source-v1/followup/report/weights.png)与[完成清单](docs/development-artifacts/text-loss-source-v1/completion-manifest.json)。
 
-每个编辑单元修改 93 条基础事实，并评价 96 条必要派生查询。历史 SA/AS 的两个课程阶段各 2640 步；当前文档组织实验使用统一混合训练及完整轮次曝光匹配。旧数据计划与独立 composition 校准任务已移除，其他数据只保留选型依据。
+- **文本预训练归因比较已完成。** 3条开发、18条新世界确认训练及36个节点内部干预全部完成。独立事实/联合上下文/再加入组合结果的未见组合正确率为69.16%/82.88%/99.84%，全部单跳100%；P0/P1严格匹配文本及监督，但P1收益在第三个世界反向。局部状态可交换，但单点转向未随能力单调增强。见[结果与边界](docs/results.md#text-pretraining)、[图](docs/development-artifacts/text-pretrain-v1/report/comparison.png)与[完成清单](docs/development-artifacts/text-pretrain-v1/completion-manifest.json)。
 
-当前 A/B/C 符号批次及控制审计已经完成。下一阶段需据此锁定自然语言组织适配与 Qwen 验证；确认矩阵、SmolLM2 复现与外部验证尚未运行。理论推导并行推进。
+- **bioS同权重诊断已完成。** 18端点、6,912条生成复核通过；MP任务权重常用问法下，直接月份奇偶76.56%，自主提取再判断100%。预训练主体张量在适配后完全保持，原生续写下降不能称为主体记忆被擦除。见[同权重结果](docs/results.md#bios-same-weight)。
 
-原有 NumPy 示例与小型 MLP／Transformer 分类器仍只用于工程检查。`bios_*` 模块支持符号开发；当前配置为 `configs/bios-organization-development-v1.json`，历史 SA/AS 配置为 `configs/bios-symbolic-development-v1.json`。旧研究备忘录和临时理论综述已合并删除，不并存多份计划。
+- **循环监督与长循环检查已完成。** 2条开发与12条后续续训、18个模型的R1…64检查完成并通过审计。多终点相对单终点的OOD差异在R4/R8/R16为+16.98/+1.25/−12.26个百分点，未建立普遍稳健性改善。原始状态持续移动且幅度增长，归一化变化变小不能直接解释为不动点收敛。见[结果与限制](docs/results.md#grok-loop-supervision)、[曲线](docs/development-artifacts/grok-loop-supervision-v1/followup-report/comparison.png)和[完成清单](docs/development-artifacts/grok-loop-supervision-v1/completion-manifest.json)。
 
-## 开发
+- **事实使用经历的四臂开发及三个新世界确认已完成。** 共16条128k训练、320个节点，直接回答与自主调用重载审计全部通过。三个确认世界中，同一事实组接受组合训练、对应原子重复、仅基础单跳训练后的未见组合正确率为100.00%/25.01%/3.01%；主比较涉及的原子事实全部答对。见[完整结果](docs/results.md#grok-usage)、[形成曲线](docs/development-artifacts/grok-usage-v1/report-confirmation/role-aligned-learning-confirmation.png)与[完成清单](docs/development-artifacts/grok-usage-v1/completion-manifest.json)。
 
-需要 Python 3.10 或更新版本。以下是现有工程检查的 CPU 安装方式：
+- **Loop Transformer 对照实验已完成。** 15条开发、6条敏感性及90条正式训练，111个终点GPU审计、210个机制评价和42个循环扫描全部完成。三个正式世界中，循环模型两/三/四跳的ID留出组合均接近100%；两跳L2的纯OOD组合为6.29%，三/四跳仍约1%。见[完整结果](docs/results.md#grok-loop)、[主汇总](docs/development-artifacts/grok-loop-v1/main-report/summary.json)和[完成清单](docs/development-artifacts/grok-loop-v1/completion-manifest.json)。
+上述历史两到四跳小Transformer只对最终答案与EOS计算交叉熵；新增文本批次从随机初始化做完整下一词元训练。
+
+- **连续评分复盘与两跳同桥供体实验已完成。** 111条轨迹、2,997节点的连续评分未显示大幅模式切换，低OOD表现也不是EOS失分。在图定义的共同供体子集上，L1/L2使用ID首跳完整状态的正确率为40.58%/38.94%，使用OOD供体为8.06%/12.33%；三个世界差异均为正。该子集只覆盖3.11%–8.16%的OOD题目，本次只评价35个既有端点、零新增训练。见[复盘](docs/results.md#grok-loop-continuous)与[供体结果](docs/results.md#grok-loop-same-bridge)。
+- **历史配方的深度比较已完成。** 两跳2/3/4层留出准确率为96.44%/98.40%/98.29%；三跳独立世界的3/4层均值为90.29%/97.04%。该配方的四跳6层尚未学会大部分留出组合，区别于新Loop批次的开发结果。见[完整结果](docs/results.md#depth-hop-extension)与[八页对比图册](docs/development-artifacts/hop-depth-comparison-v1/complete-comparison.pdf)。
+- **历史首跳状态置换已完成。** 两层模型第一块的r1位置换入纯首跳供体后，89.31%的答案正确转向新路径，h位置对照为0.13%。该历史批次未拆分注意力与MLP；Loop批次已单独完成子层比较。见[历史机制结果](docs/results.md#grok-depth-bridge)与[Loop机制报告](docs/development-artifacts/grok-loop-v1/mechanism-report/summary.json)。
+- **原版bioS复盘、18端点抽样重载与36个预训练权重评价已完成。** 570万预测复算一致；规范六属性QA的S/M/MP为5.07%/35.65%/99.96%，留出问法仍有缺口。固定人物中，S的日期和出生地原生续写均100%，之后QA仅14.06%/1.56%，因此弱QA不能简单解释为没有记住事实。日期比较的训练题能答对，新日期对即使给真值仍失败，规则泛化前提尚未建立。见[完整结果](docs/results.md#bios-original)与[形成曲线](docs/development-artifacts/bios-original-trajectory-v1/native-attribute-curves.png)。100k矩阵与日期更新未执行。
+
+**当前受控训练证据支持：事实可被单跳提取，并不保证它能用于未见组合；组合使用经历带来原子重复无法补足的收益。** 既有状态置换进一步支持首跳信息的下游可用性差异。历史使用经历比较采用一个初始化；新增文本比较采用三个世界、两个初始化，仍未定位唯一内部机制，也不直接建立自然语言预训练定律。
+
+当前主线是[参数存储与多跳计算原理](docs/hebbian-learning-plan-v1.md#frontier-question-20261001)。既有组合经历、记忆替换和循环计算结果提供工具，尚未建立可组合存储的容量规律；原子掌握、有效操作、目标曝光和参数预算分别核查。知识更新开发保留为历史支线，旧低组合分数或长循环单跳退化不直接解释为存储能力上限。
+
+## 文档入口
+
+| 文档 | 内容 |
+| --- | --- |
+| [当前计划与理论依据](docs/hebbian-learning-plan-v1.md) | 训练目标、下一轮实验、理论与待办 |
+| [研究结果汇总](docs/results.md) | 各批次最终状态、核心数字、适用范围及产物 |
+| [实验协议](docs/experimental-protocol.md) | 统一评价与记录规范、脚本依赖的历史契约 |
+| [冻结模型两跳报告](docs/twohop-frozen-results-v1.md) | Qwen两跳实测、精度复核和复现命令 |
+| [开发指南](CONTRIBUTING.md) | 安装、检查、数据与文档维护规则 |
+
+## 开发与复现
+
+Python ≥3.10。仓库中的超大结果JSON使用Git LFS保存；克隆后运行 `git lfs install` 和 `git lfs pull` 获取完整文件。
+
+CPU工程检查环境：
 
 ```bash
 python -m venv .venv
@@ -61,26 +60,23 @@ ruff check .
 ruff format --check .
 ```
 
-现有示例入口为 `memory-editability` 和 `memory-editability-neural`。当前符号批次环境记录于 `configs/organization-environment-dev-v1.txt`，历史环境记录于 `configs/gpu-environment-dev-v1.txt`；上面的 CPU 安装不用于完整 GPU 实验，也不包含后训练 LLM 的环境。
+绘图依赖：`python -m pip install -e '.[analysis]'`。原版bioS的专用依赖见 [pyproject.toml](pyproject.toml) 的 `bios-original`；正式GPU实验使用各批冻结环境和配置，CPU环境不代替实验环境。
 
-符号开发复现入口（在项目根目录执行，GPU 编号按实际空闲设备指定）：
+完整测试还需要相关批次的本地 `data/`、`results/` 与固定模型tokenizer，按下述复现入口准备；这些大体积产物默认不随仓库提交。
 
-当前 A/B/C 批次：
-
-```bash
-.venv/bin/python scripts/prepare_bios_organization.py
-.venv/bin/python scripts/run_bios_organization.py --gpus 4
-.venv/bin/python scripts/summarize_bios_organization.py
-```
-
-历史 SA/AS 批次：
+只读查看原版bioS状态：
 
 ```bash
-python scripts/prepare_bios.py
-python scripts/run_bios_pipeline.py --gpus 6 7 8 9
-python scripts/summarize_bios.py
+.venv/bin/python scripts/run_bios_original.py status
 ```
 
-绘图依赖可用 `pip install -e '.[analysis]'` 安装。当前产物逐步写入 `results/bios-organization-dev-v1/`，历史完整产物保存在 `results/bios-dev-v1/`，包括固定配置、逐查询预测、曝光清单、预定检查点及执行记录。当前开发采用固定中间层窗口和未做新答案 NLL 筛选的目标；不声称已完成超参数搜索、自然语言审计、AlphaEdit 或完整确认矩阵。矩阵运算 FLOPs 为估算值，服务器共享负载下的墙钟时间另列。
+完整运行命令与前提见[当前计划](docs/hebbian-learning-plan-v1.md#reproduction)及[两跳报告](docs/twohop-frozen-results-v1.md)。旧批次的精确复现使用对应源码快照、配置和冻结契约。
 
-代码位于 `src/llm_memory_editability/`。开发与实验记录要求见 [CONTRIBUTING.md](CONTRIBUTING.md)。研究问题、执行决策和文献依据统一维护在实验协议中，不并存旧版计划。
+## 目录
+
+- `src/llm_memory_editability/`：模型、数据与实验实现；`scripts/`：运行、分析、审计入口；`tests/`：契约检查。
+- `configs/`：批次配置、来源清单和环境记录。
+- `docs/development-artifacts/`：冻结设计、源码快照、小型汇总、图表和审计证据，保持原始内容。
+- `data/`、`results/`、`checkpoints/`：本地数据、模型和大体积运行产物，默认不纳入版本控制。
+
+`memory-editability` 与 `memory-editability-neural` 是工程示例入口，其结果不作为正式研究证据。

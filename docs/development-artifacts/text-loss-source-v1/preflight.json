@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "records": [
+    {
+      "arm": "AB",
+      "capture_parent_and_optimizer_restored": true,
+      "three_step_max_parameter_error": 0.0
+    },
+    {
+      "arm": "A",
+      "capture_parent_and_optimizer_restored": true,
+      "three_step_max_parameter_error": 0.0
+    },
+    {
+      "arm": "B",
+      "capture_parent_and_optimizer_restored": true,
+      "three_step_max_parameter_error": 0.0
+    },
+    {
+      "arm": "N",
+      "capture_parent_and_optimizer_restored": true,
+      "three_step_max_parameter_error": 0.0
+    }
+  ],
+  "torch": "2.8.0+cu128",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition"
+}

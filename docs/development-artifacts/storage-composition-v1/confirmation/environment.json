@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-01T09:20:19.957441+00:00",
+  "python": "3.12.7",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "numpy": "2.5.3",
+  "transformers": "4.57.3",
+  "git_commit": "e279fc676f71e7e8cc8ce255faf68e26534ce311",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "workers": 2,
+  "config_sha256": "cf8ddb1be4531b39de6591b1e5dbbd68ce008c02114cac965d0669c526a7e7bc",
+  "tf32": true
+}

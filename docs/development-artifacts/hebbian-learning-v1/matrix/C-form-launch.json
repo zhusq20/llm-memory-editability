@@ -1,0 +1,103 @@
+{
+  "time": "2026-09-28T16:06:07.780842+00:00",
+  "launches": [
+    {
+      "pid": 3070858,
+      "gpu": 1,
+      "tasks": 1,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/C-form-slot0-gpu1.json",
+        "--device",
+        "cuda:1"
+      ]
+    },
+    {
+      "pid": 3070864,
+      "gpu": 2,
+      "tasks": 1,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/C-form-slot1-gpu2.json",
+        "--device",
+        "cuda:2"
+      ]
+    },
+    {
+      "pid": 3070865,
+      "gpu": 3,
+      "tasks": 1,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/C-form-slot2-gpu3.json",
+        "--device",
+        "cuda:3"
+      ]
+    },
+    {
+      "pid": 3070866,
+      "gpu": 4,
+      "tasks": 1,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/C-form-slot3-gpu4.json",
+        "--device",
+        "cuda:4"
+      ]
+    },
+    {
+      "pid": 3070867,
+      "gpu": 5,
+      "tasks": 1,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/C-form-slot4-gpu5.json",
+        "--device",
+        "cuda:5"
+      ]
+    },
+    {
+      "pid": 3070868,
+      "gpu": 6,
+      "tasks": 1,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/C-form-slot5-gpu6.json",
+        "--device",
+        "cuda:6"
+      ]
+    },
+    {
+      "pid": 3070869,
+      "gpu": 7,
+      "tasks": 1,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/C-form-slot6-gpu7.json",
+        "--device",
+        "cuda:7"
+      ]
+    }
+  ]
+}

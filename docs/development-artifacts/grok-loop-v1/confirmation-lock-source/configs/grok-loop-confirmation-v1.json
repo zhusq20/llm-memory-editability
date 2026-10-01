@@ -1,0 +1,966 @@
+{
+  "experiment": "grok-loop-confirmation-v1",
+  "output_root": "results/grok-loop-v1",
+  "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+  "extra_lock_files": [
+    "docs/development-artifacts/grok-loop-v1/confirmation-plan.md",
+    "src/llm_memory_editability/grok_loop_mechanism.py",
+    "scripts/analyze_grok_loop_mechanism.py"
+  ],
+  "base": {
+    "entities": 128,
+    "relations": 16,
+    "degree": 8,
+    "id_fraction": 0.75,
+    "id_test_fraction": 0.1,
+    "evaluation_size": 1024,
+    "width": 128,
+    "heads": 4,
+    "dropout": 0.1,
+    "lr": 0.0001,
+    "weight_decay": 0.1,
+    "batch_size": 256,
+    "n_atomic_per_batch": 32,
+    "warmup": 2000,
+    "steps": 128000,
+    "nodes": [
+      0,
+      100,
+      250,
+      500,
+      1000,
+      2000,
+      4000,
+      6000,
+      8000,
+      10000,
+      12000,
+      14000,
+      16000,
+      24000,
+      32000,
+      40000,
+      48000,
+      56000,
+      64000,
+      72000,
+      80000,
+      88000,
+      96000,
+      104000,
+      112000,
+      120000,
+      128000
+    ],
+    "weight_nodes": [
+      0,
+      16000,
+      64000,
+      128000
+    ],
+    "init_scheme": "scaled_effective",
+    "phase": "confirmation"
+  },
+  "runs": {
+    "conf-w145011-i14501-h2-c1": {
+      "hops": 2,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "c1",
+      "stream_seed": 145011021,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14501-h2-c2": {
+      "hops": 2,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "c2",
+      "stream_seed": 145011021,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14501-h2-cd": {
+      "hops": 2,
+      "layers": 4,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "cd",
+      "stream_seed": 145011021,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14501-h2-l1": {
+      "hops": 2,
+      "layers": 1,
+      "repeats": 4,
+      "phi": 6,
+      "architecture": "l1",
+      "stream_seed": 145011021,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14501-h2-l2": {
+      "hops": 2,
+      "layers": 2,
+      "repeats": 2,
+      "phi": 6,
+      "architecture": "l2",
+      "stream_seed": 145011021,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14501-h3-c1": {
+      "hops": 3,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "c1",
+      "stream_seed": 145011031,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14501-h3-c2": {
+      "hops": 3,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "c2",
+      "stream_seed": 145011031,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14501-h3-cd": {
+      "hops": 3,
+      "layers": 4,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "cd",
+      "stream_seed": 145011031,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14501-h3-l1": {
+      "hops": 3,
+      "layers": 1,
+      "repeats": 4,
+      "phi": 24,
+      "architecture": "l1",
+      "stream_seed": 145011031,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14501-h3-l2": {
+      "hops": 3,
+      "layers": 2,
+      "repeats": 2,
+      "phi": 24,
+      "architecture": "l2",
+      "stream_seed": 145011031,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14501-h4-c1": {
+      "hops": 4,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "c1",
+      "stream_seed": 145011041,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14501-h4-c2": {
+      "hops": 4,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "c2",
+      "stream_seed": 145011041,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14501-h4-cd": {
+      "hops": 4,
+      "layers": 6,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "cd",
+      "stream_seed": 145011041,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14501-h4-l1": {
+      "hops": 4,
+      "layers": 1,
+      "repeats": 6,
+      "phi": 96,
+      "architecture": "l1",
+      "stream_seed": 145011041,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14501-h4-l2": {
+      "hops": 4,
+      "layers": 2,
+      "repeats": 3,
+      "phi": 96,
+      "architecture": "l2",
+      "stream_seed": 145011041,
+      "world_seed": 145011,
+      "initialization": 14501
+    },
+    "conf-w145011-i14502-h2-c1": {
+      "hops": 2,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "c1",
+      "stream_seed": 145011022,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145011-i14502-h2-c2": {
+      "hops": 2,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "c2",
+      "stream_seed": 145011022,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145011-i14502-h2-cd": {
+      "hops": 2,
+      "layers": 4,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "cd",
+      "stream_seed": 145011022,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145011-i14502-h2-l1": {
+      "hops": 2,
+      "layers": 1,
+      "repeats": 4,
+      "phi": 6,
+      "architecture": "l1",
+      "stream_seed": 145011022,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145011-i14502-h2-l2": {
+      "hops": 2,
+      "layers": 2,
+      "repeats": 2,
+      "phi": 6,
+      "architecture": "l2",
+      "stream_seed": 145011022,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145011-i14502-h3-c1": {
+      "hops": 3,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "c1",
+      "stream_seed": 145011032,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145011-i14502-h3-c2": {
+      "hops": 3,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "c2",
+      "stream_seed": 145011032,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145011-i14502-h3-cd": {
+      "hops": 3,
+      "layers": 4,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "cd",
+      "stream_seed": 145011032,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145011-i14502-h3-l1": {
+      "hops": 3,
+      "layers": 1,
+      "repeats": 4,
+      "phi": 24,
+      "architecture": "l1",
+      "stream_seed": 145011032,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145011-i14502-h3-l2": {
+      "hops": 3,
+      "layers": 2,
+      "repeats": 2,
+      "phi": 24,
+      "architecture": "l2",
+      "stream_seed": 145011032,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145011-i14502-h4-c1": {
+      "hops": 4,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "c1",
+      "stream_seed": 145011042,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145011-i14502-h4-c2": {
+      "hops": 4,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "c2",
+      "stream_seed": 145011042,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145011-i14502-h4-cd": {
+      "hops": 4,
+      "layers": 6,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "cd",
+      "stream_seed": 145011042,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145011-i14502-h4-l1": {
+      "hops": 4,
+      "layers": 1,
+      "repeats": 6,
+      "phi": 96,
+      "architecture": "l1",
+      "stream_seed": 145011042,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145011-i14502-h4-l2": {
+      "hops": 4,
+      "layers": 2,
+      "repeats": 3,
+      "phi": 96,
+      "architecture": "l2",
+      "stream_seed": 145011042,
+      "world_seed": 145011,
+      "initialization": 14502
+    },
+    "conf-w145012-i14501-h2-c1": {
+      "hops": 2,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "c1",
+      "stream_seed": 145012021,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14501-h2-c2": {
+      "hops": 2,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "c2",
+      "stream_seed": 145012021,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14501-h2-cd": {
+      "hops": 2,
+      "layers": 4,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "cd",
+      "stream_seed": 145012021,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14501-h2-l1": {
+      "hops": 2,
+      "layers": 1,
+      "repeats": 4,
+      "phi": 6,
+      "architecture": "l1",
+      "stream_seed": 145012021,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14501-h2-l2": {
+      "hops": 2,
+      "layers": 2,
+      "repeats": 2,
+      "phi": 6,
+      "architecture": "l2",
+      "stream_seed": 145012021,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14501-h3-c1": {
+      "hops": 3,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "c1",
+      "stream_seed": 145012031,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14501-h3-c2": {
+      "hops": 3,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "c2",
+      "stream_seed": 145012031,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14501-h3-cd": {
+      "hops": 3,
+      "layers": 4,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "cd",
+      "stream_seed": 145012031,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14501-h3-l1": {
+      "hops": 3,
+      "layers": 1,
+      "repeats": 4,
+      "phi": 24,
+      "architecture": "l1",
+      "stream_seed": 145012031,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14501-h3-l2": {
+      "hops": 3,
+      "layers": 2,
+      "repeats": 2,
+      "phi": 24,
+      "architecture": "l2",
+      "stream_seed": 145012031,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14501-h4-c1": {
+      "hops": 4,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "c1",
+      "stream_seed": 145012041,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14501-h4-c2": {
+      "hops": 4,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "c2",
+      "stream_seed": 145012041,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14501-h4-cd": {
+      "hops": 4,
+      "layers": 6,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "cd",
+      "stream_seed": 145012041,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14501-h4-l1": {
+      "hops": 4,
+      "layers": 1,
+      "repeats": 6,
+      "phi": 96,
+      "architecture": "l1",
+      "stream_seed": 145012041,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14501-h4-l2": {
+      "hops": 4,
+      "layers": 2,
+      "repeats": 3,
+      "phi": 96,
+      "architecture": "l2",
+      "stream_seed": 145012041,
+      "world_seed": 145012,
+      "initialization": 14501
+    },
+    "conf-w145012-i14502-h2-c1": {
+      "hops": 2,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "c1",
+      "stream_seed": 145012022,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145012-i14502-h2-c2": {
+      "hops": 2,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "c2",
+      "stream_seed": 145012022,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145012-i14502-h2-cd": {
+      "hops": 2,
+      "layers": 4,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "cd",
+      "stream_seed": 145012022,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145012-i14502-h2-l1": {
+      "hops": 2,
+      "layers": 1,
+      "repeats": 4,
+      "phi": 6,
+      "architecture": "l1",
+      "stream_seed": 145012022,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145012-i14502-h2-l2": {
+      "hops": 2,
+      "layers": 2,
+      "repeats": 2,
+      "phi": 6,
+      "architecture": "l2",
+      "stream_seed": 145012022,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145012-i14502-h3-c1": {
+      "hops": 3,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "c1",
+      "stream_seed": 145012032,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145012-i14502-h3-c2": {
+      "hops": 3,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "c2",
+      "stream_seed": 145012032,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145012-i14502-h3-cd": {
+      "hops": 3,
+      "layers": 4,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "cd",
+      "stream_seed": 145012032,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145012-i14502-h3-l1": {
+      "hops": 3,
+      "layers": 1,
+      "repeats": 4,
+      "phi": 24,
+      "architecture": "l1",
+      "stream_seed": 145012032,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145012-i14502-h3-l2": {
+      "hops": 3,
+      "layers": 2,
+      "repeats": 2,
+      "phi": 24,
+      "architecture": "l2",
+      "stream_seed": 145012032,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145012-i14502-h4-c1": {
+      "hops": 4,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "c1",
+      "stream_seed": 145012042,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145012-i14502-h4-c2": {
+      "hops": 4,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "c2",
+      "stream_seed": 145012042,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145012-i14502-h4-cd": {
+      "hops": 4,
+      "layers": 6,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "cd",
+      "stream_seed": 145012042,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145012-i14502-h4-l1": {
+      "hops": 4,
+      "layers": 1,
+      "repeats": 6,
+      "phi": 96,
+      "architecture": "l1",
+      "stream_seed": 145012042,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145012-i14502-h4-l2": {
+      "hops": 4,
+      "layers": 2,
+      "repeats": 3,
+      "phi": 96,
+      "architecture": "l2",
+      "stream_seed": 145012042,
+      "world_seed": 145012,
+      "initialization": 14502
+    },
+    "conf-w145013-i14501-h2-c1": {
+      "hops": 2,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "c1",
+      "stream_seed": 145013021,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14501-h2-c2": {
+      "hops": 2,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "c2",
+      "stream_seed": 145013021,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14501-h2-cd": {
+      "hops": 2,
+      "layers": 4,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "cd",
+      "stream_seed": 145013021,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14501-h2-l1": {
+      "hops": 2,
+      "layers": 1,
+      "repeats": 4,
+      "phi": 6,
+      "architecture": "l1",
+      "stream_seed": 145013021,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14501-h2-l2": {
+      "hops": 2,
+      "layers": 2,
+      "repeats": 2,
+      "phi": 6,
+      "architecture": "l2",
+      "stream_seed": 145013021,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14501-h3-c1": {
+      "hops": 3,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "c1",
+      "stream_seed": 145013031,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14501-h3-c2": {
+      "hops": 3,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "c2",
+      "stream_seed": 145013031,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14501-h3-cd": {
+      "hops": 3,
+      "layers": 4,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "cd",
+      "stream_seed": 145013031,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14501-h3-l1": {
+      "hops": 3,
+      "layers": 1,
+      "repeats": 4,
+      "phi": 24,
+      "architecture": "l1",
+      "stream_seed": 145013031,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14501-h3-l2": {
+      "hops": 3,
+      "layers": 2,
+      "repeats": 2,
+      "phi": 24,
+      "architecture": "l2",
+      "stream_seed": 145013031,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14501-h4-c1": {
+      "hops": 4,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "c1",
+      "stream_seed": 145013041,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14501-h4-c2": {
+      "hops": 4,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "c2",
+      "stream_seed": 145013041,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14501-h4-cd": {
+      "hops": 4,
+      "layers": 6,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "cd",
+      "stream_seed": 145013041,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14501-h4-l1": {
+      "hops": 4,
+      "layers": 1,
+      "repeats": 6,
+      "phi": 96,
+      "architecture": "l1",
+      "stream_seed": 145013041,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14501-h4-l2": {
+      "hops": 4,
+      "layers": 2,
+      "repeats": 3,
+      "phi": 96,
+      "architecture": "l2",
+      "stream_seed": 145013041,
+      "world_seed": 145013,
+      "initialization": 14501
+    },
+    "conf-w145013-i14502-h2-c1": {
+      "hops": 2,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "c1",
+      "stream_seed": 145013022,
+      "world_seed": 145013,
+      "initialization": 14502
+    },
+    "conf-w145013-i14502-h2-c2": {
+      "hops": 2,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "c2",
+      "stream_seed": 145013022,
+      "world_seed": 145013,
+      "initialization": 14502
+    },
+    "conf-w145013-i14502-h2-cd": {
+      "hops": 2,
+      "layers": 4,
+      "repeats": 1,
+      "phi": 6,
+      "architecture": "cd",
+      "stream_seed": 145013022,
+      "world_seed": 145013,
+      "initialization": 14502
+    },
+    "conf-w145013-i14502-h2-l1": {
+      "hops": 2,
+      "layers": 1,
+      "repeats": 4,
+      "phi": 6,
+      "architecture": "l1",
+      "stream_seed": 145013022,
+      "world_seed": 145013,
+      "initialization": 14502
+    },
+    "conf-w145013-i14502-h2-l2": {
+      "hops": 2,
+      "layers": 2,
+      "repeats": 2,
+      "phi": 6,
+      "architecture": "l2",
+      "stream_seed": 145013022,
+      "world_seed": 145013,
+      "initialization": 14502
+    },
+    "conf-w145013-i14502-h3-c1": {
+      "hops": 3,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "c1",
+      "stream_seed": 145013032,
+      "world_seed": 145013,
+      "initialization": 14502
+    },
+    "conf-w145013-i14502-h3-c2": {
+      "hops": 3,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "c2",
+      "stream_seed": 145013032,
+      "world_seed": 145013,
+      "initialization": 14502
+    },
+    "conf-w145013-i14502-h3-cd": {
+      "hops": 3,
+      "layers": 4,
+      "repeats": 1,
+      "phi": 24,
+      "architecture": "cd",
+      "stream_seed": 145013032,
+      "world_seed": 145013,
+      "initialization": 14502
+    },
+    "conf-w145013-i14502-h3-l1": {
+      "hops": 3,
+      "layers": 1,
+      "repeats": 4,
+      "phi": 24,
+      "architecture": "l1",
+      "stream_seed": 145013032,
+      "world_seed": 145013,
+      "initialization": 14502
+    },
+    "conf-w145013-i14502-h3-l2": {
+      "hops": 3,
+      "layers": 2,
+      "repeats": 2,
+      "phi": 24,
+      "architecture": "l2",
+      "stream_seed": 145013032,
+      "world_seed": 145013,
+      "initialization": 14502
+    },
+    "conf-w145013-i14502-h4-c1": {
+      "hops": 4,
+      "layers": 1,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "c1",
+      "stream_seed": 145013042,
+      "world_seed": 145013,
+      "initialization": 14502
+    },
+    "conf-w145013-i14502-h4-c2": {
+      "hops": 4,
+      "layers": 2,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "c2",
+      "stream_seed": 145013042,
+      "world_seed": 145013,
+      "initialization": 14502
+    },
+    "conf-w145013-i14502-h4-cd": {
+      "hops": 4,
+      "layers": 6,
+      "repeats": 1,
+      "phi": 96,
+      "architecture": "cd",
+      "stream_seed": 145013042,
+      "world_seed": 145013,
+      "initialization": 14502
+    },
+    "conf-w145013-i14502-h4-l1": {
+      "hops": 4,
+      "layers": 1,
+      "repeats": 6,
+      "phi": 96,
+      "architecture": "l1",
+      "stream_seed": 145013042,
+      "world_seed": 145013,
+      "initialization": 14502
+    },
+    "conf-w145013-i14502-h4-l2": {
+      "hops": 4,
+      "layers": 2,
+      "repeats": 3,
+      "phi": 96,
+      "architecture": "l2",
+      "stream_seed": 145013042,
+      "world_seed": 145013,
+      "initialization": 14502
+    }
+  }
+}

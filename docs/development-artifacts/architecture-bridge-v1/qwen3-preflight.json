@@ -1,0 +1,165 @@
+{
+  "recorded_at_utc": "2026-09-29T22:57:37.562015+00:00",
+  "python": "/home/siqizhu4/.local/share/llm-memory/architecture-bridge-v1/environment/bin/python",
+  "model_class": "Qwen3ForCausalLM",
+  "model_path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/data/hebbian-learning-v1/source/qwen3-0.6b-base",
+  "dtype": "float32",
+  "parameter_count": 596049920,
+  "model_config_sha256": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59",
+  "implementation_sha256": "cbb7f2dc274c2f5592746c0dc6985ca50353efa07376f92cc922b77680a74f69",
+  "script_sha256": "18390e93c702093c4cd50ba7bca6147324624c96f161deda82a7fb6636a34665",
+  "loading_info": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "error_msgs": []
+  },
+  "forward_signature": "(input_ids: torch.LongTensor | None = None, attention_mask: torch.Tensor | None = None, position_ids: torch.LongTensor | None = None, past_key_values: transformers.cache_utils.Cache | None = None, inputs_embeds: torch.FloatTensor | None = None, labels: torch.LongTensor | None = None, use_cache: bool | None = None, logits_to_keep: int | torch.Tensor = 0, **kwargs: Unpack[transformers.utils.generic.TransformersKwargs]) -> transformers.modeling_outputs.CausalLMOutputWithPast",
+  "cache_checks": {
+    "prefix_ids": [
+      [
+        19384,
+        13440,
+        21619,
+        9477
+      ]
+    ],
+    "suffix_ids": [
+      [
+        31204,
+        13
+      ]
+    ],
+    "cache_class": "transformers.cache_utils.DynamicCache",
+    "layer_types": [
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer",
+      "DynamicLayer"
+    ],
+    "full_vs_resumed": {
+      "max_absolute_logit_difference": 9.357929229736328e-06,
+      "rms_logit_difference": 1.6797008584035211e-06,
+      "greedy_token_equal": true,
+      "passed_at_1e_4_absolute": true
+    },
+    "implicit_vs_explicit_positions": {
+      "max_absolute_logit_difference": 0.0,
+      "rms_logit_difference": 0.0,
+      "greedy_token_equal": true,
+      "passed_at_1e_4_absolute": true
+    },
+    "deepcopy_values_equal": true,
+    "deepcopy_storage_independent": true,
+    "layers": {
+      "6": {
+        "mlp_path": "model.layers.6.mlp",
+        "down_path": "model.layers.6.mlp.down_proj",
+        "keys_interface": "past_key_values.layers[6].keys",
+        "values_interface": "past_key_values.layers[6].values",
+        "keys_shape": [
+          1,
+          8,
+          4,
+          128
+        ],
+        "values_shape": [
+          1,
+          8,
+          4,
+          128
+        ],
+        "same_donor_transplant_vs_resumed": {
+          "max_absolute_logit_difference": 0.0,
+          "rms_logit_difference": 0.0,
+          "greedy_token_equal": true,
+          "passed_at_1e_4_absolute": true
+        }
+      },
+      "14": {
+        "mlp_path": "model.layers.14.mlp",
+        "down_path": "model.layers.14.mlp.down_proj",
+        "keys_interface": "past_key_values.layers[14].keys",
+        "values_interface": "past_key_values.layers[14].values",
+        "keys_shape": [
+          1,
+          8,
+          4,
+          128
+        ],
+        "values_shape": [
+          1,
+          8,
+          4,
+          128
+        ],
+        "same_donor_transplant_vs_resumed": {
+          "max_absolute_logit_difference": 0.0,
+          "rms_logit_difference": 0.0,
+          "greedy_token_equal": true,
+          "passed_at_1e_4_absolute": true
+        }
+      }
+    },
+    "original_cache_length_preserved": true,
+    "all_checks_passed": true
+  },
+  "down_gradient_check": {
+    "layer_index": 14,
+    "target": "model.layers.14.mlp.down_proj.weight",
+    "input_ids": [
+      [
+        32,
+        2613,
+        11958,
+        53231,
+        389,
+        264,
+        4916,
+        13
+      ]
+    ],
+    "loss": 3.7354519367218018,
+    "gradient_shape": [
+      1024,
+      3072
+    ],
+    "gradient_norm": 5.570411205291748,
+    "gradient_finite": true,
+    "gradient_nonzero": true,
+    "target_weight_unchanged": true,
+    "other_parameter_gradients_absent": true,
+    "optimizer_steps": 0,
+    "weights_saved": false,
+    "requires_grad_restored_to_frozen": true,
+    "gradient_cleared": true,
+    "all_checks_passed": true
+  },
+  "wall_seconds": 1.7015899859834462,
+  "peak_allocated_bytes": 2460108800,
+  "all_checks_passed": true
+}

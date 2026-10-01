@@ -1,0 +1,148 @@
+{
+  "time": "2026-09-28T16:06:04.636250+00:00",
+  "host": "sn4622128200",
+  "app_host_alias": "ulab3",
+  "authorization": "User explicitly made GPUs 1-9 available and requested parallel experiment execution. GPU 0 excluded.",
+  "supervisor_pid": 3070838,
+  "script": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/hebbian-learning-v1/dispatch/resume-20260928T160604Z.py",
+  "log": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/hebbian-learning-v1/dispatch/resume-20260928T160604Z.log",
+  "slots": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "previous_supervisor_pid": 3068724,
+  "previous_processes_terminated": [
+    3068724,
+    3068725,
+    3068730,
+    3068732,
+    3068733,
+    3068734
+  ],
+  "handover_snapshot": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/parallel-handover-20260928T160604Z.json",
+  "checkpoints": [
+    {
+      "run": "form-C0-s1",
+      "checkpoint": "results/hebbian-learning-v1/C/form-C0-s1/checkpoint-0128.pt",
+      "step": 128,
+      "sha256": "d005234c57f70e614c30c4d1de3e13402d3f5e53721765dc892247d3de9101c0"
+    },
+    {
+      "run": "form-C0-s2",
+      "checkpoint": "results/hebbian-learning-v1/C/form-C0-s2/checkpoint-0128.pt",
+      "step": 128,
+      "sha256": "904f7ba63612ef5fe6151e719312bd42b582d3f72a08fa36c516c91a34e7d2bc"
+    },
+    {
+      "run": "form-C1-s0",
+      "checkpoint": "results/hebbian-learning-v1/C/form-C1-s0/checkpoint-0128.pt",
+      "step": 128,
+      "sha256": "625621634a4d9da9acdf8803b02ae9f2e85541b054d6429ed3b59a5be3be57a9"
+    },
+    {
+      "run": "form-C1-s1",
+      "checkpoint": "results/hebbian-learning-v1/C/form-C1-s1/checkpoint-0128.pt",
+      "step": 128,
+      "sha256": "533bea531e1640e6e2ddfa56e9f289d473c668ba31948b91ed169551e28d0bba"
+    }
+  ],
+  "frozen_sources_verified": true,
+  "training_protocol_changed": false,
+  "schedule": "Remaining seven formation runs use one worker per GPU; all 72 adaptation runs use nine GPUs, eight runs per GPU. Audit, diagnostic export, and final report follow training.",
+  "verification": {
+    "time": "2026-09-28T16:07:31.599380+00:00",
+    "seven_distinct_runs": true,
+    "four_migrated_runs_advancing": true,
+    "workers": [
+      {
+        "gpu": 1,
+        "pid": 3070858,
+        "run": "C/form-C0-s1",
+        "process_verified": true,
+        "status": {
+          "step": 198,
+          "time": "2026-09-28T16:07:31.277128+00:00"
+        },
+        "replayed_step_max_difference": 0.0
+      },
+      {
+        "gpu": 2,
+        "pid": 3070864,
+        "run": "C/form-C0-s2",
+        "process_verified": true,
+        "status": {
+          "step": 199,
+          "time": "2026-09-28T16:07:31.367751+00:00"
+        },
+        "replayed_step_max_difference": 0.0
+      },
+      {
+        "gpu": 3,
+        "pid": 3070865,
+        "run": "C/form-C1-s0",
+        "process_verified": true,
+        "status": {
+          "step": 198,
+          "time": "2026-09-28T16:07:31.318821+00:00"
+        },
+        "replayed_step_max_difference": 0.0
+      },
+      {
+        "gpu": 4,
+        "pid": 3070866,
+        "run": "C/form-C1-s1",
+        "process_verified": true,
+        "status": {
+          "step": 199,
+          "time": "2026-09-28T16:07:31.318888+00:00"
+        },
+        "replayed_step_max_difference": 0.0
+      },
+      {
+        "gpu": 5,
+        "pid": 3070867,
+        "run": "C/form-C1-s2",
+        "process_verified": true,
+        "status": {
+          "step": 16,
+          "time": "2026-09-28T16:07:27.147463+00:00"
+        }
+      },
+      {
+        "gpu": 6,
+        "pid": 3070868,
+        "run": "C/form-C2-s1",
+        "process_verified": true,
+        "status": {
+          "step": 5,
+          "time": "2026-09-28T16:07:31.226968+00:00"
+        }
+      },
+      {
+        "gpu": 7,
+        "pid": 3070869,
+        "run": "C/form-C2-s2",
+        "process_verified": true,
+        "status": {
+          "step": 4,
+          "time": "2026-09-28T16:07:31.367855+00:00"
+        }
+      }
+    ],
+    "matrix_status": {
+      "time": "2026-09-28T16:07:28.737115+00:00",
+      "stage": "C-form",
+      "running_workers": 7,
+      "new_runs_complete": 0,
+      "new_runs_expected": 7,
+      "status": "running"
+    }
+  }
+}

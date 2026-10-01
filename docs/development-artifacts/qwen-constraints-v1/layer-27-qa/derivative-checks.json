@@ -1,0 +1,175 @@
+{
+  "max_relative_error": 1.4226840505671134e-07,
+  "checks": 228,
+  "all_positions": true,
+  "gate_diagnostics": [
+    {
+      "case_id": 10235,
+      "silu_absolute_quantiles": [
+        0.0,
+        0.028134677559137344,
+        0.18818959593772888,
+        0.5384072661399841,
+        34.185184478759766
+      ],
+      "up_norm": 176.53846740722656,
+      "input_norm": 129.53707885742188,
+      "last_output_derivative_norm": 0.2180374711751938,
+      "earlier_output_derivative_norm": 0.0
+    },
+    {
+      "case_id": 15527,
+      "silu_absolute_quantiles": [
+        0.0,
+        0.015859033912420273,
+        0.17029106616973877,
+        0.7650520205497742,
+        34.24192428588867
+      ],
+      "up_norm": 194.1837921142578,
+      "input_norm": 125.82262420654297,
+      "last_output_derivative_norm": 0.2163870483636856,
+      "earlier_output_derivative_norm": 0.0
+    },
+    {
+      "case_id": 12986,
+      "silu_absolute_quantiles": [
+        0.0,
+        0.013449925929307938,
+        0.14611786603927612,
+        0.8237870335578918,
+        31.890939712524414
+      ],
+      "up_norm": 206.2059783935547,
+      "input_norm": 131.8402862548828,
+      "last_output_derivative_norm": 0.17839890718460083,
+      "earlier_output_derivative_norm": 0.0
+    },
+    {
+      "case_id": 1471,
+      "silu_absolute_quantiles": [
+        0.0,
+        0.02483486942946911,
+        0.178754985332489,
+        0.6309032440185547,
+        34.29548645019531
+      ],
+      "up_norm": 173.55368041992188,
+      "input_norm": 128.2974853515625,
+      "last_output_derivative_norm": 0.24658000469207764,
+      "earlier_output_derivative_norm": 0.0
+    },
+    {
+      "case_id": 6252,
+      "silu_absolute_quantiles": [
+        0.0,
+        0.023998241871595383,
+        0.18493866920471191,
+        0.6432676911354065,
+        32.30462646484375
+      ],
+      "up_norm": 178.08447265625,
+      "input_norm": 130.01849365234375,
+      "last_output_derivative_norm": 0.20041495561599731,
+      "earlier_output_derivative_norm": 0.0
+    },
+    {
+      "case_id": 3260,
+      "silu_absolute_quantiles": [
+        6.1401591093477095e-33,
+        0.026168938726186752,
+        0.1929173469543457,
+        0.6174013614654541,
+        34.34217834472656
+      ],
+      "up_norm": 162.9647216796875,
+      "input_norm": 140.70159912109375,
+      "last_output_derivative_norm": 0.26334813237190247,
+      "earlier_output_derivative_norm": 0.0
+    },
+    {
+      "case_id": 17374,
+      "silu_absolute_quantiles": [
+        0.0,
+        0.031563419848680496,
+        0.2043471336364746,
+        0.5350092649459839,
+        35.10068130493164
+      ],
+      "up_norm": 172.78085327148438,
+      "input_norm": 131.51837158203125,
+      "last_output_derivative_norm": 0.1968078911304474,
+      "earlier_output_derivative_norm": 0.0
+    },
+    {
+      "case_id": 21486,
+      "silu_absolute_quantiles": [
+        0.0,
+        0.02572491019964218,
+        0.1832522749900818,
+        0.5395979285240173,
+        35.525245666503906
+      ],
+      "up_norm": 170.57191467285156,
+      "input_norm": 130.8482666015625,
+      "last_output_derivative_norm": 0.2544308006763458,
+      "earlier_output_derivative_norm": 0.0
+    },
+    {
+      "case_id": 5400,
+      "silu_absolute_quantiles": [
+        0.0,
+        0.022710971534252167,
+        0.17769408226013184,
+        0.48696908354759216,
+        33.871986389160156
+      ],
+      "up_norm": 169.46694946289062,
+      "input_norm": 128.24891662597656,
+      "last_output_derivative_norm": 0.2761774957180023,
+      "earlier_output_derivative_norm": 0.0
+    },
+    {
+      "case_id": 7456,
+      "silu_absolute_quantiles": [
+        0.0,
+        0.028263334184885025,
+        0.1818421483039856,
+        0.6480804681777954,
+        32.50014114379883
+      ],
+      "up_norm": 171.9632568359375,
+      "input_norm": 119.23127746582031,
+      "last_output_derivative_norm": 0.27968305349349976,
+      "earlier_output_derivative_norm": 0.0
+    },
+    {
+      "case_id": 8921,
+      "silu_absolute_quantiles": [
+        0.0,
+        0.02328038401901722,
+        0.17392386496067047,
+        0.6075615882873535,
+        33.32783126831055
+      ],
+      "up_norm": 179.8598175048828,
+      "input_norm": 128.4130401611328,
+      "last_output_derivative_norm": 0.26495811343193054,
+      "earlier_output_derivative_norm": 0.0
+    },
+    {
+      "case_id": 12197,
+      "silu_absolute_quantiles": [
+        0.0,
+        0.019537553191184998,
+        0.17609313130378723,
+        0.8014768362045288,
+        35.02640151977539
+      ],
+      "up_norm": 180.03421020507812,
+      "input_norm": 131.9732208251953,
+      "last_output_derivative_norm": 0.18957532942295074,
+      "earlier_output_derivative_norm": 0.0
+    }
+  ]
+}

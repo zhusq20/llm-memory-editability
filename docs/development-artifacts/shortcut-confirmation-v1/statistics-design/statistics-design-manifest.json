@@ -1,0 +1,11 @@
+{
+  "source_hashes": {
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/analyze_bios_confirmation_stats.py": "2a0ab3a5fc0c472f4862c0325ee45cdf54a16d3c2a836581595efbd74bcae336",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/bios_confirmation_stats.py": "e40f0347bd44e8602c18fc2fbee9647010d509d6f6dc7bc3c5cb8e98036e9c9b"
+  },
+  "files": {
+    "statistics-contract.json": "7205727f65be110b866b2e0afc8d06ae6d3f84ae43c402bf44df947c608851c7",
+    "power-sensitivity.json": "4149e3587aab04bdecdadba4d48ff2cc382fef072c77525dd3c912e67e1110e8"
+  },
+  "new_worlds_generated_or_read": false
+}

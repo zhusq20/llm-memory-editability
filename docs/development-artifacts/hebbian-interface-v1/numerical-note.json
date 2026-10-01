@@ -1,0 +1,101 @@
+{
+  "type": "Finite precision diagnosis; unchanged training results and unchanged strict replay tolerance",
+  "scope": "Development 142941 and confirmation 142942 only; later worlds use the same strict audit script and classification rule.",
+  "audit_files_preserved_unmodified": true,
+  "audit_snapshots": [
+    {
+      "phase": "development",
+      "seed": 142941,
+      "path": "docs/development-artifacts/hebbian-interface-v1/audit-development-142941.json",
+      "sha256": "cfc549a84c26f915a6a7c933531d7b8ff72afa5ca7f9b535b7d9dbba1cabc600",
+      "strict_passed": false,
+      "strict_failures": [
+        "memory/mse/B/angle_mean"
+      ],
+      "checks": 182,
+      "prediction_score_target_accuracy_replay_passed": true,
+      "max_full_reader_score_absolute_difference": 4.76837158203125e-07
+    },
+    {
+      "phase": "confirmation",
+      "seed": 142942,
+      "path": "docs/development-artifacts/hebbian-interface-v1/audit-confirmation-142942.json",
+      "sha256": "c8bd120d48038cf4c39c6454fba277c0f9e635f671ebd8a52ea0b9250317eb61",
+      "strict_passed": false,
+      "strict_failures": [
+        "memory/mse/A/angle_mean",
+        "memory/mse/B/angle_mean"
+      ],
+      "checks": 182,
+      "prediction_score_target_accuracy_replay_passed": true,
+      "max_full_reader_score_absolute_difference": 4.3213367462158203e-07
+    }
+  ],
+  "strict_atol": 1e-05,
+  "strict_rtol": 1e-05,
+  "derivation": "d acos(c) / dc = -1/sqrt(1-c*c). Near c=1, angle is approximately sqrt(2*(1-c)), so float32 cosine rounding can change a near-zero reported angle substantially even when vector directions and candidate scores agree. Averaging acos values does not remove the ill-conditioning.",
+  "float32_epsilon": 1.1920928955078125e-07,
+  "single_vector_angular_scale_from_one_cosine_epsilon_rad": 0.00048828125,
+  "diagnostic_method": "Reload the same frozen checkpoint on CPU. Recompute original float32 cosine/acos, compare all normalized candidate scores against saved arrays with original atol=rtol=1e-5, and compute stable angle 2*atan2(||u-v||,||u+v||) in float64 for normalized CPU-replayed outputs. The stable angle is a diagnostic on replayed vectors, not a replacement score or a new scientific endpoint.",
+  "diagnoses": [
+    {
+      "phase": "development",
+      "seed": 142941,
+      "memory_loss": "mse",
+      "mapping": "B",
+      "strict_check": "memory/mse/B/angle_mean",
+      "stored_GPU_float32_acos_mean_rad": 1.0326793017156888e-05,
+      "CPU_float32_acos_mean_rad": 2.493108513590414e-05,
+      "absolute_mean_difference_rad": 1.4604292118747253e-05,
+      "CPU_float64_stable_angle_mean_rad": 2.358228236338423e-07,
+      "CPU_float64_stable_angle_max_rad": 3.4727195123592466e-07,
+      "CPU_float32_cosine_min": 0.9999998807907104,
+      "CPU_float32_cosine_max": 1.0,
+      "full_score_max_absolute_difference": 2.384185791015625e-07,
+      "full_score_allclose_original_atol_rtol_1e_5": true,
+      "predictions_exact_equal": true
+    },
+    {
+      "phase": "confirmation",
+      "seed": 142942,
+      "memory_loss": "mse",
+      "mapping": "A",
+      "strict_check": "memory/mse/A/angle_mean",
+      "stored_GPU_float32_acos_mean_rad": 2.6973982585332124e-06,
+      "CPU_float32_acos_mean_rad": 2.6511183023103513e-05,
+      "absolute_mean_difference_rad": 2.38137847645703e-05,
+      "CPU_float64_stable_angle_mean_rad": 2.3027325007214904e-07,
+      "CPU_float64_stable_angle_max_rad": 3.2038382402902254e-07,
+      "CPU_float32_cosine_min": 0.9999998807907104,
+      "CPU_float32_cosine_max": 1.0,
+      "full_score_max_absolute_difference": 2.980232238769531e-07,
+      "full_score_allclose_original_atol_rtol_1e_5": true,
+      "predictions_exact_equal": true
+    },
+    {
+      "phase": "confirmation",
+      "seed": 142942,
+      "memory_loss": "mse",
+      "mapping": "B",
+      "strict_check": "memory/mse/B/angle_mean",
+      "stored_GPU_float32_acos_mean_rad": 2.6973982585332124e-06,
+      "CPU_float32_acos_mean_rad": 2.7368518203729764e-05,
+      "absolute_mean_difference_rad": 2.467111994519655e-05,
+      "CPU_float64_stable_angle_mean_rad": 2.35533545957534e-07,
+      "CPU_float64_stable_angle_max_rad": 3.3748774695660705e-07,
+      "CPU_float32_cosine_min": 0.9999998211860657,
+      "CPU_float32_cosine_max": 1.0,
+      "full_score_max_absolute_difference": 3.5762786865234375e-07,
+      "full_score_allclose_original_atol_rtol_1e_5": true,
+      "predictions_exact_equal": true
+    }
+  ],
+  "interpretation": "All prediction/score/target/accuracy replay checks pass for these worlds. The strict audits retain passed=false for the listed near-zero acos means. Do not interpret approximately 1e-5 rad variation as a precise scientific CE/MSE effect. No tolerance was widened and no training output was modified.",
+  "environment": {
+    "python": "3.12.7",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.5.3",
+    "device": "cpu",
+    "threads": 1
+  }
+}

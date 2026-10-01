@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-10-01T02:11:15.650550+00:00",
+  "sources": {
+    "scripts/verify_text_structure.py": "8c295ac057d7ee64b71e83c36802e38469707943bc2f114dcfca4a97912b8aba"
+  },
+  "config_sha256": "8ca3d66d493d393ba47636ce4e75e135a2cd1c33dbc1a1cb6b51f5e00f885b71",
+  "precision": "FP32 with CUDA matmul and cuDNN TF32 enabled"
+}

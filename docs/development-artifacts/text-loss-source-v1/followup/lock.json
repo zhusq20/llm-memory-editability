@@ -1,0 +1,47 @@
+{
+  "created_unix": 1790818029.5678463,
+  "config_sha256": "9dbd714ad87a14fbc30c9647c5d7bf730e0bdb89a5936aa242733c49dd38ed22",
+  "sources": {
+    "scripts/run_text_loss_source.py": "594f6f2564107fa34d764a76584c31d4d535ed9f1e5ccd885d994225d1786a5b",
+    "src/llm_memory_editability/text_loss_source.py": "579471a04def8a11e9cc072fcb909d6e84c3b61c8d901d0d029e126f14a6d3fe",
+    "src/llm_memory_editability/text_pretrain.py": "cd777a56ba270d3c71ed3260f68501ee0685d4cc58a4f7b952719236adf874cb",
+    "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+    "src/llm_memory_editability/grok_loop_model.py": "07e84388997a1710e5c821e54cf6d23726e4289aab178347761e060851fea6cc",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d"
+  },
+  "parents": {
+    "results/text-pretrain-v1/confirmation/confirm-w147011-s14701-P1/latest.pt": "eccdd9b68babbf93617615943bca8a5ec25391327c7ccbf71eef20e20b148e3f",
+    "results/text-pretrain-v1/confirmation/confirm-w147011-s14702-P1/latest.pt": "aa49397bc3081e8e4fe715c6bbe06555148b886e8ef73ec7a13ed90ee3c0e4f6",
+    "results/text-pretrain-v1/confirmation/confirm-w147012-s14701-P1/latest.pt": "32a42664ee01c143ec55563459d42dcd1b829dfff2bb1abaeb3e9d93bd4d893e",
+    "results/text-pretrain-v1/confirmation/confirm-w147012-s14702-P1/latest.pt": "ae501419de3e134c7032b1431baeb3be9b165dd75f84babd49910420ec95a1e8",
+    "results/text-pretrain-v1/confirmation/confirm-w147013-s14701-P1/latest.pt": "827bfd01908382549dee600e4e5d8fcfa94273aaa1c792820862bb5f20eb6cba",
+    "results/text-pretrain-v1/confirmation/confirm-w147013-s14702-P1/latest.pt": "6e0dca509078fad32d996c12b2ba13e30788811c543cd47db692713535fbf5f5"
+  },
+  "inputs": {
+    "results/text-pretrain-v1/confirmation/confirm-w147011-s14701-P1/learning.json": "938537fae476e9c6e69df3f7b55de3b2196c089b6cc43cb356843e3993b8dfd9",
+    "results/text-pretrain-v1/confirmation/confirm-w147011-s14701-P1/spec.json": "7a091665549e3b9ed8311f42cbdac9e47592755f756c51157b488017515641b0",
+    "results/text-pretrain-v1/confirmation/confirm-w147011-s14701-P1/training-table.npz": "ae09507abec1529ba879cdeabce9c1a28e106d35fce329c564bdc954da9c6575",
+    "results/text-pretrain-v1/confirmation/confirm-w147011-s14701-P1/world.npz": "c65d289981b3e044e2f9901d611b83289a4a6f369550c7c91fc5a08943579339",
+    "results/text-pretrain-v1/confirmation/confirm-w147011-s14702-P1/learning.json": "6ef576d09906df1a0937829a32dfbbb641c3a2e855e3e767497360162b620c96",
+    "results/text-pretrain-v1/confirmation/confirm-w147011-s14702-P1/spec.json": "c0222b8282a479f342236d067c809fcf92e35295a0ea96d5ea4a712835fb1773",
+    "results/text-pretrain-v1/confirmation/confirm-w147011-s14702-P1/training-table.npz": "ae09507abec1529ba879cdeabce9c1a28e106d35fce329c564bdc954da9c6575",
+    "results/text-pretrain-v1/confirmation/confirm-w147011-s14702-P1/world.npz": "c65d289981b3e044e2f9901d611b83289a4a6f369550c7c91fc5a08943579339",
+    "results/text-pretrain-v1/confirmation/confirm-w147012-s14701-P1/learning.json": "95c339b12f69519e37c5b16f0dce7326c5575288e306a1faa10bad09ae31a8a6",
+    "results/text-pretrain-v1/confirmation/confirm-w147012-s14701-P1/spec.json": "853a77b539afdca62eee5c12a7302d87903ef9be630aab5e5abc6d172aeaa829",
+    "results/text-pretrain-v1/confirmation/confirm-w147012-s14701-P1/training-table.npz": "c72d93709664a99560d3bb8867ff5a0b770f8fa5a24cc9e4316787359b447814",
+    "results/text-pretrain-v1/confirmation/confirm-w147012-s14701-P1/world.npz": "76db2e8c91c8e2ecb53ff18fff6e17bb361b19715a48f5bbcdbc0b0318dc97e9",
+    "results/text-pretrain-v1/confirmation/confirm-w147012-s14702-P1/learning.json": "8b686d8f88dd23ae067e9659563963daee0bfe446e3dd6399ada306b0abc8260",
+    "results/text-pretrain-v1/confirmation/confirm-w147012-s14702-P1/spec.json": "d0695a588244b73432553a79d5f58ee65453b106f984d5e77428d9d71ea82ff0",
+    "results/text-pretrain-v1/confirmation/confirm-w147012-s14702-P1/training-table.npz": "c72d93709664a99560d3bb8867ff5a0b770f8fa5a24cc9e4316787359b447814",
+    "results/text-pretrain-v1/confirmation/confirm-w147012-s14702-P1/world.npz": "76db2e8c91c8e2ecb53ff18fff6e17bb361b19715a48f5bbcdbc0b0318dc97e9",
+    "results/text-pretrain-v1/confirmation/confirm-w147013-s14701-P1/learning.json": "86379d7489c49104fc3cbfb26c84df2725f117ac9bd369b267e15d79b6485fff",
+    "results/text-pretrain-v1/confirmation/confirm-w147013-s14701-P1/spec.json": "f75dbbf97c11c5d6db2ee59424f11ed161f44448996f01c56f655a14088fa98e",
+    "results/text-pretrain-v1/confirmation/confirm-w147013-s14701-P1/training-table.npz": "e3b8576101a465310821c87ada738e3dac105ea9d11f845c5a4c19030d65591e",
+    "results/text-pretrain-v1/confirmation/confirm-w147013-s14701-P1/world.npz": "5cb78c5ef8d2d1045b56c544584b21b75848373718b22910e1673fd649759f4d",
+    "results/text-pretrain-v1/confirmation/confirm-w147013-s14702-P1/learning.json": "5ca9dc84f45158800b525189b943859fdb22b15da30aee556a69f0fc55f52275",
+    "results/text-pretrain-v1/confirmation/confirm-w147013-s14702-P1/spec.json": "dda15d7a330deea69beda9d220952927956e20bd74c030680ea8c847c623ffe1",
+    "results/text-pretrain-v1/confirmation/confirm-w147013-s14702-P1/training-table.npz": "e3b8576101a465310821c87ada738e3dac105ea9d11f845c5a4c19030d65591e",
+    "results/text-pretrain-v1/confirmation/confirm-w147013-s14702-P1/world.npz": "5cb78c5ef8d2d1045b56c544584b21b75848373718b22910e1673fd649759f4d"
+  },
+  "plan_sha256": "69a20fc1dee441391795222f9227aa9e2d5615c3c5e28dd3dad9f3d20d760748"
+}

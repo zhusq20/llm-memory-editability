@@ -1,0 +1,48 @@
+{
+  "time": 1790483658.201203,
+  "decision": "Triggered conditional12 learning-only context control; existing12unrestricted low-prevalence references",
+  "evidence": {
+    "P0": "Single-step/default composition fails despite97-98% autonomous two-step in larger models",
+    "P1": "Root-only directE100 but heldoutDnear0; actual-onlyunchangeddefaultknown-damage64.73/96.38%; balancedCEdoesnotrepairmostconflicts",
+    "P2": "width256base99.75-99.89 aftersharedtraining, matching allfourblockspositive butexceptionpropagation21.3%; optimization andcontext stillnotseparated",
+    "P3": "Fixedoriginalexception gainsbothworlds, actualknowledgeimproves; crossrelationorganizationbenefit positivebothworlds; overallaccuracycost"
+  },
+  "prespecified_falsifiable_comparisons": [
+    "Same15360budget: organization matching/unmatched effects with vswithout cross-fact attention",
+    "Same-person originalexception direct/two-step gap andactual-answer errors; simultaneouslyreportbaseknowledge/NLL/coverage",
+    "A reducedgap accompanyingpoorknowledge isnot evidence ofselectivepathrepair; residualorgdifferences mayreflectbatch/positions/optimization"
+  ],
+  "no_edits": true,
+  "full_matrix": {
+    "world": [
+      0,
+      1
+    ],
+    "seed": [
+      0,
+      1
+    ],
+    "organization": [
+      "company",
+      "project",
+      "neither"
+    ],
+    "width": 256,
+    "steps": 15360,
+    "models": 12
+  },
+  "sources_sha256": {
+    "src/llm_memory_editability/bios_context_control.py": "9205a7f8d25e0f1311d78c73638b97466f425886e62165166ba104f53050a40d",
+    "scripts/run_bios_context_control.py": "457ddbf510b129a2f14296e85f1705d584f7fb292bb238e9ce5765e5e5c6f47a",
+    "configs/bios-context-control-v1.json": "1f02f861b6d46a533355416acf88441b73d0e0c6a901e80f1d3e410a9de9b3b0"
+  },
+  "audits_sha256": {
+    "results/bios-mechanism-dev-v1/p0/audit.json": "60ccf47b3f1e004cc95542ffe8623503ae56500652585b9aabe209e1dba6a826",
+    "results/bios-mechanism-dev-v1/p1/audit.json": "dba29deda3ad5c300820c33baa9f7a8e26df832a34da3bf31818669f19bd098e",
+    "results/bios-mechanism-dev-v1/p2/audit.json": "d0abe16612440c740e0068d930badec66391887526fd40775916cb4545547867",
+    "results/bios-mechanism-dev-v1/p3-summary/audit.json": "ddb70e154be5da99f3ae643ec3b5845cec1cbe6004a15050e7aeb68a68b3b4c5",
+    "results/bios-mechanism-dev-v1/preflight/context-control-cuda-check-width256.json": "3a75d85ff3f8bd864e21d6cc2e6fd02fcd89c3f00d8941342d565a67e5636f80"
+  },
+  "storage": "LocalNVMe andfullverifieddurablearchiveaftercompletion",
+  "inference_limit": "Two-step onlyat15360; sixsavednodesdirect/baseNLL; noquerylevelconfirmatoryinference"
+}

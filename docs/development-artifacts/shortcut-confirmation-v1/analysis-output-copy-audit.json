@@ -1,0 +1,238 @@
+{
+  "complete": true,
+  "copied_at_utc": "2026-09-27T06:53:29.206281+00:00",
+  "files": 38,
+  "bytes": 15737295,
+  "members": [
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/summary/audit.json",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/summary/audit.json",
+      "sha256": "27a7996d9c0012da080ff7135d1e6111ce34d1b95cef4058563daa9b712534db",
+      "size_bytes": 1921
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/summary/declared-weights.json",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/summary/declared-weights.json",
+      "sha256": "841fb8c84cc97b948dd5e679946cccecc7a1f94c19ebc5e4e5413da273ce7d2f",
+      "size_bytes": 594099
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/summary/editing-all-nodes.csv",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/summary/editing-all-nodes.csv",
+      "sha256": "0049bb902aff4cc2674052c8f86cb9e37f554df86267f92a3c9b001883d79a58",
+      "size_bytes": 2322477
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/summary/editing-endpoint.csv",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/summary/editing-endpoint.csv",
+      "sha256": "e39419cfb989674a4a3ff9e1e0d5cee77bfbf2f38efafe8ad762b01f4c1fffb4",
+      "size_bytes": 665593
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/summary/learning-endpoint.csv",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/summary/learning-endpoint.csv",
+      "sha256": "d6e1473e81325076f03834b95824314dcb77f5edbdaa092767c9878551f3293d",
+      "size_bytes": 12832
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/summary/learning-facts.csv",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/summary/learning-facts.csv",
+      "sha256": "15916fd817b4cfe80457feddf2d6f1f11cb5783731b61bef129ad32adbc1360c",
+      "size_bytes": 696874
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/summary/learning-metrics.csv",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/summary/learning-metrics.csv",
+      "sha256": "16066d562836f4d55b54119d76f943f6c3a53cc1a14e0d01a4a2bcbdffc76e6d",
+      "size_bytes": 155486
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/summary/learning-strata.csv",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/summary/learning-strata.csv",
+      "sha256": "5f50707d33c0df554a09e04ee4420de4c1e381a3d291a287e34cfca5d22256b5",
+      "size_bytes": 2426672
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/summary/sources.json",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/summary/sources.json",
+      "sha256": "b2890f5054fbd733b7582f52927cb97fdfbc9c16956502ed47e6974746638985",
+      "size_bytes": 1689086
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/summary/two-step-strata.csv",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/summary/two-step-strata.csv",
+      "sha256": "61c5c464e844cbcc8ca8b03fd32088292d6297e47d7503ac8bfbcab2c545c5b6",
+      "size_bytes": 424201
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/summary/world-descriptive.csv",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/summary/world-descriptive.csv",
+      "sha256": "b55e1deca5478f6c36e91c990021eb6c251ad038b54d600a539b1198efaf34d5",
+      "size_bytes": 3027
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/statistics/confirmation-statistics.json",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/statistics/confirmation-statistics.json",
+      "sha256": "864424845ed1cdd087dd17ab479021fd5d36c1107ea828c49739af296def3d53",
+      "size_bytes": 172059
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/statistics/paired-cases.csv",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/statistics/paired-cases.csv",
+      "sha256": "b20e0f82731c533d81c8f1ca84d96539774374630c2ffb73a7e898e4ae8f3050",
+      "size_bytes": 39053
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/statistics/report.md",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/statistics/report.md",
+      "sha256": "21f4a3cd5db41ab3edbbd534d57d6bca8fac1635954eb746073fc69997c76864",
+      "size_bytes": 1580
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/statistics/statistics-audit.json",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/statistics/statistics-audit.json",
+      "sha256": "8b9f14249486314acd04d80a707edb7669bc0d149c33ebb4daf1947f3713329b",
+      "size_bytes": 1682
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/statistics/world-effects.csv",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/statistics/world-effects.csv",
+      "sha256": "98d9cdde08c47606c78ea3679fb10b2bc06c1cefbc887bcfe78eddba9bff2b9e",
+      "size_bytes": 2300
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/common-u-report.md",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/common-u-report.md",
+      "sha256": "9842c3dedd62aa4dd05b7837bf9a48a41c7250a16d4447afc7afcf69ad885729",
+      "size_bytes": 11105
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/common-u-world-checks.csv",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/common-u-world-checks.csv",
+      "sha256": "7a386b56e9b1ba34aeec4277e97efb123de493b89d5bb510e212184236e3ff82",
+      "size_bytes": 631978
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/confirmation-common-knowledge-retention.pdf",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/confirmation-common-knowledge-retention.pdf",
+      "sha256": "a494365f0c8072bb5fc07bb7faa0a691760ef8cc91d44a187440a58522f3eac6",
+      "size_bytes": 25154
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/confirmation-common-knowledge-retention.png",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/confirmation-common-knowledge-retention.png",
+      "sha256": "20efc9ff69f166a35fefbd5f7425286bab97733e21f93b96a48c4835954bb6f4",
+      "size_bytes": 558154
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/confirmation-editing-checks.pdf",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/confirmation-editing-checks.pdf",
+      "sha256": "bfb9a57cc5270c39ff2785fc31bfe8fb23c8372742a9219136d3cb47712d3965",
+      "size_bytes": 39789
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/confirmation-editing-checks.png",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/confirmation-editing-checks.png",
+      "sha256": "e9d4f5f05a8219d3c6859d7da3aa8b280f028402fcbbca661c6b8a72251cab75",
+      "size_bytes": 672079
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/confirmation-endpoints.pdf",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/confirmation-endpoints.pdf",
+      "sha256": "43984cf1f4a975fc1e266cc837df60497782810245c2d364c16866c6eb9ff7e5",
+      "size_bytes": 17244
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/confirmation-endpoints.png",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/confirmation-endpoints.png",
+      "sha256": "24e69f0dd6bb2e33d7d2d07ce7db61cc3c67c211408d56c6e5ec36442472f22d",
+      "size_bytes": 201777
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/confirmation-learning-checks.pdf",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/confirmation-learning-checks.pdf",
+      "sha256": "fd9f337b539a0b9ce0e27173179e141ba3aba2fdf5e5f158f01684dbac35dc46",
+      "size_bytes": 28438
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/confirmation-learning-checks.png",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/confirmation-learning-checks.png",
+      "sha256": "1b3df05ff54b367ba41ff7f9a5503c0221c2f8bb40d05577332d1395842133db",
+      "size_bytes": 719346
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/confirmation-organization-interactions.pdf",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/confirmation-organization-interactions.pdf",
+      "sha256": "44b34eba20c941ad1aaff8967fd944505f84452dd18ee382c1dc9192cd3faca3",
+      "size_bytes": 33517
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/confirmation-organization-interactions.png",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/confirmation-organization-interactions.png",
+      "sha256": "aacd121f44a25d2ba2c8623ed541f530ccba71ae715afb432e9174ea6953cf43",
+      "size_bytes": 1222340
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/descriptive-world-checks.csv",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/descriptive-world-checks.csv",
+      "sha256": "4dd00d1362272405a170ed64971bf99546889b4bb696030fda4fee9ea9ed74fd",
+      "size_bytes": 119232
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/organization-report.md",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/organization-report.md",
+      "sha256": "7e86a7cf0ab7ded9791277cdd6c86e8a0716987f1fb695ac33c0b6b81560d486",
+      "size_bytes": 40244
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/organization-world-checks.csv",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/organization-world-checks.csv",
+      "sha256": "d3a93ba78d3bd27bd972fc772ee3287e72db3d530c1e554c9b4b53c64286fd07",
+      "size_bytes": 73162
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/report-audit.json",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/report-audit.json",
+      "sha256": "ed7b3d27c29709171cb676aadcc484ebcbd638d2cc677ff16107b6d44d81cf29",
+      "size_bytes": 4925
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/report/report.md",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/report/report.md",
+      "sha256": "705d423c1ff41aacd7cd23c8aa70c4fa341718d722c0570ff151aeaf60ea75d4",
+      "size_bytes": 9135
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/execution-start.json",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/execution-start.json",
+      "sha256": "4be221f783697192fc5f091ceb08623e989839776c7dc7449be6d5379c2f9ab4",
+      "size_bytes": 680
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/execution-completion.json",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/execution-completion.json",
+      "sha256": "6395fdd58b7d62bdd91f3ad9f753f37759885f65ec2f9f59ca59241302d04b42",
+      "size_bytes": 421
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/archive-analysis-gate.json",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/archive-analysis-gate.json",
+      "sha256": "be7c768c160f7ffb6e7cbe820035f29c65ece30242ac6ff2278b211622f233c2",
+      "size_bytes": 879
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/archive-storage-recovery.json",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/archive-storage-recovery.json",
+      "sha256": "14964cac60aeb302eca93c3949d4e6a7c4d46f53e5495a3a7fd8aa881c243bb3",
+      "size_bytes": 1076
+    },
+    {
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-shortcut-confirmation-v1/verified-analysis-archive.tar.json",
+      "destination": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/shortcut-confirmation-v1/verified-analysis-archive.tar.json",
+      "sha256": "9b729f8dcc1bd18ca18974d473772e2788bc359b3278210e8486ff7baf0a4997",
+      "size_bytes": 2117678
+    }
+  ],
+  "independently_verified_archive_index_sha256": "9b729f8dcc1bd18ca18974d473772e2788bc359b3278210e8486ff7baf0a4997",
+  "storage_scope": "Analysis uses independently verified RAM archive; copied recovery/gate records preserve their current NFS verification status. No claim of verified NFS raw archive."
+}

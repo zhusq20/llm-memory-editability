@@ -1,0 +1,22 @@
+{
+  "E_dev": {
+    "available": 333,
+    "requested": 16
+  },
+  "E_confirm": {
+    "available": 474,
+    "requested": 32
+  },
+  "R": {
+    "available": 193,
+    "requested": 64
+  },
+  "V": {
+    "available": 230,
+    "requested": 64
+  },
+  "U": {
+    "available": 413,
+    "requested": 128
+  }
+}

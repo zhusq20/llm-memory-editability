@@ -1,0 +1,34 @@
+[
+  {
+    "phase": "direction-v1",
+    "input_files_verified": 7
+  },
+  {
+    "phase": "direction-cross-v1",
+    "input_files_verified": 12
+  },
+  {
+    "phase": "direction-formation-v1",
+    "input_files_verified": 5
+  },
+  {
+    "phase": "direction-confirm-v1",
+    "input_files_verified": 7
+  },
+  {
+    "phase": "direction-causal-v1",
+    "input_files_verified": 6
+  },
+  {
+    "phase": "direction-routing-v1",
+    "input_files_verified": 3
+  },
+  {
+    "phase": "direction-supplement-v1",
+    "input_files_verified": 3
+  },
+  {
+    "phase": "direction-refresh-v1",
+    "input_files_verified": 5
+  }
+]

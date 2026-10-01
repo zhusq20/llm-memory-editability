@@ -1,0 +1,5 @@
+cell,n,E,D,D_heldout,D_heldout_n,E_local,E_local_D,autonomous,actual_answer,U_broken,U_known
+aa,24,24,20,167,384,16,14,24,20,460,3568
+ab,24,24,3,63,384,21,3,24,15,397,3568
+ba,24,24,2,85,384,16,2,24,15,398,3568
+bb,24,24,20,192,384,20,17,24,20,458,3568

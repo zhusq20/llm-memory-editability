@@ -1,0 +1,24 @@
+{
+  "complete": true,
+  "status": "audited",
+  "models": 48,
+  "edit_cases": 384,
+  "analysis": "Descriptive answer matching; no internal-route causal claim.",
+  "aggregate": "Model/chain/edit cases equal weighted; pooled error fractions also labelled.",
+  "inputs": {
+    "learning-strata.csv": "9cd6759d459962fe92964ce38f7113fbfcc5f692a479a15ff70911027051f73a",
+    "editing-strata.csv": "b1f20e2277f15107d835e576eb0d9f702a2034bb32a0e1092a4bcf51cc112539",
+    "propagation-queries.csv": "a49c646f3a41bf5eda42ba3cb0ad6cede82ed039933bbad68869ca03f50279c2",
+    "audit.json": "60ccf47b3f1e004cc95542ffe8623503ae56500652585b9aabe209e1dba6a826",
+    "sources.json": "5c2dbdbd94ff0fb90349c7c23edc8c10b48d312f91fdbb322e719755c35215ea"
+  },
+  "sources_hashes": {
+    "learning-strata.csv": "9cd6759d459962fe92964ce38f7113fbfcc5f692a479a15ff70911027051f73a",
+    "editing-strata.csv": "b1f20e2277f15107d835e576eb0d9f702a2034bb32a0e1092a4bcf51cc112539",
+    "propagation-queries.csv": "a49c646f3a41bf5eda42ba3cb0ad6cede82ed039933bbad68869ca03f50279c2",
+    "audit.json": "60ccf47b3f1e004cc95542ffe8623503ae56500652585b9aabe209e1dba6a826",
+    "sources.json": "5c2dbdbd94ff0fb90349c7c23edc8c10b48d312f91fdbb322e719755c35215ea"
+  },
+  "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p0",
+  "script_sha256": "7053a87d4ccb3d0b745ccc62f8caf16b27a3fcfc527b09e049ee304751034174"
+}

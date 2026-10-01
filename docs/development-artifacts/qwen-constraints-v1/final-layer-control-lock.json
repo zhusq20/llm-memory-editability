@@ -1,0 +1,14 @@
+{
+  "time": "2026-09-29T01:00:42.925194+00:00",
+  "scope": "After the original six jobs, before measuring the final-layer controls",
+  "jobs": [
+    "layer-27-qa",
+    "layer-27-plain"
+  ],
+  "parent_lock_sha256": "94393dd38c4e39fe962aba40ca36ab5293e6bdb06baeed3661a3a24c79dd823d",
+  "unchanged_runner_sha256": "964ee73ed5dcc4a9f4dabb1573003d350f06ee6a99451e11f576faf5e68368e8",
+  "plan_sha256": "497a1b453d589dd051e9af0ce9d70c6f854b72e5aaea572b97a8ae0778975241",
+  "prediction": "Earlier-position changes in the final MLP have zero effect on the final-position next-token output; last equals all.",
+  "interventions": 792,
+  "protocol": "Plan section 14.14; original cases, conditions, thresholds and budgets unchanged"
+}

@@ -1,0 +1,43 @@
+{
+  "cases": [
+    {
+      "dataset": "mquake",
+      "id": "609"
+    },
+    {
+      "dataset": "mquake",
+      "id": "1085"
+    },
+    {
+      "dataset": "mquake",
+      "id": "69"
+    },
+    {
+      "dataset": "mquake",
+      "id": "112"
+    },
+    {
+      "dataset": "2wiki",
+      "id": "681d4fcc0bde11eba7f7acde48001122"
+    },
+    {
+      "dataset": "2wiki",
+      "id": "f481a5960bdc11eba7f7acde48001122"
+    },
+    {
+      "dataset": "2wiki",
+      "id": "22457b2c0bda11eba7f7acde48001122"
+    },
+    {
+      "dataset": "2wiki",
+      "id": "7f64d7820bdd11eba7f7acde48001122"
+    }
+  ],
+  "dtype": "float32",
+  "device": "cuda:2",
+  "tail_full_score_max_difference": 2.288818359375e-05,
+  "weight_note": "BF16 weights promoted to FP32; computation changes, no training.",
+  "selection": "First four evaluation mechanism cases per dataset; no outcome filter.",
+  "runner_sha256": "510594505df0f375d4d7f1ff5a8f71176141de0687cd07e6d8b27268759e1a60",
+  "script_sha256": "e82611e0e5b7eaddfb5d2005a9c69548e5660dc689d712beb84be2d4179bc7f9"
+}

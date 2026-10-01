@@ -1,0 +1,32 @@
+{
+  "experiment": "memory-reuse-v1",
+  "phase": "development",
+  "plan": "docs/development-artifacts/memory-reuse-v1/development-plan.md",
+  "lock": "docs/development-artifacts/memory-reuse-v1/development/lock.json",
+  "output_root": "results/memory-reuse-v1/development",
+  "worlds": [149001],
+  "initializations": [14901],
+  "arms": ["ce", "aligned"],
+  "spec": {
+    "num_entities": 128,
+    "d_model": 64,
+    "hidden_dim": 256,
+    "junk_vocab_size": 9,
+    "junk_length": 18,
+    "reader_steps": 4000,
+    "memory_steps": 10000,
+    "memory_lr": 0.001,
+    "memory_min_lr": 0.000001,
+    "alignment_weight": 10.0,
+    "reader_lr": 0.0002,
+    "reader_weight_decay": 0.1,
+    "readout_scale": 20.0,
+    "train_head_fraction": 0.75,
+    "eval_repeats": 8,
+    "memory_nodes": [0, 100, 500, 1000, 2000, 4000, 6000, 8000, 10000],
+    "reader_nodes": [0, 100, 500, 1000, 2000, 3000, 4000],
+    "cpu_threads": 1,
+    "source_path": "data/hebbian-interface-v1/source",
+    "source_commit": "41443978d2261f30a9749fe7a286c95be08b331e"
+  }
+}

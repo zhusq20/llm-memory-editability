@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-09-27T07:19:27.440243+00:00",
+  "config": {
+    "protocol": "v2.11-development-context-gradient",
+    "worlds": [
+      0,
+      1
+    ],
+    "seeds": [
+      0,
+      1
+    ],
+    "conditions": [
+      "company",
+      "project",
+      "neither"
+    ],
+    "masks": [
+      "open",
+      "isolated"
+    ],
+    "states": [
+      0,
+      32,
+      128
+    ],
+    "width": 256,
+    "layers": 8,
+    "heads": 4,
+    "context": 128,
+    "rotations": 10,
+    "measurement_batch": 128,
+    "training_batch": 16,
+    "qa_per_chain": 20,
+    "lr": 0.0001,
+    "weight_decay": 0.1,
+    "warmup_epochs": 16,
+    "clip_norm": 1.0,
+    "document_weight": 0.8,
+    "qa_weight": 0.2,
+    "shuffle_seed": 317041,
+    "precision": "FP32 training and diagnostics; TF32 disabled; FP64 gradient accumulation",
+    "reference_trajectory": "one neither trajectory per world/seed; all conditions evaluated at identical weights",
+    "predictors": [
+      "position",
+      "token",
+      "shuffled"
+    ],
+    "target_parameter": "blocks.0.attention.proj.weight",
+    "primary": "step 0, open mask, answer gradients, company-minus-neither and project-minus-neither cosine with position predictor; all four world/seed blocks",
+    "secondary": "states 32/128, token-only and shuffled predictors, EOS and combined objectives, company-minus-project, module gradient norms, isolated attention control",
+    "scale_fitting": false,
+    "inference": "descriptive development diagnostic; no significance tests; queries/parameters/seeds are not independent worlds",
+    "source_world_root": "data/bios-organization-v1",
+    "output": "results/bios-context-gradient-v1",
+    "artifacts": "docs/development-artifacts/context-gradient-v1"
+  },
+  "sources": {
+    "src/llm_memory_editability/bios_context_gradient.py": "8376dec9883b1d2c3ef06e5e04ad01fec6a1b9eceaa5cd74db02a79629bc536f",
+    "src/llm_memory_editability/bios_cross.py": "47b8f55adbe13d9bc6e1c5c9170cc95e382261ffb1f31980706ac95be03623bf",
+    "src/llm_memory_editability/bios_cross_train.py": "0106cae29be447319be2e7f6f0e1f5b60cc6224282331906f43ebc65ab795f38",
+    "src/llm_memory_editability/bios_data.py": "d5568901f2042a6d89d447f47eddae9764eced0a9e71e3ea5adc0038a7e636d6",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "src/llm_memory_editability/bios_train.py": "c1d84d38aa1853815075041535ae3fa9890f5cf1f9f5d9019136c79521033046",
+    "src/llm_memory_editability/bios_organization_train.py": "833426232b693495711e38101553e8bff370c837c722d76e7f9f5f2d2ed3cad6",
+    "src/llm_memory_editability/bios_organization.py": "42f714473695da4c8543f666fd15a7eab7cef1e571429b25f81818b5505bd9d5",
+    "scripts/run_bios_context_gradient.py": "48f58a36a228b23059d7339eeb6bdf8bc18ccd35f5a53dbee9a28ce04f0d5737",
+    "tests/test_bios_context_gradient.py": "5db05111d414326302e9b6554a5b3c9c89c64455d04959fdd1e9e397394b5e26",
+    "configs/bios-context-gradient-v1.json": "d589986b884641a13bc192662f671ecd2011d7fe2ed983c5430916f5fafccd35",
+    "data/bios-organization-v1/world-0/world.npz": "fc617752fbcca698a9e19f414185dc13fea69480788edda7fdf7d64a1b98964f",
+    "data/bios-organization-v1/world-0/metadata.json": "9a9af83798afa4833c60239b6d550ca3660e04b9ffef71f97910c171d927107b",
+    "data/bios-organization-v1/world-0/audit.json": "65965ca36c90eee6699f5556fb3cedf01928e60cd60e2cc5ac23e5983a1333b1",
+    "data/bios-organization-v1/world-1/world.npz": "3b23c7a05c2f64057269b7998a7c1b3578ee0e05d257394515923ed60a4d858c",
+    "data/bios-organization-v1/world-1/metadata.json": "c4cd1fba9f62737e65e66981d415ed96d047336508dc218ffb7059f69e4c3ed3",
+    "data/bios-organization-v1/world-1/audit.json": "66db12629d8ebe1e8f60d77ad9a5eed0dcb304d86f1ea9562ed17824d1a38f66"
+  },
+  "protocol_sha256": "85b7044ef8b8f8774f4a68906fb46d27669bdaf0a3dc1df31d60050a1e835d99",
+  "torch": "2.11.0+cu130",
+  "numpy": "1.26.4",
+  "python": "3.13.9"
+}

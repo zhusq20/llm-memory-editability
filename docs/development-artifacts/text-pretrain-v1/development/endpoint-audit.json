@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "runs": 3,
+  "raw_scoring_rows": 72576,
+  "audits": [
+    {
+      "run": "development-P0",
+      "raw_scoring_rows": 24192,
+      "endpoint_reload_max_probability_error": 0.0,
+      "exposures": [
+        {
+          "group": 0,
+          "rows": 640,
+          "total": 1024000,
+          "minimum": 1600,
+          "maximum": 1600
+        },
+        {
+          "group": 1,
+          "rows": 830,
+          "total": 1024000,
+          "minimum": 1233,
+          "maximum": 1234
+        },
+        {
+          "group": 2,
+          "rows": 817,
+          "total": 2048000,
+          "minimum": 2506,
+          "maximum": 2507
+        }
+      ],
+      "checkpoint_sha256": "0fe35796980fa4b3e636d4a7fac1b6bc9783a961c93cbbecffb9c689d635ae20"
+    },
+    {
+      "run": "development-P1",
+      "raw_scoring_rows": 24192,
+      "endpoint_reload_max_probability_error": 0.0,
+      "exposures": [
+        {
+          "group": 0,
+          "rows": 640,
+          "total": 1024000,
+          "minimum": 1600,
+          "maximum": 1600
+        },
+        {
+          "group": 1,
+          "rows": 830,
+          "total": 1024000,
+          "minimum": 1233,
+          "maximum": 1234
+        },
+        {
+          "group": 2,
+          "rows": 817,
+          "total": 2048000,
+          "minimum": 2506,
+          "maximum": 2507
+        }
+      ],
+      "checkpoint_sha256": "46821757660b55a5fe4736f7966d0f45f2c0e40b4de3f923e7e559285f900e64"
+    },
+    {
+      "run": "development-P2",
+      "raw_scoring_rows": 24192,
+      "endpoint_reload_max_probability_error": 0.0,
+      "exposures": [
+        {
+          "group": 0,
+          "rows": 640,
+          "total": 1024000,
+          "minimum": 1600,
+          "maximum": 1600
+        },
+        {
+          "group": 1,
+          "rows": 830,
+          "total": 1024000,
+          "minimum": 1233,
+          "maximum": 1234
+        },
+        {
+          "group": 2,
+          "rows": 817,
+          "total": 2048000,
+          "minimum": 2506,
+          "maximum": 2507
+        }
+      ],
+      "checkpoint_sha256": "4a8efb4057da9864f8c26acf25703f78367f74fd9240e82522526b200a7d6c1a"
+    }
+  ],
+  "sources": {
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/audit_text_pretrain.py": "faad2365a2c5e316765bd3b11fef0e2c311a1c59e61fc6ed51aa5b3c794859b9"
+  }
+}

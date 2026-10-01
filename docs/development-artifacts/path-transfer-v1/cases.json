@@ -1,0 +1,1454 @@
+{
+  "0": {
+    "truth_sha256": "302a0dcf86e26e737bcd4c93a119df552cf19465f2a7df14b8a20219710ee8f2",
+    "prompts_sha256": "eca809b23cafb682a67b684de215c4358bf3f6385175781c764927fa5eeb4301",
+    "cases": [
+      {
+        "name": "chain-0-group-29-root",
+        "chain": 0,
+        "group": 29,
+        "kind": "root",
+        "person": 47,
+        "other_person": 101,
+        "ids": [
+          2077,
+          16559,
+          16613,
+          2159,
+          14511,
+          2112
+        ],
+        "targets": [
+          4011,
+          4011,
+          4011,
+          4011,
+          2336,
+          2522
+        ],
+        "old_targets": [
+          1662,
+          1662,
+          1662,
+          1662,
+          2336,
+          2522
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-29-coherent",
+        "chain": 0,
+        "group": 29,
+        "kind": "coherent",
+        "person": 47,
+        "other_person": 101,
+        "ids": [
+          2159,
+          16559,
+          16613,
+          2077,
+          14511,
+          2112
+        ],
+        "targets": [
+          4011,
+          4011,
+          4011,
+          4011,
+          2336,
+          2522
+        ],
+        "old_targets": [
+          1662,
+          1662,
+          1662,
+          1662,
+          2336,
+          2522
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-29-conflict",
+        "chain": 0,
+        "group": 29,
+        "kind": "conflict",
+        "person": 47,
+        "other_person": 101,
+        "ids": [
+          2159,
+          16559,
+          16613,
+          2077,
+          14511,
+          2112
+        ],
+        "targets": [
+          4469,
+          4011,
+          4011,
+          4011,
+          2336,
+          2522
+        ],
+        "old_targets": [
+          1662,
+          1662,
+          1662,
+          1662,
+          2336,
+          2522
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-21-root",
+        "chain": 0,
+        "group": 21,
+        "kind": "root",
+        "person": 28,
+        "other_person": 469,
+        "ids": [
+          2069,
+          16540,
+          16981,
+          2140,
+          14492,
+          2112
+        ],
+        "targets": [
+          4469,
+          4469,
+          4469,
+          4469,
+          1652,
+          2522
+        ],
+        "old_targets": [
+          4011,
+          4011,
+          4011,
+          4011,
+          1652,
+          2522
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-21-coherent",
+        "chain": 0,
+        "group": 21,
+        "kind": "coherent",
+        "person": 28,
+        "other_person": 469,
+        "ids": [
+          2140,
+          16540,
+          16981,
+          2069,
+          14492,
+          2112
+        ],
+        "targets": [
+          4469,
+          4469,
+          4469,
+          4469,
+          1652,
+          2522
+        ],
+        "old_targets": [
+          4011,
+          4011,
+          4011,
+          4011,
+          1652,
+          2522
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-21-conflict",
+        "chain": 0,
+        "group": 21,
+        "kind": "conflict",
+        "person": 28,
+        "other_person": 469,
+        "ids": [
+          2140,
+          16540,
+          16981,
+          2069,
+          14492,
+          2112
+        ],
+        "targets": [
+          1662,
+          4469,
+          4469,
+          4469,
+          1652,
+          2522
+        ],
+        "old_targets": [
+          4011,
+          4011,
+          4011,
+          4011,
+          1652,
+          2522
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-13-root",
+        "chain": 0,
+        "group": 13,
+        "kind": "root",
+        "person": 108,
+        "other_person": 160,
+        "ids": [
+          2061,
+          16620,
+          16672,
+          2220,
+          14572,
+          2112
+        ],
+        "targets": [
+          1662,
+          1662,
+          1662,
+          1662,
+          4469,
+          2522
+        ],
+        "old_targets": [
+          4469,
+          4469,
+          4469,
+          4469,
+          4469,
+          2522
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-13-coherent",
+        "chain": 0,
+        "group": 13,
+        "kind": "coherent",
+        "person": 108,
+        "other_person": 160,
+        "ids": [
+          2220,
+          16620,
+          16672,
+          2061,
+          14572,
+          2112
+        ],
+        "targets": [
+          1662,
+          1662,
+          1662,
+          1662,
+          4469,
+          2522
+        ],
+        "old_targets": [
+          4469,
+          4469,
+          4469,
+          4469,
+          4469,
+          2522
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-13-conflict",
+        "chain": 0,
+        "group": 13,
+        "kind": "conflict",
+        "person": 108,
+        "other_person": 160,
+        "ids": [
+          2220,
+          16620,
+          16672,
+          2061,
+          14572,
+          2112
+        ],
+        "targets": [
+          4011,
+          1662,
+          1662,
+          1662,
+          4469,
+          2522
+        ],
+        "old_targets": [
+          4469,
+          4469,
+          4469,
+          4469,
+          4469,
+          2522
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-13-root",
+        "chain": 1,
+        "group": 13,
+        "kind": "root",
+        "person": 60,
+        "other_person": 317,
+        "ids": [
+          14413,
+          18620,
+          18877,
+          14524,
+          2172,
+          14464
+        ],
+        "targets": [
+          1830,
+          1830,
+          1830,
+          1830,
+          4363,
+          3659
+        ],
+        "old_targets": [
+          3811,
+          3811,
+          3811,
+          3811,
+          4363,
+          3659
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-13-coherent",
+        "chain": 1,
+        "group": 13,
+        "kind": "coherent",
+        "person": 60,
+        "other_person": 317,
+        "ids": [
+          14524,
+          18620,
+          18877,
+          14413,
+          2172,
+          14464
+        ],
+        "targets": [
+          1830,
+          1830,
+          1830,
+          1830,
+          4363,
+          3659
+        ],
+        "old_targets": [
+          3811,
+          3811,
+          3811,
+          3811,
+          4363,
+          3659
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-13-conflict",
+        "chain": 1,
+        "group": 13,
+        "kind": "conflict",
+        "person": 60,
+        "other_person": 317,
+        "ids": [
+          14524,
+          18620,
+          18877,
+          14413,
+          2172,
+          14464
+        ],
+        "targets": [
+          157,
+          1830,
+          1830,
+          1830,
+          4363,
+          3659
+        ],
+        "old_targets": [
+          3811,
+          3811,
+          3811,
+          3811,
+          4363,
+          3659
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-8-root",
+        "chain": 1,
+        "group": 8,
+        "kind": "root",
+        "person": 177,
+        "other_person": 491,
+        "ids": [
+          14408,
+          18737,
+          19051,
+          14641,
+          2289,
+          14464
+        ],
+        "targets": [
+          157,
+          157,
+          157,
+          157,
+          688,
+          3659
+        ],
+        "old_targets": [
+          1830,
+          1830,
+          1830,
+          1830,
+          688,
+          3659
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-8-coherent",
+        "chain": 1,
+        "group": 8,
+        "kind": "coherent",
+        "person": 177,
+        "other_person": 491,
+        "ids": [
+          14641,
+          18737,
+          19051,
+          14408,
+          2289,
+          14464
+        ],
+        "targets": [
+          157,
+          157,
+          157,
+          157,
+          688,
+          3659
+        ],
+        "old_targets": [
+          1830,
+          1830,
+          1830,
+          1830,
+          688,
+          3659
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-8-conflict",
+        "chain": 1,
+        "group": 8,
+        "kind": "conflict",
+        "person": 177,
+        "other_person": 491,
+        "ids": [
+          14641,
+          18737,
+          19051,
+          14408,
+          2289,
+          14464
+        ],
+        "targets": [
+          3811,
+          157,
+          157,
+          157,
+          688,
+          3659
+        ],
+        "old_targets": [
+          1830,
+          1830,
+          1830,
+          1830,
+          688,
+          3659
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-1-root",
+        "chain": 1,
+        "group": 1,
+        "kind": "root",
+        "person": 134,
+        "other_person": 213,
+        "ids": [
+          14401,
+          18694,
+          18773,
+          14598,
+          2246,
+          14464
+        ],
+        "targets": [
+          3811,
+          3811,
+          3811,
+          3811,
+          2327,
+          3659
+        ],
+        "old_targets": [
+          157,
+          157,
+          157,
+          157,
+          2327,
+          3659
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-1-coherent",
+        "chain": 1,
+        "group": 1,
+        "kind": "coherent",
+        "person": 134,
+        "other_person": 213,
+        "ids": [
+          14598,
+          18694,
+          18773,
+          14401,
+          2246,
+          14464
+        ],
+        "targets": [
+          3811,
+          3811,
+          3811,
+          3811,
+          2327,
+          3659
+        ],
+        "old_targets": [
+          157,
+          157,
+          157,
+          157,
+          2327,
+          3659
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-1-conflict",
+        "chain": 1,
+        "group": 1,
+        "kind": "conflict",
+        "person": 134,
+        "other_person": 213,
+        "ids": [
+          14598,
+          18694,
+          18773,
+          14401,
+          2246,
+          14464
+        ],
+        "targets": [
+          1830,
+          3811,
+          3811,
+          3811,
+          2327,
+          3659
+        ],
+        "old_targets": [
+          157,
+          157,
+          157,
+          157,
+          2327,
+          3659
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      }
+    ]
+  },
+  "1": {
+    "truth_sha256": "bc54933db471034f1617e1bae99b8c135e92d99eb9ea860b50eeba41aa1b3467",
+    "prompts_sha256": "c1fa6ff42b5ecc0ffe6c2a379c6d9a1cb1a795e3bc0845385f1f210db4c8fe87",
+    "cases": [
+      {
+        "name": "chain-0-group-12-root",
+        "chain": 0,
+        "group": 12,
+        "kind": "root",
+        "person": 332,
+        "other_person": 22,
+        "ids": [
+          2060,
+          16844,
+          16534,
+          2444,
+          14796,
+          2112
+        ],
+        "targets": [
+          1243,
+          1243,
+          1243,
+          1243,
+          1027,
+          4028
+        ],
+        "old_targets": [
+          4644,
+          4644,
+          4644,
+          4644,
+          1027,
+          4028
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-12-coherent",
+        "chain": 0,
+        "group": 12,
+        "kind": "coherent",
+        "person": 332,
+        "other_person": 22,
+        "ids": [
+          2444,
+          16844,
+          16534,
+          2060,
+          14796,
+          2112
+        ],
+        "targets": [
+          1243,
+          1243,
+          1243,
+          1243,
+          1027,
+          4028
+        ],
+        "old_targets": [
+          4644,
+          4644,
+          4644,
+          4644,
+          1027,
+          4028
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-12-conflict",
+        "chain": 0,
+        "group": 12,
+        "kind": "conflict",
+        "person": 332,
+        "other_person": 22,
+        "ids": [
+          2444,
+          16844,
+          16534,
+          2060,
+          14796,
+          2112
+        ],
+        "targets": [
+          2837,
+          1243,
+          1243,
+          1243,
+          1027,
+          4028
+        ],
+        "old_targets": [
+          4644,
+          4644,
+          4644,
+          4644,
+          1027,
+          4028
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-57-root",
+        "chain": 0,
+        "group": 57,
+        "kind": "root",
+        "person": 745,
+        "other_person": 249,
+        "ids": [
+          2105,
+          17257,
+          16761,
+          2857,
+          15209,
+          2112
+        ],
+        "targets": [
+          2837,
+          2837,
+          2837,
+          2837,
+          3824,
+          4028
+        ],
+        "old_targets": [
+          1243,
+          1243,
+          1243,
+          1243,
+          3824,
+          4028
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-57-coherent",
+        "chain": 0,
+        "group": 57,
+        "kind": "coherent",
+        "person": 745,
+        "other_person": 249,
+        "ids": [
+          2857,
+          17257,
+          16761,
+          2105,
+          15209,
+          2112
+        ],
+        "targets": [
+          2837,
+          2837,
+          2837,
+          2837,
+          3824,
+          4028
+        ],
+        "old_targets": [
+          1243,
+          1243,
+          1243,
+          1243,
+          3824,
+          4028
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-57-conflict",
+        "chain": 0,
+        "group": 57,
+        "kind": "conflict",
+        "person": 745,
+        "other_person": 249,
+        "ids": [
+          2857,
+          17257,
+          16761,
+          2105,
+          15209,
+          2112
+        ],
+        "targets": [
+          4644,
+          2837,
+          2837,
+          2837,
+          3824,
+          4028
+        ],
+        "old_targets": [
+          1243,
+          1243,
+          1243,
+          1243,
+          3824,
+          4028
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-30-root",
+        "chain": 0,
+        "group": 30,
+        "kind": "root",
+        "person": 196,
+        "other_person": 345,
+        "ids": [
+          2078,
+          16708,
+          16857,
+          2308,
+          14660,
+          2112
+        ],
+        "targets": [
+          4644,
+          4644,
+          4644,
+          4644,
+          2837,
+          4028
+        ],
+        "old_targets": [
+          2837,
+          2837,
+          2837,
+          2837,
+          2837,
+          4028
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-30-coherent",
+        "chain": 0,
+        "group": 30,
+        "kind": "coherent",
+        "person": 196,
+        "other_person": 345,
+        "ids": [
+          2308,
+          16708,
+          16857,
+          2078,
+          14660,
+          2112
+        ],
+        "targets": [
+          4644,
+          4644,
+          4644,
+          4644,
+          2837,
+          4028
+        ],
+        "old_targets": [
+          2837,
+          2837,
+          2837,
+          2837,
+          2837,
+          4028
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-0-group-30-conflict",
+        "chain": 0,
+        "group": 30,
+        "kind": "conflict",
+        "person": 196,
+        "other_person": 345,
+        "ids": [
+          2308,
+          16708,
+          16857,
+          2078,
+          14660,
+          2112
+        ],
+        "targets": [
+          1243,
+          4644,
+          4644,
+          4644,
+          2837,
+          4028
+        ],
+        "old_targets": [
+          2837,
+          2837,
+          2837,
+          2837,
+          2837,
+          4028
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-11-root",
+        "chain": 1,
+        "group": 11,
+        "kind": "root",
+        "person": 456,
+        "other_person": 208,
+        "ids": [
+          14411,
+          19016,
+          18768,
+          14920,
+          2568,
+          14464
+        ],
+        "targets": [
+          2724,
+          2724,
+          2724,
+          2724,
+          3824,
+          1494
+        ],
+        "old_targets": [
+          2076,
+          2076,
+          2076,
+          2076,
+          3824,
+          1494
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-11-coherent",
+        "chain": 1,
+        "group": 11,
+        "kind": "coherent",
+        "person": 456,
+        "other_person": 208,
+        "ids": [
+          14920,
+          19016,
+          18768,
+          14411,
+          2568,
+          14464
+        ],
+        "targets": [
+          2724,
+          2724,
+          2724,
+          2724,
+          3824,
+          1494
+        ],
+        "old_targets": [
+          2076,
+          2076,
+          2076,
+          2076,
+          3824,
+          1494
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-11-conflict",
+        "chain": 1,
+        "group": 11,
+        "kind": "conflict",
+        "person": 456,
+        "other_person": 208,
+        "ids": [
+          14920,
+          19016,
+          18768,
+          14411,
+          2568,
+          14464
+        ],
+        "targets": [
+          3248,
+          2724,
+          2724,
+          2724,
+          3824,
+          1494
+        ],
+        "old_targets": [
+          2076,
+          2076,
+          2076,
+          2076,
+          3824,
+          1494
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-44-root",
+        "chain": 1,
+        "group": 44,
+        "kind": "root",
+        "person": 127,
+        "other_person": 25,
+        "ids": [
+          14444,
+          18687,
+          18585,
+          14591,
+          2239,
+          14464
+        ],
+        "targets": [
+          3248,
+          3248,
+          3248,
+          3248,
+          4644,
+          1494
+        ],
+        "old_targets": [
+          2724,
+          2724,
+          2724,
+          2724,
+          4644,
+          1494
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-44-coherent",
+        "chain": 1,
+        "group": 44,
+        "kind": "coherent",
+        "person": 127,
+        "other_person": 25,
+        "ids": [
+          14591,
+          18687,
+          18585,
+          14444,
+          2239,
+          14464
+        ],
+        "targets": [
+          3248,
+          3248,
+          3248,
+          3248,
+          4644,
+          1494
+        ],
+        "old_targets": [
+          2724,
+          2724,
+          2724,
+          2724,
+          4644,
+          1494
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-44-conflict",
+        "chain": 1,
+        "group": 44,
+        "kind": "conflict",
+        "person": 127,
+        "other_person": 25,
+        "ids": [
+          14591,
+          18687,
+          18585,
+          14444,
+          2239,
+          14464
+        ],
+        "targets": [
+          2076,
+          3248,
+          3248,
+          3248,
+          4644,
+          1494
+        ],
+        "old_targets": [
+          2724,
+          2724,
+          2724,
+          2724,
+          4644,
+          1494
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-35-root",
+        "chain": 1,
+        "group": 35,
+        "kind": "root",
+        "person": 227,
+        "other_person": 250,
+        "ids": [
+          14435,
+          18787,
+          18810,
+          14691,
+          2339,
+          14464
+        ],
+        "targets": [
+          2076,
+          2076,
+          2076,
+          2076,
+          818,
+          1494
+        ],
+        "old_targets": [
+          3248,
+          3248,
+          3248,
+          3248,
+          818,
+          1494
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-35-coherent",
+        "chain": 1,
+        "group": 35,
+        "kind": "coherent",
+        "person": 227,
+        "other_person": 250,
+        "ids": [
+          14691,
+          18787,
+          18810,
+          14435,
+          2339,
+          14464
+        ],
+        "targets": [
+          2076,
+          2076,
+          2076,
+          2076,
+          818,
+          1494
+        ],
+        "old_targets": [
+          3248,
+          3248,
+          3248,
+          3248,
+          818,
+          1494
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      },
+      {
+        "name": "chain-1-group-35-conflict",
+        "chain": 1,
+        "group": 35,
+        "kind": "conflict",
+        "person": 227,
+        "other_person": 250,
+        "ids": [
+          14691,
+          18787,
+          18810,
+          14435,
+          2339,
+          14464
+        ],
+        "targets": [
+          2724,
+          2076,
+          2076,
+          2076,
+          818,
+          1494
+        ],
+        "old_targets": [
+          3248,
+          3248,
+          3248,
+          3248,
+          818,
+          1494
+        ],
+        "roles": [
+          "source",
+          "derived_same",
+          "derived_other",
+          "associated",
+          "retention_local",
+          "retention_distant"
+        ]
+      }
+    ]
+  }
+}

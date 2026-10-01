@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "learning_runs": 96,
+  "editing_cases": 768,
+  "complete_parent_tasks": 96,
+  "failed_parent_tasks": 0,
+  "finished_at_utc": "2026-09-27T05:56:06.275170+00:00",
+  "wall_seconds": 2476.9825422763824,
+  "parameters_min": 7578368,
+  "parameters_max": 7582720,
+  "independent_worlds": 8,
+  "scientific_result_status": "Awaiting full archive and score audit; no effects inspected at record creation"
+}

@@ -1,0 +1,15 @@
+{
+  "status": "complete",
+  "utc": "2026-10-01T02:14:17.316381+00:00",
+  "runs": 12,
+  "verification_lock_sha256": "20c9723d6b7b8dc7dc6c8e871d849c03bf5335a0efae813184e36a5791f7a1fc",
+  "artifacts": {
+    "docs/development-artifacts/text-structure-v1/confirmation/lock.json": "e1f39df18611068420d3c742b0586bfd08b8e3f154af5061994e94114ef4ef24",
+    "docs/development-artifacts/text-structure-v1/confirmation/audit.json": "425f72b8c593ac38579b24e8e379e8952b7f320565efb92a70f936fe8951d739",
+    "docs/development-artifacts/text-structure-v1/confirmation/summary.json": "6868e4121650b9a1463154547cebd53be91d813761f5c8608b8523209f724676",
+    "docs/development-artifacts/text-structure-v1/confirmation/secondary-analysis-lock.json": "851279c46c8a330cbd00245c3aa3874836f15c3758b9b13e5b6cc9b1f6029af1",
+    "docs/development-artifacts/text-structure-v1/confirmation/secondary-analysis.json": "063a4b191a197f49a9bb47606e7a0f26c2ea09d024a1ec7f847d13c7947e08e1",
+    "docs/development-artifacts/text-structure-v1/confirmation/completion-manifest.json": "e5f48abcbabc363c9bae75b7091024bec622ec2d54205cffe11e83b9e9dde9ae",
+    "docs/development-artifacts/text-structure-v1/confirmation/comparison.png": "6ddaedcfe1a4d4ab87404c474c6479561cdce15c422410c692f3e124171e8a37"
+  }
+}

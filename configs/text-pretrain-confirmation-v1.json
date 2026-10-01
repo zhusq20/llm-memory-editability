@@ -1,0 +1,135 @@
+{
+  "output_root": "results/text-pretrain-v1/confirmation",
+  "source_lock": "docs/development-artifacts/text-pretrain-v1/confirmation/lock.json",
+  "base": {
+    "world": 147001,
+    "initialization": 14701,
+    "heads_n": 128,
+    "bridges_n": 32,
+    "tails_n": 32,
+    "holdout_fraction": 0.2,
+    "width": 128,
+    "layers": 2,
+    "heads": 4,
+    "repeats": 2,
+    "dropout": 0.1,
+    "lr": 0.0003,
+    "weight_decay": 0.1,
+    "warmup": 1000,
+    "steps": 32000,
+    "batch_parts": [
+      32,
+      32,
+      64
+    ],
+    "nodes": [
+      0,
+      500,
+      1000,
+      2000,
+      4000,
+      8000,
+      16000,
+      24000,
+      32000
+    ],
+    "weight_nodes": [
+      0,
+      4000,
+      16000,
+      32000
+    ]
+  },
+  "runs": {
+    "confirm-w147011-s14701-P0": {
+      "world": 147011,
+      "initialization": 14701,
+      "arm": "P0"
+    },
+    "confirm-w147011-s14701-P1": {
+      "world": 147011,
+      "initialization": 14701,
+      "arm": "P1"
+    },
+    "confirm-w147011-s14701-P2": {
+      "world": 147011,
+      "initialization": 14701,
+      "arm": "P2"
+    },
+    "confirm-w147011-s14702-P0": {
+      "world": 147011,
+      "initialization": 14702,
+      "arm": "P0"
+    },
+    "confirm-w147011-s14702-P1": {
+      "world": 147011,
+      "initialization": 14702,
+      "arm": "P1"
+    },
+    "confirm-w147011-s14702-P2": {
+      "world": 147011,
+      "initialization": 14702,
+      "arm": "P2"
+    },
+    "confirm-w147012-s14701-P0": {
+      "world": 147012,
+      "initialization": 14701,
+      "arm": "P0"
+    },
+    "confirm-w147012-s14701-P1": {
+      "world": 147012,
+      "initialization": 14701,
+      "arm": "P1"
+    },
+    "confirm-w147012-s14701-P2": {
+      "world": 147012,
+      "initialization": 14701,
+      "arm": "P2"
+    },
+    "confirm-w147012-s14702-P0": {
+      "world": 147012,
+      "initialization": 14702,
+      "arm": "P0"
+    },
+    "confirm-w147012-s14702-P1": {
+      "world": 147012,
+      "initialization": 14702,
+      "arm": "P1"
+    },
+    "confirm-w147012-s14702-P2": {
+      "world": 147012,
+      "initialization": 14702,
+      "arm": "P2"
+    },
+    "confirm-w147013-s14701-P0": {
+      "world": 147013,
+      "initialization": 14701,
+      "arm": "P0"
+    },
+    "confirm-w147013-s14701-P1": {
+      "world": 147013,
+      "initialization": 14701,
+      "arm": "P1"
+    },
+    "confirm-w147013-s14701-P2": {
+      "world": 147013,
+      "initialization": 14701,
+      "arm": "P2"
+    },
+    "confirm-w147013-s14702-P0": {
+      "world": 147013,
+      "initialization": 14702,
+      "arm": "P0"
+    },
+    "confirm-w147013-s14702-P1": {
+      "world": 147013,
+      "initialization": 14702,
+      "arm": "P1"
+    },
+    "confirm-w147013-s14702-P2": {
+      "world": 147013,
+      "initialization": 14702,
+      "arm": "P2"
+    }
+  }
+}

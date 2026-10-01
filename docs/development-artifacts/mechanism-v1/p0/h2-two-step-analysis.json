@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "states": 528,
+  "chain_files": 1056,
+  "sources_hashes": {
+    "summary/two-step-audit.json": "06970c76f1c6c4bb7b1686bc98281ef6ffe3a5f33ed43fab72e93d54863d2e80",
+    "summary/two-step-strata.csv": "7f651e0bbede5dfc458fc66f8926133d40b7057a7cf330e0cda1411506cd5174",
+    "summary/two-step-sources.json": "f71fd0f799d1363d1f9f851022a319ccec2b0c6396055aa52cf902d6c8e7dde0"
+  },
+  "source_sha256": "7f651e0bbede5dfc458fc66f8926133d40b7057a7cf330e0cda1411506cd5174",
+  "script_sha256": "7053a87d4ccb3d0b745ccc62f8caf16b27a3fcfc527b09e049ee304751034174",
+  "interpretation": "External two-call retrieval with model-predicted bridge; not evidence of identical internal computation."
+}

@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "world": 0,
+  "conditions": {
+    "company": {
+      "documents_sha256": "264d5e5546eb7bc24eb24b7bf0c0099fd3bd2daf556405dc5bf75d8938b10c66",
+      "exposure_sha256": "c88483d2bec0e0f27cd70bb0b533cd0585911eefa4d1c38da4f79213c1da0f29"
+    },
+    "project": {
+      "documents_sha256": "0fdd4d0d8d4a5b6c957ea3bb04430245d51c2d40d7796ca8617ed35eb6e799d8",
+      "exposure_sha256": "c88483d2bec0e0f27cd70bb0b533cd0585911eefa4d1c38da4f79213c1da0f29"
+    },
+    "neither": {
+      "documents_sha256": "cc5bdbc0a88e983af060238c26abd9be96ac5d609bf8d601b72c13eb5f2cc112",
+      "exposure_sha256": "c88483d2bec0e0f27cd70bb0b533cd0585911eefa4d1c38da4f79213c1da0f29"
+    }
+  },
+  "base_facts": 16512,
+  "queries": 20608,
+  "truth_sha256": "302a0dcf86e26e737bcd4c93a119df552cf19465f2a7df14b8a20219710ee8f2",
+  "prompts_sha256": "eca809b23cafb682a67b684de215c4358bf3f6385175781c764927fa5eeb4301",
+  "QA_train_per_chain": 1024,
+  "QA_heldout_per_chain": 1024
+}

@@ -1,0 +1,24 @@
+{
+  "registered_unix": 1790702885.8294625,
+  "reason": "Separate finite-effect measurements from BF16 and batch-shape rounding. No model-effect threshold or result-based case selection.",
+  "cases": {
+    "mquake": [
+      "609",
+      "1085",
+      "69",
+      "112"
+    ],
+    "2wiki": [
+      "681d4fcc0bde11eba7f7acde48001122",
+      "f481a5960bdc11eba7f7acde48001122",
+      "22457b2c0bda11eba7f7acde48001122",
+      "7f64d7820bdd11eba7f7acde48001122"
+    ]
+  },
+  "models": [
+    "small",
+    "main"
+  ],
+  "all_layers_and_conditions": true,
+  "expected_generations": 432
+}

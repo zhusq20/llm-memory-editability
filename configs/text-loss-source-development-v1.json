@@ -1,0 +1,34 @@
+{
+  "output_root": "results/text-loss-source-v1/development",
+  "lock": "docs/development-artifacts/text-loss-source-v1/development/lock.json",
+  "plan": "docs/development-artifacts/text-loss-source-v1/preregistration.md",
+  "steps": 4096,
+  "nodes": [
+    0,
+    1,
+    32,
+    128,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "runs": {
+    "development-AB": {
+      "parent": "results/text-pretrain-v1/development/development-P1",
+      "arm": "AB"
+    },
+    "development-A": {
+      "parent": "results/text-pretrain-v1/development/development-P1",
+      "arm": "A"
+    },
+    "development-B": {
+      "parent": "results/text-pretrain-v1/development/development-P1",
+      "arm": "B"
+    },
+    "development-N": {
+      "parent": "results/text-pretrain-v1/development/development-P1",
+      "arm": "N"
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "source_root": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p3-context-summary",
+  "physical_isolated_source_root": "/tmp/llm-memory-siqizhu4-mechanism-20260927/p3-context/width-256",
+  "archived_at_utc": "2026-09-27T04:48:30.608984+00:00",
+  "files": {
+    "audit.json": {
+      "sha256": "27b5e4d191a90ad29709fa25dbec2bef19604896f8d001582098fed7240c83b1",
+      "bytes": 1382
+    },
+    "base-summary.csv": {
+      "sha256": "426a06ebd07a435f4415e8ced964382f3049b152f4071786451eb49847c2f096",
+      "bytes": 2669
+    },
+    "component-strata.csv": {
+      "sha256": "8f5cc9f7050e8d56fbb6279a956bedc60a4ba101a83c9337daf68eb0b9408d46",
+      "bytes": 390645
+    },
+    "component-summary.csv": {
+      "sha256": "782aed65d3dc4a294ee6ea31c4a083b224db05ab0467c75e13d564c7ec2b11ff",
+      "bytes": 49895
+    },
+    "interaction-summary.csv": {
+      "sha256": "9078b6a877951b74311784e4e64e09eb755ee6af508ed1b4998401fd29edf461",
+      "bytes": 20056
+    },
+    "interpretation.md": {
+      "sha256": "4ec2cddfbd15377489db1ae6f5bbcf8be04c65d0fac85da4980ad6f0cb5275e3",
+      "bytes": 3973
+    },
+    "learning-metrics.csv": {
+      "sha256": "f44bf2b97a707ce4a4e0adf2d2e3a57efe49e9f208d16668dbcec1cb17646826",
+      "bytes": 40187
+    },
+    "organization-effects.csv": {
+      "sha256": "425966d36a6019609b4ceee274127288a4c3b0aa5a635dbe81194e44ed21cf71",
+      "bytes": 54212
+    },
+    "organization-interactions.csv": {
+      "sha256": "3590e99181326d4252877b9bba1f1bdde918722df6ae72f2a2b3d34aa26a3e7e",
+      "bytes": 25204
+    },
+    "organization-summary.csv": {
+      "sha256": "98e233228067133d247ee68a5675f793b572cf4cf03409facee7245b4b0aa4cb",
+      "bytes": 43299
+    },
+    "paired-paths.csv": {
+      "sha256": "4345a4a41e94af8217d2076987c073eaa44e01630df0cb664dbaf32a74e096a8",
+      "bytes": 147573
+    },
+    "paired-summary.csv": {
+      "sha256": "5fe44401e2c4910f20de3939a3149438d8b985b5c0785b0127c3135cf53910aa",
+      "bytes": 22882
+    },
+    "path-strata.csv": {
+      "sha256": "d7fb07f037692d502901ed323b935043cc046cbeea80da2e25de038f719c72f8",
+      "bytes": 396766
+    },
+    "path-summary.csv": {
+      "sha256": "702a67fc711032dcf8a1e48f01cf0030f316e3265403d2ea8d7dfafacdc55fa7",
+      "bytes": 42005
+    },
+    "report.md": {
+      "sha256": "f6cd16b47ad6f4464e7d38f21e5734d67f59bf571d960347f90804cdf4650e91",
+      "bytes": 6811
+    },
+    "sources.json": {
+      "sha256": "1e3f056ef87c21491d469f89450ae8f00d551d9808831b5f87cc3f0b972514a4",
+      "bytes": 59162
+    },
+    "launch-gate.json": {
+      "sha256": "c9fc4c98c1b24e5d26530127bceb3ac047cf98ab037acc64a0df5b324d536589",
+      "bytes": 2628,
+      "source": "/tmp/llm-memory-siqizhu4-mechanism-20260927/p3-context/launch-gate.json"
+    },
+    "launch-contract.json": {
+      "sha256": "89e893dff7f09c421636f3c7f0d2397bf5e93aeebd05d860ba2d0c05fd638023",
+      "bytes": 9590,
+      "source": "/tmp/llm-memory-siqizhu4-mechanism-20260927/p3-context/launch-contract.json"
+    }
+  },
+  "generated_files": {
+    "p3-context-fixed-person-control.png": {
+      "sha256": "8e55b7a057dcb6e1b56a904acf90b54586076d4bbda059108218f55bfaac4403",
+      "bytes": 774323
+    },
+    "p3-context-fixed-person-control.json": {
+      "sha256": "c934011d2b0a78723e4a3e5a7e0a6df34e4a83fc6057881f0845e5d2cc94f5d2",
+      "bytes": 10105
+    },
+    "p3-context-fixed-person-control.pdf": {
+      "sha256": "e77ce541277e8ea01ed99b1e7004f653bcf346b4188055aea066a39ddac3103f",
+      "bytes": 24909
+    }
+  }
+}

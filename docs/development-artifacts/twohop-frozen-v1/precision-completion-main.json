@@ -1,0 +1,39 @@
+{
+  "state": "complete",
+  "cases": 8,
+  "seconds": 76.6057907610084,
+  "stats": {
+    "generation_calls": 24,
+    "prompt_tokens": 65475,
+    "generated_nonpad_tokens": 2523,
+    "generation_seconds": 23.735348982037976
+  },
+  "max_memory_bytes": 27448934400,
+  "files": {
+    "mechanism.jsonl": "5a715e78d1afd4fbdf0fb92d040b1e961fed3e3fd8be79fd9608f28aba8110f3",
+    "vectors/2wiki-22457b2c0bda11eba7f7acde48001122-layer-12.npz": "56bae06529f373144c585b9789d6fef63eee8ecde7ff0ea9072873afdcdc83e7",
+    "vectors/2wiki-7f64d7820bdd11eba7f7acde48001122-layer-18.npz": "c382a1d3ac2fe3847bc9675e29e6dc7867996ac37a742a6342a7120efa30809c",
+    "vectors/2wiki-681d4fcc0bde11eba7f7acde48001122-layer-18.npz": "7157cc95262cd84052324a2fc6c30858b7536488edcd30b9588c812b05a601f7",
+    "vectors/2wiki-f481a5960bdc11eba7f7acde48001122-layer-12.npz": "29cf33b9994006ec70ec88a35842d2689d63f86e8c36063056c4951fef25c6d0",
+    "vectors/mquake-69-layer-12.npz": "e6cd8f9f3c4c1512c47bfa414b1f837d5fbdd258e4b2ee005147e889edfe53de",
+    "vectors/2wiki-f481a5960bdc11eba7f7acde48001122-layer-18.npz": "2f1ab2ccf76b1bf827001a95d9f089f2b83bbb70db409d07e27119bfc4baab28",
+    "vectors/mquake-1085-layer-24.npz": "d8237aeb38dee34c7d91be0e99d218ea537b2e7631f59bcf40f44fbea27ee3c3",
+    "vectors/mquake-609-layer-24.npz": "44eda4d68e90dcff4f7be41ac50ee06b63cb338444b5ceb5eb2e79873dbf4c08",
+    "vectors/mquake-609-layer-18.npz": "f7b5822cde9989296f93474d6315e7a47b049503c7aa20a96853e2a36a556f19",
+    "vectors/mquake-112-layer-12.npz": "b57ceb9c66bc4de591fdddba96e1e5bc1094056daaf52316007a5f878d5c5391",
+    "vectors/mquake-1085-layer-18.npz": "251effd1f8caa80d1300a8be0f8c009198e345e6483e3dc450112b73392b54f9",
+    "vectors/2wiki-22457b2c0bda11eba7f7acde48001122-layer-24.npz": "26ff9ab087c164216839244f522bd8ab0bfb1f33482b5e77d18d3f2d1c68b7fb",
+    "vectors/2wiki-681d4fcc0bde11eba7f7acde48001122-layer-12.npz": "032b5929e74ecc5dfbc3199dd1a516180fe0587ae6481d3e5e7dab343f7eb3d4",
+    "vectors/mquake-1085-layer-12.npz": "f2a25707c8f8b4c3a825ef67628d99efabba796f22d79c9d3362c6ffd26ab280",
+    "vectors/2wiki-22457b2c0bda11eba7f7acde48001122-layer-18.npz": "93f482e92bbcec03ee82b03e3bf9dd86da82782f779ef7c7c1ee00643e812413",
+    "vectors/mquake-112-layer-18.npz": "bb9495fd7513671851011918f802754e9a554a9c9578fc383a910ac5702a7db9",
+    "vectors/mquake-112-layer-24.npz": "2f7254ec09171acdca6b54e9521c475d91821809399348e350ff97273cc98220",
+    "vectors/2wiki-f481a5960bdc11eba7f7acde48001122-layer-24.npz": "6ec5798c4ba8d95bf31747b7acad68f3693188470b2469bcb2c6204ca43bd685",
+    "vectors/mquake-609-layer-12.npz": "998042cf1dee1de7f7bd6c6ee46e5e0382c119102690a64bc6a8bbb7e6c5ac57",
+    "vectors/2wiki-7f64d7820bdd11eba7f7acde48001122-layer-12.npz": "d8932a1020b19f8feb28f786dd54c63b5aa67cb6baa6f7eb64259e2a1f94950a",
+    "vectors/2wiki-681d4fcc0bde11eba7f7acde48001122-layer-24.npz": "5f21a950e8443c4bbd592d08316137464658a6217652da4916f4b245a8cc251d",
+    "vectors/mquake-69-layer-24.npz": "5c2be27dfc5c45dcfdb225bff6053d702ee2ba13d1237a6244d67f5077d66eec",
+    "vectors/mquake-69-layer-18.npz": "f162970340f90b2e96a7c46b88f91dc42c22345bb2f43a4d6ddc07b9906639ec",
+    "vectors/2wiki-7f64d7820bdd11eba7f7acde48001122-layer-24.npz": "549b25ead3346c8fffe1e3b18586c553e09c3d5aec627fe3691b34afab9f5ba1"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "created": "2026-09-27T23:47:42.497742+00:00",
+  "config": {
+    "protocol": "v2.15-target-complete-eight-layer-transfer",
+    "worlds": [
+      0,
+      1
+    ],
+    "seeds": [
+      0,
+      1
+    ],
+    "parent_step": 15360,
+    "parent_condition": "neither",
+    "target_parameter": "blocks.4.mlp.down.weight",
+    "main_cases_per_parent": 12,
+    "arms": [
+      "func-soft-adam",
+      "repr-hard-adam",
+      "func-hard-gn",
+      "func-soft-gn"
+    ],
+    "main_steps": 1024,
+    "main_runs": 192,
+    "tuning": "World 0, both seeds, first group of chain 0, both edit types; 12 candidates per arm, 256 accepted steps; 192 tuning trajectories total.",
+    "E": 2,
+    "R": 48,
+    "V": 48,
+    "D": 32,
+    "D_heldout": 16,
+    "retention": "R includes focal membership plus 47 unchanged atoms. U contains all other focal attributes, 48 nearby facts, 80 distant atoms and 16 unaffected held-out compositions. All E/R/V/U/D queries disjoint.",
+    "focal_selection": "Deterministic ID-only hash among old nonexception people with held-out composite; independent of model success.",
+    "budgets": "Full E/R batch, shared information and weights across arms; no D in edit loss, protection or selection. Original full-answer/EOS generation, own generated prefix.",
+    "solver": "Identical frozen engine and candidate configurations to minimal phase; separate E/V tuning. Rank-8 GGN diagnostic approximation, actual original-parent constraints verified.",
+    "status": "Development transfer; previously observed worlds. Independent confirmation is separate."
+  },
+  "files": {
+    "configs/bios-direction-cross-v1.json": "bcb394c1b05774df2b4feb8cdcb4a787e07db9cb57b516117891119d2eb949a7",
+    "scripts/run_bios_direction_cross.py": "3ecf0edf982e98f332000269fe2f7de3be168ded84629b299e7ab2fa792b1600",
+    "src/llm_memory_editability/bios_direction.py": "1240f83f5ee558101bbf6f808522fa6c37ffe09dc2296749bd5e685eff8aa41d",
+    "src/llm_memory_editability/bios_direction_cross.py": "66cf337b3a52508e82da6190ea01916662f1fe6fddef036844f9d1be2c179888",
+    "src/llm_memory_editability/bios_cross.py": "47b8f55adbe13d9bc6e1c5c9170cc95e382261ffb1f31980706ac95be03623bf",
+    "src/llm_memory_editability/bios_cross_train.py": "0106cae29be447319be2e7f6f0e1f5b60cc6224282331906f43ebc65ab795f38",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "src/llm_memory_editability/bios_data.py": "d5568901f2042a6d89d447f47eddae9764eced0a9e71e3ea5adc0038a7e636d6",
+    "results/bios-cross-scale-dev-v1/width-256/world-0-seed-0-neither/model-15360.pt": "47ac5120a444b4a5cc6e2d3e80a4579216c248367ebc437b9798970b4ab3b949",
+    "results/bios-cross-scale-dev-v1/width-256/world-0-seed-1-neither/model-15360.pt": "99b9f33d0ef7fd789192ae6ffe2bb271ea1867fce03e416c88bbc20e2f07011e",
+    "results/bios-cross-scale-dev-v1/width-256/world-1-seed-0-neither/model-15360.pt": "4ecfbc8f5769e9ac1cc3c7ecac1db875925ad5be28b5722b50a14bdc5c4f298c",
+    "results/bios-cross-scale-dev-v1/width-256/world-1-seed-1-neither/model-15360.pt": "36116419ea18b0d0a04a3a88bc4d6740bde23bb49eebe49e3cc1740d8e01f44e"
+  },
+  "torch": "2.11.0+cu130"
+}

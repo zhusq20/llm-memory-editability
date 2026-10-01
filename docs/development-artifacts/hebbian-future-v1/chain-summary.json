@@ -1,0 +1,312 @@
+{
+  "completed": 24,
+  "expected": 24,
+  "aggregates": [
+    {
+      "depth": 2,
+      "rho": 0.25,
+      "worlds": 4,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "held_composite": 0.9166666666666667,
+      "held_conflict_composite": 0.888888888888889,
+      "held_common_conflict_composite": 0.9791666666666666,
+      "held_two_step": 1.0,
+      "held_both_known_composite": 0.9166666666666667,
+      "held_conflict_home_copy": 0.08333333333333334
+    },
+    {
+      "depth": 2,
+      "rho": 0.5,
+      "worlds": 4,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "held_composite": 0.9166666666666666,
+      "held_conflict_composite": 0.875,
+      "held_common_conflict_composite": 0.875,
+      "held_two_step": 1.0,
+      "held_both_known_composite": 0.9166666666666666,
+      "held_conflict_home_copy": 0.10416666666666667
+    },
+    {
+      "depth": 2,
+      "rho": 0.75,
+      "worlds": 4,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "held_composite": 0.8802083333333333,
+      "held_conflict_composite": 0.5416666666666666,
+      "held_common_conflict_composite": 0.5416666666666666,
+      "held_two_step": 1.0,
+      "held_both_known_composite": 0.8802083333333333,
+      "held_conflict_home_copy": 0.4375
+    },
+    {
+      "depth": 4,
+      "rho": 0.25,
+      "worlds": 4,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "held_composite": 0.8541666666666666,
+      "held_conflict_composite": 0.8055555555555555,
+      "held_common_conflict_composite": 0.7708333333333334,
+      "held_two_step": 1.0,
+      "held_both_known_composite": 0.8541666666666666,
+      "held_conflict_home_copy": 0.125
+    },
+    {
+      "depth": 4,
+      "rho": 0.5,
+      "worlds": 4,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "held_composite": 0.9427083333333334,
+      "held_conflict_composite": 0.8958333333333334,
+      "held_common_conflict_composite": 0.875,
+      "held_two_step": 1.0,
+      "held_both_known_composite": 0.9427083333333334,
+      "held_conflict_home_copy": 0.08333333333333333
+    },
+    {
+      "depth": 4,
+      "rho": 0.75,
+      "worlds": 4,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "held_composite": 0.9687499999999999,
+      "held_conflict_composite": 0.8749999999999999,
+      "held_common_conflict_composite": 0.8749999999999999,
+      "held_two_step": 1.0,
+      "held_both_known_composite": 0.9687499999999999,
+      "held_conflict_home_copy": 0.10416666666666666
+    }
+  ],
+  "paired_effects": [
+    {
+      "depth": 2,
+      "metric": "member_accuracy",
+      "contrast": "rho0.25-rho0.75",
+      "mean": 0.0,
+      "world_effects": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "depth": 2,
+      "metric": "root_accuracy",
+      "contrast": "rho0.25-rho0.75",
+      "mean": 0.0,
+      "world_effects": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "depth": 2,
+      "metric": "home_accuracy",
+      "contrast": "rho0.25-rho0.75",
+      "mean": 0.0,
+      "world_effects": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "depth": 2,
+      "metric": "held_composite",
+      "contrast": "rho0.25-rho0.75",
+      "mean": 0.03645833333333337,
+      "world_effects": [
+        0.0,
+        0.14583333333333337,
+        -0.02083333333333326,
+        0.02083333333333337
+      ]
+    },
+    {
+      "depth": 2,
+      "metric": "held_conflict_composite",
+      "contrast": "rho0.25-rho0.75",
+      "mean": 0.3472222222222222,
+      "world_effects": [
+        0.16666666666666663,
+        0.6944444444444444,
+        0.19444444444444453,
+        0.33333333333333337
+      ]
+    },
+    {
+      "depth": 2,
+      "metric": "held_common_conflict_composite",
+      "contrast": "rho0.25-rho0.75",
+      "mean": 0.4375,
+      "world_effects": [
+        0.25,
+        0.75,
+        0.25,
+        0.5
+      ]
+    },
+    {
+      "depth": 2,
+      "metric": "held_two_step",
+      "contrast": "rho0.25-rho0.75",
+      "mean": 0.0,
+      "world_effects": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "depth": 2,
+      "metric": "held_both_known_composite",
+      "contrast": "rho0.25-rho0.75",
+      "mean": 0.03645833333333337,
+      "world_effects": [
+        0.0,
+        0.14583333333333337,
+        -0.02083333333333326,
+        0.02083333333333337
+      ]
+    },
+    {
+      "depth": 2,
+      "metric": "held_conflict_home_copy",
+      "contrast": "rho0.25-rho0.75",
+      "mean": -0.3541666666666667,
+      "world_effects": [
+        -0.25,
+        -0.6944444444444444,
+        -0.1111111111111111,
+        -0.3611111111111111
+      ]
+    },
+    {
+      "depth": 4,
+      "metric": "member_accuracy",
+      "contrast": "rho0.25-rho0.75",
+      "mean": 0.0,
+      "world_effects": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "depth": 4,
+      "metric": "root_accuracy",
+      "contrast": "rho0.25-rho0.75",
+      "mean": 0.0,
+      "world_effects": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "depth": 4,
+      "metric": "home_accuracy",
+      "contrast": "rho0.25-rho0.75",
+      "mean": 0.0,
+      "world_effects": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "depth": 4,
+      "metric": "held_composite",
+      "contrast": "rho0.25-rho0.75",
+      "mean": -0.11458333333333331,
+      "world_effects": [
+        -0.08333333333333337,
+        -0.25,
+        0.02083333333333337,
+        -0.14583333333333326
+      ]
+    },
+    {
+      "depth": 4,
+      "metric": "held_conflict_composite",
+      "contrast": "rho0.25-rho0.75",
+      "mean": -0.06944444444444445,
+      "world_effects": [
+        -0.11111111111111116,
+        -0.2777777777777778,
+        0.25,
+        -0.13888888888888884
+      ]
+    },
+    {
+      "depth": 4,
+      "metric": "held_common_conflict_composite",
+      "contrast": "rho0.25-rho0.75",
+      "mean": -0.10416666666666663,
+      "world_effects": [
+        -0.25,
+        -0.16666666666666663,
+        0.16666666666666674,
+        -0.16666666666666663
+      ]
+    },
+    {
+      "depth": 4,
+      "metric": "held_two_step",
+      "contrast": "rho0.25-rho0.75",
+      "mean": 0.0,
+      "world_effects": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "depth": 4,
+      "metric": "held_both_known_composite",
+      "contrast": "rho0.25-rho0.75",
+      "mean": -0.11458333333333331,
+      "world_effects": [
+        -0.08333333333333337,
+        -0.25,
+        0.02083333333333337,
+        -0.14583333333333326
+      ]
+    },
+    {
+      "depth": 4,
+      "metric": "held_conflict_home_copy",
+      "contrast": "rho0.25-rho0.75",
+      "mean": 0.02083333333333333,
+      "world_effects": [
+        0.05555555555555555,
+        0.1388888888888889,
+        -0.2777777777777778,
+        0.16666666666666666
+      ]
+    }
+  ],
+  "runtime_seconds_sum": 1247.957085755712,
+  "training_input_tokens": 61931520,
+  "rehearsal_input_tokens": 18800640,
+  "training_flops_estimate": 128706580316160
+}

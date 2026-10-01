@@ -1,0 +1,212 @@
+{
+  "experiment": "grok-depth-extension-v1",
+  "source_commit": "734ca654ec7a71dd6737d640407fac14491d538c",
+  "base": {
+    "entities": 128,
+    "relations": 16,
+    "degree": 8,
+    "phi": 6.0,
+    "id_fraction": 0.95,
+    "id_test_fraction": 0.1,
+    "width": 128,
+    "heads": 4,
+    "dropout": 0.1,
+    "lr": 0.0001,
+    "weight_decay": 0.1,
+    "batch_size": 256,
+    "warmup": 2000,
+    "steps": 128000,
+    "nodes": [
+      0,
+      100,
+      250,
+      500,
+      1000,
+      2000,
+      4000,
+      6000,
+      8000,
+      10000,
+      12000,
+      14000,
+      16000,
+      18000,
+      20000,
+      22000,
+      24000,
+      26000,
+      28000,
+      30000,
+      32000,
+      34000,
+      36000,
+      38000,
+      40000,
+      42000,
+      44000,
+      46000,
+      48000,
+      50000,
+      52000,
+      54000,
+      56000,
+      58000,
+      60000,
+      62000,
+      64000,
+      66000,
+      68000,
+      70000,
+      72000,
+      74000,
+      76000,
+      78000,
+      80000,
+      82000,
+      84000,
+      86000,
+      88000,
+      90000,
+      92000,
+      94000,
+      96000,
+      98000,
+      100000,
+      102000,
+      104000,
+      106000,
+      108000,
+      110000,
+      112000,
+      114000,
+      116000,
+      118000,
+      120000,
+      122000,
+      124000,
+      126000,
+      128000
+    ],
+    "weight_nodes": [
+      0,
+      1000,
+      4000,
+      16000,
+      32000,
+      64000,
+      128000
+    ],
+    "initialization": 14301,
+    "stream_seed": 143011
+  },
+  "runs": {
+    "ext-w143011-s14301-d3": {
+      "phase": "extension",
+      "world_seed": 143011,
+      "initialization": 14301,
+      "stream_seed": 14315401,
+      "layers": 3
+    },
+    "ext-w143011-s14301-d4": {
+      "phase": "extension",
+      "world_seed": 143011,
+      "initialization": 14301,
+      "stream_seed": 14315401,
+      "layers": 4
+    },
+    "ext-w143011-s14302-d3": {
+      "phase": "extension",
+      "world_seed": 143011,
+      "initialization": 14302,
+      "stream_seed": 14315402,
+      "layers": 3
+    },
+    "ext-w143011-s14302-d4": {
+      "phase": "extension",
+      "world_seed": 143011,
+      "initialization": 14302,
+      "stream_seed": 14315402,
+      "layers": 4
+    },
+    "ext-w143012-s14301-d3": {
+      "phase": "extension",
+      "world_seed": 143012,
+      "initialization": 14301,
+      "stream_seed": 14315501,
+      "layers": 3
+    },
+    "ext-w143012-s14301-d4": {
+      "phase": "extension",
+      "world_seed": 143012,
+      "initialization": 14301,
+      "stream_seed": 14315501,
+      "layers": 4
+    },
+    "ext-w143012-s14302-d3": {
+      "phase": "extension",
+      "world_seed": 143012,
+      "initialization": 14302,
+      "stream_seed": 14315502,
+      "layers": 3
+    },
+    "ext-w143012-s14302-d4": {
+      "phase": "extension",
+      "world_seed": 143012,
+      "initialization": 14302,
+      "stream_seed": 14315502,
+      "layers": 4
+    },
+    "ext-w143013-s14301-d3": {
+      "phase": "extension",
+      "world_seed": 143013,
+      "initialization": 14301,
+      "stream_seed": 14315601,
+      "layers": 3
+    },
+    "ext-w143013-s14301-d4": {
+      "phase": "extension",
+      "world_seed": 143013,
+      "initialization": 14301,
+      "stream_seed": 14315601,
+      "layers": 4
+    },
+    "ext-w143013-s14302-d3": {
+      "phase": "extension",
+      "world_seed": 143013,
+      "initialization": 14302,
+      "stream_seed": 14315602,
+      "layers": 3
+    },
+    "ext-w143013-s14302-d4": {
+      "phase": "extension",
+      "world_seed": 143013,
+      "initialization": 14302,
+      "stream_seed": 14315602,
+      "layers": 4
+    }
+  },
+  "baseline_for_run": {
+    "ext-w143011-s14301-d3": "conf-w143011-s14301-d2",
+    "ext-w143011-s14301-d4": "conf-w143011-s14301-d2",
+    "ext-w143011-s14302-d3": "conf-w143011-s14302-d2",
+    "ext-w143011-s14302-d4": "conf-w143011-s14302-d2",
+    "ext-w143012-s14301-d3": "conf-w143012-s14301-d2",
+    "ext-w143012-s14301-d4": "conf-w143012-s14301-d2",
+    "ext-w143012-s14302-d3": "conf-w143012-s14302-d2",
+    "ext-w143012-s14302-d4": "conf-w143012-s14302-d2",
+    "ext-w143013-s14301-d3": "conf-w143013-s14301-d2",
+    "ext-w143013-s14301-d4": "conf-w143013-s14301-d2",
+    "ext-w143013-s14302-d3": "conf-w143013-s14302-d2",
+    "ext-w143013-s14302-d4": "conf-w143013-s14302-d2"
+  },
+  "thresholds": {
+    "paired_final": "paired 2-layer ID answer-plus-EOS accuracy at step 128000; exact saved float",
+    "common": [
+      0.9,
+      0.95
+    ],
+    "consecutive_nodes": 3,
+    "report_start_and_confirmation": true,
+    "censoring": "not reached within registered nodes; no interpolation or infinity"
+  }
+}

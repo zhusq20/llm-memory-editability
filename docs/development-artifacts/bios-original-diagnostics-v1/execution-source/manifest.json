@@ -1,0 +1,9 @@
+{
+  "src/llm_memory_editability/bios_original_diagnostics.py": "6dd51ead7d16c1960740716fb73cb4409828666ac0332baae4c14730e39dd120",
+  "scripts/run_bios_original_diagnostics.py": "5d85e8cbff3717bc0a176f095a0e954a9a4169c65544ce2cbe517a0803be8b2b",
+  "src/llm_memory_editability/bios_original_data.py": "092689c2a05aad564ff8a7c6e1ac669d7e0475908e525766cf70922037cd2488",
+  "src/llm_memory_editability/bios_original_model.py": "8a52e58d343320ccce9e2f1b43674cc6765b840bd4feebed4813f78296ab29a9",
+  "src/llm_memory_editability/bios_original_train.py": "86b2ef1be03223dff26bc7997b91143be81fb46fd29ab8650a9cde8a39eb6891",
+  "tests/test_bios_original_diagnostics.py": "3a31ec86ac311964e0684fbb00632e10b10196ecf726bc7f2ec66e48b09c4644",
+  "docs/development-artifacts/bios-original-diagnostics-v1/preregistration.md": "871adf692dfb23fc5767896d1dc13e3a3fd337963bf2b7e504f1f195a21cde16"
+}

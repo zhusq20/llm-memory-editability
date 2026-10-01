@@ -1,0 +1,7 @@
+{
+  "purpose": "Additional aggregation of preregistered rehearsal outcomes; coordinator formatting only after launch, original execution-source hash retained",
+  "files": {
+    "scripts/analyze_hebbian_future.py": "7adda8b3c088a05bf79a66d6811130bc4cada8882c8818c398b7438775979565",
+    "scripts/execute_hebbian_future.py": "29a1724ad185b35378071e037711068123835b3036cf4ca014714b7e96745965"
+  }
+}

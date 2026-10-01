@@ -1,0 +1,34 @@
+{
+  "registered_utc": "2026-09-30T02:23:49.810438+00:00",
+  "status": "development-only coverage calibration; no confirmation model selected",
+  "observed_first_run": "k3-d4-phi6: atomic/train/autonomous calls100%, held-out full9.91295% at128k",
+  "rationale": "phi6 held-out queries have atomics in position for98%+; same-position two-hop subpaths only52-58% covered. phi24 raises subpath coverage to95-97%.",
+  "unchanged": [
+    "graph seed",
+    "atomic partition",
+    "reserved full test pool",
+    "fixed test probe",
+    "width",
+    "depth reference",
+    "initialization",
+    "stream seed",
+    "optimizer",
+    "128000 updates"
+  ],
+  "changed": [
+    "phi6 to phi24",
+    "5838 to23352 target-length training queries",
+    "uniform combined training set6862 to24376",
+    "mean record exposure4775 to1344"
+  ],
+  "cautions": [
+    "training subsets across phi are not nested",
+    "no matched exposure or compute per fact claim",
+    "one developmental world cannot determine required layers",
+    "phi6 runs remain complete historical evidence"
+  ],
+  "runs": [
+    "dev-k3-d4-phi24",
+    "dev-k4-d6-phi24"
+  ]
+}

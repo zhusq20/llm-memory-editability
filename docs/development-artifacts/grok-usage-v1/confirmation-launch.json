@@ -1,0 +1,20 @@
+{
+  "utc": "2026-09-30T20:42:17.618781+00:00",
+  "pid": 5183,
+  "command": [
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/.venv/bin/python",
+    "-u",
+    "scripts/execute_grok_usage.py",
+    "--config",
+    "configs/grok-usage-confirmation-v1.json",
+    "--gpus",
+    "5",
+    "6",
+    "8",
+    "--per-gpu",
+    "2"
+  ],
+  "config_sha256": "af8587d8c66cdd56326d5b9752dc983c32d504bc4afa4dfaf8a764c70a667978",
+  "lock_sha256": "4d09a203fad7e1cc62b76e542df1e28455af861f61c2cf6396a096ffd2f7c095",
+  "gpu_sharing": "Existing jobs preserved; two small bounded processes per selected GPU. Wall time is not an efficiency comparison."
+}

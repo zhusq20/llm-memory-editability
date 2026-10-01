@@ -1,0 +1,47 @@
+{
+  "time": "2026-09-28T04:51:59.771476+00:00",
+  "launches": [
+    {
+      "pid": 2949763,
+      "gpu": 3,
+      "tasks": 1,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/C-dev-learning-rate-gpu3.json",
+        "--device",
+        "cuda:3"
+      ]
+    },
+    {
+      "pid": 2949764,
+      "gpu": 4,
+      "tasks": 1,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/C-dev-learning-rate-gpu4.json",
+        "--device",
+        "cuda:4"
+      ]
+    },
+    {
+      "pid": 2949765,
+      "gpu": 5,
+      "tasks": 1,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/C-dev-learning-rate-gpu5.json",
+        "--device",
+        "cuda:5"
+      ]
+    }
+  ]
+}

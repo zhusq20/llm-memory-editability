@@ -1,0 +1,4 @@
+{
+  "created": "2026-09-28T01:36:25.313747+00:00",
+  "reason": "Prediction calculation reached serialization, but Path.with_suffix(\"pt\") requires \".pt\". No predictions or new edits were saved. Fix only the two suffix strings; retain initial lock and runner. No data, target, method, budget or selection change."
+}

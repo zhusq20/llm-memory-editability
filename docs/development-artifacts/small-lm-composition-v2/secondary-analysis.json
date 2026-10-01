@@ -1,0 +1,72 @@
+{
+  "status": "complete",
+  "analysis": "post_hoc_descriptive_not_new_confirmation",
+  "runs": {
+    "separate/update": {
+      "E_n": 32,
+      "E_before_old_two_correct": 0,
+      "E_after_new_two_correct": 2,
+      "E_before_correct_then_new_correct": 0,
+      "E_second_old_correct": 0,
+      "U_atomic_errors": 35,
+      "U_error_gold_anywhere_in_output": 0
+    },
+    "separate/replay": {
+      "E_n": 32,
+      "E_before_old_two_correct": 0,
+      "E_after_new_two_correct": 3,
+      "E_before_correct_then_new_correct": 0,
+      "E_second_old_correct": 32,
+      "U_atomic_errors": 16,
+      "U_error_gold_anywhere_in_output": 0
+    },
+    "shuffled/update": {
+      "E_n": 32,
+      "E_before_old_two_correct": 2,
+      "E_after_new_two_correct": 3,
+      "E_before_correct_then_new_correct": 0,
+      "E_second_old_correct": 0,
+      "U_atomic_errors": 31,
+      "U_error_gold_anywhere_in_output": 0
+    },
+    "shuffled/replay": {
+      "E_n": 32,
+      "E_before_old_two_correct": 2,
+      "E_after_new_two_correct": 4,
+      "E_before_correct_then_new_correct": 0,
+      "E_second_old_correct": 32,
+      "U_atomic_errors": 23,
+      "U_error_gold_anywhere_in_output": 0
+    },
+    "linked/update": {
+      "E_n": 32,
+      "E_before_old_two_correct": 3,
+      "E_after_new_two_correct": 6,
+      "E_before_correct_then_new_correct": 0,
+      "E_second_old_correct": 0,
+      "U_atomic_errors": 28,
+      "U_error_gold_anywhere_in_output": 0
+    },
+    "linked/replay": {
+      "E_n": 32,
+      "E_before_old_two_correct": 3,
+      "E_after_new_two_correct": 4,
+      "E_before_correct_then_new_correct": 0,
+      "E_second_old_correct": 32,
+      "U_atomic_errors": 15,
+      "U_error_gold_anywhere_in_output": 0
+    }
+  },
+  "input_sha256": {
+    "results/small-lm-composition-v2/training/linked/predictions-00512.json": "4bde4fbaeabfdb6fdee7eb64d846a9c4e6ceb98a6298e251af8acb464a5e58a2",
+    "results/small-lm-composition-v2/training/shuffled/predictions-00512.json": "a20d7452b0fc676fe612995a5f01d0e9c3d32d7233dc1e3e57c6993181cf28b9",
+    "results/small-lm-composition-v2/training/separate/predictions-00512.json": "dc920d8ed602cf60a1fc820422e85f466b4cf03a05ec285c2e7b7bcf70b8ebfc",
+    "results/small-lm-composition-v2/editing/linked/update/predictions-00256.json": "6e7a64c89379e11942496089a0b2c90e8af9bf7eabdef721ea0503df2d18535d",
+    "results/small-lm-composition-v2/editing/linked/replay/predictions-00256.json": "0ee6f30a204a3b70a12aec998521975821617e550e5c3a5162f42dae1dfbb5ed",
+    "results/small-lm-composition-v2/editing/shuffled/update/predictions-00256.json": "ca32c4869712c4c5cc01b62bcebf2c9ccfa043d57c9d7b1b62f0048dfdd42788",
+    "results/small-lm-composition-v2/editing/shuffled/replay/predictions-00256.json": "0065ebd686d23936fdb6bbc45a2bf7a143c0af58dd9b2da8c219d599aada85ab",
+    "results/small-lm-composition-v2/editing/separate/update/predictions-00256.json": "ebe7d6445df1e76920a6adaa6346c99842e3c82f4bda7307b9b17402fad29ce7",
+    "results/small-lm-composition-v2/editing/separate/replay/predictions-00256.json": "1dc987e13002fc533776ca16e54e146926549f47964b675f7a810f280a15cd05"
+  },
+  "method": "For each arm use the preselected 32 E chain IDs; count original-parent view0 direct two-hop correctness, after-update correctness under new gold, and their intersection. Review wrong U atomic outputs for a case-insensitive gold substring; this is a descriptive format screen, not an alternative main score."
+}

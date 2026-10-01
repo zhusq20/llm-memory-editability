@@ -1,0 +1,43 @@
+{
+  "protocol": "v2.8-p3-context-control",
+  "phase": "prepared conditional development control; not a confirmatory study",
+  "execution_gate": "Run only if P0/P1/P2 leave the context-association and optimization explanations unresolved",
+  "worlds": [0, 1],
+  "seeds": [0, 1],
+  "conditions": ["company", "project", "neither"],
+  "chains": ["company", "project"],
+  "width": 256,
+  "layers": 8,
+  "heads": 4,
+  "steps": 15360,
+  "checkpoints": [0, 1280, 2560, 5120, 10240, 15360],
+  "lr": 0.0001,
+  "documents_per_step": 16,
+  "facts_per_document": 10,
+  "QA_per_chain_per_step": 20,
+  "document_QA_weights": [0.8, 0.2],
+  "learning_runs": 12,
+  "edit_cases": 0,
+  "edit_scopes": [],
+  "primary_learning": "15360-step heldout QA paired with the same world/initialization/organization in the original unrestricted-context runs",
+  "secondary_learning": "all original checkpoints, ordinary/exception QA, base facts and autonomous two-step inference",
+  "primary_edit": "none; this conditional control performs no editing",
+  "intervention": "Block cross-fact attention in 60-token training documents only; retain within-fact causality",
+  "exact_controls": [
+    "document tokens, fact ordering, batches and slot rotation",
+    "absolute token positions 0 through 59 without resets",
+    "twenty supervised document positions and original answer/EOS labels",
+    "0.8 document CE plus 0.2 QA CE, backward order and gradient clipping",
+    "initial model parameters, optimizer, warmup and step budget",
+    "QA identities, sampling schedule, full causal QA training attention",
+    "full causal evaluation and inference attention"
+  ],
+  "aggregation": "pair within world and initialization before averaging; two reused worlds are development evidence",
+  "limitations": [
+    "Removing attention edges changes the training computation and may change optimization difficulty",
+    "Equal tensors, positions and supervision do not imply equal learned knowledge levels",
+    "Document slot position differences and minibatch gradient correlations remain possible mechanisms",
+    "An explicit attention mask may select a different attention kernel; assess numerical controls separately",
+    "No experiment is launched merely by creating this configuration"
+  ]
+}

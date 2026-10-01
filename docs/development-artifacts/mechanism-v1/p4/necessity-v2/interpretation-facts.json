@@ -1,0 +1,461 @@
+{
+  "calibration": [
+    {
+      "width": "256",
+      "blocks": 24,
+      "source_available": 24,
+      "downstream_available": 24,
+      "membership_accuracy": 0.9888795056171423,
+      "actual_accuracy": 0.9894166746028065
+    },
+    {
+      "width": "768",
+      "blocks": 24,
+      "source_available": 24,
+      "downstream_available": 24,
+      "membership_accuracy": 0.9948401145167499,
+      "actual_accuracy": 0.9931650799815023
+    }
+  ],
+  "default_by_organization": [
+    {
+      "width": "256",
+      "condition": "company",
+      "chain": "company",
+      "target_random": -0.0703125,
+      "target_complement": -0.0625,
+      "rescue_gain": -0.017578125,
+      "rescue_wrong": -0.013671875,
+      "rescue_random": -0.013671875
+    },
+    {
+      "width": "256",
+      "condition": "company",
+      "chain": "project",
+      "target_random": -0.033203125,
+      "target_complement": -0.029296875,
+      "rescue_gain": 0.00390625,
+      "rescue_wrong": -0.00390625,
+      "rescue_random": 0.005859375
+    },
+    {
+      "width": "256",
+      "condition": "project",
+      "chain": "company",
+      "target_random": 0.0,
+      "target_complement": 0.001953125,
+      "rescue_gain": 0.001953125,
+      "rescue_wrong": -0.00390625,
+      "rescue_random": 0.00390625
+    },
+    {
+      "width": "256",
+      "condition": "project",
+      "chain": "project",
+      "target_random": -0.28125,
+      "target_complement": -0.255859375,
+      "rescue_gain": -0.013671875,
+      "rescue_wrong": -0.01171875,
+      "rescue_random": -0.009765625
+    },
+    {
+      "width": "256",
+      "condition": "neither",
+      "chain": "company",
+      "target_random": -0.01171875,
+      "target_complement": -0.01171875,
+      "rescue_gain": 0.005859375,
+      "rescue_wrong": 0.005859375,
+      "rescue_random": 0.001953125
+    },
+    {
+      "width": "256",
+      "condition": "neither",
+      "chain": "project",
+      "target_random": -0.095703125,
+      "target_complement": -0.08203125,
+      "rescue_gain": 0.001953125,
+      "rescue_wrong": 0.0,
+      "rescue_random": 0.0
+    },
+    {
+      "width": "768",
+      "condition": "company",
+      "chain": "company",
+      "target_random": 0.00390625,
+      "target_complement": 0.00390625,
+      "rescue_gain": 0.0,
+      "rescue_wrong": 0.001953125,
+      "rescue_random": 0.001953125
+    },
+    {
+      "width": "768",
+      "condition": "company",
+      "chain": "project",
+      "target_random": 0.0,
+      "target_complement": 0.0,
+      "rescue_gain": 0.0,
+      "rescue_wrong": 0.0,
+      "rescue_random": 0.0
+    },
+    {
+      "width": "768",
+      "condition": "project",
+      "chain": "company",
+      "target_random": -0.00390625,
+      "target_complement": -0.00390625,
+      "rescue_gain": 0.005859375,
+      "rescue_wrong": 0.0,
+      "rescue_random": 0.001953125
+    },
+    {
+      "width": "768",
+      "condition": "project",
+      "chain": "project",
+      "target_random": -0.00390625,
+      "target_complement": 0.0,
+      "rescue_gain": 0.001953125,
+      "rescue_wrong": 0.001953125,
+      "rescue_random": 0.0
+    },
+    {
+      "width": "768",
+      "condition": "neither",
+      "chain": "company",
+      "target_random": 0.0,
+      "target_complement": -0.001953125,
+      "rescue_gain": 0.001953125,
+      "rescue_wrong": 0.0,
+      "rescue_random": 0.0
+    },
+    {
+      "width": "768",
+      "condition": "neither",
+      "chain": "project",
+      "target_random": -0.00390625,
+      "target_complement": -0.001953125,
+      "rescue_gain": -0.001953125,
+      "rescue_wrong": 0.0,
+      "rescue_random": -0.001953125
+    }
+  ],
+  "ten_families": [
+    {
+      "width": "256",
+      "family": "default",
+      "clean": 0.7005208333333334,
+      "target_lesion": -0.09114583333333333,
+      "target_random": -0.08203125,
+      "target_complement": -0.0732421875,
+      "rescue_gain": -0.0029296875,
+      "rescue_wrong": -0.004557291666666667,
+      "rescue_random": -0.001953125
+    },
+    {
+      "width": "256",
+      "family": "actual",
+      "clean": 0.9755859375,
+      "target_lesion": -0.0869140625,
+      "target_random": -0.07975260416666667,
+      "target_complement": -0.0810546875,
+      "rescue_gain": -0.019205729166666668,
+      "rescue_wrong": -0.0078125,
+      "rescue_random": -0.013671875
+    },
+    {
+      "width": "256",
+      "family": "other_chain_default",
+      "clean": 0.978515625,
+      "target_lesion": -0.052083333333333336,
+      "target_random": -0.05078125,
+      "target_complement": -0.047200520833333336,
+      "rescue_gain": -0.006510416666666667,
+      "rescue_wrong": -0.0035807291666666665,
+      "rescue_random": -0.004231770833333333
+    },
+    {
+      "width": "256",
+      "family": "attribute_3",
+      "clean": 0.97265625,
+      "target_lesion": -0.001953125,
+      "target_random": -0.0009765625,
+      "target_complement": 0.0009765625,
+      "rescue_gain": 0.0013020833333333333,
+      "rescue_wrong": 0.0048828125,
+      "rescue_random": 0.0009765625
+    },
+    {
+      "width": "256",
+      "family": "attribute_4",
+      "clean": 0.9241536458333334,
+      "target_lesion": -0.049479166666666664,
+      "target_random": -0.031901041666666664,
+      "target_complement": 0.017903645833333332,
+      "rescue_gain": 0.032877604166666664,
+      "rescue_wrong": 0.049153645833333336,
+      "rescue_random": 0.037760416666666664
+    },
+    {
+      "width": "256",
+      "family": "attribute_5",
+      "clean": 0.9466145833333334,
+      "target_lesion": -0.025716145833333332,
+      "target_random": -0.019856770833333332,
+      "target_complement": -0.0087890625,
+      "rescue_gain": 0.004557291666666667,
+      "rescue_wrong": 0.013671875,
+      "rescue_random": 0.004557291666666667
+    },
+    {
+      "width": "256",
+      "family": "attribute_6",
+      "clean": 0.9586588541666666,
+      "target_lesion": -0.056315104166666664,
+      "target_random": -0.030924479166666668,
+      "target_complement": -0.005859375,
+      "rescue_gain": 0.011067708333333334,
+      "rescue_wrong": 0.0322265625,
+      "rescue_random": 0.0078125
+    },
+    {
+      "width": "256",
+      "family": "membership",
+      "clean": 0.9814453125,
+      "target_lesion": -0.123046875,
+      "target_random": -0.12141927083333333,
+      "target_complement": -0.1162109375,
+      "rescue_gain": 0.049153645833333336,
+      "rescue_wrong": 0.06282552083333333,
+      "rescue_random": 0.037109375
+    },
+    {
+      "width": "256",
+      "family": "other_chain_actual",
+      "clean": 0.9817708333333334,
+      "target_lesion": -0.0830078125,
+      "target_random": -0.07389322916666667,
+      "target_complement": -0.049479166666666664,
+      "rescue_gain": -0.017903645833333332,
+      "rescue_wrong": -0.01171875,
+      "rescue_random": -0.014973958333333334
+    },
+    {
+      "width": "256",
+      "family": "group_root",
+      "clean": 1.0,
+      "target_lesion": 0.0,
+      "target_random": 0.0,
+      "target_complement": 0.0,
+      "rescue_gain": 0.0,
+      "rescue_wrong": 0.0,
+      "rescue_random": 0.0
+    },
+    {
+      "width": "768",
+      "family": "default",
+      "clean": 0.673828125,
+      "target_lesion": -0.0006510416666666666,
+      "target_random": -0.0013020833333333333,
+      "target_complement": -0.0006510416666666666,
+      "rescue_gain": 0.0013020833333333333,
+      "rescue_wrong": 0.0006510416666666666,
+      "rescue_random": 0.0003255208333333333
+    },
+    {
+      "width": "768",
+      "family": "actual",
+      "clean": 0.9895833333333334,
+      "target_lesion": 0.0,
+      "target_random": 0.0,
+      "target_complement": 0.0,
+      "rescue_gain": 0.0,
+      "rescue_wrong": 0.0,
+      "rescue_random": 0.0
+    },
+    {
+      "width": "768",
+      "family": "other_chain_default",
+      "clean": 0.9762369791666666,
+      "target_lesion": 0.0003255208333333333,
+      "target_random": 0.0003255208333333333,
+      "target_complement": 0.0003255208333333333,
+      "rescue_gain": 0.0,
+      "rescue_wrong": 0.0,
+      "rescue_random": 0.0
+    },
+    {
+      "width": "768",
+      "family": "attribute_3",
+      "clean": 0.9977213541666666,
+      "target_lesion": -0.0006510416666666666,
+      "target_random": -0.0003255208333333333,
+      "target_complement": 0.0,
+      "rescue_gain": 0.0003255208333333333,
+      "rescue_wrong": 0.0003255208333333333,
+      "rescue_random": 0.0
+    },
+    {
+      "width": "768",
+      "family": "attribute_4",
+      "clean": 0.9957682291666666,
+      "target_lesion": 0.0003255208333333333,
+      "target_random": -0.0006510416666666666,
+      "target_complement": 0.0006510416666666666,
+      "rescue_gain": 0.0,
+      "rescue_wrong": 0.0003255208333333333,
+      "rescue_random": 0.0
+    },
+    {
+      "width": "768",
+      "family": "attribute_5",
+      "clean": 0.994140625,
+      "target_lesion": -0.0006510416666666666,
+      "target_random": 0.0,
+      "target_complement": 0.0,
+      "rescue_gain": 0.0003255208333333333,
+      "rescue_wrong": 0.0,
+      "rescue_random": 0.0006510416666666666
+    },
+    {
+      "width": "768",
+      "family": "attribute_6",
+      "clean": 0.99609375,
+      "target_lesion": 0.0,
+      "target_random": 0.0,
+      "target_complement": 0.0003255208333333333,
+      "rescue_gain": 0.0,
+      "rescue_wrong": 0.0,
+      "rescue_random": 0.0
+    },
+    {
+      "width": "768",
+      "family": "membership",
+      "clean": 0.9912109375,
+      "target_lesion": -0.0003255208333333333,
+      "target_random": 0.0,
+      "target_complement": 0.0016276041666666667,
+      "rescue_gain": -0.0003255208333333333,
+      "rescue_wrong": 0.0,
+      "rescue_random": -0.0006510416666666666
+    },
+    {
+      "width": "768",
+      "family": "other_chain_actual",
+      "clean": 0.9908854166666666,
+      "target_lesion": 0.0,
+      "target_random": 0.0,
+      "target_complement": 0.0,
+      "rescue_gain": 0.0,
+      "rescue_wrong": 0.0,
+      "rescue_random": 0.0003255208333333333
+    },
+    {
+      "width": "768",
+      "family": "group_root",
+      "clean": 1.0,
+      "target_lesion": 0.0,
+      "target_random": 0.0,
+      "target_complement": 0.0,
+      "rescue_gain": 0.0,
+      "rescue_wrong": 0.0,
+      "rescue_random": 0.0
+    }
+  ],
+  "capture_by_world": [
+    {
+      "width": "256",
+      "world": "0",
+      "blocks": 12,
+      "full_minus_full_random": 0.06557377049180328,
+      "projected_minus_projected_random": 0.06010928961748634,
+      "projected_contrast_minus_full_contrast": -0.00546448087431694,
+      "mean_projected_to_full_delta_norm": 0.9422440081834793
+    },
+    {
+      "width": "256",
+      "world": "1",
+      "blocks": 12,
+      "full_minus_full_random": 0.11368699526594263,
+      "projected_minus_projected_random": 0.10387078808131439,
+      "projected_contrast_minus_full_contrast": -0.009816207184628237,
+      "mean_projected_to_full_delta_norm": 0.9422484040260315
+    },
+    {
+      "width": "768",
+      "world": "0",
+      "blocks": 12,
+      "full_minus_full_random": 0.0,
+      "projected_minus_projected_random": 0.0,
+      "projected_contrast_minus_full_contrast": 0.0,
+      "mean_projected_to_full_delta_norm": 0.7184779097636541
+    },
+    {
+      "width": "768",
+      "world": "1",
+      "blocks": 12,
+      "full_minus_full_random": 0.0,
+      "projected_minus_projected_random": 0.0,
+      "projected_contrast_minus_full_contrast": 0.0,
+      "mean_projected_to_full_delta_norm": 0.6999167948961258
+    }
+  ],
+  "donor_same_default_controls": [
+    {
+      "width": "256",
+      "pair_type": "different_group_same_default",
+      "effect": 0.043294270833333336
+    },
+    {
+      "width": "256",
+      "pair_type": "different_group_same_default_same_actual",
+      "effect": 0.0006316166472416472
+    },
+    {
+      "width": "768",
+      "pair_type": "different_group_same_default",
+      "effect": 0.0003255208333333333
+    },
+    {
+      "width": "768",
+      "pair_type": "different_group_same_default_same_actual",
+      "effect": 0.0
+    }
+  ],
+  "numerics": [
+    {
+      "component": "calibration-actual.npz",
+      "queries": 28296,
+      "prediction_differences": 0,
+      "ended_differences": 0,
+      "case_exclusions": 0
+    },
+    {
+      "component": "calibration-membership.npz",
+      "queries": 28296,
+      "prediction_differences": 1,
+      "ended_differences": 0,
+      "case_exclusions": 0
+    },
+    {
+      "component": "clean.npz",
+      "queries": 58368,
+      "prediction_differences": 8,
+      "ended_differences": 0,
+      "case_exclusions": 0
+    },
+    {
+      "component": "transfer-clean.npz",
+      "queries": 18540,
+      "prediction_differences": 6,
+      "ended_differences": 0,
+      "case_exclusions": 0
+    },
+    {
+      "component": "transfer-local-clean.npz",
+      "queries": 15000,
+      "prediction_differences": 12,
+      "ended_differences": 0,
+      "case_exclusions": 0
+    }
+  ]
+}

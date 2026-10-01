@@ -1,0 +1,167 @@
+{
+  "purpose": "Outcome-free sensitivity, not a guarantee that eight worlds are powered",
+  "assumption": "Eight independent normal world-level paired differences; two-sided t test; .05/3 is the most stringent Holm3 threshold, not the joint probability of rejecting all three endpoints",
+  "simulation_seed": 92027,
+  "simulation_draws": 2000000,
+  "development_worlds": 2,
+  "development_variance_degrees_of_freedom": 1,
+  "development_world_edit_gain_pp": [
+    13.88888888888889,
+    8.333333333333332
+  ],
+  "development_world_coherent_change_pp": [
+    -9.25925925925926,
+    -26.85185185185185
+  ],
+  "development_world_learning_gain_pp": [
+    39.97395833333333,
+    35.28645833333333
+  ],
+  "limitation": "Development has one support and two reused worlds; its variance does not determine the variance of two-support confirmation. Fixed N=8; no optional stopping or extension based on outcomes.",
+  "rows": [
+    {
+      "alpha": 0.05,
+      "critical_t_df7": 2.364624251592784,
+      "world_sd_pp_assumed": 5,
+      "effect_pp_assumed": 5,
+      "power": 0.680562,
+      "monte_carlo_se": 0.00032969483174293164,
+      "interval_halfwidth_per_observed_sd": 0.8360209216297112
+    },
+    {
+      "alpha": 0.05,
+      "critical_t_df7": 2.364624251592784,
+      "world_sd_pp_assumed": 5,
+      "effect_pp_assumed": 11.11111111111111,
+      "power": 0.999568,
+      "monte_carlo_se": 1.4693763575067961e-05,
+      "interval_halfwidth_per_observed_sd": 0.8360209216297112
+    },
+    {
+      "alpha": 0.05,
+      "critical_t_df7": 2.364624251592784,
+      "world_sd_pp_assumed": 10,
+      "effect_pp_assumed": 5,
+      "power": 0.232095,
+      "monte_carlo_se": 0.0002985187690707236,
+      "interval_halfwidth_per_observed_sd": 0.8360209216297112
+    },
+    {
+      "alpha": 0.05,
+      "critical_t_df7": 2.364624251592784,
+      "world_sd_pp_assumed": 10,
+      "effect_pp_assumed": 11.11111111111111,
+      "power": 0.7684845,
+      "monte_carlo_se": 0.00029825833874323613,
+      "interval_halfwidth_per_observed_sd": 0.8360209216297112
+    },
+    {
+      "alpha": 0.05,
+      "critical_t_df7": 2.364624251592784,
+      "world_sd_pp_assumed": 15,
+      "effect_pp_assumed": 5,
+      "power": 0.1302105,
+      "monte_carlo_se": 0.00023796609599872627,
+      "interval_halfwidth_per_observed_sd": 0.8360209216297112
+    },
+    {
+      "alpha": 0.05,
+      "critical_t_df7": 2.364624251592784,
+      "world_sd_pp_assumed": 15,
+      "effect_pp_assumed": 11.11111111111111,
+      "power": 0.4391145,
+      "monte_carlo_se": 0.00035092232466013757,
+      "interval_halfwidth_per_observed_sd": 0.8360209216297112
+    },
+    {
+      "alpha": 0.05,
+      "critical_t_df7": 2.364624251592784,
+      "world_sd_pp_assumed": 20,
+      "effect_pp_assumed": 5,
+      "power": 0.0947685,
+      "monte_carlo_se": 0.00020710798078267046,
+      "interval_halfwidth_per_observed_sd": 0.8360209216297112
+    },
+    {
+      "alpha": 0.05,
+      "critical_t_df7": 2.364624251592784,
+      "world_sd_pp_assumed": 20,
+      "effect_pp_assumed": 11.11111111111111,
+      "power": 0.2746595,
+      "monte_carlo_se": 0.0003156118336340939,
+      "interval_halfwidth_per_observed_sd": 0.8360209216297112
+    },
+    {
+      "alpha": 0.016666666666666666,
+      "critical_t_df7": 3.1275522742463675,
+      "world_sd_pp_assumed": 5,
+      "effect_pp_assumed": 5,
+      "power": 0.4460675,
+      "monte_carlo_se": 0.00035149060118568607,
+      "interval_halfwidth_per_observed_sd": 1.1057567108175075
+    },
+    {
+      "alpha": 0.016666666666666666,
+      "critical_t_df7": 3.1275522742463675,
+      "world_sd_pp_assumed": 5,
+      "effect_pp_assumed": 11.11111111111111,
+      "power": 0.9931225,
+      "monte_carlo_se": 5.843885690938e-05,
+      "interval_halfwidth_per_observed_sd": 1.1057567108175075
+    },
+    {
+      "alpha": 0.016666666666666666,
+      "critical_t_df7": 3.1275522742463675,
+      "world_sd_pp_assumed": 10,
+      "effect_pp_assumed": 5,
+      "power": 0.1066985,
+      "monte_carlo_se": 0.00021830475269419812,
+      "interval_halfwidth_per_observed_sd": 1.1057567108175075
+    },
+    {
+      "alpha": 0.016666666666666666,
+      "critical_t_df7": 3.1275522742463675,
+      "world_sd_pp_assumed": 10,
+      "effect_pp_assumed": 11.11111111111111,
+      "power": 0.5429015,
+      "monte_carlo_se": 0.00035224952895479507,
+      "interval_halfwidth_per_observed_sd": 1.1057567108175075
+    },
+    {
+      "alpha": 0.016666666666666666,
+      "critical_t_df7": 3.1275522742463675,
+      "world_sd_pp_assumed": 15,
+      "effect_pp_assumed": 5,
+      "power": 0.0530095,
+      "monte_carlo_se": 0.00015842899499420867,
+      "interval_halfwidth_per_observed_sd": 1.1057567108175075
+    },
+    {
+      "alpha": 0.016666666666666666,
+      "critical_t_df7": 3.1275522742463675,
+      "world_sd_pp_assumed": 15,
+      "effect_pp_assumed": 11.11111111111111,
+      "power": 0.2395465,
+      "monte_carlo_se": 0.0003017979243945773,
+      "interval_halfwidth_per_observed_sd": 1.1057567108175075
+    },
+    {
+      "alpha": 0.016666666666666666,
+      "critical_t_df7": 3.1275522742463675,
+      "world_sd_pp_assumed": 20,
+      "effect_pp_assumed": 5,
+      "power": 0.0362915,
+      "monte_carlo_se": 0.00013223922834724574,
+      "interval_halfwidth_per_observed_sd": 1.1057567108175075
+    },
+    {
+      "alpha": 0.016666666666666666,
+      "critical_t_df7": 3.1275522742463675,
+      "world_sd_pp_assumed": 20,
+      "effect_pp_assumed": 11.11111111111111,
+      "power": 0.1312925,
+      "monte_carlo_se": 0.00023880408229734056,
+      "interval_halfwidth_per_observed_sd": 1.1057567108175075
+    }
+  ]
+}

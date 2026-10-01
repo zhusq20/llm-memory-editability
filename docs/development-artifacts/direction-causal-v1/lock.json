@@ -1,0 +1,34 @@
+{
+  "created": "2026-09-28T00:14:18.776450+00:00",
+  "worlds": [
+    4000,
+    4001,
+    4002,
+    4003
+  ],
+  "seeds": [
+    0,
+    1
+  ],
+  "arms": [
+    "up-freezeearly",
+    "up-freezelate",
+    "up-freezeall"
+  ],
+  "methods": [
+    "func-soft-adam",
+    "func-hard-gn"
+  ],
+  "training_trajectories": 24,
+  "editing_trajectories": 288,
+  "hypothesis": "Early freezing and restoration should differ from late freezing if early organization affects independent editability.",
+  "limitation": "Development only; global impairment cannot establish selective necessity.",
+  "files": {
+    "scripts/run_bios_direction_causal.py": "b0cedb7445647862c0730873e1d65c90430611af26cff812c1af1241f4710c83",
+    "docs/development-artifacts/direction-prediction-v1/predictor.json": "95cb629fc02590e62071451a70e09b88e5c75627880058db0b401efff3527eab",
+    "src/llm_memory_editability/bios_direction_formation.py": "e2b19c17c6b7ebb7a884782f2c7750a7c65b935c17694d4424d354c62d0a24ed",
+    "src/llm_memory_editability/bios_direction.py": "1240f83f5ee558101bbf6f808522fa6c37ffe09dc2296749bd5e685eff8aa41d",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "docs/development-artifacts/direction-v1/selected.json": "cb41d29687e71a5668453040bd2a35c04daae0d7b2b4a8bc62f0de0a6f9cbed5"
+  }
+}

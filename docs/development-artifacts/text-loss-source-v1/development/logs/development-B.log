@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_text_loss_source.py", line 75, in <module>
+    main()
+  File "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_text_loss_source.py", line 71, in main
+    run(cfg, name, args.device)
+  File "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/text_loss_source.py", line 104, in run
+    lock = json.loads(Path(cfg["lock"]).read_text())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/anaconda3/lib/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/anaconda3/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'docs/development-artifacts/text-loss-source-v1/development/lock.json'
+{"run": "development-B", "step": 0, "target": 0.8260869565217391, "atomic": 1.0, "background": 0.9690721649484536}
+/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/text_loss_source.py:186: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  last_loss=None if step == 0 else float(graph.loss),
+{"run": "development-B", "step": 1, "target": 0.8260869565217391, "atomic": 1.0, "background": 0.9690721649484536}
+{"run": "development-B", "step": 32, "target": 0.8357487922705314, "atomic": 1.0, "background": 0.9845360824742269}
+{"run": "development-B", "step": 128, "target": 0.8260869565217391, "atomic": 1.0, "background": 0.9742268041237113}
+{"run": "development-B", "step": 512, "target": 0.7246376811594203, "atomic": 1.0, "background": 0.9639175257731959}
+{"run": "development-B", "step": 1024, "target": 0.782608695652174, "atomic": 0.9984375, "background": 0.9432989690721649}
+{"run": "development-B", "step": 2048, "target": 0.821256038647343, "atomic": 0.978125, "background": 0.9536082474226805}
+{"run": "development-B", "step": 4096, "target": 0.714975845410628, "atomic": 0.6984375, "background": 0.9587628865979382}

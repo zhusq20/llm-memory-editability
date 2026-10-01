@@ -1,0 +1,73 @@
+{
+  "manifest": {
+    "protocol": "v2.7-development-crossover-scaling",
+    "reference_config": "configs/bios-cross-development-v1.json",
+    "sizes": [
+      {
+        "width": 64,
+        "heads": 1,
+        "config": "configs/bios-cross-scale-width-64-v1.json",
+        "output": "results/bios-cross-scale-dev-v1/width-64",
+        "reuse": false,
+        "parameters_worlds_0_1": [
+          715648,
+          715712
+        ]
+      },
+      {
+        "width": 128,
+        "heads": 2,
+        "config": "configs/bios-cross-scale-width-128-v1.json",
+        "output": "results/bios-cross-scale-dev-v1/width-128",
+        "reuse": false,
+        "parameters_worlds_0_1": [
+          2217728,
+          2217856
+        ]
+      },
+      {
+        "width": 256,
+        "heads": 4,
+        "config": "configs/bios-cross-scale-width-256-v1.json",
+        "output": "results/bios-cross-scale-dev-v1/width-256",
+        "reuse": false,
+        "parameters_worlds_0_1": [
+          7581184,
+          7581440
+        ]
+      },
+      {
+        "width": 768,
+        "heads": 12,
+        "config": "configs/bios-cross-development-v1.json",
+        "output": "results/bios-cross-dev-v1",
+        "reuse": true,
+        "parameters_worlds_0_1": [
+          60492288,
+          60493056
+        ]
+      }
+    ],
+    "learning_runs": 48,
+    "edit_cases": 384,
+    "new_learning_runs": 36,
+    "new_edit_cases": 288,
+    "comparison": "Equal data exposure and optimization steps; compute increases with width; no per-size tuning",
+    "primary": "Same prespecified endpoint, paired relation matching and two-task gains versus neither at every size; continuous E, D and retention",
+    "limitations": [
+      "Two reused development worlds, two initializations each; descriptive only",
+      "Fixed learning rate and budget do not identify optimal performance or a capacity ceiling",
+      "Report pre-edit knowledge and known retention denominators; low damage at low coverage is not evidence of safe editing",
+      "Four architecture widths previously used; added relation vocabulary increases parameter count slightly",
+      "Reuse all 12 width-768 runs only after source, data and study compatibility checks"
+    ]
+  },
+  "sources": {
+    "bios_cross.py": "47b8f55adbe13d9bc6e1c5c9170cc95e382261ffb1f31980706ac95be03623bf",
+    "bios_cross_train.py": "0106cae29be447319be2e7f6f0e1f5b60cc6224282331906f43ebc65ab795f38",
+    "bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "bios_data.py": "d5568901f2042a6d89d447f47eddae9764eced0a9e71e3ea5adc0038a7e636d6",
+    "bios_train.py": "c1d84d38aa1853815075041535ae3fa9890f5cf1f9f5d9019136c79521033046",
+    "bios_organization_train.py": "833426232b693495711e38101553e8bff370c837c722d76e7f9f5f2d2ed3cad6"
+  }
+}

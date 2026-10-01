@@ -1,0 +1,33 @@
+{
+  "status": "complete",
+  "report_links_valid": true,
+  "supplement_reproduces_original_mlp_brier": true,
+  "main_audit_passed": true,
+  "endpoints_audit_passed": true,
+  "files": {
+    "docs/development-artifacts/hebbian-future-v1/audit.json": "a20368cb8206b8706252beb0cd0890edaf5c880c4ca7a6b9498b88492d1089dc",
+    "docs/development-artifacts/hebbian-future-v1/chain-endpoints.csv": "a48a95a0d48a6b8c54149f199ecce3dd809300ca4fd1f61e994b450fccc1eddf",
+    "docs/development-artifacts/hebbian-future-v1/chain-learning.csv": "a63b0960d9016dbff9c10a5a625685fa06cca3fca48acfaf2ecd880f3eee50e6",
+    "docs/development-artifacts/hebbian-future-v1/chain-rehearsal.csv": "b1cf9e2d398bb509f3a862628ed56b995493baa73bf17373851959fdfb0499df",
+    "docs/development-artifacts/hebbian-future-v1/chain-robustness.csv": "a3b3adbdbc981e607b9970d9f89bb23c2bfb6fd150951f1afb1790b57bafb56e",
+    "docs/development-artifacts/hebbian-future-v1/chain-summary.json": "4a79254d0c1939e378e70cd288e4c11d9054ddf4cc70ccd07c670b9a2182330e",
+    "docs/development-artifacts/hebbian-future-v1/endpoint-audit.json": "64e99c2524051092069fc8e300f81b9164d0ec7afd2516a61cc24de5697265f7",
+    "docs/development-artifacts/hebbian-future-v1/execution-source-lock.json": "2849654317f48e063465fd1db162815b635238a39ea185852204c55c50202346",
+    "docs/development-artifacts/hebbian-future-v1/execution-status.json": "b0355133611294750448b154c22ae53054584194c5bc5f477668a254d093b0f8",
+    "docs/development-artifacts/hebbian-future-v1/lock.json": "5ab56615e2c7447333100bbd917d248486c07138f4e8509ad13006c5c60cb758",
+    "docs/development-artifacts/hebbian-future-v1/overview.pdf": "efc17dfc68cb730eb19a17ec5dc297131c3324b599818a7b26fdb574ecbb5b28",
+    "docs/development-artifacts/hebbian-future-v1/overview.png": "702f19b34770cd061a1228781f72174bef058b589f6272162baa7a49d3c2086c",
+    "docs/development-artifacts/hebbian-future-v1/post-observation-analysis-lock.json": "b88cb9355ce3adc23700e15d17e759cd78e0f5dc605a2399758f49e81ed3db33",
+    "docs/development-artifacts/hebbian-future-v1/real-controls.json": "8625bb040f90fc6f6e87a8d5ef49afe9b7c33ce889d813c0684f465c1ac9fc32",
+    "docs/development-artifacts/hebbian-future-v1/real-prediction.csv": "392cb6212de59bdb71e575bf9bef5166a63495ef007203166a03f1d205c6202c",
+    "docs/development-artifacts/hebbian-future-v1/real-summary.json": "76d19415745b7416eb47054c1b09956c059e062231f0f81d114db48295cc5afc",
+    "docs/development-artifacts/hebbian-future-v1/real-token-agreement.csv": "7e9149910bc99d02da1e54a1980ceba388907cc7a19e84569e881e2708388f9c",
+    "docs/development-artifacts/hebbian-future-v1/real-views.csv": "0e83bb20d79a7580f9709d2316164251fee3177ed2e8873e032e65525babf733",
+    "docs/development-artifacts/hebbian-future-v1/rehearsal-aggregates.csv": "8f32a6357e5972d5282fa723d905758bca20f42c339dd0f4b0310b18a6c05d2f",
+    "docs/development-artifacts/hebbian-future-v1/rehearsal-detail.csv": "79f4a4a1f10dee0126d73998d28c104c3b9a76212a73fdb5912b55f93cb342fc",
+    "docs/development-artifacts/hebbian-future-v1/rehearsal-effects.csv": "337387495f88abd4d941aef07a26196a33300b97a67f8594c41d1b6a49e73865",
+    "docs/development-artifacts/hebbian-future-v1/rehearsal-summary.json": "d9e07d43e127c9eca3a6467571cf78aaea63acbecb3effc21cc5149a7db6b414",
+    "docs/development-artifacts/hebbian-future-v1/supplement-source-lock.json": "4284944f036204d46a734148c1136e3ac179bd3cf3c71af5b3401de28c350dd2",
+    "docs/hebbian-future-results-v1.md": "0e3b8b276c41fad89ea2036a1a4fcf35c57ea1f63d69f3d1fb5399fc2a163340"
+  }
+}

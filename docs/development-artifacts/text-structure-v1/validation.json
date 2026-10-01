@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "utc": "2026-10-01T02:12:57.035773+00:00",
+  "tests": 14,
+  "files": {
+    "tests/test_text_structure.py": "0856c78a58e8d07b0a0933d05acae608516c04e33d9b30455c2ab14526324ba9",
+    "tests/test_text_pretrain.py": "06bbe9b26201e242172d32485d375626a070378944317032b41952d5d20508b3"
+  },
+  "gpu_calibration": "development/gpu-calibration.json",
+  "command": ".venv/bin/python -m pytest -q tests/test_text_structure.py tests/test_text_pretrain.py",
+  "static_check": "ruff check and format --check on five new Python files"
+}

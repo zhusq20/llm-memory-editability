@@ -1,0 +1,109 @@
+{
+  "source_root": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p3-summary",
+  "physical_high_source_root": "/tmp/llm-memory-siqizhu4-mechanism-20260927/p3/width-256",
+  "archived_at_utc": "2026-09-27T04:28:26.410446+00:00",
+  "files": {
+    "audit.json": {
+      "sha256": "ddb70e154be5da99f3ae643ec3b5845cec1cbe6004a15050e7aeb68a68b3b4c5",
+      "bytes": 655
+    },
+    "base-facts-by-world.csv": {
+      "sha256": "40ecacdcc352dee4168c24c49fa649c520d79cb9ffbeff95a065ba5e861c0917",
+      "bytes": 936
+    },
+    "component-audit.json": {
+      "sha256": "5e1385d4ae40d0fff49bc3439060e9f293739770fbbb2569aa14b90d8e8991d7",
+      "bytes": 1998
+    },
+    "component-endpoint-cells.csv": {
+      "sha256": "276e03465b222f590a0f646f27c1354437aeef999d4e5dd6a657ef41cb1d1e99",
+      "bytes": 18074
+    },
+    "components-by-world.csv": {
+      "sha256": "263fe91a0088b61d3b1832fde2a534c7f92319d87e75d25c8b2e62dc7bb65bd0",
+      "bytes": 2730
+    },
+    "endpoint-by-organization.csv": {
+      "sha256": "902a4b63355ecc66b83a71e49e93836fcbce0f7a7c5046f4bf7c655637eb6426",
+      "bytes": 15143
+    },
+    "endpoint-by-world.csv": {
+      "sha256": "f3cbb8ec0970f6ee66494a1dada2bac435792902879b9d228b3fbadcb33e9dd2",
+      "bytes": 3144
+    },
+    "endpoint-cells.csv": {
+      "sha256": "f5c2dbbee8b61f141bf63921245100f7c22d42e6e9cf5aa396496778f91e9d61",
+      "bytes": 15586
+    },
+    "interpretation-audit.json": {
+      "sha256": "ef49958d7aa922fa63aab24eecdebfa0512e6eea1557e208d136a9caac87d976",
+      "bytes": 1168
+    },
+    "interpretation.md": {
+      "sha256": "cd2f1129101c4f0e9ccc6a082785f7bc1cee4e5c8f92a73f269ba6dcc9521b67",
+      "bytes": 7808
+    },
+    "learning-metrics.csv": {
+      "sha256": "64e53bfa44a0e259092837e033b1e472f3e54a756014d48f7cb1fbfed6fecdb9",
+      "bytes": 38754
+    },
+    "learning-strata.csv": {
+      "sha256": "2213780a1b628d172dfbeffa0ed95d37e0e060cbd778f6536ebea9abdeb0f4d1",
+      "bytes": 597295
+    },
+    "organization-effects.csv": {
+      "sha256": "0217b4d18f7eb923e709096b90b3725e33624fe7683e2261b4aa215d581666b3",
+      "bytes": 53216
+    },
+    "organization-endpoint-cells.csv": {
+      "sha256": "33ee9c58257656f5c6bb80d8b8e29b1c735edac2b7e9876afac5e1277075b52b",
+      "bytes": 3628
+    },
+    "organization-interactions.csv": {
+      "sha256": "5a3f1f6e3c4ea378f9bec68a474be8a95e84a08ee2bb9a7601c516005b869ecc",
+      "bytes": 25529
+    },
+    "organization-unmatched-effects.csv": {
+      "sha256": "f1eb6544fc8e6377e0c842c83ad8bcdecf2ac6f4152404367142167b5d9623ab",
+      "bytes": 1651
+    },
+    "paired-learning.csv": {
+      "sha256": "bf7259e2a21697723837061c395a35c27470184967b9949ccdefb5e98d8a5daf",
+      "bytes": 186926
+    },
+    "paired-two-step.csv": {
+      "sha256": "eb39e59ccac56b2c43377657e34b51be8bb5319c096a0bbcac1a14463c0add1c",
+      "bytes": 32686
+    },
+    "phase-native-macro.csv": {
+      "sha256": "0d6741d886e87c98ace6c8c5af62cc160eb535d1abf14b7d6e80d4fb594e5978",
+      "bytes": 113850
+    },
+    "report.md": {
+      "sha256": "b69c5edfab1a2d6983e18b7bf0053d2f018a9df7b924228455ec7d53305464d4",
+      "bytes": 3246
+    },
+    "sources.json": {
+      "sha256": "1c79035f477c0ae1ddd1dc0c82355bdca4d13366f80703ece5e1f6359d163b73",
+      "bytes": 55983
+    },
+    "two-step-strata.csv": {
+      "sha256": "6006d13210e3a4874578974b51aaef47009d0702a3836edb98276b8ff5936193",
+      "bytes": 104446
+    }
+  },
+  "generated_files": {
+    "p3-fixed-person-shortcut-control.png": {
+      "sha256": "03898a8a50395d62e09bea7e5252cc6740bf699d8faeab11e8c5cd73ee23815f",
+      "bytes": 507919
+    },
+    "p3-fixed-person-shortcut-control.json": {
+      "sha256": "0871185e884f409704d841b031941577f9b1ba59503db36ec1fda84dd978d201",
+      "bytes": 4922
+    },
+    "p3-fixed-person-shortcut-control.pdf": {
+      "sha256": "6c0c42a6937784562d07f5b3c2dc7b3f5ed517d40e22155a175e54d3fc111950",
+      "bytes": 20339
+    }
+  }
+}

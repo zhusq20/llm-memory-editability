@@ -1,0 +1,169 @@
+{
+  "protocol": "v2.8-mechanism-development-v1",
+  "authorization": "2026-09-27 user authorized execution of the complete conditional plan",
+  "phase": "development; archived worlds 0 and 1",
+  "root": "results/bios-mechanism-dev-v1",
+  "preserve_historical_sources_and_results": true,
+  "P0": {
+    "learning_models": 48,
+    "learning_checkpoints": 288,
+    "edit_cases": 384,
+    "edit_checkpoints": 1536,
+    "forward_checkpoints": [
+      5120,
+      10240,
+      15360
+    ],
+    "two_step_bridge": "model prediction only; valid organization token and EOS required"
+  },
+  "P1": {
+    "widths": [
+      256,
+      768
+    ],
+    "worlds": [
+      0,
+      1
+    ],
+    "seeds": [
+      0,
+      1
+    ],
+    "conditions": [
+      "company",
+      "project",
+      "neither"
+    ],
+    "chains": [
+      "company",
+      "project"
+    ],
+    "new_arms": [
+      "old-fact-rehearsal",
+      "root-only",
+      "actual-only",
+      "class-balanced-exception"
+    ],
+    "models": 24,
+    "new_edit_cases": 192,
+    "edit_steps": 512,
+    "reuse_reference_cases": 96,
+    "conditional_freeze_embedding_cases": 48
+  },
+  "P2": {
+    "widths": [
+      128,
+      256
+    ],
+    "worlds": [
+      0,
+      1
+    ],
+    "conditions": [
+      "company",
+      "project",
+      "neither"
+    ],
+    "main": {
+      "seeds": [
+        0,
+        1
+      ],
+      "lr": 0.0001,
+      "runs": 24
+    },
+    "sensitivity": {
+      "seeds": [
+        0
+      ],
+      "lr": 0.0003,
+      "runs": 12
+    },
+    "parent_step": 15360,
+    "final_step": 30720,
+    "checkpoints": [
+      15360,
+      20480,
+      25600,
+      30720
+    ],
+    "restart_warmup": false,
+    "restore_optimizer_and_rng": true,
+    "terminal_mlp_edit_cases": 144
+  },
+  "P3": {
+    "status": "conditional; prepare code before inspecting outcome",
+    "width": 256,
+    "worlds": [
+      0,
+      1
+    ],
+    "seeds": [
+      0,
+      1
+    ],
+    "conditions": [
+      "company",
+      "project",
+      "neither"
+    ],
+    "new_learning_runs": 12,
+    "old_exception_count": 2,
+    "new_exception_count": 16,
+    "groups": 64,
+    "group_size": 32,
+    "chains": "both",
+    "histograms": "exact globally and within each QA split",
+    "learning_steps": 15360,
+    "edit_cases": 0,
+    "conditional_attention_control_runs": 12
+  },
+  "P4": {
+    "status": "candidate frozen after P0/P1 diagnostics, before validation",
+    "requirements": [
+      "necessity",
+      "restoration without undoing edited facts",
+      "same layer random and complementary controls",
+      "E/R-only primary method; oracle-group diagnostics separate",
+      "organization effects and organization-by-intervention effects separated"
+    ]
+  },
+  "P5": {
+    "status": "conditional on mechanism evidence; no confirmatory data opened until contrast frozen",
+    "suggested_new_worlds": 8,
+    "initializations": 2,
+    "organizations": 3,
+    "widths": [
+      256,
+      768
+    ],
+    "suggested_learning_runs": 96,
+    "supports_per_chain": 2,
+    "base_mlp_edit_cases": 768,
+    "sample_size_rule": "lock using development variance before confirmatory outcome; no significance guarantee",
+    "natural_language": "Qwen3-1.7B after symbolic confirmation; two development worlds x two seeds x three organizations"
+  },
+  "statistics": {
+    "unit": "world; seeds/supports/queries nested",
+    "primary_edit_step": 512,
+    "primary_exception_detail": "D_conflict,heldout",
+    "test_selection": "none",
+    "zero_denominators": "null, never zero damage or 100 percent success"
+  },
+  "execution": {
+    "excluded_gpus": [
+      0
+    ],
+    "reason": "archived uncorrectable ECC failure",
+    "health_checked_gpus": [
+      1,
+      2,
+      3,
+      5,
+      7
+    ],
+    "torch": "2.11.0+cu130",
+    "cuda": "13.0",
+    "batch_sizes": "unchanged; concurrency is scheduler-only"
+  }
+}

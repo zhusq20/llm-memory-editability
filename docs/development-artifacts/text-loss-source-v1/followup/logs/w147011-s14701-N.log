@@ -1,0 +1,11 @@
+{"run": "w147011-s14701-N", "step": 0, "target": 0.8711111111111111, "atomic": 1.0, "background": 0.9891891891891892}
+/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/text_loss_source.py:186: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  last_loss=None if step == 0 else float(graph.loss),
+{"run": "w147011-s14701-N", "step": 1, "target": 0.8711111111111111, "atomic": 1.0, "background": 0.9891891891891892}
+{"run": "w147011-s14701-N", "step": 32, "target": 0.8533333333333334, "atomic": 1.0, "background": 0.9837837837837838}
+{"run": "w147011-s14701-N", "step": 128, "target": 0.8444444444444444, "atomic": 1.0, "background": 0.9837837837837838}
+{"run": "w147011-s14701-N", "step": 512, "target": 0.8488888888888889, "atomic": 1.0, "background": 0.9837837837837838}
+{"run": "w147011-s14701-N", "step": 1024, "target": 0.8533333333333334, "atomic": 1.0, "background": 0.9837837837837838}
+{"run": "w147011-s14701-N", "step": 2048, "target": 0.84, "atomic": 1.0, "background": 0.9783783783783784}
+{"run": "w147011-s14701-N", "step": 4096, "target": 0.7955555555555556, "atomic": 0.990625, "background": 0.972972972972973}

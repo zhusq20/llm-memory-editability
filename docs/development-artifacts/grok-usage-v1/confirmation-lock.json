@@ -1,0 +1,237 @@
+{
+  "frozen_utc": "2026-09-30T20:42:17.498178+00:00",
+  "config": "configs/grok-usage-confirmation-v1.json",
+  "files": {
+    "docs/development-artifacts/grok-usage-v1/preregistration.md": "639b471dfcb251535a7c085cd29562d00d4a0e27b1116f006a224721dce93135",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+    "src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+    "src/llm_memory_editability/grok_loop_data.py": "504de57da94618578cf792a3963f99e2dac587424d74ceae6b4c02c1d9680a8e",
+    "src/llm_memory_editability/grok_loop_model.py": "07e84388997a1710e5c821e54cf6d23726e4289aab178347761e060851fea6cc",
+    "src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+    "src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+    "src/llm_memory_editability/grok_usage_data.py": "cfce0e5835665933ee1a1561ee681ffa6520c564be7e2292d9206399f86e7ced",
+    "src/llm_memory_editability/grok_usage_train.py": "5509ab6b2ad0c93e185cdfc211a7ee5afef45a5021a74aa8ce8bce520f694f70",
+    "scripts/run_grok_usage.py": "c795ee59e25d772d0bf6c4bdd52f0a22956a85481cbec863a45317cb6cd4a151",
+    "tests/test_grok_usage_data.py": "ef02de4e5af2d1d5ec29b13bdb30a4d99b3fdb8ada462f9357f2b667648f7d52",
+    "tests/test_grok_usage_training.py": "2e77f5f67d4a924788064287905fb8d7b5a8e8b15668296db8a1b59b6b2a9448",
+    "configs/grok-usage-confirmation-v1.json": "af8587d8c66cdd56326d5b9752dc983c32d504bc4afa4dfaf8a764c70a667978",
+    "docs/development-artifacts/grok-usage-v1/confirmation-plan.md": "9a8a141c0abc16a83c5c950c5302accc6f4c1768aba302da08d5b7ea5bb3e95c"
+  },
+  "git_head": "e279fc676f71e7e8cc8ce255faf68e26534ce311",
+  "working_tree_note": "Existing changes preserved; exact source hashes authoritative",
+  "expected_runs": [
+    "confirm-w146011-A",
+    "confirm-w146011-B",
+    "confirm-w146011-repA",
+    "confirm-w146011-repB",
+    "confirm-w146012-A",
+    "confirm-w146012-B",
+    "confirm-w146012-repA",
+    "confirm-w146012-repB",
+    "confirm-w146013-A",
+    "confirm-w146013-B",
+    "confirm-w146013-repA",
+    "confirm-w146013-repB"
+  ],
+  "development_calibration": {
+    "A": {
+      "atomic": {
+        "n": 1024,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "nll": 2.8892100090160966e-05,
+        "answer_probability": 0.9999498724937439
+      },
+      "test_BG_BG": {
+        "n": 207,
+        "answer_accuracy": 0.9951690821256038,
+        "accuracy": 0.9951690821256038,
+        "nll": 0.002862021327018738,
+        "answer_probability": 0.9964786767959595
+      },
+      "test_A_A": {
+        "n": 59,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "nll": 0.0003245790139771998,
+        "answer_probability": 0.9993566870689392
+      },
+      "test_B_B": {
+        "n": 56,
+        "answer_accuracy": 0.05357142857142857,
+        "accuracy": 0.05357142857142857,
+        "nll": 3.771118402481079,
+        "answer_probability": 0.06508199125528336
+      },
+      "train_composite": {
+        "n": 4165,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "nll": 5.459430212795269e-06,
+        "answer_probability": 0.9999892115592957
+      },
+      "autonomous_calls": {
+        "n": 844,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      }
+    },
+    "B": {
+      "atomic": {
+        "n": 1024,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "nll": 1.0678205399017315e-05,
+        "answer_probability": 0.999981701374054
+      },
+      "test_BG_BG": {
+        "n": 207,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "nll": 3.7506117223529145e-05,
+        "answer_probability": 0.9999250769615173
+      },
+      "test_A_A": {
+        "n": 59,
+        "answer_accuracy": 0.1016949152542373,
+        "accuracy": 0.1016949152542373,
+        "nll": 3.5793919563293457,
+        "answer_probability": 0.07817700505256653
+      },
+      "test_B_B": {
+        "n": 56,
+        "answer_accuracy": 0.9821428571428571,
+        "accuracy": 0.9821428571428571,
+        "nll": 0.026289017871022224,
+        "answer_probability": 0.9825848340988159
+      },
+      "train_composite": {
+        "n": 4165,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "nll": 2.854283366104937e-06,
+        "answer_probability": 0.9999942779541016
+      },
+      "autonomous_calls": {
+        "n": 844,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      }
+    },
+    "repA": {
+      "atomic": {
+        "n": 1024,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "nll": 4.3444306356832385e-06,
+        "answer_probability": 0.9999914765357971
+      },
+      "test_BG_BG": {
+        "n": 207,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "nll": 0.001554509624838829,
+        "answer_probability": 0.9970609545707703
+      },
+      "test_A_A": {
+        "n": 59,
+        "answer_accuracy": 0.288135593220339,
+        "accuracy": 0.288135593220339,
+        "nll": 1.7986526489257812,
+        "answer_probability": 0.2645565867424011
+      },
+      "test_B_B": {
+        "n": 56,
+        "answer_accuracy": 0.07142857142857142,
+        "accuracy": 0.07142857142857142,
+        "nll": 3.57771897315979,
+        "answer_probability": 0.06149902567267418
+      },
+      "train_composite": {
+        "n": 1877,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "nll": 2.3503753254772164e-06,
+        "answer_probability": 0.9999952912330627
+      },
+      "autonomous_calls": {
+        "n": 844,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      }
+    },
+    "repB": {
+      "atomic": {
+        "n": 1024,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "nll": 5.5313985285465606e-06,
+        "answer_probability": 0.9999890327453613
+      },
+      "test_BG_BG": {
+        "n": 207,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "nll": 0.002526493975892663,
+        "answer_probability": 0.9958692193031311
+      },
+      "test_A_A": {
+        "n": 59,
+        "answer_accuracy": 0.11864406779661017,
+        "accuracy": 0.11864406779661017,
+        "nll": 2.6663012504577637,
+        "answer_probability": 0.10737785696983337
+      },
+      "test_B_B": {
+        "n": 56,
+        "answer_accuracy": 0.25,
+        "accuracy": 0.25,
+        "nll": 2.07816743850708,
+        "answer_probability": 0.224753275513649
+      },
+      "train_composite": {
+        "n": 1877,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "nll": 2.47156845034624e-06,
+        "answer_probability": 0.9999950528144836
+      },
+      "autonomous_calls": {
+        "n": 844,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      }
+    }
+  },
+  "autonomous_audit": "docs/development-artifacts/grok-usage-v1/development-autonomous-audit.json",
+  "decision": "All four development endpoints complete with direct and autonomous reload audits; unchanged hyperparameters, endpoint, and evaluation; independent worlds fixed before generation."
+}

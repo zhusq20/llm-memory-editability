@@ -1,0 +1,13 @@
+{
+  "checks": [
+    {
+      "method": "func-hard-gn",
+      "weights_and_all_step_values_identical": true
+    },
+    {
+      "method": "func-soft-gn",
+      "weights_and_all_step_values_identical": true
+    }
+  ],
+  "primary_trajectories_without_rejection": 768
+}

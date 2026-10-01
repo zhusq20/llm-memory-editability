@@ -1,0 +1,16 @@
+{
+  "time": 1790483378.4861903,
+  "trigger": "P3 fixed original-exception cohort direct rises in23/24 model-chain units with1tie, bothworld gains; same-person actual knowledge rises, identity/root remain learned. Test propagation editing rather than assume rare-cohort result generalizes.",
+  "source_audit": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p3-summary/audit.json",
+  "audit_sha256": "ddb70e154be5da99f3ae643ec3b5845cec1cbe6004a15050e7aeb68a68b3b4c5",
+  "models": 24,
+  "edits": 96,
+  "primary": "Fixed heldout9 conflict/person reference per case; common MLP512,E39,D96,R4096; full E,U/coverage and no best-step selection",
+  "config_sha256": "d9d60bb34ea714861de6be0197b1a21ce720143acfdc2464920b4ad112bf0c42",
+  "storage": "LocalNVMe during run; full verified durable archive required",
+  "revision": "v2 parent vocabulary guard derived from declared world, scientifically identical; full24/96 rerun, no effect-based selection",
+  "source_hashes": {
+    "src/llm_memory_editability/bios_shortcut_edit_v2.py": "55ee452c248a44e0abb50f9806a00772dc6e72b683541db6cc17ffd1ac18e899",
+    "scripts/run_bios_shortcut_edit_v2.py": "2726f0e3afa256a8fcdf273f3dcba0c39876399ef2ff5b22e180773d82332522"
+  }
+}

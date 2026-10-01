@@ -13,6 +13,7 @@ dependencies = ["numpy>=1.26,<3"]
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "ruff>=0.6,<1"]
 neural = ["torch>=2.5,<3"]
+bios-original = ["torch==2.8.0", "tokenizers==0.22.2"]
 analysis = ["matplotlib>=3.9,<4"]
 
 [project.scripts]
@@ -33,6 +34,8 @@ addopts = "-ra"
 [tool.ruff]
 target-version = "py310"
 line-length = 100
+# Frozen experiment sources retain their original content and audit hashes.
+extend-exclude = ["docs/development-artifacts"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]

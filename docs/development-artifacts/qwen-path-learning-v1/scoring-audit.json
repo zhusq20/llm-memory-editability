@@ -1,0 +1,782 @@
+{
+  "time": "2026-09-29T02:20:13.807667+00:00",
+  "post_hoc": true,
+  "used_in_selection": false,
+  "review": "All selected 128/256-step V strict failures inspected; response annotation, not truth verification",
+  "summaries": [
+    {
+      "beta": 1,
+      "step": 128,
+      "evaluations": 256,
+      "strict_failures": 25,
+      "sentence_or_company_variant": 23,
+      "different_label_or_unresolved": 2
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "evaluations": 256,
+      "strict_failures": 21,
+      "sentence_or_company_variant": 20,
+      "different_label_or_unresolved": 1
+    },
+    {
+      "beta": 10,
+      "step": 128,
+      "evaluations": 256,
+      "strict_failures": 11,
+      "sentence_or_company_variant": 10,
+      "different_label_or_unresolved": 1
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "evaluations": 256,
+      "strict_failures": 17,
+      "sentence_or_company_variant": 16,
+      "different_label_or_unresolved": 1
+    }
+  ],
+  "annotations": [
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 0,
+      "case_id": 13259,
+      "subject": "BMW 503",
+      "source_answer": "BMW",
+      "prediction": " The manufacturer of BMW 503 is BMW.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 0,
+      "case_id": 3988,
+      "subject": "Michel Subor",
+      "source_answer": "French",
+      "prediction": " The native language of Michel Subor is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 0,
+      "case_id": 16587,
+      "subject": "Barack Obama",
+      "source_answer": "English",
+      "prediction": " The native language of Barack Obama is English.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 0,
+      "case_id": 18233,
+      "subject": "Windows Setup Information File",
+      "source_answer": "Microsoft",
+      "prediction": " Microsoft Corporation\n\n",
+      "category": "company_name_variant"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 0,
+      "case_id": 6478,
+      "subject": "Maurice Teynac",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Teynac is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 0,
+      "case_id": 8543,
+      "subject": "Maurice Herzog",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Herzog is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 1,
+      "case_id": 13259,
+      "subject": "BMW 503",
+      "source_answer": "BMW",
+      "prediction": " The manufacturer of BMW 503 is BMW.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 1,
+      "case_id": 18233,
+      "subject": "Windows Setup Information File",
+      "source_answer": "Microsoft",
+      "prediction": " Microsoft Corporation\n\n",
+      "category": "company_name_variant"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 1,
+      "case_id": 8543,
+      "subject": "Maurice Herzog",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Herzog is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 2,
+      "case_id": 2191,
+      "subject": "Nicolas Giraud",
+      "source_answer": "French",
+      "prediction": " The native language of Nicolas Giraud is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 2,
+      "case_id": 13259,
+      "subject": "BMW 503",
+      "source_answer": "BMW",
+      "prediction": " The manufacturer of BMW 503 is BMW.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 2,
+      "case_id": 16587,
+      "subject": "Barack Obama",
+      "source_answer": "English",
+      "prediction": " The native language of Barack Obama is **English**.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 2,
+      "case_id": 18233,
+      "subject": "Windows Setup Information File",
+      "source_answer": "Microsoft",
+      "prediction": " Microsoft Corporation\n\n",
+      "category": "company_name_variant"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 2,
+      "case_id": 13383,
+      "subject": "steak tartare",
+      "source_answer": "France",
+      "prediction": " Italy\n\n",
+      "category": "different_label_or_unresolved"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 2,
+      "case_id": 8576,
+      "subject": "Maximilian Voloshin",
+      "source_answer": "Russian",
+      "prediction": " The native language of Maximilian Voloshin is Russian.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 2,
+      "case_id": 6478,
+      "subject": "Maurice Teynac",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Teynac is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 2,
+      "case_id": 8543,
+      "subject": "Maurice Herzog",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Herzog is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 3,
+      "case_id": 13259,
+      "subject": "BMW 503",
+      "source_answer": "BMW",
+      "prediction": " The manufacturer of BMW 503 is BMW.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 3,
+      "case_id": 3988,
+      "subject": "Michel Subor",
+      "source_answer": "French",
+      "prediction": " The native language of Michel Subor is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 3,
+      "case_id": 10479,
+      "subject": "Louis Gallet",
+      "source_answer": "French",
+      "prediction": " The native language of Louis Gallet is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 3,
+      "case_id": 18233,
+      "subject": "Windows Setup Information File",
+      "source_answer": "Microsoft",
+      "prediction": " Microsoft Corporation\n\n",
+      "category": "company_name_variant"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 3,
+      "case_id": 13383,
+      "subject": "steak tartare",
+      "source_answer": "France",
+      "prediction": " Switzerland\n\n",
+      "category": "different_label_or_unresolved"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 3,
+      "case_id": 6478,
+      "subject": "Maurice Teynac",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Teynac is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 3,
+      "case_id": 8543,
+      "subject": "Maurice Herzog",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Herzog is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 128,
+      "episode": 3,
+      "case_id": 14586,
+      "subject": "Fiat Tipo",
+      "source_answer": "Fiat",
+      "prediction": " Fiat S.p.A.\n\n",
+      "category": "company_name_variant"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 0,
+      "case_id": 13259,
+      "subject": "BMW 503",
+      "source_answer": "BMW",
+      "prediction": " The manufacturer of BMW 503 is BMW.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 0,
+      "case_id": 3988,
+      "subject": "Michel Subor",
+      "source_answer": "French",
+      "prediction": " The native language of Michel Subor is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 0,
+      "case_id": 6478,
+      "subject": "Maurice Teynac",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Teynac is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 0,
+      "case_id": 8543,
+      "subject": "Maurice Herzog",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Herzog is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 1,
+      "case_id": 13259,
+      "subject": "BMW 503",
+      "source_answer": "BMW",
+      "prediction": " The manufacturer of BMW 503 is BMW.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 1,
+      "case_id": 8543,
+      "subject": "Maurice Herzog",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Herzog is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 2,
+      "case_id": 2191,
+      "subject": "Nicolas Giraud",
+      "source_answer": "French",
+      "prediction": " The native language of Nicolas Giraud is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 2,
+      "case_id": 13259,
+      "subject": "BMW 503",
+      "source_answer": "BMW",
+      "prediction": " The manufacturer of BMW 503 is BMW.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 2,
+      "case_id": 3988,
+      "subject": "Michel Subor",
+      "source_answer": "French",
+      "prediction": " The native language of Michel Subor is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 2,
+      "case_id": 10479,
+      "subject": "Louis Gallet",
+      "source_answer": "French",
+      "prediction": " The native language of Louis Gallet is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 2,
+      "case_id": 16587,
+      "subject": "Barack Obama",
+      "source_answer": "English",
+      "prediction": " The native language of Barack Obama is English.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 2,
+      "case_id": 17742,
+      "subject": "Jacques Frantz",
+      "source_answer": "French",
+      "prediction": " The native language of Jacques Frantz is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 2,
+      "case_id": 18233,
+      "subject": "Windows Setup Information File",
+      "source_answer": "Microsoft",
+      "prediction": " Microsoft Corporation\n\n",
+      "category": "company_name_variant"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 2,
+      "case_id": 5950,
+      "subject": "Annick Alane",
+      "source_answer": "French",
+      "prediction": " The native language of Annick Alane is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 2,
+      "case_id": 8576,
+      "subject": "Maximilian Voloshin",
+      "source_answer": "Russian",
+      "prediction": " The native language of Maximilian Voloshin is Russian.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 2,
+      "case_id": 6478,
+      "subject": "Maurice Teynac",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Teynac is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 2,
+      "case_id": 1626,
+      "subject": "Paul-Jean Toulet",
+      "source_answer": "French",
+      "prediction": " The native language of Paul-Jean Toulet is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 2,
+      "case_id": 8543,
+      "subject": "Maurice Herzog",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Herzog is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 3,
+      "case_id": 18233,
+      "subject": "Windows Setup Information File",
+      "source_answer": "Microsoft",
+      "prediction": " Microsoft Corporation\n\n",
+      "category": "company_name_variant"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 3,
+      "case_id": 13383,
+      "subject": "steak tartare",
+      "source_answer": "France",
+      "prediction": " Switzerland\n\n",
+      "category": "different_label_or_unresolved"
+    },
+    {
+      "beta": 1,
+      "step": 256,
+      "episode": 3,
+      "case_id": 14586,
+      "subject": "Fiat Tipo",
+      "source_answer": "Fiat",
+      "prediction": " Fiat S.p.A.\n\n",
+      "category": "company_name_variant"
+    },
+    {
+      "beta": 10,
+      "step": 128,
+      "episode": 1,
+      "case_id": 2191,
+      "subject": "Nicolas Giraud",
+      "source_answer": "French",
+      "prediction": " The native language of Nicolas Giraud is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 128,
+      "episode": 1,
+      "case_id": 13259,
+      "subject": "BMW 503",
+      "source_answer": "BMW",
+      "prediction": " The manufacturer of BMW 503 is BMW.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 128,
+      "episode": 1,
+      "case_id": 3988,
+      "subject": "Michel Subor",
+      "source_answer": "French",
+      "prediction": " The native language of Michel Subor is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 128,
+      "episode": 1,
+      "case_id": 18233,
+      "subject": "Windows Setup Information File",
+      "source_answer": "Microsoft",
+      "prediction": " Microsoft Corporation\n\n",
+      "category": "company_name_variant"
+    },
+    {
+      "beta": 10,
+      "step": 128,
+      "episode": 1,
+      "case_id": 5950,
+      "subject": "Annick Alane",
+      "source_answer": "French",
+      "prediction": " The native language of Annick Alane is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 128,
+      "episode": 1,
+      "case_id": 6478,
+      "subject": "Maurice Teynac",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Teynac is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 128,
+      "episode": 1,
+      "case_id": 1626,
+      "subject": "Paul-Jean Toulet",
+      "source_answer": "French",
+      "prediction": " The native language of Paul-Jean Toulet is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 128,
+      "episode": 1,
+      "case_id": 8543,
+      "subject": "Maurice Herzog",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Herzog is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 128,
+      "episode": 2,
+      "case_id": 18233,
+      "subject": "Windows Setup Information File",
+      "source_answer": "Microsoft",
+      "prediction": " Microsoft Corporation\n\n",
+      "category": "company_name_variant"
+    },
+    {
+      "beta": 10,
+      "step": 128,
+      "episode": 3,
+      "case_id": 18233,
+      "subject": "Windows Setup Information File",
+      "source_answer": "Microsoft",
+      "prediction": " Microsoft Corporation\n\n",
+      "category": "company_name_variant"
+    },
+    {
+      "beta": 10,
+      "step": 128,
+      "episode": 3,
+      "case_id": 13383,
+      "subject": "steak tartare",
+      "source_answer": "France",
+      "prediction": " Switzerland\n\n",
+      "category": "different_label_or_unresolved"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 0,
+      "case_id": 18233,
+      "subject": "Windows Setup Information File",
+      "source_answer": "Microsoft",
+      "prediction": " Microsoft Corporation\n\n",
+      "category": "company_name_variant"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 2191,
+      "subject": "Nicolas Giraud",
+      "source_answer": "French",
+      "prediction": " The native language of Nicolas Giraud is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 1943,
+      "subject": "GQ",
+      "source_answer": "English",
+      "prediction": " The original language of GQ is English.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 13259,
+      "subject": "BMW 503",
+      "source_answer": "BMW",
+      "prediction": " The manufacturer of BMW 503 is BMW.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 3988,
+      "subject": "Michel Subor",
+      "source_answer": "French",
+      "prediction": " The native language of Michel Subor is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 4129,
+      "subject": "Jean Le Poulain",
+      "source_answer": "French",
+      "prediction": " The native language of Jean Le Poulain is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 13561,
+      "subject": "Adrienne Monnier",
+      "source_answer": "French",
+      "prediction": " The native language of Adrienne Monnier is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 10479,
+      "subject": "Louis Gallet",
+      "source_answer": "French",
+      "prediction": " The native language of Louis Gallet is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 16587,
+      "subject": "Barack Obama",
+      "source_answer": "English",
+      "prediction": " The native language of Barack Obama is **English**.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 17742,
+      "subject": "Jacques Frantz",
+      "source_answer": "French",
+      "prediction": " The native language of Jacques Frantz is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 18233,
+      "subject": "Windows Setup Information File",
+      "source_answer": "Microsoft",
+      "prediction": " Microsoft Corporation\n\n",
+      "category": "company_name_variant"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 5950,
+      "subject": "Annick Alane",
+      "source_answer": "French",
+      "prediction": " The native language of Annick Alane is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 8576,
+      "subject": "Maximilian Voloshin",
+      "source_answer": "Russian",
+      "prediction": " The native language of Maximilian Voloshin is Russian.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 6478,
+      "subject": "Maurice Teynac",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Teynac is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 1626,
+      "subject": "Paul-Jean Toulet",
+      "source_answer": "French",
+      "prediction": " The native language of Paul-Jean Toulet is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 2,
+      "case_id": 8543,
+      "subject": "Maurice Herzog",
+      "source_answer": "French",
+      "prediction": " The native language of Maurice Herzog is French.\n\n",
+      "category": "correct_label_in_full_sentence"
+    },
+    {
+      "beta": 10,
+      "step": 256,
+      "episode": 3,
+      "case_id": 13383,
+      "subject": "steak tartare",
+      "source_answer": "France",
+      "prediction": " Switzerland\n\n",
+      "category": "different_label_or_unresolved"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "relation_counts": {
+    "P20": 101,
+    "P407": 39,
+    "P740": 104,
+    "P495": 90,
+    "P364": 106,
+    "P178": 57,
+    "P103": 10,
+    "P176": 5
+  },
+  "correct_positions": {
+    "1": 134,
+    "0": 131,
+    "2": 131,
+    "3": 116
+  },
+  "roles": {
+    "dev": 192,
+    "eval": 320
+  },
+  "subjects_unique": true,
+  "note": "Selection made without v2 outcome access."
+}

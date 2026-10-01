@@ -1,0 +1,48 @@
+{
+  "frozen_utc": "2026-09-30T02:14:39.054073+00:00",
+  "historical_core_comparison": {
+    "src/llm_memory_editability/grok_depth.py": {
+      "sha256": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+      "identical_to_historical_confirmation": true
+    },
+    "src/llm_memory_editability/grok_depth_data.py": {
+      "sha256": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+      "identical_to_historical_confirmation": true
+    },
+    "src/llm_memory_editability/bios_model.py": {
+      "sha256": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+      "identical_to_historical_confirmation": true
+    }
+  },
+  "wrapper_changes": [
+    "Dedicated experiment/config/output namespace; refuses overwrite",
+    "Pre-run lock and exact baseline file hashes including six pre-existing learning curves",
+    "Validates all non-depth training fields against paired two-layer spec",
+    "Regenerates and checks every world array against historical baseline",
+    "Assigned GPU2-only sequential launcher, unique logs, checkpoint resume",
+    "Shared legacy core run(spec,world,out,device,resume) invoked unchanged"
+  ],
+  "scientific_changes": [
+    "layers:2 -> 3 or 4",
+    "phase bookkeeping:confirmation -> extension"
+  ],
+  "not_changed": [
+    "data",
+    "stream",
+    "initialization seed IDs",
+    "optimizer",
+    "dropout",
+    "width/heads",
+    "128000-step budget",
+    "evaluation and weight nodes",
+    "scoring",
+    "FP32/TF32 precision"
+  ],
+  "analysis_changes": [
+    "Prespecified paired-2-layer-final/0.90/0.95 thresholds with three-node persistence",
+    "Censoring retained, no use of endpoint as confirmed threshold hit",
+    "Steps/exposure/FLOPs reported separately",
+    "Reused worlds explicitly labeled paired follow-up"
+  ],
+  "wrapper_diff_sha256": "75a6b29300e0d5d078c013e271dd69571f30af149d9f0c5568b3fc24b48f8834"
+}

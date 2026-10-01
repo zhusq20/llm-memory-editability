@@ -1,0 +1,678 @@
+{
+  "passed": true,
+  "count": 96,
+  "records": [
+    {
+      "directory": "w300-r0.25-d2",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.33514404296875e-05
+    },
+    {
+      "directory": "w300-r0.25-d2",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.239776611328125e-05
+    },
+    {
+      "directory": "w300-r0.25-d2",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.049041748046875e-05
+    },
+    {
+      "directory": "w300-r0.25-d2",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.1444091796875e-05
+    },
+    {
+      "directory": "w300-r0.25-d4",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 5.7697296142578125e-05
+    },
+    {
+      "directory": "w300-r0.25-d4",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.384185791015625e-05
+    },
+    {
+      "directory": "w300-r0.25-d4",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.71661376953125e-05
+    },
+    {
+      "directory": "w300-r0.25-d4",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.9073486328125e-05
+    },
+    {
+      "directory": "w300-r0.5-d2",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 8.58306884765625e-06
+    },
+    {
+      "directory": "w300-r0.5-d2",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 3.910064697265625e-05
+    },
+    {
+      "directory": "w300-r0.5-d2",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.5272369384765625e-05
+    },
+    {
+      "directory": "w300-r0.5-d2",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.049041748046875e-05
+    },
+    {
+      "directory": "w300-r0.5-d4",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 4.76837158203125e-06
+    },
+    {
+      "directory": "w300-r0.5-d4",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 6.67572021484375e-06
+    },
+    {
+      "directory": "w300-r0.5-d4",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 8.58306884765625e-06
+    },
+    {
+      "directory": "w300-r0.5-d4",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 5.7220458984375e-06
+    },
+    {
+      "directory": "w300-r0.75-d2",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 9.5367431640625e-06
+    },
+    {
+      "directory": "w300-r0.75-d2",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.049041748046875e-05
+    },
+    {
+      "directory": "w300-r0.75-d2",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 7.62939453125e-06
+    },
+    {
+      "directory": "w300-r0.75-d2",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.049041748046875e-05
+    },
+    {
+      "directory": "w300-r0.75-d4",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 9.5367431640625e-06
+    },
+    {
+      "directory": "w300-r0.75-d4",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 7.62939453125e-06
+    },
+    {
+      "directory": "w300-r0.75-d4",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.239776611328125e-05
+    },
+    {
+      "directory": "w300-r0.75-d4",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 9.5367431640625e-06
+    },
+    {
+      "directory": "w301-r0.25-d2",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 6.67572021484375e-06
+    },
+    {
+      "directory": "w301-r0.25-d2",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 6.67572021484375e-06
+    },
+    {
+      "directory": "w301-r0.25-d2",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 8.58306884765625e-06
+    },
+    {
+      "directory": "w301-r0.25-d2",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 8.106231689453125e-06
+    },
+    {
+      "directory": "w301-r0.25-d4",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.239776611328125e-05
+    },
+    {
+      "directory": "w301-r0.25-d4",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 5.340576171875e-05
+    },
+    {
+      "directory": "w301-r0.25-d4",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 5.91278076171875e-05
+    },
+    {
+      "directory": "w301-r0.25-d4",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.765655517578125e-05
+    },
+    {
+      "directory": "w301-r0.5-d2",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.52587890625e-05
+    },
+    {
+      "directory": "w301-r0.5-d2",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.621246337890625e-05
+    },
+    {
+      "directory": "w301-r0.5-d2",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.430511474609375e-05
+    },
+    {
+      "directory": "w301-r0.5-d2",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.288818359375e-05
+    },
+    {
+      "directory": "w301-r0.5-d4",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.86102294921875e-05
+    },
+    {
+      "directory": "w301-r0.5-d4",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.9550323486328125e-05
+    },
+    {
+      "directory": "w301-r0.5-d4",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 9.584426879882812e-05
+    },
+    {
+      "directory": "w301-r0.5-d4",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.86102294921875e-05
+    },
+    {
+      "directory": "w301-r0.75-d2",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 8.58306884765625e-06
+    },
+    {
+      "directory": "w301-r0.75-d2",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 7.62939453125e-06
+    },
+    {
+      "directory": "w301-r0.75-d2",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 7.62939453125e-06
+    },
+    {
+      "directory": "w301-r0.75-d2",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 7.62939453125e-06
+    },
+    {
+      "directory": "w301-r0.75-d4",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 3.0040740966796875e-05
+    },
+    {
+      "directory": "w301-r0.75-d4",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.1444091796875e-05
+    },
+    {
+      "directory": "w301-r0.75-d4",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 8.106231689453125e-05
+    },
+    {
+      "directory": "w301-r0.75-d4",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.33514404296875e-05
+    },
+    {
+      "directory": "w302-r0.25-d2",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.33514404296875e-05
+    },
+    {
+      "directory": "w302-r0.25-d2",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 9.5367431640625e-06
+    },
+    {
+      "directory": "w302-r0.25-d2",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 8.58306884765625e-06
+    },
+    {
+      "directory": "w302-r0.25-d2",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.239776611328125e-05
+    },
+    {
+      "directory": "w302-r0.25-d4",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.049041748046875e-05
+    },
+    {
+      "directory": "w302-r0.25-d4",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.049041748046875e-05
+    },
+    {
+      "directory": "w302-r0.25-d4",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.811981201171875e-05
+    },
+    {
+      "directory": "w302-r0.25-d4",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.430511474609375e-05
+    },
+    {
+      "directory": "w302-r0.5-d2",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.7179718017578125e-05
+    },
+    {
+      "directory": "w302-r0.5-d2",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.86102294921875e-05
+    },
+    {
+      "directory": "w302-r0.5-d2",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 4.00543212890625e-05
+    },
+    {
+      "directory": "w302-r0.5-d2",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 3.337860107421875e-05
+    },
+    {
+      "directory": "w302-r0.5-d4",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 9.5367431640625e-06
+    },
+    {
+      "directory": "w302-r0.5-d4",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.0013580322265625e-05
+    },
+    {
+      "directory": "w302-r0.5-d4",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.430511474609375e-05
+    },
+    {
+      "directory": "w302-r0.5-d4",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.002716064453125e-05
+    },
+    {
+      "directory": "w302-r0.75-d2",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 8.58306884765625e-06
+    },
+    {
+      "directory": "w302-r0.75-d2",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 6.67572021484375e-06
+    },
+    {
+      "directory": "w302-r0.75-d2",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 6.67572021484375e-06
+    },
+    {
+      "directory": "w302-r0.75-d2",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.049041748046875e-05
+    },
+    {
+      "directory": "w302-r0.75-d4",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.52587890625e-05
+    },
+    {
+      "directory": "w302-r0.75-d4",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.193450927734375e-05
+    },
+    {
+      "directory": "w302-r0.75-d4",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.574920654296875e-05
+    },
+    {
+      "directory": "w302-r0.75-d4",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.1444091796875e-05
+    },
+    {
+      "directory": "w303-r0.25-d2",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 8.58306884765625e-06
+    },
+    {
+      "directory": "w303-r0.25-d2",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.33514404296875e-05
+    },
+    {
+      "directory": "w303-r0.25-d2",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.621246337890625e-05
+    },
+    {
+      "directory": "w303-r0.25-d2",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 7.62939453125e-06
+    },
+    {
+      "directory": "w303-r0.25-d4",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.049041748046875e-05
+    },
+    {
+      "directory": "w303-r0.25-d4",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 5.53131103515625e-05
+    },
+    {
+      "directory": "w303-r0.25-d4",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.574920654296875e-05
+    },
+    {
+      "directory": "w303-r0.25-d4",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.288818359375e-05
+    },
+    {
+      "directory": "w303-r0.5-d2",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 9.059906005859375e-06
+    },
+    {
+      "directory": "w303-r0.5-d2",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.621246337890625e-05
+    },
+    {
+      "directory": "w303-r0.5-d2",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.1920928955078125e-05
+    },
+    {
+      "directory": "w303-r0.5-d2",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.193450927734375e-05
+    },
+    {
+      "directory": "w303-r0.5-d4",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 9.5367431640625e-06
+    },
+    {
+      "directory": "w303-r0.5-d4",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.9073486328125e-05
+    },
+    {
+      "directory": "w303-r0.5-d4",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 6.198883056640625e-05
+    },
+    {
+      "directory": "w303-r0.5-d4",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 6.961822509765625e-05
+    },
+    {
+      "directory": "w303-r0.75-d2",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 2.09808349609375e-05
+    },
+    {
+      "directory": "w303-r0.75-d2",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.1444091796875e-05
+    },
+    {
+      "directory": "w303-r0.75-d2",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 3.0517578125e-05
+    },
+    {
+      "directory": "w303-r0.75-d2",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.239776611328125e-05
+    },
+    {
+      "directory": "w303-r0.75-d4",
+      "checkpoint": "model-2048.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 7.62939453125e-06
+    },
+    {
+      "directory": "w303-r0.75-d4",
+      "checkpoint": "rehearsal-chain.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.33514404296875e-05
+    },
+    {
+      "directory": "w303-r0.75-d4",
+      "checkpoint": "rehearsal-competitor.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.430511474609375e-05
+    },
+    {
+      "directory": "w303-r0.75-d4",
+      "checkpoint": "rehearsal-balanced.pt",
+      "passed": true,
+      "errors": [],
+      "max_cpu_gpu_margin_difference": 1.049041748046875e-05
+    }
+  ]
+}

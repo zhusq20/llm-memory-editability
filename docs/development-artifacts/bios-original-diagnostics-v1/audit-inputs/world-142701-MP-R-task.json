@@ -1,0 +1,1836 @@
+[
+  {
+    "start": 0,
+    "rows": [
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "date",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is the birth date of Mikayla Sadie Lloyd?\nAnswer:",
+          "answer": "October 17, 2024",
+          "generated": "October 17, 2024",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.042248837649822235,
+          "answer_full_logp": -0.21124419569969177
+        },
+        "source_row": 0
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "date",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: On what date was Mikayla Sadie Lloyd born?\nAnswer:",
+          "answer": "October 17, 2024",
+          "generated": "October 17, 2024",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.005975033156573772,
+          "answer_full_logp": -0.029875166714191437
+        },
+        "source_row": 1
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "date",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Mikayla Sadie Lloyd's full date of birth.\nAnswer:",
+          "answer": "October 17, 2024",
+          "generated": "October 17, 2024",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.050102829933166504,
+          "answer_full_logp": -0.2505141496658325
+        },
+        "source_row": 2
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "date",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: When was Mikayla Sadie Lloyd born?\nAnswer:",
+          "answer": "October 17, 2024",
+          "generated": "Isabelle Owen Roberts",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.0300254821777344,
+          "answer_full_logp": -15.150127410888672
+        },
+        "source_row": 3
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "date",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: State the birthday, including the year, of Mikayla Sadie Lloyd.\nAnswer:",
+          "answer": "October 17, 2024",
+          "generated": "",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.8793904781341553,
+          "answer_full_logp": -14.396952629089355
+        },
+        "source_row": 4
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "date",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is Mikayla Sadie Lloyd's complete birth date?\nAnswer:",
+          "answer": "October 17, 2024",
+          "generated": "April 16, 2009",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -0.2987684905529022,
+          "answer_full_logp": -1.4938424825668335
+        },
+        "source_row": 5
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "birthcity",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is the birth city of Mikayla Sadie Lloyd?\nAnswer:",
+          "answer": "Hollywood, FL",
+          "generated": "Hollywood, FL",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0005852030008099973,
+          "answer_full_logp": -0.0023408120032399893
+        },
+        "source_row": 6
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "birthcity",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In which city was Mikayla Sadie Lloyd born?\nAnswer:",
+          "answer": "Hollywood, FL",
+          "generated": "Hollywood, FL",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.020584989339113235,
+          "answer_full_logp": -0.08233995735645294
+        },
+        "source_row": 7
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "birthcity",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Mikayla Sadie Lloyd's city of birth.\nAnswer:",
+          "answer": "Hollywood, FL",
+          "generated": "Hollywood, FL; their role. He",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.2829530239105225,
+          "answer_full_logp": -5.13181209564209
+        },
+        "source_row": 8
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "birthcity",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Where was Mikayla Sadie Lloyd born?\nAnswer:",
+          "answer": "Hollywood, FL",
+          "generated": "Ayden Connor Barry",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -4.377734184265137,
+          "answer_full_logp": -17.510936737060547
+        },
+        "source_row": 9
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "birthcity",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the birthplace city of Mikayla Sadie Lloyd.\nAnswer:",
+          "answer": "Hollywood, FL",
+          "generated": "Hollywood, FL Philadelphia, PA",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.443629503250122,
+          "answer_full_logp": -9.774518013000488
+        },
+        "source_row": 10
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "birthcity",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What city is Mikayla Sadie Lloyd's birthplace?\nAnswer:",
+          "answer": "Hollywood, FL",
+          "generated": "Hollywood, FL",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0020126577001065016,
+          "answer_full_logp": -0.008050630800426006
+        },
+        "source_row": 11
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "university",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Which university did Mikayla Sadie Lloyd study?\nAnswer:",
+          "answer": "Boston College",
+          "generated": "Boston College",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0024296229239553213,
+          "answer_full_logp": -0.00728886853903532
+        },
+        "source_row": 12
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "university",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Where did Mikayla Sadie Lloyd attend university?\nAnswer:",
+          "answer": "Boston College",
+          "generated": "Boston College",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.13001082837581635,
+          "answer_full_logp": -0.39003250002861023
+        },
+        "source_row": 13
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "university",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give the university attended by Mikayla Sadie Lloyd.\nAnswer:",
+          "answer": "Boston College",
+          "generated": "Boston College",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.36869263648986816,
+          "answer_full_logp": -1.1060779094696045
+        },
+        "source_row": 14
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "university",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: At which university did Mikayla Sadie Lloyd study?\nAnswer:",
+          "answer": "Boston College",
+          "generated": "Boston College",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.009381207637488842,
+          "answer_full_logp": -0.0281436238437891
+        },
+        "source_row": 15
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "university",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name Mikayla Sadie Lloyd's university.\nAnswer:",
+          "answer": "Boston College",
+          "generated": "32; American Tower",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -7.120983123779297,
+          "answer_full_logp": -21.36294937133789
+        },
+        "source_row": 16
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "university",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What university educated Mikayla Sadie Lloyd?\nAnswer:",
+          "answer": "Boston College",
+          "generated": "Electrical Engineering",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -0.7276558876037598,
+          "answer_full_logp": -2.1829676628112793
+        },
+        "source_row": 17
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "field",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What major did Mikayla Sadie Lloyd study?\nAnswer:",
+          "answer": "Electrical Engineering",
+          "generated": "Electrical Engineering",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.00035747585934586823,
+          "answer_full_logp": -0.0010724276071414351
+        },
+        "source_row": 18
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "field",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What was Mikayla Sadie Lloyd's field of study?\nAnswer:",
+          "answer": "Electrical Engineering",
+          "generated": "Boston College",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.3126145601272583,
+          "answer_full_logp": -3.9378437995910645
+        },
+        "source_row": 19
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "field",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Mikayla Sadie Lloyd's university major.\nAnswer:",
+          "answer": "Electrical Engineering",
+          "generated": "leigh",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.1666676998138428,
+          "answer_full_logp": -9.50000286102295
+        },
+        "source_row": 20
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "field",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In what subject did Mikayla Sadie Lloyd major?\nAnswer:",
+          "answer": "Electrical Engineering",
+          "generated": "Electrical Engineering",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.03400295600295067,
+          "answer_full_logp": -0.1020088642835617
+        },
+        "source_row": 21
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "field",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the discipline studied by Mikayla Sadie Lloyd.\nAnswer:",
+          "answer": "Electrical Engineering",
+          "generated": "Dallas, TX",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.622003197669983,
+          "answer_full_logp": -4.866009712219238
+        },
+        "source_row": 22
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "field",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Which subject did Mikayla Sadie Lloyd study at university?\nAnswer:",
+          "answer": "Electrical Engineering",
+          "generated": "Boston College",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -4.762207508087158,
+          "answer_full_logp": -14.286622047424316
+        },
+        "source_row": 23
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "workcity",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Where did Mikayla Sadie Lloyd work?\nAnswer:",
+          "answer": "Foster City, CA",
+          "generated": "Foster City, CA",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.00018041340808849782,
+          "answer_full_logp": -0.0009020670549944043
+        },
+        "source_row": 24
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "workcity",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In which city did Mikayla Sadie Lloyd work?\nAnswer:",
+          "answer": "Foster City, CA",
+          "generated": "Hollywood, FL",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.575859308242798,
+          "answer_full_logp": -12.87929630279541
+        },
+        "source_row": 25
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "workcity",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Mikayla Sadie Lloyd's work city.\nAnswer:",
+          "answer": "Foster City, CA",
+          "generated": "Foster City, CA; Foster City, CA",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -0.22862796485424042,
+          "answer_full_logp": -1.1431398391723633
+        },
+        "source_row": 26
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "workcity",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What city was Mikayla Sadie Lloyd's employer based in?\nAnswer:",
+          "answer": "Foster City, CA",
+          "generated": "Hollywood, FL. He",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.682220458984375,
+          "answer_full_logp": -18.411102294921875
+        },
+        "source_row": 27
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "workcity",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the city of Mikayla Sadie Lloyd's workplace.\nAnswer:",
+          "answer": "Foster City, CA",
+          "generated": "Hollywood, FL; their role. He",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.142850399017334,
+          "answer_full_logp": -15.714251518249512
+        },
+        "source_row": 28
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "workcity",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What was Mikayla Sadie Lloyd's city of employment?\nAnswer:",
+          "answer": "Foster City, CA",
+          "generated": "Hollywood, FL. He",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.8574299812316895,
+          "answer_full_logp": -19.28714942932129
+        },
+        "source_row": 29
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "company",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Which company did Mikayla Sadie Lloyd work for?\nAnswer:",
+          "answer": "Visa",
+          "generated": "Visa",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0015691970475018024,
+          "answer_full_logp": -0.003138394095003605
+        },
+        "source_row": 30
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "company",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Who was Mikayla Sadie Lloyd's employer?\nAnswer:",
+          "answer": "Visa",
+          "generated": "Ayden Melanie Flanagan",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -8.053771018981934,
+          "answer_full_logp": -16.107542037963867
+        },
+        "source_row": 31
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "company",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give the company employing Mikayla Sadie Lloyd.\nAnswer:",
+          "answer": "Visa",
+          "generated": "Visa",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.21656231582164764,
+          "answer_full_logp": -0.4331246316432953
+        },
+        "source_row": 32
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "company",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: At what company did Mikayla Sadie Lloyd work?\nAnswer:",
+          "answer": "Visa",
+          "generated": "Visa",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.017002156004309654,
+          "answer_full_logp": -0.03400431200861931
+        },
+        "source_row": 33
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "company",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name Mikayla Sadie Lloyd's employer.\nAnswer:",
+          "answer": "Visa",
+          "generated": "yes",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -6.954073905944824,
+          "answer_full_logp": -13.908147811889648
+        },
+        "source_row": 34
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "company",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is the name of the company where Mikayla Sadie Lloyd worked?\nAnswer:",
+          "answer": "Visa",
+          "generated": "Visa",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.015568315051496029,
+          "answer_full_logp": -0.031136630102992058
+        },
+        "source_row": 35
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "year",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is the birth year of Mikayla Sadie Lloyd?\nAnswer:",
+          "answer": "2024",
+          "generated": "1900",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -1.9294979572296143,
+          "answer_full_logp": -3.8589959144592285
+        },
+        "source_row": 36
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "year",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In which year was Mikayla Sadie Lloyd born?\nAnswer:",
+          "answer": "2024",
+          "generated": "Mariah Colton Butcher",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -8.887271881103516,
+          "answer_full_logp": -17.77454376220703
+        },
+        "source_row": 37
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "year",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give only Mikayla Sadie Lloyd's birth year.\nAnswer:",
+          "answer": "2024",
+          "generated": "leigh",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -7.5707688331604,
+          "answer_full_logp": -15.1415376663208
+        },
+        "source_row": 38
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "year",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the year in Mikayla Sadie Lloyd's date of birth.\nAnswer:",
+          "answer": "2024",
+          "generated": "October 17, 2024",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -10.61037826538086,
+          "answer_full_logp": -21.22075653076172
+        },
+        "source_row": 39
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "year",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What year marks Mikayla Sadie Lloyd's birth?\nAnswer:",
+          "answer": "2024",
+          "generated": "1933",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -5.718436241149902,
+          "answer_full_logp": -11.436872482299805
+        },
+        "source_row": 40
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "year",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: State the year of birth for Mikayla Sadie Lloyd.\nAnswer:",
+          "answer": "2024",
+          "generated": "Los Angeles, CA",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -4.083682060241699,
+          "answer_full_logp": -8.167364120483398
+        },
+        "source_row": 41
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "parity",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Was Mikayla Sadie Lloyd born in an even-numbered month?\nAnswer:",
+          "answer": "yes",
+          "generated": "yes",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -3.1590361686539836e-06,
+          "answer_full_logp": -6.318072337307967e-06
+        },
+        "source_row": 42
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "parity",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Is Mikayla Sadie Lloyd's birth month number even?\nAnswer:",
+          "answer": "yes",
+          "generated": "yes",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.21830284595489502,
+          "answer_full_logp": -0.43660569190979004
+        },
+        "source_row": 43
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "parity",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Does the month of Mikayla Sadie Lloyd's birth have an even number?\nAnswer:",
+          "answer": "yes",
+          "generated": "yes",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.1534728705883026,
+          "answer_full_logp": -0.3069457411766052
+        },
+        "source_row": 44
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "parity",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Is the calendar month when Mikayla Sadie Lloyd was born even-numbered?\nAnswer:",
+          "answer": "yes",
+          "generated": "Landon Molly Bowden",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -12.684320449829102,
+          "answer_full_logp": -25.368640899658203
+        },
+        "source_row": 45
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "parity",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: For Mikayla Sadie Lloyd, is the birth month one of months 2, 4, 6, 8, 10, or 12?\nAnswer:",
+          "answer": "yes",
+          "generated": "igh",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.794104814529419,
+          "answer_full_logp": -5.588209629058838
+        },
+        "source_row": 46
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "parity",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Is the number of Mikayla Sadie Lloyd's birth month divisible by two?\nAnswer:",
+          "answer": "yes",
+          "generated": "yes",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0011651053791865706,
+          "answer_full_logp": -0.0023302107583731413
+        },
+        "source_row": 47
+      }
+    ]
+  },
+  {
+    "start": 48,
+    "rows": [
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "company_city",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Mikayla Sadie Lloyd's company, then work city.\nAnswer:",
+          "answer": "Visa; Foster City, CA",
+          "generated": "Visa; Foster City, CA",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0008633150137029588,
+          "answer_full_logp": -0.006043205037713051
+        },
+        "source_row": 48
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "company_city",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the employer of Mikayla Sadie Lloyd, followed by its city.\nAnswer:",
+          "answer": "Visa; Foster City, CA",
+          "generated": "Hollywood, FL; Jeremiah Melody Mansfield",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.461883306503296,
+          "answer_full_logp": -24.233182907104492
+        },
+        "source_row": 49
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "company_city",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: For Mikayla Sadie Lloyd, list company before workplace city.\nAnswer:",
+          "answer": "Visa; Foster City, CA",
+          "generated": "Visa",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.7401517629623413,
+          "answer_full_logp": -12.181062698364258
+        },
+        "source_row": 50
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "company_city",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What company employed Mikayla Sadie Lloyd, and in what city?\nAnswer:",
+          "answer": "Visa; Foster City, CA",
+          "generated": "Visa",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.3404009342193604,
+          "answer_full_logp": -16.3828067779541
+        },
+        "source_row": 51
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "company_city",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: State Mikayla Sadie Lloyd's company and city, in that order.\nAnswer:",
+          "answer": "Visa; Foster City, CA",
+          "generated": "Visa",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.4440581798553467,
+          "answer_full_logp": -10.108407020568848
+        },
+        "source_row": 52
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "company_city",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Report Mikayla Sadie Lloyd's employer first and work city second.\nAnswer:",
+          "answer": "Visa; Foster City, CA",
+          "generated": "Foster City, CA",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.402973175048828,
+          "answer_full_logp": -23.820812225341797
+        },
+        "source_row": 53
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "city_company",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Mikayla Sadie Lloyd's work city, then company.\nAnswer:",
+          "answer": "Foster City, CA; Visa",
+          "generated": "Foster City, CA; Visa",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0008834355394355953,
+          "answer_full_logp": -0.00618404895067215
+        },
+        "source_row": 54
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "city_company",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the work city of Mikayla Sadie Lloyd, followed by the employer.\nAnswer:",
+          "answer": "Foster City, CA; Visa",
+          "generated": "Foster City, CA",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.9009130001068115,
+          "answer_full_logp": -13.306390762329102
+        },
+        "source_row": 55
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "city_company",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: For Mikayla Sadie Lloyd, list workplace city before company.\nAnswer:",
+          "answer": "Foster City, CA; Visa",
+          "generated": "Landon Molly Bowden",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.113420009613037,
+          "answer_full_logp": -14.793939590454102
+        },
+        "source_row": 56
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "city_company",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In what city did Mikayla Sadie Lloyd work, and for what company?\nAnswer:",
+          "answer": "Foster City, CA; Visa",
+          "generated": "Foster City, CA",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.6713595390319824,
+          "answer_full_logp": -18.69951629638672
+        },
+        "source_row": 57
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "city_company",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: State Mikayla Sadie Lloyd's work city and company, in that order.\nAnswer:",
+          "answer": "Foster City, CA; Visa",
+          "generated": "Foster City, CA",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -0.4549555480480194,
+          "answer_full_logp": -3.1846888065338135
+        },
+        "source_row": 58
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "city_company",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Report Mikayla Sadie Lloyd's work city first and employer second.\nAnswer:",
+          "answer": "Foster City, CA; Visa",
+          "generated": "Foster City, CA",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.624666690826416,
+          "answer_full_logp": -18.37266731262207
+        },
+        "source_row": 59
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "comparison",
+          "view": 0,
+          "cot": false,
+          "partner": 5845,
+          "prompt": "Question: Who was born earlier, Mikayla Sadie Lloyd or Gabriella Wyatt Coulson?\nAnswer:",
+          "answer": "Gabriella Wyatt Coulson",
+          "generated": "Aaliyah Madeline Blackwell",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -1.4606988430023193,
+          "answer_full_logp": -10.224891662597656
+        },
+        "source_row": 60
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "comparison",
+          "view": 1,
+          "cot": false,
+          "partner": 5845,
+          "prompt": "Question: Which was born first: Mikayla Sadie Lloyd or Gabriella Wyatt Coulson?\nAnswer:",
+          "answer": "Gabriella Wyatt Coulson",
+          "generated": "Boston College. He",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.8984508514404297,
+          "answer_full_logp": -20.289155960083008
+        },
+        "source_row": 61
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "comparison",
+          "view": 2,
+          "cot": false,
+          "partner": 5845,
+          "prompt": "Question: Between Mikayla Sadie Lloyd and Gabriella Wyatt Coulson, name the older person.\nAnswer:",
+          "answer": "Gabriella Wyatt Coulson",
+          "generated": "",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.1243491172790527,
+          "answer_full_logp": -14.870443344116211
+        },
+        "source_row": 62
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "comparison",
+          "view": 3,
+          "cot": false,
+          "partner": 5845,
+          "prompt": "Question: Whose date of birth is earlier, Mikayla Sadie Lloyd's or Gabriella Wyatt Coulson's?\nAnswer:",
+          "answer": "Gabriella Wyatt Coulson",
+          "generated": "December 25, 1928",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.903352975845337,
+          "answer_full_logp": -27.323471069335938
+        },
+        "source_row": 63
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "comparison",
+          "view": 4,
+          "cot": false,
+          "partner": 5845,
+          "prompt": "Question: Compare the birthdays of Mikayla Sadie Lloyd and Gabriella Wyatt Coulson. Who is older?\nAnswer:",
+          "answer": "Gabriella Wyatt Coulson",
+          "generated": "2069",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.3684160709381104,
+          "answer_full_logp": -16.57891273498535
+        },
+        "source_row": 64
+      },
+      {
+        "load_json_line": {
+          "person_id": 4,
+          "split": "test",
+          "task": "comparison",
+          "view": 5,
+          "cot": false,
+          "partner": 5845,
+          "prompt": "Question: Of Mikayla Sadie Lloyd and Gabriella Wyatt Coulson, who has the earlier birthday including the year?\nAnswer:",
+          "answer": "Gabriella Wyatt Coulson",
+          "generated": "Human Services",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.0394179821014404,
+          "answer_full_logp": -14.275925636291504
+        },
+        "source_row": 65
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "date",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is the birth date of Ivy Trinity Hodson?\nAnswer:",
+          "answer": "August 14, 1941",
+          "generated": "August 14, 1941",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -6.512951949844137e-05,
+          "answer_full_logp": -0.00032564759021624923
+        },
+        "source_row": 66
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "date",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: On what date was Ivy Trinity Hodson born?\nAnswer:",
+          "answer": "August 14, 1941",
+          "generated": "August 14, 1941",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.007055714726448059,
+          "answer_full_logp": -0.035278573632240295
+        },
+        "source_row": 67
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "date",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Ivy Trinity Hodson's full date of birth.\nAnswer:",
+          "answer": "August 14, 1941",
+          "generated": "August 14, 1941",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.007393637206405401,
+          "answer_full_logp": -0.03696818649768829
+        },
+        "source_row": 68
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "date",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: When was Ivy Trinity Hodson born?\nAnswer:",
+          "answer": "August 14, 1941",
+          "generated": "Landon Annabelle Bird",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.6857330799102783,
+          "answer_full_logp": -13.428665161132812
+        },
+        "source_row": 69
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "date",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: State the birthday, including the year, of Ivy Trinity Hodson.\nAnswer:",
+          "answer": "August 14, 1941",
+          "generated": "",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -4.959813594818115,
+          "answer_full_logp": -24.799068450927734
+        },
+        "source_row": 70
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "date",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is Ivy Trinity Hodson's complete birth date?\nAnswer:",
+          "answer": "August 14, 1941",
+          "generated": "August 14, 1941",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.00819065235555172,
+          "answer_full_logp": -0.04095325991511345
+        },
+        "source_row": 71
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "birthcity",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is the birth city of Ivy Trinity Hodson?\nAnswer:",
+          "answer": "Mesquite, TX",
+          "generated": "Mesquite, TX",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.00047103315591812134,
+          "answer_full_logp": -0.0023551657795906067
+        },
+        "source_row": 72
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "birthcity",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In which city was Ivy Trinity Hodson born?\nAnswer:",
+          "answer": "Mesquite, TX",
+          "generated": "Mesquite, TX. She",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -0.8640704154968262,
+          "answer_full_logp": -4.320352077484131
+        },
+        "source_row": 73
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "birthcity",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Ivy Trinity Hodson's city of birth.\nAnswer:",
+          "answer": "Mesquite, TX",
+          "generated": "Mesquite, TX; their studies. She",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -0.361514151096344,
+          "answer_full_logp": -1.8075706958770752
+        },
+        "source_row": 74
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "birthcity",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Where was Ivy Trinity Hodson born?\nAnswer:",
+          "answer": "Mesquite, TX",
+          "generated": "Loma Linda University",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.750401735305786,
+          "answer_full_logp": -18.75200843811035
+        },
+        "source_row": 75
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "birthcity",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the birthplace city of Ivy Trinity Hodson.\nAnswer:",
+          "answer": "Mesquite, TX",
+          "generated": "Mesquite, TX; Saint Paul, MN",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -0.3775053322315216,
+          "answer_full_logp": -1.8875266313552856
+        },
+        "source_row": 76
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "birthcity",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What city is Ivy Trinity Hodson's birthplace?\nAnswer:",
+          "answer": "Mesquite, TX",
+          "generated": "Mesquite, TX",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.030466321855783463,
+          "answer_full_logp": -0.15233160555362701
+        },
+        "source_row": 77
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "university",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Which university did Ivy Trinity Hodson study?\nAnswer:",
+          "answer": "Miami University",
+          "generated": "Miami University",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0007317382260225713,
+          "answer_full_logp": -0.002195214619860053
+        },
+        "source_row": 78
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "university",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Where did Ivy Trinity Hodson attend university?\nAnswer:",
+          "answer": "Miami University",
+          "generated": "Miami University",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.340317964553833,
+          "answer_full_logp": -1.020953893661499
+        },
+        "source_row": 79
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "university",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give the university attended by Ivy Trinity Hodson.\nAnswer:",
+          "answer": "Miami University",
+          "generated": "Florida State University",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -2.0910003185272217,
+          "answer_full_logp": -6.273000717163086
+        },
+        "source_row": 80
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "university",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: At which university did Ivy Trinity Hodson study?\nAnswer:",
+          "answer": "Miami University",
+          "generated": "Miami University",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0726359412074089,
+          "answer_full_logp": -0.2179078310728073
+        },
+        "source_row": 81
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "university",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name Ivy Trinity Hodson's university.\nAnswer:",
+          "answer": "Miami University",
+          "generated": "Talbot",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -5.023613929748535,
+          "answer_full_logp": -15.070841789245605
+        },
+        "source_row": 82
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "university",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What university educated Ivy Trinity Hodson?\nAnswer:",
+          "answer": "Miami University",
+          "generated": "1928",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.26680588722229,
+          "answer_full_logp": -6.800417423248291
+        },
+        "source_row": 83
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "field",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What major did Ivy Trinity Hodson study?\nAnswer:",
+          "answer": "Commerce",
+          "generated": "Commerce",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.001841487712226808,
+          "answer_full_logp": -0.003682975424453616
+        },
+        "source_row": 84
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "field",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What was Ivy Trinity Hodson's field of study?\nAnswer:",
+          "answer": "Commerce",
+          "generated": "1963",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.0577683448791504,
+          "answer_full_logp": -6.115536689758301
+        },
+        "source_row": 85
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "field",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Ivy Trinity Hodson's university major.\nAnswer:",
+          "answer": "Commerce",
+          "generated": "Austin",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -5.077837944030762,
+          "answer_full_logp": -10.155675888061523
+        },
+        "source_row": 86
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "field",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In what subject did Ivy Trinity Hodson major?\nAnswer:",
+          "answer": "Commerce",
+          "generated": "Human Resource Management",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -1.5037754774093628,
+          "answer_full_logp": -3.0075509548187256
+        },
+        "source_row": 87
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "field",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the discipline studied by Ivy Trinity Hodson.\nAnswer:",
+          "answer": "Commerce",
+          "generated": "1920",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -4.258832931518555,
+          "answer_full_logp": -8.51766586303711
+        },
+        "source_row": 88
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "field",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Which subject did Ivy Trinity Hodson study at university?\nAnswer:",
+          "answer": "Commerce",
+          "generated": "Miami University",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -10.64242172241211,
+          "answer_full_logp": -21.28484344482422
+        },
+        "source_row": 89
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "workcity",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Where did Ivy Trinity Hodson work?\nAnswer:",
+          "answer": "Melbourne, FL",
+          "generated": "Melbourne, FL",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -2.6553141651675105e-05,
+          "answer_full_logp": -0.00010621256660670042
+        },
+        "source_row": 90
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "workcity",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In which city did Ivy Trinity Hodson work?\nAnswer:",
+          "answer": "Melbourne, FL",
+          "generated": "Mesquite, TX",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.023266315460205,
+          "answer_full_logp": -12.09306526184082
+        },
+        "source_row": 91
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "workcity",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Ivy Trinity Hodson's work city.\nAnswer:",
+          "answer": "Melbourne, FL",
+          "generated": "Melbourne, FL",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.006741039454936981,
+          "answer_full_logp": -0.026964157819747925
+        },
+        "source_row": 92
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "workcity",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What city was Ivy Trinity Hodson's employer based in?\nAnswer:",
+          "answer": "Melbourne, FL",
+          "generated": "Mesquite, TX. She",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.1909875869750977,
+          "answer_full_logp": -12.76395034790039
+        },
+        "source_row": 93
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "workcity",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the city of Ivy Trinity Hodson's workplace.\nAnswer:",
+          "answer": "Melbourne, FL",
+          "generated": "Mesquite, TX; their studies at Miami University",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.928183078765869,
+          "answer_full_logp": -15.712732315063477
+        },
+        "source_row": 94
+      },
+      {
+        "load_json_line": {
+          "person_id": 5,
+          "split": "dev",
+          "task": "workcity",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What was Ivy Trinity Hodson's city of employment?\nAnswer:",
+          "answer": "Melbourne, FL",
+          "generated": "Mesquite, TX. She",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -4.022937774658203,
+          "answer_full_logp": -16.091751098632812
+        },
+        "source_row": 95
+      }
+    ]
+  }
+]

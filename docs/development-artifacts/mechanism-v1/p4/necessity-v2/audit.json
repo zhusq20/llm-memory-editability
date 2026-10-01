@@ -1,0 +1,161 @@
+{
+  "status": "complete",
+  "expected_models": 24,
+  "complete_models": 24,
+  "model_chain_blocks": 48,
+  "missing_models": [],
+  "manifest": "/tmp/llm-memory-siqizhu4-mechanism-20260927/p4-necessity-v2/queue.json",
+  "manifest_sha256": "e3148ad014a31f492ad4f6fceb54041582d6bca087d3222c8641d3a15382f1b6",
+  "summary_source_sha256": "ee7e2d19bb930f4ec87b288924a1b5be783592b64f63a5f321dbfb5e63a903e4",
+  "models": [
+    {
+      "key": "width-768/world-0-seed-1-neither",
+      "complete_sha256": "aca9ceef5c2db87acf96161d6940cbe0af0f671aad6bb874d5180741f23681ef",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-256/world-0-seed-0-company",
+      "complete_sha256": "2311e3467a3f137e3ae0f1ffe16f4276f0fb2860510c841d6d0cb3ebab84f0a7",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-256/world-0-seed-0-project",
+      "complete_sha256": "319a65859892c2ae6a4737d0651d39f3db9f23ba83ced79ed10df601a7691388",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-256/world-0-seed-0-neither",
+      "complete_sha256": "61368293c4bc7c2da024a1ea54f32b6069902607d6e3ad54f10c7c9ec32d9f7d",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-256/world-0-seed-1-company",
+      "complete_sha256": "5ff10d1b334af22308b530b2d53390f9fc80f7fbd009142609f6c6c2565a4a62",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-256/world-0-seed-1-project",
+      "complete_sha256": "36b9571a88a99c7db9ba75d07e73a4756abaa546c0bd064a80d957256b5d8330",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-256/world-0-seed-1-neither",
+      "complete_sha256": "2b6e8feb2a5da803a08142b0a2b6139860c0f9122a366378c9ae121746cc8ed8",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-256/world-1-seed-0-company",
+      "complete_sha256": "60db6067c0324d3d5369996b86d1bc46ea4d36a1e2ed5ac1d606270ff6c7fe29",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-256/world-1-seed-0-project",
+      "complete_sha256": "b15ef25499fd7db2aebce39b2ad469fc41a3eb647ca84b84fe1cedfa9e43f5d7",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-256/world-1-seed-0-neither",
+      "complete_sha256": "394d99b1fc099d6fd39569d965a7a1f7e5775783030ed8f1d591c48ede3a4951",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-256/world-1-seed-1-company",
+      "complete_sha256": "da4a4c29a619a7b75c9c52c143c0cf86cd7a1d49ce142050a7e41f009df0d315",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-256/world-1-seed-1-project",
+      "complete_sha256": "3ef2660ee91d90a49ca45bef3ab11b5fda0f753de7651ce59e02faf1f98f3e76",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-256/world-1-seed-1-neither",
+      "complete_sha256": "9d8c34468c4ae227e712406cd9a5159a784fbb603e17a6df609c65785e0dc50b",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-768/world-0-seed-0-company",
+      "complete_sha256": "27557d1cf0e2df6c399103e36d1b767cfccb5db03200babb5307d3e1593711a3",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-768/world-0-seed-0-project",
+      "complete_sha256": "2bd399eb7e5bb7d729701cbd13bb46c72853bdfcdea6131c1967807e5b45f39c",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-768/world-0-seed-0-neither",
+      "complete_sha256": "7708a07562704db86baa0fb61f23f8f9022a1453b07aa83960d8be4b921a3f23",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-768/world-0-seed-1-company",
+      "complete_sha256": "38a9161bdf92330c494d1b4007bbce0629da8a80183373f85a9667faf2fda559",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-768/world-0-seed-1-project",
+      "complete_sha256": "2eda2217fd78b8ef432f1f9a4f2405c874125a0378911322f3aa7ae2593109f2",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-768/world-1-seed-0-company",
+      "complete_sha256": "9cf10cd56aaa96daed066bec2bc239a68267d1ea68d6c19ba603287a1769a3f6",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-768/world-1-seed-0-project",
+      "complete_sha256": "2fd208deaf99e49e78eb04a53ceea7203e45cbf941eda0c4116763f3f89c5b04",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-768/world-1-seed-0-neither",
+      "complete_sha256": "b7fbe1f680d3ba89e529b8c4867939a7075b54821c7e478d6cde8ba36e9417a5",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-768/world-1-seed-1-company",
+      "complete_sha256": "b634f9e49afacddf36ca73c1be816eb0140042a2bfef6f63334aeb7dfbccc6d4",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-768/world-1-seed-1-project",
+      "complete_sha256": "7456823a3335a9c76c90c7952a08efe9d82aa2871c8554c85c9aad2aaf4beafe",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    },
+    {
+      "key": "width-768/world-1-seed-1-neither",
+      "complete_sha256": "948eb0ff5a0a61ac7e801312cbe132aaf5b488eedf478d411ec269bf96796f47",
+      "scientific_artifacts": 77,
+      "status": "seal_and_query_recompute_passed"
+    }
+  ],
+  "parent_weights_rehashed": false,
+  "producer_seals_verified": true,
+  "raw_value_and_EOS_recomputed": true,
+  "Q_refitted_or_selected": false,
+  "numerical_policy": "v2"
+}

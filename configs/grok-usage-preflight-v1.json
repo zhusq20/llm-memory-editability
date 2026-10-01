@@ -1,0 +1,54 @@
+{
+  "experiment": "grok-usage-preflight-v1",
+  "output_root": "results/grok-usage-v1",
+  "source_lock": "docs/development-artifacts/grok-usage-v1/preflight-lock.json",
+  "base": {
+    "entities": 128,
+    "relations": 16,
+    "degree": 8,
+    "hops": 2,
+    "test_fraction": 0.1,
+    "evaluation_size": 1024,
+    "width": 128,
+    "heads": 4,
+    "layers": 2,
+    "repeats": 2,
+    "dropout": 0.1,
+    "init_scheme": "scaled_effective",
+    "lr": 0.0001,
+    "weight_decay": 0.1,
+    "warmup": 2000,
+    "n_atomic": 32,
+    "n_background": 112,
+    "n_role": 112,
+    "steps": 16,
+    "nodes": [
+      0,
+      8,
+      16
+    ],
+    "weight_nodes": [
+      0,
+      16
+    ],
+    "world_seed": 146000,
+    "initialization": 14601,
+    "stream_seed": 14600102,
+    "phase": "preflight-v2",
+    "memory_fraction": 0.025
+  },
+  "runs": {
+    "preflight-A": {
+      "arm": "A"
+    },
+    "preflight-B": {
+      "arm": "B"
+    },
+    "preflight-repA": {
+      "arm": "repA"
+    },
+    "preflight-repB": {
+      "arm": "repB"
+    }
+  }
+}

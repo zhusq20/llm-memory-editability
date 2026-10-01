@@ -1,0 +1,58 @@
+{
+  "protocol": "v2.8-p3-shortcut-matched-E39",
+  "width": 256,
+  "parent_step": 15360,
+  "phases": [
+    "low",
+    "high"
+  ],
+  "worlds": [
+    0,
+    1
+  ],
+  "seeds": [
+    0,
+    1
+  ],
+  "conditions": [
+    "company",
+    "project",
+    "neither"
+  ],
+  "chains": [
+    "company",
+    "project"
+  ],
+  "kinds": [
+    "coherent",
+    "exception"
+  ],
+  "scope": "mlp",
+  "mlp_layers": [
+    3,
+    4,
+    5
+  ],
+  "lr": 3e-05,
+  "weight_decay": 0.1,
+  "edit_batch": 128,
+  "replay_batch": 128,
+  "retention_kl": 1.0,
+  "clip_norm": 1.0,
+  "steps": 512,
+  "checkpoints": [
+    0,
+    32,
+    128,
+    512
+  ],
+  "resume_every": 32,
+  "models": 24,
+  "edit_cases": 96,
+  "E": 39,
+  "D": 96,
+  "R": 4096,
+  "primary_reference_D": 18,
+  "primary_reference_D_heldout": 9,
+  "status": "prepared conditional branch; no best-step selection"
+}

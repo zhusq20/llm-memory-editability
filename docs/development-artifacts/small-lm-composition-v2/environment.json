@@ -1,0 +1,18 @@
+{
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:27:36) [GCC 11.2.0]",
+  "executable": "/mnt/disk2_from_server2/siqizhu4/llm-memory/.venv/bin/python",
+  "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
+  "torch": "2.8.0+cu128",
+  "transformers": "4.57.3",
+  "git_head": "e279fc676f71e7e8cc8ce255faf68e26534ce311",
+  "tests": {
+    "passed": 7,
+    "seconds": 6.48,
+    "files": [
+      "tests/test_small_lm_followup.py",
+      "tests/test_small_lm_composition.py"
+    ]
+  },
+  "static_checks": "ruff check and format passed on the three new Python files",
+  "gpu_inventory": "index, name, memory.used [MiB], memory.total [MiB], utilization.gpu [%]\n0, NVIDIA RTX PRO 6000 Blackwell Server Edition, 84249 MiB, 97887 MiB, 0 %\n1, NVIDIA RTX PRO 6000 Blackwell Server Edition, 84249 MiB, 97887 MiB, 0 %\n2, NVIDIA RTX PRO 6000 Blackwell Server Edition, 13355 MiB, 97887 MiB, 67 %\n3, NVIDIA RTX PRO 6000 Blackwell Server Edition, 84249 MiB, 97887 MiB, 0 %\n4, NVIDIA RTX PRO 6000 Blackwell Server Edition, 84249 MiB, 97887 MiB, 0 %\n5, NVIDIA RTX PRO 6000 Blackwell Server Edition, 14707 MiB, 97887 MiB, 98 %\n6, NVIDIA RTX PRO 6000 Blackwell Server Edition, 1857 MiB, 97887 MiB, 0 %\n7, NVIDIA RTX PRO 6000 Blackwell Server Edition, 57351 MiB, 97887 MiB, 0 %\n8, NVIDIA RTX PRO 6000 Blackwell Server Edition, 57351 MiB, 97887 MiB, 89 %\n9, NVIDIA RTX PRO 6000 Blackwell Server Edition, 57393 MiB, 97887 MiB, 0 %\n"
+}

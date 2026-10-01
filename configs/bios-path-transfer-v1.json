@@ -1,0 +1,23 @@
+{
+  "protocol": "v2.13-development-path-transfer",
+  "worlds": [0, 1],
+  "seeds": [0, 1],
+  "states": [0, 5120, 15360],
+  "condition": "neither",
+  "target_layer": 4,
+  "target_parameter": "blocks.4.mlp.down.weight",
+  "arms": ["full", "no_cross", "no_mlp", "fixed_qk"],
+  "step_fractions": [0.0001, 0.0003, 0.001],
+  "primary_fraction": 0.0003,
+  "scales": ["shared_lr", "matched_norm"],
+  "parent_root": "results/bios-cross-scale-dev-v1/width-256",
+  "source_world_root": "data/bios-organization-v1",
+  "output": "results/bios-path-transfer-v1",
+  "artifacts": "docs/development-artifacts/path-transfer-v1",
+  "precision": "FP32 model and gradients, TF32 disabled; FP64 reductions and CE evaluation",
+  "cases_per_state": 18,
+  "forward_tolerance": 0.000002,
+  "gradient_tolerance": 0.00005,
+  "seed": 271318,
+  "inference": "descriptive paired development; two worlds, no query-level significance or independent-world claim"
+}

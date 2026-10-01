@@ -1,0 +1,419 @@
+{
+  "version": 1,
+  "created_unix": 1790799857.6813533,
+  "config_path": "configs/bios-original-development-v1.json",
+  "config_sha256": "f9d27b755eefd142fd8f1ea1cc7eb808436cdc00c7327a5bdd2b3bfbb10b3977",
+  "config": {
+    "protocol": "14.27",
+    "stage": "10k-development",
+    "world_seeds": [
+      142701,
+      142702
+    ],
+    "initialization_seeds": [
+      1427
+    ],
+    "people": 10000,
+    "data_root": "data/bios-original-v1",
+    "result_root": "results/bios-original-development-v1",
+    "source_manifest": "configs/bios-source-manifest.json",
+    "model": {
+      "vocab_size": 50257,
+      "width": 768,
+      "layers": 12,
+      "heads": 12,
+      "context": 512,
+      "rotary_fraction": 0.25,
+      "rotary_base": 10000,
+      "dropout": 0.0
+    },
+    "pretrain": {
+      "conditions": [
+        "S",
+        "M",
+        "MP"
+      ],
+      "passes": 540,
+      "nodes": [
+        0,
+        30,
+        90,
+        180,
+        360,
+        540
+      ],
+      "batch_size": 96,
+      "micro_batch_size": 24,
+      "learning_rate": 0.001,
+      "minimum_lr_ratio": 0.1,
+      "warmup_steps": 1000,
+      "weight_decay": 0.1,
+      "adam_betas": [
+        0.9,
+        0.999
+      ],
+      "adam_epsilon": 1e-06,
+      "gradient_clip": 1.0,
+      "precision": "bf16-autocast-fp32-parameters",
+      "compile": false
+    },
+    "adapt": {
+      "epochs": 10,
+      "batch_size": 48,
+      "micro_batch_size": 24,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "qv_rank": 8,
+      "embedding_rank": 128,
+      "lora_scale": 1.0
+    },
+    "task": {
+      "epochs": 10,
+      "conditions": [
+        "S",
+        "M",
+        "MP",
+        "MP-R",
+        "MP-Random",
+        "MP-CoT"
+      ],
+      "ranking_coefficient": 0.1,
+      "ranking_candidates_to_calibrate": [
+        0.1,
+        0.3
+      ],
+      "margin": 0.5,
+      "rule_repetitions_per_epoch": 100
+    },
+    "evaluation": {
+      "splits": [
+        "dev",
+        "test"
+      ],
+      "views": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "batch_size": 48,
+      "max_new_tokens": 96,
+      "pretrain_diagnostic_people": 128
+    },
+    "edit": {
+      "people_per_world": 16,
+      "steps": 64,
+      "nodes": [
+        0,
+        16,
+        32,
+        64
+      ],
+      "learning_rate_candidates": [
+        1e-05,
+        3e-05
+      ],
+      "target_batch": 32,
+      "replay_batch": 32,
+      "replay_pool": 256,
+      "kl_coefficient": 1.0
+    },
+    "formal": {
+      "status": "pending-development-calibration-and-configuration-freeze",
+      "people": 100000,
+      "world_seeds": [
+        142711,
+        142712,
+        142713
+      ],
+      "initialization_seeds": [
+        1427,
+        1428
+      ],
+      "pretrains": 18,
+      "adaptations": 18,
+      "task_branches": 36,
+      "edits": 2304
+    }
+  },
+  "count": 24,
+  "views": [
+    0,
+    1
+  ],
+  "diagnostic_batch_size": 16,
+  "audit_batch_size": 48,
+  "max_new_tokens": 96,
+  "source_sha256": {
+    "src/llm_memory_editability/bios_original_diagnostics.py": "6dd51ead7d16c1960740716fb73cb4409828666ac0332baae4c14730e39dd120",
+    "scripts/run_bios_original_diagnostics.py": "5d85e8cbff3717bc0a176f095a0e954a9a4169c65544ce2cbe517a0803be8b2b",
+    "src/llm_memory_editability/bios_original_data.py": "092689c2a05aad564ff8a7c6e1ac669d7e0475908e525766cf70922037cd2488",
+    "src/llm_memory_editability/bios_original_model.py": "8a52e58d343320ccce9e2f1b43674cc6765b840bd4feebed4813f78296ab29a9",
+    "src/llm_memory_editability/bios_original_train.py": "86b2ef1be03223dff26bc7997b91143be81fb46fd29ab8650a9cde8a39eb6891"
+  },
+  "tokenizer_sha256": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+  "worlds": {
+    "142701": {
+      "person_ids": [
+        134,
+        157,
+        656,
+        777,
+        826,
+        1336,
+        1559,
+        2145,
+        2546,
+        3449,
+        3887,
+        4235,
+        5585,
+        5754,
+        6246,
+        6472,
+        6963,
+        7662,
+        7783,
+        7864,
+        8055,
+        8191,
+        8212,
+        8844
+      ],
+      "people_path": "data/bios-original-v1/world-142701/people.json",
+      "sha256": "396f836e74475dd103c7f8927c38821e2aef118b53a414e6c1bbe4df81126dae"
+    },
+    "142702": {
+      "person_ids": [
+        95,
+        202,
+        777,
+        1108,
+        1645,
+        2487,
+        2585,
+        2800,
+        2888,
+        3352,
+        3403,
+        3511,
+        3843,
+        4094,
+        4236,
+        4424,
+        5719,
+        6120,
+        6621,
+        7698,
+        7899,
+        8126,
+        8201,
+        8273
+      ],
+      "people_path": "data/bios-original-v1/world-142702/people.json",
+      "sha256": "3ad6297db8b8f5e733340a8efe7a63b6826104b423381200b868838437c95b18"
+    }
+  },
+  "endpoints": [
+    {
+      "id": "world-142701-S-adapt",
+      "world": 142701,
+      "init": 1427,
+      "condition": "S",
+      "stage": "adapt",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/S/adapt/final.pt",
+      "checkpoint_sha256": "0683a90478f5f53ca308d578bdeed04b686c2b99b7cf4124285fbb29e931c9ab",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142701-S-adapt.json",
+      "audit_sample_sha256": "8521682d5fb842c93259de0623ea0d5f5eef17bb36541f1a30906933f25b5d43"
+    },
+    {
+      "id": "world-142701-S-task",
+      "world": 142701,
+      "init": 1427,
+      "condition": "S",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/S/task/final.pt",
+      "checkpoint_sha256": "d2b33aeb970dbcec5e4c4b69d8205fdb59508774db762399ede755e3fe49a933",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142701-S-task.json",
+      "audit_sample_sha256": "19c1c07c0774c02cfea7052bc93f6fc4292f0be8612d875a8fd92a5a11b2ab3c"
+    },
+    {
+      "id": "world-142701-M-adapt",
+      "world": 142701,
+      "init": 1427,
+      "condition": "M",
+      "stage": "adapt",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/M/adapt/final.pt",
+      "checkpoint_sha256": "c13b5078cb9d527d6392e312c44b444aed8984afde2116397417cae02caf844b",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142701-M-adapt.json",
+      "audit_sample_sha256": "e17f15df68c7d3c117b905a2d91c9075f97a19a4a8308913de0d670121ef5f75"
+    },
+    {
+      "id": "world-142701-M-task",
+      "world": 142701,
+      "init": 1427,
+      "condition": "M",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/M/task/final.pt",
+      "checkpoint_sha256": "b02c0485d875e89fbb9c8ed9e03c38f8b4941689a93f8a36610cea74a5dd6edd",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142701-M-task.json",
+      "audit_sample_sha256": "97de0bb2b8f89765d905d6ff88b3cb9711c10ffa1d1369cddb1f356de42ec1b1"
+    },
+    {
+      "id": "world-142701-MP-adapt",
+      "world": 142701,
+      "init": 1427,
+      "condition": "MP",
+      "stage": "adapt",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/MP/adapt/final.pt",
+      "checkpoint_sha256": "669f96adc832535b3884a6aef0b287433e8d07efac7cd2ecc4256460e0757bd9",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142701-MP-adapt.json",
+      "audit_sample_sha256": "8e094faf549d3c11f20be06593d7fde0f7803dfdd448cbe2935033d193a5b7c2"
+    },
+    {
+      "id": "world-142701-MP-task",
+      "world": 142701,
+      "init": 1427,
+      "condition": "MP",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/MP/task/final.pt",
+      "checkpoint_sha256": "3ee56214b1bd8a30bd378e829e02386e21ef9124b0bfd18dbd9d00b98f9180e7",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142701-MP-task.json",
+      "audit_sample_sha256": "691fc2d25257469797e4286b588d2e0d84424ea61a6aa3d09f4b1a6ff0062087"
+    },
+    {
+      "id": "world-142701-MP-R-task",
+      "world": 142701,
+      "init": 1427,
+      "condition": "MP-R",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/MP-R/task/final.pt",
+      "checkpoint_sha256": "4a9608bd4f0dc875265063f960b6a5d5aaaf7880df94ab862351fd6d3c7dc00c",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142701-MP-R-task.json",
+      "audit_sample_sha256": "ab135686b920373eeb23c8b6360d509ff646bfe87ddb7be2dd8fc42bd03f3c5d"
+    },
+    {
+      "id": "world-142701-MP-Random-task",
+      "world": 142701,
+      "init": 1427,
+      "condition": "MP-Random",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/MP-Random/task/final.pt",
+      "checkpoint_sha256": "192b4ad0fddca4db71e25d9344628e74003baef8e8967b261950d61f7b4b3eca",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142701-MP-Random-task.json",
+      "audit_sample_sha256": "e20b99b8e5052ca925a9bdac213e548765b0064306f4c19368f6283a4e090626"
+    },
+    {
+      "id": "world-142701-MP-CoT-task",
+      "world": 142701,
+      "init": 1427,
+      "condition": "MP-CoT",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/MP-CoT/task/final.pt",
+      "checkpoint_sha256": "bc9f69117c1e8fa7d4e24bb9447c00c44f77f741359fd93b3e39dd13bcbd1ed8",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142701-MP-CoT-task.json",
+      "audit_sample_sha256": "4ead232f29e1ecec2e93f1819f099a3d885d98f3fb5627e6ab3c456bbf536ca1"
+    },
+    {
+      "id": "world-142702-S-adapt",
+      "world": 142702,
+      "init": 1427,
+      "condition": "S",
+      "stage": "adapt",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/S/adapt/final.pt",
+      "checkpoint_sha256": "d761fd0e01e7c20160fd6c65bf8f8441331663550587016a913196e3bdddba68",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142702-S-adapt.json",
+      "audit_sample_sha256": "fe59215ecacc962185ebf54ae9658cab7871891cb7608640f075edca620d9e7c"
+    },
+    {
+      "id": "world-142702-S-task",
+      "world": 142702,
+      "init": 1427,
+      "condition": "S",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/S/task/final.pt",
+      "checkpoint_sha256": "aba40a1c6f034afbc0588890b91bf30d1fe5aed3bc59d25962c205266628050f",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142702-S-task.json",
+      "audit_sample_sha256": "d9beab220cc44513181280c8e477a7ed5d62c105cffb421d1754b1ae0441d1f3"
+    },
+    {
+      "id": "world-142702-M-adapt",
+      "world": 142702,
+      "init": 1427,
+      "condition": "M",
+      "stage": "adapt",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/M/adapt/final.pt",
+      "checkpoint_sha256": "83d02129971cec7b3edb2fa12e8047dd1a7dd06ca4e500a1953815dffb4ec6ec",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142702-M-adapt.json",
+      "audit_sample_sha256": "eab82ba5757516820f475c7c9b623f27b26f8a81361067a5f9d74b03cdc3b02e"
+    },
+    {
+      "id": "world-142702-M-task",
+      "world": 142702,
+      "init": 1427,
+      "condition": "M",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/M/task/final.pt",
+      "checkpoint_sha256": "80dc2fa8206772cad796601bb1799eaae28b952972bd8ce7a6ac7ddc6eaad4da",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142702-M-task.json",
+      "audit_sample_sha256": "a76c74f2b72542a83d6f3980409752b5e0ac14f055ac3245de5bf97f47d4998b"
+    },
+    {
+      "id": "world-142702-MP-adapt",
+      "world": 142702,
+      "init": 1427,
+      "condition": "MP",
+      "stage": "adapt",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/MP/adapt/final.pt",
+      "checkpoint_sha256": "022b9c44bce6db9cfe07aaaa198819ae245789cbe16a19a0838952a8ae56dda6",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142702-MP-adapt.json",
+      "audit_sample_sha256": "ae41866f9f69a04acc7dc621de23f41632ef4fc749fc5ce9f0fceaf0e9a0e1e4"
+    },
+    {
+      "id": "world-142702-MP-task",
+      "world": 142702,
+      "init": 1427,
+      "condition": "MP",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/MP/task/final.pt",
+      "checkpoint_sha256": "46362d8f6c8e26c1958c76cf13b576d74fa37367350a6afc8e31dcc8bd5c1b9f",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142702-MP-task.json",
+      "audit_sample_sha256": "24dc3ed090ffee615f0c2bb75276527701ff502f8a131f4153195ed5e64c6bcd"
+    },
+    {
+      "id": "world-142702-MP-R-task",
+      "world": 142702,
+      "init": 1427,
+      "condition": "MP-R",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/MP-R/task/final.pt",
+      "checkpoint_sha256": "a117abcd8926b680243c35dfde8d9e23195589b2d309d2cad9fc625aa0c84e31",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142702-MP-R-task.json",
+      "audit_sample_sha256": "d790b5f1cc7c88a2583ff404b4c05a9d800fe5687f419e3a3e677d0e1e1283f4"
+    },
+    {
+      "id": "world-142702-MP-Random-task",
+      "world": 142702,
+      "init": 1427,
+      "condition": "MP-Random",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/MP-Random/task/final.pt",
+      "checkpoint_sha256": "b4363ba653a40894431ab2bd7642b4b34f6dd65632143c27fababd1d023f6af9",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142702-MP-Random-task.json",
+      "audit_sample_sha256": "cdc853c5d80a1d4dbc4666726acc276abef3d25f9ffff5664a741b51ca82637f"
+    },
+    {
+      "id": "world-142702-MP-CoT-task",
+      "world": 142702,
+      "init": 1427,
+      "condition": "MP-CoT",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/MP-CoT/task/final.pt",
+      "checkpoint_sha256": "1cbbcd9b0de7e78fcf0225988bceba22bb19d5b429d1edf6eae0a886fa65e7db",
+      "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142702-MP-CoT-task.json",
+      "audit_sample_sha256": "003089f465db75a70b78cbd27a579e61c2dccfeb5e8b7845735de538d9c2bde4"
+    }
+  ]
+}

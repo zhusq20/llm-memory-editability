@@ -1,0 +1,18 @@
+{
+  "observed_utc": "2026-10-01T02:12:56.597992+00:00",
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:27:36) [GCC 11.2.0]",
+  "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "numpy": "2.5.3",
+    "matplotlib": "3.11.2",
+    "pytest": "9.1.1",
+    "ruff": "0.16.9"
+  },
+  "cuda": "12.8",
+  "gpu_index": 2,
+  "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "precision": "FP32, TF32 enabled; no mixed precision",
+  "threads_per_worker": 2,
+  "workers": 3
+}

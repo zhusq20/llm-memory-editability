@@ -1,0 +1,14 @@
+{
+  "state": "complete",
+  "n": 256,
+  "seconds": 217.48425442300504,
+  "unchanged_parameters": true,
+  "parameter_sha256_after": "2dcd24c5bb20390d596d777327ad99cda9ce18936477cae1afba45252ef1e874",
+  "stats": {
+    "generation_calls": 32,
+    "prompt_tokens": 150185,
+    "generated_nonpad_tokens": 21385,
+    "generation_seconds": 191.69443190604215
+  },
+  "output_sha256": "530c420f833643354e50b6b278439f7d130f94e5b5b5d5bacb648c4f411fc7de"
+}

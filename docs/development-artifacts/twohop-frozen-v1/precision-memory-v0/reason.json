@@ -1,0 +1,4 @@
+{
+  "time": 1790703160.7741108,
+  "reason": "FP32 replay collided with the primary run peak on GPU2. Retry alone, compute logits only from prompt boundary onwards (identical candidate score definition); keep every case/layer/condition."
+}

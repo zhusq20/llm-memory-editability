@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-09-27T20:30:50.531538+00:00",
+  "lock_sha256": "2f2a1c592d29f0d7f44421f7ce6a7b17175afd9c98fe497fdf187c1722e0d190",
+  "states": 12,
+  "cases": 216,
+  "single_step_conditions": 5184,
+  "probe_records": 31104,
+  "gradient_arms": 864,
+  "maximum_factor_kernel_error": 2.2271593408306473e-09,
+  "maximum_sham_error": 0.0,
+  "maximum_forward_error": 0.0,
+  "maximum_gradient_reconstruction_error": 6.528658983532494e-08,
+  "maximum_no_cross_unsupervised_norm": 0.0,
+  "all_frozen_parameters_unchanged": true,
+  "all_parents_restored": true,
+  "all_full_duplicate_controls_identical": true,
+  "source_updates_with_increased_loss": 0,
+  "analysis_source_sha256": "e1b6a552a9092691d3d523a580f857bef694fa58c26527e03f140624a65d5e74"
+}

@@ -1,0 +1,24 @@
+{
+  "started_utc": "2026-09-30T07:21:23.931684+00:00",
+  "tmux_socket": "llm-memory",
+  "tmux_session": "grok-loop-20260930T072123Z",
+  "directory": "docs/development-artifacts/grok-loop-v1/restart-20260930T072123Z",
+  "command": [
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/.venv/bin/python",
+    "scripts/execute_grok_loop.py",
+    "--config",
+    "configs/grok-loop-confirmation-v1.json",
+    "--gpus",
+    "2",
+    "5",
+    "--per-gpu",
+    "2"
+  ],
+  "pre_restart": {
+    "complete": 44,
+    "resume": 4,
+    "new": 42
+  },
+  "monitoring": "remains paused",
+  "source_lock_verified": true
+}

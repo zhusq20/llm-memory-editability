@@ -1,0 +1,1453 @@
+{
+  "purpose": "Graph-only donor identity annotation and descriptive same-bridge stratification",
+  "phase": "development",
+  "config_sha256": "871198ace50d2bb36493015e143cb78fce6ced5870c4e5c1bef7bbd24e9a376e",
+  "script_sha256": "c73cb7459ed15e94bd8b180bb15dbaa1740be05f1e39c488c22d7a892cde2d5a",
+  "batch_summary_sha256": "fd757f0565e1126cedec0e6499087c3488f856414aab403642222493dbae7eb2",
+  "csv_sha256": "1b884cf4a644cc1f51db53037e50ec5f0f51b2d6e07e0ed0c25a887c990f50d5",
+  "source_summaries": [
+    {
+      "path": "results/grok-depth-bridge-v1/development/dev-d2-original/step-0004000/summary.json",
+      "sha256": "2276258954c8ffc6c54ba8e8ba2944eaf600fa1686d94a4e3076d10ad9f2449f"
+    },
+    {
+      "path": "results/grok-depth-bridge-v1/development/dev-d2-original/step-0032000/summary.json",
+      "sha256": "89f4423861d6d056f9b7fd2de3816c40a61e60d797ea114e8269ac52e2b81754"
+    },
+    {
+      "path": "results/grok-depth-bridge-v1/development/dev-d2-original/step-0064000/summary.json",
+      "sha256": "e3166e5fbc4fa73980d691e45c47c992426771dac9b2381e57d5415ad7c30981"
+    },
+    {
+      "path": "results/grok-depth-bridge-v1/development/dev-d2-original/step-0128000/summary.json",
+      "sha256": "b1b80f5224b71991da1ecf15bfca0e65ada0187fd25410aa96ca1cc7bbf28a50"
+    }
+  ],
+  "worlds": {
+    "143001": {
+      "total_test_n": 754,
+      "same_counterfactual_split": {
+        "train_composite": 620,
+        "unused_composite": 73,
+        "test_composite": 61
+      },
+      "different_counterfactual_split": {
+        "test_composite": 357,
+        "unused_composite": 397
+      }
+    }
+  },
+  "runs": [
+    {
+      "run_id": "dev-d2-original",
+      "step": 4000,
+      "world_seed": 143001,
+      "initialization": 14301,
+      "layers": 2,
+      "width": 128,
+      "strata": {
+        "all_same_donors": {
+          "n": 754,
+          "total_test_n": 754,
+          "coverage": 1.0,
+          "baseline_original_answer_accuracy": 0.15782493368700265,
+          "baseline_original_complete_accuracy": 0.15782493368700265,
+          "same_bridge_r1_original_answer_accuracy": 0.2519893899204244,
+          "same_bridge_r1_original_complete_accuracy": 0.2519893899204244
+        },
+        "same_counterfactual_train": {
+          "n": 620,
+          "total_test_n": 754,
+          "coverage": 0.8222811671087533,
+          "baseline_original_answer_accuracy": 0.17096774193548386,
+          "baseline_original_complete_accuracy": 0.17096774193548386,
+          "same_bridge_r1_original_answer_accuracy": 0.2838709677419355,
+          "same_bridge_r1_original_complete_accuracy": 0.2838709677419355
+        },
+        "same_counterfactual_held_out": {
+          "n": 134,
+          "total_test_n": 754,
+          "coverage": 0.17771883289124668,
+          "baseline_original_answer_accuracy": 0.09701492537313433,
+          "baseline_original_complete_accuracy": 0.09701492537313433,
+          "same_bridge_r1_original_answer_accuracy": 0.1044776119402985,
+          "same_bridge_r1_original_complete_accuracy": 0.1044776119402985
+        },
+        "same_counterfactual_test": {
+          "n": 61,
+          "total_test_n": 754,
+          "coverage": 0.08090185676392574,
+          "baseline_original_answer_accuracy": 0.08196721311475409,
+          "baseline_original_complete_accuracy": 0.08196721311475409,
+          "same_bridge_r1_original_answer_accuracy": 0.13114754098360656,
+          "same_bridge_r1_original_complete_accuracy": 0.13114754098360656
+        },
+        "same_counterfactual_unused": {
+          "n": 73,
+          "total_test_n": 754,
+          "coverage": 0.09681697612732096,
+          "baseline_original_answer_accuracy": 0.1095890410958904,
+          "baseline_original_complete_accuracy": 0.1095890410958904,
+          "same_bridge_r1_original_answer_accuracy": 0.0821917808219178,
+          "same_bridge_r1_original_complete_accuracy": 0.0821917808219178
+        },
+        "same_r1_train": {
+          "n": 237,
+          "total_test_n": 754,
+          "coverage": 0.31432360742705573,
+          "baseline_original_answer_accuracy": 0.270042194092827,
+          "baseline_original_complete_accuracy": 0.270042194092827,
+          "same_bridge_r1_original_answer_accuracy": 0.3670886075949367,
+          "same_bridge_r1_original_complete_accuracy": 0.3670886075949367
+        },
+        "same_r1_held_out": {
+          "n": 38,
+          "total_test_n": 754,
+          "coverage": 0.050397877984084884,
+          "baseline_original_answer_accuracy": 0.05263157894736842,
+          "baseline_original_complete_accuracy": 0.05263157894736842,
+          "same_bridge_r1_original_answer_accuracy": 0.07894736842105263,
+          "same_bridge_r1_original_complete_accuracy": 0.07894736842105263
+        },
+        "different_r1_train": {
+          "n": 383,
+          "total_test_n": 754,
+          "coverage": 0.5079575596816976,
+          "baseline_original_answer_accuracy": 0.10966057441253264,
+          "baseline_original_complete_accuracy": 0.10966057441253264,
+          "same_bridge_r1_original_answer_accuracy": 0.23237597911227154,
+          "same_bridge_r1_original_complete_accuracy": 0.23237597911227154
+        },
+        "different_r1_held_out": {
+          "n": 96,
+          "total_test_n": 754,
+          "coverage": 0.1273209549071618,
+          "baseline_original_answer_accuracy": 0.11458333333333333,
+          "baseline_original_complete_accuracy": 0.11458333333333333,
+          "same_bridge_r1_original_answer_accuracy": 0.11458333333333333,
+          "same_bridge_r1_original_complete_accuracy": 0.11458333333333333
+        }
+      }
+    },
+    {
+      "run_id": "dev-d2-original",
+      "step": 32000,
+      "world_seed": 143001,
+      "initialization": 14301,
+      "layers": 2,
+      "width": 128,
+      "strata": {
+        "all_same_donors": {
+          "n": 754,
+          "total_test_n": 754,
+          "coverage": 1.0,
+          "baseline_original_answer_accuracy": 0.8527851458885941,
+          "baseline_original_complete_accuracy": 0.8527851458885941,
+          "same_bridge_r1_original_answer_accuracy": 0.9562334217506632,
+          "same_bridge_r1_original_complete_accuracy": 0.9562334217506632
+        },
+        "same_counterfactual_train": {
+          "n": 620,
+          "total_test_n": 754,
+          "coverage": 0.8222811671087533,
+          "baseline_original_answer_accuracy": 0.8806451612903226,
+          "baseline_original_complete_accuracy": 0.8806451612903226,
+          "same_bridge_r1_original_answer_accuracy": 0.9838709677419355,
+          "same_bridge_r1_original_complete_accuracy": 0.9838709677419355
+        },
+        "same_counterfactual_held_out": {
+          "n": 134,
+          "total_test_n": 754,
+          "coverage": 0.17771883289124668,
+          "baseline_original_answer_accuracy": 0.7238805970149254,
+          "baseline_original_complete_accuracy": 0.7238805970149254,
+          "same_bridge_r1_original_answer_accuracy": 0.8283582089552238,
+          "same_bridge_r1_original_complete_accuracy": 0.8283582089552238
+        },
+        "same_counterfactual_test": {
+          "n": 61,
+          "total_test_n": 754,
+          "coverage": 0.08090185676392574,
+          "baseline_original_answer_accuracy": 0.7704918032786885,
+          "baseline_original_complete_accuracy": 0.7704918032786885,
+          "same_bridge_r1_original_answer_accuracy": 0.8688524590163934,
+          "same_bridge_r1_original_complete_accuracy": 0.8688524590163934
+        },
+        "same_counterfactual_unused": {
+          "n": 73,
+          "total_test_n": 754,
+          "coverage": 0.09681697612732096,
+          "baseline_original_answer_accuracy": 0.684931506849315,
+          "baseline_original_complete_accuracy": 0.684931506849315,
+          "same_bridge_r1_original_answer_accuracy": 0.7945205479452054,
+          "same_bridge_r1_original_complete_accuracy": 0.7945205479452054
+        },
+        "same_r1_train": {
+          "n": 237,
+          "total_test_n": 754,
+          "coverage": 0.31432360742705573,
+          "baseline_original_answer_accuracy": 0.9282700421940928,
+          "baseline_original_complete_accuracy": 0.9282700421940928,
+          "same_bridge_r1_original_answer_accuracy": 1.0,
+          "same_bridge_r1_original_complete_accuracy": 1.0
+        },
+        "same_r1_held_out": {
+          "n": 38,
+          "total_test_n": 754,
+          "coverage": 0.050397877984084884,
+          "baseline_original_answer_accuracy": 0.7894736842105263,
+          "baseline_original_complete_accuracy": 0.7894736842105263,
+          "same_bridge_r1_original_answer_accuracy": 0.8421052631578947,
+          "same_bridge_r1_original_complete_accuracy": 0.8421052631578947
+        },
+        "different_r1_train": {
+          "n": 383,
+          "total_test_n": 754,
+          "coverage": 0.5079575596816976,
+          "baseline_original_answer_accuracy": 0.8511749347258486,
+          "baseline_original_complete_accuracy": 0.8511749347258486,
+          "same_bridge_r1_original_answer_accuracy": 0.9738903394255874,
+          "same_bridge_r1_original_complete_accuracy": 0.9738903394255874
+        },
+        "different_r1_held_out": {
+          "n": 96,
+          "total_test_n": 754,
+          "coverage": 0.1273209549071618,
+          "baseline_original_answer_accuracy": 0.6979166666666666,
+          "baseline_original_complete_accuracy": 0.6979166666666666,
+          "same_bridge_r1_original_answer_accuracy": 0.8229166666666666,
+          "same_bridge_r1_original_complete_accuracy": 0.8229166666666666
+        }
+      }
+    },
+    {
+      "run_id": "dev-d2-original",
+      "step": 64000,
+      "world_seed": 143001,
+      "initialization": 14301,
+      "layers": 2,
+      "width": 128,
+      "strata": {
+        "all_same_donors": {
+          "n": 754,
+          "total_test_n": 754,
+          "coverage": 1.0,
+          "baseline_original_answer_accuracy": 0.9270557029177718,
+          "baseline_original_complete_accuracy": 0.9270557029177718,
+          "same_bridge_r1_original_answer_accuracy": 0.9748010610079576,
+          "same_bridge_r1_original_complete_accuracy": 0.9748010610079576
+        },
+        "same_counterfactual_train": {
+          "n": 620,
+          "total_test_n": 754,
+          "coverage": 0.8222811671087533,
+          "baseline_original_answer_accuracy": 0.9387096774193548,
+          "baseline_original_complete_accuracy": 0.9387096774193548,
+          "same_bridge_r1_original_answer_accuracy": 0.9951612903225806,
+          "same_bridge_r1_original_complete_accuracy": 0.9951612903225806
+        },
+        "same_counterfactual_held_out": {
+          "n": 134,
+          "total_test_n": 754,
+          "coverage": 0.17771883289124668,
+          "baseline_original_answer_accuracy": 0.8731343283582089,
+          "baseline_original_complete_accuracy": 0.8731343283582089,
+          "same_bridge_r1_original_answer_accuracy": 0.8805970149253731,
+          "same_bridge_r1_original_complete_accuracy": 0.8805970149253731
+        },
+        "same_counterfactual_test": {
+          "n": 61,
+          "total_test_n": 754,
+          "coverage": 0.08090185676392574,
+          "baseline_original_answer_accuracy": 0.9180327868852459,
+          "baseline_original_complete_accuracy": 0.9180327868852459,
+          "same_bridge_r1_original_answer_accuracy": 0.9344262295081968,
+          "same_bridge_r1_original_complete_accuracy": 0.9344262295081968
+        },
+        "same_counterfactual_unused": {
+          "n": 73,
+          "total_test_n": 754,
+          "coverage": 0.09681697612732096,
+          "baseline_original_answer_accuracy": 0.8356164383561644,
+          "baseline_original_complete_accuracy": 0.8356164383561644,
+          "same_bridge_r1_original_answer_accuracy": 0.8356164383561644,
+          "same_bridge_r1_original_complete_accuracy": 0.8356164383561644
+        },
+        "same_r1_train": {
+          "n": 237,
+          "total_test_n": 754,
+          "coverage": 0.31432360742705573,
+          "baseline_original_answer_accuracy": 0.9746835443037974,
+          "baseline_original_complete_accuracy": 0.9746835443037974,
+          "same_bridge_r1_original_answer_accuracy": 1.0,
+          "same_bridge_r1_original_complete_accuracy": 1.0
+        },
+        "same_r1_held_out": {
+          "n": 38,
+          "total_test_n": 754,
+          "coverage": 0.050397877984084884,
+          "baseline_original_answer_accuracy": 0.9473684210526315,
+          "baseline_original_complete_accuracy": 0.9473684210526315,
+          "same_bridge_r1_original_answer_accuracy": 0.9210526315789473,
+          "same_bridge_r1_original_complete_accuracy": 0.9210526315789473
+        },
+        "different_r1_train": {
+          "n": 383,
+          "total_test_n": 754,
+          "coverage": 0.5079575596816976,
+          "baseline_original_answer_accuracy": 0.9164490861618799,
+          "baseline_original_complete_accuracy": 0.9164490861618799,
+          "same_bridge_r1_original_answer_accuracy": 0.9921671018276762,
+          "same_bridge_r1_original_complete_accuracy": 0.9921671018276762
+        },
+        "different_r1_held_out": {
+          "n": 96,
+          "total_test_n": 754,
+          "coverage": 0.1273209549071618,
+          "baseline_original_answer_accuracy": 0.84375,
+          "baseline_original_complete_accuracy": 0.84375,
+          "same_bridge_r1_original_answer_accuracy": 0.8645833333333334,
+          "same_bridge_r1_original_complete_accuracy": 0.8645833333333334
+        }
+      }
+    },
+    {
+      "run_id": "dev-d2-original",
+      "step": 128000,
+      "world_seed": 143001,
+      "initialization": 14301,
+      "layers": 2,
+      "width": 128,
+      "strata": {
+        "all_same_donors": {
+          "n": 754,
+          "total_test_n": 754,
+          "coverage": 1.0,
+          "baseline_original_answer_accuracy": 0.9708222811671088,
+          "baseline_original_complete_accuracy": 0.9708222811671088,
+          "same_bridge_r1_original_answer_accuracy": 0.9907161803713528,
+          "same_bridge_r1_original_complete_accuracy": 0.9907161803713528
+        },
+        "same_counterfactual_train": {
+          "n": 620,
+          "total_test_n": 754,
+          "coverage": 0.8222811671087533,
+          "baseline_original_answer_accuracy": 0.9774193548387097,
+          "baseline_original_complete_accuracy": 0.9774193548387097,
+          "same_bridge_r1_original_answer_accuracy": 0.9983870967741936,
+          "same_bridge_r1_original_complete_accuracy": 0.9983870967741936
+        },
+        "same_counterfactual_held_out": {
+          "n": 134,
+          "total_test_n": 754,
+          "coverage": 0.17771883289124668,
+          "baseline_original_answer_accuracy": 0.9402985074626866,
+          "baseline_original_complete_accuracy": 0.9402985074626866,
+          "same_bridge_r1_original_answer_accuracy": 0.9552238805970149,
+          "same_bridge_r1_original_complete_accuracy": 0.9552238805970149
+        },
+        "same_counterfactual_test": {
+          "n": 61,
+          "total_test_n": 754,
+          "coverage": 0.08090185676392574,
+          "baseline_original_answer_accuracy": 0.9508196721311475,
+          "baseline_original_complete_accuracy": 0.9508196721311475,
+          "same_bridge_r1_original_answer_accuracy": 0.9672131147540983,
+          "same_bridge_r1_original_complete_accuracy": 0.9672131147540983
+        },
+        "same_counterfactual_unused": {
+          "n": 73,
+          "total_test_n": 754,
+          "coverage": 0.09681697612732096,
+          "baseline_original_answer_accuracy": 0.9315068493150684,
+          "baseline_original_complete_accuracy": 0.9315068493150684,
+          "same_bridge_r1_original_answer_accuracy": 0.9452054794520548,
+          "same_bridge_r1_original_complete_accuracy": 0.9452054794520548
+        },
+        "same_r1_train": {
+          "n": 237,
+          "total_test_n": 754,
+          "coverage": 0.31432360742705573,
+          "baseline_original_answer_accuracy": 0.9915611814345991,
+          "baseline_original_complete_accuracy": 0.9915611814345991,
+          "same_bridge_r1_original_answer_accuracy": 1.0,
+          "same_bridge_r1_original_complete_accuracy": 1.0
+        },
+        "same_r1_held_out": {
+          "n": 38,
+          "total_test_n": 754,
+          "coverage": 0.050397877984084884,
+          "baseline_original_answer_accuracy": 0.9473684210526315,
+          "baseline_original_complete_accuracy": 0.9473684210526315,
+          "same_bridge_r1_original_answer_accuracy": 0.9736842105263158,
+          "same_bridge_r1_original_complete_accuracy": 0.9736842105263158
+        },
+        "different_r1_train": {
+          "n": 383,
+          "total_test_n": 754,
+          "coverage": 0.5079575596816976,
+          "baseline_original_answer_accuracy": 0.9686684073107049,
+          "baseline_original_complete_accuracy": 0.9686684073107049,
+          "same_bridge_r1_original_answer_accuracy": 0.9973890339425587,
+          "same_bridge_r1_original_complete_accuracy": 0.9973890339425587
+        },
+        "different_r1_held_out": {
+          "n": 96,
+          "total_test_n": 754,
+          "coverage": 0.1273209549071618,
+          "baseline_original_answer_accuracy": 0.9375,
+          "baseline_original_complete_accuracy": 0.9375,
+          "same_bridge_r1_original_answer_accuracy": 0.9479166666666666,
+          "same_bridge_r1_original_complete_accuracy": 0.9479166666666666
+        }
+      }
+    }
+  ],
+  "aggregates": [
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 4000,
+      "stratum": "all_same_donors",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 754,
+          "baseline_original_complete_accuracy": 0.15782493368700265,
+          "same_bridge_r1_original_complete_accuracy": 0.2519893899204244
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.15782493368700265,
+          "min": 0.15782493368700265,
+          "max": 0.15782493368700265
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.2519893899204244,
+          "min": 0.2519893899204244,
+          "max": 0.2519893899204244
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 4000,
+      "stratum": "different_r1_held_out",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 96,
+          "baseline_original_complete_accuracy": 0.11458333333333333,
+          "same_bridge_r1_original_complete_accuracy": 0.11458333333333333
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.11458333333333333,
+          "min": 0.11458333333333333,
+          "max": 0.11458333333333333
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.11458333333333333,
+          "min": 0.11458333333333333,
+          "max": 0.11458333333333333
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 4000,
+      "stratum": "different_r1_train",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 383,
+          "baseline_original_complete_accuracy": 0.10966057441253264,
+          "same_bridge_r1_original_complete_accuracy": 0.23237597911227154
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.10966057441253264,
+          "min": 0.10966057441253264,
+          "max": 0.10966057441253264
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.23237597911227154,
+          "min": 0.23237597911227154,
+          "max": 0.23237597911227154
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 4000,
+      "stratum": "same_counterfactual_held_out",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 134,
+          "baseline_original_complete_accuracy": 0.09701492537313433,
+          "same_bridge_r1_original_complete_accuracy": 0.1044776119402985
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.09701492537313433,
+          "min": 0.09701492537313433,
+          "max": 0.09701492537313433
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.1044776119402985,
+          "min": 0.1044776119402985,
+          "max": 0.1044776119402985
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 4000,
+      "stratum": "same_counterfactual_test",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 61,
+          "baseline_original_complete_accuracy": 0.08196721311475409,
+          "same_bridge_r1_original_complete_accuracy": 0.13114754098360656
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.08196721311475409,
+          "min": 0.08196721311475409,
+          "max": 0.08196721311475409
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.13114754098360656,
+          "min": 0.13114754098360656,
+          "max": 0.13114754098360656
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 4000,
+      "stratum": "same_counterfactual_train",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 620,
+          "baseline_original_complete_accuracy": 0.17096774193548386,
+          "same_bridge_r1_original_complete_accuracy": 0.2838709677419355
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.17096774193548386,
+          "min": 0.17096774193548386,
+          "max": 0.17096774193548386
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.2838709677419355,
+          "min": 0.2838709677419355,
+          "max": 0.2838709677419355
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 4000,
+      "stratum": "same_counterfactual_unused",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 73,
+          "baseline_original_complete_accuracy": 0.1095890410958904,
+          "same_bridge_r1_original_complete_accuracy": 0.0821917808219178
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.1095890410958904,
+          "min": 0.1095890410958904,
+          "max": 0.1095890410958904
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.0821917808219178,
+          "min": 0.0821917808219178,
+          "max": 0.0821917808219178
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 4000,
+      "stratum": "same_r1_held_out",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 38,
+          "baseline_original_complete_accuracy": 0.05263157894736842,
+          "same_bridge_r1_original_complete_accuracy": 0.07894736842105263
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.05263157894736842,
+          "min": 0.05263157894736842,
+          "max": 0.05263157894736842
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.07894736842105263,
+          "min": 0.07894736842105263,
+          "max": 0.07894736842105263
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 4000,
+      "stratum": "same_r1_train",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 237,
+          "baseline_original_complete_accuracy": 0.270042194092827,
+          "same_bridge_r1_original_complete_accuracy": 0.3670886075949367
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.270042194092827,
+          "min": 0.270042194092827,
+          "max": 0.270042194092827
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.3670886075949367,
+          "min": 0.3670886075949367,
+          "max": 0.3670886075949367
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 32000,
+      "stratum": "all_same_donors",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 754,
+          "baseline_original_complete_accuracy": 0.8527851458885941,
+          "same_bridge_r1_original_complete_accuracy": 0.9562334217506632
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.8527851458885941,
+          "min": 0.8527851458885941,
+          "max": 0.8527851458885941
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9562334217506632,
+          "min": 0.9562334217506632,
+          "max": 0.9562334217506632
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 32000,
+      "stratum": "different_r1_held_out",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 96,
+          "baseline_original_complete_accuracy": 0.6979166666666666,
+          "same_bridge_r1_original_complete_accuracy": 0.8229166666666666
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.6979166666666666,
+          "min": 0.6979166666666666,
+          "max": 0.6979166666666666
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.8229166666666666,
+          "min": 0.8229166666666666,
+          "max": 0.8229166666666666
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 32000,
+      "stratum": "different_r1_train",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 383,
+          "baseline_original_complete_accuracy": 0.8511749347258486,
+          "same_bridge_r1_original_complete_accuracy": 0.9738903394255874
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.8511749347258486,
+          "min": 0.8511749347258486,
+          "max": 0.8511749347258486
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9738903394255874,
+          "min": 0.9738903394255874,
+          "max": 0.9738903394255874
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 32000,
+      "stratum": "same_counterfactual_held_out",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 134,
+          "baseline_original_complete_accuracy": 0.7238805970149254,
+          "same_bridge_r1_original_complete_accuracy": 0.8283582089552238
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.7238805970149254,
+          "min": 0.7238805970149254,
+          "max": 0.7238805970149254
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.8283582089552238,
+          "min": 0.8283582089552238,
+          "max": 0.8283582089552238
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 32000,
+      "stratum": "same_counterfactual_test",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 61,
+          "baseline_original_complete_accuracy": 0.7704918032786885,
+          "same_bridge_r1_original_complete_accuracy": 0.8688524590163934
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.7704918032786885,
+          "min": 0.7704918032786885,
+          "max": 0.7704918032786885
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.8688524590163934,
+          "min": 0.8688524590163934,
+          "max": 0.8688524590163934
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 32000,
+      "stratum": "same_counterfactual_train",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 620,
+          "baseline_original_complete_accuracy": 0.8806451612903226,
+          "same_bridge_r1_original_complete_accuracy": 0.9838709677419355
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.8806451612903226,
+          "min": 0.8806451612903226,
+          "max": 0.8806451612903226
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9838709677419355,
+          "min": 0.9838709677419355,
+          "max": 0.9838709677419355
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 32000,
+      "stratum": "same_counterfactual_unused",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 73,
+          "baseline_original_complete_accuracy": 0.684931506849315,
+          "same_bridge_r1_original_complete_accuracy": 0.7945205479452054
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.684931506849315,
+          "min": 0.684931506849315,
+          "max": 0.684931506849315
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.7945205479452054,
+          "min": 0.7945205479452054,
+          "max": 0.7945205479452054
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 32000,
+      "stratum": "same_r1_held_out",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 38,
+          "baseline_original_complete_accuracy": 0.7894736842105263,
+          "same_bridge_r1_original_complete_accuracy": 0.8421052631578947
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.7894736842105263,
+          "min": 0.7894736842105263,
+          "max": 0.7894736842105263
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.8421052631578947,
+          "min": 0.8421052631578947,
+          "max": 0.8421052631578947
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 32000,
+      "stratum": "same_r1_train",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 237,
+          "baseline_original_complete_accuracy": 0.9282700421940928,
+          "same_bridge_r1_original_complete_accuracy": 1.0
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9282700421940928,
+          "min": 0.9282700421940928,
+          "max": 0.9282700421940928
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 64000,
+      "stratum": "all_same_donors",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 754,
+          "baseline_original_complete_accuracy": 0.9270557029177718,
+          "same_bridge_r1_original_complete_accuracy": 0.9748010610079576
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9270557029177718,
+          "min": 0.9270557029177718,
+          "max": 0.9270557029177718
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9748010610079576,
+          "min": 0.9748010610079576,
+          "max": 0.9748010610079576
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 64000,
+      "stratum": "different_r1_held_out",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 96,
+          "baseline_original_complete_accuracy": 0.84375,
+          "same_bridge_r1_original_complete_accuracy": 0.8645833333333334
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.84375,
+          "min": 0.84375,
+          "max": 0.84375
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.8645833333333334,
+          "min": 0.8645833333333334,
+          "max": 0.8645833333333334
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 64000,
+      "stratum": "different_r1_train",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 383,
+          "baseline_original_complete_accuracy": 0.9164490861618799,
+          "same_bridge_r1_original_complete_accuracy": 0.9921671018276762
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9164490861618799,
+          "min": 0.9164490861618799,
+          "max": 0.9164490861618799
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9921671018276762,
+          "min": 0.9921671018276762,
+          "max": 0.9921671018276762
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 64000,
+      "stratum": "same_counterfactual_held_out",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 134,
+          "baseline_original_complete_accuracy": 0.8731343283582089,
+          "same_bridge_r1_original_complete_accuracy": 0.8805970149253731
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.8731343283582089,
+          "min": 0.8731343283582089,
+          "max": 0.8731343283582089
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.8805970149253731,
+          "min": 0.8805970149253731,
+          "max": 0.8805970149253731
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 64000,
+      "stratum": "same_counterfactual_test",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 61,
+          "baseline_original_complete_accuracy": 0.9180327868852459,
+          "same_bridge_r1_original_complete_accuracy": 0.9344262295081968
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9180327868852459,
+          "min": 0.9180327868852459,
+          "max": 0.9180327868852459
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9344262295081968,
+          "min": 0.9344262295081968,
+          "max": 0.9344262295081968
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 64000,
+      "stratum": "same_counterfactual_train",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 620,
+          "baseline_original_complete_accuracy": 0.9387096774193548,
+          "same_bridge_r1_original_complete_accuracy": 0.9951612903225806
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9387096774193548,
+          "min": 0.9387096774193548,
+          "max": 0.9387096774193548
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9951612903225806,
+          "min": 0.9951612903225806,
+          "max": 0.9951612903225806
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 64000,
+      "stratum": "same_counterfactual_unused",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 73,
+          "baseline_original_complete_accuracy": 0.8356164383561644,
+          "same_bridge_r1_original_complete_accuracy": 0.8356164383561644
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.8356164383561644,
+          "min": 0.8356164383561644,
+          "max": 0.8356164383561644
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.8356164383561644,
+          "min": 0.8356164383561644,
+          "max": 0.8356164383561644
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 64000,
+      "stratum": "same_r1_held_out",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 38,
+          "baseline_original_complete_accuracy": 0.9473684210526315,
+          "same_bridge_r1_original_complete_accuracy": 0.9210526315789473
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9473684210526315,
+          "min": 0.9473684210526315,
+          "max": 0.9473684210526315
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9210526315789473,
+          "min": 0.9210526315789473,
+          "max": 0.9210526315789473
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 64000,
+      "stratum": "same_r1_train",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 237,
+          "baseline_original_complete_accuracy": 0.9746835443037974,
+          "same_bridge_r1_original_complete_accuracy": 1.0
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9746835443037974,
+          "min": 0.9746835443037974,
+          "max": 0.9746835443037974
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 128000,
+      "stratum": "all_same_donors",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 754,
+          "baseline_original_complete_accuracy": 0.9708222811671088,
+          "same_bridge_r1_original_complete_accuracy": 0.9907161803713528
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9708222811671088,
+          "min": 0.9708222811671088,
+          "max": 0.9708222811671088
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9907161803713528,
+          "min": 0.9907161803713528,
+          "max": 0.9907161803713528
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 128000,
+      "stratum": "different_r1_held_out",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 96,
+          "baseline_original_complete_accuracy": 0.9375,
+          "same_bridge_r1_original_complete_accuracy": 0.9479166666666666
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9375,
+          "min": 0.9375,
+          "max": 0.9375
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9479166666666666,
+          "min": 0.9479166666666666,
+          "max": 0.9479166666666666
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 128000,
+      "stratum": "different_r1_train",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 383,
+          "baseline_original_complete_accuracy": 0.9686684073107049,
+          "same_bridge_r1_original_complete_accuracy": 0.9973890339425587
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9686684073107049,
+          "min": 0.9686684073107049,
+          "max": 0.9686684073107049
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9973890339425587,
+          "min": 0.9973890339425587,
+          "max": 0.9973890339425587
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 128000,
+      "stratum": "same_counterfactual_held_out",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 134,
+          "baseline_original_complete_accuracy": 0.9402985074626866,
+          "same_bridge_r1_original_complete_accuracy": 0.9552238805970149
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9402985074626866,
+          "min": 0.9402985074626866,
+          "max": 0.9402985074626866
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9552238805970149,
+          "min": 0.9552238805970149,
+          "max": 0.9552238805970149
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 128000,
+      "stratum": "same_counterfactual_test",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 61,
+          "baseline_original_complete_accuracy": 0.9508196721311475,
+          "same_bridge_r1_original_complete_accuracy": 0.9672131147540983
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9508196721311475,
+          "min": 0.9508196721311475,
+          "max": 0.9508196721311475
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9672131147540983,
+          "min": 0.9672131147540983,
+          "max": 0.9672131147540983
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 128000,
+      "stratum": "same_counterfactual_train",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 620,
+          "baseline_original_complete_accuracy": 0.9774193548387097,
+          "same_bridge_r1_original_complete_accuracy": 0.9983870967741936
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9774193548387097,
+          "min": 0.9774193548387097,
+          "max": 0.9774193548387097
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9983870967741936,
+          "min": 0.9983870967741936,
+          "max": 0.9983870967741936
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 128000,
+      "stratum": "same_counterfactual_unused",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 73,
+          "baseline_original_complete_accuracy": 0.9315068493150684,
+          "same_bridge_r1_original_complete_accuracy": 0.9452054794520548
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9315068493150684,
+          "min": 0.9315068493150684,
+          "max": 0.9315068493150684
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9452054794520548,
+          "min": 0.9452054794520548,
+          "max": 0.9452054794520548
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 128000,
+      "stratum": "same_r1_held_out",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 38,
+          "baseline_original_complete_accuracy": 0.9473684210526315,
+          "same_bridge_r1_original_complete_accuracy": 0.9736842105263158
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9473684210526315,
+          "min": 0.9473684210526315,
+          "max": 0.9473684210526315
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9736842105263158,
+          "min": 0.9736842105263158,
+          "max": 0.9736842105263158
+        }
+      }
+    },
+    {
+      "layers": 2,
+      "width": 128,
+      "step": 128000,
+      "stratum": "same_r1_train",
+      "worlds": [
+        {
+          "world_seed": 143001,
+          "initializations": 1,
+          "stratum_n": 237,
+          "baseline_original_complete_accuracy": 0.9915611814345991,
+          "same_bridge_r1_original_complete_accuracy": 1.0
+        }
+      ],
+      "metrics": {
+        "baseline_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 0.9915611814345991,
+          "min": 0.9915611814345991,
+          "max": 0.9915611814345991
+        },
+        "same_bridge_r1_original_complete_accuracy": {
+          "world_n": 1,
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0
+        }
+      }
+    }
+  ],
+  "interpretation": "This records an existing graph attribute; it changes no donor or evaluation rule. Within-stratum rates are descriptive and always retain stratum sizes. Initializations and checkpoints are repeated measurements, not independent worlds."
+}

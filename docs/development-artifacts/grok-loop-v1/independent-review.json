@@ -1,0 +1,435 @@
+{
+  "reviewed_utc": "2026-09-30T04:37:32.162413+00:00",
+  "scope": "CPU-only source review, independent artifact recount, runtime call counting and causal input interventions; no training or GPU execution",
+  "status": "no unresolved defect found in primary architecture computation; sensitivity report pairing issue separately reported for repair",
+  "training_files_modified": false,
+  "checks": {
+    "historical_recurrence_measurements_recounted": 64,
+    "historical_recurrence_native_arrays_match_training_exactly": true,
+    "all_imported_training_dependencies_match_frozen_sources": true,
+    "real_checkpoint_runtime_cpu": [
+      {
+        "run": "dev-h2-l1",
+        "count_checks": [
+          {
+            "repeats": 1,
+            "qkv_calls_per_unique_block": [
+              1
+            ],
+            "executed_depth": 1
+          },
+          {
+            "repeats": 2,
+            "qkv_calls_per_unique_block": [
+              2
+            ],
+            "executed_depth": 2
+          },
+          {
+            "repeats": 4,
+            "qkv_calls_per_unique_block": [
+              4
+            ],
+            "executed_depth": 4
+          },
+          {
+            "repeats": 8,
+            "qkv_calls_per_unique_block": [
+              8
+            ],
+            "executed_depth": 8
+          }
+        ],
+        "forward_override_equal_to_attribute_repeats": true,
+        "weights_unchanged": true,
+        "gold_target_changes_neither_generated_answer_nor_eos": true,
+        "all_r1_components_match_fixed_padded_prefix_and_ignore_arbitrary_suffix": true
+      },
+      {
+        "run": "dev-h2-cd",
+        "count_checks": [
+          {
+            "repeats": 1,
+            "qkv_calls_per_unique_block": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "executed_depth": 4
+          },
+          {
+            "repeats": 2,
+            "qkv_calls_per_unique_block": [
+              2,
+              2,
+              2,
+              2
+            ],
+            "executed_depth": 8
+          },
+          {
+            "repeats": 4,
+            "qkv_calls_per_unique_block": [
+              4,
+              4,
+              4,
+              4
+            ],
+            "executed_depth": 16
+          },
+          {
+            "repeats": 8,
+            "qkv_calls_per_unique_block": [
+              8,
+              8,
+              8,
+              8
+            ],
+            "executed_depth": 32
+          }
+        ],
+        "forward_override_equal_to_attribute_repeats": true,
+        "weights_unchanged": true,
+        "gold_target_changes_neither_generated_answer_nor_eos": true,
+        "all_r1_components_match_fixed_padded_prefix_and_ignore_arbitrary_suffix": true
+      },
+      {
+        "run": "dev-h3-l2",
+        "count_checks": [
+          {
+            "repeats": 1,
+            "qkv_calls_per_unique_block": [
+              1,
+              1
+            ],
+            "executed_depth": 2
+          },
+          {
+            "repeats": 2,
+            "qkv_calls_per_unique_block": [
+              2,
+              2
+            ],
+            "executed_depth": 4
+          },
+          {
+            "repeats": 4,
+            "qkv_calls_per_unique_block": [
+              4,
+              4
+            ],
+            "executed_depth": 8
+          },
+          {
+            "repeats": 8,
+            "qkv_calls_per_unique_block": [
+              8,
+              8
+            ],
+            "executed_depth": 16
+          }
+        ],
+        "forward_override_equal_to_attribute_repeats": true,
+        "weights_unchanged": true,
+        "gold_target_changes_neither_generated_answer_nor_eos": true,
+        "all_r1_components_match_fixed_padded_prefix_and_ignore_arbitrary_suffix": true
+      },
+      {
+        "run": "dev-h4-l1",
+        "count_checks": [
+          {
+            "repeats": 1,
+            "qkv_calls_per_unique_block": [
+              1
+            ],
+            "executed_depth": 1
+          },
+          {
+            "repeats": 2,
+            "qkv_calls_per_unique_block": [
+              2
+            ],
+            "executed_depth": 2
+          },
+          {
+            "repeats": 4,
+            "qkv_calls_per_unique_block": [
+              4
+            ],
+            "executed_depth": 4
+          },
+          {
+            "repeats": 8,
+            "qkv_calls_per_unique_block": [
+              8
+            ],
+            "executed_depth": 8
+          }
+        ],
+        "forward_override_equal_to_attribute_repeats": true,
+        "weights_unchanged": true,
+        "gold_target_changes_neither_generated_answer_nor_eos": true,
+        "all_r1_components_match_fixed_padded_prefix_and_ignore_arbitrary_suffix": true
+      }
+    ],
+    "parameter_and_compute_formulas": [
+      {
+        "run": "dev-h2-c1",
+        "parameters": 218240,
+        "executed_depth": 1,
+        "estimated_training_matmul_flops_per_step": 1271660544
+      },
+      {
+        "run": "dev-h2-c2",
+        "parameters": 416512,
+        "executed_depth": 2,
+        "estimated_training_matmul_flops_per_step": 2485911552
+      },
+      {
+        "run": "dev-h2-cd",
+        "parameters": 813056,
+        "executed_depth": 4,
+        "estimated_training_matmul_flops_per_step": 4914413568
+      },
+      {
+        "run": "dev-h2-l1",
+        "parameters": 218240,
+        "executed_depth": 4,
+        "estimated_training_matmul_flops_per_step": 4914413568
+      },
+      {
+        "run": "dev-h2-l2",
+        "parameters": 416512,
+        "executed_depth": 4,
+        "estimated_training_matmul_flops_per_step": 4914413568
+      },
+      {
+        "run": "dev-h3-c1",
+        "parameters": 218240,
+        "executed_depth": 1,
+        "estimated_training_matmul_flops_per_step": 1577189376
+      },
+      {
+        "run": "dev-h3-c2",
+        "parameters": 416512,
+        "executed_depth": 2,
+        "estimated_training_matmul_flops_per_step": 3096969216
+      },
+      {
+        "run": "dev-h3-cd",
+        "parameters": 813056,
+        "executed_depth": 4,
+        "estimated_training_matmul_flops_per_step": 6136528896
+      },
+      {
+        "run": "dev-h3-l1",
+        "parameters": 218240,
+        "executed_depth": 4,
+        "estimated_training_matmul_flops_per_step": 6136528896
+      },
+      {
+        "run": "dev-h3-l2",
+        "parameters": 416512,
+        "executed_depth": 4,
+        "estimated_training_matmul_flops_per_step": 6136528896
+      },
+      {
+        "run": "dev-h4-c1",
+        "parameters": 218240,
+        "executed_depth": 1,
+        "estimated_training_matmul_flops_per_step": 1883504640
+      },
+      {
+        "run": "dev-h4-c2",
+        "parameters": 416512,
+        "executed_depth": 2,
+        "estimated_training_matmul_flops_per_step": 3709599744
+      },
+      {
+        "run": "dev-h4-cd",
+        "parameters": 1209600,
+        "executed_depth": 6,
+        "estimated_training_matmul_flops_per_step": 11013980160
+      },
+      {
+        "run": "dev-h4-l1",
+        "parameters": 218240,
+        "executed_depth": 6,
+        "estimated_training_matmul_flops_per_step": 11013980160
+      },
+      {
+        "run": "dev-h4-l2",
+        "parameters": 416512,
+        "executed_depth": 6,
+        "estimated_training_matmul_flops_per_step": 11013980160
+      }
+    ]
+  },
+  "historical_recurrence": [
+    {
+      "run": "dev-h2-c2",
+      "summary": "results/grok-loop-v1/recurrence-development-h2-classic/summary.json",
+      "dataset_sha256": "5456728cf3e9d76eabe4db3d5917fe4481aa54693b29442fd4cf1e8c5336bf95",
+      "checkpoint_hash_verified": true,
+      "measurements_recounted": 8,
+      "native_repeats": 1,
+      "native_arrays_exact": true,
+      "native_nll_max_delta": 0.0,
+      "original_scan_has_full_source_environment_lock_snapshot": false
+    },
+    {
+      "run": "dev-h2-cd",
+      "summary": "results/grok-loop-v1/recurrence-development-h2-classic/summary.json",
+      "dataset_sha256": "5456728cf3e9d76eabe4db3d5917fe4481aa54693b29442fd4cf1e8c5336bf95",
+      "checkpoint_hash_verified": true,
+      "measurements_recounted": 8,
+      "native_repeats": 1,
+      "native_arrays_exact": true,
+      "native_nll_max_delta": 0.0,
+      "original_scan_has_full_source_environment_lock_snapshot": false
+    },
+    {
+      "run": "dev-h2-l1",
+      "summary": "results/grok-loop-v1/recurrence-development-h2-l1/summary.json",
+      "dataset_sha256": "5456728cf3e9d76eabe4db3d5917fe4481aa54693b29442fd4cf1e8c5336bf95",
+      "checkpoint_hash_verified": true,
+      "measurements_recounted": 8,
+      "native_repeats": 4,
+      "native_arrays_exact": true,
+      "native_nll_max_delta": 0.0,
+      "original_scan_has_full_source_environment_lock_snapshot": false
+    },
+    {
+      "run": "dev-h2-l2",
+      "summary": "results/grok-loop-v1/recurrence-development-h2-l2/summary.json",
+      "dataset_sha256": "5456728cf3e9d76eabe4db3d5917fe4481aa54693b29442fd4cf1e8c5336bf95",
+      "checkpoint_hash_verified": true,
+      "measurements_recounted": 8,
+      "native_repeats": 2,
+      "native_arrays_exact": true,
+      "native_nll_max_delta": 0.0,
+      "original_scan_has_full_source_environment_lock_snapshot": false
+    },
+    {
+      "run": "dev-h3-l1",
+      "summary": "results/grok-loop-v1/recurrence-development-h3-h4/summary.json",
+      "dataset_sha256": "2335413e1e6439f487d9762b5ca78bc6bae9f3f1312a70b70a48767f055ae7b3",
+      "checkpoint_hash_verified": true,
+      "measurements_recounted": 8,
+      "native_repeats": 4,
+      "native_arrays_exact": true,
+      "native_nll_max_delta": 0.0,
+      "original_scan_has_full_source_environment_lock_snapshot": true
+    },
+    {
+      "run": "dev-h3-l2",
+      "summary": "results/grok-loop-v1/recurrence-development-h3-h4/summary.json",
+      "dataset_sha256": "2335413e1e6439f487d9762b5ca78bc6bae9f3f1312a70b70a48767f055ae7b3",
+      "checkpoint_hash_verified": true,
+      "measurements_recounted": 8,
+      "native_repeats": 2,
+      "native_arrays_exact": true,
+      "native_nll_max_delta": 0.0,
+      "original_scan_has_full_source_environment_lock_snapshot": true
+    },
+    {
+      "run": "dev-h4-l1",
+      "summary": "results/grok-loop-v1/recurrence-development-h3-h4/summary.json",
+      "dataset_sha256": "ededee2a34b6f2ff6ff2c9578e68def349fb946e0a0480c1fae8e9f0b87bf6f0",
+      "checkpoint_hash_verified": true,
+      "measurements_recounted": 8,
+      "native_repeats": 6,
+      "native_arrays_exact": true,
+      "native_nll_max_delta": 0.0,
+      "original_scan_has_full_source_environment_lock_snapshot": true
+    },
+    {
+      "run": "dev-h4-l2",
+      "summary": "results/grok-loop-v1/recurrence-development-h3-h4/summary.json",
+      "dataset_sha256": "ededee2a34b6f2ff6ff2c9578e68def349fb946e0a0480c1fae8e9f0b87bf6f0",
+      "checkpoint_hash_verified": true,
+      "measurements_recounted": 8,
+      "native_repeats": 3,
+      "native_arrays_exact": true,
+      "native_nll_max_delta": 0.0,
+      "original_scan_has_full_source_environment_lock_snapshot": true
+    }
+  ],
+  "limitations": [
+    {
+      "id": "equal_parameters_initialization",
+      "finding": "C1/L1 and C2/L2 share parameter count but scaled_effective changes residual output initialization standard deviation with executed depth. These pairs do not isolate added computation alone; CD/L1/L2 at equal depth share the same residual standard deviation.",
+      "consequence": "Restrict claims to the registered architectural/initialization recipe; do not label equal-parameter comparison a pure computation intervention."
+    },
+    {
+      "id": "compute_proxy",
+      "finding": "FLOPs count executed dense/attention matrix multiplies and factor-three backward; excludes optimizer updates, elementwise work, graph overhead and memory effects.",
+      "consequence": "Equal executed depth matches this matmul estimate, not exact hardware time; common-budget earlier nodes have explicitly recorded residual budget gaps."
+    },
+    {
+      "id": "recurrence_scope",
+      "finding": "Changing model.repeats leaves trained parameters and residual initialization unchanged; extra repeats are inference distribution changes, not retrained depth variants.",
+      "consequence": "Keep all scan counts and trained-repeat endpoint; no best-test repeat selection or length-generalization claim."
+    },
+    {
+      "id": "historical_scan_provenance",
+      "finding": "Initial development scans stored only script/checkpoint hashes; later v1 scans include full dependency/world/environment snapshots and native-repeat audits. All reviewed scans were independently recounted, and their native-repeat raw outputs match training predictions byte-for-byte. V2 adds environment mismatch rejection without numerical changes; v1 locks and artifacts remain intact.",
+      "consequence": "Historical audit is supplemental evidence, not a retroactive pre-registration or claim that original scans contained the new metadata."
+    },
+    {
+      "id": "teacher_forced_nll",
+      "finding": "Stored NLL uses teacher-forced answer/EOS labels, while answer+EOS accuracy generates an answer and then uses that answer for EOS.",
+      "consequence": "Do not describe NLL as likelihood of the freely generated sequence. No target leakage was found in answer or generated-EOS metrics."
+    },
+    {
+      "id": "world_units_and_shortcuts",
+      "finding": "Small fixed random graphs can admit relation-sequence shortcuts. Initialization repeats, queries and intervened layers remain nested within a world; conditional atom-correct or suffix-ambiguity subsets do not replace full results.",
+      "consequence": "Development is one world; three confirmation worlds still support bounded controlled comparisons rather than a universal architecture law."
+    },
+    {
+      "id": "mechanism_scope",
+      "finding": "All donor paths follow the selected ID/OOD fact class, keep r1, exclude trained different-target counterfactual queries and use two-token prefixes. Both/full equality is warranted only at first execution; component mixtures later retain the recipient incoming residual.",
+      "consequence": "A failed mixture does not establish absent information, and OOD intervention failure is not independently interpretable without atomic and native-counterfactual prerequisites."
+    },
+    {
+      "id": "sensitivity_mechanism_plot_boundary",
+      "finding": "The new mechanism report groups chart rows by architecture within a comparison recipe. If sensitivity mechanisms at multiple depths but the same architecture/phase/init scheme are later added, chart facets must also separate intended depth; CSV/JSON records already retain condition IDs.",
+      "consequence": "Current development and confirmation five-arm mechanism matrices do not contain this ambiguity."
+    }
+  ],
+  "analysis_lock": {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-v1/recurrence-analysis-lock-v2.json",
+    "sha256": "599ba4b88458b698bcac8f1d664181c553c46953a8dd3fc0eb86659e193d3db9",
+    "verified": true
+  },
+  "reported_issue": {
+    "id": "sensitivity_pairing_key",
+    "severity": "blocks sensitivity report, not primary training",
+    "location": "scripts/report_grok_loop.py::paired_comparisons",
+    "finding": "Removing architecture/layers/repeats from pairing identity collides CD/L2 at D4 and D8 under zero_residual sensitivity recipe. Primary five-arm configurations are unaffected.",
+    "status": "Parent notified immediately and assigned separate repair; no frozen training code changed by reviewer."
+  },
+  "source_hashes": {
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+    "src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+    "src/llm_memory_editability/grok_loop_data.py": "504de57da94618578cf792a3963f99e2dac587424d74ceae6b4c02c1d9680a8e",
+    "src/llm_memory_editability/grok_loop_model.py": "07e84388997a1710e5c821e54cf6d23726e4289aab178347761e060851fea6cc",
+    "src/llm_memory_editability/grok_loop_train.py": "4931606ee614aaadebbc3460c9ad9a86fbb12b5b6a1bbda9f3714f81424ff142",
+    "src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+    "src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851"
+  },
+  "reviewed_script_hashes": {
+    "scripts/evaluate_grok_loop_recurrence.py": "0f7f081e60a8e86bdc1b82c80104eef6943da21fbddf3c12714144cd70c6dc43",
+    "scripts/audit_grok_loop.py": "5c551e8e975baa3a70c4a4e4609ea07f975f850a70547c751ac672925adb1167",
+    "scripts/report_grok_loop.py": "690cd71ef0460f98285e5c5c61b4977eafc535206e91b26461d0b4a9192cf959",
+    "scripts/analyze_grok_loop_mechanism.py": "e601800ffec13bc836aa7c7ae85776657600cd1e37b32bcf3b2a0f1d2fc49e85",
+    "scripts/report_grok_loop_mechanism.py": "9b913fe890441839a0437e5d14d496b04607bf81856cb9c617842b7cc79f9164"
+  },
+  "analysis_lock_v1_preserved": {
+    "path": "docs/development-artifacts/grok-loop-v1/recurrence-analysis-lock.json",
+    "sha256": "ccaa2ee762189c3eea284145bdbfe55fa5d9f106c2f450e405eec14d8b6e1410"
+  },
+  "analysis_lock_revision_note": "Add explicit rejection of training/runtime Python, Torch, NumPy, CUDA, GPU-family and FP32/TF32 environment mismatches; v1 recorded environment but did not compare each field."
+}

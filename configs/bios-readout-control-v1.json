@@ -1,0 +1,53 @@
+{
+  "protocol": "v2.8-h5-readout-control-E93",
+  "widths": [
+    256,
+    768
+  ],
+  "parent_step": 15360,
+  "worlds": [
+    0,
+    1
+  ],
+  "seeds": [
+    0,
+    1
+  ],
+  "conditions": [
+    "company",
+    "project",
+    "neither"
+  ],
+  "chains": [
+    "company",
+    "project"
+  ],
+  "kind": "exception",
+  "scope": "all-freeze-embedding",
+  "frozen": "token.weight, shared by input embedding and output F.linear readout",
+  "trainable": "all other parameters, including absolute position embedding",
+  "lr": 3e-05,
+  "weight_decay": 0.1,
+  "edit_batch": 128,
+  "replay_batch": 128,
+  "retention_kl": 1.0,
+  "clip_norm": 1.0,
+  "steps": 512,
+  "checkpoints": [
+    0,
+    32,
+    128,
+    512
+  ],
+  "resume_every": 32,
+  "models": 24,
+  "edit_cases": 48,
+  "E": 93,
+  "D": 96,
+  "R": 4096,
+  "reference_scopes": [
+    "mlp",
+    "all"
+  ],
+  "selection": "all fixed512 endpoints; no best step"
+}

@@ -1,0 +1,984 @@
+{
+  "status": "complete",
+  "endpoints": 18,
+  "checks": 7296,
+  "predictions": 6912,
+  "summary": [
+    {
+      "condition": "S",
+      "stage": "pretrain",
+      "metric": "native_date",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "S",
+      "stage": "pretrain",
+      "metric": "native_birthcity",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "S",
+      "stage": "pretrain",
+      "metric": "qa_date/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "pretrain",
+      "metric": "qa_birthcity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "pretrain",
+      "metric": "qa_date/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "pretrain",
+      "metric": "qa_birthcity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "pretrain",
+      "metric": "direct_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "pretrain",
+      "metric": "oracle_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "pretrain",
+      "metric": "autonomous_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "pretrain",
+      "metric": "direct_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "pretrain",
+      "metric": "oracle_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "pretrain",
+      "metric": "autonomous_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "adapt",
+      "metric": "native_date",
+      "worlds": 2,
+      "accuracy": 0.328125,
+      "n": 64,
+      "correct": 21
+    },
+    {
+      "condition": "S",
+      "stage": "adapt",
+      "metric": "native_birthcity",
+      "worlds": 2,
+      "accuracy": 0.78125,
+      "n": 64,
+      "correct": 50
+    },
+    {
+      "condition": "S",
+      "stage": "adapt",
+      "metric": "qa_date/view0",
+      "worlds": 2,
+      "accuracy": 0.140625,
+      "n": 64,
+      "correct": 9
+    },
+    {
+      "condition": "S",
+      "stage": "adapt",
+      "metric": "qa_birthcity/view0",
+      "worlds": 2,
+      "accuracy": 0.015625,
+      "n": 64,
+      "correct": 1
+    },
+    {
+      "condition": "S",
+      "stage": "adapt",
+      "metric": "qa_date/view1",
+      "worlds": 2,
+      "accuracy": 0.0625,
+      "n": 64,
+      "correct": 4
+    },
+    {
+      "condition": "S",
+      "stage": "adapt",
+      "metric": "qa_birthcity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "adapt",
+      "metric": "direct_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "adapt",
+      "metric": "oracle_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "adapt",
+      "metric": "autonomous_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "adapt",
+      "metric": "direct_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "adapt",
+      "metric": "oracle_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "adapt",
+      "metric": "autonomous_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "task",
+      "metric": "native_date",
+      "worlds": 2,
+      "accuracy": 0.03125,
+      "n": 64,
+      "correct": 2
+    },
+    {
+      "condition": "S",
+      "stage": "task",
+      "metric": "native_birthcity",
+      "worlds": 2,
+      "accuracy": 0.15625,
+      "n": 64,
+      "correct": 10
+    },
+    {
+      "condition": "S",
+      "stage": "task",
+      "metric": "qa_date/view0",
+      "worlds": 2,
+      "accuracy": 0.078125,
+      "n": 64,
+      "correct": 5
+    },
+    {
+      "condition": "S",
+      "stage": "task",
+      "metric": "qa_birthcity/view0",
+      "worlds": 2,
+      "accuracy": 0.015625,
+      "n": 64,
+      "correct": 1
+    },
+    {
+      "condition": "S",
+      "stage": "task",
+      "metric": "qa_date/view1",
+      "worlds": 2,
+      "accuracy": 0.015625,
+      "n": 64,
+      "correct": 1
+    },
+    {
+      "condition": "S",
+      "stage": "task",
+      "metric": "qa_birthcity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "S",
+      "stage": "task",
+      "metric": "direct_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.53125,
+      "n": 64,
+      "correct": 34
+    },
+    {
+      "condition": "S",
+      "stage": "task",
+      "metric": "oracle_parity/view0",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "S",
+      "stage": "task",
+      "metric": "autonomous_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.65625,
+      "n": 64,
+      "correct": 42
+    },
+    {
+      "condition": "S",
+      "stage": "task",
+      "metric": "direct_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.234375,
+      "n": 64,
+      "correct": 15
+    },
+    {
+      "condition": "S",
+      "stage": "task",
+      "metric": "oracle_parity/view1",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "S",
+      "stage": "task",
+      "metric": "autonomous_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.578125,
+      "n": 64,
+      "correct": 37
+    },
+    {
+      "condition": "M",
+      "stage": "pretrain",
+      "metric": "native_date",
+      "worlds": 2,
+      "accuracy": 0.984375,
+      "n": 64,
+      "correct": 63
+    },
+    {
+      "condition": "M",
+      "stage": "pretrain",
+      "metric": "native_birthcity",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "M",
+      "stage": "pretrain",
+      "metric": "qa_date/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "pretrain",
+      "metric": "qa_birthcity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "pretrain",
+      "metric": "qa_date/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "pretrain",
+      "metric": "qa_birthcity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "pretrain",
+      "metric": "direct_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "pretrain",
+      "metric": "oracle_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "pretrain",
+      "metric": "autonomous_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "pretrain",
+      "metric": "direct_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "pretrain",
+      "metric": "oracle_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "pretrain",
+      "metric": "autonomous_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "adapt",
+      "metric": "native_date",
+      "worlds": 2,
+      "accuracy": 0.828125,
+      "n": 64,
+      "correct": 53
+    },
+    {
+      "condition": "M",
+      "stage": "adapt",
+      "metric": "native_birthcity",
+      "worlds": 2,
+      "accuracy": 0.828125,
+      "n": 64,
+      "correct": 53
+    },
+    {
+      "condition": "M",
+      "stage": "adapt",
+      "metric": "qa_date/view0",
+      "worlds": 2,
+      "accuracy": 0.890625,
+      "n": 64,
+      "correct": 57
+    },
+    {
+      "condition": "M",
+      "stage": "adapt",
+      "metric": "qa_birthcity/view0",
+      "worlds": 2,
+      "accuracy": 0.640625,
+      "n": 64,
+      "correct": 41
+    },
+    {
+      "condition": "M",
+      "stage": "adapt",
+      "metric": "qa_date/view1",
+      "worlds": 2,
+      "accuracy": 0.546875,
+      "n": 64,
+      "correct": 35
+    },
+    {
+      "condition": "M",
+      "stage": "adapt",
+      "metric": "qa_birthcity/view1",
+      "worlds": 2,
+      "accuracy": 0.359375,
+      "n": 64,
+      "correct": 23
+    },
+    {
+      "condition": "M",
+      "stage": "adapt",
+      "metric": "direct_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "adapt",
+      "metric": "oracle_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "adapt",
+      "metric": "autonomous_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "adapt",
+      "metric": "direct_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "adapt",
+      "metric": "oracle_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "adapt",
+      "metric": "autonomous_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "M",
+      "stage": "task",
+      "metric": "native_date",
+      "worlds": 2,
+      "accuracy": 0.28125,
+      "n": 64,
+      "correct": 18
+    },
+    {
+      "condition": "M",
+      "stage": "task",
+      "metric": "native_birthcity",
+      "worlds": 2,
+      "accuracy": 0.25,
+      "n": 64,
+      "correct": 16
+    },
+    {
+      "condition": "M",
+      "stage": "task",
+      "metric": "qa_date/view0",
+      "worlds": 2,
+      "accuracy": 0.796875,
+      "n": 64,
+      "correct": 51
+    },
+    {
+      "condition": "M",
+      "stage": "task",
+      "metric": "qa_birthcity/view0",
+      "worlds": 2,
+      "accuracy": 0.5,
+      "n": 64,
+      "correct": 32
+    },
+    {
+      "condition": "M",
+      "stage": "task",
+      "metric": "qa_date/view1",
+      "worlds": 2,
+      "accuracy": 0.40625,
+      "n": 64,
+      "correct": 26
+    },
+    {
+      "condition": "M",
+      "stage": "task",
+      "metric": "qa_birthcity/view1",
+      "worlds": 2,
+      "accuracy": 0.234375,
+      "n": 64,
+      "correct": 15
+    },
+    {
+      "condition": "M",
+      "stage": "task",
+      "metric": "direct_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.625,
+      "n": 64,
+      "correct": 40
+    },
+    {
+      "condition": "M",
+      "stage": "task",
+      "metric": "oracle_parity/view0",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "M",
+      "stage": "task",
+      "metric": "autonomous_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.984375,
+      "n": 64,
+      "correct": 63
+    },
+    {
+      "condition": "M",
+      "stage": "task",
+      "metric": "direct_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.25,
+      "n": 64,
+      "correct": 16
+    },
+    {
+      "condition": "M",
+      "stage": "task",
+      "metric": "oracle_parity/view1",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "M",
+      "stage": "task",
+      "metric": "autonomous_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.703125,
+      "n": 64,
+      "correct": 45
+    },
+    {
+      "condition": "MP",
+      "stage": "pretrain",
+      "metric": "native_date",
+      "worlds": 2,
+      "accuracy": 0.953125,
+      "n": 64,
+      "correct": 61
+    },
+    {
+      "condition": "MP",
+      "stage": "pretrain",
+      "metric": "native_birthcity",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "MP",
+      "stage": "pretrain",
+      "metric": "qa_date/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "pretrain",
+      "metric": "qa_birthcity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "pretrain",
+      "metric": "qa_date/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "pretrain",
+      "metric": "qa_birthcity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "pretrain",
+      "metric": "direct_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "pretrain",
+      "metric": "oracle_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "pretrain",
+      "metric": "autonomous_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "pretrain",
+      "metric": "direct_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "pretrain",
+      "metric": "oracle_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "pretrain",
+      "metric": "autonomous_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "adapt",
+      "metric": "native_date",
+      "worlds": 2,
+      "accuracy": 0.96875,
+      "n": 64,
+      "correct": 62
+    },
+    {
+      "condition": "MP",
+      "stage": "adapt",
+      "metric": "native_birthcity",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "MP",
+      "stage": "adapt",
+      "metric": "qa_date/view0",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "MP",
+      "stage": "adapt",
+      "metric": "qa_birthcity/view0",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "MP",
+      "stage": "adapt",
+      "metric": "qa_date/view1",
+      "worlds": 2,
+      "accuracy": 0.828125,
+      "n": 64,
+      "correct": 53
+    },
+    {
+      "condition": "MP",
+      "stage": "adapt",
+      "metric": "qa_birthcity/view1",
+      "worlds": 2,
+      "accuracy": 0.546875,
+      "n": 64,
+      "correct": 35
+    },
+    {
+      "condition": "MP",
+      "stage": "adapt",
+      "metric": "direct_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "adapt",
+      "metric": "oracle_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "adapt",
+      "metric": "autonomous_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "adapt",
+      "metric": "direct_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "adapt",
+      "metric": "oracle_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "adapt",
+      "metric": "autonomous_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.0,
+      "n": 64,
+      "correct": 0
+    },
+    {
+      "condition": "MP",
+      "stage": "task",
+      "metric": "native_date",
+      "worlds": 2,
+      "accuracy": 0.578125,
+      "n": 64,
+      "correct": 37
+    },
+    {
+      "condition": "MP",
+      "stage": "task",
+      "metric": "native_birthcity",
+      "worlds": 2,
+      "accuracy": 0.5625,
+      "n": 64,
+      "correct": 36
+    },
+    {
+      "condition": "MP",
+      "stage": "task",
+      "metric": "qa_date/view0",
+      "worlds": 2,
+      "accuracy": 0.96875,
+      "n": 64,
+      "correct": 62
+    },
+    {
+      "condition": "MP",
+      "stage": "task",
+      "metric": "qa_birthcity/view0",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "MP",
+      "stage": "task",
+      "metric": "qa_date/view1",
+      "worlds": 2,
+      "accuracy": 0.59375,
+      "n": 64,
+      "correct": 38
+    },
+    {
+      "condition": "MP",
+      "stage": "task",
+      "metric": "qa_birthcity/view1",
+      "worlds": 2,
+      "accuracy": 0.6875,
+      "n": 64,
+      "correct": 44
+    },
+    {
+      "condition": "MP",
+      "stage": "task",
+      "metric": "direct_parity/view0",
+      "worlds": 2,
+      "accuracy": 0.765625,
+      "n": 64,
+      "correct": 49
+    },
+    {
+      "condition": "MP",
+      "stage": "task",
+      "metric": "oracle_parity/view0",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "MP",
+      "stage": "task",
+      "metric": "autonomous_parity/view0",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "MP",
+      "stage": "task",
+      "metric": "direct_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.359375,
+      "n": 64,
+      "correct": 23
+    },
+    {
+      "condition": "MP",
+      "stage": "task",
+      "metric": "oracle_parity/view1",
+      "worlds": 2,
+      "accuracy": 1.0,
+      "n": 64,
+      "correct": 64
+    },
+    {
+      "condition": "MP",
+      "stage": "task",
+      "metric": "autonomous_parity/view1",
+      "worlds": 2,
+      "accuracy": 0.9375,
+      "n": 64,
+      "correct": 60
+    }
+  ],
+  "independent_worlds": 2,
+  "people_per_world": 32,
+  "base_parameter_comparisons": 12,
+  "frozen_base_unchanged": true
+}

@@ -1,0 +1,204 @@
+{
+  "created": "2026-09-28T00:51:51.072366+00:00",
+  "training_trajectories": 112,
+  "main_edit_trajectories": 2736,
+  "rank_sensitivity_trajectories": 768,
+  "timing_replays": 144,
+  "exact_equivalence_replays": 12,
+  "tuning": [
+    {
+      "phase": "bios-direction-v1",
+      "trajectories": 576,
+      "max_accepted_steps": 256,
+      "early_solver_failures": 97,
+      "all_receipts_and_constraints_verified": true
+    },
+    {
+      "phase": "bios-direction-cross-v1",
+      "trajectories": 192,
+      "max_accepted_steps": 256,
+      "early_solver_failures": 36,
+      "all_receipts_and_constraints_verified": true
+    }
+  ],
+  "full_budget_batches": [
+    {
+      "phase": "direction-v1",
+      "trajectories": 144,
+      "accepted_steps": 1024,
+      "early_solver_failures": 0
+    },
+    {
+      "phase": "direction-cross-v1",
+      "trajectories": 192,
+      "accepted_steps": 1024,
+      "early_solver_failures": 0
+    },
+    {
+      "phase": "direction-formation-v1",
+      "trajectories": 1344,
+      "accepted_steps": 1024,
+      "early_solver_failures": 0
+    },
+    {
+      "phase": "direction-confirm-v1",
+      "trajectories": 768,
+      "accepted_steps": 1024,
+      "early_solver_failures": 0
+    },
+    {
+      "phase": "direction-causal-v1",
+      "trajectories": 288,
+      "accepted_steps": 1024,
+      "early_solver_failures": 0
+    },
+    {
+      "phase": "direction-supplement-v1/rank32",
+      "trajectories": 384,
+      "accepted_steps": 1024,
+      "early_solver_failures": 0
+    },
+    {
+      "phase": "direction-refresh-v1",
+      "trajectories": 384,
+      "accepted_steps": 1024,
+      "early_solver_failures": 0
+    }
+  ],
+  "tests": {
+    "passed": 35,
+    "command": "PYTHONPATH=src python -m pytest -q tests/test_bios_direction.py tests/test_bios_direction_cross.py tests/test_bios_direction_formation.py tests/test_bios_direction_analysis.py tests/test_bios_path_transfer.py"
+  },
+  "lint": {
+    "status": "pass",
+    "exception": "Frozen supplement runner retains one 101-character line; E501 ignored for that file only. All 22 direction files pass formatting check."
+  },
+  "frozen_inputs": [
+    {
+      "phase": "direction-v1",
+      "input_files_verified": 7
+    },
+    {
+      "phase": "direction-cross-v1",
+      "input_files_verified": 12
+    },
+    {
+      "phase": "direction-formation-v1",
+      "input_files_verified": 5
+    },
+    {
+      "phase": "direction-confirm-v1",
+      "input_files_verified": 7
+    },
+    {
+      "phase": "direction-causal-v1",
+      "input_files_verified": 6
+    },
+    {
+      "phase": "direction-routing-v1",
+      "input_files_verified": 3
+    },
+    {
+      "phase": "direction-supplement-v1",
+      "input_files_verified": 3
+    },
+    {
+      "phase": "direction-refresh-v1",
+      "input_files_verified": 5
+    }
+  ],
+  "scope": "Controlled symbolic models. No natural-language validation or established component mechanism.",
+  "files": {
+    "README.md": "8d9ec8da8cb424282f6ef2344a0d8919cae61b29e4e5901b518e3b1b6ac48ef2",
+    "CONTRIBUTING.md": "db932c3315b71d93394e54e1d5180f609715d8ca65731193bc561efd544feb53",
+    "docs/experimental-protocol.md": "4e3db7241de4a3a2c5e731f02598aa6b3b3bf3fb960c1b2c113ea860e7d77140",
+    "docs/direction-results-v1.md": "5db1c1ce2ae0d8c5077220f9f48897c906573741e315643b1ac4ea7782bb3eef",
+    "scripts/analyze_bios_direction_confirmation.py": "2aa7a9fa2bf89cadb105eebe32b22c2527ab210bb36a7299a78bb2124634173a",
+    "scripts/calibrate_bios_direction_geometry.py": "5a686536928f94c841243cea7525f9fc437c8eb418159c95796f4ae1dd65170d",
+    "scripts/diagnose_bios_direction_cross.py": "4d4738f96be68388700cbaca72626b81ccb0ff1360add39bb2807114483e4e2f",
+    "scripts/intervene_bios_direction_routing.py": "26f8962457ac15c85f39d3897f02fe8fd31e8a94de4080d4fbc7dc6b919aa4aa",
+    "scripts/predict_bios_direction.py": "7e2028ef49454e638f3150d861b9bdf1a7f420c7d9a490b19a6c93150c3c7639",
+    "scripts/render_bios_direction.py": "25dc695e9665e96d8da37a16f12df4cc02bab7ccd57a3b19eb2ab4615f687ca0",
+    "scripts/report_bios_direction.py": "804d9528ed790a7fe81870abe559d96686d54e6c8a7b5fb77290791daaceb279",
+    "scripts/run_bios_direction.py": "eb163506fd5823f711d43ab815d3e8154ca81503bcc0b2c2584a3f4a7deabc56",
+    "scripts/run_bios_direction_causal.py": "b0cedb7445647862c0730873e1d65c90430611af26cff812c1af1241f4710c83",
+    "scripts/run_bios_direction_confirm.py": "1a93e60edba276721d458fdb418178122c7d91f8a2029701b2bc65ae64d9d349",
+    "scripts/run_bios_direction_cross.py": "3ecf0edf982e98f332000269fe2f7de3be168ded84629b299e7ab2fa792b1600",
+    "scripts/run_bios_direction_formation.py": "94ec7cd1e0323b3c090878d03a117e2a4c64f23fc357ce78d9634ff79fce0f74",
+    "scripts/run_bios_direction_refresh.py": "9c0db86862a85e317ea059bdc284aa84620f86ed6877769995d1c5b30330e32d",
+    "scripts/run_bios_direction_supplement.py": "4907cf66f7d7c54543099101d0330bf66c6ac1fb521c4660407addfe4660edcc",
+    "src/llm_memory_editability/bios_direction.py": "1240f83f5ee558101bbf6f808522fa6c37ffe09dc2296749bd5e685eff8aa41d",
+    "src/llm_memory_editability/bios_direction_cross.py": "66cf337b3a52508e82da6190ea01916662f1fe6fddef036844f9d1be2c179888",
+    "src/llm_memory_editability/bios_direction_formation.py": "e2b19c17c6b7ebb7a884782f2c7750a7c65b935c17694d4424d354c62d0a24ed",
+    "src/llm_memory_editability/bios_direction_refresh.py": "4f80060d4232ec3bf4fb5d99b0823d20ee759e088aeedf4bd49ab841357d0127",
+    "tests/test_bios_direction.py": "e5649a3e97acb7cdf09a04709021a48c26c09b13f3f6d4831b60dc1619560888",
+    "tests/test_bios_direction_analysis.py": "fb8a78d4a379cc82bd24bead10bfff559d1c948c8bed53672ba94837a13cca69",
+    "tests/test_bios_direction_cross.py": "3b71ddeb54f08799aa9de44e4c91e7bae6051a5fe2420ff8942a52c11bdf9df8",
+    "tests/test_bios_direction_formation.py": "b30646e0fe0475851809931d534738c851076e729c2c9a0a4895b6e1abdbdf4b",
+    "docs/development-artifacts/direction-v1/selected.json": "cb41d29687e71a5668453040bd2a35c04daae0d7b2b4a8bc62f0de0a6f9cbed5",
+    "docs/development-artifacts/direction-v1/tasks.json": "631754e4998b9d2accc735879ea00c532cd1e81dd075253b186855957d2c279d",
+    "docs/development-artifacts/direction-v1/tuning-summary.json": "21a8643fbaeb4686d964bf6732fd9853e4f37460aacdd27da3bb5e36d93dc82d",
+    "docs/development-artifacts/direction-v1/exact-local-geometry.json": "b8930a0a78e8d896586a56e37fd7aa54f1ede51a7b40a02f1651e19c000bbf9a",
+    "docs/development-artifacts/direction-v1/summary.json": "3543a7bee917b18512e6424ec4dc18ae6a8c1c460b28640288f3df33c043948e",
+    "docs/development-artifacts/direction-v1/curves.csv": "a9eb9ec9573c613963c99425bf2ed876836deb6191b916bf558e514ae8b10681",
+    "docs/development-artifacts/direction-v1/cases.csv": "c0781d11796a18f1829d7f514ed353cf5dd9f213fad2b0ea2a3b60816674a76d",
+    "docs/development-artifacts/direction-v1/lock.json": "543721b55e706e09fd52b4f35c8428357508e23036f36b2789ed648301fb814a",
+    "docs/development-artifacts/direction-v1/audit.json": "0b7dec3e138dcc9ec3b8d1dc9581ad5ed8b086cb12ca30a89594c7ad5ff5f43b",
+    "docs/development-artifacts/direction-cross-v1/two-step-audit.json": "35243b30639eca9870dab5d22849f7d3c05f105a03869e4c932ab9beacba01a6",
+    "docs/development-artifacts/direction-cross-v1/selected.json": "62432d1fe5840ab2d0e615c2dabde3ae6bd91fc8c427d85664170a0e82f62725",
+    "docs/development-artifacts/direction-cross-v1/tasks.json": "a1dd87aa7daa80908de3349af50887a1b365c0ef33302d5109f4e7badfafd45a",
+    "docs/development-artifacts/direction-cross-v1/tuning-summary.json": "0b152aadef5268c1416c981616262cd8eef3547f417619cbfb9df9583e21ce7d",
+    "docs/development-artifacts/direction-cross-v1/summary.json": "372d09224c868a6887e663fb98cf6036cdce7b35a49348bb130a7b4550ab3443",
+    "docs/development-artifacts/direction-cross-v1/curves.csv": "f40fd583bcf2a4faf79a7f8d7a8a9457105878e16743bb380136f57060b38f1f",
+    "docs/development-artifacts/direction-cross-v1/cases.csv": "632e940f5bc07ed9b6f1c63b892f4234ee2ddc87f7908d6e04b5b488b5a99fa4",
+    "docs/development-artifacts/direction-cross-v1/lock.json": "8c9e338cae57d0e263b4726d18b46d2bdddfc0c0c9b9e60e04f270500cd3fef5",
+    "docs/development-artifacts/direction-cross-v1/two-step.csv": "74cc6d24c44fd0929ce14d89f1f2841b0557d2cc27790900facccb8775000dee",
+    "docs/development-artifacts/direction-cross-v1/audit.json": "8ff112374b0dbb4b02e19e6ad023cb4b35930a2f835ac2d11994357f685a6d32",
+    "docs/development-artifacts/direction-formation-v1/summary.json": "cf9e71977202f7c43392f98b6ed6ad08ac8fa020c727961f9208328392c02e3b",
+    "docs/development-artifacts/direction-formation-v1/curves.csv": "af28a238da67c164b9ec132cbad40fa868c4ff3fe21c3b22528ba8eff6713507",
+    "docs/development-artifacts/direction-formation-v1/cases.csv": "314868ad81858d5eb67d82f24cd07908e7579239acd507bfd5049687c40e7c3c",
+    "docs/development-artifacts/direction-formation-v1/lock.json": "e0c5ef53697f4cb5827a12c9c6e0e30531fda428ce3f8c918bebe592d2f4ef02",
+    "docs/development-artifacts/direction-formation-v1/worlds.json": "456b43220eba3a113e5a481074978a75abc6e88b47d0df56bf1f7772a079ac66",
+    "docs/development-artifacts/direction-formation-v1/audit.json": "1a84cdf745a8b8683d971d5c24f36fc9f4d6f014ca9741c7446b8cd3e6668ac1",
+    "docs/development-artifacts/direction-confirm-v1/selected-methods.json": "afd027a40d4c2febd18a404695437a9712555f03a062769e512ace5360fc8b80",
+    "docs/development-artifacts/direction-confirm-v1/summary.json": "dd21441c01c2f233c43b48a0c0538dad8f1b8b9ca3c0bd0bdde69421dce6afaa",
+    "docs/development-artifacts/direction-confirm-v1/curves.csv": "b9a5c3821e990bfc3d6e4640f9e420284d85f2f17288138b7e4dcc28a1b10c84",
+    "docs/development-artifacts/direction-confirm-v1/cases.csv": "a93e3f006e9bbc9ea01c5a66957fd0b53496ada2930068bd929cb27e3cb54dad",
+    "docs/development-artifacts/direction-confirm-v1/lock.json": "2a04c20d461b3f3c31cbe8f179fc5cdaf8e09b1138aa8b660bfcdfe58a670445",
+    "docs/development-artifacts/direction-confirm-v1/statistics.json": "fdd56d540cebfcf365efad5ff22c7c08eecc00776a08323715ddc4b4b424f668",
+    "docs/development-artifacts/direction-confirm-v1/audit.json": "66448d21132ef1ecd2af3563ea86837d16130b748cb9b9a0a1578b4127a60276",
+    "docs/development-artifacts/direction-causal-v1/summary.json": "0797f011eef500a0f3b772d143fab0ef1077347fa61004e8f95774c2de8a16b5",
+    "docs/development-artifacts/direction-causal-v1/curves.csv": "c28a5d4d51df45d53f97f6de130e1564889684420e8ad851aad2cb44f4ecdaab",
+    "docs/development-artifacts/direction-causal-v1/cases.csv": "338b9f014b0b2207fb9c990189e63175efe32caa65a24891199b062a66f36be7",
+    "docs/development-artifacts/direction-causal-v1/lock.json": "f43282440f93b4a64eb46034f90b8bd9fb5f1fdde4511a6a1b5a70af85a04607",
+    "docs/development-artifacts/direction-causal-v1/freeze-audit.json": "ab292b4752c4822e8d81db60ccdceadf19085073fb60bf6b61b4c651f58198a5",
+    "docs/development-artifacts/direction-causal-v1/audit.json": "81b645382e84942247cc70ac282bc74225551c6d9fe8a6d0da05ee10d02bc3ea",
+    "docs/development-artifacts/direction-routing-v1/selected.json": "8935335b28a8c4cef71eb530486fe4b9c953ea348bb1801e2fb912ad6f002160",
+    "docs/development-artifacts/direction-routing-v1/lock.json": "d23d899956cfe23c17ae1a2069b92f5aa3a53005ad44d7ff15b6cc9b7b6c1752",
+    "docs/development-artifacts/direction-routing-v1/preflight-lock.json": "2f3467203c7a18c14ef86a4a94c30fbee75e0018704d86b9baa55453df33436d",
+    "docs/development-artifacts/direction-supplement-v1/timing-summary.json": "9ee888caf7bf7fac367d8b0fed00814a7728eca7d22203f965b20b70fb1d1711",
+    "docs/development-artifacts/direction-supplement-v1/rank-sensitivity.json": "4969a119d3b29904beabd49fb1ce2c0e33a2c32e83b805f54e8846b79fd99fc2",
+    "docs/development-artifacts/direction-supplement-v1/budget-points.json": "fbdc29605381047dfa5a1a5fc7f1d7b0ac2fdd71c92fc2967546d19ead95ac2a",
+    "docs/development-artifacts/direction-supplement-v1/lock.json": "7e5b01dce2b3656ae2c6700e07e6ee2367758b92ce9145c7cb6a518f5f5610e8",
+    "docs/development-artifacts/direction-supplement-v1/timing.json": "2bc754600b520225f1a236a5b4c892a9284919a1234ecc26f9cef846b64d7d6a",
+    "docs/development-artifacts/direction-refresh-v1/equivalence.json": "f0d075b561c189ed5161252670dedda3e649af4bad768284a8ca6d77f92e1716",
+    "docs/development-artifacts/direction-refresh-v1/summary.json": "e6cc0559d583480a5ee7a442fa56b73ee379f1801e9f71ba2d4f7839878c3f44",
+    "docs/development-artifacts/direction-refresh-v1/curves.csv": "30dc9c8de106c7e108eccb7a59e21c3a5417a1105be0eb00c7faf8be25882405",
+    "docs/development-artifacts/direction-refresh-v1/cases.csv": "58c93e73639f5a16747b1f5dacc9ee3194f2b9a3c11b912c75570e77d7014016",
+    "docs/development-artifacts/direction-refresh-v1/lock.json": "a0e95d12cd1a023e2a9ba6463a09e855e4a9531ec7994e528060937b10bfb72e",
+    "docs/development-artifacts/direction-refresh-v1/statistics.json": "1c4a43adb8fb5debe8fe283e401b340ef123742ba0966b4489d71f319c95a296",
+    "docs/development-artifacts/direction-refresh-v1/audit.json": "fa89eb5118462ff941fa2cfc1983f8d639c0b4ef859d87fcb790b7770621e252",
+    "docs/development-artifacts/direction-report-v1/cost-and-rank.pdf": "3f3e44a6d6d0fd7c22480b98cd107c1b818a763b810099eca490c31bd5dab0f5",
+    "docs/development-artifacts/direction-report-v1/frozen-input-audit.json": "0687e51317faba738454469b968904c8620dca16d242979c5132d95723be9821",
+    "docs/development-artifacts/direction-report-v1/linear-instrument-calibration.json": "3e6fc1d9f8c4cfd756823b34376d096768372b763f35dbf4259c3d48932af46b",
+    "docs/development-artifacts/direction-report-v1/cost-and-rank.png": "c92c8c1e742cdb07dcd89f232d9901ca3ba9035ff582286e42e51f9e3a3cc3ff",
+    "docs/development-artifacts/direction-report-v1/composition.pdf": "be53bb1da5dc57afba445680bf09ca408fcc00c2aaa8401b804bae6420109bc8",
+    "docs/development-artifacts/direction-report-v1/composition.png": "182c1dc1de6c9c25fa4e98dc5ee1619925407476ec24c30d007605cd377ac916",
+    "docs/development-artifacts/direction-report-v1/confirmation-totals.json": "751970930047f1cc756873da59c39d2912b794aa6da38165b23626454ca7543c",
+    "docs/development-artifacts/direction-report-v1/editability.pdf": "fc4ffcc6037d72eb044e329ce3bd92b18600699578c4c2524eb44525d7cf3456",
+    "docs/development-artifacts/direction-report-v1/editability.png": "6a0d17345c19a58e98f13416a6816bd7cc56328489ab0ee0c18c59f0f2e9bcf7",
+    "docs/development-artifacts/direction-report-v1/mechanism.pdf": "0f29fcbc51604cb1dde8d37d5011f720d1ddf2dcf2e2b6dd49518632558221d6",
+    "docs/development-artifacts/direction-report-v1/training-audit.json": "06862e730cbd73d03ff4882f79d034988d37364c3cb3b7f6b97c536622fd17f2",
+    "docs/development-artifacts/direction-report-v1/mechanism.png": "ab81cfd9343bdb18d4011191c30c100845b97ae94ef58fda4f93f35567bc866f"
+  }
+}

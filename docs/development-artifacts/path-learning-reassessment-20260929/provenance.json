@@ -1,0 +1,40 @@
+{
+  "created_at": "2026-09-29T02:32:30.544617+00:00",
+  "analysis_type": "post_hoc_development_reanalysis",
+  "new_training_runs": 0,
+  "new_model_evaluations": 0,
+  "post_update_U_read": false,
+  "scope": "Four previously selected beta=1, lr=1e-4 development units; all six available nonzero diagnostic nodes. No threshold reselection or change to v1 stopping decision.",
+  "interpretation": "Positive R_kl_relative_change means restoring the position group increases drift. KL and strict answer matching do not isolate factual content. Temporal effects alone do not establish compensation.",
+  "inputs": {
+    "results/qwen-path-learning-v1/dev-e0-lr0.0001-b1/diagnostics/step-001.json": "a89052d6ec890f964bf8798a1dca7230b8855af6c6dddee42294b78149b45f0d",
+    "results/qwen-path-learning-v1/dev-e0-lr0.0001-b1/diagnostics/step-004.json": "8caebb11573827a74a243528ab1e433a957aa557188f34d6c278551ca36697b1",
+    "results/qwen-path-learning-v1/dev-e0-lr0.0001-b1/diagnostics/step-016.json": "b332043695895a52a7c26180da0afb30a6a83422873524f4988c1d590f0cab5a",
+    "results/qwen-path-learning-v1/dev-e0-lr0.0001-b1/diagnostics/step-064.json": "7eff0389448ae63d3a996afdabeaebb927ddfdf039cc66d105bee038bd28fd3c",
+    "results/qwen-path-learning-v1/dev-e0-lr0.0001-b1/diagnostics/step-128.json": "4e9e529b2bdef241280bfaf1baaca7d6991fdc2376008cf8517b27272853b7eb",
+    "results/qwen-path-learning-v1/dev-e0-lr0.0001-b1/diagnostics/step-256.json": "8694052c7e3cb597ed73f273a714853d07ae043dd2cd512f9cf68428fc40511f",
+    "results/qwen-path-learning-v1/dev-e1-lr0.0001-b1/diagnostics/step-001.json": "01a7be230461baff1148447fbc58848329069b70b8e5d0130cffc8e1cace4530",
+    "results/qwen-path-learning-v1/dev-e1-lr0.0001-b1/diagnostics/step-004.json": "af20e3c32a383032f26bdfb6c6b4a508356831a09472e7d4facfc1cee689ede9",
+    "results/qwen-path-learning-v1/dev-e1-lr0.0001-b1/diagnostics/step-016.json": "6ed48d90fe4a58be132d56e24cf421c374d30882140adc39d4c799c133dff9f3",
+    "results/qwen-path-learning-v1/dev-e1-lr0.0001-b1/diagnostics/step-064.json": "c1fd5b4c1dc9fe8b4beb76727e7ce6332a2e8c9124e807cb570e3b84dbe36596",
+    "results/qwen-path-learning-v1/dev-e1-lr0.0001-b1/diagnostics/step-128.json": "defabf078f66d996e49e86c0e5224650d40b6ba7e7ca23e146e0933cded0c771",
+    "results/qwen-path-learning-v1/dev-e1-lr0.0001-b1/diagnostics/step-256.json": "2b4bfd511401ebaf76ab27022287b0f0394276c4e503345aeb80b85464d8dd4a",
+    "results/qwen-path-learning-v1/dev-e2-lr0.0001-b1/diagnostics/step-001.json": "0fcae38d7990ff4f38e4ef4ecaf8adf4238fbedae3a82381b9bf1d4afa3a92ac",
+    "results/qwen-path-learning-v1/dev-e2-lr0.0001-b1/diagnostics/step-004.json": "0fdbccd9d1706367f829d4ea20f4d5a90d6126452d8358bb96433fdc8ddae892",
+    "results/qwen-path-learning-v1/dev-e2-lr0.0001-b1/diagnostics/step-016.json": "55a707d94fb87d5517b6e60ca8ed1017a51110d79b661075f2aa1c704e9a9858",
+    "results/qwen-path-learning-v1/dev-e2-lr0.0001-b1/diagnostics/step-064.json": "b79cce65c0bfc8012417afc5756f8c50a81efe6b7064c48a6867bd7719dbf0b0",
+    "results/qwen-path-learning-v1/dev-e2-lr0.0001-b1/diagnostics/step-128.json": "04e2b6b41ea5c0923fa4e32194995e954c39d65184cb2e117da68ba5a7a2a0e0",
+    "results/qwen-path-learning-v1/dev-e2-lr0.0001-b1/diagnostics/step-256.json": "fed911044accbfa4a3ba186676eeac090bfd3d077589d59617ad8b5c9be27d25",
+    "results/qwen-path-learning-v1/dev-e3-lr0.0001-b1/diagnostics/step-001.json": "06c74d76f9d003685ebff414b51927c7e2b891bf06a292411e104656ad19d587",
+    "results/qwen-path-learning-v1/dev-e3-lr0.0001-b1/diagnostics/step-004.json": "71388126b8d9dd5fbc24a84a5bccef81719909558f1f86e888f803933431caec",
+    "results/qwen-path-learning-v1/dev-e3-lr0.0001-b1/diagnostics/step-016.json": "267c9e85e342d099f23099ef2c808cd9745b62e436e6ac548921fe82ff1bf8bd",
+    "results/qwen-path-learning-v1/dev-e3-lr0.0001-b1/diagnostics/step-064.json": "0aa19764ff4e46b11132a6b7f9dcf600b0c00ede035abecfcae909e1c41e711d",
+    "results/qwen-path-learning-v1/dev-e3-lr0.0001-b1/diagnostics/step-128.json": "e2b22cb786381916d17eeaa7b584222d13297df0d14d8b1456fea503e9554cea",
+    "results/qwen-path-learning-v1/dev-e3-lr0.0001-b1/diagnostics/step-256.json": "89651f007edb47b5763ccd91578627352b006c451aa8c4770c5f6df2cfea0ae3",
+    "docs/development-artifacts/qwen-path-learning-v1/learning-curves.csv": "6afc352f0ee2c77f7db3d66885b987d6d8c6d23accc8261f9c88002760763b3d"
+  },
+  "outputs": {
+    "position-effects-by-time.csv": "d2226af17bde4a5287fd066269154cc2b55919013f49ca7d5a1508e00390ded5",
+    "summary-by-time.csv": "2c351c543c419d6f911c269fdef54bfb1c54c52fe6f3bb83b14fbdad75dc316b"
+  }
+}

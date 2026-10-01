@@ -1,0 +1,29 @@
+{
+  "experiment": "twohop-depth-v1",
+  "scope": "controlled symbolic exploration, not a universal depth lower bound",
+  "worlds": [142801, 142802],
+  "initializations": [14281, 14282],
+  "entities": 128,
+  "relations": 4,
+  "architectures": [
+    {"name": "d1w128", "layers": 1, "width": 128, "heads": 4},
+    {"name": "d2w128", "layers": 2, "width": 128, "heads": 4},
+    {"name": "d3w128", "layers": 3, "width": 128, "heads": 4},
+    {"name": "d4w128", "layers": 4, "width": 128, "heads": 4},
+    {"name": "d6w128", "layers": 6, "width": 128, "heads": 4},
+    {"name": "d1w312", "layers": 1, "width": 312, "heads": 4},
+    {"name": "d2w220", "layers": 2, "width": 220, "heads": 4}
+  ],
+  "steps": 8192,
+  "primary_step": 4096,
+  "nodes": [0, 128, 512, 1024, 2048, 4096, 8192],
+  "batch_per_kind": 128,
+  "lr": 0.001,
+  "warmup": 128,
+  "weight_decay": 0.1,
+  "gradient_clip": 1.0,
+  "diagnostic_cases": 64,
+  "eval_batch": 512,
+  "dtype": "bfloat16 autocast with float32 parameters and optimizer",
+  "policy": "Run all 28 trajectories and all checkpoints regardless of mastery or effect. Both budgets apply to every architecture. No test-selected hyperparameters."
+}

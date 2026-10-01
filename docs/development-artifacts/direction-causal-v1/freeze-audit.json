@@ -1,0 +1,269 @@
+{
+  "parents": [
+    {
+      "world": 4000,
+      "seed": 0,
+      "arm": "up-freezeall",
+      "optimizer_up_steps": [
+        0,
+        0
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0015853600343689322
+    },
+    {
+      "world": 4000,
+      "seed": 0,
+      "arm": "up-freezeearly",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0027086958289146423
+    },
+    {
+      "world": 4000,
+      "seed": 0,
+      "arm": "up-freezelate",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0015960909659042954
+    },
+    {
+      "world": 4000,
+      "seed": 1,
+      "arm": "up-freezeall",
+      "optimizer_up_steps": [
+        0,
+        0
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0016482617938891053
+    },
+    {
+      "world": 4000,
+      "seed": 1,
+      "arm": "up-freezeearly",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0016447664238512516
+    },
+    {
+      "world": 4000,
+      "seed": 1,
+      "arm": "up-freezelate",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0015060227597132325
+    },
+    {
+      "world": 4001,
+      "seed": 0,
+      "arm": "up-freezeall",
+      "optimizer_up_steps": [
+        0,
+        0
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0014647854259237647
+    },
+    {
+      "world": 4001,
+      "seed": 0,
+      "arm": "up-freezeearly",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.001984776696190238
+    },
+    {
+      "world": 4001,
+      "seed": 0,
+      "arm": "up-freezelate",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0014909737510606647
+    },
+    {
+      "world": 4001,
+      "seed": 1,
+      "arm": "up-freezeall",
+      "optimizer_up_steps": [
+        0,
+        0
+      ],
+      "accuracy": 1.0,
+      "loss": 0.001480894978158176
+    },
+    {
+      "world": 4001,
+      "seed": 1,
+      "arm": "up-freezeearly",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 0.9895833730697632,
+      "loss": 0.016404589638113976
+    },
+    {
+      "world": 4001,
+      "seed": 1,
+      "arm": "up-freezelate",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0014916961081326008
+    },
+    {
+      "world": 4002,
+      "seed": 0,
+      "arm": "up-freezeall",
+      "optimizer_up_steps": [
+        0,
+        0
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0014650955563411117
+    },
+    {
+      "world": 4002,
+      "seed": 0,
+      "arm": "up-freezeearly",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.002098982222378254
+    },
+    {
+      "world": 4002,
+      "seed": 0,
+      "arm": "up-freezelate",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0014581023715436459
+    },
+    {
+      "world": 4002,
+      "seed": 1,
+      "arm": "up-freezeall",
+      "optimizer_up_steps": [
+        0,
+        0
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0014287527883425355
+    },
+    {
+      "world": 4002,
+      "seed": 1,
+      "arm": "up-freezeearly",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.002044006483629346
+    },
+    {
+      "world": 4002,
+      "seed": 1,
+      "arm": "up-freezelate",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0014827469130977988
+    },
+    {
+      "world": 4003,
+      "seed": 0,
+      "arm": "up-freezeall",
+      "optimizer_up_steps": [
+        0,
+        0
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0015488133067265153
+    },
+    {
+      "world": 4003,
+      "seed": 0,
+      "arm": "up-freezeearly",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.001545701758004725
+    },
+    {
+      "world": 4003,
+      "seed": 0,
+      "arm": "up-freezelate",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0015416615642607212
+    },
+    {
+      "world": 4003,
+      "seed": 1,
+      "arm": "up-freezeall",
+      "optimizer_up_steps": [
+        0,
+        0
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0014905892312526703
+    },
+    {
+      "world": 4003,
+      "seed": 1,
+      "arm": "up-freezeearly",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.002249869517982006
+    },
+    {
+      "world": 4003,
+      "seed": 1,
+      "arm": "up-freezelate",
+      "optimizer_up_steps": [
+        768,
+        768
+      ],
+      "accuracy": 1.0,
+      "loss": 0.0016015218570828438
+    }
+  ],
+  "all_parameter_and_optimizer_freeze_checks_passed": true
+}

@@ -1,0 +1,48 @@
+{
+  "registered_utc": "2026-09-30T04:56:06.752587+00:00",
+  "registered_user_time": "2026-09-29T23:56:06.752587-05:00",
+  "classification": "exploratory reanalysis designed after development observations",
+  "completed_confirmation_scan_count_at_registration": 1,
+  "completed_confirmation_scans_at_registration": [
+    {
+      "run": "conf-w145011-i14501-h2-l1",
+      "summary": "results/grok-loop-v1/recurrence-confirmation-conf-w145011-i14501-h2-l1/summary.json",
+      "finished_utc": "2026-09-30T04:54:52.357446+00:00",
+      "summary_sha256": "4710160fe4d0831c139149b9db9d82f6f8c09b76c5b46a8a1e1a0e41bff6013c"
+    }
+  ],
+  "observations_supplied_before_registration": {
+    "L1_R1_ID_atomic_answer_percent_by_hops_2_3_4": [
+      100,
+      100,
+      100
+    ],
+    "L1_R1_OOD_atomic_answer_percent_by_hops_2_3_4": [
+      18.0,
+      10.5,
+      9.0
+    ],
+    "L2_R1_ID_atomic_answer_percent_by_hops_2_3_4": [
+      100,
+      100,
+      100
+    ],
+    "L2_R1_OOD_atomic_answer_percent_by_hops_2_3_4": [
+      98.0,
+      92.2,
+      61.7
+    ]
+  },
+  "no_new_model_forward": true,
+  "repeat_counts": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "selection": "all L1/L2 scans, all counts, no threshold or best-count selection"
+}

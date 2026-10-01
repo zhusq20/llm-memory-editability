@@ -1,0 +1,49 @@
+{
+  "current_runs": 43,
+  "historical_runs": 28,
+  "current_nodes": 2967,
+  "historical_nodes": 196,
+  "pdf_pages": 8,
+  "files_sha256": {
+    "all-trajectories.pdf": "8723245e0c555710da42ce572f2a6f24bcd8bfee1681b570a1b1dd864ab7bba8",
+    "all-trajectories.png": "6eb4bf7c6ac2093d3c78f21c3a0d7f28ea39bd192e4618bab29c2d93cfcf177f",
+    "complete-comparison.pdf": "de4ccb4b3677cf8e314294724ed7df1757ea6942a716f9a498665437225c9d9a",
+    "endpoint-diagnostics.pdf": "0cdbad7d773ea56f8a395ead19737b21b0716e127492887d8bba169e5705e4bc",
+    "endpoint-diagnostics.png": "d702cb1888d66452d27a7fa42c199436c6da4e147bcc24bf779033d44e56b0be",
+    "endpoints.csv": "8cf1dd2ab1483f9b00ce669ede8cc96d24cdd6d02a1a0654b03526c4dd8a6731",
+    "figure-notes.json": "e8bcf295f513cd96ac5ca1697ab7c1270153c9fc6f08c34b8c19aad07ae123e1",
+    "group-summary.csv": "6e4daac3b1d1e7698c87010885de0d324660bd5c0cb57bdceb1f371bd231ca4f",
+    "history/architecture-summary.csv": "ff4871bcc54cb5f22cf35d8fba79c2e922f73119f109595dddf6228e6483694a",
+    "history/endpoints-all-56.csv": "15f0b469a198da27455011ce9eb827cd5e237e1b7ccad334009c41b63fd1decb",
+    "history/history-learning-curves.pdf": "68cc978a36af631d25567164466c8a54e98aab9cdd17fa0e52a2864ae71b830c",
+    "history/history-learning-curves.png": "709b3a833e5a832c671b9fbcfb9e62ac83551b95d732a9c0a083abfe170c4890",
+    "history/history-overview.pdf": "740e8a280bd0291d15f8fc8580fa691163ff85cb7656e980e90fcc465279c183",
+    "history/history-overview.png": "161d2644834764eb518e44adeef11eeb07c2619d064a5481c38ef7e33462e5f8",
+    "history/learning-all-196-nodes.csv": "0662a91916267d01d90be9dc5f18c4fbf8d0b6b7ab189bf062b498c778fd8cbf",
+    "history/manifest.json": "1a1f3e7192899a7479c6fd41f36f6cb3d0ec154d3b92ab3f44b844b530933a95",
+    "history/runs-all-28.csv": "b1e67e6766b86864a66193e40ef2a09248553b17b7a2bd2f9e63678f63b8ad56",
+    "history/world-means.csv": "4081c05b0aa2c2d315bb3892107f05388d8481908f1caa55e1da52635bf6753c",
+    "learning-and-cost.pdf": "2d70528a4040d73e23e09ee692dde3b3b3a37abf011453595feb53c1eeadf922",
+    "learning-and-cost.png": "27a0d9b34ec310b66c126b2decc15e0a531f71b78e307a156f7d165c01e50017",
+    "learning.csv": "e7135c7283bfc240ac6f351bfcef51d75c35deeb5d62d8afbe851a5ded31aa97",
+    "manifest.json": "8fbf4362596ed8abb242376c7cb29df5af9b536f134cf4aab240dba94d10055f",
+    "overview.pdf": "fc83e547afa14285d2ce94548254398e9726eba0ce8126b17437865cfcccf5dc",
+    "overview.png": "49bad9e923d5cacd38c77155b51bffd54853326f055dd7c49ad8a62673f0bf3f"
+  },
+  "scripts_sha256": {
+    "scripts/export_hop_depth_comparison.py": "f68232f8638782e6c7241f33c8e7e90962bac6407fd1919c0860565a9c66b444",
+    "scripts/plot_hop_depth_comparison.py": "eb4e810a09d1a4e753da08a009b7054de91f53f39e0f9874360c99e7a852a950",
+    "scripts/plot_hop_depth_history.py": "69c44803517c173608790e578e731f74dcde11fdfdf203c1269a7a1882b997c7"
+  },
+  "pdf_contents": [
+    "Results overview",
+    "Learning and computation cost",
+    "Endpoint diagnostics",
+    "All 43 current learning trajectories",
+    "Current run endpoints 1–23",
+    "Current run endpoints 24–43",
+    "Historical 28-run overview",
+    "Historical learning curves"
+  ],
+  "scope_note": "Current and historical task protocols are separate; no new training performed. Different hop counts and training-set sizes are not pooled."
+}

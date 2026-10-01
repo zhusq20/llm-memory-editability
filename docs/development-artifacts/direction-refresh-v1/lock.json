@@ -1,0 +1,24 @@
+{
+  "created": "2026-09-28T00:42:27.370820+00:00",
+  "rank": 32,
+  "worlds": [
+    5000,
+    5001,
+    5002,
+    5003,
+    5004,
+    5005,
+    5006,
+    5007
+  ],
+  "trajectories": 384,
+  "change": "Per-trajectory refresh and frozen idle counters; other settings fixed.",
+  "interpretation": "Numerical audit; no new independent worlds or retuning.",
+  "files": {
+    "scripts/run_bios_direction_refresh.py": "9c0db86862a85e317ea059bdc284aa84620f86ed6877769995d1c5b30330e32d",
+    "src/llm_memory_editability/bios_direction.py": "1240f83f5ee558101bbf6f808522fa6c37ffe09dc2296749bd5e685eff8aa41d",
+    "src/llm_memory_editability/bios_direction_refresh.py": "4f80060d4232ec3bf4fb5d99b0823d20ee759e088aeedf4bd49ab841357d0127",
+    "scripts/run_bios_direction_supplement.py": "4907cf66f7d7c54543099101d0330bf66c6ac1fb521c4660407addfe4660edcc",
+    "docs/development-artifacts/direction-v1/selected.json": "cb41d29687e71a5668453040bd2a35c04daae0d7b2b4a8bc62f0de0a6f9cbed5"
+  }
+}

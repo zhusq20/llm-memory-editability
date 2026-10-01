@@ -1,0 +1,101 @@
+{
+  "experiment": "hebbian-interface-v1",
+  "completed_utc": "2026-09-30T00:01:01.187754+00:00",
+  "state": "complete",
+  "development_worlds": 1,
+  "confirmation_worlds": 3,
+  "development_not_pooled_with_confirmation": true,
+  "trained_memories": 16,
+  "trained_readers": 8,
+  "checkpoint_files": 24,
+  "confirmation_reader_evaluation_rows": 24576,
+  "reported_unit": "independent world",
+  "config_unchanged_after_development": true,
+  "training_source_lock_verified": true,
+  "tests": {
+    "passed": 8,
+    "reported_by": "independent theory_audit agent",
+    "seconds": 7.62,
+    "command": ".venv/bin/python -m pytest tests/test_hebbian_interface.py -q",
+    "ruff_check_and_format": "5 new Python files pass"
+  },
+  "audit": {
+    "worlds": 4,
+    "checks": 728,
+    "strict_checks_failed": 5,
+    "strict_failures_preserved": {
+      "audit-confirmation-142943.json": [
+        "memory/mse/B/angle_mean"
+      ],
+      "audit-confirmation-142944.json": [
+        "memory/mse/A/angle_mean"
+      ],
+      "audit-development-142941.json": [
+        "memory/mse/B/angle_mean"
+      ],
+      "audit-confirmation-142942.json": [
+        "memory/mse/A/angle_mean",
+        "memory/mse/B/angle_mean"
+      ]
+    },
+    "prediction_score_target_accuracy_freezing_stream_causality_replay_passed": true,
+    "max_reader_score_absolute_difference": 5.662441253662109e-07,
+    "diagnostic_limitation": "Five near-zero MSE mean acos angles differ beyond the original 1e-5 CPU/GPU threshold. All original strict failures remain; no tolerance or training result changed. Do not interpret near-zero float32 acos values as precise angular differences.",
+    "initial_memory_limitation": "Four recorded initialization hashes are compared within each world; the CPU replay does not regenerate original CUDA initial samples."
+  },
+  "time_seconds": {
+    "development_internal": 104.61184044397669,
+    "confirmation_internal": 295.67597595398547,
+    "total_internal": 400.28781639796216,
+    "independent_cpu_replay": 9.57314051897265,
+    "scope": "Internal timed run_world blocks; not end-to-end task wall clock; imports and development tests excluded."
+  },
+  "compute": {
+    "model_parameters": 74944,
+    "memory_parameters": 49728,
+    "reader_trainable_parameters": 8192,
+    "confirmation_reader_input_tokens": 122880000,
+    "total_reader_input_tokens": 163840000,
+    "rough_dense_training_flops_per_world": 18479579136000,
+    "rough_dense_training_flops_all_worlds": 73918316544000,
+    "estimate_method": "Count multiply-add as 2 FLOPs: memory forward 6 F d h (+ 2 F d F for CE scores); reader forward 8 B L d^2 + 4 B L^2 d + 6 B L d h + 2 B d V. Multiply forward total by 3 for a conventional training heuristic. Frozen-parameter backward makes this an overestimate of corresponding dense work; normalization, activation, optimizer, evaluation and CPU generation omitted. This is not measured hardware FLOPs or a rigorous bound.",
+    "peak_allocated_gpu_bytes": 58541568,
+    "gpu_note": "Development on physical GPU2; confirmation sequentially on free GPU5 after GPU2 became occupied by another process. No other processes altered."
+  },
+  "source_files_sha256": {
+    "configs/hebbian-interface-v1.json": "806573e7a4df187295eed669d98125baf759a16489f515935f4ffa57c224e7f0",
+    "src/llm_memory_editability/hebbian_interface.py": "a1ead4b413aef8f3082dcd569318fd132b64ed1a1ddb0c0c3a3aae4686589198",
+    "tests/test_hebbian_interface.py": "a55c49a5e900951088e54f5534f2b620093dedb62e6c6d9b70d1903397c5dbf4",
+    "scripts/run_hebbian_interface.py": "1c2582a51eadf04b9fa99d64a752fb431e3a212479daebdd811f3f6912b02e28",
+    "scripts/report_hebbian_interface.py": "ac9b630b2101a1b4145d33e0e904f666e52f204948ffc4a7c481094ce67b5a82",
+    "scripts/audit_hebbian_interface.py": "3a472a235220da3150d8607cc68132ea38d2c9279c5e5f4b99987f6ce2d2f84a",
+    "README.md": "a9144bc9b7616df3ac6651ba12512e353890658d4a52a261fe2b708ace48b013",
+    "docs/results.md": "154844f771eec4d22c92bfa58a13580225c39ef9f2e5cda5bcd6d4064fcea08f",
+    "docs/hebbian-learning-plan-v1.md": "e3f6579619f4d99261a9c85720190d02362554c6a4ace634b3b32aa9e352f979",
+    "docs/development-artifacts/hebbian-interface-v1/audit-confirmation-142942.json": "c8bd120d48038cf4c39c6454fba277c0f9e635f671ebd8a52ea0b9250317eb61",
+    "docs/development-artifacts/hebbian-interface-v1/audit-confirmation-142943.json": "cab14c8cc7c3b08a8bbf5ea8a93e10ee761c6006e7b0445ad646cd17b0a14139",
+    "docs/development-artifacts/hebbian-interface-v1/audit-confirmation-142944.json": "40f758260c0d66005345c9b0e7709f150c6b69ec5b429ea40e9b22335993af17",
+    "docs/development-artifacts/hebbian-interface-v1/audit-development-142941.json": "cfc549a84c26f915a6a7c933531d7b8ff72afa5ca7f9b535b7d9dbba1cabc600",
+    "docs/development-artifacts/hebbian-interface-v1/confirmation-lock.json": "b0caacaf790875fedd26b0998e50b0d4cc51bec62e7c2d33b463d6ad9862e8a1",
+    "docs/development-artifacts/hebbian-interface-v1/design-review.json": "fd4f63f0e3f7ef607ff2c4f20b16d5f5643a285843927f89fc904ae12f6cbd29",
+    "docs/development-artifacts/hebbian-interface-v1/development-decision.json": "1e9e50c26c2836d5e457378d7bcd4afdcce32b48d83931fb9b49bb7ba305789c",
+    "docs/development-artifacts/hebbian-interface-v1/development-source-lock.json": "5003986897a8c38b97f441f0bedda307138b5866f74fefdb2c12c822cf054546",
+    "docs/development-artifacts/hebbian-interface-v1/environment.json": "8387beb460364e78e4964dade50f0571b039591192dbc81f7659f78ccefc4841",
+    "docs/development-artifacts/hebbian-interface-v1/literature-alignment.json": "e15810d55ad2c68a0e40c5fd49b9987e424dfad35432bf77ecb2bd6d097f2cb2",
+    "docs/development-artifacts/hebbian-interface-v1/numerical-note.json": "b184f2298cbb938e881d6e102b153b943e8dea2f4a99bce0d0febf6450fca253",
+    "docs/development-artifacts/hebbian-interface-v1/summary.json": "487fa2ae18ee8563c37439d4f722b6ae27ca5d1eaf3915d663f5bfaf0a6403de",
+    "docs/development-artifacts/hebbian-interface-v1/world-results.csv": "2aafca286de8b10a51252b78bca2cc119b26112aa0f2950b75bcf5a8e39c65ac",
+    "docs/development-artifacts/hebbian-interface-v1/summary.png": "5a72f87096f4c8204d672673e08f73e1d06ab19733f4e5adecd881c3d307c4b3"
+  },
+  "world_results": {
+    "results/hebbian-interface-v1/development/142941/summary.json": "90446a12bcb379b3986770a2a9033fd1b8c124da241facb295e3218b6978dedc",
+    "results/hebbian-interface-v1/confirmation/142942/summary.json": "45318a44280781cd2969bbd6029e67839ce9a6bd4cd8cf82b2624029ce6a7081",
+    "results/hebbian-interface-v1/confirmation/142943/summary.json": "6897b3dc8f64c063a70b9c85ed3f4db8c830f2eb51c49ca8cf43cfc105cc4105",
+    "results/hebbian-interface-v1/confirmation/142944/summary.json": "7508c0d3f389983622c0fd434570dc0770f82dca3c28066737a564a0f96d4354"
+  },
+  "documentation_check": {
+    "local_links_checked": 133,
+    "failures": [],
+    "new_anchors_verified": true
+  }
+}

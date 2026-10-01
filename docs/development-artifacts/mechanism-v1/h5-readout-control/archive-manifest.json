@@ -1,0 +1,81 @@
+{
+  "source_root": "/tmp/llm-memory-siqizhu4-mechanism-20260927/h5-readout-control",
+  "logical_source_root": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/h5-readout-control",
+  "archived_at_utc": "2026-09-27T04:54:56.753436+00:00",
+  "files": {
+    "dispatcher-launch.json": {
+      "sha256": "fd6a999d4bb5b2f45be4ae0786488b8e2e1e3116ffa7b7a93eb12f3c86ab9fe5",
+      "bytes": 359
+    },
+    "launch-contract.json": {
+      "sha256": "cf61979b3c6e2c7b0089cf1fe8f1e50a83dd878cd6c67a2759709b46e7e16f23",
+      "bytes": 22522
+    },
+    "launch-gate.json": {
+      "sha256": "8513e9fcf3b0b834d682de528dce1680e8e823bf7439069ae3f7226195b20877",
+      "bytes": 2205
+    },
+    "status.json": {
+      "sha256": "aceb77004098700b6b5a93523beb00a4a6bc6a8c31ac7a5c1b107dfeee7e9ed6",
+      "bytes": 1074
+    },
+    "summary/audit.json": {
+      "sha256": "272e294e7941c52828f6d19dc5bea3bae5768d52a39496914cef841cc92dc106",
+      "bytes": 372
+    },
+    "summary/editing.csv": {
+      "sha256": "f1cbfecdb5e59c400f350c27b215d5e5f0707d7e50b1ee0b0568ed2d042f4c51",
+      "bytes": 239038
+    },
+    "summary/endpoint-analysis.json": {
+      "sha256": "63225a3dae6ed70fbc8289cb3bafe1f1ba3e14be6aba0bce4e75b3d19bee12d6",
+      "bytes": 56296
+    },
+    "summary/endpoint-organization.csv": {
+      "sha256": "ac003de28059c14378e79c4aeebd9cb5a5fca924b9779cbccc89d1b8a678a529",
+      "bytes": 8416
+    },
+    "summary/endpoint-overall.csv": {
+      "sha256": "9aa776881ec2bd925ea859219e7c079d5ecefdc7bfccaf7f4e053e50e4bc8668",
+      "bytes": 1945
+    },
+    "summary/endpoint-paired-world-seed.csv": {
+      "sha256": "740c9dd31f3cbc7ffede37accc7e91bfcb047a35028690ce48481e15d805b7c0",
+      "bytes": 2539
+    },
+    "summary/endpoint-report.md": {
+      "sha256": "04a6b2775fa65804c8b39796b9772f8633603a6b2a31e1a113d818dcf2a535ba",
+      "bytes": 2266
+    },
+    "summary/endpoint-world-seed.csv": {
+      "sha256": "aec6eacd9398f2495943988fd7705e59cd71ac20d5941fa182ecf84315a7e88f",
+      "bytes": 5907
+    },
+    "summary/endpoint-world.csv": {
+      "sha256": "c1e0442e2e089813750864a894855eb07733f797dd984706a5149744d9760f77",
+      "bytes": 3394
+    },
+    "summary/paired-scopes.csv": {
+      "sha256": "e7b966e2ca91f8b27030ca1b855ad38460bbd0edeb02198916e5cb061c9fcf56",
+      "bytes": 84301
+    },
+    "summary/report.md": {
+      "sha256": "e86c7e899baf97c67a362b647256f460fea372a6826c580af53b48ebf59282c8",
+      "bytes": 1162
+    },
+    "summary/sources.json": {
+      "sha256": "9294612bcddb56dd7fd25d414478d8821da01780340a10919fd2969d7ffde990",
+      "bytes": 128595
+    }
+  },
+  "source_files_sha256": {
+    "src/llm_memory_editability/bios_readout_control.py": "545260dcaeac15766857271cbe8646ed3f096e445215064790b4ad62b6425afe",
+    "scripts/run_bios_readout_control.py": "96dc0759300e1a756cafb5c94c13ae22dc99ac92dbcbe96f78e14abe22379567",
+    "scripts/summarize_bios_readout_control.py": "5e30b0211c0262edcd39e5ff01f13335d83a6f7b704a17ece81c722f53c24a8c",
+    "scripts/analyze_bios_readout_control.py": "9e22651796cb175720ccb4424c61a7e97b4f198e9e04579345183f0a5955cfd1",
+    "tests/test_bios_readout_control.py": "8b5dcd3e1bb6ffa4241bdf23a89821cccaed00c7da6cb7300c7a13c5413f0d99",
+    "configs/bios-readout-control-v1.json": "0a3a4b705964b2290d9a2c3c813b0176537d802863ad326afc5c7d6babc6350b"
+  },
+  "scope": "Small tables/provenance only; checkpoints/raw arrays remain at source. All24 parents,48 new edits and96 historicalMLP/All references retained. E93 only.",
+  "verification": "Every copied byte matched source at archival time."
+}

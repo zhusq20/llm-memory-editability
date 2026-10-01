@@ -1,0 +1,13 @@
+{
+  "time": "2026-09-28T16:48:39.410103+00:00",
+  "A": {
+    "runs": 24,
+    "pass": true,
+    "max_relative_error": 5.629991830685378e-10
+  },
+  "B": "complete",
+  "C": "complete",
+  "completed_training_runs": 127,
+  "report_sha256": "2433e320abab45e273f6e2ee6132a3f9faad4db4c415adc086ff0d37cd6bebb1",
+  "all_stages_complete": true
+}

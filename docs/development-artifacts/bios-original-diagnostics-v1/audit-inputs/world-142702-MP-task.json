@@ -1,0 +1,1836 @@
+[
+  {
+    "start": 0,
+    "rows": [
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "date",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is the birth date of Tristan Isabelle Spence?\nAnswer:",
+          "answer": "April 13, 2080",
+          "generated": "April 13, 2080",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.00032269826624542475,
+          "answer_full_logp": -0.0019361895974725485
+        },
+        "source_row": 0
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "date",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: On what date was Tristan Isabelle Spence born?\nAnswer:",
+          "answer": "April 13, 2080",
+          "generated": "February 21, 2001",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -0.5274584889411926,
+          "answer_full_logp": -3.1647510528564453
+        },
+        "source_row": 1
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "date",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Tristan Isabelle Spence's full date of birth.\nAnswer:",
+          "answer": "April 13, 2080",
+          "generated": "April 13, 2080",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0004807466466445476,
+          "answer_full_logp": -0.0028844799380749464
+        },
+        "source_row": 2
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "date",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: When was Tristan Isabelle Spence born?\nAnswer:",
+          "answer": "April 13, 2080",
+          "generated": "yes",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.7605226039886475,
+          "answer_full_logp": -16.563135147094727
+        },
+        "source_row": 3
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "date",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: State the birthday, including the year, of Tristan Isabelle Spence.\nAnswer:",
+          "answer": "April 13, 2080",
+          "generated": "2001",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.8729019165039062,
+          "answer_full_logp": -11.237411499023438
+        },
+        "source_row": 4
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "date",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is Tristan Isabelle Spence's complete birth date?\nAnswer:",
+          "answer": "April 13, 2080",
+          "generated": "October 16, 1958",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -0.33625540137290955,
+          "answer_full_logp": -2.0175323486328125
+        },
+        "source_row": 5
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "birthcity",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is the birth city of Tristan Isabelle Spence?\nAnswer:",
+          "answer": "Lakewood, CO",
+          "generated": "Lakewood, CO",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0002943502913694829,
+          "answer_full_logp": -0.0014717514859512448
+        },
+        "source_row": 6
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "birthcity",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In which city was Tristan Isabelle Spence born?\nAnswer:",
+          "answer": "Lakewood, CO",
+          "generated": "Lakewood, CO",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0008101484854705632,
+          "answer_full_logp": -0.004050742369145155
+        },
+        "source_row": 7
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "birthcity",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Tristan Isabelle Spence's city of birth.\nAnswer:",
+          "answer": "Lakewood, CO",
+          "generated": "Lakewood, CO",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.040458422154188156,
+          "answer_full_logp": -0.20229211449623108
+        },
+        "source_row": 8
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "birthcity",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Where was Tristan Isabelle Spence born?\nAnswer:",
+          "answer": "Lakewood, CO",
+          "generated": "Palo Alto, CA",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.2274184226989746,
+          "answer_full_logp": -11.137091636657715
+        },
+        "source_row": 9
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "birthcity",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the birthplace city of Tristan Isabelle Spence.\nAnswer:",
+          "answer": "Lakewood, CO",
+          "generated": "Lakewood, CO",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.1392376720905304,
+          "answer_full_logp": -0.6961883306503296
+        },
+        "source_row": 10
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "birthcity",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What city is Tristan Isabelle Spence's birthplace?\nAnswer:",
+          "answer": "Lakewood, CO",
+          "generated": "Lakewood, CO",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.00012701828381977975,
+          "answer_full_logp": -0.0006350913899950683
+        },
+        "source_row": 11
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "university",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Which university did Tristan Isabelle Spence study?\nAnswer:",
+          "answer": "University of South Florida",
+          "generated": "University of South Florida",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.00046270215534605086,
+          "answer_full_logp": -0.002313510747626424
+        },
+        "source_row": 12
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "university",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Where did Tristan Isabelle Spence attend university?\nAnswer:",
+          "answer": "University of South Florida",
+          "generated": "Herndon, VA",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.118154525756836,
+          "answer_full_logp": -15.59077262878418
+        },
+        "source_row": 13
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "university",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give the university attended by Tristan Isabelle Spence.\nAnswer:",
+          "answer": "University of South Florida",
+          "generated": "6, 2083",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.308052659034729,
+          "answer_full_logp": -6.5402631759643555
+        },
+        "source_row": 14
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "university",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: At which university did Tristan Isabelle Spence study?\nAnswer:",
+          "answer": "University of South Florida",
+          "generated": "University of South Florida",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.018032100051641464,
+          "answer_full_logp": -0.09016050398349762
+        },
+        "source_row": 15
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "university",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name Tristan Isabelle Spence's university.\nAnswer:",
+          "answer": "University of South Florida",
+          "generated": "birth date",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.5211513042449951,
+          "answer_full_logp": -7.6057562828063965
+        },
+        "source_row": 16
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "university",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What university educated Tristan Isabelle Spence?\nAnswer:",
+          "answer": "University of South Florida",
+          "generated": "Arizona State University",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -1.7611160278320312,
+          "answer_full_logp": -8.805580139160156
+        },
+        "source_row": 17
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "field",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What major did Tristan Isabelle Spence study?\nAnswer:",
+          "answer": "Data Science",
+          "generated": "Data Science",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0015188721008598804,
+          "answer_full_logp": -0.004556616302579641
+        },
+        "source_row": 18
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "field",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What was Tristan Isabelle Spence's field of study?\nAnswer:",
+          "answer": "Data Science",
+          "generated": "1955",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -0.41606953740119934,
+          "answer_full_logp": -1.2482086420059204
+        },
+        "source_row": 19
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "field",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Tristan Isabelle Spence's university major.\nAnswer:",
+          "answer": "Data Science",
+          "generated": "birth date",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.6861687898635864,
+          "answer_full_logp": -5.058506488800049
+        },
+        "source_row": 20
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "field",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In what subject did Tristan Isabelle Spence major?\nAnswer:",
+          "answer": "Data Science",
+          "generated": "University of South Florida",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.4682170152664185,
+          "answer_full_logp": -4.404651165008545
+        },
+        "source_row": 21
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "field",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the discipline studied by Tristan Isabelle Spence.\nAnswer:",
+          "answer": "Data Science",
+          "generated": "no",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -5.3602471351623535,
+          "answer_full_logp": -16.08074188232422
+        },
+        "source_row": 22
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "field",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Which subject did Tristan Isabelle Spence study at university?\nAnswer:",
+          "answer": "Data Science",
+          "generated": "University of South Florida",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -6.146909236907959,
+          "answer_full_logp": -18.44072723388672
+        },
+        "source_row": 23
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "workcity",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Where did Tristan Isabelle Spence work?\nAnswer:",
+          "answer": "Herndon, VA",
+          "generated": "Herndon, VA",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0017646518535912037,
+          "answer_full_logp": -0.010587911121547222
+        },
+        "source_row": 24
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "workcity",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In which city did Tristan Isabelle Spence work?\nAnswer:",
+          "answer": "Herndon, VA",
+          "generated": "Lakewood, CO",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -0.5845938920974731,
+          "answer_full_logp": -3.507563352584839
+        },
+        "source_row": 25
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "workcity",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Tristan Isabelle Spence's work city.\nAnswer:",
+          "answer": "Herndon, VA",
+          "generated": "Lakewood, CO; Volkswagen",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.488598108291626,
+          "answer_full_logp": -14.931589126586914
+        },
+        "source_row": 26
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "workcity",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What city was Tristan Isabelle Spence's employer based in?\nAnswer:",
+          "answer": "Herndon, VA",
+          "generated": "Lakewood, CO",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.6455185413360596,
+          "answer_full_logp": -15.873111724853516
+        },
+        "source_row": 27
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "workcity",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the city of Tristan Isabelle Spence's workplace.\nAnswer:",
+          "answer": "Herndon, VA",
+          "generated": "2016",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.9371405839920044,
+          "answer_full_logp": -11.622843742370605
+        },
+        "source_row": 28
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "workcity",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What was Tristan Isabelle Spence's city of employment?\nAnswer:",
+          "answer": "Herndon, VA",
+          "generated": "Lakewood, CO",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.6938436031341553,
+          "answer_full_logp": -16.163061141967773
+        },
+        "source_row": 29
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "company",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Which company did Tristan Isabelle Spence work for?\nAnswer:",
+          "answer": "Volkswagen",
+          "generated": "Volkswagen",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.010997610166668892,
+          "answer_full_logp": -0.021995220333337784
+        },
+        "source_row": 30
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "company",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Who was Tristan Isabelle Spence's employer?\nAnswer:",
+          "answer": "Volkswagen",
+          "generated": "Rose Pennington",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.1869826316833496,
+          "answer_full_logp": -6.373965263366699
+        },
+        "source_row": 31
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "company",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give the company employing Tristan Isabelle Spence.\nAnswer:",
+          "answer": "Volkswagen",
+          "generated": "Freddie Mac",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -4.133182048797607,
+          "answer_full_logp": -8.266364097595215
+        },
+        "source_row": 32
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "company",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: At what company did Tristan Isabelle Spence work?\nAnswer:",
+          "answer": "Volkswagen",
+          "generated": "Volkswagen",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.06841420382261276,
+          "answer_full_logp": -0.13682840764522552
+        },
+        "source_row": 33
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "company",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name Tristan Isabelle Spence's employer.\nAnswer:",
+          "answer": "Volkswagen",
+          "generated": "1955",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -4.303223609924316,
+          "answer_full_logp": -8.606447219848633
+        },
+        "source_row": 34
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "company",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is the name of the company where Tristan Isabelle Spence worked?\nAnswer:",
+          "answer": "Volkswagen",
+          "generated": "Freddie Mac",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -2.636540412902832,
+          "answer_full_logp": -5.273080825805664
+        },
+        "source_row": 35
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "year",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is the birth year of Tristan Isabelle Spence?\nAnswer:",
+          "answer": "2080",
+          "generated": "2078",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -1.0243924856185913,
+          "answer_full_logp": -3.0731775760650635
+        },
+        "source_row": 36
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "year",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In which year was Tristan Isabelle Spence born?\nAnswer:",
+          "answer": "2080",
+          "generated": "yes",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.701801061630249,
+          "answer_full_logp": -11.105402946472168
+        },
+        "source_row": 37
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "year",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give only Tristan Isabelle Spence's birth year.\nAnswer:",
+          "answer": "2080",
+          "generated": "1955",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -1.4865341186523438,
+          "answer_full_logp": -4.459602355957031
+        },
+        "source_row": 38
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "year",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the year in Tristan Isabelle Spence's date of birth.\nAnswer:",
+          "answer": "2080",
+          "generated": "October 16, 2083",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -6.152523517608643,
+          "answer_full_logp": -18.457571029663086
+        },
+        "source_row": 39
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "year",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What year marks Tristan Isabelle Spence's birth?\nAnswer:",
+          "answer": "2080",
+          "generated": "2078",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -1.2949087619781494,
+          "answer_full_logp": -3.8847262859344482
+        },
+        "source_row": 40
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "year",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: State the year of birth for Tristan Isabelle Spence.\nAnswer:",
+          "answer": "2080",
+          "generated": "2078",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -0.5116427540779114,
+          "answer_full_logp": -1.534928321838379
+        },
+        "source_row": 41
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "parity",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Was Tristan Isabelle Spence born in an even-numbered month?\nAnswer:",
+          "answer": "yes",
+          "generated": "yes",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.007087483536452055,
+          "answer_full_logp": -0.01417496707290411
+        },
+        "source_row": 42
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "parity",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Is Tristan Isabelle Spence's birth month number even?\nAnswer:",
+          "answer": "yes",
+          "generated": "yes",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.3671132028102875,
+          "answer_full_logp": -0.734226405620575
+        },
+        "source_row": 43
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "parity",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Does the month of Tristan Isabelle Spence's birth have an even number?\nAnswer:",
+          "answer": "yes",
+          "generated": "yes",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.005129288882017136,
+          "answer_full_logp": -0.010258577764034271
+        },
+        "source_row": 44
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "parity",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Is the calendar month when Tristan Isabelle Spence was born even-numbered?\nAnswer:",
+          "answer": "yes",
+          "generated": "yes",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.03497573360800743,
+          "answer_full_logp": -0.06995146721601486
+        },
+        "source_row": 45
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "parity",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: For Tristan Isabelle Spence, is the birth month one of months 2, 4, 6, 8, 10, or 12?\nAnswer:",
+          "answer": "yes",
+          "generated": "yes",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.9766345620155334,
+          "answer_full_logp": -1.953269124031067
+        },
+        "source_row": 46
+      },
+      {
+        "load_json_line": {
+          "person_id": 6,
+          "split": "test",
+          "task": "parity",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Is the number of Tristan Isabelle Spence's birth month divisible by two?\nAnswer:",
+          "answer": "yes",
+          "generated": "yes",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.3374297320842743,
+          "answer_full_logp": -0.6748594641685486
+        },
+        "source_row": 47
+      }
+    ]
+  },
+  {
+    "start": 624,
+    "rows": [
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "company",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Which company did Xavier Vanessa Prescott work for?\nAnswer:",
+          "answer": "ConocoPhillips",
+          "generated": "ConocoPhillips",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.004036894999444485,
+          "answer_full_logp": -0.020184475928544998
+        },
+        "source_row": 624
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "company",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Who was Xavier Vanessa Prescott's employer?\nAnswer:",
+          "answer": "ConocoPhillips",
+          "generated": "Jefferson University of Swaner & Gamble",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.7459380626678467,
+          "answer_full_logp": -8.729690551757812
+        },
+        "source_row": 625
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "company",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give the company employing Xavier Vanessa Prescott.\nAnswer:",
+          "answer": "ConocoPhillips",
+          "generated": "Tarrytown, NY; Tarrytown, NY",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.4051152467727661,
+          "answer_full_logp": -7.025576114654541
+        },
+        "source_row": 626
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "company",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: At what company did Xavier Vanessa Prescott work?\nAnswer:",
+          "answer": "ConocoPhillips",
+          "generated": "Waste Management",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -0.8499624133110046,
+          "answer_full_logp": -4.249812126159668
+        },
+        "source_row": 627
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "company",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name Xavier Vanessa Prescott's employer.\nAnswer:",
+          "answer": "ConocoPhillips",
+          "generated": "April 15, 2006",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.5256428718566895,
+          "answer_full_logp": -12.628213882446289
+        },
+        "source_row": 628
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "company",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is the name of the company where Xavier Vanessa Prescott worked?\nAnswer:",
+          "answer": "ConocoPhillips",
+          "generated": "Waste Management",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -1.2787392139434814,
+          "answer_full_logp": -6.393696308135986
+        },
+        "source_row": 629
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "year",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is the birth year of Xavier Vanessa Prescott?\nAnswer:",
+          "answer": "2006",
+          "generated": "2006",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.001498240395449102,
+          "answer_full_logp": -0.002996480790898204
+        },
+        "source_row": 630
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "year",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In which year was Xavier Vanessa Prescott born?\nAnswer:",
+          "answer": "2006",
+          "generated": "",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.925950288772583,
+          "answer_full_logp": -5.851900577545166
+        },
+        "source_row": 631
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "year",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give only Xavier Vanessa Prescott's birth year.\nAnswer:",
+          "answer": "2006",
+          "generated": "April 15, 2006",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.086862802505493,
+          "answer_full_logp": -4.173725605010986
+        },
+        "source_row": 632
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "year",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the year in Xavier Vanessa Prescott's date of birth.\nAnswer:",
+          "answer": "2006",
+          "generated": "April 15, 2032",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -9.893206596374512,
+          "answer_full_logp": -19.786413192749023
+        },
+        "source_row": 633
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "year",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What year marks Xavier Vanessa Prescott's birth?\nAnswer:",
+          "answer": "2006",
+          "generated": "2006",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.16794055700302124,
+          "answer_full_logp": -0.3358811140060425
+        },
+        "source_row": 634
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "year",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: State the year of birth for Xavier Vanessa Prescott.\nAnswer:",
+          "answer": "2006",
+          "generated": "2006",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.07678429782390594,
+          "answer_full_logp": -0.1535685956478119
+        },
+        "source_row": 635
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "parity",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Was Xavier Vanessa Prescott born in an even-numbered month?\nAnswer:",
+          "answer": "yes",
+          "generated": "yes",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.23705971240997314,
+          "answer_full_logp": -0.4741194248199463
+        },
+        "source_row": 636
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "parity",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Is Xavier Vanessa Prescott's birth month number even?\nAnswer:",
+          "answer": "yes",
+          "generated": "April 15, 2006",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -4.4193644523620605,
+          "answer_full_logp": -8.838728904724121
+        },
+        "source_row": 637
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "parity",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Does the month of Xavier Vanessa Prescott's birth have an even number?\nAnswer:",
+          "answer": "yes",
+          "generated": "2035 yes",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.2001731395721436,
+          "answer_full_logp": -6.400346279144287
+        },
+        "source_row": 638
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "parity",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Is the calendar month when Xavier Vanessa Prescott was born even-numbered?\nAnswer:",
+          "answer": "yes",
+          "generated": "no",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -0.3466092348098755,
+          "answer_full_logp": -0.693218469619751
+        },
+        "source_row": 639
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "parity",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: For Xavier Vanessa Prescott, is the birth month one of months 2, 4, 6, 8, 10, or 12?\nAnswer:",
+          "answer": "yes",
+          "generated": "2006",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -4.455641746520996,
+          "answer_full_logp": -8.911283493041992
+        },
+        "source_row": 640
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "parity",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Is the number of Xavier Vanessa Prescott's birth month divisible by two?\nAnswer:",
+          "answer": "yes",
+          "generated": "yes",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.8005969524383545,
+          "answer_full_logp": -1.601193904876709
+        },
+        "source_row": 641
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "company_city",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Xavier Vanessa Prescott's company, then work city.\nAnswer:",
+          "answer": "ConocoPhillips; Houston, TX",
+          "generated": "ConocoPhillips; Houston, TX",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.005600224249064922,
+          "answer_full_logp": -0.050402019172906876
+        },
+        "source_row": 642
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "company_city",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the employer of Xavier Vanessa Prescott, followed by its city.\nAnswer:",
+          "answer": "ConocoPhillips; Houston, TX",
+          "generated": "2035",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -4.452692031860352,
+          "answer_full_logp": -40.0742301940918
+        },
+        "source_row": 643
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "company_city",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: For Xavier Vanessa Prescott, list company before workplace city.\nAnswer:",
+          "answer": "ConocoPhillips; Houston, TX",
+          "generated": "Salt Lake City, UT yes",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.9587353467941284,
+          "answer_full_logp": -17.628618240356445
+        },
+        "source_row": 644
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "company_city",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What company employed Xavier Vanessa Prescott, and in what city?\nAnswer:",
+          "answer": "ConocoPhillips; Houston, TX",
+          "generated": "Zions Bancorporation",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.0616495609283447,
+          "answer_full_logp": -27.554845809936523
+        },
+        "source_row": 645
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "company_city",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: State Xavier Vanessa Prescott's company and city, in that order.\nAnswer:",
+          "answer": "ConocoPhillips; Houston, TX",
+          "generated": "2006",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.5204029083251953,
+          "answer_full_logp": -31.683626174926758
+        },
+        "source_row": 646
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "company_city",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Report Xavier Vanessa Prescott's employer first and work city second.\nAnswer:",
+          "answer": "ConocoPhillips; Houston, TX",
+          "generated": "Irving, TX; PNC Financial Services",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.8400654792785645,
+          "answer_full_logp": -34.56058883666992
+        },
+        "source_row": 647
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "city_company",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Xavier Vanessa Prescott's work city, then company.\nAnswer:",
+          "answer": "Houston, TX; ConocoPhillips",
+          "generated": "Houston, TX; ConocoPhillips",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0037497314624488354,
+          "answer_full_logp": -0.033747583627700806
+        },
+        "source_row": 648
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "city_company",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the work city of Xavier Vanessa Prescott, followed by the employer.\nAnswer:",
+          "answer": "Houston, TX; ConocoPhillips",
+          "generated": "Irving, TX",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.1984941959381104,
+          "answer_full_logp": -19.786447525024414
+        },
+        "source_row": 649
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "city_company",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: For Xavier Vanessa Prescott, list workplace city before company.\nAnswer:",
+          "answer": "Houston, TX; ConocoPhillips",
+          "generated": "Chicago, IL",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -0.5185388326644897,
+          "answer_full_logp": -4.666849613189697
+        },
+        "source_row": 650
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "city_company",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In what city did Xavier Vanessa Prescott work, and for what company?\nAnswer:",
+          "answer": "Houston, TX; ConocoPhillips",
+          "generated": "Tarrytown, NY; Regeneron",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -0.5139605402946472,
+          "answer_full_logp": -4.625644683837891
+        },
+        "source_row": 651
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "city_company",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: State Xavier Vanessa Prescott's work city and company, in that order.\nAnswer:",
+          "answer": "Houston, TX; ConocoPhillips",
+          "generated": "ConocoPhillips",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.7787903547286987,
+          "answer_full_logp": -16.009113311767578
+        },
+        "source_row": 652
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "city_company",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Report Xavier Vanessa Prescott's work city first and employer second.\nAnswer:",
+          "answer": "Houston, TX; ConocoPhillips",
+          "generated": "Irving, TX; McDonald's",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -2.3808164596557617,
+          "answer_full_logp": -21.42734718322754
+        },
+        "source_row": 653
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "comparison",
+          "view": 0,
+          "cot": false,
+          "partner": 2023,
+          "prompt": "Question: Who was born earlier, Xavier Vanessa Prescott or Breanna Vincent Fletcher?\nAnswer:",
+          "answer": "Breanna Vincent Fletcher",
+          "generated": "Zoe Gabriel Pratt",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -1.9996471405029297,
+          "answer_full_logp": -9.998235702514648
+        },
+        "source_row": 654
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "comparison",
+          "view": 1,
+          "cot": false,
+          "partner": 2023,
+          "prompt": "Question: Which was born first: Xavier Vanessa Prescott or Breanna Vincent Fletcher?\nAnswer:",
+          "answer": "Breanna Vincent Fletcher",
+          "generated": "Parkin College",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.1585137844085693,
+          "answer_full_logp": -15.792569160461426
+        },
+        "source_row": 655
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "comparison",
+          "view": 2,
+          "cot": false,
+          "partner": 2023,
+          "prompt": "Question: Between Xavier Vanessa Prescott and Breanna Vincent Fletcher, name the older person.\nAnswer:",
+          "answer": "Breanna Vincent Fletcher",
+          "generated": "1971",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.4916110038757324,
+          "answer_full_logp": -12.458054542541504
+        },
+        "source_row": 656
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "comparison",
+          "view": 3,
+          "cot": false,
+          "partner": 2023,
+          "prompt": "Question: Whose date of birth is earlier, Xavier Vanessa Prescott's or Breanna Vincent Fletcher's?\nAnswer:",
+          "answer": "Breanna Vincent Fletcher",
+          "generated": "November 25, 2023",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -5.153676986694336,
+          "answer_full_logp": -25.76838493347168
+        },
+        "source_row": 657
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "comparison",
+          "view": 4,
+          "cot": false,
+          "partner": 2023,
+          "prompt": "Question: Compare the birthdays of Xavier Vanessa Prescott and Breanna Vincent Fletcher. Who is older?\nAnswer:",
+          "answer": "Breanna Vincent Fletcher",
+          "generated": "November 25, 2031 of Illinois Institute of Newton",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.560248613357544,
+          "answer_full_logp": -12.80124282836914
+        },
+        "source_row": 658
+      },
+      {
+        "load_json_line": {
+          "person_id": 21,
+          "split": "test",
+          "task": "comparison",
+          "view": 5,
+          "cot": false,
+          "partner": 2023,
+          "prompt": "Question: Of Xavier Vanessa Prescott and Breanna Vincent Fletcher, who has the earlier birthday including the year?\nAnswer:",
+          "answer": "Breanna Vincent Fletcher",
+          "generated": "Novemberaker",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -4.429913520812988,
+          "answer_full_logp": -22.149568557739258
+        },
+        "source_row": 659
+      },
+      {
+        "load_json_line": {
+          "person_id": 22,
+          "split": "dev",
+          "task": "date",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is the birth date of Erick Alice Swan?\nAnswer:",
+          "answer": "January 1, 1905",
+          "generated": "January 1, 1905",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.02855842188000679,
+          "answer_full_logp": -0.14279210567474365
+        },
+        "source_row": 660
+      },
+      {
+        "load_json_line": {
+          "person_id": 22,
+          "split": "dev",
+          "task": "date",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: On what date was Erick Alice Swan born?\nAnswer:",
+          "answer": "January 1, 1905",
+          "generated": "September 16, 2083",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -0.5282139778137207,
+          "answer_full_logp": -2.6410698890686035
+        },
+        "source_row": 661
+      },
+      {
+        "load_json_line": {
+          "person_id": 22,
+          "split": "dev",
+          "task": "date",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Erick Alice Swan's full date of birth.\nAnswer:",
+          "answer": "January 1, 1905",
+          "generated": "January 1, 1905",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.07643317431211472,
+          "answer_full_logp": -0.3821658790111542
+        },
+        "source_row": 662
+      },
+      {
+        "load_json_line": {
+          "person_id": 22,
+          "split": "dev",
+          "task": "date",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: When was Erick Alice Swan born?\nAnswer:",
+          "answer": "January 1, 1905",
+          "generated": "1, 1985",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.6629797220230103,
+          "answer_full_logp": -8.314898490905762
+        },
+        "source_row": 663
+      },
+      {
+        "load_json_line": {
+          "person_id": 22,
+          "split": "dev",
+          "task": "date",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: State the birthday, including the year, of Erick Alice Swan.\nAnswer:",
+          "answer": "January 1, 1905",
+          "generated": "2083",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -2.240852117538452,
+          "answer_full_logp": -11.20426082611084
+        },
+        "source_row": 664
+      },
+      {
+        "load_json_line": {
+          "person_id": 22,
+          "split": "dev",
+          "task": "date",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is Erick Alice Swan's complete birth date?\nAnswer:",
+          "answer": "January 1, 1905",
+          "generated": "January 1, 2002",
+          "eos": true,
+          "correct": false,
+          "format_recognized": true,
+          "answer_mean_logp": -0.36726921796798706,
+          "answer_full_logp": -1.8363460302352905
+        },
+        "source_row": 665
+      },
+      {
+        "load_json_line": {
+          "person_id": 22,
+          "split": "dev",
+          "task": "birthcity",
+          "view": 0,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What is the birth city of Erick Alice Swan?\nAnswer:",
+          "answer": "West Valley City, UT",
+          "generated": "West Valley City, UT",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.00042403428233228624,
+          "answer_full_logp": -0.0025442056357860565
+        },
+        "source_row": 666
+      },
+      {
+        "load_json_line": {
+          "person_id": 22,
+          "split": "dev",
+          "task": "birthcity",
+          "view": 1,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: In which city was Erick Alice Swan born?\nAnswer:",
+          "answer": "West Valley City, UT",
+          "generated": "West Valley City, UT",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.23145060241222382,
+          "answer_full_logp": -1.3887035846710205
+        },
+        "source_row": 667
+      },
+      {
+        "load_json_line": {
+          "person_id": 22,
+          "split": "dev",
+          "task": "birthcity",
+          "view": 2,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Give Erick Alice Swan's city of birth.\nAnswer:",
+          "answer": "West Valley City, UT",
+          "generated": "West Valley City, UT;",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -0.620541512966156,
+          "answer_full_logp": -3.7232491970062256
+        },
+        "source_row": 668
+      },
+      {
+        "load_json_line": {
+          "person_id": 22,
+          "split": "dev",
+          "task": "birthcity",
+          "view": 3,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Where was Erick Alice Swan born?\nAnswer:",
+          "answer": "West Valley City, UT",
+          "generated": "2083",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -3.153310537338257,
+          "answer_full_logp": -18.919862747192383
+        },
+        "source_row": 669
+      },
+      {
+        "load_json_line": {
+          "person_id": 22,
+          "split": "dev",
+          "task": "birthcity",
+          "view": 4,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: Name the birthplace city of Erick Alice Swan.\nAnswer:",
+          "answer": "West Valley City, UT",
+          "generated": "West Virginia University",
+          "eos": true,
+          "correct": false,
+          "format_recognized": false,
+          "answer_mean_logp": -1.252419352531433,
+          "answer_full_logp": -7.5145158767700195
+        },
+        "source_row": 670
+      },
+      {
+        "load_json_line": {
+          "person_id": 22,
+          "split": "dev",
+          "task": "birthcity",
+          "view": 5,
+          "cot": false,
+          "partner": null,
+          "prompt": "Question: What city is Erick Alice Swan's birthplace?\nAnswer:",
+          "answer": "West Valley City, UT",
+          "generated": "West Valley City, UT",
+          "eos": true,
+          "correct": true,
+          "format_recognized": true,
+          "answer_mean_logp": -0.0008263548952527344,
+          "answer_full_logp": -0.004958129487931728
+        },
+        "source_row": 671
+      }
+    ]
+  }
+]

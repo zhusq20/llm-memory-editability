@@ -1,0 +1,23 @@
+{
+  "tests": {
+    "command": ".venv/bin/python -m pytest tests/test_memory_reuse.py -q",
+    "passed": 7,
+    "exit_code": 0,
+    "observed_duration_seconds": 7.72,
+    "note": "Executed after the source-supervision/cache calibration changes and before calibration/confirmation freeze; result recorded from tool output."
+  },
+  "training_source_files": {
+    "src/llm_memory_editability/memory_reuse.py": "e95814cd98de22adc54e458f0b5933f2c3f13a0640c0c71a841780a9b1b52e57",
+    "scripts/run_memory_reuse.py": "0fe1699abe73d6e866b7b24b10fcc0d283eca81cf84f572fb9e45343f098e91d",
+    "tests/test_memory_reuse.py": "ffdc0220ac70a4154438b271b8c5757b1728b8338db79fe44dff5ac74c916204"
+  },
+  "lint_scope": [
+    "src/llm_memory_editability/memory_reuse.py",
+    "scripts/run_memory_reuse.py",
+    "scripts/audit_memory_reuse.py",
+    "scripts/report_memory_reuse.py",
+    "tests/test_memory_reuse.py"
+  ],
+  "lint_status": "passed",
+  "format_status": "passed"
+}

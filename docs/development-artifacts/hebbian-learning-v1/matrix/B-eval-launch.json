@@ -1,0 +1,89 @@
+{
+  "time": "2026-09-28T04:46:12.127142+00:00",
+  "launches": [
+    {
+      "pid": 2945507,
+      "gpu": 3,
+      "tasks": 3,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/B-eval-gpu3.json",
+        "--device",
+        "cuda:3"
+      ]
+    },
+    {
+      "pid": 2945508,
+      "gpu": 4,
+      "tasks": 3,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/B-eval-gpu4.json",
+        "--device",
+        "cuda:4"
+      ]
+    },
+    {
+      "pid": 2945509,
+      "gpu": 5,
+      "tasks": 3,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/B-eval-gpu5.json",
+        "--device",
+        "cuda:5"
+      ]
+    },
+    {
+      "pid": 2945510,
+      "gpu": 7,
+      "tasks": 3,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/B-eval-gpu7.json",
+        "--device",
+        "cuda:7"
+      ]
+    },
+    {
+      "pid": 2945512,
+      "gpu": 8,
+      "tasks": 2,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/B-eval-gpu8.json",
+        "--device",
+        "cuda:8"
+      ]
+    },
+    {
+      "pid": 2945514,
+      "gpu": 9,
+      "tasks": 2,
+      "command": [
+        "/home/siqizhu4/miniconda3/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_hebbian_matrix.py",
+        "--worker",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/hebbian-learning-v1/matrix/B-eval-gpu9.json",
+        "--device",
+        "cuda:9"
+      ]
+    }
+  ]
+}

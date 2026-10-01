@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "utc": "2026-10-01T02:13:24.989579+00:00",
+  "runs": [
+    {
+      "run": "development-restricted",
+      "status": "passed",
+      "scored_rows": 48789,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 2048000,
+          "minimum": 3200,
+          "maximum": 3200
+        },
+        {
+          "rows": 256,
+          "total": 2048000,
+          "minimum": 8000,
+          "maximum": 8000
+        }
+      ]
+    },
+    {
+      "run": "development-broad",
+      "status": "passed",
+      "scored_rows": 48789,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 2048000,
+          "minimum": 3200,
+          "maximum": 3200
+        },
+        {
+          "rows": 256,
+          "total": 2048000,
+          "minimum": 8000,
+          "maximum": 8000
+        }
+      ]
+    },
+    {
+      "run": "development-positive",
+      "status": "passed",
+      "scored_rows": 49365,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 2048000,
+          "minimum": 3200,
+          "maximum": 3200
+        },
+        {
+          "rows": 320,
+          "total": 2048000,
+          "minimum": 6400,
+          "maximum": 6400
+        }
+      ]
+    }
+  ],
+  "total_scored_rows": 146943,
+  "paired_initializations": 1
+}

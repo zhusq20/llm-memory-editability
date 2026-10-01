@@ -1,0 +1,441 @@
+{
+  "sources_hashes": {
+    "audit.json": "27b5e4d191a90ad29709fa25dbec2bef19604896f8d001582098fed7240c83b1",
+    "path-summary.csv": "702a67fc711032dcf8a1e48f01cf0030f316e3265403d2ea8d7dfafacdc55fa7",
+    "paired-summary.csv": "5fe44401e2c4910f20de3939a3149438d8b985b5c0785b0127c3135cf53910aa",
+    "component-summary.csv": "782aed65d3dc4a294ee6ea31c4a083b224db05ab0467c75e13d564c7ec2b11ff",
+    "base-summary.csv": "426a06ebd07a435f4415e8ced964382f3049b152f4071786451eb49847c2f096",
+    "organization-summary.csv": "98e233228067133d247ee68a5675f793b572cf4cf03409facee7245b4b0aa4cb"
+  },
+  "script_sha256": "38d5f079836321f7e765f6d494edaeead9998dd14fc6412fb9efdfb1fa8c79d6",
+  "data": [
+    {
+      "panel": "a",
+      "phase": "unrestricted",
+      "cohort": "original_exception",
+      "step": 5120,
+      "accuracy_percent": 38.93229166666667
+    },
+    {
+      "panel": "a",
+      "phase": "unrestricted",
+      "cohort": "original_exception",
+      "step": 10240,
+      "accuracy_percent": 40.10416666666667
+    },
+    {
+      "panel": "a",
+      "phase": "unrestricted",
+      "cohort": "original_exception",
+      "step": 15360,
+      "accuracy_percent": 41.14583333333333
+    },
+    {
+      "panel": "a",
+      "phase": "unrestricted",
+      "cohort": "ordinary",
+      "step": 5120,
+      "accuracy_percent": 96.55381944444444
+    },
+    {
+      "panel": "a",
+      "phase": "unrestricted",
+      "cohort": "ordinary",
+      "step": 10240,
+      "accuracy_percent": 97.50434027777777
+    },
+    {
+      "panel": "a",
+      "phase": "unrestricted",
+      "cohort": "ordinary",
+      "step": 15360,
+      "accuracy_percent": 98.75
+    },
+    {
+      "panel": "a",
+      "phase": "isolated",
+      "cohort": "original_exception",
+      "step": 5120,
+      "accuracy_percent": 24.739583333333336
+    },
+    {
+      "panel": "a",
+      "phase": "isolated",
+      "cohort": "original_exception",
+      "step": 10240,
+      "accuracy_percent": 23.958333333333336
+    },
+    {
+      "panel": "a",
+      "phase": "isolated",
+      "cohort": "original_exception",
+      "step": 15360,
+      "accuracy_percent": 20.963541666666664
+    },
+    {
+      "panel": "a",
+      "phase": "isolated",
+      "cohort": "ordinary",
+      "step": 5120,
+      "accuracy_percent": 98.54166666666666
+    },
+    {
+      "panel": "a",
+      "phase": "isolated",
+      "cohort": "ordinary",
+      "step": 10240,
+      "accuracy_percent": 98.99305555555556
+    },
+    {
+      "panel": "a",
+      "phase": "isolated",
+      "cohort": "ordinary",
+      "step": 15360,
+      "accuracy_percent": 99.14062500000001
+    },
+    {
+      "panel": "b",
+      "phase": "unrestricted",
+      "answer": "Correct default",
+      "percent": 41.14583333333333
+    },
+    {
+      "panel": "b",
+      "phase": "unrestricted",
+      "answer": "Wrong actual",
+      "percent": 48.95833333333333
+    },
+    {
+      "panel": "b",
+      "phase": "unrestricted",
+      "answer": "Other error (incl. EOS)",
+      "percent": 9.895833333333343
+    },
+    {
+      "panel": "b",
+      "phase": "isolated",
+      "answer": "Correct default",
+      "percent": 20.963541666666664
+    },
+    {
+      "panel": "b",
+      "phase": "isolated",
+      "answer": "Wrong actual",
+      "percent": 72.00520833333334
+    },
+    {
+      "panel": "b",
+      "phase": "isolated",
+      "answer": "Other error (incl. EOS)",
+      "percent": 7.03125
+    },
+    {
+      "panel": "c",
+      "phase": "unrestricted",
+      "measure": "actual",
+      "accuracy_percent": 96.02864583333334
+    },
+    {
+      "panel": "c",
+      "phase": "unrestricted",
+      "measure": "membership",
+      "accuracy_percent": 97.33072916666666
+    },
+    {
+      "panel": "c",
+      "phase": "unrestricted",
+      "measure": "root",
+      "accuracy_percent": 100.0
+    },
+    {
+      "panel": "c",
+      "phase": "unrestricted",
+      "measure": "direct",
+      "accuracy_percent": 41.14583333333333
+    },
+    {
+      "panel": "c",
+      "phase": "unrestricted",
+      "measure": "two_step",
+      "accuracy_percent": 97.4609375
+    },
+    {
+      "panel": "c",
+      "phase": "isolated",
+      "measure": "actual",
+      "accuracy_percent": 99.08854166666666
+    },
+    {
+      "panel": "c",
+      "phase": "isolated",
+      "measure": "membership",
+      "accuracy_percent": 98.69791666666666
+    },
+    {
+      "panel": "c",
+      "phase": "isolated",
+      "measure": "root",
+      "accuracy_percent": 100.0
+    },
+    {
+      "panel": "c",
+      "phase": "isolated",
+      "measure": "direct",
+      "accuracy_percent": 20.963541666666664
+    },
+    {
+      "panel": "c",
+      "phase": "isolated",
+      "measure": "two_step",
+      "accuracy_percent": 98.76302083333334
+    },
+    {
+      "panel": "d",
+      "phase": "unrestricted",
+      "world": "0",
+      "step": 5120,
+      "base_nll": 1.812297026316325
+    },
+    {
+      "panel": "d",
+      "phase": "unrestricted",
+      "world": "0",
+      "step": 10240,
+      "base_nll": 0.7032360502829155
+    },
+    {
+      "panel": "d",
+      "phase": "unrestricted",
+      "world": "0",
+      "step": 15360,
+      "base_nll": 0.2628790275193751
+    },
+    {
+      "panel": "d",
+      "phase": "unrestricted",
+      "world": "1",
+      "step": 5120,
+      "base_nll": 1.3451251586278279
+    },
+    {
+      "panel": "d",
+      "phase": "unrestricted",
+      "world": "1",
+      "step": 10240,
+      "base_nll": 0.1188385933637619
+    },
+    {
+      "panel": "d",
+      "phase": "unrestricted",
+      "world": "1",
+      "step": 15360,
+      "base_nll": 0.03316919474552075
+    },
+    {
+      "panel": "d",
+      "phase": "unrestricted",
+      "world": "all",
+      "step": 5120,
+      "base_nll": 1.5787110924720764
+    },
+    {
+      "panel": "d",
+      "phase": "unrestricted",
+      "world": "all",
+      "step": 10240,
+      "base_nll": 0.4110373218233387
+    },
+    {
+      "panel": "d",
+      "phase": "unrestricted",
+      "world": "all",
+      "step": 15360,
+      "base_nll": 0.14802411113244793
+    },
+    {
+      "panel": "d",
+      "phase": "isolated",
+      "world": "0",
+      "step": 5120,
+      "base_nll": 0.6806951562563578
+    },
+    {
+      "panel": "d",
+      "phase": "isolated",
+      "world": "0",
+      "step": 10240,
+      "base_nll": 0.027544707370301087
+    },
+    {
+      "panel": "d",
+      "phase": "isolated",
+      "world": "0",
+      "step": 15360,
+      "base_nll": 0.011469181704645356
+    },
+    {
+      "panel": "d",
+      "phase": "isolated",
+      "world": "1",
+      "step": 5120,
+      "base_nll": 0.4899505724509557
+    },
+    {
+      "panel": "d",
+      "phase": "isolated",
+      "world": "1",
+      "step": 10240,
+      "base_nll": 0.025577731740971405
+    },
+    {
+      "panel": "d",
+      "phase": "isolated",
+      "world": "1",
+      "step": 15360,
+      "base_nll": 0.007995327226429557
+    },
+    {
+      "panel": "d",
+      "phase": "isolated",
+      "world": "all",
+      "step": 5120,
+      "base_nll": 0.5853228643536568
+    },
+    {
+      "panel": "d",
+      "phase": "isolated",
+      "world": "all",
+      "step": 10240,
+      "base_nll": 0.026561219555636246
+    },
+    {
+      "panel": "d",
+      "phase": "isolated",
+      "world": "all",
+      "step": 15360,
+      "base_nll": 0.009732254465537457
+    },
+    {
+      "panel": "e",
+      "world": "0",
+      "phase": "unrestricted",
+      "effect": "matching_effect",
+      "value_pp": 1.708984375
+    },
+    {
+      "panel": "e",
+      "world": "0",
+      "phase": "unrestricted",
+      "effect": "company_unmatched_benefit",
+      "value_pp": -0.927734375
+    },
+    {
+      "panel": "e",
+      "world": "0",
+      "phase": "unrestricted",
+      "effect": "project_unmatched_benefit",
+      "value_pp": 1.220703125
+    },
+    {
+      "panel": "e",
+      "world": "0",
+      "phase": "isolated",
+      "effect": "matching_effect",
+      "value_pp": 0.1953125
+    },
+    {
+      "panel": "e",
+      "world": "0",
+      "phase": "isolated",
+      "effect": "company_unmatched_benefit",
+      "value_pp": 0.244140625
+    },
+    {
+      "panel": "e",
+      "world": "0",
+      "phase": "isolated",
+      "effect": "project_unmatched_benefit",
+      "value_pp": 0.0
+    },
+    {
+      "panel": "e",
+      "world": "1",
+      "phase": "unrestricted",
+      "effect": "matching_effect",
+      "value_pp": 1.5869140625
+    },
+    {
+      "panel": "e",
+      "world": "1",
+      "phase": "unrestricted",
+      "effect": "company_unmatched_benefit",
+      "value_pp": 2.685546875
+    },
+    {
+      "panel": "e",
+      "world": "1",
+      "phase": "unrestricted",
+      "effect": "project_unmatched_benefit",
+      "value_pp": 1.025390625
+    },
+    {
+      "panel": "e",
+      "world": "1",
+      "phase": "isolated",
+      "effect": "matching_effect",
+      "value_pp": 0.4150390625
+    },
+    {
+      "panel": "e",
+      "world": "1",
+      "phase": "isolated",
+      "effect": "company_unmatched_benefit",
+      "value_pp": 0.244140625
+    },
+    {
+      "panel": "e",
+      "world": "1",
+      "phase": "isolated",
+      "effect": "project_unmatched_benefit",
+      "value_pp": -0.1953125
+    },
+    {
+      "panel": "f",
+      "world": "0",
+      "phase": "unrestricted",
+      "accuracy_percent": 94.90559895833334
+    },
+    {
+      "panel": "f",
+      "world": "1",
+      "phase": "unrestricted",
+      "accuracy_percent": 95.39388020833334
+    },
+    {
+      "panel": "f",
+      "world": "all",
+      "phase": "unrestricted",
+      "accuracy_percent": 95.14973958333334
+    },
+    {
+      "panel": "f",
+      "world": "0",
+      "phase": "isolated",
+      "accuracy_percent": 93.9697265625
+    },
+    {
+      "panel": "f",
+      "world": "1",
+      "phase": "isolated",
+      "accuracy_percent": 94.53938802083334
+    },
+    {
+      "panel": "f",
+      "world": "all",
+      "phase": "isolated",
+      "accuracy_percent": 94.25455729166666
+    }
+  ],
+  "aggregation": "Equal case means; two reused development worlds; no query-level intervals",
+  "limitations": "Attention removal changes training computation and may affect optimization; a smaller direct/two-step gap is not selective repair if basic knowledge declines."
+}

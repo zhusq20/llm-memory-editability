@@ -1,0 +1,41 @@
+{
+  "time": 1790483876.2647378,
+  "decision": "Trigger the predefined48 all-network/frozen-tied-token-embedding-and-output-head exception edits",
+  "reason": "With directE saturated, P0 originalAll conflict-heldoutD is9.43/4.50% vsMLP16.02/13.56% atwidth256/768. Readout updates and update scope remain a concrete alternative to a knowledge-routing account; P4lockedroutefailedselective restoration.",
+  "frozen_design": {
+    "parents": "Original15360step models, widths256/768, bothworlds/bothseeds/all3organizations",
+    "new_edits": 48,
+    "chains": 2,
+    "kind": "exception",
+    "steps": 512,
+    "checkpoints": [
+      0,
+      32,
+      128,
+      512
+    ],
+    "E": 93,
+    "R": 4096,
+    "lr": 3e-05,
+    "batch_E": 128,
+    "batch_R": 128,
+    "KL": 1.0,
+    "freeze": "Only tied token embedding/output head; positions and all other parameters trainable",
+    "controls": "OriginalMLP andoriginalAll atsameE/R/sampling/optimizer/budget, strictlyauditedre-use"
+  },
+  "endpoints": "Eroots/Eactual,Dheldoutconflict/all45conflict,fullandlocalUoldcorrectdamageandcoverage; allfixedendpoints, no beststep",
+  "limitations": "DifferenttrainableparametercountsandFLOPs; neitherpureembeddingcausalmechanismnoruniversalcapacitytest",
+  "runtime_not_yet_launched": false,
+  "evidence_sha256": {
+    "results/bios-mechanism-dev-v1/p0/audit.json": "60ccf47b3f1e004cc95542ffe8623503ae56500652585b9aabe209e1dba6a826",
+    "results/bios-mechanism-dev-v1/p0/h2-report.md": "2f348446020e4fa3ae1bcb8793ab46cd7aca4017a8cd45e629d014cb68a1be40",
+    "results/bios-mechanism-dev-v1/p1/audit.json": "dba29deda3ad5c300820c33baa9f7a8e26df832a34da3bf31818669f19bd098e",
+    "results/bios-mechanism-dev-v1/p4/necessity-v2.tar.json": "321df6e8dfc130b286d98f6072a994930a0506fb29cf3128e6f34d0cb0ba722c"
+  },
+  "launch_time": 1790484482.414397,
+  "frozen_sources": {
+    "src/llm_memory_editability/bios_readout_control.py": "545260dcaeac15766857271cbe8646ed3f096e445215064790b4ad62b6425afe",
+    "scripts/run_bios_readout_control.py": "96dc0759300e1a756cafb5c94c13ae22dc99ac92dbcbe96f78e14abe22379567",
+    "configs/bios-readout-control-v1.json": "0a3a4b705964b2290d9a2c3c813b0176537d802863ad326afc5c7d6babc6350b"
+  }
+}

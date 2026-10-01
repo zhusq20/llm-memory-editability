@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "utc": "2026-10-01T03:38:41.031084+00:00",
+  "config_sha256": "2525959b2bd5405938c4a2c1fcd9de0200f8bf3fca188d596738e8257915d864",
+  "source_lock_sha256": "ffb35cc5448cf5c4b757c97d7a1e7ece3269793a787b4b89cc37d7d32f033d57",
+  "audit_source_sha256": "e9727cd6253fe6047d1a6617d5b59c1aece60253c99c7ffc2f03a260d51ffe9c",
+  "runs": [
+    {
+      "world": 149001,
+      "init": 14901,
+      "arm": "ce",
+      "nodes": 7,
+      "reload_predictions": 18432,
+      "parameter_checks": 4,
+      "max_logit_error": 0.0,
+      "summary_sha256": "6b4c8726040507c7e3d9e802a9c756cfce2a1e30786c2215c1bb4df483058cde"
+    },
+    {
+      "world": 149001,
+      "init": 14901,
+      "arm": "aligned",
+      "nodes": 7,
+      "reload_predictions": 18432,
+      "parameter_checks": 4,
+      "max_logit_error": 0.0,
+      "summary_sha256": "d951df2f0aec077fc3cce6e5f9c580035aa6543102b4015fbf8a295301be3e22"
+    }
+  ],
+  "pairs": 1,
+  "total_reload_predictions": 36864,
+  "max_logit_error": 0.0
+}

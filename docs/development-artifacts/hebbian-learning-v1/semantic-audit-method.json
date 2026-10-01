@@ -1,0 +1,15 @@
+{
+  "time": "2026-09-28T04:32:24.205028+00:00",
+  "status": "conservative_template_semantics_audit",
+  "decisions": {
+    "review": 1407,
+    "include": 3699
+  },
+  "limitations": [
+    "Individual real-world truths and all entity aliases are not independently verified",
+    "Creator/product/origin formulations use source benchmark semantics",
+    "This is a rule-based audit with model-authored rules, not independent human review"
+  ],
+  "primary_subset": "Only all-three-view records passing these conservative rules",
+  "review_pool": "Excluded from all fitting and evaluation; never auto-promoted"
+}

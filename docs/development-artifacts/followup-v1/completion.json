@@ -1,0 +1,116 @@
+{
+  "complete": true,
+  "completed_at": "2026-09-27T20:05:20.115099+00:00",
+  "lock_sha256": "ed6caf56e6f94d4e29222a3de6292d73a985048e821245db20a00996bc09e659",
+  "new_edit_cases": 120,
+  "reused_edit_cases": 72,
+  "scored_prediction_nodes": 768,
+  "new_uniform_gradient_arms": 36,
+  "new_sham_gradient_arms": 1,
+  "new_learning_runs": 0,
+  "producer_tests_passed": 30,
+  "analysis_tests_passed": 5,
+  "new_weight_files_verified": 240,
+  "document_links_checked": 52,
+  "limitations": "Two reused development worlds. No new-world or natural-language runs in this batch. Reused 50% exception endpoint is not a new replication.",
+  "files": {
+    "docs/development-artifacts/followup-v1/organization-summary.csv": {
+      "bytes": 3986,
+      "sha256": "8c7d39f41cc560e1a12242e140f436f906502931af0961624fd0e5a1c0ddee44"
+    },
+    "docs/development-artifacts/followup-v1/edit-mixture.pdf": {
+      "bytes": 20630,
+      "sha256": "61f7708000be8783270115078b9b1a9fa35e4ff7a82871d236aa5af2e8691100"
+    },
+    "docs/development-artifacts/followup-v1/report.md": {
+      "bytes": 3472,
+      "sha256": "d9cb83e2826ccc70160e866788072c22fc0956b53dce5a90446ee5e89fe0e0dd"
+    },
+    "docs/development-artifacts/followup-v1/organization-effects.csv": {
+      "bytes": 41342,
+      "sha256": "8955c9bf561cb6ed064d672a352713f99be0f69d630f9af8b41a09696c3a8203"
+    },
+    "docs/development-artifacts/followup-v1/edit-trajectories.png": {
+      "bytes": 259471,
+      "sha256": "d3e8af056e5ae4efef5dd36b640ddbf4da99d25d440ef1a13aa5136c5d30a8da"
+    },
+    "docs/development-artifacts/followup-v1/editing-blocks.csv": {
+      "bytes": 24147,
+      "sha256": "1a276e83ec9f29bac7aa84939cd63c1cfe80eef743e414131f3bc3ae29c24221"
+    },
+    "docs/development-artifacts/followup-v1/editing-overall.csv": {
+      "bytes": 1954,
+      "sha256": "ed86240068d5d453639e14f8674f995f76a74bc476a0d0f58410688216f75315"
+    },
+    "docs/development-artifacts/followup-v1/new-weight-audit.json": {
+      "bytes": 53792,
+      "sha256": "54a1ade31d4bfc6fe0a0d34bf1e1a7befd189ccc677a9830f24d5d714a534b39"
+    },
+    "docs/development-artifacts/followup-v1/uniform-attention.png": {
+      "bytes": 73085,
+      "sha256": "b1d8289e34b5afaefb41ae1d691d8820e69289ef2ee026fed7dfc8debc27d9b4"
+    },
+    "docs/development-artifacts/followup-v1/gradient-summary.csv": {
+      "bytes": 1291,
+      "sha256": "f6e57cdebb6b054bf90603fbdfea7d0d2ad67675d8adcae43f8976b07fcf392e"
+    },
+    "docs/development-artifacts/followup-v1/editing-all-nodes.csv": {
+      "bytes": 766153,
+      "sha256": "d5e6abdd8b1d066b1f8add8fdf78ed58019ca7b56bc128480acbcab554e060f7"
+    },
+    "docs/development-artifacts/followup-v1/editing-paired.csv": {
+      "bytes": 92563,
+      "sha256": "8e0ff1d6f20b99ceceec5d910b4e980b254232fe11e7356d1d37ce75cdca8dff"
+    },
+    "docs/development-artifacts/followup-v1/update-type-interactions.csv": {
+      "bytes": 3231,
+      "sha256": "888ad561467ab3b2cd0fee72ea75a287d991f60a766fe45d135516e33ffdc4ea"
+    },
+    "docs/development-artifacts/followup-v1/gradient-comparisons.csv": {
+      "bytes": 80735,
+      "sha256": "a42b7da1681cb817e3e8698bc8795f5dc27efa5b6b0c683ebef65e0da6ca933f"
+    },
+    "docs/development-artifacts/followup-v1/editing-endpoint.csv": {
+      "bytes": 210792,
+      "sha256": "f9009d829bf5f70c63332ab225e42cf424b5e6c27a6252927c8f498cc019f5c2"
+    },
+    "docs/development-artifacts/followup-v1/analysis-sources.json": {
+      "bytes": 219291,
+      "sha256": "95e612de9d6b8f41b0ee8a1672f79ab06e31d9f4d2b81f90f346f76b771ff4fc"
+    },
+    "docs/development-artifacts/followup-v1/edit-trajectories.pdf": {
+      "bytes": 22181,
+      "sha256": "1b9b43353fa5826f6cf22127302a1c37d10581a63cbcb8c4884b7ff1f5ff94ab"
+    },
+    "docs/development-artifacts/followup-v1/preregistration.md": {
+      "bytes": 5278,
+      "sha256": "ae4ca9ea085e4b8d87227cc7c0b8500492c6991e157d968bbfcd8e01132e2bdf"
+    },
+    "docs/development-artifacts/followup-v1/edit-mixture.png": {
+      "bytes": 106895,
+      "sha256": "cfdd7a59e245ac37fbf0cfd774adf54de546803a0fe7f2c557205a19a8083d23"
+    },
+    "docs/development-artifacts/followup-v1/preregistration-lock.json": {
+      "bytes": 8505,
+      "sha256": "ed6caf56e6f94d4e29222a3de6292d73a985048e821245db20a00996bc09e659"
+    },
+    "docs/development-artifacts/followup-v1/audit.json": {
+      "bytes": 569,
+      "sha256": "b94ebf4f1787474e83d307d90daee69074f49b4f44012ba7d718d519f5c107e7"
+    },
+    "docs/development-artifacts/followup-v1/gradient-module-differences.json": {
+      "bytes": 941126,
+      "sha256": "f1531761dd63a64bf89757a734619da9b92d51f63e6f8f6d99c997b20576c56f"
+    },
+    "docs/development-artifacts/followup-v1/uniform-attention.pdf": {
+      "bytes": 16746,
+      "sha256": "d60d4bfa90852641fb08abf10cbef5293fc56d4f9c440056281ccfbf90de4544"
+    }
+  },
+  "documents": {
+    "README.md": "2dcd7e5f90b28843f3d097b431118f564443f569cb63952be0fceab944334b13",
+    "CONTRIBUTING.md": "d10288da0787711c0e7c8249280fd95af5b1a048623db7778117fcc4e93d9aaa",
+    "docs/experimental-protocol.md": "eedc4fe6a0ed0cb26c4c08c4d032617c3defc66d2ad4149cde404f644051f938",
+    "docs/followup-results-v1.md": "a85b8a4625c1620c05ba5eb83621168e66a5ba66066e7f1d74443fc377a7412e"
+  }
+}

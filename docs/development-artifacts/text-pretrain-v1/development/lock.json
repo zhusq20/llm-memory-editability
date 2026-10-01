@@ -1,0 +1,12 @@
+{
+  "created_unix": 1790815450.0182219,
+  "config_sha256": "641cdd24e65cf66dbedd33facabccd21da2af4aa11fa89fc29da06a2caefa45e",
+  "sources": {
+    "scripts/run_text_pretrain.py": "d4ada7a4cc78538f7bf2acd77006f69743c7cb320698eab352d5e78ea01edbff",
+    "src/llm_memory_editability/text_pretrain.py": "cd777a56ba270d3c71ed3260f68501ee0685d4cc58a4f7b952719236adf874cb",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+    "src/llm_memory_editability/grok_loop_model.py": "07e84388997a1710e5c821e54cf6d23726e4289aab178347761e060851fea6cc"
+  },
+  "git_commit": "e279fc676f71e7e8cc8ce255faf68e26534ce311"
+}

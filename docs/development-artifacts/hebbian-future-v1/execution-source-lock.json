@@ -1,0 +1,10 @@
+{
+  "before_launch": 1790655850.3981912,
+  "files": {
+    "scripts/execute_hebbian_future.py": "6c82e833c950ca7f6db5af9c6825ffd729ad692ae15ec98216de0ed6ae85439d",
+    "src/llm_memory_editability/hebbian_model.py": "e0413d8288a679800f3f7bafc8ef072a0d6d5b29fc49de417077569eec49cc3e",
+    "src/llm_memory_editability/hebbian_data.py": "f2f5458d624fc4a49781a557641de7388937e90fda846ab03f7e17a3f455dd0e",
+    "data/hebbian-learning-v1/source/qwen3-0.6b-base/model.safetensors": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+    "data/hebbian-learning-v1/source/qwen3-0.6b-base/config.json": "504a6b58c4271583724e66584b6b7698aea18450209df6b2f7582df0e89cee59"
+  }
+}

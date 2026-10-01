@@ -1,0 +1,15 @@
+{
+  "paused_utc": "2026-09-30T05:35:52.634256+00:00",
+  "reason": "User requested pausing monitoring while leaving training running.",
+  "monitor_pid": 3251538,
+  "monitor_command": ".venv/bin/python scripts/postprocess_grok_loop.py --configs configs/grok-loop-sensitivity-v1.json configs/grok-loop-confirmation-v1.json --gpus 2 5 ",
+  "monitor_state": "State:\tT (stopped)",
+  "training_pid": 3243265,
+  "training_command": ".venv/bin/python scripts/execute_grok_loop.py --config configs/grok-loop-sensitivity-v1.json --additional-configs configs/grok-loop-confirmation-v1.json --gpus 2 5 --per-gpu 2 ",
+  "training_state": "State:\tS (sleeping)",
+  "training_session_id": 69808,
+  "monitor_session_id": 55448,
+  "formal_completed_at_pause": 32,
+  "resume": "Verify /proc/3251538/cmdline still identifies this monitor, then send SIGCONT. If process no longer exists, rerun the saved monitor command; completed outputs are identity-checked and reused.",
+  "assistant_polling": "paused"
+}

@@ -1,0 +1,575 @@
+{
+  "batch": "architecture-bridge-v1",
+  "scope": "CPU float64 algebra checks, not evidence about pretrained model mechanisms.\n\nScope and assumptions, fixed before running:\n* MoE: inputs, expert features, router weights and shared-expert gates are fixed.\n  Concatenate their weighted features; only the unconstrained down matrices vary.\n  P1 uses the Euclidean/Frobenius parameter metric and finite keep/edit columns.\n  Numerical rank uses an explicit absolute threshold; it is not exact arithmetic.\n* Hard top-k: expert independence is conditional on unchanged routing. Crossing a\n  selection boundary need not be continuous, so a smooth Taylor claim is invalid.\n* Gated DeltaNet: S_t = S_(t-1) A_t + W_t, with fixed keys, values and gates,\n  A_t = alpha_t (I - beta_t k_t k_t^T), W_t = beta_t v_t k_t^T. Perturbations\n  are injected into the state, not silently equated with parameter updates.\n* Two-hop: the complete interface includes a nonlinear query and a bypass state.\n  Smooth finite-dimensional examples check the chain rule and local O(step^2)\n  remainders; omitting a live bypass can produce an O(step) error.\n* SwiGLU: B [phi(x+delta)-phi(x)] is exact for fixed B, up and gate. Applying a\n  nonlinear downstream readout still needs a finite bound or Taylor remainder.\n\nAll cases are constructed examples. They neither prove universality nor certify\nGLM, Kimi, Qwen, natural-language reasoning, learned routing or training dynamics.\nNo model loading, fitting, training, GPU work or access to previous artifacts.\n",
+  "seed": 20260929,
+  "precision": "float64",
+  "device": "CPU",
+  "rank_rtol": 1e-12,
+  "count": 60,
+  "all_passed": true,
+  "max_identity_error": 4.267143314468672e-15,
+  "checks": [
+    {
+      "name": "moe.weighted_concat_including_shared",
+      "kind": "identity",
+      "error": 4.267143314468672e-15,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "moe.P1_keep",
+      "kind": "identity",
+      "error": 7.078632469481383e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "moe.P1_target",
+      "kind": "identity",
+      "error": 6.346338311341279e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "moe.P1_compatibility",
+      "kind": "identity",
+      "error": 3.920321537349984e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "moe.P1_projected_update",
+      "kind": "identity",
+      "error": 1.3069062212698894e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "moe.P1_independent_minimum_norm_solver",
+      "kind": "identity",
+      "error": 7.14601073936374e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "moe.minimum_norm_free_direction_feasible",
+      "kind": "identity",
+      "error": 3.275387898125086e-15,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "moe.minimum_norm_orthogonality",
+      "kind": "identity",
+      "error": 1.734723475976807e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "moe.minimum_norm_pythagoras",
+      "kind": "identity",
+      "error": 3.552713678800501e-15,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "moe.alternative_solution_has_larger_norm",
+      "kind": "inequality_or_counterexample",
+      "value": 5.182190108432472,
+      "lower": 0.1,
+      "upper": 100,
+      "passed": true
+    },
+    {
+      "name": "moe.keep_span_incompatible_target_rejected",
+      "kind": "identity",
+      "error": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "router.disjoint_expert_keep",
+      "kind": "identity",
+      "error": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "router.selected_expert_change",
+      "kind": "identity",
+      "error": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "router.shared_expert_change_leaks_to_keep",
+      "kind": "identity",
+      "error": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "router.boundary_jump_at_0.1",
+      "kind": "identity",
+      "error": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "router.boundary_jump_at_0.001",
+      "kind": "identity",
+      "error": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "router.boundary_jump_at_1e-06",
+      "kind": "identity",
+      "error": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "router.boundary_secant_unbounded_example",
+      "kind": "inequality_or_counterexample",
+      "value": 1000000.0,
+      "lower": 100000.0,
+      "upper": 10000000.0,
+      "passed": true
+    },
+    {
+      "name": "gdn.full_expansion_t0",
+      "kind": "identity",
+      "error": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "gdn.full_expansion_t1",
+      "kind": "identity",
+      "error": 1.3597399555105182e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "gdn.full_expansion_t2",
+      "kind": "identity",
+      "error": 1.2412670766236366e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "gdn.full_expansion_t3",
+      "kind": "identity",
+      "error": 1.3597399555105182e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "gdn.full_expansion_t4",
+      "kind": "identity",
+      "error": 1.4946834900704541e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "gdn.state_injection_propagation_t0",
+      "kind": "identity",
+      "error": 0.0,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "gdn.state_injection_propagation_t1",
+      "kind": "identity",
+      "error": 1.7554167342883506e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "gdn.state_injection_propagation_t2",
+      "kind": "identity",
+      "error": 1.415262216750919e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "gdn.state_injection_propagation_t3",
+      "kind": "identity",
+      "error": 2.3551386880256624e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "gdn.state_injection_propagation_t4",
+      "kind": "identity",
+      "error": 4.827894691472311e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "gdn.single_injection_chronological_product",
+      "kind": "identity",
+      "error": 1.8889378360685047e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "gdn.changed_value_write_propagation",
+      "kind": "identity",
+      "error": 1.4913578240024917e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "gdn.reversing_noncommuting_product_is_wrong",
+      "kind": "inequality_or_counterexample",
+      "value": 0.13342733562548162,
+      "lower": 1e-05,
+      "upper": 100,
+      "passed": true
+    },
+    {
+      "name": "gdn.unit_key_gate_contraction_bound",
+      "kind": "inequality_or_counterexample",
+      "value": 0.4921887790797531,
+      "lower": 0,
+      "upper": 0.6474203591327864,
+      "passed": true
+    },
+    {
+      "name": "gdn.changed_future_key_invalidates_fixed_transition_formula",
+      "kind": "inequality_or_counterexample",
+      "value": 1.4877943910605447,
+      "lower": 1e-05,
+      "upper": 100,
+      "passed": true
+    },
+    {
+      "name": "twohop.complete_state_chain_rule",
+      "kind": "identity",
+      "error": 2.2887833992611187e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "twohop.head_derivative",
+      "kind": "identity",
+      "error": 1.1985452908869411e-16,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "twohop.complete_state_second_order_0",
+      "kind": "inequality_or_counterexample",
+      "value": 2.0083392145090633,
+      "lower": 1.9,
+      "upper": 2.1,
+      "passed": true
+    },
+    {
+      "name": "twohop.omitted_bypass_first_order_0",
+      "kind": "inequality_or_counterexample",
+      "value": 1.0442422014532036,
+      "lower": 0.85,
+      "upper": 1.15,
+      "passed": true
+    },
+    {
+      "name": "twohop.complete_state_second_order_1",
+      "kind": "inequality_or_counterexample",
+      "value": 2.0044043160441483,
+      "lower": 1.9,
+      "upper": 2.1,
+      "passed": true
+    },
+    {
+      "name": "twohop.omitted_bypass_first_order_1",
+      "kind": "inequality_or_counterexample",
+      "value": 1.0224477451302847,
+      "lower": 0.85,
+      "upper": 1.15,
+      "passed": true
+    },
+    {
+      "name": "twohop.complete_state_second_order_2",
+      "kind": "inequality_or_counterexample",
+      "value": 2.002262107768091,
+      "lower": 1.9,
+      "upper": 2.1,
+      "passed": true
+    },
+    {
+      "name": "twohop.omitted_bypass_first_order_2",
+      "kind": "inequality_or_counterexample",
+      "value": 1.0113046862412272,
+      "lower": 0.85,
+      "upper": 1.15,
+      "passed": true
+    },
+    {
+      "name": "twohop.omitted_bypass_derivative_is_nonzero",
+      "kind": "inequality_or_counterexample",
+      "value": 0.10315028102738971,
+      "lower": 0.001,
+      "upper": 100,
+      "passed": true
+    },
+    {
+      "name": "features.exact_finite_module_response_1.0",
+      "kind": "identity",
+      "error": 2.7755575615628914e-17,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "features.exact_linear_readout_1.0",
+      "kind": "identity",
+      "error": 2.7755575615628914e-17,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "features.certified_downstream_taylor_bound_1.0",
+      "kind": "inequality_or_counterexample",
+      "value": 0.0012233758643918208,
+      "lower": 0,
+      "upper": 0.005996870800782358,
+      "passed": true
+    },
+    {
+      "name": "features.global_downstream_lipschitz_bound_1.0",
+      "kind": "inequality_or_counterexample",
+      "value": 0.11842868836890186,
+      "lower": 0,
+      "upper": 0.1248211815761636,
+      "passed": true
+    },
+    {
+      "name": "features.exact_finite_module_response_0.5",
+      "kind": "identity",
+      "error": 1.3877787807814457e-17,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "features.exact_linear_readout_0.5",
+      "kind": "identity",
+      "error": 2.7755575615628914e-17,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "features.certified_downstream_taylor_bound_0.5",
+      "kind": "inequality_or_counterexample",
+      "value": 0.0004765033640193872,
+      "lower": 0,
+      "upper": 0.0017875082312185972,
+      "passed": true
+    },
+    {
+      "name": "features.global_downstream_lipschitz_bound_0.5",
+      "kind": "inequality_or_counterexample",
+      "value": 0.06748048860336722,
+      "lower": 0,
+      "upper": 0.06814750628691278,
+      "passed": true
+    },
+    {
+      "name": "features.exact_finite_module_response_0.25",
+      "kind": "identity",
+      "error": 1.3877787807814457e-17,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "features.exact_linear_readout_0.25",
+      "kind": "identity",
+      "error": 1.3877787807814457e-17,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "features.certified_downstream_taylor_bound_0.25",
+      "kind": "inequality_or_counterexample",
+      "value": 0.00014419391559942346,
+      "lower": 0,
+      "upper": 0.0004922080766128334,
+      "passed": true
+    },
+    {
+      "name": "features.global_downstream_lipschitz_bound_0.25",
+      "kind": "inequality_or_counterexample",
+      "value": 0.03527559475730599,
+      "lower": 0,
+      "upper": 0.03576023063238332,
+      "passed": true
+    },
+    {
+      "name": "features.exact_finite_module_response_0.125",
+      "kind": "identity",
+      "error": 1.734723475976807e-18,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "features.exact_linear_readout_0.125",
+      "kind": "identity",
+      "error": 1.734723475976807e-17,
+      "tolerance": 1e-10,
+      "passed": true
+    },
+    {
+      "name": "features.certified_downstream_taylor_bound_0.125",
+      "kind": "inequality_or_counterexample",
+      "value": 3.934560312736368e-05,
+      "lower": 0,
+      "upper": 0.00012888220744360594,
+      "passed": true
+    },
+    {
+      "name": "features.global_downstream_lipschitz_bound_0.125",
+      "kind": "inequality_or_counterexample",
+      "value": 0.01795771902675762,
+      "lower": 0,
+      "upper": 0.01829879223400753,
+      "passed": true
+    },
+    {
+      "name": "features.nonlinear_downstream_is_not_an_exact_finite_formula",
+      "kind": "inequality_or_counterexample",
+      "value": 0.0012233758643918208,
+      "lower": 1e-08,
+      "upper": 1,
+      "passed": true
+    },
+    {
+      "name": "features.point_derivative_is_not_a_finite_lipschitz_certificate",
+      "kind": "inequality_or_counterexample",
+      "value": 0.36484191676701844,
+      "lower": 0.01,
+      "upper": 2,
+      "passed": true
+    }
+  ],
+  "details": {
+    "fixed_router_moe": {
+      "keep_rank": 4,
+      "residual_rank": 3,
+      "absolute_singular_cutoff": 7.407782006966316e-12,
+      "compatibility_error": 3.920321537349984e-16
+    },
+    "hard_router_boundary": {
+      "boundary_crossings": [
+        {
+          "input_distance": 0.2,
+          "output_jump": 2.0
+        },
+        {
+          "input_distance": 0.002,
+          "output_jump": 2.0
+        },
+        {
+          "input_distance": 2e-06,
+          "output_jump": 2.0
+        }
+      ],
+      "branch_derivative": 0.0,
+      "smooth_at_boundary": false
+    },
+    "gdn_frozen_state_transition": {
+      "sequence_length": 5,
+      "key_dim": 3,
+      "value_dim": 2,
+      "state_injection_bound": 0.6474203591317864
+    },
+    "twohop_complete_interface": {
+      "step_halving": [
+        {
+          "step": 0.04,
+          "complete_error": 0.00026362248253721833,
+          "omitted_bypass_error": 0.00438963372363281
+        },
+        {
+          "step": 0.02,
+          "complete_error": 6.552576507374858e-05,
+          "omitted_bypass_error": 0.0021285313856215446
+        },
+        {
+          "step": 0.01,
+          "complete_error": 1.633150762007105e-05,
+          "omitted_bypass_error": 0.001047834317893969
+        },
+        {
+          "step": 0.005,
+          "complete_error": 4.076480078069088e-06,
+          "omitted_bypass_error": 0.0005198278852150181
+        }
+      ],
+      "complete_directional_derivative": 0.3469895479786301,
+      "omitted_bypass_directional_derivative": 0.4501398290060198
+    },
+    "finite_features_and_downstream": {
+      "perturbations": [
+        {
+          "step": 1.0,
+          "actual_change": 0.11842868836890186,
+          "feature_plus_local_downstream": 0.11720531250451004,
+          "remainder": 0.0012233758643918208,
+          "analytic_remainder_bound": 0.0059968708007813575
+        },
+        {
+          "step": 0.5,
+          "actual_change": 0.06748048860336722,
+          "feature_plus_local_downstream": 0.06700398523934784,
+          "remainder": 0.0004765033640193872,
+          "analytic_remainder_bound": 0.001787508231217597
+        },
+        {
+          "step": 0.25,
+          "actual_change": 0.03527559475730599,
+          "feature_plus_local_downstream": 0.035131400841706566,
+          "remainder": 0.00014419391559942346,
+          "analytic_remainder_bound": 0.0004922080766118335
+        },
+        {
+          "step": 0.125,
+          "actual_change": 0.01795771902675762,
+          "feature_plus_local_downstream": 0.017918373423630257,
+          "remainder": 3.934560312736368e-05,
+          "analytic_remainder_bound": 0.00012888220744260596
+        }
+      ],
+      "global_tanh_hessian_bound": 0.5003702332976756,
+      "point_derivative_counterexample": {
+        "actual_change": 0.37454784938245655,
+        "incorrect_local_bound": 0.00970593261543814
+      }
+    }
+  },
+  "conclusion": {
+    "numerical_consistency": "Constructed fixed-router, fixed-transition and smooth-interface identities pass only if all_passed is true.",
+    "counterexamples": "Hard route switches, changed future GDN keys, omitted bypasses and pointwise derivative bounds invalidate the corresponding stronger claims.",
+    "mechanism_evidence": false,
+    "not_established": [
+      "pretrained model mechanisms",
+      "cross-family empirical generalization",
+      "natural-language two-hop failure causes",
+      "long-term learning dynamics"
+    ]
+  },
+  "provenance": {
+    "created_at_utc": "2026-09-29T22:50:31.171964+00:00",
+    "python": "3.12.7",
+    "numpy": "2.5.3",
+    "torch": "2.8.0+cu128",
+    "git_head": "e279fc676f71e7e8cc8ce255faf68e26534ce311",
+    "source_sha256": {
+      "scripts/check_architecture_bridge_algebra.py": "ef96f61f30014445513f34720caf406020d62254bcf22328dde27e9dac8bf01e",
+      "tests/test_architecture_bridge_algebra.py": "3eee12dad091db65290d7babf1949dd8640d56eced57fa46b4eb04197f574719"
+    },
+    "wall_seconds": 0.34322280302876607,
+    "model_or_data_downloaded": false,
+    "model_training": false
+  }
+}

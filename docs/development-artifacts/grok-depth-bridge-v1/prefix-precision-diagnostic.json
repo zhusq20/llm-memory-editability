@@ -1,0 +1,54 @@
+{
+  "utc": "2026-09-30T01:46:04.282301+00:00",
+  "run_id": "conf-w143011-s14302-d1wide",
+  "step": 128000,
+  "tf32": {
+    "True": {
+      "max_absolute_error": 0.00017537921667099,
+      "failed_entries": 19,
+      "total_entries": 269280,
+      "relative_norm_error": 1.4184893188939895e-05,
+      "allclose_1e4": false
+    },
+    "False": {
+      "max_absolute_error": 5.960464477539062e-07,
+      "failed_entries": 0,
+      "total_entries": 269280,
+      "relative_norm_error": 5.483042855303211e-07,
+      "allclose_1e4": true
+    }
+  },
+  "source": {
+    "source_dir": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/grok-depth-v1/confirmation/conf-w143011-s14302-d1wide",
+    "source_hashes": {
+      "configs/grok-depth-v1.json": "e376faed75a830f3de3fa0541e88461cac5922eb0d997071470d6005ce8e9fc8",
+      "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+      "src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+      "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+      "scripts/run_grok_depth.py": "1a3f7649addc040abe2a23d558aedacbd64d54293a2bbd36ec8ed09428be47d2"
+    },
+    "checkpoint_sha256": "08a18c7fd9f5c02565bac4694378e2509321af154b1fae78f17f7f0ae8950b1f",
+    "world_file_sha256": "b62258b1fd82f7a1d5d1fcccfb7cba3e6c077fd1488f390115a6fe87011eb24f",
+    "dataset_sha256": "ba567f4ff1ff9d607f12a762c160dd97f78423d150b294435bae60b00c84b7f3",
+    "world_audit": {
+      "ok": true,
+      "counts": {
+        "atomic": 1024,
+        "id_atomic": 973,
+        "ood_atomic": 51,
+        "train_composite": 5838,
+        "test_composite": 748,
+        "ood_composite": 21,
+        "unused_composite": 790
+      },
+      "id_composite_total": 7376,
+      "ood_composite_total": 21,
+      "mixed_composite_excluded": 795,
+      "dataset_sha256": "ba567f4ff1ff9d607f12a762c160dd97f78423d150b294435bae60b00c84b7f3",
+      "warnings": []
+    },
+    "source_metadata_sha256": "b4a82b1f5831754260d68f662464491462438275c34b0bd86b0cdc93eab5bccd",
+    "source_predictions_sha256": "558ad887f026feba865379e3a8f99caa2b96bf25fd56518165af9a82133f8176",
+    "world_regenerated_identically": true
+  }
+}

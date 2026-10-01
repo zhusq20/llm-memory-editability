@@ -1,0 +1,372 @@
+{
+  "finished_utc": "2026-09-30T03:06:04.158280+00:00",
+  "status": "complete",
+  "groups": {
+    "development": {
+      "config": "configs/grok-multihop-analysis-v1.json",
+      "audit": "docs/development-artifacts/grok-multihop-v1/all-development-endpoint-audit.json",
+      "run_count": 7,
+      "totals": {
+        "steps": 896000,
+        "examples": 229376000,
+        "effective_input_tokens": 1172824571,
+        "estimated_training_flops": 5579766497280000,
+        "training_seconds": 1267.06490201212,
+        "evaluation_seconds": 24.216676897369325,
+        "capture_seconds": 4.2205079609993845,
+        "evaluation_nodes": 483
+      },
+      "runs": [
+        {
+          "run_id": "dev-k3-d4-phi6",
+          "phase": "development",
+          "steps": 128000,
+          "examples": 32768000,
+          "effective_input_tokens": 154060222,
+          "estimated_training_flops": 785475698688000,
+          "training_seconds": 186.55248135863803,
+          "evaluation_seconds": 2.161133630783297,
+          "capture_seconds": 0.6186552670551464,
+          "evaluation_nodes": 69,
+          "visible_devices": "5",
+          "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "started_utc": "2026-09-30T02:18:55.000074+00:00",
+          "finished_utc": "2026-09-30T02:22:44.675306+00:00",
+          "execution_files": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-multihop-development-v1.json": "c9466b95bc04d213028e86e09444f32b2c3285006bc240fff8b73e11a7365141",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_grok_multihop.py": "c2609aa3bdd25da9ac2a47f0373cf47b2cabcd40be5f56e5678e85129501b840"
+          },
+          "receipt_hash": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/grok-multihop-v1/development/dev-k3-d4-phi6/complete.json": "9541930c87b024c8bd1237231cb3c8068e55103da01354bc10ee8b5f5a94b03b"
+          }
+        },
+        {
+          "run_id": "dev-k4-d6-phi6",
+          "phase": "development",
+          "steps": 128000,
+          "examples": 32768000,
+          "effective_input_tokens": 181938333,
+          "estimated_training_flops": 1409789460480000,
+          "training_seconds": 258.62781097367406,
+          "evaluation_seconds": 3.06535249191802,
+          "capture_seconds": 0.5893029239960015,
+          "evaluation_nodes": 69,
+          "visible_devices": "5",
+          "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "started_utc": "2026-09-30T02:23:15.849528+00:00",
+          "finished_utc": "2026-09-30T02:28:26.780952+00:00",
+          "execution_files": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-multihop-development-v1.json": "c9466b95bc04d213028e86e09444f32b2c3285006bc240fff8b73e11a7365141",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_grok_multihop.py": "c2609aa3bdd25da9ac2a47f0373cf47b2cabcd40be5f56e5678e85129501b840"
+          },
+          "receipt_hash": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/grok-multihop-v1/development/dev-k4-d6-phi6/complete.json": "4a8b915ab4c6026b2cd18d341eb16076a0bb0f3949fe0b05026fcb6ee9264aba"
+          }
+        },
+        {
+          "run_id": "dev-k3-d4-phi24",
+          "phase": "development",
+          "steps": 128000,
+          "examples": 32768000,
+          "effective_input_tokens": 161086912,
+          "estimated_training_flops": 785475698688000,
+          "training_seconds": 185.29605581483338,
+          "evaluation_seconds": 4.419999553123489,
+          "capture_seconds": 0.6315070029813796,
+          "evaluation_nodes": 69,
+          "visible_devices": "5",
+          "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "started_utc": "2026-09-30T02:29:39.373652+00:00",
+          "finished_utc": "2026-09-30T02:33:31.539361+00:00",
+          "execution_files": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-multihop-coverage-development-v1.json": "8a1044cf771b70c72c1ebf400b8992e9ab424e58eec0c0241a7d402ef549f450",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_grok_multihop.py": "c2609aa3bdd25da9ac2a47f0373cf47b2cabcd40be5f56e5678e85129501b840"
+          },
+          "receipt_hash": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/grok-multihop-v1/development/dev-k3-d4-phi24/complete.json": "eea8b3cc626f5b3b1b9153cbcaf16ef3c6509f399dbbb09f90998d7fdb25e268"
+          }
+        },
+        {
+          "run_id": "dev-k4-d6-phi24",
+          "phase": "development",
+          "steps": 128000,
+          "examples": 32768000,
+          "effective_input_tokens": 192478368,
+          "estimated_training_flops": 1409789460480000,
+          "training_seconds": 257.84417258633766,
+          "evaluation_seconds": 5.75626691931393,
+          "capture_seconds": 0.6026716419728473,
+          "evaluation_nodes": 69,
+          "visible_devices": "5",
+          "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "started_utc": "2026-09-30T02:33:56.948594+00:00",
+          "finished_utc": "2026-09-30T02:39:10.464695+00:00",
+          "execution_files": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-multihop-coverage-development-v1.json": "8a1044cf771b70c72c1ebf400b8992e9ab424e58eec0c0241a7d402ef549f450",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_grok_multihop.py": "c2609aa3bdd25da9ac2a47f0373cf47b2cabcd40be5f56e5678e85129501b840"
+          },
+          "receipt_hash": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/grok-multihop-v1/development/dev-k4-d6-phi24/complete.json": "24a7f7ce9d5eab37eb6503f7c8f043a88a8aff6e4396c68501b21dfc2278331e"
+          }
+        },
+        {
+          "run_id": "dev-k3-d2-phi24",
+          "phase": "development_followup",
+          "steps": 128000,
+          "examples": 32768000,
+          "effective_input_tokens": 161086912,
+          "estimated_training_flops": 396412059648000,
+          "training_seconds": 128.20621560828295,
+          "evaluation_seconds": 3.0599889042787254,
+          "capture_seconds": 0.6092293430119753,
+          "evaluation_nodes": 69,
+          "visible_devices": "5",
+          "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "started_utc": "2026-09-30T02:40:33.982584+00:00",
+          "finished_utc": "2026-09-30T02:43:20.838986+00:00",
+          "execution_files": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-multihop-shallow-development-v1.json": "1c225d13b70b5d6a9460dc2df5a0c7ef0cabf46dde43eefc29aa0a217619409d",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_grok_multihop.py": "c2609aa3bdd25da9ac2a47f0373cf47b2cabcd40be5f56e5678e85129501b840"
+          },
+          "receipt_hash": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/grok-multihop-v1/development_followup/dev-k3-d2-phi24/complete.json": "460824366ad38557b90a8faaf601679da4f67b16775bdc226a67cffded31fa81"
+          }
+        },
+        {
+          "run_id": "dev-k3-d3-phi24",
+          "phase": "development_followup",
+          "steps": 128000,
+          "examples": 32768000,
+          "effective_input_tokens": 161086912,
+          "estimated_training_flops": 590943879168000,
+          "training_seconds": 155.717147822259,
+          "evaluation_seconds": 3.5570798506960273,
+          "capture_seconds": 0.5971770810429007,
+          "evaluation_nodes": 69,
+          "visible_devices": "5",
+          "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "started_utc": "2026-09-30T02:43:23.951271+00:00",
+          "finished_utc": "2026-09-30T02:46:41.686670+00:00",
+          "execution_files": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-multihop-shallow-development-v1.json": "1c225d13b70b5d6a9460dc2df5a0c7ef0cabf46dde43eefc29aa0a217619409d",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_grok_multihop.py": "c2609aa3bdd25da9ac2a47f0373cf47b2cabcd40be5f56e5678e85129501b840"
+          },
+          "receipt_hash": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/grok-multihop-v1/development_followup/dev-k3-d3-phi24/complete.json": "ccd041d8088e6f151fcc5917e71ab78739547608354b38e25bcb428eeb4b0456"
+          }
+        },
+        {
+          "run_id": "dev-k3-d1-phi24",
+          "phase": "development_followup",
+          "steps": 128000,
+          "examples": 32768000,
+          "effective_input_tokens": 161086912,
+          "estimated_training_flops": 201880240128000,
+          "training_seconds": 94.82101784809493,
+          "evaluation_seconds": 2.1968555472558364,
+          "capture_seconds": 0.5719647009391338,
+          "evaluation_nodes": 69,
+          "visible_devices": "5",
+          "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "started_utc": "2026-09-30T02:46:45.449480+00:00",
+          "finished_utc": "2026-09-30T02:48:55.127054+00:00",
+          "execution_files": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-multihop-shallow-development-v1.json": "1c225d13b70b5d6a9460dc2df5a0c7ef0cabf46dde43eefc29aa0a217619409d",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_grok_multihop.py": "c2609aa3bdd25da9ac2a47f0373cf47b2cabcd40be5f56e5678e85129501b840"
+          },
+          "receipt_hash": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/grok-multihop-v1/development_followup/dev-k3-d1-phi24/complete.json": "eefc13cd884e7dacddbaa460897ff0eba6aa32a61cb70ca3892c8f4614c40c2d"
+          }
+        }
+      ]
+    },
+    "confirmation": {
+      "config": "configs/grok-multihop-boundary-confirmation-v1.json",
+      "audit": "docs/development-artifacts/grok-multihop-v1/confirmation-endpoint-audit.json",
+      "run_count": 4,
+      "totals": {
+        "steps": 512000,
+        "examples": 131072000,
+        "effective_input_tokens": 644347648,
+        "estimated_training_flops": 2752839155712000,
+        "training_seconds": 680.2407349968562,
+        "evaluation_seconds": 15.754226932767779,
+        "capture_seconds": 2.455388037022203,
+        "evaluation_nodes": 276
+      },
+      "runs": [
+        {
+          "run_id": "conf-w144011-k3-d3-phi24",
+          "phase": "confirmation",
+          "steps": 128000,
+          "examples": 32768000,
+          "effective_input_tokens": 161086912,
+          "estimated_training_flops": 590943879168000,
+          "training_seconds": 155.95780259231105,
+          "evaluation_seconds": 3.6686731786467135,
+          "capture_seconds": 0.621565725072287,
+          "evaluation_nodes": 69,
+          "visible_devices": "5",
+          "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "started_utc": "2026-09-30T02:51:25.823959+00:00",
+          "finished_utc": "2026-09-30T02:54:45.597537+00:00",
+          "execution_files": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-multihop-boundary-confirmation-v1.json": "a882c80b73bc53c535168734261b8786eddc955ca0acba58a9b6c21d897218fb",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_grok_multihop.py": "c2609aa3bdd25da9ac2a47f0373cf47b2cabcd40be5f56e5678e85129501b840"
+          },
+          "receipt_hash": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/grok-multihop-v1/confirmation/conf-w144011-k3-d3-phi24/complete.json": "6e8f75df3407ddc1c1631dc97afad029858af907fdde794acbf7e7b81592f0ed"
+          }
+        },
+        {
+          "run_id": "conf-w144011-k3-d4-phi24",
+          "phase": "confirmation",
+          "steps": 128000,
+          "examples": 32768000,
+          "effective_input_tokens": 161086912,
+          "estimated_training_flops": 785475698688000,
+          "training_seconds": 183.7367407460697,
+          "evaluation_seconds": 4.146554684499279,
+          "capture_seconds": 0.5907271259929985,
+          "evaluation_nodes": 69,
+          "visible_devices": "5",
+          "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "started_utc": "2026-09-30T02:54:49.010231+00:00",
+          "finished_utc": "2026-09-30T02:58:40.153874+00:00",
+          "execution_files": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-multihop-boundary-confirmation-v1.json": "a882c80b73bc53c535168734261b8786eddc955ca0acba58a9b6c21d897218fb",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_grok_multihop.py": "c2609aa3bdd25da9ac2a47f0373cf47b2cabcd40be5f56e5678e85129501b840"
+          },
+          "receipt_hash": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/grok-multihop-v1/confirmation/conf-w144011-k3-d4-phi24/complete.json": "500a104d35fe7f58c516f9e73fa9275bd3d21a31a9076ec628ea5ce9a92b6a39"
+          }
+        },
+        {
+          "run_id": "conf-w144012-k3-d3-phi24",
+          "phase": "confirmation",
+          "steps": 128000,
+          "examples": 32768000,
+          "effective_input_tokens": 161086912,
+          "estimated_training_flops": 590943879168000,
+          "training_seconds": 153.89931153552607,
+          "evaluation_seconds": 3.615653923014179,
+          "capture_seconds": 0.6318907469976693,
+          "evaluation_nodes": 69,
+          "visible_devices": "5",
+          "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "started_utc": "2026-09-30T02:58:43.283478+00:00",
+          "finished_utc": "2026-09-30T03:02:00.192512+00:00",
+          "execution_files": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-multihop-boundary-confirmation-v1.json": "a882c80b73bc53c535168734261b8786eddc955ca0acba58a9b6c21d897218fb",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_grok_multihop.py": "c2609aa3bdd25da9ac2a47f0373cf47b2cabcd40be5f56e5678e85129501b840"
+          },
+          "receipt_hash": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/grok-multihop-v1/confirmation/conf-w144012-k3-d3-phi24/complete.json": "267f71fb035d83a482d65b4e31590656b140faea4b260bc822e9ea4669430e94"
+          }
+        },
+        {
+          "run_id": "conf-w144012-k3-d4-phi24",
+          "phase": "confirmation",
+          "steps": 128000,
+          "examples": 32768000,
+          "effective_input_tokens": 161086912,
+          "estimated_training_flops": 785475698688000,
+          "training_seconds": 186.64688012294937,
+          "evaluation_seconds": 4.323345146607608,
+          "capture_seconds": 0.6112044389592484,
+          "evaluation_nodes": 69,
+          "visible_devices": "2",
+          "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+          "started_utc": "2026-09-30T02:58:24.232743+00:00",
+          "finished_utc": "2026-09-30T03:02:18.137298+00:00",
+          "execution_files": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-multihop-boundary-confirmation-v1.json": "a882c80b73bc53c535168734261b8786eddc955ca0acba58a9b6c21d897218fb",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_grok_multihop.py": "c2609aa3bdd25da9ac2a47f0373cf47b2cabcd40be5f56e5678e85129501b840"
+          },
+          "receipt_hash": {
+            "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/grok-multihop-v1/confirmation/conf-w144012-k3-d4-phi24/complete.json": "501b6156849d221b178ceebbc4d1f069708ba38e2378cbb42b6d05b0942c7fe7"
+          }
+        }
+      ]
+    }
+  },
+  "run_count": 11,
+  "first_run_metadata_utc": "2026-09-30T02:18:55.000074+00:00",
+  "last_run_complete_utc": "2026-09-30T03:02:18.137298+00:00",
+  "run_utc_span_seconds": 2603.137224,
+  "wall_time_scope": "First launch metadata to last training completion; excludes prior implementation and later auditing",
+  "cost_scope": "Only this longer-path batch; no historical or concurrent two-hop runs",
+  "verification_files": {
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/finalize_grok_multihop.py": "a871a2d7d748ff966a848484b9f616d7dba69ae14f4059831c7b62efb2536c0e",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/report_grok_multihop.py": "ed2937342e64277e648547981d16e26b237aba9cc7dc878f3d4a85c82a830f40",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/audit_grok_multihop.py": "d24eadeed7785d7d79a8b82c588f539e8bd2cce70c2ec3c2f37a5c54f78996b0",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/execute_grok_multihop.py": "0b4964157fa96df4653ca890986102635d4832db88d134444b877e00df06bad8",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-multihop-analysis-v1.json": "5ae57a3005c6f6636d16d507cbd4ba742fc879f0d156a203722993f361827cab",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-multihop-v1/all-development-endpoint-audit.json": "1180f5f51620bc1cd654d6ca1a2e0aa2c1b41a70d876ceed62837137c02713eb",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-multihop-v1/preflight.json": "7230976b13936f55ad56b63b82f05dda9c083622c64b5a5fba217a8291100937",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-multihop-v1/development-lock.json": "4ea3e1839f4021b034d4d8279238623d2a6b87239ae505b8643072d3a8a541f0",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-multihop-v1/coverage-development-lock.json": "eea4d4482a56ce64ebd4594ef257d6539ea247154c4796b79f5533512f04e129",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-multihop-v1/shallow-development-lock.json": "e07dd385ab4e814be12d88846101d1583d25917141b8d84332460ff02a5ce568",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/tests/test_grok_multihop.py": "53cecbb31c1c8032591feaed603d78d622b8b9529686d3507cac4134ccae7871",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-multihop-boundary-confirmation-v1.json": "a882c80b73bc53c535168734261b8786eddc955ca0acba58a9b6c21d897218fb",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-multihop-v1/confirmation-endpoint-audit.json": "c2affa8e453a71b14838d9f96138badf4a31a680f9417847405e6c934f886e6b",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-multihop-v1/boundary-confirmation-lock.json": "69ba9de0e78e3054ac01133a99de3f575a5b9d6e300b045494f54fa951f8b4e8"
+  },
+  "CPU_contract_tests_passed": 14,
+  "GPU_execution_preflight": "preflight.json"
+}

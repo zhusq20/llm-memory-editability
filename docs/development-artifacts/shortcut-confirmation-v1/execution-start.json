@@ -1,0 +1,37 @@
+{
+  "pid": 2542050,
+  "command": [
+    "/home/siqizhu4/miniconda3/bin/python",
+    "scripts/run_bios_mechanism_queue.py",
+    "--manifest",
+    "/tmp/llm-memory-siqizhu4-mechanism-20260927/confirmation-h2/queue.json",
+    "--gpus",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "7",
+    "--slots-per-gpu",
+    "6"
+  ],
+  "started": 1790486089.2926278,
+  "lock_sha256": "7c3af938277308fdbf8f384a6bd3afcbed2eb848a58b5501f9a2249a6cdde5f6",
+  "preparation_complete": true,
+  "prepared_worlds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107
+  ],
+  "prepared_files": 24,
+  "prelaunch_tests": {
+    "passed": 43,
+    "failed": 0,
+    "ruff": "passed"
+  }
+}

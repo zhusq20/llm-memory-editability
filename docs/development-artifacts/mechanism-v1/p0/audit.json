@@ -1,0 +1,18 @@
+{
+  "complete": true,
+  "models": 48,
+  "learning_checkpoints": 288,
+  "edit_cases": 384,
+  "edit_checkpoints": 1536,
+  "scored_query_predictions": 37588992,
+  "classified_derived_predictions": 7471104,
+  "source_files": 2699,
+  "sources_sha256": "5c2dbdbd94ff0fb90349c7c23edc8c10b48d312f91fdbb322e719755c35215ea",
+  "analysis_sources": {
+    "src/llm_memory_editability/bios_path_diagnostics.py": "7d95f31f9fa9099d6b05666b9a638f880aa83a88554d934c3ff05e86880d0f7e",
+    "scripts/analyze_bios_paths.py": "90d9ea3563d86a0fbbeb584b7d1ac79046c725ed39738c7f9ac5c0cd7ad3afd1"
+  },
+  "errors": [],
+  "source_data_modified": false,
+  "source_hashes_rechecked_after_analysis": true
+}

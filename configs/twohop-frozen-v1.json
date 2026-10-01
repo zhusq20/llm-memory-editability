@@ -1,0 +1,20 @@
+{
+  "experiment": "twohop-frozen-v1",
+  "seed": 142913,
+  "models": {
+    "small": {"repo": "Qwen/Qwen3-0.6B-Base", "revision": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd", "path": "data/hebbian-learning-v1/source/qwen3-0.6b-base", "chat": false, "device": "cuda:2"},
+    "main": {"repo": "Qwen/Qwen3-4B-Instruct-2507", "revision": "cdbee75f17c01a7cc42f958dc650907174af0554", "path": "data/twohop-frozen-v1/models/qwen3-4b-instruct-2507", "chat": true, "device": "cuda:5"}
+  },
+  "behavior_per_dataset": {"development": 16, "evaluation": 128},
+  "mechanism_per_dataset": {"development": 8, "evaluation": 24},
+  "layer_fractions": [0.3333333333333333, 0.5, 0.6666666666666666],
+  "patches": {"zero": 0, "first_only": 0.5, "oracle_025": 0.25, "oracle_050": 0.5, "oracle_100": 1, "wrong_oracle": 0.5, "random": 0.5, "reverse": -0.5, "self_bridge": 0.5},
+  "generation_tokens": 32,
+  "cot_tokens": 64,
+  "batch": 8,
+  "max_input_tokens": 8192,
+  "dtype": "bfloat16",
+  "attention": "sdpa",
+  "bootstrap": 2000,
+  "policy": "Frozen parameters; no optimizer/probe/classifier fit. Fixed hash samples, all layers and conditions reported. Mechanism uses MQuAKE closed book and 2Wiki gold-support paragraphs; behavioral main uses 2Wiki full context. Oracle directions and gold-based gradients are offline diagnostics only. Model size and instruction tuning confounded; no pure scaling claim."
+}

@@ -1,0 +1,16 @@
+{
+  "paired-outcomes.pdf": "6164cadb8a61594fc2bc4bea35961a90a37249771b6f966837076e87950f6788",
+  "source-manifest.json": "439679731ccf3a476d3040bcc5f8cf321a165af86db782533dcf343f02c7f5f9",
+  "component-contrasts.pdf": "17d26688c90ce00a188bfbb1df5f485885c4660ffbbc036f5934b4219da98b05",
+  "run-matrix.csv": "7a4c768cf6385268811b313f36f0accfa301d1758ced8ff95f0645056e3a10df",
+  "summary.json": "dcffccb40128d99c841e962863ac66fcdb80e81a822ea617f26e615478601164",
+  "paired-outcomes.png": "1d688c2fa6882e650725ba443b097d921299c237225f6640c5853010104c938d",
+  "contrasts.csv": "fcf6d9a801fbaace4df585e6b972051535c49c608a9f2c21d7bb56517e9c371e",
+  "coverage.png": "e0ebab876fd71e648141af72de004ee9560c83f05c1c4a13c34abbed6be15920",
+  "worlds.csv": "cc99888400204b7d43c9a12692e59519d9286c8f96251c8ba524927f5587825d",
+  "component-contrasts.png": "1cb514f29224467f9a479866c3694f3e8391aca00724848291c6066f2e8cf680",
+  "completion-matrix.json": "aa48b9efbc35229628e8cf45dcff95b485117cba2d33b64a4add602cdeb1e804",
+  "coverage.pdf": "6c95d84c0658d49d1acebdc6c6e2dacd2f78e1927abfc40feec26dd5b010c5d9",
+  "endpoints.csv": "b1b42b76ba2098cb361fea4e5fa7e13a89a11560c7cee04a35bb1c7f2092ae8e",
+  "world-contrasts.csv": "788a3310d7de143b159afa4d37394cb73fd12c3f7ccad77e22926359cb9fa2aa"
+}

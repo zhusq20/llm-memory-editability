@@ -1,0 +1,114 @@
+{
+  "output_root": "results/text-loss-source-v1/followup",
+  "lock": "docs/development-artifacts/text-loss-source-v1/followup/lock.json",
+  "plan": "docs/development-artifacts/text-loss-source-v1/followup-plan.md",
+  "steps": 4096,
+  "nodes": [
+    0,
+    1,
+    32,
+    128,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "runs": {
+    "w147011-s14701-AB": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147011-s14701-P1",
+      "arm": "AB"
+    },
+    "w147011-s14701-A": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147011-s14701-P1",
+      "arm": "A"
+    },
+    "w147011-s14701-B": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147011-s14701-P1",
+      "arm": "B"
+    },
+    "w147011-s14701-N": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147011-s14701-P1",
+      "arm": "N"
+    },
+    "w147011-s14702-AB": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147011-s14702-P1",
+      "arm": "AB"
+    },
+    "w147011-s14702-A": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147011-s14702-P1",
+      "arm": "A"
+    },
+    "w147011-s14702-B": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147011-s14702-P1",
+      "arm": "B"
+    },
+    "w147011-s14702-N": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147011-s14702-P1",
+      "arm": "N"
+    },
+    "w147012-s14701-AB": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147012-s14701-P1",
+      "arm": "AB"
+    },
+    "w147012-s14701-A": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147012-s14701-P1",
+      "arm": "A"
+    },
+    "w147012-s14701-B": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147012-s14701-P1",
+      "arm": "B"
+    },
+    "w147012-s14701-N": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147012-s14701-P1",
+      "arm": "N"
+    },
+    "w147012-s14702-AB": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147012-s14702-P1",
+      "arm": "AB"
+    },
+    "w147012-s14702-A": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147012-s14702-P1",
+      "arm": "A"
+    },
+    "w147012-s14702-B": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147012-s14702-P1",
+      "arm": "B"
+    },
+    "w147012-s14702-N": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147012-s14702-P1",
+      "arm": "N"
+    },
+    "w147013-s14701-AB": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147013-s14701-P1",
+      "arm": "AB"
+    },
+    "w147013-s14701-A": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147013-s14701-P1",
+      "arm": "A"
+    },
+    "w147013-s14701-B": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147013-s14701-P1",
+      "arm": "B"
+    },
+    "w147013-s14701-N": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147013-s14701-P1",
+      "arm": "N"
+    },
+    "w147013-s14702-AB": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147013-s14702-P1",
+      "arm": "AB"
+    },
+    "w147013-s14702-A": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147013-s14702-P1",
+      "arm": "A"
+    },
+    "w147013-s14702-B": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147013-s14702-P1",
+      "arm": "B"
+    },
+    "w147013-s14702-N": {
+      "parent": "results/text-pretrain-v1/confirmation/confirm-w147013-s14702-P1",
+      "arm": "N"
+    }
+  }
+}

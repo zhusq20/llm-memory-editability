@@ -1,0 +1,1545 @@
+{
+  "completed_at": "2026-09-28T04:21:37.766488+00:00",
+  "config_sha256": "8a07ed6359017689c34793faaa87fb36dc54865654d80f279df3ce1d8145e689",
+  "implementation_sha256": "86c64ceadae0e6affa3627bffb57885e8af0be97f2496bcd7ccfe7527f1cc385",
+  "author_file_sha256": "9130909b82eeec82df5873e468d3f83c2e23d4c20466830c3531dfb747f3d4bd",
+  "runs": [
+    {
+      "rho": -2.7755575615628914e-17,
+      "max_relative_vector_error": 1.5133597425585772e-10,
+      "small_error_max_absolute": 1.1171619185290638e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 45,
+          "observed_step": 45,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 90,
+          "observed_step": 90,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 45,
+          "observed_step": 45,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 90,
+          "observed_step": 90,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "exact-s0-rho0",
+      "kind": "exact",
+      "seed": 0,
+      "input_rho": 0,
+      "raw_gram": [
+        [
+          0.9999999999999997,
+          -2.8494933836422494e-18
+        ],
+        [
+          -2.8494933836422494e-18,
+          0.9999999999999998
+        ]
+      ],
+      "unit_gram": [
+        [
+          0.9999999999999998,
+          -1.5057747363166514e-17
+        ],
+        [
+          -1.5057747363166514e-17,
+          1.0000000000000002
+        ]
+      ]
+    },
+    {
+      "rho": 0.5,
+      "max_relative_vector_error": 8.614663260488154e-11,
+      "small_error_max_absolute": 2.0932968495481425e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 30,
+          "observed_step": 30,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 60,
+          "observed_step": 60,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 91,
+          "observed_step": 91,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 182,
+          "observed_step": 182,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "exact-s0-rho0.5",
+      "kind": "exact",
+      "seed": 0,
+      "input_rho": 0.5,
+      "raw_gram": [
+        [
+          0.9999999999999997,
+          0.4999999999999998
+        ],
+        [
+          0.4999999999999998,
+          0.9999999999999997
+        ]
+      ],
+      "unit_gram": [
+        [
+          0.9999999999999998,
+          0.5
+        ],
+        [
+          0.5,
+          0.9999999999999999
+        ]
+      ]
+    },
+    {
+      "rho": 0.9,
+      "max_relative_vector_error": 2.6673083061399817e-10,
+      "small_error_max_absolute": 1.155651609603025e-14,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 24,
+          "observed_step": 24,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 47,
+          "observed_step": 47,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 460,
+          "observed_step": 460,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 919,
+          "observed_step": 919,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "exact-s0-rho0.9",
+      "kind": "exact",
+      "seed": 0,
+      "input_rho": 0.9,
+      "raw_gram": [
+        [
+          0.9999999999999997,
+          0.8999999999999996
+        ],
+        [
+          0.8999999999999996,
+          0.9999999999999994
+        ]
+      ],
+      "unit_gram": [
+        [
+          0.9999999999999998,
+          0.9
+        ],
+        [
+          0.9,
+          1.0
+        ]
+      ]
+    },
+    {
+      "rho": 0.99,
+      "max_relative_vector_error": 6.063175893589791e-11,
+      "small_error_max_absolute": 1.056171682913856e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 22,
+          "observed_step": 22,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 44,
+          "observed_step": 44,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 4605,
+          "observed_step": 4605,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 9209,
+          "observed_step": 9209,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "exact-s0-rho0.99",
+      "kind": "exact",
+      "seed": 0,
+      "input_rho": 0.99,
+      "raw_gram": [
+        [
+          0.9999999999999997,
+          0.9899999999999997
+        ],
+        [
+          0.9899999999999997,
+          0.9999999999999997
+        ]
+      ],
+      "unit_gram": [
+        [
+          0.9999999999999998,
+          0.9899999999999998
+        ],
+        [
+          0.9899999999999998,
+          0.9999999999999999
+        ]
+      ]
+    },
+    {
+      "rho": 1.0408340855860843e-17,
+      "max_relative_vector_error": 8.903188175395716e-11,
+      "small_error_max_absolute": 1.1157906133596348e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 45,
+          "observed_step": 45,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 90,
+          "observed_step": 90,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 45,
+          "observed_step": 45,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 90,
+          "observed_step": 90,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "exact-s1-rho0",
+      "kind": "exact",
+      "seed": 1,
+      "input_rho": 0,
+      "raw_gram": [
+        [
+          0.9999999999999999,
+          2.860577791445082e-17
+        ],
+        [
+          2.860577791445082e-17,
+          1.0000000000000004
+        ]
+      ],
+      "unit_gram": [
+        [
+          0.9999999999999999,
+          4.995354306761347e-17
+        ],
+        [
+          4.995354306761347e-17,
+          0.9999999999999999
+        ]
+      ]
+    },
+    {
+      "rho": 0.49999999999999983,
+      "max_relative_vector_error": 1.166964312103688e-10,
+      "small_error_max_absolute": 2.16839738409075e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 30,
+          "observed_step": 30,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 60,
+          "observed_step": 60,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 91,
+          "observed_step": 91,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 182,
+          "observed_step": 182,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "exact-s1-rho0.5",
+      "kind": "exact",
+      "seed": 1,
+      "input_rho": 0.5,
+      "raw_gram": [
+        [
+          0.9999999999999999,
+          0.49999999999999994
+        ],
+        [
+          0.49999999999999994,
+          1.0000000000000007
+        ]
+      ],
+      "unit_gram": [
+        [
+          0.9999999999999999,
+          0.49999999999999983
+        ],
+        [
+          0.49999999999999983,
+          1.0000000000000002
+        ]
+      ]
+    },
+    {
+      "rho": 0.9000000000000001,
+      "max_relative_vector_error": 1.6579444729818053e-10,
+      "small_error_max_absolute": 1.1194502018797758e-14,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 24,
+          "observed_step": 24,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 47,
+          "observed_step": 47,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 460,
+          "observed_step": 460,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 919,
+          "observed_step": 919,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "exact-s1-rho0.9",
+      "kind": "exact",
+      "seed": 1,
+      "input_rho": 0.9,
+      "raw_gram": [
+        [
+          0.9999999999999999,
+          0.8999999999999999
+        ],
+        [
+          0.8999999999999999,
+          1.0
+        ]
+      ],
+      "unit_gram": [
+        [
+          0.9999999999999999,
+          0.8999999999999999
+        ],
+        [
+          0.8999999999999999,
+          1.0
+        ]
+      ]
+    },
+    {
+      "rho": 0.9900000000000002,
+      "max_relative_vector_error": 1.4375030685280507e-10,
+      "small_error_max_absolute": 8.008337352290733e-16,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 22,
+          "observed_step": 22,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 44,
+          "observed_step": 44,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 4605,
+          "observed_step": 4605,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 9209,
+          "observed_step": 9209,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "exact-s1-rho0.99",
+      "kind": "exact",
+      "seed": 1,
+      "input_rho": 0.99,
+      "raw_gram": [
+        [
+          0.9999999999999999,
+          0.9900000000000002
+        ],
+        [
+          0.9900000000000002,
+          0.9999999999999998
+        ]
+      ],
+      "unit_gram": [
+        [
+          0.9999999999999999,
+          0.9900000000000002
+        ],
+        [
+          0.9900000000000002,
+          1.0000000000000004
+        ]
+      ]
+    },
+    {
+      "rho": -1.0408340855860843e-17,
+      "max_relative_vector_error": 1.1813739055362991e-10,
+      "small_error_max_absolute": 1.1418750572958775e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 45,
+          "observed_step": 45,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 90,
+          "observed_step": 90,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 45,
+          "observed_step": 45,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 90,
+          "observed_step": 90,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "exact-s2-rho0",
+      "kind": "exact",
+      "seed": 2,
+      "input_rho": 0,
+      "raw_gram": [
+        [
+          0.9999999999999997,
+          2.101889560289134e-17
+        ],
+        [
+          2.101889560289134e-17,
+          1.0
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0,
+          -3.945767947528147e-18
+        ],
+        [
+          -3.945767947528147e-18,
+          1.0
+        ]
+      ]
+    },
+    {
+      "rho": 0.5000000000000001,
+      "max_relative_vector_error": 1.0769823045598255e-10,
+      "small_error_max_absolute": 2.317439380897046e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 30,
+          "observed_step": 30,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 60,
+          "observed_step": 60,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 91,
+          "observed_step": 91,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 182,
+          "observed_step": 182,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "exact-s2-rho0.5",
+      "kind": "exact",
+      "seed": 2,
+      "input_rho": 0.5,
+      "raw_gram": [
+        [
+          0.9999999999999997,
+          0.5
+        ],
+        [
+          0.5,
+          0.9999999999999994
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0,
+          0.5000000000000001
+        ],
+        [
+          0.5000000000000001,
+          1.0000000000000002
+        ]
+      ]
+    },
+    {
+      "rho": 0.9000000000000001,
+      "max_relative_vector_error": 2.6350626245786937e-10,
+      "small_error_max_absolute": 1.1185530260528307e-14,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 24,
+          "observed_step": 24,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 47,
+          "observed_step": 47,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 460,
+          "observed_step": 460,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 919,
+          "observed_step": 919,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "exact-s2-rho0.9",
+      "kind": "exact",
+      "seed": 2,
+      "input_rho": 0.9,
+      "raw_gram": [
+        [
+          0.9999999999999997,
+          0.8999999999999994
+        ],
+        [
+          0.8999999999999994,
+          0.9999999999999999
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0,
+          0.8999999999999999
+        ],
+        [
+          0.8999999999999999,
+          1.0
+        ]
+      ]
+    },
+    {
+      "rho": 0.9899999999999998,
+      "max_relative_vector_error": 1.5228315640579036e-10,
+      "small_error_max_absolute": 1.056171682913856e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 22,
+          "observed_step": 22,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 44,
+          "observed_step": 44,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 4605,
+          "observed_step": 4605,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 9209,
+          "observed_step": 9209,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "exact-s2-rho0.99",
+      "kind": "exact",
+      "seed": 2,
+      "input_rho": 0.99,
+      "raw_gram": [
+        [
+          0.9999999999999997,
+          0.9899999999999999
+        ],
+        [
+          0.9899999999999999,
+          1.0000000000000002
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0,
+          0.9900000000000001
+        ],
+        [
+          0.9900000000000001,
+          1.0000000000000002
+        ]
+      ]
+    },
+    {
+      "rho": 0.01801629131225982,
+      "max_relative_vector_error": 1.6971690911874809e-10,
+      "small_error_max_absolute": 1.021481219703941e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 45,
+          "observed_step": 45,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 89,
+          "observed_step": 89,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 46,
+          "observed_step": 46,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 92,
+          "observed_step": 92,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "bilinear-s0-rho0",
+      "kind": "bilinear",
+      "seed": 0,
+      "input_rho": 0,
+      "raw_gram": [
+        [
+          0.9903186211433626,
+          0.018447402232191212
+        ],
+        [
+          0.018447402232191212,
+          1.0586799749750342
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0,
+          0.018016291312259854
+        ],
+        [
+          0.018016291312259854,
+          0.9999999999999993
+        ]
+      ]
+    },
+    {
+      "rho": 0.26519193919652106,
+      "max_relative_vector_error": 2.3432454709285686e-10,
+      "small_error_max_absolute": 1.4187736911385774e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 36,
+          "observed_step": 36,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 71,
+          "observed_step": 71,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 62,
+          "observed_step": 62,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 124,
+          "observed_step": 124,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "bilinear-s0-rho0.5",
+      "kind": "bilinear",
+      "seed": 0,
+      "input_rho": 0.5,
+      "raw_gram": [
+        [
+          0.9903186211433626,
+          0.2566200364300183
+        ],
+        [
+          0.2566200364300183,
+          0.9455522691639427
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0,
+          0.26519193919652106
+        ],
+        [
+          0.26519193919652106,
+          1.0000000000000004
+        ]
+      ]
+    },
+    {
+      "rho": 0.8121227956228443,
+      "max_relative_vector_error": 1.685939684719604e-10,
+      "small_error_max_absolute": 5.839080250269432e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 25,
+          "observed_step": 25,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 49,
+          "observed_step": 49,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 244,
+          "observed_step": 244,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 488,
+          "observed_step": 488,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "bilinear-s0-rho0.9",
+      "kind": "bilinear",
+      "seed": 0,
+      "input_rho": 0.9,
+      "raw_gram": [
+        [
+          0.9903186211433626,
+          0.8013187603194238
+        ],
+        [
+          0.8013187603194238,
+          0.9830877257803976
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0,
+          0.8121227956228445
+        ],
+        [
+          0.8121227956228445,
+          0.9999999999999996
+        ]
+      ]
+    },
+    {
+      "rho": 0.9794684036532534,
+      "max_relative_vector_error": 3.233735123333675e-10,
+      "small_error_max_absolute": 5.93995257398358e-16,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 23,
+          "observed_step": 23,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 45,
+          "observed_step": 45,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 2242,
+          "observed_step": 2242,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 4484,
+          "observed_step": 4484,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "bilinear-s0-rho0.99",
+      "kind": "bilinear",
+      "seed": 0,
+      "input_rho": 0.99,
+      "raw_gram": [
+        [
+          0.9903186211433626,
+          0.9694318296565283
+        ],
+        [
+          0.9694318296565283,
+          0.9891877809613236
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0,
+          0.9794684036532533
+        ],
+        [
+          0.9794684036532533,
+          1.0000000000000002
+        ]
+      ]
+    },
+    {
+      "rho": -0.07090786520378739,
+      "max_relative_vector_error": 1.463252355724572e-10,
+      "small_error_max_absolute": 9.627603352058726e-16,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 49,
+          "observed_step": 49,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 97,
+          "observed_step": 97,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 42,
+          "observed_step": 42,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 84,
+          "observed_step": 84,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "bilinear-s1-rho0",
+      "kind": "bilinear",
+      "seed": 1,
+      "input_rho": 0,
+      "raw_gram": [
+        [
+          0.939010095834092,
+          -0.06992924665035663
+        ],
+        [
+          -0.06992924665035663,
+          1.0357587638978831
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0000000000000007,
+          -0.07090786520378742
+        ],
+        [
+          -0.07090786520378742,
+          1.0
+        ]
+      ]
+    },
+    {
+      "rho": 0.24178552674240628,
+      "max_relative_vector_error": 1.8216945500691932e-10,
+      "small_error_max_absolute": 1.3842837664081126e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 36,
+          "observed_step": 36,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 72,
+          "observed_step": 72,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 60,
+          "observed_step": 60,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 120,
+          "observed_step": 120,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "bilinear-s1-rho0.5",
+      "kind": "bilinear",
+      "seed": 1,
+      "input_rho": 0.5,
+      "raw_gram": [
+        [
+          0.939010095834092,
+          0.23781959054777654
+        ],
+        [
+          0.23781959054777654,
+          1.030301640928371
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0000000000000007,
+          0.24178552674240616
+        ],
+        [
+          0.24178552674240616,
+          0.9999999999999993
+        ]
+      ]
+    },
+    {
+      "rho": 0.8224328411994115,
+      "max_relative_vector_error": 1.8366437479971464e-10,
+      "small_error_max_absolute": 6.329533658865446e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 25,
+          "observed_step": 25,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 49,
+          "observed_step": 49,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 259,
+          "observed_step": 259,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 517,
+          "observed_step": 517,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "bilinear-s1-rho0.9",
+      "kind": "bilinear",
+      "seed": 1,
+      "input_rho": 0.9,
+      "raw_gram": [
+        [
+          0.939010095834092,
+          0.7976062032515507
+        ],
+        [
+          0.7976062032515507,
+          1.0016267072906462
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0000000000000007,
+          0.8224328411994117
+        ],
+        [
+          0.8224328411994117,
+          0.9999999999999998
+        ]
+      ]
+    },
+    {
+      "rho": 0.9814791803415641,
+      "max_relative_vector_error": 5.629991830685378e-10,
+      "small_error_max_absolute": 6.855121490028353e-16,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 23,
+          "observed_step": 23,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 45,
+          "observed_step": 45,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 2486,
+          "observed_step": 2486,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 4971,
+          "observed_step": 4971,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "bilinear-s1-rho0.99",
+      "kind": "bilinear",
+      "seed": 1,
+      "input_rho": 0.99,
+      "raw_gram": [
+        [
+          0.939010095834092,
+          0.9368367619858482
+        ],
+        [
+          0.9368367619858482,
+          0.970276256539933
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0000000000000007,
+          0.9814791803415641
+        ],
+        [
+          0.9814791803415641,
+          1.0000000000000007
+        ]
+      ]
+    },
+    {
+      "rho": 0.019016251026933217,
+      "max_relative_vector_error": 1.8892322564601805e-10,
+      "small_error_max_absolute": 9.75581951166279e-16,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 45,
+          "observed_step": 45,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 89,
+          "observed_step": 89,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 46,
+          "observed_step": 46,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 92,
+          "observed_step": 92,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "bilinear-s2-rho0",
+      "kind": "bilinear",
+      "seed": 2,
+      "input_rho": 0,
+      "raw_gram": [
+        [
+          0.8626229791243067,
+          0.016957310051554136
+        ],
+        [
+          0.016957310051554136,
+          0.9218135667059656
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0000000000000002,
+          0.01901625102693325
+        ],
+        [
+          0.01901625102693325,
+          1.0000000000000002
+        ]
+      ]
+    },
+    {
+      "rho": 0.2586071492003047,
+      "max_relative_vector_error": 1.4165000063011866e-10,
+      "small_error_max_absolute": 1.4236120703756925e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 36,
+          "observed_step": 36,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 71,
+          "observed_step": 71,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 61,
+          "observed_step": 61,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 122,
+          "observed_step": 122,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "bilinear-s2-rho0.5",
+      "kind": "bilinear",
+      "seed": 2,
+      "input_rho": 0.5,
+      "raw_gram": [
+        [
+          0.8626229791243067,
+          0.24857740609307125
+        ],
+        [
+          0.24857740609307125,
+          1.0710783160215116
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0000000000000002,
+          0.25860714920030453
+        ],
+        [
+          0.25860714920030453,
+          1.0
+        ]
+      ]
+    },
+    {
+      "rho": 0.7901366380594312,
+      "max_relative_vector_error": 1.7850273411919757e-10,
+      "small_error_max_absolute": 5.1833955466158386e-15,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 25,
+          "observed_step": 25,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 50,
+          "observed_step": 50,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 219,
+          "observed_step": 219,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 437,
+          "observed_step": 437,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "bilinear-s2-rho0.9",
+      "kind": "bilinear",
+      "seed": 2,
+      "input_rho": 0.9,
+      "raw_gram": [
+        [
+          0.8626229791243067,
+          0.720250633567127
+        ],
+        [
+          0.720250633567127,
+          0.9632563365709119
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0000000000000002,
+          0.7901366380594311
+        ],
+        [
+          0.7901366380594311,
+          0.9999999999999996
+        ]
+      ]
+    },
+    {
+      "rho": 0.9772253262414419,
+      "max_relative_vector_error": 3.5025814241704845e-10,
+      "small_error_max_absolute": 5.439480868842654e-16,
+      "crossings": [
+        {
+          "mode": "common",
+          "epsilon": 0.1,
+          "predicted_step": 23,
+          "observed_step": 23,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "common",
+          "epsilon": 0.01,
+          "predicted_step": 45,
+          "observed_step": 45,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.1,
+          "predicted_step": 2021,
+          "observed_step": 2021,
+          "right_censored": false,
+          "pass": true
+        },
+        {
+          "mode": "difference",
+          "epsilon": 0.01,
+          "predicted_step": 4042,
+          "observed_step": 4042,
+          "right_censored": false,
+          "pass": true
+        }
+      ],
+      "pass": true,
+      "run_id": "bilinear-s2-rho0.99",
+      "kind": "bilinear",
+      "seed": 2,
+      "input_rho": 0.99,
+      "raw_gram": [
+        [
+          0.8626229791243067,
+          0.8523103894898505
+        ],
+        [
+          0.8523103894898505,
+          0.8818304968783715
+        ]
+      ],
+      "unit_gram": [
+        [
+          1.0000000000000002,
+          0.9772253262414424
+        ],
+        [
+          0.9772253262414424,
+          1.0000000000000004
+        ]
+      ]
+    }
+  ],
+  "pass": true
+}

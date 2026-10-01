@@ -1,0 +1,250 @@
+{
+  "status": "complete",
+  "utc": "2026-10-01T02:13:26.088399+00:00",
+  "lock_sha256": "7a4b76d87e8835202189a8c917b2147e01c6fbc0fddcd1b28bd7502056374356",
+  "runs": [
+    {
+      "run": "development-restricted",
+      "world": 148001,
+      "initialization": 14801,
+      "arm": "restricted",
+      "full_target": {
+        "n": 512,
+        "answer_accuracy": 0.005859375,
+        "accuracy": 0.005859375,
+        "answer_probability": 0.009001607029527216
+      },
+      "full_target_two_calls": {
+        "n": 512,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "answer_probability": 0.9999186117202044,
+        "path_accuracy": 1.0,
+        "first_accuracy": 1.0
+      },
+      "strict_test_coverage": 0.826171875,
+      "relation_support": {
+        "id_test_restricted_supported": {
+          "n": 0
+        },
+        "id_test_restricted_unsupported": {
+          "n": 103,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0035689562344940148
+        },
+        "first_only_restricted_supported": {
+          "n": 229,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 6.5971802657104e-06
+        },
+        "first_only_restricted_unsupported": {
+          "n": 220,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 3.949452873492089e-05
+        },
+        "second_only_restricted_supported": {
+          "n": 128,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9995693797245622
+        },
+        "second_only_restricted_unsupported": {
+          "n": 128,
+          "answer_accuracy": 0.0390625,
+          "accuracy": 0.0390625,
+          "answer_probability": 0.06288395151625714
+        },
+        "background_neither_restricted_supported": {
+          "n": 128,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.00014645664089821958
+        },
+        "background_neither_restricted_unsupported": {
+          "n": 128,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.00016273983755246257
+        },
+        "strict_test_restricted_supported": {
+          "n": 206,
+          "answer_accuracy": 0.0048543689320388345,
+          "accuracy": 0.0048543689320388345,
+          "answer_probability": 0.006613723059488466
+        },
+        "strict_test_restricted_unsupported": {
+          "n": 217,
+          "answer_accuracy": 0.004608294930875576,
+          "accuracy": 0.004608294930875576,
+          "answer_probability": 0.009573317240585062
+        }
+      },
+      "checkpoint_sha256": "68dca001eb663d36a634fe5cd56186c257d3df282e4a85babc92b37af56fd12e"
+    },
+    {
+      "run": "development-broad",
+      "world": 148001,
+      "initialization": 14801,
+      "arm": "broad",
+      "full_target": {
+        "n": 512,
+        "answer_accuracy": 0.0,
+        "accuracy": 0.0,
+        "answer_probability": 0.0009052016291839133
+      },
+      "full_target_two_calls": {
+        "n": 512,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "answer_probability": 0.9998830361291766,
+        "path_accuracy": 1.0,
+        "first_accuracy": 1.0
+      },
+      "strict_test_coverage": 0.826171875,
+      "relation_support": {
+        "id_test_restricted_supported": {
+          "n": 0
+        },
+        "id_test_restricted_unsupported": {
+          "n": 103,
+          "answer_accuracy": 0.1262135922330097,
+          "accuracy": 0.1262135922330097,
+          "answer_probability": 0.14903798737537127
+        },
+        "first_only_restricted_supported": {
+          "n": 229,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0020466753732557
+        },
+        "first_only_restricted_unsupported": {
+          "n": 220,
+          "answer_accuracy": 0.004545454545454545,
+          "accuracy": 0.004545454545454545,
+          "answer_probability": 0.0063411508042624815
+        },
+        "second_only_restricted_supported": {
+          "n": 128,
+          "answer_accuracy": 0.84375,
+          "accuracy": 0.84375,
+          "answer_probability": 0.8267779096786398
+        },
+        "second_only_restricted_unsupported": {
+          "n": 128,
+          "answer_accuracy": 0.7578125,
+          "accuracy": 0.7578125,
+          "answer_probability": 0.7503688983984773
+        },
+        "background_neither_restricted_supported": {
+          "n": 128,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0025349217701657947
+        },
+        "background_neither_restricted_unsupported": {
+          "n": 128,
+          "answer_accuracy": 0.0078125,
+          "accuracy": 0.0078125,
+          "answer_probability": 0.008396678256368972
+        },
+        "strict_test_restricted_supported": {
+          "n": 206,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.00045592173705013173
+        },
+        "strict_test_restricted_unsupported": {
+          "n": 217,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0006677589760962116
+        }
+      },
+      "checkpoint_sha256": "91a7db737bc47bff96b3260fbf7f960159e8cc580b31e55fa19e51551b3fdc6b"
+    },
+    {
+      "run": "development-positive",
+      "world": 148001,
+      "initialization": 14801,
+      "arm": "positive",
+      "full_target": {
+        "n": 512,
+        "answer_accuracy": 0.3046875,
+        "accuracy": 0.3046875,
+        "answer_probability": 0.2947123902491194
+      },
+      "full_target_two_calls": {
+        "n": 512,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "answer_probability": 0.9998913519084454,
+        "path_accuracy": 1.0,
+        "first_accuracy": 1.0
+      },
+      "strict_test_coverage": 0.826171875,
+      "relation_support": {
+        "id_test_restricted_supported": {
+          "n": 0
+        },
+        "id_test_restricted_unsupported": {
+          "n": 103,
+          "answer_accuracy": 0.49514563106796117,
+          "accuracy": 0.49514563106796117,
+          "answer_probability": 0.4768704432978304
+        },
+        "first_only_restricted_supported": {
+          "n": 229,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0005049848308909329
+        },
+        "first_only_restricted_unsupported": {
+          "n": 220,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0037287464607267495
+        },
+        "second_only_restricted_supported": {
+          "n": 128,
+          "answer_accuracy": 0.9296875,
+          "accuracy": 0.9296875,
+          "answer_probability": 0.9101251671163482
+        },
+        "second_only_restricted_unsupported": {
+          "n": 128,
+          "answer_accuracy": 0.9609375,
+          "accuracy": 0.9609375,
+          "answer_probability": 0.9316855034558102
+        },
+        "background_neither_restricted_supported": {
+          "n": 128,
+          "answer_accuracy": 0.0078125,
+          "accuracy": 0.0078125,
+          "answer_probability": 0.006425265664068426
+        },
+        "background_neither_restricted_unsupported": {
+          "n": 128,
+          "answer_accuracy": 0.0234375,
+          "accuracy": 0.0234375,
+          "answer_probability": 0.018442185368965403
+        },
+        "strict_test_restricted_supported": {
+          "n": 206,
+          "answer_accuracy": 0.1650485436893204,
+          "accuracy": 0.1650485436893204,
+          "answer_probability": 0.15646689744717007
+        },
+        "strict_test_restricted_unsupported": {
+          "n": 217,
+          "answer_accuracy": 0.17050691244239632,
+          "accuracy": 0.17050691244239632,
+          "answer_probability": 0.1558862279238713
+        }
+      },
+      "checkpoint_sha256": "99b61674e65a19b0cb5b71500a6444ae7ea77ddfbcede56bc5440b2a4f91e420"
+    }
+  ]
+}

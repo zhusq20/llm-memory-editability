@@ -1,0 +1,26 @@
+{
+  "method": "NFKC/casefold grouping; punctuation/accent variants quarantined",
+  "limitations": "No claim of exhaustive real-world entity resolution",
+  "review_groups": [
+    [
+      "the round up",
+      "the round-up"
+    ],
+    [
+      "windows 1.0",
+      "windows 10"
+    ],
+    [
+      "mac os",
+      "macos"
+    ],
+    [
+      "brown hills",
+      "brownhills"
+    ],
+    [
+      "a.u.s.a.",
+      "ausa"
+    ]
+  ]
+}

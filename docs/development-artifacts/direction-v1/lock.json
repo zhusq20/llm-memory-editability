@@ -1,0 +1,837 @@
+{
+  "created": "2026-09-27T23:39:20.340506+00:00",
+  "config": {
+    "protocol": "v2.15-target-complete-direction-development",
+    "parent_seeds": [
+      0,
+      1
+    ],
+    "people": [
+      0,
+      1,
+      2
+    ],
+    "tasks": [
+      "selective",
+      "coherent",
+      "independent"
+    ],
+    "target": "blocks.0.mlp.down.weight",
+    "tuning_steps": 256,
+    "main_steps": 1024,
+    "tuning_candidates_per_cell": 12,
+    "tuning_person": 0,
+    "main_trajectories": 144,
+    "alpha_R_CE": 1.0,
+    "weight_decay": 0.0,
+    "precision": "FP32 forwards/gradients; FP64 CE/KL reductions, representation eigendecomposition and dual solves; TF32 off",
+    "solver": "Rank-8 unbiased randomized generalized Gauss-Newton sketch, refreshed every 16 attempted updates, damping 0.01; exact representation curvature added using 16 CG iterations. This is a diagnostic approximation, not an author implementation. Refresh immediately following a rejected update.",
+    "constraint": "Sequential linearized original-distance constraint with interior restoration, followed by actual parent-relative distance acceptance; projected actual Adam increments for strict representation nullspace. Feasible interior-restoration steps may increase data objective at most 5% while strictly decreasing distance; logged as solver work.",
+    "soft_objective_matching": "Penalty selected jointly across both solvers for each protection object; each solver's learning rate selected on E/V.",
+    "selection": "Sum V broken across six tuning cases then mean E NLL; never U or combination D.",
+    "rank_threshold": "1e-10 relative to largest eigenvalue of FP64 representation covariance",
+    "hard_tolerance": "1e-10 normalized representation distance at strict zero; otherwise 1e-8 + 1e-5 * budget",
+    "line_search_max": 10,
+    "consecutive_rejection_stop": 10,
+    "notes": "Shared batching accelerates independent runs. Batch wall time includes evaluation; component operation counts and padding cost are retained, and serial timings are required before claiming comparative wall-clock efficiency. Checkpoints indexed by attempts with accepted counts retained."
+  },
+  "files": {
+    "configs/bios-direction-v1.json": "288bb995ef690ddd087063d0d751652aea0fb1b851286928006835e58a2ad1ee",
+    "src/llm_memory_editability/bios_direction.py": "1240f83f5ee558101bbf6f808522fa6c37ffe09dc2296749bd5e685eff8aa41d",
+    "scripts/run_bios_direction.py": "eb163506fd5823f711d43ab815d3e8154ca81503bcc0b2c2584a3f4a7deabc56",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "src/llm_memory_editability/bios_data.py": "d5568901f2042a6d89d447f47eddae9764eced0a9e71e3ea5adc0038a7e636d6",
+    "results/bios-path-minimal-v1/seed-0/parent.pt": "e1a4e179f63fc13c77e80e59e8db4475803c43d8965435a97650d61bef14522b",
+    "results/bios-path-minimal-v1/seed-1/parent.pt": "c570202d825947da1cf3b95f4cd26621474618b6d585c2ae8d47d43efb66f32b"
+  },
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:16:10) [GCC 11.2.0]",
+  "executable": "/home/siqizhu4/miniconda3/bin/python",
+  "torch": "2.11.0+cu130",
+  "platform": "Linux-6.8.0-85-generic-x86_64-with-glibc2.39",
+  "arms": {
+    "func-soft-adam": [
+      {
+        "lr": 0.0001,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.0001,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.0001,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.0001,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      }
+    ],
+    "func-soft-gn": [
+      {
+        "lr": 0.1,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.1,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.1,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.1,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      }
+    ],
+    "func-hard-adam": [
+      {
+        "lr": 0.0001,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.0001,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.0001,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.0001,
+        "level": 0.1,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 0.1,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 0.1,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      }
+    ],
+    "func-hard-gn": [
+      {
+        "lr": 0.1,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.1,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.1,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.1,
+        "level": 0.1,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 0.1,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 0.1,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      }
+    ],
+    "repr-soft-adam": [
+      {
+        "lr": 0.0001,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.0001,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.0001,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.0001,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      }
+    ],
+    "repr-soft-gn": [
+      {
+        "lr": 0.1,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.1,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.1,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.1,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      }
+    ],
+    "repr-hard-adam": [
+      {
+        "lr": 0.0001,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.0001,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.0001,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.0001,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.001,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.01,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      }
+    ],
+    "repr-hard-gn": [
+      {
+        "lr": 0.1,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.1,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.1,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.1,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 0.3,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      {
+        "lr": 1.0,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      }
+    ]
+  }
+}

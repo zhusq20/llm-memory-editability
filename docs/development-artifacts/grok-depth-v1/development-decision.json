@@ -1,0 +1,150 @@
+{
+  "utc": "2026-09-30T01:03:13.145569+00:00",
+  "selected": "unchanged base recipe: lr1e-4 wd.1 dropout.1 width128 phi6 budget128000",
+  "reason": "Two-layer development achieves sustained >90% held-out composition and 97.08% fixed endpoint; no retuning needed. Four-layer reference also succeeds. All development endpoints retained; no confirmation worlds read.",
+  "development": {
+    "dev-d2-original": {
+      "parameters": 416512,
+      "training_seconds": 125.8127673609415,
+      "evaluation_seconds": 1.1260491695720702,
+      "endpoint": {
+        "step": 128000,
+        "utc": "2026-09-30T01:00:16.690367+00:00",
+        "parameters": 416512,
+        "training_seconds": 125.8127673609415,
+        "capture_seconds": 0.6041618440067396,
+        "examples": 32768000,
+        "counts": {
+          "atomic": 4889904,
+          "composite": 27878096
+        },
+        "effective_input_tokens": 126182096,
+        "supervised_tokens": 65536000,
+        "estimated_training_flops": 318196678656000,
+        "last_batch_loss": 0.004912014119327068,
+        "atomic": {
+          "n": 1024,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 6.468004357884638e-06
+        },
+        "train_composite": {
+          "n": 5838,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 5.646218596666586e-06
+        },
+        "test_composite": {
+          "n": 754,
+          "answer_accuracy": 0.9708222811671088,
+          "accuracy": 0.9708222811671088,
+          "nll": 0.04894252493977547
+        },
+        "ood_composite": {
+          "n": 14,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "nll": 6.5166850090026855
+        },
+        "two_calls": {
+          "n": 754,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 5.410871835920261e-06
+        },
+        "evaluation_seconds": 1.1260491695720702
+      }
+    },
+    "dev-d4-reference": {
+      "parameters": 813056,
+      "training_seconds": 182.0216330656549,
+      "evaluation_seconds": 1.648130600224249,
+      "endpoint": {
+        "step": 128000,
+        "utc": "2026-09-30T01:01:28.449357+00:00",
+        "parameters": 813056,
+        "training_seconds": 182.0216330656549,
+        "capture_seconds": 0.5995612218976021,
+        "examples": 32768000,
+        "counts": {
+          "atomic": 4889904,
+          "composite": 27878096
+        },
+        "effective_input_tokens": 126182096,
+        "supervised_tokens": 65536000,
+        "estimated_training_flops": 629044936704000,
+        "last_batch_loss": 0.0007603238918818533,
+        "atomic": {
+          "n": 1024,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 3.510803480821778e-06
+        },
+        "train_composite": {
+          "n": 5838,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 5.936707566434052e-06
+        },
+        "test_composite": {
+          "n": 754,
+          "answer_accuracy": 0.9893899204244032,
+          "accuracy": 0.9893899204244032,
+          "nll": 0.014771726913750172
+        },
+        "ood_composite": {
+          "n": 14,
+          "answer_accuracy": 0.07142857142857142,
+          "accuracy": 0.07142857142857142,
+          "nll": 4.617985248565674
+        },
+        "two_calls": {
+          "n": 754,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 2.9723194074904313e-06
+        },
+        "evaluation_seconds": 1.648130600224249
+      }
+    }
+  },
+  "confirmation_worlds": [
+    143011,
+    143012,
+    143013
+  ],
+  "initializations": [
+    14301,
+    14302
+  ],
+  "primary_runs": [
+    "conf-w143011-s14301-d1",
+    "conf-w143011-s14301-d2",
+    "conf-w143011-s14302-d1",
+    "conf-w143011-s14302-d2",
+    "conf-w143012-s14301-d1",
+    "conf-w143012-s14301-d2",
+    "conf-w143012-s14302-d1",
+    "conf-w143012-s14302-d2",
+    "conf-w143013-s14301-d1",
+    "conf-w143013-s14301-d2",
+    "conf-w143013-s14302-d1",
+    "conf-w143013-s14302-d2"
+  ],
+  "conditional_wide_runs": [
+    "conf-w143011-s14301-d1wide",
+    "conf-w143011-s14302-d1wide",
+    "conf-w143012-s14301-d1wide",
+    "conf-w143012-s14302-d1wide",
+    "conf-w143013-s14301-d1wide",
+    "conf-w143013-s14302-d1wide"
+  ],
+  "parameter_control": {
+    "width": 180,
+    "parameters": 419220,
+    "two_layer_parameters": 416512,
+    "relative_difference": 0.0065016133988937685,
+    "selection": "nearest parameter count over widths multiple of 4; no accuracy used"
+  },
+  "boundary": "Shared training recipe, not per-depth optimal hyperparameters; no linear scaling law from two depths."
+}

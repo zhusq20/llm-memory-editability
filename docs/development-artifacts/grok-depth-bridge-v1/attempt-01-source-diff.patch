@@ -1,0 +1,55 @@
+--- original-frozen
++++ attempt-01-actual
+@@ -187,6 +187,11 @@
+         for row in world[name]
+     }
+     training = {tuple(map(int, row)) for row in world["train_composite"]}
++    split_lookup = {
++        tuple(map(int, row)): name
++        for name in ("train_composite", "test_composite", "unused_composite")
++        for row in world[name]
++    }
+     world_hash = world["metadata"]["dataset_sha256"]
+     out = {
+         "original_rows": rows.copy(),
+@@ -201,6 +206,9 @@
+         "different_candidate_count": np.zeros(n, dtype=np.int64),
+         "same_candidate_count": np.zeros(n, dtype=np.int64),
+         "same_relation_control": np.full(n, "missing", dtype="U24"),
++        "same_counterfactual_rows": np.full((n, 4), -1, dtype=np.int64),
++        "same_counterfactual_split": np.full(n, "missing", dtype="U24"),
++        "different_counterfactual_split": np.full(n, "missing", dtype="U24"),
+         "different_nondegenerate": np.zeros(n, dtype=bool),
+     }
+     rejection_names = (
+@@ -257,6 +265,7 @@
+             out["different_valid"][index] = True
+             out["different_reason"][index] = "eligible"
+             out["different_nondegenerate"][index] = db != dt and db != tail
++            out["different_counterfactual_split"][index] = split_lookup[(dh, r1, r2, dt)]
+         candidates = [
+             (dh, dr, db)
+             for dh, dr, db in atoms
+@@ -272,6 +281,9 @@
+             out["same_valid"][index] = True
+             out["same_reason"][index] = "eligible"
+             out["same_relation_control"][index] = "same_r1" if donor[1] == r1 else "different_r1"
++            same_cf = (donor[0], donor[1], r2, tail)
++            out["same_counterfactual_rows"][index] = same_cf
++            out["same_counterfactual_split"][index] = split_lookup[same_cf]
+     return out
+ 
+ 
+@@ -583,6 +595,12 @@
+             "different_reasons": dict(Counter(donors["different_reason"].tolist())),
+             "same_reasons": dict(Counter(donors["same_reason"].tolist())),
+             "same_relation_control": dict(Counter(donors["same_relation_control"].tolist())),
++            "same_counterfactual_split": dict(
++                Counter(donors["same_counterfactual_split"].tolist())
++            ),
++            "different_counterfactual_split": dict(
++                Counter(donors["different_counterfactual_split"].tolist())
++            ),
+         },
+         "engineering_checks": {
+             "identity_predictions_equal": True,

@@ -1,0 +1,137 @@
+{
+  "files": [
+    {
+      "name": "archive-difference-coverage.csv",
+      "bytes": 15567,
+      "sha256": "f6fc25b131c004e4be8356a7cda9b71392bb417d71a43dc4513d078e9a21e2dc",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/archive-difference-coverage.csv"
+    },
+    {
+      "name": "archive-discrepant-queries.csv",
+      "bytes": 2576,
+      "sha256": "4cab1123409b425c065bf7c4ddf48fbaafbb7c78c80d4a62e1b796f371ca14b9",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/archive-discrepant-queries.csv"
+    },
+    {
+      "name": "audit.json",
+      "bytes": 6329,
+      "sha256": "467b01cae6f2f10ef35d9e854de418780b77d4a4ac14f5b1bad5cb98c5bbf410",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/audit.json"
+    },
+    {
+      "name": "calibration.csv",
+      "bytes": 6288,
+      "sha256": "87b33cdb3454af70b123862b3e9ae64ffd32a2f72bbd955bf58d29ab0ec0f1f2",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/calibration.csv"
+    },
+    {
+      "name": "costs.csv",
+      "bytes": 74610,
+      "sha256": "914b2b40c25cdbbe538525106c28a60b859f1b736603d38614de5d90bcafb9dc",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/costs.csv"
+    },
+    {
+      "name": "coverage.csv",
+      "bytes": 47109,
+      "sha256": "964c09bf12f19a719b4608b7bcd679dab303e258e7f66a6b83d891804a2fa6df",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/coverage.csv"
+    },
+    {
+      "name": "denominator-facts.json",
+      "bytes": 3975,
+      "sha256": "6a53475dd3db3b5580e6333c8ea33c4f2e890c39cf7e22316ed5cf32bd68d35d",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/denominator-facts.json"
+    },
+    {
+      "name": "donor-contrasts.csv",
+      "bytes": 3156804,
+      "sha256": "95368ded30829b7e2b544ede31d6050b14870ae6e107c55137b08f63686ad5aa",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/donor-contrasts.csv"
+    },
+    {
+      "name": "donor-coverage.csv",
+      "bytes": 38859,
+      "sha256": "bb733001415ba85b24a6512cb3abda6f72d2bc0b4751f14765b58259c05bf8f6",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/donor-coverage.csv"
+    },
+    {
+      "name": "donor-outcomes.csv",
+      "bytes": 541704,
+      "sha256": "c54649f154bda388de9769f68eef35ef36f2c2d056245213087815c5fbdcee3e",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/donor-outcomes.csv"
+    },
+    {
+      "name": "interpretation-facts.json",
+      "bytes": 12798,
+      "sha256": "f9fb827b5742698d68dae3b0cdee51173069154eb48dfeb06f1f0db0b25516d9",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/interpretation-facts.json"
+    },
+    {
+      "name": "interpretation.md",
+      "bytes": 4722,
+      "sha256": "6a5a3a7fd7ce5d8b5a2877126a6da814e2ca5380c0ab74274fe6d123952431ed",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/interpretation.md"
+    },
+    {
+      "name": "necessity-family-control-means.csv",
+      "bytes": 13976,
+      "sha256": "f920663552c7099973176b5c8c101ea5b3f04727152a53492e201e47b51f8f26",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/necessity-family-control-means.csv"
+    },
+    {
+      "name": "necessity-family-controls.pdf",
+      "bytes": 25850,
+      "sha256": "27eef9eff5822eeaffa61cf0daf09b21cb032a52520d04cbef036802db3c7ed6",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/necessity-family-controls.pdf"
+    },
+    {
+      "name": "necessity-family-controls.png",
+      "bytes": 360602,
+      "sha256": "e0a7e4afedfbd10cae8e587af8039428e7d49b23225742569f31d64417399870",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/necessity-family-controls.png"
+    },
+    {
+      "name": "necessity.csv",
+      "bytes": 2015690,
+      "sha256": "324f60515fc4c012ff3155e032887e0d4a05bc245734c539d78e12f6b4234835",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/necessity.csv"
+    },
+    {
+      "name": "paired-necessity.csv",
+      "bytes": 1968953,
+      "sha256": "59c87364bff4985254a68c434b33d96da27de80fdc947c1ef5222c86f85a3717",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/paired-necessity.csv"
+    },
+    {
+      "name": "prefix-drift.csv",
+      "bytes": 26769,
+      "sha256": "7f5edb6ea265ae0fd5a365fff8f49a3deb78ed64df5586a38e7305e23ebb1526",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/prefix-drift.csv"
+    },
+    {
+      "name": "projection-capture.csv",
+      "bytes": 12357,
+      "sha256": "a881a9a526e4aeaa9e068863f647206b250529d4c4478da8b16a8ee7280f1a5d",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/projection-capture.csv"
+    },
+    {
+      "name": "report.md",
+      "bytes": 49083,
+      "sha256": "bbb94b3ccc2a259b0981b0ffb45b4a2639fbcdc9b5fee07bebd39d0df17244c8",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/report.md"
+    },
+    {
+      "name": "selectivity.csv",
+      "bytes": 252403,
+      "sha256": "52be6a17573ce9587004735ad73fccdf0103bc6643a896f401a77ab325167fe4",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/selectivity.csv"
+    },
+    {
+      "name": "small-artifact-manifest.json",
+      "bytes": 3284,
+      "sha256": "c808c592e608184ef9dd811596c1364e210b5b73865db49c27fae628a1e10e78",
+      "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p4/necessity-v2-summary/small-artifact-manifest.json"
+    }
+  ],
+  "verified": true
+}

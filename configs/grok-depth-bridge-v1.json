@@ -1,0 +1,166 @@
+{
+  "experiment": "grok-depth-bridge-v1",
+  "source_root": "results/grok-depth-v1",
+  "output_root": "results/grok-depth-bridge-v1",
+  "donor_seed": 20260930,
+  "batch_size": 1024,
+  "development_runs": [
+    {
+      "run_id": "dev-d2-original",
+      "phase": "development",
+      "steps": [
+        4000,
+        32000,
+        64000,
+        128000
+      ]
+    }
+  ],
+  "confirmation_runs": [
+    {
+      "run_id": "conf-w143011-s14301-d1",
+      "phase": "confirmation",
+      "steps": [
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143011-s14301-d2",
+      "phase": "confirmation",
+      "steps": [
+        4000,
+        32000,
+        64000,
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143011-s14301-d1wide",
+      "phase": "confirmation",
+      "steps": [
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143011-s14302-d1",
+      "phase": "confirmation",
+      "steps": [
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143011-s14302-d2",
+      "phase": "confirmation",
+      "steps": [
+        4000,
+        32000,
+        64000,
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143011-s14302-d1wide",
+      "phase": "confirmation",
+      "steps": [
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143012-s14301-d1",
+      "phase": "confirmation",
+      "steps": [
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143012-s14301-d2",
+      "phase": "confirmation",
+      "steps": [
+        4000,
+        32000,
+        64000,
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143012-s14301-d1wide",
+      "phase": "confirmation",
+      "steps": [
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143012-s14302-d1",
+      "phase": "confirmation",
+      "steps": [
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143012-s14302-d2",
+      "phase": "confirmation",
+      "steps": [
+        4000,
+        32000,
+        64000,
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143012-s14302-d1wide",
+      "phase": "confirmation",
+      "steps": [
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143013-s14301-d1",
+      "phase": "confirmation",
+      "steps": [
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143013-s14301-d2",
+      "phase": "confirmation",
+      "steps": [
+        4000,
+        32000,
+        64000,
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143013-s14301-d1wide",
+      "phase": "confirmation",
+      "steps": [
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143013-s14302-d1",
+      "phase": "confirmation",
+      "steps": [
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143013-s14302-d2",
+      "phase": "confirmation",
+      "steps": [
+        4000,
+        32000,
+        64000,
+        128000
+      ]
+    },
+    {
+      "run_id": "conf-w143013-s14302-d1wide",
+      "phase": "confirmation",
+      "steps": [
+        128000
+      ]
+    }
+  ],
+  "evaluation_tf32": true
+}

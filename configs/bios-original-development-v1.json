@@ -1,0 +1,81 @@
+{
+  "protocol": "14.27",
+  "stage": "10k-development",
+  "world_seeds": [142701, 142702],
+  "initialization_seeds": [1427],
+  "people": 10000,
+  "data_root": "data/bios-original-v1",
+  "result_root": "results/bios-original-development-v1",
+  "source_manifest": "configs/bios-source-manifest.json",
+  "model": {
+    "vocab_size": 50257,
+    "width": 768,
+    "layers": 12,
+    "heads": 12,
+    "context": 512,
+    "rotary_fraction": 0.25,
+    "rotary_base": 10000,
+    "dropout": 0.0
+  },
+  "pretrain": {
+    "conditions": ["S", "M", "MP"],
+    "passes": 540,
+    "nodes": [0, 30, 90, 180, 360, 540],
+    "batch_size": 96,
+    "micro_batch_size": 24,
+    "learning_rate": 0.001,
+    "minimum_lr_ratio": 0.1,
+    "warmup_steps": 1000,
+    "weight_decay": 0.1,
+    "adam_betas": [0.9, 0.999],
+    "adam_epsilon": 0.000001,
+    "gradient_clip": 1.0,
+    "precision": "bf16-autocast-fp32-parameters",
+    "compile": false
+  },
+  "adapt": {
+    "epochs": 10,
+    "batch_size": 48,
+    "micro_batch_size": 24,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "qv_rank": 8,
+    "embedding_rank": 128,
+    "lora_scale": 1.0
+  },
+  "task": {
+    "epochs": 10,
+    "conditions": ["S", "M", "MP", "MP-R", "MP-Random", "MP-CoT"],
+    "ranking_coefficient": 0.1,
+    "ranking_candidates_to_calibrate": [0.1, 0.3],
+    "margin": 0.5,
+    "rule_repetitions_per_epoch": 100
+  },
+  "evaluation": {
+    "splits": ["dev", "test"],
+    "views": [0, 1, 2, 3, 4, 5],
+    "batch_size": 48,
+    "max_new_tokens": 96,
+    "pretrain_diagnostic_people": 128
+  },
+  "edit": {
+    "people_per_world": 16,
+    "steps": 64,
+    "nodes": [0, 16, 32, 64],
+    "learning_rate_candidates": [0.00001, 0.00003],
+    "target_batch": 32,
+    "replay_batch": 32,
+    "replay_pool": 256,
+    "kl_coefficient": 1.0
+  },
+  "formal": {
+    "status": "pending-development-calibration-and-configuration-freeze",
+    "people": 100000,
+    "world_seeds": [142711, 142712, 142713],
+    "initialization_seeds": [1427, 1428],
+    "pretrains": 18,
+    "adaptations": 18,
+    "task_branches": 36,
+    "edits": 2304
+  }
+}

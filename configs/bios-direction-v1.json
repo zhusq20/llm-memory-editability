@@ -1,0 +1,35 @@
+{
+  "protocol": "v2.15-target-complete-direction-development",
+  "parent_seeds": [
+    0,
+    1
+  ],
+  "people": [
+    0,
+    1,
+    2
+  ],
+  "tasks": [
+    "selective",
+    "coherent",
+    "independent"
+  ],
+  "target": "blocks.0.mlp.down.weight",
+  "tuning_steps": 256,
+  "main_steps": 1024,
+  "tuning_candidates_per_cell": 12,
+  "tuning_person": 0,
+  "main_trajectories": 144,
+  "alpha_R_CE": 1.0,
+  "weight_decay": 0.0,
+  "precision": "FP32 forwards/gradients; FP64 CE/KL reductions, representation eigendecomposition and dual solves; TF32 off",
+  "solver": "Rank-8 unbiased randomized generalized Gauss-Newton sketch, refreshed every 16 attempted updates, damping 0.01; exact representation curvature added using 16 CG iterations. This is a diagnostic approximation, not an author implementation. Refresh immediately following a rejected update.",
+  "constraint": "Sequential linearized original-distance constraint with interior restoration, followed by actual parent-relative distance acceptance; projected actual Adam increments for strict representation nullspace. Feasible interior-restoration steps may increase data objective at most 5% while strictly decreasing distance; logged as solver work.",
+  "soft_objective_matching": "Penalty selected jointly across both solvers for each protection object; each solver's learning rate selected on E/V.",
+  "selection": "Sum V broken across six tuning cases then mean E NLL; never U or combination D.",
+  "rank_threshold": "1e-10 relative to largest eigenvalue of FP64 representation covariance",
+  "hard_tolerance": "1e-10 normalized representation distance at strict zero; otherwise 1e-8 + 1e-5 * budget",
+  "line_search_max": 10,
+  "consecutive_rejection_stop": 10,
+  "notes": "Shared batching accelerates independent runs. Batch wall time includes evaluation; component operation counts and padding cost are retained, and serial timings are required before claiming comparative wall-clock efficiency. Checkpoints indexed by attempts with accepted counts retained."
+}

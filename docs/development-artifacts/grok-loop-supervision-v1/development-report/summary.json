@@ -1,0 +1,88 @@
+{
+  "experiment": "grok-loop-supervision-development-v1",
+  "runs": 2,
+  "worlds": 1,
+  "steps": 8000,
+  "summary": {
+    "atomic": {
+      "single_r4": 1.0,
+      "single_r8": 0.994140625,
+      "multi_r4": 1.0,
+      "multi_r8": 0.998046875,
+      "r4_effect": 0.0,
+      "r8_effect": 0.00390625,
+      "single_change_8_minus_4": -0.005859375,
+      "multi_change_8_minus_4": -0.001953125,
+      "change_effect": 0.00390625
+    },
+    "test_full_composite": {
+      "single_r4": 1.0,
+      "single_r8": 1.0,
+      "multi_r4": 0.9977578475336323,
+      "multi_r8": 0.9977578475336323,
+      "r4_effect": -0.0022421524663677195,
+      "r8_effect": -0.0022421524663677195,
+      "single_change_8_minus_4": 0.0,
+      "multi_change_8_minus_4": 0.0,
+      "change_effect": 0.0
+    },
+    "ood_composite": {
+      "single_r4": 0.10185185185185185,
+      "single_r8": 0.40185185185185185,
+      "multi_r4": 0.2777777777777778,
+      "multi_r8": 0.44074074074074077,
+      "r4_effect": 0.17592592592592593,
+      "r8_effect": 0.03888888888888892,
+      "single_change_8_minus_4": 0.3,
+      "multi_change_8_minus_4": 0.16296296296296298,
+      "change_effect": -0.137037037037037
+    }
+  },
+  "world_results": [
+    {
+      "world": 145001,
+      "split": "atomic",
+      "initializations": 1,
+      "single_r4": 1.0,
+      "single_r8": 0.994140625,
+      "multi_r4": 1.0,
+      "multi_r8": 0.998046875,
+      "r4_effect": 0.0,
+      "r8_effect": 0.00390625,
+      "single_change_8_minus_4": -0.005859375,
+      "multi_change_8_minus_4": -0.001953125,
+      "change_effect": 0.00390625
+    },
+    {
+      "world": 145001,
+      "split": "test_full_composite",
+      "initializations": 1,
+      "single_r4": 1.0,
+      "single_r8": 1.0,
+      "multi_r4": 0.9977578475336323,
+      "multi_r8": 0.9977578475336323,
+      "r4_effect": -0.0022421524663677195,
+      "r8_effect": -0.0022421524663677195,
+      "single_change_8_minus_4": 0.0,
+      "multi_change_8_minus_4": 0.0,
+      "change_effect": 0.0
+    },
+    {
+      "world": 145001,
+      "split": "ood_composite",
+      "initializations": 1,
+      "single_r4": 0.10185185185185185,
+      "single_r8": 0.40185185185185185,
+      "multi_r4": 0.2777777777777778,
+      "multi_r8": 0.44074074074074077,
+      "r4_effect": 0.17592592592592593,
+      "r8_effect": 0.03888888888888892,
+      "single_change_8_minus_4": 0.3,
+      "multi_change_8_minus_4": 0.16296296296296298,
+      "change_effect": -0.137037037037037
+    }
+  ],
+  "training_seconds": 39.75307347474154,
+  "pair_initialization_and_exposure_audit": true,
+  "interpretation": "Paired continuation on existing worlds. Training-objective effect; not proof of fixed-point dynamics."
+}

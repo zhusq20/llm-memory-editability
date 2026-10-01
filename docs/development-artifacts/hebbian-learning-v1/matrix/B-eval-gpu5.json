@@ -1,0 +1,65 @@
+[
+  {
+    "phase": "adapt",
+    "run_id": "B/eval-lr0.0001-e2",
+    "case_ids": [
+      7922,
+      21493,
+      18569,
+      14857,
+      10453,
+      16742,
+      17347,
+      6563
+    ],
+    "condition": "B",
+    "seed": 0,
+    "episode_id": 2,
+    "split": "eval",
+    "lr": 0.0001,
+    "steps": 128,
+    "diagnostics": true
+  },
+  {
+    "phase": "adapt",
+    "run_id": "B/eval-lr0.0001-e8",
+    "case_ids": [
+      8698,
+      19772,
+      3724,
+      2204,
+      16242,
+      1823,
+      10224,
+      6672
+    ],
+    "condition": "B",
+    "seed": 0,
+    "episode_id": 8,
+    "split": "eval",
+    "lr": 0.0001,
+    "steps": 128,
+    "diagnostics": true
+  },
+  {
+    "phase": "adapt",
+    "run_id": "B/eval-lr0.0001-e14",
+    "case_ids": [
+      11349,
+      18209,
+      14455,
+      10455,
+      11348,
+      13541,
+      3260,
+      11814
+    ],
+    "condition": "B",
+    "seed": 0,
+    "episode_id": 14,
+    "split": "eval",
+    "lr": 0.0001,
+    "steps": 128,
+    "diagnostics": true
+  }
+]

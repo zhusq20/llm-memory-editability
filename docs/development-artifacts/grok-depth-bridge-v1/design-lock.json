@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-09-30T01:40:12.326290+00:00",
+  "phase": "design_before_any_new_model_evaluation",
+  "files": {
+    "configs/grok-depth-bridge-v1.json": "eb01d8fe4885a961b00f98ba55f5cb2613e1eea025175ef58e23aa35963f7083",
+    "docs/development-artifacts/grok-depth-bridge-v1/preregistration.md": "be1b17488eee46e16e477e7146792dc12ec502e7364891858c5f35d48a8b270a"
+  },
+  "historical_training_outcomes_already_known": true,
+  "donor_eligibility_only": {
+    "development": {
+      "all": 754,
+      "different_bridge": 754,
+      "same_relation_same_bridge": 275
+    },
+    "143011": {
+      "all": 748,
+      "different_bridge": 747,
+      "same_relation_same_bridge": 254
+    },
+    "143012": {
+      "all": 760,
+      "different_bridge": 758,
+      "same_relation_same_bridge": 257
+    },
+    "143013": {
+      "all": 769,
+      "different_bridge": 766,
+      "same_relation_same_bridge": 275
+    }
+  }
+}

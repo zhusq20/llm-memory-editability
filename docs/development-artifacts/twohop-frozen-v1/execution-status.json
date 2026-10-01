@@ -1,0 +1,45 @@
+{
+  "state": "complete",
+  "models": [
+    "small",
+    "main"
+  ],
+  "mode": "frozen behavior and MLP interventions",
+  "data_cases": 288,
+  "mechanism_cases": 64,
+  "mechanism_valid_cases": 60,
+  "independent_contract_tests": 4,
+  "precision_supplement_cases_per_model": 8,
+  "finished_utc": "2026-09-29T18:08:38.139471+00:00",
+  "successful_generation_outputs": 11128,
+  "generation_output_counts": {
+    "small_behavior": 2304,
+    "small_interventions": 1620,
+    "small-fp32_interventions": 216,
+    "small-fp32-all-evaluation_interventions": 1296,
+    "main_behavior": 2304,
+    "main_interventions": 1620,
+    "main-fp32_interventions": 216,
+    "main-fp32-all-evaluation_interventions": 1296,
+    "main_cot256": 256
+  },
+  "audits": {
+    "completion-audit.json": {
+      "total": 4036,
+      "passed": 4036
+    },
+    "full-precision-audit.json": {
+      "total": 2888,
+      "passed": 2888
+    }
+  },
+  "audit_checks_passed": 6924,
+  "full_fp32_evaluation_cases_per_model": 48,
+  "unchanged_parameters": {
+    "small": true,
+    "main": true
+  },
+  "report": "docs/twohop-frozen-results-v1.md",
+  "report_sha256": "4565858703561cb51e0a22f16028457b5f28130f4069a9c6f10d9697cca9b23c",
+  "source_archive_note": "Original protocol snapshot retained; final analysis sources refreshed. Executed precision variants separately hash-verified in precision-sources."
+}

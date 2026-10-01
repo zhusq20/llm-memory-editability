@@ -1,0 +1,63 @@
+{
+  "protocol": "v2.7-development-crossover-scaling",
+  "reference_config": "configs/bios-cross-development-v1.json",
+  "sizes": [
+    {
+      "width": 64,
+      "heads": 1,
+      "config": "configs/bios-cross-scale-width-64-v1.json",
+      "output": "results/bios-cross-scale-dev-v1/width-64",
+      "reuse": false,
+      "parameters_worlds_0_1": [
+        715648,
+        715712
+      ]
+    },
+    {
+      "width": 128,
+      "heads": 2,
+      "config": "configs/bios-cross-scale-width-128-v1.json",
+      "output": "results/bios-cross-scale-dev-v1/width-128",
+      "reuse": false,
+      "parameters_worlds_0_1": [
+        2217728,
+        2217856
+      ]
+    },
+    {
+      "width": 256,
+      "heads": 4,
+      "config": "configs/bios-cross-scale-width-256-v1.json",
+      "output": "results/bios-cross-scale-dev-v1/width-256",
+      "reuse": false,
+      "parameters_worlds_0_1": [
+        7581184,
+        7581440
+      ]
+    },
+    {
+      "width": 768,
+      "heads": 12,
+      "config": "configs/bios-cross-development-v1.json",
+      "output": "results/bios-cross-dev-v1",
+      "reuse": true,
+      "parameters_worlds_0_1": [
+        60492288,
+        60493056
+      ]
+    }
+  ],
+  "learning_runs": 48,
+  "edit_cases": 384,
+  "new_learning_runs": 36,
+  "new_edit_cases": 288,
+  "comparison": "Equal data exposure and optimization steps; compute increases with width; no per-size tuning",
+  "primary": "Same prespecified endpoint, paired relation matching and two-task gains versus neither at every size; continuous E, D and retention",
+  "limitations": [
+    "Two reused development worlds, two initializations each; descriptive only",
+    "Fixed learning rate and budget do not identify optimal performance or a capacity ceiling",
+    "Report pre-edit knowledge and known retention denominators; low damage at low coverage is not evidence of safe editing",
+    "Four architecture widths previously used; added relation vocabulary increases parameter count slightly",
+    "Reuse all 12 width-768 runs only after source, data and study compatibility checks"
+  ]
+}

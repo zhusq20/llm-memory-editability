@@ -1,0 +1,194 @@
+{
+  "known": [
+    {
+      "width": "256",
+      "arm": "clean",
+      "available": 3072,
+      "baseline_correct": 2152,
+      "correct": 2152,
+      "known_became_wrong": 0,
+      "wrong_became_correct": 0,
+      "known_denominator": 2152
+    },
+    {
+      "width": "256",
+      "arm": "target_remove",
+      "available": 3072,
+      "baseline_correct": 2152,
+      "correct": 1872,
+      "known_became_wrong": 315,
+      "wrong_became_correct": 35,
+      "known_denominator": 2152
+    },
+    {
+      "width": "256",
+      "arm": "random_remove",
+      "available": 3072,
+      "baseline_correct": 2152,
+      "correct": 2124,
+      "known_became_wrong": 52,
+      "wrong_became_correct": 24,
+      "known_denominator": 2152
+    },
+    {
+      "width": "256",
+      "arm": "complement_remove",
+      "available": 3072,
+      "baseline_correct": 2152,
+      "correct": 2097,
+      "known_became_wrong": 77,
+      "wrong_became_correct": 22,
+      "known_denominator": 2152
+    },
+    {
+      "width": "256",
+      "arm": "remove_rescue",
+      "available": 3072,
+      "baseline_correct": 2152,
+      "correct": 1863,
+      "known_became_wrong": 325,
+      "wrong_became_correct": 36,
+      "known_denominator": 2152
+    },
+    {
+      "width": "768",
+      "arm": "clean",
+      "available": 3072,
+      "baseline_correct": 2070,
+      "correct": 2070,
+      "known_became_wrong": 0,
+      "wrong_became_correct": 0,
+      "known_denominator": 2070
+    },
+    {
+      "width": "768",
+      "arm": "target_remove",
+      "available": 3072,
+      "baseline_correct": 2070,
+      "correct": 2068,
+      "known_became_wrong": 7,
+      "wrong_became_correct": 5,
+      "known_denominator": 2070
+    },
+    {
+      "width": "768",
+      "arm": "random_remove",
+      "available": 3072,
+      "baseline_correct": 2070,
+      "correct": 2072,
+      "known_became_wrong": 1,
+      "wrong_became_correct": 3,
+      "known_denominator": 2070
+    },
+    {
+      "width": "768",
+      "arm": "complement_remove",
+      "available": 3072,
+      "baseline_correct": 2070,
+      "correct": 2070,
+      "known_became_wrong": 4,
+      "wrong_became_correct": 4,
+      "known_denominator": 2070
+    },
+    {
+      "width": "768",
+      "arm": "remove_rescue",
+      "available": 3072,
+      "baseline_correct": 2070,
+      "correct": 2072,
+      "known_became_wrong": 2,
+      "wrong_became_correct": 4,
+      "known_denominator": 2070
+    }
+  ],
+  "strict_donor": [
+    {
+      "world": "0",
+      "chain": "company",
+      "population": "ordinary",
+      "per_case_requested": [
+        64
+      ],
+      "per_case_matched": [
+        64
+      ]
+    },
+    {
+      "world": "0",
+      "chain": "company",
+      "population": "old_exception",
+      "per_case_requested": [
+        64
+      ],
+      "per_case_matched": [
+        1
+      ]
+    },
+    {
+      "world": "0",
+      "chain": "project",
+      "population": "ordinary",
+      "per_case_requested": [
+        64
+      ],
+      "per_case_matched": [
+        64
+      ]
+    },
+    {
+      "world": "0",
+      "chain": "project",
+      "population": "old_exception",
+      "per_case_requested": [
+        64
+      ],
+      "per_case_matched": [
+        1
+      ]
+    },
+    {
+      "world": "1",
+      "chain": "company",
+      "population": "ordinary",
+      "per_case_requested": [
+        64
+      ],
+      "per_case_matched": [
+        64
+      ]
+    },
+    {
+      "world": "1",
+      "chain": "company",
+      "population": "old_exception",
+      "per_case_requested": [
+        64
+      ],
+      "per_case_matched": [
+        2
+      ]
+    },
+    {
+      "world": "1",
+      "chain": "project",
+      "population": "ordinary",
+      "per_case_requested": [
+        64
+      ],
+      "per_case_matched": [
+        64
+      ]
+    },
+    {
+      "world": "1",
+      "chain": "project",
+      "population": "old_exception",
+      "per_case_requested": [
+        64
+      ],
+      "per_case_matched": [
+        0
+      ]
+    }
+  ]
+}

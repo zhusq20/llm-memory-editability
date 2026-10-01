@@ -1,0 +1,127 @@
+{
+  "time": "2026-09-29T04:46:35.595915+00:00",
+  "config": {
+    "experiment": "hebbian-future-v2",
+    "seed": 2026092919,
+    "real": {
+      "facts": 512,
+      "development_facts": 192,
+      "layers": [
+        14,
+        22,
+        27
+      ],
+      "ridges": [
+        0.01,
+        0.1
+      ],
+      "prediction_ridge": 10.0,
+      "bootstrap": 2000,
+      "batch": 16,
+      "candidate_batch": 32,
+      "max_new_tokens": 32,
+      "candidates": 4,
+      "model_source": "data/hebbian-learning-v1/source/qwen3-0.6b-base",
+      "model_revision": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd"
+    },
+    "chains": {
+      "worlds": [
+        310,
+        311,
+        312,
+        313,
+        314,
+        315
+      ],
+      "initializations": [
+        0,
+        1
+      ],
+      "correlations": [
+        0.25,
+        0.5,
+        0.75
+      ],
+      "architectures": [
+        {
+          "name": "d2w96",
+          "depth": 2,
+          "width": 96,
+          "heads": 3
+        },
+        {
+          "name": "d2w135",
+          "depth": 2,
+          "width": 135,
+          "heads": 3
+        },
+        {
+          "name": "d4w96",
+          "depth": 4,
+          "width": 96,
+          "heads": 3
+        }
+      ],
+      "people": 96,
+      "organizations": 12,
+      "cities": 4,
+      "steps": 2048,
+      "nodes": [
+        0,
+        128,
+        512,
+        1024,
+        2048
+      ],
+      "lr": 0.001,
+      "weight_decay": 0.01,
+      "primary": "rho0.25 minus rho0.75 on fixed-content held-out conflict people; average initializations within world before paired statistics"
+    },
+    "policy": "Execute all 108 training runs and all real-model measurements; no significance, effect, mastery, or mechanism gate.",
+    "excluded_gpus": [
+      0,
+      1
+    ]
+  },
+  "files": {
+    "configs/hebbian-future-v2.json": "dfa61c6ac7a334e8147ca4d8169865366be87e6f3dd58a181c6a41d7e009bd9c",
+    "scripts/run_hebbian_followup.py": "6e7d0ae543011db629bb0a41e152f077b842cfbef2e1fdfb2a2744d791e1f6e3",
+    "scripts/run_hebbian_future.py": "f653cf14c994c1569f36cd24bcaa2375e4c4a2e15a227be052c4ad560376e033",
+    "scripts/report_hebbian_followup.py": "ef7f8f05cdc4551ce260d1315631b6b6cd7ecffef16eb4de8222a656756c5090",
+    "scripts/execute_hebbian_followup.py": "b1988dbbd1afac4912da4f074674334690b2e9f9f676b390ca198cc8f6b3c1de",
+    "src/llm_memory_editability/hebbian_followup.py": "752244bd78c5b02ba1d37a276e0547a5ff5bcf7a47986d64642f0db36cc4f4aa",
+    "src/llm_memory_editability/hebbian_future.py": "9fa7d88102e5b79e91735f530fe98fdd2bba20fad146238cde4f6eb591cf7105",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "src/llm_memory_editability/hebbian_model.py": "e0413d8288a679800f3f7bafc8ef072a0d6d5b29fc49de417077569eec49cc3e",
+    "src/llm_memory_editability/hebbian_data.py": "f2f5458d624fc4a49781a557641de7388937e90fda846ab03f7e17a3f455dd0e",
+    "src/llm_memory_editability/qwen_path_learning.py": "d62080bf19605df02e9a140332c8981094a6e65b4c84a14b35734248e278a231",
+    "tests/test_hebbian_followup.py": "25c89f745cea03ff4ef22a379e689e3fa28e24c9afa6f3945b605d792c4e2144",
+    "docs/hebbian-learning-plan-v1.md": "813aae20dac65cec5093d7bd5e47ba3de9a2a8b45c5f077dfa3145c50ad6dfc3",
+    "data/hebbian-future-v2/facts.json": "83253f64ab8bfe37a090147eea2bbf403021f6eb1a16c4367640cf8a9bbea627",
+    "data/hebbian-future-v2/inventory.json": "9f3ec28df84320bfc4c5714fa9d8359020acd5fb27bc0c1e04e0446bbf7351b5",
+    "data/hebbian-future-v2/world-310-rho0.25.json": "adcb97451334a0bbb570de8c1ff9175f52c55be1a0684a384cbc6934b9ec80be",
+    "data/hebbian-future-v2/world-310-rho0.5.json": "08a68dea42c1784628fde6ec5bb9b440dbab0a276095ceadc420a7fe041ddac0",
+    "data/hebbian-future-v2/world-310-rho0.75.json": "9f1b8adf68232689798db9ec8616d7d22b4a31fc890e7a1788ea4f745385afe6",
+    "data/hebbian-future-v2/world-311-rho0.25.json": "bca684101488ede7ca794ddd7bfdf1757f7a0b947af3513ac077c349fc0ff699",
+    "data/hebbian-future-v2/world-311-rho0.5.json": "8666b374e9465e3044ed09a64d117ff8509d86d067cd79a5a948a3b554a5ad86",
+    "data/hebbian-future-v2/world-311-rho0.75.json": "431da5de269741a3ccb2f799bebf1172ee95ecfd9cda6acbc31f6bca8c38bd35",
+    "data/hebbian-future-v2/world-312-rho0.25.json": "8aaf548962a45980265131c470d462974a5effd65e49dfa249fb3c28ed9f9858",
+    "data/hebbian-future-v2/world-312-rho0.5.json": "5355c72619c64ce4f5886f6a6d731e8b01c70dd59563adc41105bf7e3734115f",
+    "data/hebbian-future-v2/world-312-rho0.75.json": "c5c7ad2a211c4dbba24c32a232618e81eaad490be0a92c6522934244bb9a37aa",
+    "data/hebbian-future-v2/world-313-rho0.25.json": "5b726950072042bf19819c369a73d3c219cedfacb3588f36ecc8ab6de53eef40",
+    "data/hebbian-future-v2/world-313-rho0.5.json": "ff274daea92137ab7a5123357e6cba7c4f49e0678bf7d0a02a9650176b3dde21",
+    "data/hebbian-future-v2/world-313-rho0.75.json": "d9dce2df917e00f3d1bc95883cf07e82be23940b006f1ae52d05c005781ff14e",
+    "data/hebbian-future-v2/world-314-rho0.25.json": "e928573fde82b16bac53ae84980dbe8dd9d3427a0b5c5208d98ad05c6db409c7",
+    "data/hebbian-future-v2/world-314-rho0.5.json": "8c4c42fa15b545e4e66b2b5400464d285310490b1696d8865d07a73c0500b7f6",
+    "data/hebbian-future-v2/world-314-rho0.75.json": "255756941caab6db020ba7a8f20cca3c07b0a3215da27c05335c999567b4dd6c",
+    "data/hebbian-future-v2/world-315-rho0.25.json": "f8c5728a1f52072341bb71e7fa53aee1407b02d6f202fde67d4711d53c4f9ff4",
+    "data/hebbian-future-v2/world-315-rho0.5.json": "d261572101660ba8b135624599e6d091ea812d71e0caf973be1eed29ede904ea",
+    "data/hebbian-future-v2/world-315-rho0.75.json": "80b88b5c0cfa306c8db593411e6634afe60a34c4440b8519df1938b686ed7968"
+  },
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:16:10) [GCC 11.2.0]",
+  "torch": "2.11.0+cu130",
+  "numpy": "1.26.4",
+  "previous_round_subject_overlap": 0,
+  "history": "Already audited/historically accessed pools; subjects exclude v1, new prompts and outcomes",
+  "no_scientific_gate": true
+}

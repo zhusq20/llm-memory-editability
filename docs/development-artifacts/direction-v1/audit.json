@@ -1,0 +1,11 @@
+{
+  "batches": 16,
+  "trajectories": 144,
+  "all_receipts_valid": true,
+  "info_disjoint": true,
+  "parent_relative_hard_constraints_verified": true,
+  "steps_and_states_agree": true,
+  "expected_trajectories": 144,
+  "interpretation": "Queries are nested within parent/world; not independent replicates.",
+  "status_correction": "Raw v1 failure counters also advance for completed, idle batch members. Early solver failure requires accepted < 1024; raw flags retained in cases.csv."
+}

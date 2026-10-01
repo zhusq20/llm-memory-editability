@@ -1,0 +1,44 @@
+[
+  {
+    "phase": "adapt",
+    "run_id": "B/eval-lr0.0001-e4",
+    "case_ids": [
+      17976,
+      16268,
+      1667,
+      12606,
+      16416,
+      1834,
+      12197,
+      18089
+    ],
+    "condition": "B",
+    "seed": 0,
+    "episode_id": 4,
+    "split": "eval",
+    "lr": 0.0001,
+    "steps": 128,
+    "diagnostics": true
+  },
+  {
+    "phase": "adapt",
+    "run_id": "B/eval-lr0.0001-e10",
+    "case_ids": [
+      13801,
+      11004,
+      1795,
+      21214,
+      20112,
+      21050,
+      19232,
+      17910
+    ],
+    "condition": "B",
+    "seed": 0,
+    "episode_id": 10,
+    "split": "eval",
+    "lr": 0.0001,
+    "steps": 128,
+    "diagnostics": true
+  }
+]

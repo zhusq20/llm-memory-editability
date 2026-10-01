@@ -1,0 +1,8 @@
+{
+  "phi_max_absolute_error": 0.0,
+  "gradient_relative_error": 4.686112272686613e-08,
+  "earlier_prompt_delta_norm": 1.268963392652934,
+  "all_positions_used": true,
+  "trainable_parameters": 3145728,
+  "pass": true
+}

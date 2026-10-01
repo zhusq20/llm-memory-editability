@@ -1,0 +1,3823 @@
+{
+  "aggregates": [
+    {
+      "depth": 2,
+      "rho": 0.25,
+      "arm": "parent",
+      "worlds": 4,
+      "held_composite": 0.9166666666666667,
+      "held_common_conflict_composite": 0.9791666666666666,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 10.81315803527832,
+      "root_margin_median": 11.024858951568604,
+      "home_margin_median": 11.105570912361145
+    },
+    {
+      "depth": 2,
+      "rho": 0.25,
+      "arm": "chain",
+      "worlds": 4,
+      "held_composite": 0.9166666666666666,
+      "held_common_conflict_composite": 0.9166666666666666,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 12.17838191986084,
+      "root_margin_median": 12.86956536769867,
+      "home_margin_median": 12.787547588348389
+    },
+    {
+      "depth": 2,
+      "rho": 0.25,
+      "arm": "competitor",
+      "worlds": 4,
+      "held_composite": 0.8958333333333334,
+      "held_common_conflict_composite": 0.9166666666666666,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 12.000019788742065,
+      "root_margin_median": 12.9724200963974,
+      "home_margin_median": 13.050601363182068
+    },
+    {
+      "depth": 2,
+      "rho": 0.25,
+      "arm": "balanced",
+      "worlds": 4,
+      "held_composite": 0.9114583333333333,
+      "held_common_conflict_composite": 0.8958333333333334,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 12.085699200630188,
+      "root_margin_median": 12.871922135353088,
+      "home_margin_median": 12.869613647460938
+    },
+    {
+      "depth": 2,
+      "rho": 0.5,
+      "arm": "parent",
+      "worlds": 4,
+      "held_composite": 0.9166666666666666,
+      "held_common_conflict_composite": 0.875,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 10.732491254806519,
+      "root_margin_median": 10.989026308059692,
+      "home_margin_median": 11.039971590042114
+    },
+    {
+      "depth": 2,
+      "rho": 0.5,
+      "arm": "chain",
+      "worlds": 4,
+      "held_composite": 0.9166666666666666,
+      "held_common_conflict_composite": 0.8541666666666666,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 11.906931400299072,
+      "root_margin_median": 12.625332951545715,
+      "home_margin_median": 12.497406959533691
+    },
+    {
+      "depth": 2,
+      "rho": 0.5,
+      "arm": "competitor",
+      "worlds": 4,
+      "held_composite": 0.890625,
+      "held_common_conflict_composite": 0.8125,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 11.95596468448639,
+      "root_margin_median": 12.745376706123352,
+      "home_margin_median": 12.781671524047852
+    },
+    {
+      "depth": 2,
+      "rho": 0.5,
+      "arm": "balanced",
+      "worlds": 4,
+      "held_composite": 0.9010416666666666,
+      "held_common_conflict_composite": 0.8333333333333334,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 11.842921376228333,
+      "root_margin_median": 12.685556530952454,
+      "home_margin_median": 12.647659301757812
+    },
+    {
+      "depth": 2,
+      "rho": 0.75,
+      "arm": "parent",
+      "worlds": 4,
+      "held_composite": 0.8802083333333333,
+      "held_common_conflict_composite": 0.5416666666666666,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 10.650586724281311,
+      "root_margin_median": 10.961807489395142,
+      "home_margin_median": 11.04782223701477
+    },
+    {
+      "depth": 2,
+      "rho": 0.75,
+      "arm": "chain",
+      "worlds": 4,
+      "held_composite": 0.9010416666666666,
+      "held_common_conflict_composite": 0.6041666666666666,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 12.050901293754578,
+      "root_margin_median": 12.807738065719604,
+      "home_margin_median": 12.705788493156433
+    },
+    {
+      "depth": 2,
+      "rho": 0.75,
+      "arm": "competitor",
+      "worlds": 4,
+      "held_composite": 0.890625,
+      "held_common_conflict_composite": 0.5625,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 11.942220211029053,
+      "root_margin_median": 12.940742492675781,
+      "home_margin_median": 13.01684844493866
+    },
+    {
+      "depth": 2,
+      "rho": 0.75,
+      "arm": "balanced",
+      "worlds": 4,
+      "held_composite": 0.9062499999999999,
+      "held_common_conflict_composite": 0.6249999999999999,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 11.974752426147461,
+      "root_margin_median": 12.7917720079422,
+      "home_margin_median": 12.781261324882507
+    },
+    {
+      "depth": 4,
+      "rho": 0.25,
+      "arm": "parent",
+      "worlds": 4,
+      "held_composite": 0.8541666666666666,
+      "held_common_conflict_composite": 0.7708333333333334,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 10.564419388771057,
+      "root_margin_median": 10.972504734992981,
+      "home_margin_median": 11.041337490081787
+    },
+    {
+      "depth": 4,
+      "rho": 0.25,
+      "arm": "chain",
+      "worlds": 4,
+      "held_composite": 0.8333333333333334,
+      "held_common_conflict_composite": 0.7499999999999999,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 12.087385058403015,
+      "root_margin_median": 12.793333411216736,
+      "home_margin_median": 12.669630527496338
+    },
+    {
+      "depth": 4,
+      "rho": 0.25,
+      "arm": "competitor",
+      "worlds": 4,
+      "held_composite": 0.8177083333333333,
+      "held_common_conflict_composite": 0.7708333333333333,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 11.820709586143494,
+      "root_margin_median": 12.67573344707489,
+      "home_margin_median": 12.745238542556763
+    },
+    {
+      "depth": 4,
+      "rho": 0.25,
+      "arm": "balanced",
+      "worlds": 4,
+      "held_composite": 0.8333333333333334,
+      "held_common_conflict_composite": 0.7499999999999999,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 12.02065658569336,
+      "root_margin_median": 12.862317562103271,
+      "home_margin_median": 12.83105456829071
+    },
+    {
+      "depth": 4,
+      "rho": 0.5,
+      "arm": "parent",
+      "worlds": 4,
+      "held_composite": 0.9427083333333334,
+      "held_common_conflict_composite": 0.875,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 10.464583992958069,
+      "root_margin_median": 10.817861676216125,
+      "home_margin_median": 10.930167317390442
+    },
+    {
+      "depth": 4,
+      "rho": 0.5,
+      "arm": "chain",
+      "worlds": 4,
+      "held_composite": 0.9427083333333334,
+      "held_common_conflict_composite": 0.8541666666666666,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 11.94301700592041,
+      "root_margin_median": 12.770386099815369,
+      "home_margin_median": 12.694116592407227
+    },
+    {
+      "depth": 4,
+      "rho": 0.5,
+      "arm": "competitor",
+      "worlds": 4,
+      "held_composite": 0.9218750000000001,
+      "held_common_conflict_composite": 0.8333333333333334,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 11.919888377189636,
+      "root_margin_median": 12.884870290756226,
+      "home_margin_median": 12.95981764793396
+    },
+    {
+      "depth": 4,
+      "rho": 0.5,
+      "arm": "balanced",
+      "worlds": 4,
+      "held_composite": 0.9427083333333334,
+      "held_common_conflict_composite": 0.875,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 12.061851620674133,
+      "root_margin_median": 12.848987102508545,
+      "home_margin_median": 12.83498764038086
+    },
+    {
+      "depth": 4,
+      "rho": 0.75,
+      "arm": "parent",
+      "worlds": 4,
+      "held_composite": 0.9687499999999999,
+      "held_common_conflict_composite": 0.8749999999999999,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 10.454062938690186,
+      "root_margin_median": 10.897531390190125,
+      "home_margin_median": 10.948028326034546
+    },
+    {
+      "depth": 4,
+      "rho": 0.75,
+      "arm": "chain",
+      "worlds": 4,
+      "held_composite": 0.953125,
+      "held_common_conflict_composite": 0.8125,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 11.904404640197754,
+      "root_margin_median": 12.698877096176147,
+      "home_margin_median": 12.580437183380127
+    },
+    {
+      "depth": 4,
+      "rho": 0.75,
+      "arm": "competitor",
+      "worlds": 4,
+      "held_composite": 0.9427083333333334,
+      "held_common_conflict_composite": 0.8125,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 11.710631728172302,
+      "root_margin_median": 12.814498782157898,
+      "home_margin_median": 12.877911448478699
+    },
+    {
+      "depth": 4,
+      "rho": 0.75,
+      "arm": "balanced",
+      "worlds": 4,
+      "held_composite": 0.9583333333333334,
+      "held_common_conflict_composite": 0.8333333333333334,
+      "held_two_step": 1.0,
+      "member_accuracy": 1.0,
+      "root_accuracy": 1.0,
+      "home_accuracy": 1.0,
+      "member_margin_median": 11.839330434799194,
+      "root_margin_median": 12.691008567810059,
+      "home_margin_median": 12.66812014579773
+    }
+  ],
+  "effects": [
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.04166666666666663
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": 0.02083333333333337
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.04166666666666663
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": -0.0625
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": -0.08333333333333326
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": -0.0625
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": -0.02083333333333337
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": -0.04166666666666663
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": -0.04166666666666663
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.16666666666666663
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.02083333333333337
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.08333333333333337
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.04166666666666663
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.16666666666666663
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 300,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": -0.04166666666666674
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": -0.0625
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": -0.04166666666666674
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": -0.02083333333333326
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": -0.02083333333333326
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.02083333333333337
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": 0.04166666666666674
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.08333333333333337
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.08333333333333337
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.08333333333333337
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": -0.04166666666666663
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.16666666666666663
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": -0.08333333333333326
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.16666666666666663
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": -0.02083333333333326
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333326
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 301,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.02083333333333326
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333326
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.02083333333333337
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.08333333333333326
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": -0.02083333333333337
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.08333333333333326
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.02083333333333337
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.08333333333333326
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.25
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": -0.02083333333333337
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": -0.08333333333333326
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.25
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 302,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": -0.02083333333333337
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.16666666666666663
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": -0.04166666666666663
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.16666666666666663
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": -0.02083333333333337
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.16666666666666663
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": -0.02083333333333337
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": -0.04166666666666674
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": -0.02083333333333337
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.25,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.08333333333333337
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": -0.02083333333333337
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.08333333333333337
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333337
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.5,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": 0.0625
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.16666666666666663
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": 0.04166666666666674
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.08333333333333337
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": 0.0625
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": 0.16666666666666663
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 2,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_composite",
+      "change_from_parent": -0.02083333333333326
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333326
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "chain",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_composite",
+      "change_from_parent": -0.02083333333333326
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333326
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "competitor",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_composite",
+      "change_from_parent": -0.02083333333333326
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_common_conflict_composite",
+      "change_from_parent": -0.08333333333333326
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "held_two_step",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "member_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "root_accuracy",
+      "change_from_parent": 0.0
+    },
+    {
+      "world": 303,
+      "rho": 0.75,
+      "depth": 4,
+      "arm": "balanced",
+      "metric": "home_accuracy",
+      "change_from_parent": 0.0
+    }
+  ],
+  "interpretation": "Raw margins are descriptive within model/arm, not scale invariant robustness. Use perturbation curves separately. Rehearsal changes parameters broadly, not margin alone."
+}

@@ -1,0 +1,74 @@
+{
+  "status": "complete",
+  "runs": [
+    {
+      "run_id": "preflight-A",
+      "spec": {
+        "entities": 128,
+        "relations": 16,
+        "degree": 8,
+        "hops": 2,
+        "test_fraction": 0.1,
+        "evaluation_size": 1024,
+        "width": 128,
+        "heads": 4,
+        "layers": 2,
+        "repeats": 2,
+        "dropout": 0.1,
+        "init_scheme": "scaled_effective",
+        "lr": 0.0001,
+        "weight_decay": 0.1,
+        "warmup": 2000,
+        "n_atomic": 32,
+        "n_background": 112,
+        "n_role": 112,
+        "steps": 16,
+        "nodes": [
+          0,
+          8,
+          16
+        ],
+        "weight_nodes": [
+          0,
+          16
+        ],
+        "world_seed": 146000,
+        "initialization": 14601,
+        "stream_seed": 14600102,
+        "phase": "preflight",
+        "memory_fraction": 0.025,
+        "arm": "A"
+      },
+      "complete": true
+    }
+  ],
+  "expected_run_count": 0,
+  "missing": [],
+  "errors": [],
+  "checks": 12591,
+  "maximum_score_difference": 1.0913968487638592e-09,
+  "scored_split_nodes": 60,
+  "world_endpoint_effects": [],
+  "phase_world_equal_means": [],
+  "interpretation": [
+    "Main contrasts compare the same AA or BB held-out queries across A/B models; the two cohorts are averaged equally, not pooled by query count.",
+    "Initializations are averaged within worlds; development and confirmation stay separate. Query counts are denominators, not independent worlds.",
+    "Repetition matches raw constituent occurrences with half loss weight per atom. Information, direct supervision and actual compute differ.",
+    "Differences identify the training treatment's overall effect; shared parameters and other composition training also change.",
+    "Only fixed budget endpoints enter endpoint statistics; partial reports do not choose best checkpoints.",
+    "The atomic-correct subset requires both separate atomic answers to be correct, with coverage reported; it never replaces the all-query score."
+  ],
+  "input_sha256": {
+    "results/grok-usage-v1/preflight/preflight-A/metadata.json": "7f352960f851c4d58b2945a6ed0fe4ba6d6862c3c1ca0ad07637b6d4e3d4b99b",
+    "results/grok-usage-v1/preflight/preflight-A/world.npz": "b2cd46d4d535a7003ae9b74dac495a1254537cd08f46c908789cb6e3f2362bc4",
+    "results/grok-usage-v1/preflight/preflight-A/world-metadata.json": "4390b916d04eb5df3616de4fb968a31a3ebfae871fb0c489870c18bfe316cfca",
+    "results/grok-usage-v1/preflight/preflight-A/learning.json": "316159528e016d83c75f0981832481f17422cc4df5372918f86192a43e88ae36",
+    "results/grok-usage-v1/preflight/preflight-A/predictions-0000000.npz": "238673e526772baab4fbef241dc2e6abc66909f86c27bf44078e58b99571d1c8",
+    "results/grok-usage-v1/preflight/preflight-A/exposure-0000000.npz": "a4c7f5dd1b6720e955321bcaa35e7bf4becdf312aa673a4df6559c093ccae641",
+    "results/grok-usage-v1/preflight/preflight-A/predictions-0000008.npz": "562fcc715380cb7fdb03d6c644e52820261547fa0d20050eca1e42d5bade8b01",
+    "results/grok-usage-v1/preflight/preflight-A/exposure-0000008.npz": "944a57c10fc12fe612fe2eaa7bff7d00828927cfd8481587de2c40ed593f6d20",
+    "results/grok-usage-v1/preflight/preflight-A/predictions-0000016.npz": "a1b12ef2ef64ef1dd434f2f5a0befbd9d1eb75014c4423e08be991b6183d70ee",
+    "results/grok-usage-v1/preflight/preflight-A/exposure-0000016.npz": "7b0cbf0db91c50b53f417e538b5ef8874090bf5e97807dee543f242c811c733b"
+  },
+  "report_source_sha256": "3f8dc77f5ce1832468e04f46f1f5ff140985faf9937d24bd1698e65b5dfb435e"
+}

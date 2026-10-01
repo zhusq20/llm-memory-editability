@@ -1,0 +1,45 @@
+{
+  "registered_utc": "2026-09-30T02:35:07.161739+00:00",
+  "status": "predeclared developmental follow-up after successful depth4 calibration",
+  "trigger": {
+    "reference": "dev-k3-d4-phi24",
+    "full_test_accuracy": 0.950257594599396,
+    "fixed_probe_T90": 100000
+  },
+  "question": "Among depths1/2/3/4, which reaches90% full reserved-set answer+EOS within the fixed128k budget?",
+  "new_runs": [
+    "dev-k3-d2-phi24",
+    "dev-k3-d3-phi24",
+    "dev-k3-d1-phi24"
+  ],
+  "reference_reused": "dev-k3-d4-phi24",
+  "paired_dataset_sha256": "1036cb47364eca980f3d41d7201c37880f2141c27c1912299beb086344ddbeb4",
+  "independent_regeneration_equal": true,
+  "paired_fields": [
+    "world",
+    "graph/atomic split",
+    "train query arrays and order",
+    "entire held-out pool",
+    "fixed probe",
+    "initialization seed",
+    "stream seed",
+    "width/heads/dropout",
+    "optimizer",
+    "128000 updates and nodes"
+  ],
+  "only_scientific_change": "layer count",
+  "run_order": [
+    2,
+    3,
+    1
+  ],
+  "inference_limits": [
+    "one previously inspected development world; no independent confirmation",
+    "different parameter count and compute; fixed-step comparison does not isolate pure depth",
+    "failure means not reaching criterion in this recipe/budget, not impossibility",
+    "all low-scoring runs retained; no tuning by depth"
+  ],
+  "primary_endpoint": "entire reserved pool at128k",
+  "learning_time": "first of3 consecutive fixed1024-probe nodes >=90%, every2000 steps; no crossing is censored",
+  "execution": "GPU5 after k4-d6-phi24 and four-development endpoint audit"
+}

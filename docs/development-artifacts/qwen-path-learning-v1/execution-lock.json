@@ -1,0 +1,336 @@
+{
+  "time": "2026-09-29T02:04:03.935891+00:00",
+  "status": "locked_before_development_updates",
+  "sources": {
+    "configs/qwen-path-learning-v1.json": "6c6c8eff99529e4b0c38fc226665ab2fd2de8dd57f8a67c85efc7b6b3bd5b587",
+    "scripts/run_qwen_path_learning.py": "90171b0d45574d6355ada3bcbc4cb6e63769d6e07f4afe8d85cc82c0c92d81f8",
+    "src/llm_memory_editability/qwen_path_learning.py": "d62080bf19605df02e9a140332c8981094a6e65b4c84a14b35734248e278a231",
+    "src/llm_memory_editability/qwen_path_train.py": "09f03b01179a2cef8d98f803f61cea7e48ce636259222e394b0248d6744aec9d",
+    "src/llm_memory_editability/hebbian_data.py": "f2f5458d624fc4a49781a557641de7388937e90fda846ab03f7e17a3f455dd0e",
+    "src/llm_memory_editability/hebbian_model.py": "e0413d8288a679800f3f7bafc8ef072a0d6d5b29fc49de417077569eec49cc3e",
+    "src/llm_memory_editability/hebbian_learning.py": "94029aaa3661ad8c067224d4cd89d83aa98fb94acefe733a2df127cb5da24b61",
+    "tests/test_qwen_path_learning.py": "587d363eed63eeb88bf2517fe30266a9c0b9de7f68f1e8da66f7bf5d6c05de1d",
+    "docs/hebbian-learning-plan-v1.md": "fabc126c8ca9cf8fedc3aee416da17b6ef92d91c59c2cdedf5db0dc4be1b5d37",
+    "docs/experimental-protocol.md": "c4186a64cefece880f3b42f7d25ebfec00c1949425b2268f66b0107167339d04"
+  },
+  "inputs": {
+    "data/qwen-path-learning-v1/selection.json": "40cd70fc9409d0119d2c93b6c99574fe0c63ae80a651eb14f75f8cc604f6c3a9",
+    "data/qwen-path-learning-v1/text.json": "322f1c24afebbb7a8adb02af63f138833746b96fbc9fb802a50dc2d7c4fd43eb",
+    "data/hebbian-learning-v1/source/qwen3-0.6b-base/model.safetensors": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba"
+  },
+  "matrix": [
+    {
+      "id": "dev-e0-lr1e-05-b1",
+      "episode": 0,
+      "lr": 1e-05,
+      "beta": 1,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e0-lr1e-05-b10",
+      "episode": 0,
+      "lr": 1e-05,
+      "beta": 10,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e0-lr3e-05-b1",
+      "episode": 0,
+      "lr": 3e-05,
+      "beta": 1,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e0-lr3e-05-b10",
+      "episode": 0,
+      "lr": 3e-05,
+      "beta": 10,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e0-lr0.0001-b1",
+      "episode": 0,
+      "lr": 0.0001,
+      "beta": 1,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e0-lr0.0001-b10",
+      "episode": 0,
+      "lr": 0.0001,
+      "beta": 10,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e1-lr1e-05-b1",
+      "episode": 1,
+      "lr": 1e-05,
+      "beta": 1,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e1-lr1e-05-b10",
+      "episode": 1,
+      "lr": 1e-05,
+      "beta": 10,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e1-lr3e-05-b1",
+      "episode": 1,
+      "lr": 3e-05,
+      "beta": 1,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e1-lr3e-05-b10",
+      "episode": 1,
+      "lr": 3e-05,
+      "beta": 10,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e1-lr0.0001-b1",
+      "episode": 1,
+      "lr": 0.0001,
+      "beta": 1,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e1-lr0.0001-b10",
+      "episode": 1,
+      "lr": 0.0001,
+      "beta": 10,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e2-lr1e-05-b1",
+      "episode": 2,
+      "lr": 1e-05,
+      "beta": 1,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e2-lr1e-05-b10",
+      "episode": 2,
+      "lr": 1e-05,
+      "beta": 10,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e2-lr3e-05-b1",
+      "episode": 2,
+      "lr": 3e-05,
+      "beta": 1,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e2-lr3e-05-b10",
+      "episode": 2,
+      "lr": 3e-05,
+      "beta": 10,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e2-lr0.0001-b1",
+      "episode": 2,
+      "lr": 0.0001,
+      "beta": 1,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e2-lr0.0001-b10",
+      "episode": 2,
+      "lr": 0.0001,
+      "beta": 10,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e3-lr1e-05-b1",
+      "episode": 3,
+      "lr": 1e-05,
+      "beta": 1,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e3-lr1e-05-b10",
+      "episode": 3,
+      "lr": 1e-05,
+      "beta": 10,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e3-lr3e-05-b1",
+      "episode": 3,
+      "lr": 3e-05,
+      "beta": 1,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e3-lr3e-05-b10",
+      "episode": 3,
+      "lr": 3e-05,
+      "beta": 10,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e3-lr0.0001-b1",
+      "episode": 3,
+      "lr": 0.0001,
+      "beta": 1,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    },
+    {
+      "id": "dev-e3-lr0.0001-b10",
+      "episode": 3,
+      "lr": 0.0001,
+      "beta": 10,
+      "seed": 0,
+      "phase": "dev",
+      "condition": "ordinary"
+    }
+  ],
+  "environment": {
+    "python": "3.13.9",
+    "torch": "2.11.0+cu130",
+    "transformers": "4.57.3",
+    "numpy": "1.26.4"
+  },
+  "config": {
+    "experiment": "qwen-path-learning-v1",
+    "model_source": "data/hebbian-learning-v1/source/qwen3-0.6b-base",
+    "model_revision": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd",
+    "layer": 14,
+    "seed": 20260929,
+    "dtype": "float32",
+    "attention": "eager",
+    "tf32": false,
+    "steps": 256,
+    "nodes": [
+      0,
+      1,
+      4,
+      16,
+      64,
+      128,
+      256
+    ],
+    "learning_rates": [
+      1e-05,
+      3e-05,
+      0.0001
+    ],
+    "betas_replay": [
+      1,
+      10
+    ],
+    "optimizer": {
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "eps": 1e-08,
+      "weight_decay": 0,
+      "clip": 1.0
+    },
+    "counts": {
+      "E_dev": 16,
+      "E_confirm": 32,
+      "R": 64,
+      "V": 64,
+      "U": 128
+    },
+    "episode_size": 4,
+    "text_counts": {
+      "train": 64,
+      "dev": 32,
+      "test": 64
+    },
+    "text_tokens": 128,
+    "max_new_tokens": 32,
+    "batch": {
+      "E": 4,
+      "R": 8,
+      "text": 2,
+      "eval": 16
+    },
+    "groups": [
+      "S_end",
+      "S_other",
+      "C",
+      "W"
+    ],
+    "matching": {
+      "position_bins": 2,
+      "draws": 16,
+      "norm_relative_tolerance": 0.25,
+      "minimum_coverage": 0.8,
+      "diagnostic_seeds": [
+        0,
+        1,
+        2
+      ]
+    },
+    "gate": {
+      "units_required": 3,
+      "learning_retained": 0.9,
+      "kl_reduction": 0.25,
+      "kl_floor": 0.0001,
+      "noise_multiplier": 10
+    },
+    "confirmation_seeds": [
+      0,
+      1,
+      2
+    ],
+    "excluded_gpus": [
+      0
+    ]
+  }
+}

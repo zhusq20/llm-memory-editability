@@ -1,0 +1,1220 @@
+{
+  "utc": "2026-09-30T21:02:57.282385+00:00",
+  "phase": "confirmation",
+  "config": "configs/grok-usage-confirmation-v1.json",
+  "config_sha256": "af8587d8c66cdd56326d5b9752dc983c32d504bc4afa4dfaf8a764c70a667978",
+  "audit_script_sha256": "da28fb9db754496f9a065e3fb2d68ba0c722c7db5a758e4480608f582ddc034f",
+  "verified_execution_lock": {
+    "frozen_utc": "2026-09-30T20:42:17.498178+00:00",
+    "config": "configs/grok-usage-confirmation-v1.json",
+    "files": {
+      "docs/development-artifacts/grok-usage-v1/preregistration.md": "639b471dfcb251535a7c085cd29562d00d4a0e27b1116f006a224721dce93135",
+      "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+      "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+      "src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+      "src/llm_memory_editability/grok_loop_data.py": "504de57da94618578cf792a3963f99e2dac587424d74ceae6b4c02c1d9680a8e",
+      "src/llm_memory_editability/grok_loop_model.py": "07e84388997a1710e5c821e54cf6d23726e4289aab178347761e060851fea6cc",
+      "src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+      "src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+      "src/llm_memory_editability/grok_usage_data.py": "cfce0e5835665933ee1a1561ee681ffa6520c564be7e2292d9206399f86e7ced",
+      "src/llm_memory_editability/grok_usage_train.py": "5509ab6b2ad0c93e185cdfc211a7ee5afef45a5021a74aa8ce8bce520f694f70",
+      "scripts/run_grok_usage.py": "c795ee59e25d772d0bf6c4bdd52f0a22956a85481cbec863a45317cb6cd4a151",
+      "tests/test_grok_usage_data.py": "ef02de4e5af2d1d5ec29b13bdb30a4d99b3fdb8ada462f9357f2b667648f7d52",
+      "tests/test_grok_usage_training.py": "2e77f5f67d4a924788064287905fb8d7b5a8e8b15668296db8a1b59b6b2a9448",
+      "configs/grok-usage-confirmation-v1.json": "af8587d8c66cdd56326d5b9752dc983c32d504bc4afa4dfaf8a764c70a667978",
+      "docs/development-artifacts/grok-usage-v1/confirmation-plan.md": "9a8a141c0abc16a83c5c950c5302accc6f4c1768aba302da08d5b7ea5bb3e95c"
+    },
+    "git_head": "e279fc676f71e7e8cc8ce255faf68e26534ce311",
+    "working_tree_note": "Existing changes preserved; exact source hashes authoritative",
+    "expected_runs": [
+      "confirm-w146011-A",
+      "confirm-w146011-B",
+      "confirm-w146011-repA",
+      "confirm-w146011-repB",
+      "confirm-w146012-A",
+      "confirm-w146012-B",
+      "confirm-w146012-repA",
+      "confirm-w146012-repB",
+      "confirm-w146013-A",
+      "confirm-w146013-B",
+      "confirm-w146013-repA",
+      "confirm-w146013-repB"
+    ],
+    "development_calibration": {
+      "A": {
+        "atomic": {
+          "n": 1024,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 2.8892100090160966e-05,
+          "answer_probability": 0.9999498724937439
+        },
+        "test_BG_BG": {
+          "n": 207,
+          "answer_accuracy": 0.9951690821256038,
+          "accuracy": 0.9951690821256038,
+          "nll": 0.002862021327018738,
+          "answer_probability": 0.9964786767959595
+        },
+        "test_A_A": {
+          "n": 59,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 0.0003245790139771998,
+          "answer_probability": 0.9993566870689392
+        },
+        "test_B_B": {
+          "n": 56,
+          "answer_accuracy": 0.05357142857142857,
+          "accuracy": 0.05357142857142857,
+          "nll": 3.771118402481079,
+          "answer_probability": 0.06508199125528336
+        },
+        "train_composite": {
+          "n": 4165,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 5.459430212795269e-06,
+          "answer_probability": 0.9999892115592957
+        },
+        "autonomous_calls": {
+          "n": 844,
+          "calls": 2,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "all_intermediate_answers_and_eos_correct": 1.0,
+          "hop_accuracy": [
+            1.0,
+            1.0
+          ],
+          "extra_information": "given relation decomposition, own generated bridge entities"
+        }
+      },
+      "B": {
+        "atomic": {
+          "n": 1024,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 1.0678205399017315e-05,
+          "answer_probability": 0.999981701374054
+        },
+        "test_BG_BG": {
+          "n": 207,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 3.7506117223529145e-05,
+          "answer_probability": 0.9999250769615173
+        },
+        "test_A_A": {
+          "n": 59,
+          "answer_accuracy": 0.1016949152542373,
+          "accuracy": 0.1016949152542373,
+          "nll": 3.5793919563293457,
+          "answer_probability": 0.07817700505256653
+        },
+        "test_B_B": {
+          "n": 56,
+          "answer_accuracy": 0.9821428571428571,
+          "accuracy": 0.9821428571428571,
+          "nll": 0.026289017871022224,
+          "answer_probability": 0.9825848340988159
+        },
+        "train_composite": {
+          "n": 4165,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 2.854283366104937e-06,
+          "answer_probability": 0.9999942779541016
+        },
+        "autonomous_calls": {
+          "n": 844,
+          "calls": 2,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "all_intermediate_answers_and_eos_correct": 1.0,
+          "hop_accuracy": [
+            1.0,
+            1.0
+          ],
+          "extra_information": "given relation decomposition, own generated bridge entities"
+        }
+      },
+      "repA": {
+        "atomic": {
+          "n": 1024,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 4.3444306356832385e-06,
+          "answer_probability": 0.9999914765357971
+        },
+        "test_BG_BG": {
+          "n": 207,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 0.001554509624838829,
+          "answer_probability": 0.9970609545707703
+        },
+        "test_A_A": {
+          "n": 59,
+          "answer_accuracy": 0.288135593220339,
+          "accuracy": 0.288135593220339,
+          "nll": 1.7986526489257812,
+          "answer_probability": 0.2645565867424011
+        },
+        "test_B_B": {
+          "n": 56,
+          "answer_accuracy": 0.07142857142857142,
+          "accuracy": 0.07142857142857142,
+          "nll": 3.57771897315979,
+          "answer_probability": 0.06149902567267418
+        },
+        "train_composite": {
+          "n": 1877,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 2.3503753254772164e-06,
+          "answer_probability": 0.9999952912330627
+        },
+        "autonomous_calls": {
+          "n": 844,
+          "calls": 2,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "all_intermediate_answers_and_eos_correct": 1.0,
+          "hop_accuracy": [
+            1.0,
+            1.0
+          ],
+          "extra_information": "given relation decomposition, own generated bridge entities"
+        }
+      },
+      "repB": {
+        "atomic": {
+          "n": 1024,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 5.5313985285465606e-06,
+          "answer_probability": 0.9999890327453613
+        },
+        "test_BG_BG": {
+          "n": 207,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 0.002526493975892663,
+          "answer_probability": 0.9958692193031311
+        },
+        "test_A_A": {
+          "n": 59,
+          "answer_accuracy": 0.11864406779661017,
+          "accuracy": 0.11864406779661017,
+          "nll": 2.6663012504577637,
+          "answer_probability": 0.10737785696983337
+        },
+        "test_B_B": {
+          "n": 56,
+          "answer_accuracy": 0.25,
+          "accuracy": 0.25,
+          "nll": 2.07816743850708,
+          "answer_probability": 0.224753275513649
+        },
+        "train_composite": {
+          "n": 1877,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "nll": 2.47156845034624e-06,
+          "answer_probability": 0.9999950528144836
+        },
+        "autonomous_calls": {
+          "n": 844,
+          "calls": 2,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "all_intermediate_answers_and_eos_correct": 1.0,
+          "hop_accuracy": [
+            1.0,
+            1.0
+          ],
+          "extra_information": "given relation decomposition, own generated bridge entities"
+        }
+      }
+    },
+    "autonomous_audit": "docs/development-artifacts/grok-usage-v1/development-autonomous-audit.json",
+    "decision": "All four development endpoints complete with direct and autonomous reload audits; unchanged hyperparameters, endpoint, and evaluation; independent worlds fixed before generation."
+  },
+  "device": "cuda:0",
+  "visible_devices": "6",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "shared_gpu": true,
+  "precision": "FP32 weights and activations, TF32 enabled, no autocast",
+  "physical_batch_size": 1024,
+  "padded_length": 4,
+  "float_metric_atol": 1e-12,
+  "memory_fraction": 0.025,
+  "max_allocated_bytes": 37300736,
+  "expected_runs": 12,
+  "audited_runs": 12,
+  "exact_array_entries": 39008,
+  "passed": true,
+  "records": [
+    {
+      "run_id": "confirm-w146011-A",
+      "step": 128000,
+      "world_seed": 146011,
+      "arm": "A",
+      "n_queries": 832,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 832,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 832,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/confirmation/confirm-w146011-A/weights-0128000.pt",
+      "checkpoint_sha256": "a7a105d282dcffce3cb7f0217bda2d8a6cb1139c1b9aad5bbfe500cf56397813",
+      "world_sha256": "9a77d0747079aea7d7a2b949ecd1fd770d072355eb83c3afcf165832b2e1365e",
+      "predictions_sha256": "cc1f1d8c995263dfb6e80edb7e6a3d8fc4bdf2263fb07b9a0fd831a908f89a95",
+      "learning_sha256": "1bf05a84b2e409728b2598c7e3bed97e527e5c2aab407dc5fd111ade9832a9eb"
+    },
+    {
+      "run_id": "confirm-w146011-B",
+      "step": 128000,
+      "world_seed": 146011,
+      "arm": "B",
+      "n_queries": 832,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 832,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 832,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/confirmation/confirm-w146011-B/weights-0128000.pt",
+      "checkpoint_sha256": "715a72550bf1ba8fb9f5963a197bb55b53e26a284e79974a7ed990df7e23c77f",
+      "world_sha256": "d61d2e5e3d799351156af25db1982860780da4eeb87ffd7742e27bfab82678d9",
+      "predictions_sha256": "800a2df0077d0e849e3576e09813f6bba72f4f53f73553714aa28ab1674bd69b",
+      "learning_sha256": "d68ceb087392432e272c2a56764866452f504fd1dca5b01550b7bc3813a95bec"
+    },
+    {
+      "run_id": "confirm-w146011-repA",
+      "step": 128000,
+      "world_seed": 146011,
+      "arm": "repA",
+      "n_queries": 832,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 832,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 832,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/confirmation/confirm-w146011-repA/weights-0128000.pt",
+      "checkpoint_sha256": "d6f63dfb2fe33628552bd9c8d6ee0778f917904268bb0a0210211e8438811621",
+      "world_sha256": "0e08368a263a37f0388e2617398fd1dfddcdaf9291ea8b97e52708c778b40f7a",
+      "predictions_sha256": "70eac539cf8e22a961d0ed4371b02cd845bc20c4f11d1633526c4d8926bad412",
+      "learning_sha256": "58fabd0e895101e2e577221cb929c35cf7143cb2c6f63a139359e7a285fa4f83"
+    },
+    {
+      "run_id": "confirm-w146011-repB",
+      "step": 128000,
+      "world_seed": 146011,
+      "arm": "repB",
+      "n_queries": 832,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            832
+          ],
+          "dtype": "int64",
+          "entries": 832,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 832,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 832,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/confirmation/confirm-w146011-repB/weights-0128000.pt",
+      "checkpoint_sha256": "c409b73ff406efd78c067c346d5073e1a8dc6aa0b5eb0c4e14f15cc6af1b180b",
+      "world_sha256": "d39e720d30988c8594329df429f57696ea47bb89d4b0b146ae698ab665dd0ff9",
+      "predictions_sha256": "26077fefd2b9db1e7d6fe09c41740bae8280c2f70803e7b3ad9d961bf3345a28",
+      "learning_sha256": "ae5b28c15ab35e857d836e6ecf06005d7d9cb7ba3679e34f1630facef070960e"
+    },
+    {
+      "run_id": "confirm-w146012-A",
+      "step": 128000,
+      "world_seed": 146012,
+      "arm": "A",
+      "n_queries": 801,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 801,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 801,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/confirmation/confirm-w146012-A/weights-0128000.pt",
+      "checkpoint_sha256": "27954af7b33709a72b3fb67523f8c1ed27493b45211216d3caf770a3117c4662",
+      "world_sha256": "3842e63240d5642b80cc9f042f84d2bdb43ba8cebfd8ad945372b6eb3e3b2f66",
+      "predictions_sha256": "0f84030cf7de0c48e2a1dd9dce293315d8f7ab59a450839456498c1528e5afb1",
+      "learning_sha256": "55afde3aef1b2f723f564dd5784397f56133ebc29a448ab25a9e21cad2b7de43"
+    },
+    {
+      "run_id": "confirm-w146012-B",
+      "step": 128000,
+      "world_seed": 146012,
+      "arm": "B",
+      "n_queries": 801,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 801,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 801,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/confirmation/confirm-w146012-B/weights-0128000.pt",
+      "checkpoint_sha256": "c265268882d8b2777a2fa4b967f5fd9d9171e420cefd8b74de298d43bc370da0",
+      "world_sha256": "9ee70c77e09db55c980b1a2d4119347e41a400106f95b3650df687614dc6e8b7",
+      "predictions_sha256": "fdb33a1958c6f29a1f064d328a3598b5485dec8229869fae73f6f8d447c5bf5f",
+      "learning_sha256": "e906629bb70a282e5dc9b19fdce7f506abda5d65557ab103618238758c1171d4"
+    },
+    {
+      "run_id": "confirm-w146012-repA",
+      "step": 128000,
+      "world_seed": 146012,
+      "arm": "repA",
+      "n_queries": 801,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 801,
+        "calls": 2,
+        "answer_accuracy": 0.9975031210986267,
+        "accuracy": 0.9975031210986267,
+        "all_intermediate_answers_and_eos_correct": 0.9975031210986267,
+        "hop_accuracy": [
+          1.0,
+          0.9975031210986267
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 801,
+        "calls": 2,
+        "answer_accuracy": 0.9975031210986267,
+        "accuracy": 0.9975031210986267,
+        "all_intermediate_answers_and_eos_correct": 0.9975031210986267,
+        "hop_accuracy": [
+          1.0,
+          0.9975031210986267
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/confirmation/confirm-w146012-repA/weights-0128000.pt",
+      "checkpoint_sha256": "a35f780a764c089dadc645351d9381310d34cf62a771f7a8bd51432c3d6b7e9f",
+      "world_sha256": "1ef002282df6b456298e1addae22ffe9c3d831a61e8dd720f18e817ecd4c6b82",
+      "predictions_sha256": "d08917782e3c300738368b22bcaaf044fd4dd6216f783a3b457b7f5fd099b315",
+      "learning_sha256": "c619a8b13e7420c6c0139d22840a228864a93855fc511367c2d4c17b894f20b8"
+    },
+    {
+      "run_id": "confirm-w146012-repB",
+      "step": 128000,
+      "world_seed": 146012,
+      "arm": "repB",
+      "n_queries": 801,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            801
+          ],
+          "dtype": "int64",
+          "entries": 801,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 801,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 801,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/confirmation/confirm-w146012-repB/weights-0128000.pt",
+      "checkpoint_sha256": "093bcf2293651ef7ff11692f5d79bf7c5ced5b3cc0ae8c2cca31c273de8fccde",
+      "world_sha256": "eb5ab0d8d568fcafd37b64f9df3e889b3bc4b989c2507c51f4be6a85d4822bc5",
+      "predictions_sha256": "bb2324605d308beed93864a9972b249f155481caff1541ce1838eef041f2da48",
+      "learning_sha256": "591e72d01fef13ad81972b724421c6e49fc9b93cb6ba0a25b6e2d3d32110260a"
+    },
+    {
+      "run_id": "confirm-w146013-A",
+      "step": 128000,
+      "world_seed": 146013,
+      "arm": "A",
+      "n_queries": 805,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 805,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 805,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/confirmation/confirm-w146013-A/weights-0128000.pt",
+      "checkpoint_sha256": "34ac9e380080ab006f3a66b71c8c0f36a2ed9a0beaefc35ff5b0065bbf86ba4b",
+      "world_sha256": "0d83610bf57f6aec83bd91d72323117323c6400013d6550a1aece821b059d70e",
+      "predictions_sha256": "506425e190a1872cbb144adce98631e532753a017dd74070378fd1984a65cf9a",
+      "learning_sha256": "04da1541c7a8fbfe37efd3259ce71c99c42b83f1b65879da1b1cdcee41b256a9"
+    },
+    {
+      "run_id": "confirm-w146013-B",
+      "step": 128000,
+      "world_seed": 146013,
+      "arm": "B",
+      "n_queries": 805,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 805,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 805,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/confirmation/confirm-w146013-B/weights-0128000.pt",
+      "checkpoint_sha256": "9230b943dccbcfeb34e3320d3cea131c58714533c144dc51bd9ea4d84b1507c3",
+      "world_sha256": "79e7f3c769e257c445f34c5987f7351581cc1af821178a68ffc698416bd4c4d5",
+      "predictions_sha256": "a335988a83b2fb234004a47d68763d5ba47e1d05280a7f5f43ca91e8c9a2c88b",
+      "learning_sha256": "96b6194b79c75ab1398c82530ec17b968a773d4ad8881a26aac8ad6c264b581d"
+    },
+    {
+      "run_id": "confirm-w146013-repA",
+      "step": 128000,
+      "world_seed": 146013,
+      "arm": "repA",
+      "n_queries": 805,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 805,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 805,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/confirmation/confirm-w146013-repA/weights-0128000.pt",
+      "checkpoint_sha256": "a69ecb38ae119eddaca454f43c38e792b19d8a0c7da54ce4f708e6a737cca8b4",
+      "world_sha256": "b717e0ef97edd6c7f46b4c8ca72691c6b78f6126e100c91f5c8f7bda5b027ad7",
+      "predictions_sha256": "1a8b8c8802e648ce4222fdf8f638e7e506fddcbe94a49f175087504f94de1ecd",
+      "learning_sha256": "8fcaea57df40d0f4c409d0241f7db455efd86a42f712b1cb9c4f6c8f6ac041f5"
+    },
+    {
+      "run_id": "confirm-w146013-repB",
+      "step": 128000,
+      "world_seed": 146013,
+      "arm": "repB",
+      "n_queries": 805,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            805
+          ],
+          "dtype": "int64",
+          "entries": 805,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 805,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 805,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/confirmation/confirm-w146013-repB/weights-0128000.pt",
+      "checkpoint_sha256": "bab53db434c08e71a32a94da265002ab268585d0fc84001d372b838ea83b8cb6",
+      "world_sha256": "2266a9c7a7cca7f64222cf868fb30d3a435d5365acd6f0163fb886d931b23f43",
+      "predictions_sha256": "6c4fba58d3650b2a8a9156e7ce21e864fa634b4819a46fc19b70a7fea63460d6",
+      "learning_sha256": "b0a95782f3f1ba992e810b0068b74f055cbadf12c3ecf7d0e74a4ea0971b8ada"
+    }
+  ]
+}

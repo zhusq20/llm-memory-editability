@@ -1,0 +1,28 @@
+{
+  "class_codes": {
+    "not_applicable_to_base_query": -1,
+    "termination_error": 0,
+    "other": 1,
+    "indistinguishable": 2,
+    "unique_role_start": 3
+  },
+  "learning_roles": [
+    "default",
+    "actual",
+    "other_default",
+    "other_actual"
+  ],
+  "editing_roles": [
+    "new_default",
+    "new_actual",
+    "old_default",
+    "old_actual",
+    "other_default",
+    "other_actual"
+  ],
+  "matched_role_bits": "bit i indicates value matches role i; EOS checked separately",
+  "candidate_tokens_shape": "chain, person, role; maps to derived_query_ids[chain, person]",
+  "interpretation": "Candidate answer agreement is not causal evidence for a path. Overlapping roles are never assigned a preferred interpretation.",
+  "subset_rows_overlap": true,
+  "manipulated_conflict_cohort": "Original 45 people, also tagged in coherent controls; factual_conflict is measured from actual target answers."
+}

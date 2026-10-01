@@ -1,0 +1,25 @@
+{
+  "generation": [
+    " Paris"
+  ],
+  "zero_equivalent": true,
+  "scores": [
+    -0.2907251715660095,
+    -5.040725231170654
+  ],
+  "grad_input_norm": 0.3195984959602356,
+  "grad_feature_norm": 0.7967104911804199,
+  "layers": [
+    9,
+    14,
+    18
+  ],
+  "parameters": 596049920,
+  "trainable": 0,
+  "environment": {
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:27:36) [GCC 11.2.0]",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.3",
+    "numpy": "2.5.3"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "study": {
+    "protocol": "v2.6-development-crossover",
+    "phase": "development; two reused world seeds, no confirmatory claim",
+    "worlds": [
+      0,
+      1
+    ],
+    "seeds": [
+      0,
+      1
+    ],
+    "conditions": [
+      "company",
+      "project",
+      "neither"
+    ],
+    "chains": [
+      "company",
+      "project"
+    ],
+    "width": 768,
+    "layers": 8,
+    "heads": 12,
+    "steps": 15360,
+    "checkpoints": [
+      0,
+      1280,
+      2560,
+      5120,
+      10240,
+      15360
+    ],
+    "lr": 0.0001,
+    "documents_per_step": 16,
+    "facts_per_document": 10,
+    "QA_per_chain_per_step": 20,
+    "document_QA_weights": [
+      0.8,
+      0.2
+    ],
+    "qa_split": "50% within each chain's group and old-exception stratum; identical across organizations",
+    "edit_steps": 512,
+    "edit_checkpoints": [
+      0,
+      32,
+      128,
+      512
+    ],
+    "edit_lr": 3e-05,
+    "retention_kl": 1.0,
+    "edit_scopes": [
+      "mlp",
+      "all"
+    ],
+    "edit_kinds": [
+      "coherent",
+      "exception"
+    ],
+    "edit_supports_per_chain": 1,
+    "learning_runs": 12,
+    "edit_cases": 96,
+    "primary_learning": "heldout full-answer accuracy for each of the 3 organizations x 2 chains at 15360 steps",
+    "matching_effect": "0.5 * ((company_org/company_task - project_org/company_task) + (project_org/project_task - company_org/project_task))",
+    "general_benefit": "each organized condition's two-task average minus neither condition's two-task average",
+    "secondary_learning": "all prespecified checkpoints, base accuracy, trained QA, NLL, prerequisite-known subset with denominator",
+    "primary_edit": "fixed 512-step E, D trained/heldout, exception-conflict D, and full/heldout retention counts by stratum",
+    "aggregation": "first pair within world/initialization; then equal-weight four paired blocks; no probe-level significance",
+    "limitations": [
+      "Two reused development worlds; two initializations do not create four independent worlds",
+      "New symmetric company/project task adds facts; not a numerical rerun of the archived A/B/C batch",
+      "All conditions preserve personal grouping; neither is a B-like control, not the old C condition",
+      "Tests relation alignment, not unseen natural-language paraphrases",
+      "Identical surface QA streams do not rule out task-specific learned representations",
+      "No early stopping, best-checkpoint selection, or outcome-dependent extension"
+    ]
+  },
+  "sources": {
+    "bios_cross.py": "47b8f55adbe13d9bc6e1c5c9170cc95e382261ffb1f31980706ac95be03623bf",
+    "bios_cross_train.py": "0106cae29be447319be2e7f6f0e1f5b60cc6224282331906f43ebc65ab795f38",
+    "bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "bios_data.py": "d5568901f2042a6d89d447f47eddae9764eced0a9e71e3ea5adc0038a7e636d6",
+    "bios_train.py": "c1d84d38aa1853815075041535ae3fa9890f5cf1f9f5d9019136c79521033046",
+    "bios_organization_train.py": "833426232b693495711e38101553e8bff370c837c722d76e7f9f5f2d2ed3cad6"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-30",
+  "paper_url": "https://arxiv.org/html/2405.15071v3",
+  "sections_reread": [
+    "2",
+    "3.1",
+    "3.2",
+    "Appendix A",
+    "Appendix B"
+  ],
+  "upstream_commit": "734ca654ec7a71dd6737d640407fac14491d538c",
+  "historical_alignment": "docs/development-artifacts/grok-depth-v1/literature-alignment.json",
+  "method": "Reuse the exact local two-hop generator, GPT2-style model, tail/EOS supervision, dropout and optimizer. Only depth changes to 3/4 at width128.",
+  "paper_comparison": "Appendix B compares model scales and reports fewer optimization steps for larger models. Our extension isolates depth at fixed width in the pre-existing miniature adaptation and reports steps, exposures and estimated FLOPs.",
+  "known_adaptations": [
+    "128 entities/16 relations/degree8, compact vocabulary",
+    "10% ID path holdout and phi6",
+    "width128, heads4, batch256, 128k steps",
+    "FP32 with TF32 instead of original FP16"
+  ],
+  "not_claimed": [
+    "exact numerical replication",
+    "new-world independent confirmation",
+    "depth-only parameter-matched causal effect",
+    "linear depth law",
+    "one hop per layer"
+  ]
+}

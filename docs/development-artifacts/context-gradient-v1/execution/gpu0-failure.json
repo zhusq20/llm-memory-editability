@@ -1,0 +1,9 @@
+{
+  "time": "2026-09-27T07:20:05.135961+00:00",
+  "world": 0,
+  "seed": 0,
+  "device": "cuda:0",
+  "failure": "uncorrectable ECC error when moving newly initialized model to device",
+  "gradient_results_produced": false,
+  "recovery": "rerun unchanged frozen experiment on cuda:6; no GPU reset"
+}

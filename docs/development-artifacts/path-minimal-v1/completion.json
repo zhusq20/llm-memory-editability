@@ -1,0 +1,49 @@
+{
+  "completed_at": "2026-09-27T20:53:31.822810+00:00",
+  "stage": "minimal_and_jacobian",
+  "status": "complete",
+  "locks": {
+    "path_transfer": "2f2a1c592d29f0d7f44421f7ce6a7b17175afd9c98fe497fdf187c1722e0d190",
+    "minimal": "8ed7122de8848da4a0f24799d4b8d2c7d1c8363584f743f09fb07a70c58fa556",
+    "jacobian": "73949c9f90e931a1752bda30b7057ec461d41132c8467a86fd5369178ae46e0c"
+  },
+  "relevant_tests_passed": 39,
+  "python_files_lint_and_format_passed": 13,
+  "documents": {
+    "README.md": "d19d2555e2af672830ff8d567af568c0f32b3a2116b6498aaf46e1cb320288ad",
+    "CONTRIBUTING.md": "f37e469b28943d56e607cdff3e390ebfa84e8c8a2bf48cfe84d1c0878a28bf4c",
+    "docs/experimental-protocol.md": "9815c1d1d1989fc93cf867c6fced3030883ec13f3b92e33cc683854c9c6cfef7",
+    "docs/path-transfer-results-v1.md": "a6e56c434aff38b4cfee8b97f1374a671d9ec87abad2ebd1d98b79785621ec20"
+  },
+  "artifacts": {
+    "docs/development-artifacts/path-minimal-v1/report.md": "2c4aac95ca93788f183ea60fa2b4f4d77129aac29b0de920fec84fecda2f1a7b",
+    "docs/development-artifacts/path-minimal-v1/mechanism-geometry.csv": "c3f3f575b28adf32c083768875dfca8ea786c9caf5fd189c721fd9f0eb10e102",
+    "docs/development-artifacts/path-minimal-v1/margin-audit.json": "bbda94c6515819cdfc7f622a8be35719940cb1d05f10c3108d82e7ebc5fdd758",
+    "docs/development-artifacts/path-minimal-v1/all-points.csv": "85d30e2636b6d4be1e28a8cd7d293e716972448dee5bbcc90189eb84044986f3",
+    "docs/development-artifacts/path-minimal-v1/jacobian-audit.json": "98ad9812a1fcb57c60f373d15fc0e0e7bc9f579b123047ff1a040e3ea5030022",
+    "docs/development-artifacts/path-minimal-v1/jacobian-lock.json": "73949c9f90e931a1752bda30b7057ec461d41132c8467a86fd5369178ae46e0c",
+    "docs/development-artifacts/path-minimal-v1/jacobian-metrics.npz": "cfe2768e12e36157991b99dedd94dcc3f5a476642dbc1e4d38de496323608ddf",
+    "docs/development-artifacts/path-minimal-v1/jacobian-preregistration.md": "31b5883425c175342dc643c89bf013be95500be4ec5baccc995ca6e3e2c08598",
+    "docs/development-artifacts/path-minimal-v1/mechanism-summary.png": "3ec614e0ed1c5c45b63571d61727c01c3273b182ea5efeca8cc18cb98fa8b3a1",
+    "docs/development-artifacts/path-minimal-v1/minimal-trajectories.pdf": "d650bd739ec01a36bcf697c87bd5dfbc1df49b5bb7b8abc3f95a22430de6be7f",
+    "docs/development-artifacts/path-minimal-v1/mature-margin-summary.csv": "9207e68819fd3ca2e88b6715c2d013b84b993db0bb172d17b468dc98b31db484",
+    "docs/development-artifacts/path-minimal-v1/jacobian-geometry.csv": "0a67df3afad76c1ae4f40635f25b426436e5192a6b845068628ac3329e165a9a",
+    "docs/development-artifacts/path-minimal-v1/minimal-trajectories.png": "49a819279ff9c40a3c924f72db8134b57106d59a9955f4efd400fc9002de18b2",
+    "docs/development-artifacts/path-minimal-v1/endpoints.csv": "610b65aa0c0df9acefbb3336a184339fe1b09c6b167d4bc6a429cac2af70eec0",
+    "docs/development-artifacts/path-minimal-v1/mature-margin-secondary.csv": "cb21a310973c55c3ebbba481a979c7a1e27396204e0bb56fa14efcd33abb0a34",
+    "docs/development-artifacts/path-minimal-v1/jacobian-small-steps.csv": "943cfd7d14523d6a7e3c921ee871f901d68a5e55a72ba25f12f5aeb5967aea60",
+    "docs/development-artifacts/path-minimal-v1/preregistration.md": "6bb77c1a8babee2511d0f9fc03d0d74d674abea4e4effe3b73d9c11c5f17b12e",
+    "docs/development-artifacts/path-minimal-v1/mechanism-summary.pdf": "6266c946ec41cef5e2ac9bfedfeec1abf7b7f76e990bbe47b4a2e31debab32d9",
+    "docs/development-artifacts/path-minimal-v1/preregistration-lock.json": "8ed7122de8848da4a0f24799d4b8d2c7d1c8363584f743f09fb07a70c58fa556",
+    "docs/development-artifacts/path-minimal-v1/audit.json": "ab726df5946cf5f0fdf9e4ff102510f969ea9f632665f1f53f915e5c3a1df61d",
+    "docs/development-artifacts/path-minimal-v1/summary.csv": "edbdf7ad1ee816c17b88d79ca9d851df298da601711ffc32c509d81d5ae8c632",
+    "docs/development-artifacts/path-minimal-v1/frozen-files/configs/bios-path-minimal-v1.json": "facf6bc40fe0c37ce3b08f5d52c9e02452814b841e3f15a1f9c5f3a954c7e211",
+    "docs/development-artifacts/path-minimal-v1/frozen-files/tests/test_bios_path_minimal.py": "f89dac6b4a2751a278646241f85518804ba0722bcceadc7f1d3ce75359119619",
+    "docs/development-artifacts/path-minimal-v1/frozen-files/scripts/analyze_bios_path_margin.py": "c39217ef3a515721e0df042d89808b570e10422cfe62243d948b94c35bbb9e4f",
+    "docs/development-artifacts/path-minimal-v1/frozen-files/scripts/run_bios_path_minimal.py": "003dd1fc81b3c1a245ec2a13f5174231e56f5920ed344d76f9ad0ae50beb8e83",
+    "docs/development-artifacts/path-minimal-v1/frozen-files/docs/development-artifacts/path-transfer-v1/audit.json": "3ce3edd9c9c26b9b63f66a00a6d1bc7e51a6ef2e22dec9192b1f0be96c640555",
+    "docs/development-artifacts/path-minimal-v1/frozen-files/src/llm_memory_editability/bios_path_transfer.py": "2a079c54c2778e9bcb8fb36ebea4f90c43ac7bb7135e6d61e8a91a250ae3a0e1",
+    "docs/development-artifacts/path-minimal-v1/frozen-files/src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "docs/development-artifacts/path-minimal-v1/frozen-files/src/llm_memory_editability/bios_path_minimal.py": "6fe8f0f6dd0950adfbbc5ad0524c1fe7e96b5c054d04338c046728535257a12e"
+  }
+}

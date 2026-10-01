@@ -1,0 +1,167 @@
+{
+  "audit_date": "2026-09-30",
+  "scope": "Read-only source/method alignment for a small-model development adaptation; no GPU experiment was run by this audit.",
+  "paper": {
+    "title": "Grokked Transformers are Implicit Reasoners: A Mechanistic Journey to the Edge of Generalization",
+    "version": "arXiv:2405.15071v3, 2024-10-30",
+    "venue": "NeurIPS 2024",
+    "url": "https://arxiv.org/html/2405.15071v3",
+    "sections_read": [
+      "2",
+      "3",
+      "A",
+      "B",
+      "C",
+      "D.1",
+      "E.1",
+      "E.2"
+    ]
+  },
+  "repository": {
+    "url": "https://github.com/OSU-NLP-Group/GrokkedTransformer",
+    "commit": "734ca654ec7a71dd6737d640407fac14491d538c",
+    "source_sha256": {
+      "composition.ipynb": "9e54986014eeb45eea1df2529225f31c4480d15ef35dcace94ef7cdc5fbabcc1",
+      "README.md": "b5724c9671c2e50d0535567b235a58f4923856f0d9cb54d438dc0b6dea099d6a",
+      "main.py": "45d7016e9a92b63b594f8ff24b935dd54792edd47a2bf3a83b3e4792907ee74d",
+      "simpletransformers/simpletransformers/seq2seq/seq2seq_utils.py": "66aa2347ba0b0cad702c5a37f412c8c22bb05d77101432f8d7db9993586d1ebe",
+      "simpletransformers/simpletransformers/seq2seq/seq2seq_model.py": "350e6702c77a0b2cc55cc4298f4dfa3e8952b14fe62c61e6c87d1a0bbef15cbc",
+      "simpletransformers/simpletransformers/config/model_args.py": "ef9aceb9fad7c5c8225f8b242b1e598340a01a65c7ad4a38d4b119e656541ae8",
+      "transformers/src/transformers/models/gpt2/configuration_gpt2.py": "7a5d5492d348afe0f07da0ee1cdded76278d2be182f2ac7fbc82c4c9c8017d4d",
+      "transformers/src/transformers/models/gpt2/modeling_gpt2.py": "ae55537036e63cc4a3d01955057f16dd26a6a5b452799ea5d5c70f5af15331a5"
+    }
+  },
+  "original_composition": {
+    "world": {
+      "entities_main": 2000,
+      "relations": 200,
+      "out_degree": 20,
+      "relation_selection": "per head, distinct relations sampled without replacement",
+      "tail_selection": "uniform random entity independently per (head,relation); self-loops and repeated tail values allowed",
+      "atomic_split": "uniform global edge partition: 95% ID, 5% OOD; all atomic facts included in training"
+    },
+    "paths": {
+      "ID": "both edges in ID atomic partition",
+      "OOD": "both edges in OOD atomic partition",
+      "mixed_ID_OOD": "excluded from compositional training and the reported ID/OOD composition probes",
+      "ID_test_reservation": "each ID path independently reserved with probability 0.005 before training subsampling",
+      "training": "uniform subset without replacement from remaining ID paths; count round(phi * ID atomic count)",
+      "phi_values": [
+        18.0,
+        12.6,
+        9.0,
+        7.2,
+        5.4,
+        3.6
+      ],
+      "train_examples": "all ID+OOD atomic facts concatenated with sampled ID compositions; random permutation each epoch, no separate balanced task sampler",
+      "probe_sizes": "up to 3000 per split; original valid.json contains OOD compositions"
+    },
+    "serialization": {
+      "atomic_prefix": [
+        "head",
+        "relation"
+      ],
+      "composition_prefix": [
+        "head",
+        "relation1",
+        "relation2"
+      ],
+      "target_sequence": "prefix + tail entity + </a>",
+      "BOS": false,
+      "query_answer_separators": false,
+      "notes": "<q>, </q>, <a>, <sep>, <mask> exist in added vocabulary but are not used by composition form_items",
+      "tokenizer": "GPT2 tokenizer with all E entities, R relations and six markers added as single tokens; original 50257-token vocabulary retained",
+      "pad": "original GPT2 <|endoftext|>, different from newly added </a> answer end marker",
+      "loss": "causal cross-entropy on tail and </a> only, equally weighted token losses; input-prefix labels and right-padding labels masked -100",
+      "train_padded_length": 10,
+      "evaluation": "greedy generation; compare serialized answer up to </a>; first entity-token argmax is a close but explicitly different simplified metric"
+    },
+    "model": {
+      "architecture": "standard causal decoder-only GPT2, pre-LN, train from random initialization",
+      "layers_main": 8,
+      "width": 768,
+      "heads": 12,
+      "ffn_multiplier": 4,
+      "activation": "gelu_new (tanh approximation)",
+      "layernorm_epsilon": 1e-05,
+      "positional_embedding": "learned absolute, GPT2 default max positions 1024",
+      "tied_input_output_embeddings": true,
+      "linear_bias": true,
+      "dropout_attention": 0.1,
+      "dropout_embedding": 0.1,
+      "dropout_residual": 0.1,
+      "init_weights_std": 0.02,
+      "residual_output_init_std": "0.02 / sqrt(2 * n_layer) for attention and MLP c_proj weights",
+      "layernorm_init": "gamma=1, beta=0; other linear biases=0"
+    },
+    "optimization": {
+      "optimizer": "torch.optim.AdamW",
+      "learning_rate": 0.0001,
+      "betas": [
+        0.9,
+        0.999
+      ],
+      "epsilon": 1e-08,
+      "weight_decay": 0.1,
+      "weight_decay_exclusions": "parameter names containing bias, LayerNorm.weight, or ln; embeddings are decayed",
+      "batch_size": 512,
+      "warmup_steps": 2000,
+      "schedule": "constant after linear warmup",
+      "max_grad_norm": 1.0,
+      "precision_README": "fp16 with gradient scaling",
+      "max_steps_README": 1500000,
+      "data_sampler": "without-replacement random epoch permutations",
+      "training_seed_default": 42,
+      "notebook_world_seed": "not explicitly set in composition.ipynb"
+    }
+  },
+  "paper_code_distinctions": [
+    "Paper describes prediction of final tail. Code supervises both tail and answer-ending marker, while masking every prefix token.",
+    "Paper does not enumerate dropout. README does not enable --no_dropout; GPT2 defaults imply 0.1 embedding, attention and residual dropout.",
+    "CLI defaults (LR 4e-5, WD 0.01, linear scheduler, batch16, epochs20) do not reproduce the paper. README command overrides most; weight decay must be supplied externally as 0.1.",
+    "Original tokenizer retains 50257 base tokens even though the factual task uses the newly added tokens; compact vocabulary is an explicit adaptation.",
+    "Paper conceptual ID test is unseen inferred facts. Notebook reserves 0.5% ID paths, then samples training from the remaining pool; unused training-pool paths are not added to test probes.",
+    "Notebook has no explicit random seed and iterates sets when serializing facts. Independent deterministic generation should record the world seed and partition seed.",
+    "Main paper uses 8-layer width768 models. A 1/2-layer width64/128 model is a new controlled small-scale adaptation, not an exact reproduction.",
+    "Paper says two million updates were also tried for OOD; README default maximum is 1.5 million."
+  ],
+  "planned_small_adaptation_from_parent": {
+    "status": "planned development configuration; record actual executed config separately",
+    "entities": 128,
+    "relations": 16,
+    "out_degree": 8,
+    "phi": 6.0,
+    "ID_test_reservation": 0.1,
+    "width_candidates": [
+      64,
+      128
+    ],
+    "depth_candidates": [
+      1,
+      2
+    ],
+    "compact_vocabulary": true,
+    "retain": [
+      "both ID/OOD atomic facts in training",
+      "edge-based ID/OOD split",
+      "unseparated h,r1,r2 prefixes",
+      "tail plus distinct EOS-marker supervision",
+      "GPT2 dropout and initialization",
+      "constant LR after warmup",
+      "uniform training-set sampling"
+    ]
+  },
+  "scientific_cautions": [
+    "For E128, degree8 and a 5% OOD edge split, expected both-OOD path count is only about 20. OOD estimates are descriptive and must show denominator.",
+    "With 10% ID path reservation, degree8 and phi6, about 88% of available training-pool ID paths are used. Successful calibration may show direct generalization rather than delayed grokking. A later lower-phi comparison is needed to investigate delay.",
+    "Reducing relation vocabulary from 200 to 16 and degree20 to 8 changes reuse statistics, path availability and the achievable inferred/atomic ratio; this is more than changing model size.",
+    "A one-layer model failing within budget does not establish an architectural impossibility. Verify atomic and training-composition prerequisites and report right-censored threshold times.",
+    "Compare learning curves against updates, example exposure and estimated computation. Extra layers increase per-step computation and parameters; a matched-parameter one-layer follow-up is useful only after a working deeper model exists.",
+    "Do not infer one-hop-per-layer solely from successful two-layer behavior; that mechanism requires additional evidence.",
+    "A compact vocabulary changes the output softmax and tied-embedding capacity. Report this adaptation and do not use unchanged absolute step counts as an exact paper replication.",
+    "Keep PAD distinct from trained EOS or mask pads by position; ID-based masking with PAD=EOS would erase the ending-marker training signal.",
+    "Do not mix OOD or held-out development performance into an undisclosed checkpoint-selection rule. The pilot is calibration; independent worlds are needed for later confirmation.",
+    "For a small world, accidental equalities (tail=head or tail=bridge) occur more often. Keep whole-set scores and predeclare any descriptive subsets rather than deleting easy cases after results."
+  ]
+}

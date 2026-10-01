@@ -1,0 +1,21 @@
+{
+  "state": "complete",
+  "sha256_checks": {
+    "input-provenance.json": {
+      "files": 3455,
+      "hash_mismatches": []
+    },
+    "output-manifest.json": {
+      "files": 32,
+      "hash_mismatches": []
+    }
+  },
+  "source_and_test_snapshots_match": true,
+  "definition_snapshot_matches": true,
+  "tests": {
+    "pytest": "10 passed",
+    "ruff_check": "passed",
+    "ruff_format_check": "passed"
+  },
+  "log_excluded_from_output_seal": true
+}

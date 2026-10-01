@@ -1,0 +1,154 @@
+{
+  "created": "2026-09-28T01:39:30.606830+00:00",
+  "n_cases": 96,
+  "n_pairs": 24,
+  "new_edits": 48,
+  "reused_edits": 48,
+  "new_training": 0,
+  "endpoints": [
+    {
+      "cell": "aa",
+      "n": 24,
+      "E": 24,
+      "D": 20,
+      "D_heldout": 167,
+      "D_heldout_n": 384,
+      "E_local": 16,
+      "E_local_D": 14,
+      "autonomous": 24,
+      "actual_answer": 20,
+      "U_broken": 460,
+      "U_known": 3568
+    },
+    {
+      "cell": "ab",
+      "n": 24,
+      "E": 24,
+      "D": 3,
+      "D_heldout": 63,
+      "D_heldout_n": 384,
+      "E_local": 21,
+      "E_local_D": 3,
+      "autonomous": 24,
+      "actual_answer": 15,
+      "U_broken": 397,
+      "U_known": 3568
+    },
+    {
+      "cell": "ba",
+      "n": 24,
+      "E": 24,
+      "D": 2,
+      "D_heldout": 85,
+      "D_heldout_n": 384,
+      "E_local": 16,
+      "E_local_D": 2,
+      "autonomous": 24,
+      "actual_answer": 15,
+      "U_broken": 398,
+      "U_known": 3568
+    },
+    {
+      "cell": "bb",
+      "n": 24,
+      "E": 24,
+      "D": 20,
+      "D_heldout": 192,
+      "D_heldout_n": 384,
+      "E_local": 20,
+      "E_local_D": 17,
+      "autonomous": 24,
+      "actual_answer": 20,
+      "U_broken": 458,
+      "U_known": 3568
+    }
+  ],
+  "patterns": {
+    "actual": 10,
+    "mixed": 14
+  },
+  "world_seed": [
+    {
+      "world": 0,
+      "seed": 0,
+      "n": 6,
+      "root_patterns": 0,
+      "actual_patterns": 4,
+      "root_effect": 3.68168443441391,
+      "actual_effect": 7.144301434357961
+    },
+    {
+      "world": 0,
+      "seed": 1,
+      "n": 6,
+      "root_patterns": 0,
+      "actual_patterns": 2,
+      "root_effect": 3.4104243516921997,
+      "actual_effect": 6.091792980829875
+    },
+    {
+      "world": 1,
+      "seed": 0,
+      "n": 6,
+      "root_patterns": 0,
+      "actual_patterns": 2,
+      "root_effect": 2.1616342465082803,
+      "actual_effect": 6.947485725084941
+    },
+    {
+      "world": 1,
+      "seed": 1,
+      "n": 6,
+      "root_patterns": 0,
+      "actual_patterns": 2,
+      "root_effect": 3.196584403514862,
+      "actual_effect": 7.349001983801524
+    }
+  ],
+  "all_accepted_1024": true,
+  "pre": {
+    "root_response_mean": 0.22458324920350173,
+    "actual_response_mean": 0.5630337125327141,
+    "actual_positive": 24,
+    "actual_exceeds_root": 22,
+    "unexplained_fraction_median": 0.6726119471879699
+  },
+  "source_controls": {
+    "n": 672,
+    "nonzero": 672,
+    "sign_matches": 672,
+    "other_contrast_drift_max": 0.00018215179443359375,
+    "other_output_kl_max": 2.467024112257894e-07
+  },
+  "prospective_first_step": {
+    "n": 48,
+    "sign_matches": 48,
+    "max_actual_replay_difference": 5.7220458984375e-06
+  },
+  "finite_effects": {
+    "root_mean": 3.112581859032313,
+    "actual_mean": 6.883145531018575,
+    "actual_exceeds_root": 23,
+    "calibrated_root_mean": 0.20087213054836772,
+    "calibrated_actual_mean": 0.5515753387071168
+  },
+  "scope": "Two previously studied development worlds; no independent significance inference.",
+  "verified_sources": {
+    "results/bios-relation-response-v1/world-0-seed-0/analysis.json": "c4385faba171011b5e042458c485865b679dbfa3a8359ce2a211fbe60b85c8f7",
+    "results/bios-relation-response-v1/world-0-seed-0/prediction.json": "3296ef4acc23c8ad165645b45ade83fc15b533d2ca4b684c80067ebe56e34ddb",
+    "results/bios-relation-response-v1/world-0-seed-0/new/complete.json": "e8d2418f0ed8806f80e50c12a1c1cf8d6ed520d5700159d8788fc116640e6a8d",
+    "results/bios-relation-response-v1/world-0-seed-0/new/launch.json": "1307e8697961110f9bdb6827929147fc86013401c0f51d3af357bcdadc8a9052",
+    "results/bios-relation-response-v1/world-0-seed-1/analysis.json": "bdb98f67c582d8daf1793a223c4f7a60ef853442df60eb2f4348703e48dda584",
+    "results/bios-relation-response-v1/world-0-seed-1/prediction.json": "45c96edd1f0c8bf8c6beb4fca2573e2b8991d425f7f6f249470680c755da1624",
+    "results/bios-relation-response-v1/world-0-seed-1/new/complete.json": "b237c21ee5062c2ca9b7b759e07e5b7a35ff85f8aad0c2acf80905623912cdac",
+    "results/bios-relation-response-v1/world-0-seed-1/new/launch.json": "9b537d75f61911dfc0f74ef8ee08e4422bdc7ceed62c4f7c8b658178a903c9fa",
+    "results/bios-relation-response-v1/world-1-seed-0/analysis.json": "d066c7c3734e3000466442a756474eceea93dd83b38c65e0db73f552af2009c9",
+    "results/bios-relation-response-v1/world-1-seed-0/prediction.json": "f6dcf26ba6e9159a2781bc1ae682ab0bc5f5fd400f2321c0afe07d707941cb7c",
+    "results/bios-relation-response-v1/world-1-seed-0/new/complete.json": "cb7876466bcbe5c8e214b9a15031136c7cd026f378ddde423ac26d69223a876b",
+    "results/bios-relation-response-v1/world-1-seed-0/new/launch.json": "e119ccbaa815e2dd564e6a49127cfeada5a0cacfaa35a3ca6a2fe23d1512cf6e",
+    "results/bios-relation-response-v1/world-1-seed-1/analysis.json": "a79d4c8992c7d90490ac8e5e3670fb8e80b3dfdc3079854e10f56714d6dabfb9",
+    "results/bios-relation-response-v1/world-1-seed-1/prediction.json": "9a3cc3385d2f78680ca28ea7890b0e417d6884427fa714a08346dcd109625ab9",
+    "results/bios-relation-response-v1/world-1-seed-1/new/complete.json": "ed2af28ad3abcace3555d046d94c5f2910fb2b30a5ac6df05db51160cd0c3d5b",
+    "results/bios-relation-response-v1/world-1-seed-1/new/launch.json": "3612843fd915510475e26a8aa1d4b148a54cd29bea04bcf021c4eb763a5e56fb"
+  }
+}

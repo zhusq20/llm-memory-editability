@@ -1,0 +1,203 @@
+{
+  "source": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/mechanism-v1/p0/h2-two-step.csv",
+  "source_sha256": "5d6f940eccff6b20afc44fa25e187ee7240273704affde766ac01c0869f88ca1",
+  "script_sha256": "2f978a59ccbf726917cb355725e90286b0d2f1b5f0059b50e22241794e9b2f74",
+  "data": [
+    {
+      "phase": "learning",
+      "scope": "",
+      "width": 64,
+      "method": "Direct composed query",
+      "accuracy_percent": 5.859375,
+      "cases": 24
+    },
+    {
+      "phase": "learning",
+      "scope": "",
+      "width": 128,
+      "method": "Direct composed query",
+      "accuracy_percent": 30.533854166666668,
+      "cases": 24
+    },
+    {
+      "phase": "learning",
+      "scope": "",
+      "width": 256,
+      "method": "Direct composed query",
+      "accuracy_percent": 41.14583333333333,
+      "cases": 24
+    },
+    {
+      "phase": "learning",
+      "scope": "",
+      "width": 768,
+      "method": "Direct composed query",
+      "accuracy_percent": 35.61197916666667,
+      "cases": 24
+    },
+    {
+      "phase": "learning",
+      "scope": "",
+      "width": 64,
+      "method": "Autonomous two-step",
+      "accuracy_percent": 2.278645833333333,
+      "cases": 24
+    },
+    {
+      "phase": "learning",
+      "scope": "",
+      "width": 128,
+      "method": "Autonomous two-step",
+      "accuracy_percent": 57.2265625,
+      "cases": 24
+    },
+    {
+      "phase": "learning",
+      "scope": "",
+      "width": 256,
+      "method": "Autonomous two-step",
+      "accuracy_percent": 97.4609375,
+      "cases": 24
+    },
+    {
+      "phase": "learning",
+      "scope": "",
+      "width": 768,
+      "method": "Autonomous two-step",
+      "accuracy_percent": 98.30729166666666,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "mlp",
+      "width": 64,
+      "method": "Direct composed query",
+      "accuracy_percent": 23.731069125805966,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "mlp",
+      "width": 128,
+      "method": "Direct composed query",
+      "accuracy_percent": 18.314917903733694,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "mlp",
+      "width": 256,
+      "method": "Direct composed query",
+      "accuracy_percent": 16.018456040385864,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "mlp",
+      "width": 768,
+      "method": "Direct composed query",
+      "accuracy_percent": 13.561269180786725,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "mlp",
+      "width": 64,
+      "method": "Autonomous two-step",
+      "accuracy_percent": 5.7750880941670415,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "mlp",
+      "width": 128,
+      "method": "Autonomous two-step",
+      "accuracy_percent": 74.469638751437,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "mlp",
+      "width": 256,
+      "method": "Autonomous two-step",
+      "accuracy_percent": 97.02283888139151,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "mlp",
+      "width": 768,
+      "method": "Autonomous two-step",
+      "accuracy_percent": 98.98387127005547,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "all",
+      "width": 64,
+      "method": "Direct composed query",
+      "accuracy_percent": 11.634755960413855,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "all",
+      "width": 128,
+      "method": "Direct composed query",
+      "accuracy_percent": 4.938271604938271,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "all",
+      "width": 256,
+      "method": "Direct composed query",
+      "accuracy_percent": 9.428184510421351,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "all",
+      "width": 768,
+      "method": "Direct composed query",
+      "accuracy_percent": 4.502564727345429,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "all",
+      "width": 64,
+      "method": "Autonomous two-step",
+      "accuracy_percent": 5.101183335832459,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "all",
+      "width": 128,
+      "method": "Autonomous two-step",
+      "accuracy_percent": 71.05669265756985,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "all",
+      "width": 256,
+      "method": "Autonomous two-step",
+      "accuracy_percent": 97.65199367721297,
+      "cases": 24
+    },
+    {
+      "phase": "editing",
+      "scope": "all",
+      "width": 768,
+      "method": "Autonomous two-step",
+      "accuracy_percent": 98.35979282251213,
+      "cases": 24
+    }
+  ],
+  "population": "Learning: original-exception heldout. Editing: original 45-person manipulated-conflict cohort, heldout subset, exception edits only.",
+  "aggregation": "Equal model-chain/edit-case weighting; all organizations, worlds and initializations retained. Repeated queries are not independent replicates.",
+  "intervals": "None; no query-level confidence intervals.",
+  "generation": "First hop is model generated; no true bridge fed to the second call. Both calls require value plus EOS. Extra calls change inference cost."
+}

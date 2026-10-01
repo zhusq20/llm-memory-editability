@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-09-29T23:12:28.045227+00:00",
+  "files": {
+    "configs/architecture-bridge-v1.json": "4b9892a2acf9b208af90b1c0e91e29ae6f3850ecf97d947a40e72881915e5cdc",
+    "src/llm_memory_editability/architecture_bridge.py": "777fe51d98b09275f487386660106e93c6c8b49e25b94e804510ed968c2df04c",
+    "scripts/run_architecture_bridge.py": "37550169b68327ed48559b966084aae94012f13e3892364945dbe271be36c708",
+    "tests/test_architecture_bridge.py": "2ecf62bf2341d74f4645841302523d93bbd7d2ea3fd062f668a589f3e325ded5",
+    "docs/development-artifacts/architecture-bridge-v1/preregistration.md": "2b7460e5caefc840ca886050a8e576db40698d4171c14e078ebae15106841807"
+  },
+  "git_head": "e279fc676f71e7e8cc8ce255faf68e26534ce311",
+  "torch": "2.8.0+cu128",
+  "transformers": "5.17.0",
+  "python": "3.12.7",
+  "data_lock_sha256": "e0b5c2566ea0022e68dd389426bce11990cfe4fec2d2070f4edf651e32df2482",
+  "revision": 3,
+  "previous_lock_sha256": "5317c25f248697a1f8051f057538e15ec9d9e8110bf64267667a8b2c5e1ec4bc",
+  "amendment": "learning-boundary-amendment.json"
+}

@@ -1,0 +1,28 @@
+{
+  "protocol": "confirmation-common-U-supplement-v1",
+  "complete": true,
+  "parent_models": 96,
+  "edit_cases": 768,
+  "paired_cases": 384,
+  "paired_checkpoints": 1536,
+  "rows": 55296,
+  "receipt_sha256": "ec588e48536cb458bca2848b9f4fae8201536eaf198fc7bda9ce25626b994ce5",
+  "lock_sha256": "7c3af938277308fdbf8f384a6bd3afcbed2eb848a58b5501f9a2249a6cdde5f6",
+  "primary_audit_sha256": "27a7996d9c0012da080ff7135d1e6111ce34d1b95cef4058563daa9b712534db",
+  "archive_index_sha256": "9b729f8dcc1bd18ca18974d473772e2788bc359b3278210e8486ff7baf0a4997",
+  "declared_weights": 2208,
+  "model_weights_read": false,
+  "weight_archive_verified": true,
+  "sources_sha256": "82b9a7a0513b8086a851e288b5f680c60d44270e514e14e1fdd4e77d9377cf59",
+  "supplementary_sources": {
+    "scripts/summarize_bios_confirmation_common_u.py": "e7eae2bb3384eb9be29470d222755f56390719a4571d208715744e50c3073853",
+    "tests/test_bios_confirmation_common_u.py": "3990ebde0aa8dc89da22a581b9c4b192f10ee0e64671c4727bd9737c486ec4a2"
+  },
+  "outputs_sha256": {
+    "paired-common-u.csv": "b59158b084bc7e4a0070b0a5a33e495467b859af8975d3b43b335ee1cc1c0ff7",
+    "world-common-u.csv": "c0b9e2062d49719f93392aa3e2ab9585188acfe93d2d73398c0b8fa9bc856079",
+    "overall-common-u.csv": "1dce7f921f791306ed427d8e944956320fe294fee34fbaaa9750bac1836be2d0"
+  },
+  "inference": "Descriptive only; repeated queries/supports/seeds are not independent worlds",
+  "limitation": "Conditions on both baselines being correct after prevalence-specific learning; not a primary causal effect of prevalence on retention and does not replace phase-specific primary U. Case macros average only nonzero-known cases; world macros average available world case means, with valid counts reported. Archive byte verification reused via sealed independent index; weights not loaded again."
+}

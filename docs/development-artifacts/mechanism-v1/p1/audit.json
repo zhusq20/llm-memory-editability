@@ -1,0 +1,75 @@
+{
+  "state": "complete",
+  "passed_available_predictions": true,
+  "expected_models": 24,
+  "complete_models": 24,
+  "expected_new_edits": 192,
+  "complete_new_edits": 192,
+  "expected_reference_edits": 96,
+  "complete_reference_edits": 96,
+  "prediction_checkpoints_recomputed": 1152,
+  "expected_prediction_checkpoints": 1152,
+  "weights_and_optimizer_states_verified": 192,
+  "weight_verification_requested": true,
+  "missing": [],
+  "sources": {
+    "bios_cross.py": "47b8f55adbe13d9bc6e1c5c9170cc95e382261ffb1f31980706ac95be03623bf",
+    "bios_cross_train.py": "0106cae29be447319be2e7f6f0e1f5b60cc6224282331906f43ebc65ab795f38",
+    "bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "bios_data.py": "d5568901f2042a6d89d447f47eddae9764eced0a9e71e3ea5adc0038a7e636d6",
+    "bios_train.py": "c1d84d38aa1853815075041535ae3fa9890f5cf1f9f5d9019136c79521033046",
+    "bios_organization_train.py": "833426232b693495711e38101553e8bff370c837c722d76e7f9f5f2d2ed3cad6",
+    "bios_mechanism_edit.py": "ca9351ef08189c643a5b0a009af3e52b2578d5ae6265510f603cb78b229667dd",
+    "run_bios_mechanism_edit.py": "c7074aee56fa418e25b0ebfbd8f10fd52e3253f7495242bf8e203bf79ff058f5"
+  },
+  "config": {
+    "protocol": "v2.8-development-mechanism-P1",
+    "widths": [
+      256,
+      768
+    ],
+    "worlds": [
+      0,
+      1
+    ],
+    "seeds": [
+      0,
+      1
+    ],
+    "conditions": [
+      "company",
+      "project",
+      "neither"
+    ],
+    "arms": [
+      "old-fact-rehearsal",
+      "root-only",
+      "actual-only",
+      "class-balanced-exception"
+    ],
+    "edit_steps": 512,
+    "edit_checkpoints": [
+      0,
+      32,
+      128,
+      512
+    ],
+    "edit_lr": 3e-05,
+    "retention_kl": 1.0,
+    "batch_size": 128,
+    "save_every": 512,
+    "gradient_steps": [
+      0,
+      31,
+      127,
+      511
+    ]
+  },
+  "limitations": [
+    "Two reused development worlds",
+    "Fixed-label response contrasts do not alone identify internal routing",
+    "Retention pools differ across truth arms; supervised unchanged facts are separate",
+    "No D/U targets enter editor optimization",
+    "New-arm elapsed training time includes four class-gradient diagnostics; it is not an exact compute comparison with archived references"
+  ]
+}

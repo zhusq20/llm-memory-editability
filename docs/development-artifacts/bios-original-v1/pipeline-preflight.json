@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "scope": "200-person 2-layer engineering check; not science evidence",
+  "pretrain_passes": 2,
+  "restart_weights_max_difference": 0.0,
+  "adaptations": 1,
+  "task_branches": 4,
+  "evaluations": 4
+}

@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-09-30T01:49:00.242934+00:00",
+  "supersedes": "numerical-amendment.json",
+  "reason": "Disabling TF32 changes one of 754 historical development-step4000 predictions; retain original arithmetic instead.",
+  "change": "Keep historical TF32. A helper accepts only two informative prefix tokens, pads two fixed PAD=0 suffix tokens to historical length four, returns only positions 0 and 1 after block one. Causal masking prevents these states from accessing suffix tokens.",
+  "unchanged": "No real second relation or answer enters donor calculation; retain original donors, sites, metrics, all numerical thresholds, and exact historical prediction checks.",
+  "validation": "On the previously failed width180 checkpoint, padded-prefix and full-input prefix states are bitwise identical (max error 0). Independent causal suffix/CPU equivalence tests required.",
+  "attempts_preserved": [
+    "attempts/development-01",
+    "attempts/confirmation-01",
+    "attempts/development-02"
+  ],
+  "rerun": "All 40 predefined model states, no outcome-based selection."
+}

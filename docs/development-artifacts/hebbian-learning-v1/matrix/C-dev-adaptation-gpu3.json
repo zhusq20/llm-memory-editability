@@ -1,0 +1,60 @@
+[
+  {
+    "phase": "adapt",
+    "run_id": "C/adapt-dev-C0-lambda0-e0",
+    "case_ids": [
+      8902,
+      17759,
+      12161,
+      15779,
+      16657,
+      20394,
+      17587,
+      13437,
+      19408,
+      9593,
+      5308,
+      8650,
+      7944,
+      6721,
+      16152,
+      19260
+    ],
+    "condition": "C0",
+    "seed": 10,
+    "episode_id": 0,
+    "split": "dev",
+    "lr": 0.0001,
+    "steps": 64,
+    "parent_path": "C/dev-C0-lr1e-05/checkpoint-0256.pt"
+  },
+  {
+    "phase": "adapt",
+    "run_id": "C/adapt-dev-C1-lambda0.01-e2",
+    "case_ids": [
+      8670,
+      20301,
+      4323,
+      12923,
+      15867,
+      20025,
+      20491,
+      16692,
+      16423,
+      2445,
+      13037,
+      21145,
+      6111,
+      11121,
+      18302,
+      18631
+    ],
+    "condition": "C1",
+    "seed": 10,
+    "episode_id": 2,
+    "split": "dev",
+    "lr": 0.0001,
+    "steps": 64,
+    "parent_path": "C/dev-C1-lambda0.01/checkpoint-0256.pt"
+  }
+]

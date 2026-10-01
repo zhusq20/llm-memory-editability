@@ -1,0 +1,94 @@
+{
+  "source_root": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p0",
+  "archived_at_utc": "2026-09-27T04:02:25.770678+00:00",
+  "files": {
+    "audit.json": {
+      "sha256": "60ccf47b3f1e004cc95542ffe8623503ae56500652585b9aabe209e1dba6a826",
+      "bytes": 675
+    },
+    "schema.json": {
+      "sha256": "ddab7380d83fa7d2eef0fc8bfb05d8648956c372447785665e9be9fc9dc0214b",
+      "bytes": 910
+    },
+    "sources.json": {
+      "sha256": "5c2dbdbd94ff0fb90349c7c23edc8c10b48d312f91fdbb322e719755c35215ea",
+      "bytes": 469878
+    },
+    "report.md": {
+      "sha256": "e0fb48b407bb80bf25fafe287aaa2e362e612d9df707d25613382418a9567bb8",
+      "bytes": 1269
+    },
+    "learning-strata.csv": {
+      "sha256": "9cd6759d459962fe92964ce38f7113fbfcc5f692a479a15ff70911027051f73a",
+      "bytes": 1057258
+    },
+    "editing-strata.csv": {
+      "sha256": "b1f20e2277f15107d835e576eb0d9f702a2034bb32a0e1092a4bcf51cc112539",
+      "bytes": 8088176
+    },
+    "propagation-queries.csv": {
+      "sha256": "a49c646f3a41bf5eda42ba3cb0ad6cede82ed039933bbad68869ca03f50279c2",
+      "bytes": 24910160
+    },
+    "h2-report.md": {
+      "sha256": "2f348446020e4fa3ae1bcb8793ab46cd7aca4017a8cd45e629d014cb68a1be40",
+      "bytes": 9356
+    },
+    "h2-learning.csv": {
+      "sha256": "149cc9a1333de329e42e1a420500d107aa36d30b5539c4f4be95c5c5ade4cdeb",
+      "bytes": 5152
+    },
+    "h2-editing.csv": {
+      "sha256": "9604202c603a3f1d8e0c0367f6cfe2f1593f6d37de143a7fd3214412f837b013",
+      "bytes": 78047
+    },
+    "h2-editing-error-signatures.csv": {
+      "sha256": "2dceca257cab63e09b772d3133dcb024c11990bc1846a1aaf961bf26d404eeaa",
+      "bytes": 4909
+    },
+    "h2-analysis.json": {
+      "sha256": "4ac040c8b8ed4929a481b0a50ee477075eb322abfcf47af5b89f44f20505154c",
+      "bytes": 1403
+    },
+    "h2-two-step.csv": {
+      "sha256": "5d6f940eccff6b20afc44fa25e187ee7240273704affde766ac01c0869f88ca1",
+      "bytes": 63788
+    },
+    "h2-two-step-analysis.json": {
+      "sha256": "148312e693a942c61147f30274c00a56e6a35a7ba5e0db8ec2a62f70acbdc89d",
+      "bytes": 702
+    },
+    "summary/two-step-audit.json": {
+      "sha256": "06970c76f1c6c4bb7b1686bc98281ef6ffe3a5f33ed43fab72e93d54863d2e80",
+      "bytes": 142
+    },
+    "summary/two-step-sources.json": {
+      "sha256": "f71fd0f799d1363d1f9f851022a319ccec2b0c6396055aa52cf902d6c8e7dde0",
+      "bytes": 354903
+    },
+    "summary/two-step-strata.csv": {
+      "sha256": "7f651e0bbede5dfc458fc66f8926133d40b7057a7cf330e0cda1411506cd5174",
+      "bytes": 1837602
+    },
+    "summary/two-step-report.md": {
+      "sha256": "3ec7a393b06d98cea8e44c33b45455a7c7ade51d725c9135c395dbd447a7c135",
+      "bytes": 921
+    }
+  },
+  "copy_verified": true,
+  "generated_files": {
+    "p0-direct-vs-autonomous-two-step.png": {
+      "sha256": "a43ba2643fb1087b947268841e1f1c8f915a07d31046320f355977da50f8ddb1",
+      "bytes": 235994
+    },
+    "p0-direct-vs-autonomous-two-step.pdf": {
+      "sha256": "54dcd54d08746f1cde535db5fcf0d701b10a0c085410712c043a620980b34047",
+      "bytes": 17208
+    },
+    "p0-direct-vs-autonomous-two-step.json": {
+      "sha256": "2d108287afef0221ab8b6aa311e797ae0527fac680fe7577bdc54c030023fd76",
+      "bytes": 5222
+    }
+  },
+  "plot_script": "scripts/plot_bios_mechanism_paths.py"
+}

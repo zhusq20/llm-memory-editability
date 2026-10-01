@@ -1,0 +1,104 @@
+[
+  {
+    "pid": 2936408,
+    "gpu": 3,
+    "shard": 0,
+    "command": [
+      "/home/siqizhu4/miniconda3/bin/python",
+      "-u",
+      "scripts/run_hebbian_learning.py",
+      "baseline",
+      "--device",
+      "cuda:3",
+      "--shard",
+      "0",
+      "--shards",
+      "6"
+    ]
+  },
+  {
+    "pid": 2936409,
+    "gpu": 4,
+    "shard": 1,
+    "command": [
+      "/home/siqizhu4/miniconda3/bin/python",
+      "-u",
+      "scripts/run_hebbian_learning.py",
+      "baseline",
+      "--device",
+      "cuda:4",
+      "--shard",
+      "1",
+      "--shards",
+      "6"
+    ]
+  },
+  {
+    "pid": 2936410,
+    "gpu": 5,
+    "shard": 2,
+    "command": [
+      "/home/siqizhu4/miniconda3/bin/python",
+      "-u",
+      "scripts/run_hebbian_learning.py",
+      "baseline",
+      "--device",
+      "cuda:5",
+      "--shard",
+      "2",
+      "--shards",
+      "6"
+    ]
+  },
+  {
+    "pid": 2936411,
+    "gpu": 7,
+    "shard": 3,
+    "command": [
+      "/home/siqizhu4/miniconda3/bin/python",
+      "-u",
+      "scripts/run_hebbian_learning.py",
+      "baseline",
+      "--device",
+      "cuda:7",
+      "--shard",
+      "3",
+      "--shards",
+      "6"
+    ]
+  },
+  {
+    "pid": 2936412,
+    "gpu": 8,
+    "shard": 4,
+    "command": [
+      "/home/siqizhu4/miniconda3/bin/python",
+      "-u",
+      "scripts/run_hebbian_learning.py",
+      "baseline",
+      "--device",
+      "cuda:8",
+      "--shard",
+      "4",
+      "--shards",
+      "6"
+    ]
+  },
+  {
+    "pid": 2936413,
+    "gpu": 9,
+    "shard": 5,
+    "command": [
+      "/home/siqizhu4/miniconda3/bin/python",
+      "-u",
+      "scripts/run_hebbian_learning.py",
+      "baseline",
+      "--device",
+      "cuda:9",
+      "--shard",
+      "5",
+      "--shards",
+      "6"
+    ]
+  }
+]

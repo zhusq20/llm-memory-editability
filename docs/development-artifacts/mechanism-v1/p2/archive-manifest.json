@@ -1,0 +1,82 @@
+{
+  "source_root": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p2",
+  "archived_at_utc": "2026-09-27T04:31:50.556572+00:00",
+  "files": {
+    "audit.json": {
+      "sha256": "d0abe16612440c740e0068d930badec66391887526fd40775916cb4545547867",
+      "bytes": 365
+    },
+    "dispatcher-launch.json": {
+      "sha256": "5ed1d53d8b969aa7eea2a634f9238d83146000dc17586ded76a561a721fe89f0",
+      "bytes": 284
+    },
+    "editing-change.csv": {
+      "sha256": "cffe2f16dd2c8f3be614137b87cf16b372c4122b5ebc01240c07eea97ac752c8",
+      "bytes": 18242
+    },
+    "editing.csv": {
+      "sha256": "9bd546104eb68817c06590e01d2ce9554a5fe9b6582984eab5fb250e9faca49a",
+      "bytes": 461712
+    },
+    "io-auto-resume-execution.py": {
+      "sha256": "f64aedd16fbd92cfff6cd65aa39f8c8ff5e8365767cc6078d9f552d53f6c0ff0",
+      "bytes": 2490
+    },
+    "io-throttle-and-resume.json": {
+      "sha256": "ab48b88c62e302fb420d5b633e960bcf4924018d94225fbb8d06424b2b2ea704",
+      "bytes": 3359
+    },
+    "launch-audit.json": {
+      "sha256": "f9f96d425bf84044c4f90663806974349e9c0cb3235fdd5cf5d9bdd4b648da37",
+      "bytes": 142
+    },
+    "launch-contract.json": {
+      "sha256": "3d9a0044dedd323ee2a496ebcee42e8ec959f7c6ba6a8b92cedbbaadfeb6bbd3",
+      "bytes": 34468
+    },
+    "learning-change.csv": {
+      "sha256": "e68c9561039ba92f8e28508214c029fe149ecb467dd93495f31ad5fe5c5e07a9",
+      "bytes": 3778
+    },
+    "learning-rate-comparison.csv": {
+      "sha256": "24c15dd6e013dc6b00a1c891e982bef92b3d69a9f4859896e26d6038b52955ea",
+      "bytes": 1107
+    },
+    "learning.csv": {
+      "sha256": "5f34ee0a9a491e902af968e303d3e6b74f78b52542e918a34d812a1433fa229d",
+      "bytes": 61470
+    },
+    "paired-editing.csv": {
+      "sha256": "f36e123ddb846c196965153d293b5ea0f5c1eafc25f07259d88e7ed5f3c5ff43",
+      "bytes": 33535
+    },
+    "paired-interpretation.json": {
+      "sha256": "6b6b1f27df6aa638b8f60879c86a1ca4d8c8348c79f234178319c8e538fea6e2",
+      "bytes": 48997
+    },
+    "paired-interpretation.md": {
+      "sha256": "34042919e2fa16a752a62788d31a4fd85408611c6ea99b37df08520fb5edf508",
+      "bytes": 3541
+    },
+    "paired-learning.csv": {
+      "sha256": "2bbe55a3b4d38865c77e6f29e37af9921069b7250b2181be4dab250a751d4d29",
+      "bytes": 6494
+    },
+    "report.md": {
+      "sha256": "e448db54b0e48f40f917d2ffb0793a7183bddb626398ab16e1c1aecdf2de3f9d",
+      "bytes": 4641
+    },
+    "status.json": {
+      "sha256": "f7b4f6ec4b109c2451c0bbc42ce1f8d71478dbcb7d841ca68c53dbf46b7356b8",
+      "bytes": 1874
+    }
+  },
+  "source_files_sha256": {
+    "scripts/run_bios_cross_continue.py": "9d80acb62ccf55f6313593de92d30fd35d9c649208572c98c42f91ec0fd386b1",
+    "scripts/summarize_bios_cross_continue.py": "bb7a3427ba2dcc86adc94dda7e2de0b19f2ed0f84b05a1bec030f3f95908c364",
+    "scripts/analyze_bios_cross_continue.py": "23fdaef2f97a9dd3abbdeb95f65fbbcc1aff2046fb3c299bd1ca792bea1bc1cd",
+    "src/llm_memory_editability/bios_cross_continue.py": "e6fd3a86157566559ab0e0571fbefcc1a28f22ec7add66da2105ea81d63cdaf8"
+  },
+  "scope": "Small numerical tables and provenance only; checkpoints and raw predictions remain in original results root. No models or fixed endpoints excluded.",
+  "verification": "Every copied byte matched source at archival time."
+}

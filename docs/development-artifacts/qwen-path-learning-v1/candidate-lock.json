@@ -1,0 +1,28 @@
+{
+  "time": "2026-09-29T01:50:38.367071+00:00",
+  "status": "roles_and_templates_locked_before_new_baseline",
+  "counts": {
+    "U": 2023,
+    "R": 985,
+    "V": 1080,
+    "E_confirm": 599,
+    "E_dev": 429
+  },
+  "historical_access": 3659,
+  "files": {
+    "configs/qwen-path-learning-v1.json": "9dca73b9f7e38cfe9c3483c4ba49695da6474e96b3ced206b39594779279cd49",
+    "scripts/run_qwen_path_learning.py": "4befeaf6765dc22fe326795b2998d2f66de9c6255fc357f7e246626a27824a2f",
+    "src/llm_memory_editability/qwen_path_learning.py": "f633b15d75eb9bd71533627059aee0c4bed4d1d995156be0874d8fa3e83f4a7e",
+    "data/hebbian-learning-v1/source/counterfact.json": "d017056125178a13728594e66a801357a8db9ed7973a7425554bb4271de9fc6f",
+    "data/hebbian-learning-v1/pools.json": "9134a1b266b9e0776c6f88d4aea201bae5127955ab4340e0308c4b46d55fb0e8",
+    "data/hebbian-learning-v1/baseline.json": "8672a610f5db24078b414b611fe9049d0fb851690c6fc10176afe619bd2d23ce",
+    "data/qwen-path-learning-v1/candidates.json": "1672b78171bfa454f36cf8145de5ef4d148618e72e3736fe39765033f73cfd0f",
+    "data/qwen-path-learning-v1/text.json": "322f1c24afebbb7a8adb02af63f138833746b96fbc9fb802a50dc2d7c4fd43eb"
+  },
+  "text_articles_disjoint": true,
+  "limitations": [
+    "Source facts are benchmark labels, not independently verified current truths",
+    "Canonical relation templates are author-written; labels are original",
+    "Corpus and some entities had historical baseline access; newly selected updates are disjoint from old experiments"
+  ]
+}

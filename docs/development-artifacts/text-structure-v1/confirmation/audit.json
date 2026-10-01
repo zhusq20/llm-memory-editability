@@ -1,0 +1,272 @@
+{
+  "status": "passed",
+  "utc": "2026-10-01T02:14:14.021538+00:00",
+  "runs": [
+    {
+      "run": "confirm-w148011-i14801-restricted",
+      "status": "passed",
+      "scored_rows": 32418,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 512000,
+          "minimum": 800,
+          "maximum": 800
+        },
+        {
+          "rows": 256,
+          "total": 512000,
+          "minimum": 2000,
+          "maximum": 2000
+        }
+      ]
+    },
+    {
+      "run": "confirm-w148011-i14801-broad",
+      "status": "passed",
+      "scored_rows": 32418,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 512000,
+          "minimum": 800,
+          "maximum": 800
+        },
+        {
+          "rows": 256,
+          "total": 512000,
+          "minimum": 2000,
+          "maximum": 2000
+        }
+      ]
+    },
+    {
+      "run": "confirm-w148011-i14802-restricted",
+      "status": "passed",
+      "scored_rows": 32418,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 512000,
+          "minimum": 800,
+          "maximum": 800
+        },
+        {
+          "rows": 256,
+          "total": 512000,
+          "minimum": 2000,
+          "maximum": 2000
+        }
+      ]
+    },
+    {
+      "run": "confirm-w148011-i14802-broad",
+      "status": "passed",
+      "scored_rows": 32418,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 512000,
+          "minimum": 800,
+          "maximum": 800
+        },
+        {
+          "rows": 256,
+          "total": 512000,
+          "minimum": 2000,
+          "maximum": 2000
+        }
+      ]
+    },
+    {
+      "run": "confirm-w148012-i14801-restricted",
+      "status": "passed",
+      "scored_rows": 31392,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 512000,
+          "minimum": 800,
+          "maximum": 800
+        },
+        {
+          "rows": 256,
+          "total": 512000,
+          "minimum": 2000,
+          "maximum": 2000
+        }
+      ]
+    },
+    {
+      "run": "confirm-w148012-i14801-broad",
+      "status": "passed",
+      "scored_rows": 31392,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 512000,
+          "minimum": 800,
+          "maximum": 800
+        },
+        {
+          "rows": 256,
+          "total": 512000,
+          "minimum": 2000,
+          "maximum": 2000
+        }
+      ]
+    },
+    {
+      "run": "confirm-w148012-i14802-restricted",
+      "status": "passed",
+      "scored_rows": 31392,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 512000,
+          "minimum": 800,
+          "maximum": 800
+        },
+        {
+          "rows": 256,
+          "total": 512000,
+          "minimum": 2000,
+          "maximum": 2000
+        }
+      ]
+    },
+    {
+      "run": "confirm-w148012-i14802-broad",
+      "status": "passed",
+      "scored_rows": 31392,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 512000,
+          "minimum": 800,
+          "maximum": 800
+        },
+        {
+          "rows": 256,
+          "total": 512000,
+          "minimum": 2000,
+          "maximum": 2000
+        }
+      ]
+    },
+    {
+      "run": "confirm-w148013-i14801-restricted",
+      "status": "passed",
+      "scored_rows": 32094,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 512000,
+          "minimum": 800,
+          "maximum": 800
+        },
+        {
+          "rows": 256,
+          "total": 512000,
+          "minimum": 2000,
+          "maximum": 2000
+        }
+      ]
+    },
+    {
+      "run": "confirm-w148013-i14801-broad",
+      "status": "passed",
+      "scored_rows": 32094,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 512000,
+          "minimum": 800,
+          "maximum": 800
+        },
+        {
+          "rows": 256,
+          "total": 512000,
+          "minimum": 2000,
+          "maximum": 2000
+        }
+      ]
+    },
+    {
+      "run": "confirm-w148013-i14802-restricted",
+      "status": "passed",
+      "scored_rows": 32094,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 512000,
+          "minimum": 800,
+          "maximum": 800
+        },
+        {
+          "rows": 256,
+          "total": 512000,
+          "minimum": 2000,
+          "maximum": 2000
+        }
+      ]
+    },
+    {
+      "run": "confirm-w148013-i14802-broad",
+      "status": "passed",
+      "scored_rows": 32094,
+      "endpoint_arrays": 77,
+      "endpoint_reload_exact": true,
+      "evaluation_parameters_unchanged": true,
+      "exposures": [
+        {
+          "rows": 640,
+          "total": 512000,
+          "minimum": 800,
+          "maximum": 800
+        },
+        {
+          "rows": 256,
+          "total": 512000,
+          "minimum": 2000,
+          "maximum": 2000
+        }
+      ]
+    }
+  ],
+  "total_scored_rows": 383616,
+  "paired_initializations": 6
+}

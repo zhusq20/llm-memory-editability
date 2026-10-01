@@ -1,0 +1,36 @@
+{
+  "utc": "2026-09-30T01:03:13.186354+00:00",
+  "files": {
+    "configs/grok-depth-v1.json": "e376faed75a830f3de3fa0541e88461cac5922eb0d997071470d6005ce8e9fc8",
+    "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+    "src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "scripts/run_grok_depth.py": "1a3f7649addc040abe2a23d558aedacbd64d54293a2bbd36ec8ed09428be47d2",
+    "scripts/execute_grok_depth.py": "da37b1da67ab5b7b5af87e5dbe3877837df9691afcb7678a89eae427e7636db0",
+    "docs/development-artifacts/grok-depth-v1/preregistration.md": "9b2808b1d21137bc35a176d7ce930aadb1a1b17cfe3a9cea3d6f61c89835df62",
+    "tests/test_grok_depth_training.py": "893ee321d8696bcce145da102626d655dfe524876ad7caa8065ad1fe9bc040aa",
+    "tests/test_grok_depth_data.py": "2377810ac683f33c39b79699eea1affd364c4617775be1b65f1dcfa71a2f6d2f"
+  },
+  "primary_runs": [
+    "conf-w143011-s14301-d1",
+    "conf-w143011-s14301-d2",
+    "conf-w143011-s14302-d1",
+    "conf-w143011-s14302-d2",
+    "conf-w143012-s14301-d1",
+    "conf-w143012-s14301-d2",
+    "conf-w143012-s14302-d1",
+    "conf-w143012-s14302-d2",
+    "conf-w143013-s14301-d1",
+    "conf-w143013-s14301-d2",
+    "conf-w143013-s14302-d1",
+    "conf-w143013-s14302-d2"
+  ],
+  "conditional_wide_runs": [
+    "conf-w143011-s14301-d1wide",
+    "conf-w143011-s14302-d1wide",
+    "conf-w143012-s14301-d1wide",
+    "conf-w143012-s14302-d1wide",
+    "conf-w143013-s14301-d1wide",
+    "conf-w143013-s14302-d1wide"
+  ]
+}

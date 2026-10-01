@@ -1,0 +1,1170 @@
+{
+  "func-soft-adam": [
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 11,
+      "e_nll": 0.26858993868033093
+    },
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 8,
+      "e_nll": 0.41058555990457535
+    },
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.4923491543158889
+    },
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.030553380415464442
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.0031452211551368237
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.002350143350971242
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.0027090153889730573
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.006004537533347805
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 8,
+      "e_nll": 0.3618794010059598
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 6,
+      "e_nll": 0.21770878062428287
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.2303885721679156
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 2.9916988015174866
+    }
+  ],
+  "func-soft-gn": [
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 1,
+      "e_nll": 0.014563469041604549
+    },
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.0016042963058377306
+    },
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.02119369973661378
+    },
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.0028735771775245667
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 3,
+      "e_nll": 0.017157808179035783
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.0016835753534299631
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.0017878458796379466
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.0025767689027513065
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 1,
+      "e_nll": 0.0044171415696231025
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 1,
+      "e_nll": 0.010310043910673508
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.001641323169072469
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.0029335610452108085
+    }
+  ],
+  "func-hard-adam": [
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.313891331354776
+    },
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 7.503993590672811
+    },
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 4.466940402984619
+    },
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 0.1,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 2.0096115271250405
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.327019770940145
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 6.60630734761556
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 2,
+      "e_nll": 3.197153825002412
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 0.1,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 2.427447279294332
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.261405229568481
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 7.365673144658406
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 2,
+      "e_nll": 2.6883170233340934
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 0.1,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 2.6205175717671714
+    }
+  ],
+  "func-hard-gn": [
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 7.576774835586548
+    },
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.21409423139023906
+    },
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.001668735620720933
+    },
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 0.1,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.0016238494426943362
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 7.552402178446452
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.010555090266279876
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.0023652926514235637
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 0.1,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 3,
+      "e_nll": 0.05175273089359204
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 7.5282619794209795
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.0031468848270984986
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 1,
+      "e_nll": 0.006893143174238503
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 0.1,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.0016984852845780551
+    }
+  ],
+  "repr-soft-adam": [
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 11,
+      "e_nll": 0.26858993868033093
+    },
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 4,
+      "e_nll": 0.18283195421099663
+    },
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 3,
+      "e_nll": 0.15877915608386198
+    },
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 2,
+      "e_nll": 0.4358960861961047
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.0031452211551368237
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.009332362795248628
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 2,
+      "e_nll": 0.04135571218406161
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 2,
+      "e_nll": 0.2669072436789672
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 8,
+      "e_nll": 0.3618794010059598
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 2,
+      "e_nll": 0.006457770437312623
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 2,
+      "e_nll": 0.026082128441582125
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 2,
+      "e_nll": 0.38043624721467495
+    }
+  ],
+  "repr-soft-gn": [
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 0.005488053643299888
+    },
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 2,
+      "e_nll": 0.0037383229937404394
+    },
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 3,
+      "e_nll": 0.012988770535836617
+    },
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 3,
+      "e_nll": 0.13751266400019327
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 3,
+      "e_nll": 0.019387712915583204
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 5,
+      "e_nll": 0.003574392176233232
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 3,
+      "e_nll": 0.012718257727101445
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 3,
+      "e_nll": 0.13727060270806155
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 1,
+      "e_nll": 0.004461619013454765
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 1.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 1,
+      "e_nll": 0.003231118277957042
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 10.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 3,
+      "e_nll": 0.012898481916636229
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 100.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 2,
+      "e_nll": 0.14087115476528803
+    }
+  ],
+  "repr-hard-adam": [
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.385651191075643
+    },
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.38051430384318
+    },
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.337575197219849
+    },
+    {
+      "config": {
+        "lr": 0.0001,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 7.357807397842407
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.383249123891195
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.377520243326822
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.33203903834025
+    },
+    {
+      "config": {
+        "lr": 0.001,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 7.14218012491862
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.383267641067505
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.386439800262451
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.293830553690592
+    },
+    {
+      "config": {
+        "lr": 0.01,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 7.612127621968587
+    }
+  ],
+  "repr-hard-gn": [
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.22312593460083
+    },
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.373301029205322
+    },
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.15945847829183
+    },
+    {
+      "config": {
+        "lr": 0.1,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 3.96027018626531
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.22312561670939
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.372839530309042
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.17870577176412
+    },
+    {
+      "config": {
+        "lr": 0.3,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 3.9784574111302695
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 0.0,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.223128318786621
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 1e-06,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.373294512430826
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 0.0001,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 8.156201124191284
+    },
+    {
+      "config": {
+        "lr": 1.0,
+        "level": 0.01,
+        "damping": 0.01,
+        "rank": 8,
+        "refresh": 16,
+        "trust_fraction": 0.05
+      },
+      "v_broken": 0,
+      "e_nll": 4.024086078008016
+    }
+  ]
+}

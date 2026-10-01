@@ -1,0 +1,96 @@
+{
+  "started_utc": "2026-09-30T00:57:09.782751+00:00",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "device": "cuda:0",
+  "tf32": true,
+  "source_hash": {
+    "src/llm_memory_editability/grok_depth.py": "272352da9e00562f0bad31998c2e1d08f939b0cb2a08535ac8900c390a66376d",
+    "scripts/preflight_grok_depth.py": "6ca5cf0aee5311a786e928853b114ea8c89860c0b3110a9a0fdba94448545ebb",
+    "tests/test_grok_depth_training.py": "893ee321d8696bcce145da102626d655dfe524876ad7caa8065ad1fe9bc040aa"
+  },
+  "hf_equivalence": {
+    "passed": true,
+    "tf32": false,
+    "logits_max_abs_delta": 1.7881393432617188e-07,
+    "grad_max_abs_delta": 4.470348358154297e-08
+  },
+  "graph_parity": {
+    "passed": true,
+    "steps": 100,
+    "dropout": 0.1,
+    "clip": 1.0,
+    "capture_weights_unchanged": true,
+    "capture_optimizer_unchanged": true,
+    "capture_rng_unchanged": true,
+    "per_step_rng_equal": true,
+    "loss_max_abs_delta": 0.0,
+    "grad_norm_max_abs_delta": 0.0,
+    "parameter_max_abs_delta": 0.0,
+    "optimizer_max_abs_delta": 0.0,
+    "fixed_weights_dropout_losses": [
+      1.9629590511322021,
+      1.9482667446136475,
+      1.9553817510604858,
+      1.9665255546569824,
+      1.9715553522109985
+    ]
+  },
+  "resume_equivalence": {
+    "passed": true,
+    "before_checkpoint_steps": 30,
+    "continued_steps": 50,
+    "losses_identical": true,
+    "parameter_max_abs_delta": 0.0,
+    "optimizer_max_abs_delta": 0.0,
+    "rng_identical": true,
+    "epoch_stream_identical": true
+  },
+  "throughput": [
+    {
+      "layers": 2,
+      "width": 128,
+      "batch_size": 256,
+      "sequence": 4,
+      "vocab_size": 202,
+      "dropout": 0.1,
+      "clip": 1.0,
+      "timing": [
+        {
+          "steps": 100,
+          "seconds": 0.09706039703451097,
+          "steps_per_second": 1030.2863274342862
+        },
+        {
+          "steps": 1000,
+          "seconds": 0.9707194949733093,
+          "steps_per_second": 1030.1637138002422
+        }
+      ]
+    },
+    {
+      "layers": 4,
+      "width": 128,
+      "batch_size": 256,
+      "sequence": 4,
+      "vocab_size": 202,
+      "dropout": 0.1,
+      "clip": 1.0,
+      "timing": [
+        {
+          "steps": 100,
+          "seconds": 0.14521247695665807,
+          "steps_per_second": 688.6460591802125
+        },
+        {
+          "steps": 1000,
+          "seconds": 1.4513128729304299,
+          "steps_per_second": 689.0313030717092
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "finished_utc": "2026-09-30T00:57:17.193886+00:00"
+}

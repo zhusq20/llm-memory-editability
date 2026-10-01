@@ -1,0 +1,36 @@
+{
+  "frozen_utc": "2026-09-30T04:07:24.758712+00:00",
+  "config": "configs/grok-loop-development-v1.json",
+  "files": {
+    "configs/grok-loop-development-v1.json": "96c15d1b0103efb954e5b4177998380b3be9f96e64fcb9e98d07c8b185cff04a",
+    "docs/development-artifacts/grok-loop-v1/preregistration.md": "aced73b0c829b0ec16eb603f2caa40067a784097414b86fb809d5ada73a1a58e",
+    "src/llm_memory_editability/grok_loop_model.py": "07e84388997a1710e5c821e54cf6d23726e4289aab178347761e060851fea6cc",
+    "src/llm_memory_editability/grok_loop_data.py": "504de57da94618578cf792a3963f99e2dac587424d74ceae6b4c02c1d9680a8e",
+    "src/llm_memory_editability/grok_loop_train.py": "4931606ee614aaadebbc3460c9ad9a86fbb12b5b6a1bbda9f3714f81424ff142",
+    "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+    "src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+    "src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+    "src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "scripts/run_grok_loop.py": "388fe11401562ed3ed28693234684d275a82a3c38ed1ba82810ac9fa29a8a247"
+  },
+  "git_head": "e279fc676f71e7e8cc8ce255faf68e26534ce311",
+  "working_tree_note": "Existing changes retained; source hashes are authoritative",
+  "runs": [
+    "dev-h2-c1",
+    "dev-h2-c2",
+    "dev-h2-cd",
+    "dev-h2-l1",
+    "dev-h2-l2",
+    "dev-h3-c1",
+    "dev-h3-c2",
+    "dev-h3-cd",
+    "dev-h3-l1",
+    "dev-h3-l2",
+    "dev-h4-c1",
+    "dev-h4-c2",
+    "dev-h4-cd",
+    "dev-h4-l1",
+    "dev-h4-l2"
+  ]
+}

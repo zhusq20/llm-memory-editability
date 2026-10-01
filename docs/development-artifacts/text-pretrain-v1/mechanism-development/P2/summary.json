@@ -1,0 +1,346 @@
+{
+  "spec": {
+    "world": 147001,
+    "initialization": 14701,
+    "heads_n": 128,
+    "bridges_n": 32,
+    "tails_n": 32,
+    "holdout_fraction": 0.2,
+    "width": 128,
+    "layers": 2,
+    "heads": 4,
+    "repeats": 2,
+    "dropout": 0.1,
+    "lr": 0.0003,
+    "weight_decay": 0.1,
+    "warmup": 1000,
+    "steps": 32000,
+    "batch_parts": [
+      32,
+      32,
+      64
+    ],
+    "nodes": [
+      0,
+      500,
+      1000,
+      2000,
+      4000,
+      8000,
+      16000,
+      24000,
+      32000
+    ],
+    "weight_nodes": [
+      0,
+      4000,
+      16000,
+      32000
+    ],
+    "arm": "P2",
+    "source_lock": "docs/development-artifacts/text-pretrain-v1/development/lock.json",
+    "config_path": "configs/text-pretrain-development-v1.json"
+  },
+  "node": 32000,
+  "checkpoint_sha256": "4a8efb4057da9864f8c26acf25703f78367f74fd9240e82522526b200a7d6c1a",
+  "script_sha256": "dc1ef8177e7a1e46f5249a8af23282c39f4f3d27f7fa79288f809438807a5c09",
+  "donor_selection": "seeded background prefix per eligible query; no score selection",
+  "donor_valid_tokens": 4,
+  "patched_position": 3,
+  "source_never_sees_r2_or_answer": true,
+  "seconds": 1.3074080219957978,
+  "results": [
+    {
+      "kind": "same_bridge",
+      "n": 186,
+      "coverage": 0.8985507246376812,
+      "baseline": {
+        "n": 186,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "answer_probability": 0.9997595532607007
+      },
+      "normal_counterfactual": {
+        "n": 186,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "answer_probability": 0.9998809086379185
+      },
+      "normal_counterfactual_heldout_fraction": 0.15053763440860216,
+      "self_patch_probability_error": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conditions": [
+        {
+          "layer": 0,
+          "component": "attention",
+          "n": 186,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9998258147188412,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 10.499054908752441
+        },
+        {
+          "layer": 0,
+          "component": "mlp",
+          "n": 186,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9998739579672454,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 11.277698516845703
+        },
+        {
+          "layer": 0,
+          "component": "full",
+          "n": 186,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9999058323521768,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 11.564051628112793
+        },
+        {
+          "layer": 1,
+          "component": "attention",
+          "n": 186,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9997754273235157,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 10.29985237121582
+        },
+        {
+          "layer": 1,
+          "component": "mlp",
+          "n": 186,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9997251405510851,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 10.232457160949707
+        },
+        {
+          "layer": 1,
+          "component": "full",
+          "n": 186,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9998208566378521,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 10.506338119506836
+        },
+        {
+          "layer": 2,
+          "component": "attention",
+          "n": 186,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.999759767965604,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 10.259265899658203
+        },
+        {
+          "layer": 2,
+          "component": "mlp",
+          "n": 186,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9997620829330978,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 10.263561248779297
+        },
+        {
+          "layer": 2,
+          "component": "full",
+          "n": 186,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9998165141510708,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 10.492226600646973
+        },
+        {
+          "layer": 3,
+          "component": "attention",
+          "n": 186,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9997595532607007,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 10.259238243103027
+        },
+        {
+          "layer": 3,
+          "component": "mlp",
+          "n": 186,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9997595532607007,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 10.259238243103027
+        },
+        {
+          "layer": 3,
+          "component": "full",
+          "n": 186,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9997595532607007,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 10.259238243103027
+        }
+      ]
+    },
+    {
+      "kind": "different_bridge",
+      "n": 207,
+      "coverage": 1.0,
+      "baseline": {
+        "n": 207,
+        "answer_accuracy": 0.0,
+        "accuracy": 0.0,
+        "answer_probability": 5.75593577922923e-06
+      },
+      "normal_counterfactual": {
+        "n": 207,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "answer_probability": 0.9994001515245668
+      },
+      "normal_counterfactual_heldout_fraction": 1.0,
+      "self_patch_probability_error": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conditions": [
+        {
+          "layer": 0,
+          "component": "attention",
+          "n": 207,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.00014780828252506406,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -15.300357818603516
+        },
+        {
+          "layer": 0,
+          "component": "mlp",
+          "n": 207,
+          "answer_accuracy": 0.10144927536231885,
+          "accuracy": 0.10144927536231885,
+          "answer_probability": 0.1041499176781571,
+          "original_answer_retained": 0.8599033816425121,
+          "target_competitor_margin": -8.234272003173828
+        },
+        {
+          "layer": 0,
+          "component": "full",
+          "n": 207,
+          "answer_accuracy": 0.3333333333333333,
+          "accuracy": 0.3333333333333333,
+          "answer_probability": 0.3391189017297624,
+          "original_answer_retained": 0.6135265700483091,
+          "target_competitor_margin": -2.706770658493042
+        },
+        {
+          "layer": 1,
+          "component": "attention",
+          "n": 207,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 6.340554214474862e-06,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -16.302827835083008
+        },
+        {
+          "layer": 1,
+          "component": "mlp",
+          "n": 207,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 7.896833582619984e-06,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -16.21465301513672
+        },
+        {
+          "layer": 1,
+          "component": "full",
+          "n": 207,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 3.368816067312206e-05,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -15.149678230285645
+        },
+        {
+          "layer": 2,
+          "component": "attention",
+          "n": 207,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 6.0273465741430855e-06,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -16.368127822875977
+        },
+        {
+          "layer": 2,
+          "component": "mlp",
+          "n": 207,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 6.135689048655001e-06,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -16.370250701904297
+        },
+        {
+          "layer": 2,
+          "component": "full",
+          "n": 207,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 2.5718894533749476e-05,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -15.444225311279297
+        },
+        {
+          "layer": 3,
+          "component": "attention",
+          "n": 207,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 5.75593577922923e-06,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -16.385534286499023
+        },
+        {
+          "layer": 3,
+          "component": "mlp",
+          "n": 207,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 5.75593577922923e-06,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -16.385534286499023
+        },
+        {
+          "layer": 3,
+          "component": "full",
+          "n": 207,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 5.75593577922923e-06,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -16.385534286499023
+        }
+      ]
+    }
+  ]
+}

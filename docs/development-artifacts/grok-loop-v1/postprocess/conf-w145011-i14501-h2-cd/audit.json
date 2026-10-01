@@ -1,0 +1,7168 @@
+{
+  "run": "conf-w145011-i14501-h2-cd",
+  "spec": {
+    "entities": 128,
+    "relations": 16,
+    "degree": 8,
+    "id_fraction": 0.75,
+    "id_test_fraction": 0.1,
+    "evaluation_size": 1024,
+    "width": 128,
+    "heads": 4,
+    "dropout": 0.1,
+    "lr": 0.0001,
+    "weight_decay": 0.1,
+    "batch_size": 256,
+    "n_atomic_per_batch": 32,
+    "warmup": 2000,
+    "steps": 128000,
+    "nodes": [
+      0,
+      100,
+      250,
+      500,
+      1000,
+      2000,
+      4000,
+      6000,
+      8000,
+      10000,
+      12000,
+      14000,
+      16000,
+      24000,
+      32000,
+      40000,
+      48000,
+      56000,
+      64000,
+      72000,
+      80000,
+      88000,
+      96000,
+      104000,
+      112000,
+      120000,
+      128000
+    ],
+    "weight_nodes": [
+      0,
+      16000,
+      64000,
+      128000
+    ],
+    "init_scheme": "scaled_effective",
+    "phase": "confirmation",
+    "hops": 2,
+    "layers": 4,
+    "repeats": 1,
+    "phi": 6,
+    "architecture": "cd",
+    "stream_seed": 145011021,
+    "world_seed": 145011,
+    "initialization": 14501
+  },
+  "passed": true,
+  "state": "complete",
+  "finished_utc": "2026-09-30T04:53:50.156273+00:00",
+  "device": "cuda:0",
+  "visible_devices": "2",
+  "environment": {
+    "python": "3.12.7",
+    "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.5.3",
+    "cuda": "12.8",
+    "device": "cuda:0",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "cuda_matmul_tf32": true,
+    "cudnn_tf32": true,
+    "precision": "FP32 parameters and evaluation; TF32 flags recorded explicitly"
+  },
+  "auditor_source": {
+    "scripts/postprocess_grok_loop.py": "529cc1da3abce4ed86f540c12dd2f77150229ea652bd0bf3979613e8447167cd",
+    "scripts/audit_grok_loop.py": "5c551e8e975baa3a70c4a4e4609ea07f975f850a70547c751ac672925adb1167",
+    "src/llm_memory_editability/grok_loop_model.py": "07e84388997a1710e5c821e54cf6d23726e4289aab178347761e060851fea6cc",
+    "src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+    "src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+    "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d"
+  },
+  "training_complete_sha256": "7c59887f76eb9006d23de377f63a4c2f7f9717917c30af53e422ad8b0a19f089",
+  "checkpoint_sha256": "0b3c6247be5276eaae26bf176486708f5885bb55605fd6ec1ad999e3bbd6e9e8",
+  "audit": {
+    "run": "conf-w145011-i14501-h2-cd",
+    "passed": true,
+    "checks": [
+      {
+        "name": "spec_identity",
+        "passed": true
+      },
+      {
+        "name": "fixed_budget_complete",
+        "passed": true
+      },
+      {
+        "name": "dataset_hash",
+        "passed": true
+      },
+      {
+        "name": "execution_source:grok-loop-confirmation-v1.json",
+        "passed": true
+      },
+      {
+        "name": "current_source:grok-loop-confirmation-v1.json",
+        "passed": true
+      },
+      {
+        "name": "execution_source:grok_multihop.py",
+        "passed": true
+      },
+      {
+        "name": "current_source:grok_multihop.py",
+        "passed": true
+      },
+      {
+        "name": "execution_source:grok_multihop_data.py",
+        "passed": true
+      },
+      {
+        "name": "current_source:grok_multihop_data.py",
+        "passed": true
+      },
+      {
+        "name": "execution_source:grok_depth.py",
+        "passed": true
+      },
+      {
+        "name": "current_source:grok_depth.py",
+        "passed": true
+      },
+      {
+        "name": "execution_source:grok_depth_data.py",
+        "passed": true
+      },
+      {
+        "name": "current_source:grok_depth_data.py",
+        "passed": true
+      },
+      {
+        "name": "execution_source:bios_model.py",
+        "passed": true
+      },
+      {
+        "name": "current_source:bios_model.py",
+        "passed": true
+      },
+      {
+        "name": "execution_source:run_grok_loop.py",
+        "passed": true
+      },
+      {
+        "name": "current_source:run_grok_loop.py",
+        "passed": true
+      },
+      {
+        "name": "execution_source:grok_loop_model.py",
+        "passed": true
+      },
+      {
+        "name": "current_source:grok_loop_model.py",
+        "passed": true
+      },
+      {
+        "name": "execution_source:grok_loop_train.py",
+        "passed": true
+      },
+      {
+        "name": "current_source:grok_loop_train.py",
+        "passed": true
+      },
+      {
+        "name": "execution_source:grok_loop_data.py",
+        "passed": true
+      },
+      {
+        "name": "current_source:grok_loop_data.py",
+        "passed": true
+      },
+      {
+        "name": "registered_learning_nodes",
+        "passed": true
+      },
+      {
+        "name": "endpoint_matches_history",
+        "passed": true
+      },
+      {
+        "name": "node0:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node0:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node0:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node0:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node0:example_count",
+        "passed": true
+      },
+      {
+        "name": "node0:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node0:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node0:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node0:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node0:hops",
+        "passed": true
+      },
+      {
+        "name": "node0:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node0:repeats",
+        "passed": true
+      },
+      {
+        "name": "node0:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node0:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node0:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node0:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node0:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node0:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node0:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node0:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node0:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node0:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node0:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node0:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node0:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node0:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node0:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node0:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node0:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node0:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node0:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node0:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node0:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node0:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node0:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node0:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node0:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node0:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node0:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node0:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node0:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node0:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node0:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node0:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node0:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node0:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node0:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node0:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node0:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node0:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node0:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node0:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node0:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node0:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node0:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node0:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node0:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node0:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node0:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node0:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node0:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node0:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node100:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node100:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node100:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node100:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node100:example_count",
+        "passed": true
+      },
+      {
+        "name": "node100:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node100:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node100:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node100:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node100:hops",
+        "passed": true
+      },
+      {
+        "name": "node100:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node100:repeats",
+        "passed": true
+      },
+      {
+        "name": "node100:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node100:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node100:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node100:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node100:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node100:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node100:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node100:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node100:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node100:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node100:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node100:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node100:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node100:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node100:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node100:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node100:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node100:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node100:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node100:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node100:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node100:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node100:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node100:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node100:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node100:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node100:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node100:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node100:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node100:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node100:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node100:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node100:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node100:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node100:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node100:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node100:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node100:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node100:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node100:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node100:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node100:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node100:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node100:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node100:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node100:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node100:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node100:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node100:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node100:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node250:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node250:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node250:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node250:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node250:example_count",
+        "passed": true
+      },
+      {
+        "name": "node250:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node250:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node250:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node250:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node250:hops",
+        "passed": true
+      },
+      {
+        "name": "node250:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node250:repeats",
+        "passed": true
+      },
+      {
+        "name": "node250:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node250:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node250:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node250:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node250:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node250:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node250:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node250:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node250:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node250:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node250:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node250:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node250:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node250:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node250:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node250:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node250:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node250:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node250:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node250:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node250:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node250:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node250:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node250:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node250:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node250:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node250:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node250:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node250:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node250:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node250:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node250:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node250:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node250:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node250:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node250:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node250:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node250:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node250:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node250:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node250:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node250:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node250:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node250:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node250:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node250:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node250:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node250:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node250:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node250:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node500:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node500:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node500:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node500:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node500:example_count",
+        "passed": true
+      },
+      {
+        "name": "node500:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node500:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node500:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node500:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node500:hops",
+        "passed": true
+      },
+      {
+        "name": "node500:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node500:repeats",
+        "passed": true
+      },
+      {
+        "name": "node500:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node500:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node500:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node500:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node500:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node500:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node500:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node500:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node500:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node500:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node500:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node500:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node500:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node500:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node500:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node500:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node500:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node500:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node500:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node500:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node500:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node500:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node500:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node500:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node500:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node500:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node500:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node500:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node500:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node500:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node500:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node500:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node500:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node500:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node500:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node500:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node500:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node500:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node500:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node500:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node500:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node500:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node500:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node500:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node500:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node500:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node500:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node500:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node500:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node500:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node1000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node1000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node1000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node1000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node1000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node1000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node1000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node1000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node1000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node1000:hops",
+        "passed": true
+      },
+      {
+        "name": "node1000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node1000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node1000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node1000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node1000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node1000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node1000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node1000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node1000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node1000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node1000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node1000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node1000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node1000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node1000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node1000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node1000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node1000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node1000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node1000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node1000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node1000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node1000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node1000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node1000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node1000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node1000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node1000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node1000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node1000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node1000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node1000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node1000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node1000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node1000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node1000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node1000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node1000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node1000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node1000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node1000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node1000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node1000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node1000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node1000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node1000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node1000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node1000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node1000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node1000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node1000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node1000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node2000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node2000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node2000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node2000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node2000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node2000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node2000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node2000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node2000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node2000:hops",
+        "passed": true
+      },
+      {
+        "name": "node2000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node2000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node2000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node2000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node2000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node2000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node2000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node2000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node2000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node2000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node2000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node2000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node2000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node2000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node2000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node2000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node2000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node2000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node2000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node2000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node2000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node2000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node2000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node2000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node2000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node2000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node2000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node2000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node2000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node2000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node2000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node2000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node2000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node2000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node2000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node2000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node2000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node2000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node2000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node2000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node2000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node2000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node2000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node2000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node2000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node2000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node2000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node2000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node2000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node2000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node2000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node2000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node4000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node4000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node4000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node4000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node4000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node4000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node4000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node4000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node4000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node4000:hops",
+        "passed": true
+      },
+      {
+        "name": "node4000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node4000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node4000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node4000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node4000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node4000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node4000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node4000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node4000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node4000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node4000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node4000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node4000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node4000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node4000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node4000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node4000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node4000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node4000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node4000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node4000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node4000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node4000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node4000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node4000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node4000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node4000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node4000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node4000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node4000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node4000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node4000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node4000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node4000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node4000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node4000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node4000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node4000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node4000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node4000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node4000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node4000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node4000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node4000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node4000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node4000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node4000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node4000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node4000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node4000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node4000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node4000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node6000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node6000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node6000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node6000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node6000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node6000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node6000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node6000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node6000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node6000:hops",
+        "passed": true
+      },
+      {
+        "name": "node6000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node6000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node6000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node6000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node6000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node6000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node6000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node6000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node6000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node6000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node6000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node6000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node6000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node6000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node6000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node6000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node6000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node6000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node6000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node6000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node6000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node6000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node6000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node6000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node6000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node6000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node6000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node6000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node6000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node6000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node6000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node6000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node6000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node6000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node6000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node6000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node6000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node6000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node6000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node6000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node6000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node6000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node6000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node6000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node6000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node6000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node6000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node6000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node6000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node6000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node6000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node6000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node8000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node8000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node8000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node8000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node8000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node8000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node8000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node8000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node8000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node8000:hops",
+        "passed": true
+      },
+      {
+        "name": "node8000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node8000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node8000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node8000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node8000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node8000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node8000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node8000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node8000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node8000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node8000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node8000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node8000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node8000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node8000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node8000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node8000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node8000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node8000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node8000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node8000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node8000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node8000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node8000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node8000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node8000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node8000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node8000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node8000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node8000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node8000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node8000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node8000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node8000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node8000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node8000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node8000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node8000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node8000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node8000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node8000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node8000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node8000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node8000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node8000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node8000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node8000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node8000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node8000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node8000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node8000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node8000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node10000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node10000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node10000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node10000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node10000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node10000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node10000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node10000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node10000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node10000:hops",
+        "passed": true
+      },
+      {
+        "name": "node10000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node10000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node10000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node10000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node10000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node10000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node10000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node10000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node10000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node10000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node10000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node10000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node10000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node10000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node10000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node10000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node10000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node10000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node10000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node10000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node10000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node10000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node10000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node10000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node10000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node10000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node10000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node10000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node10000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node10000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node10000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node10000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node10000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node10000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node10000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node10000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node10000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node10000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node10000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node10000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node10000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node10000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node10000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node10000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node10000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node10000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node10000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node10000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node10000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node10000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node10000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node10000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node12000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node12000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node12000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node12000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node12000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node12000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node12000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node12000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node12000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node12000:hops",
+        "passed": true
+      },
+      {
+        "name": "node12000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node12000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node12000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node12000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node12000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node12000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node12000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node12000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node12000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node12000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node12000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node12000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node12000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node12000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node12000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node12000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node12000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node12000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node12000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node12000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node12000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node12000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node12000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node12000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node12000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node12000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node12000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node12000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node12000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node12000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node12000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node12000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node12000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node12000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node12000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node12000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node12000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node12000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node12000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node12000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node12000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node12000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node12000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node12000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node12000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node12000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node12000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node12000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node12000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node12000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node12000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node12000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node14000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node14000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node14000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node14000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node14000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node14000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node14000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node14000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node14000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node14000:hops",
+        "passed": true
+      },
+      {
+        "name": "node14000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node14000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node14000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node14000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node14000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node14000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node14000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node14000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node14000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node14000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node14000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node14000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node14000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node14000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node14000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node14000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node14000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node14000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node14000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node14000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node14000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node14000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node14000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node14000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node14000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node14000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node14000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node14000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node14000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node14000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node14000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node14000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node14000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node14000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node14000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node14000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node14000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node14000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node14000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node14000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node14000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node14000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node14000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node14000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node14000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node14000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node14000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node14000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node14000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node14000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node14000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node14000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node16000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node16000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node16000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node16000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node16000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node16000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node16000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node16000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node16000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node16000:hops",
+        "passed": true
+      },
+      {
+        "name": "node16000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node16000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node16000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node16000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node16000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node16000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node16000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node16000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node16000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node16000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node16000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node16000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node16000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node16000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node16000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node16000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node16000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node16000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node16000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node16000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node16000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node16000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node16000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node16000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node16000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node16000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node16000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node16000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node16000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node16000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node16000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node16000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node16000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node16000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node16000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node16000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node16000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node16000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node16000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node16000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node16000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node16000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node16000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node16000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node16000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node16000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node16000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node16000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node16000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node16000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node16000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node16000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node24000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node24000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node24000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node24000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node24000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node24000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node24000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node24000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node24000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node24000:hops",
+        "passed": true
+      },
+      {
+        "name": "node24000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node24000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node24000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node24000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node24000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node24000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node24000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node24000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node24000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node24000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node24000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node24000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node24000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node24000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node24000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node24000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node24000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node24000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node24000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node24000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node24000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node24000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node24000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node24000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node24000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node24000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node24000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node24000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node24000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node24000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node24000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node24000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node24000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node24000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node24000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node24000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node24000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node24000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node24000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node24000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node24000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node24000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node24000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node24000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node24000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node24000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node24000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node24000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node24000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node24000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node24000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node24000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node32000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node32000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node32000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node32000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node32000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node32000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node32000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node32000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node32000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node32000:hops",
+        "passed": true
+      },
+      {
+        "name": "node32000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node32000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node32000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node32000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node32000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node32000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node32000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node32000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node32000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node32000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node32000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node32000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node32000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node32000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node32000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node32000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node32000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node32000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node32000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node32000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node32000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node32000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node32000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node32000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node32000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node32000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node32000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node32000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node32000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node32000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node32000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node32000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node32000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node32000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node32000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node32000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node32000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node32000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node32000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node32000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node32000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node32000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node32000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node32000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node32000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node32000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node32000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node32000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node32000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node32000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node32000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node32000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node40000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node40000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node40000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node40000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node40000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node40000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node40000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node40000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node40000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node40000:hops",
+        "passed": true
+      },
+      {
+        "name": "node40000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node40000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node40000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node40000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node40000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node40000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node40000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node40000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node40000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node40000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node40000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node40000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node40000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node40000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node40000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node40000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node40000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node40000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node40000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node40000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node40000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node40000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node40000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node40000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node40000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node40000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node40000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node40000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node40000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node40000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node40000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node40000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node40000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node40000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node40000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node40000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node40000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node40000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node40000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node40000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node40000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node40000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node40000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node40000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node40000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node40000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node40000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node40000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node40000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node40000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node40000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node40000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node48000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node48000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node48000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node48000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node48000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node48000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node48000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node48000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node48000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node48000:hops",
+        "passed": true
+      },
+      {
+        "name": "node48000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node48000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node48000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node48000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node48000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node48000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node48000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node48000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node48000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node48000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node48000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node48000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node48000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node48000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node48000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node48000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node48000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node48000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node48000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node48000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node48000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node48000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node48000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node48000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node48000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node48000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node48000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node48000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node48000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node48000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node48000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node48000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node48000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node48000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node48000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node48000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node48000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node48000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node48000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node48000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node48000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node48000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node48000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node48000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node48000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node48000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node48000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node48000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node48000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node48000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node48000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node48000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node56000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node56000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node56000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node56000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node56000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node56000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node56000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node56000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node56000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node56000:hops",
+        "passed": true
+      },
+      {
+        "name": "node56000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node56000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node56000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node56000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node56000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node56000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node56000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node56000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node56000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node56000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node56000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node56000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node56000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node56000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node56000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node56000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node56000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node56000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node56000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node56000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node56000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node56000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node56000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node56000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node56000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node56000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node56000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node56000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node56000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node56000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node56000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node56000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node56000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node56000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node56000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node56000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node56000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node56000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node56000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node56000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node56000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node56000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node56000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node56000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node56000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node56000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node56000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node56000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node56000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node56000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node56000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node56000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node64000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node64000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node64000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node64000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node64000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node64000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node64000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node64000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node64000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node64000:hops",
+        "passed": true
+      },
+      {
+        "name": "node64000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node64000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node64000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node64000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node64000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node64000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node64000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node64000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node64000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node64000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node64000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node64000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node64000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node64000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node64000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node64000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node64000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node64000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node64000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node64000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node64000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node64000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node64000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node64000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node64000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node64000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node64000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node64000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node64000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node64000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node64000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node64000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node64000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node64000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node64000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node64000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node64000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node64000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node64000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node64000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node64000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node64000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node64000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node64000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node64000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node64000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node64000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node64000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node64000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node64000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node64000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node64000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node72000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node72000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node72000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node72000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node72000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node72000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node72000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node72000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node72000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node72000:hops",
+        "passed": true
+      },
+      {
+        "name": "node72000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node72000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node72000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node72000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node72000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node72000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node72000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node72000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node72000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node72000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node72000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node72000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node72000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node72000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node72000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node72000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node72000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node72000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node72000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node72000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node72000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node72000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node72000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node72000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node72000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node72000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node72000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node72000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node72000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node72000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node72000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node72000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node72000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node72000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node72000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node72000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node72000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node72000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node72000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node72000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node72000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node72000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node72000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node72000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node72000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node72000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node72000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node72000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node72000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node72000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node72000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node72000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node80000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node80000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node80000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node80000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node80000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node80000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node80000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node80000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node80000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node80000:hops",
+        "passed": true
+      },
+      {
+        "name": "node80000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node80000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node80000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node80000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node80000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node80000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node80000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node80000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node80000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node80000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node80000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node80000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node80000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node80000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node80000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node80000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node80000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node80000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node80000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node80000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node80000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node80000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node80000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node80000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node80000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node80000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node80000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node80000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node80000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node80000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node80000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node80000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node80000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node80000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node80000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node80000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node80000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node80000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node80000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node80000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node80000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node80000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node80000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node80000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node80000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node80000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node80000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node80000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node80000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node80000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node80000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node80000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node88000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node88000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node88000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node88000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node88000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node88000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node88000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node88000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node88000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node88000:hops",
+        "passed": true
+      },
+      {
+        "name": "node88000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node88000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node88000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node88000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node88000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node88000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node88000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node88000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node88000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node88000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node88000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node88000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node88000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node88000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node88000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node88000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node88000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node88000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node88000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node88000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node88000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node88000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node88000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node88000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node88000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node88000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node88000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node88000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node88000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node88000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node88000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node88000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node88000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node88000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node88000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node88000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node88000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node88000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node88000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node88000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node88000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node88000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node88000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node88000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node88000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node88000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node88000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node88000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node88000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node88000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node88000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node88000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node96000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node96000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node96000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node96000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node96000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node96000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node96000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node96000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node96000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node96000:hops",
+        "passed": true
+      },
+      {
+        "name": "node96000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node96000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node96000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node96000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node96000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node96000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node96000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node96000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node96000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node96000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node96000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node96000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node96000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node96000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node96000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node96000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node96000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node96000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node96000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node96000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node96000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node96000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node96000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node96000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node96000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node96000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node96000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node96000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node96000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node96000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node96000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node96000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node96000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node96000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node96000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node96000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node96000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node96000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node96000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node96000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node96000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node96000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node96000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node96000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node96000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node96000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node96000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node96000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node96000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node96000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node96000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node96000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node104000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node104000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node104000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node104000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node104000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node104000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node104000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node104000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node104000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node104000:hops",
+        "passed": true
+      },
+      {
+        "name": "node104000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node104000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node104000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node104000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node104000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node104000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node104000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node104000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node104000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node104000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node104000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node104000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node104000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node104000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node104000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node104000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node104000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node104000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node104000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node104000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node104000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node104000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node104000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node104000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node104000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node104000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node104000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node104000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node104000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node104000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node104000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node104000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node104000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node104000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node104000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node104000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node104000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node104000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node104000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node104000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node104000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node104000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node104000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node104000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node104000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node104000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node104000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node104000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node104000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node104000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node104000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node104000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node112000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node112000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node112000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node112000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node112000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node112000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node112000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node112000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node112000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node112000:hops",
+        "passed": true
+      },
+      {
+        "name": "node112000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node112000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node112000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node112000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node112000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node112000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node112000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node112000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node112000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node112000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node112000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node112000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node112000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node112000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node112000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node112000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node112000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node112000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node112000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node112000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node112000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node112000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node112000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node112000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node112000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node112000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node112000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node112000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node112000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node112000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node112000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node112000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node112000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node112000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node112000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node112000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node112000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node112000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node112000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node112000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node112000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node112000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node112000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node112000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node112000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node112000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node112000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node112000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node112000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node112000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node112000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node112000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node120000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node120000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node120000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node120000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node120000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node120000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node120000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node120000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node120000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node120000:hops",
+        "passed": true
+      },
+      {
+        "name": "node120000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node120000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node120000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node120000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node120000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node120000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node120000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node120000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node120000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node120000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node120000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node120000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node120000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node120000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node120000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node120000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node120000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node120000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node120000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node120000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node120000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node120000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node120000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node120000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node120000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node120000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node120000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node120000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node120000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node120000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node120000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node120000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node120000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node120000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node120000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node120000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node120000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node120000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node120000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node120000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node120000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node120000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node120000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node120000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node120000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node120000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node120000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node120000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node120000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node120000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node120000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node120000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "node128000:predictions_exist",
+        "passed": true
+      },
+      {
+        "name": "node128000:fixed_32_atomic_224_composite_batch",
+        "passed": true
+      },
+      {
+        "name": "node128000:atomic_exposure",
+        "passed": true
+      },
+      {
+        "name": "node128000:composite_exposure",
+        "passed": true
+      },
+      {
+        "name": "node128000:example_count",
+        "passed": true
+      },
+      {
+        "name": "node128000:supervised_tokens",
+        "passed": true
+      },
+      {
+        "name": "node128000:effective_input_tokens",
+        "passed": true
+      },
+      {
+        "name": "node128000:FLOPs_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node128000:parameters_independent_formula",
+        "passed": true
+      },
+      {
+        "name": "node128000:hops",
+        "passed": true
+      },
+      {
+        "name": "node128000:unique_layers",
+        "passed": true
+      },
+      {
+        "name": "node128000:repeats",
+        "passed": true
+      },
+      {
+        "name": "node128000:effective_depth",
+        "passed": true
+      },
+      {
+        "name": "node128000:atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node128000:atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node128000:atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node128000:atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node128000:atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node128000:atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node128000:atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node128000:id_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node128000:id_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node128000:id_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node128000:id_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node128000:id_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node128000:id_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node128000:id_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node128000:ood_atomic:denominator",
+        "passed": true
+      },
+      {
+        "name": "node128000:ood_atomic:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node128000:ood_atomic:targets",
+        "passed": true
+      },
+      {
+        "name": "node128000:ood_atomic:answer",
+        "passed": true
+      },
+      {
+        "name": "node128000:ood_atomic:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node128000:ood_atomic:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node128000:ood_atomic:nll",
+        "passed": true
+      },
+      {
+        "name": "node128000:train_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node128000:train_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node128000:train_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node128000:train_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node128000:train_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node128000:train_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node128000:train_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node128000:test_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node128000:test_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node128000:test_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node128000:test_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node128000:test_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node128000:test_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node128000:test_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node128000:ood_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node128000:ood_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node128000:ood_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node128000:ood_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node128000:ood_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node128000:ood_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node128000:ood_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node128000:test_full_composite:denominator",
+        "passed": true
+      },
+      {
+        "name": "node128000:test_full_composite:prediction_shapes",
+        "passed": true
+      },
+      {
+        "name": "node128000:test_full_composite:targets",
+        "passed": true
+      },
+      {
+        "name": "node128000:test_full_composite:answer",
+        "passed": true
+      },
+      {
+        "name": "node128000:test_full_composite:answer_eos",
+        "passed": true
+      },
+      {
+        "name": "node128000:test_full_composite:nll_finite",
+        "passed": true
+      },
+      {
+        "name": "node128000:test_full_composite:nll",
+        "passed": true
+      },
+      {
+        "name": "node128000:autonomous_calls:denominator",
+        "passed": true
+      },
+      {
+        "name": "node128000:autonomous_calls:hop1",
+        "passed": true
+      },
+      {
+        "name": "node128000:autonomous_calls:hop2",
+        "passed": true
+      },
+      {
+        "name": "node128000:autonomous_calls:calls",
+        "passed": true
+      },
+      {
+        "name": "node128000:autonomous_calls:answer",
+        "passed": true
+      },
+      {
+        "name": "node128000:autonomous_calls:accuracy",
+        "passed": true
+      },
+      {
+        "name": "node128000:autonomous_calls:all_intermediates",
+        "passed": true
+      },
+      {
+        "name": "latest_spec",
+        "passed": true
+      },
+      {
+        "name": "latest_step",
+        "passed": true
+      },
+      {
+        "name": "latest_counts",
+        "passed": true
+      },
+      {
+        "name": "latest_stream_batches",
+        "passed": true
+      },
+      {
+        "name": "latest_stream_atomic_batch",
+        "passed": true
+      },
+      {
+        "name": "latest_stream_batch_size",
+        "passed": true
+      },
+      {
+        "name": "latest_stream_atomic_pool",
+        "passed": true
+      },
+      {
+        "name": "latest_stream_composite_pool",
+        "passed": true
+      },
+      {
+        "name": "checkpoint_spec",
+        "passed": true
+      },
+      {
+        "name": "parameter_count",
+        "passed": true
+      },
+      {
+        "name": "atomic:reload_answer",
+        "passed": true
+      },
+      {
+        "name": "atomic:reload_stop",
+        "passed": true
+      },
+      {
+        "name": "atomic:reload_target",
+        "passed": true
+      },
+      {
+        "name": "atomic:reload_nll",
+        "passed": true
+      },
+      {
+        "name": "id_atomic:reload_answer",
+        "passed": true
+      },
+      {
+        "name": "id_atomic:reload_stop",
+        "passed": true
+      },
+      {
+        "name": "id_atomic:reload_target",
+        "passed": true
+      },
+      {
+        "name": "id_atomic:reload_nll",
+        "passed": true
+      },
+      {
+        "name": "ood_atomic:reload_answer",
+        "passed": true
+      },
+      {
+        "name": "ood_atomic:reload_stop",
+        "passed": true
+      },
+      {
+        "name": "ood_atomic:reload_target",
+        "passed": true
+      },
+      {
+        "name": "ood_atomic:reload_nll",
+        "passed": true
+      },
+      {
+        "name": "train_composite:reload_answer",
+        "passed": true
+      },
+      {
+        "name": "train_composite:reload_stop",
+        "passed": true
+      },
+      {
+        "name": "train_composite:reload_target",
+        "passed": true
+      },
+      {
+        "name": "train_composite:reload_nll",
+        "passed": true
+      },
+      {
+        "name": "test_composite:reload_answer",
+        "passed": true
+      },
+      {
+        "name": "test_composite:reload_stop",
+        "passed": true
+      },
+      {
+        "name": "test_composite:reload_target",
+        "passed": true
+      },
+      {
+        "name": "test_composite:reload_nll",
+        "passed": true
+      },
+      {
+        "name": "ood_composite:reload_answer",
+        "passed": true
+      },
+      {
+        "name": "ood_composite:reload_stop",
+        "passed": true
+      },
+      {
+        "name": "ood_composite:reload_target",
+        "passed": true
+      },
+      {
+        "name": "ood_composite:reload_nll",
+        "passed": true
+      },
+      {
+        "name": "test_full_composite:reload_answer",
+        "passed": true
+      },
+      {
+        "name": "test_full_composite:reload_stop",
+        "passed": true
+      },
+      {
+        "name": "test_full_composite:reload_target",
+        "passed": true
+      },
+      {
+        "name": "test_full_composite:reload_nll",
+        "passed": true
+      },
+      {
+        "name": "autonomous_reload:hop1_answer",
+        "passed": true
+      },
+      {
+        "name": "autonomous_reload:hop1_stop",
+        "passed": true
+      },
+      {
+        "name": "autonomous_reload:hop2_answer",
+        "passed": true
+      },
+      {
+        "name": "autonomous_reload:hop2_stop",
+        "passed": true
+      }
+    ],
+    "reload_max_nll_absolute_error": 0.0,
+    "counts": {
+      "atomic": 1024,
+      "id_atomic": 768,
+      "ood_atomic": 256,
+      "train_composite": 4163,
+      "test_composite": 484,
+      "test_full_composite": 484,
+      "ood_composite": 515,
+      "unused_composite": 0
+    },
+    "learning_nodes_checked": 27,
+    "dataset_sha256": "8fa88ae1a644ece1ddbb074abcf53fbd7c25adb2004a866f90ecdf38f2108037",
+    "terminal_stream_sha256": "2c9ae011da490084215f0a70783364e99d6c8dec67bc0ae54bd5438911f002d3",
+    "endpoint_counts": {
+      "atomic": 4096000,
+      "composite": 28672000
+    },
+    "sampling_condition": {
+      "entities": 128,
+      "relations": 16,
+      "degree": 8,
+      "id_fraction": 0.75,
+      "id_test_fraction": 0.1,
+      "evaluation_size": 1024,
+      "width": 128,
+      "heads": 4,
+      "dropout": 0.1,
+      "lr": 0.0001,
+      "weight_decay": 0.1,
+      "batch_size": 256,
+      "n_atomic_per_batch": 32,
+      "warmup": 2000,
+      "steps": 128000,
+      "nodes": [
+        0,
+        100,
+        250,
+        500,
+        1000,
+        2000,
+        4000,
+        6000,
+        8000,
+        10000,
+        12000,
+        14000,
+        16000,
+        24000,
+        32000,
+        40000,
+        48000,
+        56000,
+        64000,
+        72000,
+        80000,
+        88000,
+        96000,
+        104000,
+        112000,
+        120000,
+        128000
+      ],
+      "weight_nodes": [
+        0,
+        16000,
+        64000,
+        128000
+      ],
+      "init_scheme": "scaled_effective",
+      "phase": "confirmation",
+      "hops": 2,
+      "phi": 6,
+      "stream_seed": 145011021,
+      "world_seed": 145011,
+      "initialization": 14501
+    }
+  }
+}

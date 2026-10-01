@@ -1,0 +1,34 @@
+{
+  "decided_utc": "2026-09-29T23:51:33.901614+00:00",
+  "development_seed": 142941,
+  "development_result": "results/hebbian-interface-v1/development/142941/summary.json",
+  "decision": "Keep configuration unchanged; run all three prespecified independent confirmation worlds. No search for a CE/MSE gap.",
+  "evidence": {
+    "all_four_memories_full_vocab_accuracy": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "A_reader_accuracy_by_1000_steps": {
+      "ce": 1.0,
+      "mse": 1.0
+    },
+    "final_crossed_B_accuracies": {
+      "ce": {
+        "B_ce": 1.0,
+        "B_mse": 1.0
+      },
+      "mse": {
+        "B_ce": 1.0,
+        "B_mse": 1.0
+      }
+    },
+    "wrong_mapping_changed_accuracy": {
+      "ce": 0.0,
+      "mse": 0.0
+    }
+  },
+  "interpretation": "Standalone vector fidelity is not necessary for successful single-hop use in this normalized, low-load task. This does not evaluate composition or establish a general loss-function advantage.",
+  "formal_selection": "Fixed final 4000-step reader checkpoints; no new-mapping evaluation during reader optimization or checkpoint selection."
+}

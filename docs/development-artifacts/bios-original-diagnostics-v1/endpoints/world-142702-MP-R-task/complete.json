@@ -1,0 +1,158 @@
+{
+  "endpoint": {
+    "id": "world-142702-MP-R-task",
+    "world": 142702,
+    "init": 1427,
+    "condition": "MP-R",
+    "stage": "task",
+    "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/MP-R/task/final.pt",
+    "checkpoint_sha256": "a117abcd8926b680243c35dfde8d9e23195589b2d309d2cad9fc625aa0c84e31",
+    "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142702-MP-R-task.json",
+    "audit_sample_sha256": "d790b5f1cc7c88a2583ff404b4c05a9d800fe5687f419e3a3e677d0e1e1283f4"
+  },
+  "seconds": 10.609605675097555,
+  "audit": {
+    "rows": 96,
+    "generation_mismatches": 0,
+    "eos_mismatches": 0,
+    "correctness_mismatches": 0,
+    "max_abs_full_logp_difference": 0.0,
+    "exact_original_batch": true,
+    "precision": "FP32 parameters, BF16 autocast, TF32 enabled",
+    "status": "passed"
+  },
+  "diagnostics": {
+    "rows": 384,
+    "extraction_rows": 48,
+    "extraction_correct": 30,
+    "extraction_parseable": 45,
+    "totals": {
+      "parity/view-0/direct": {
+        "n": 24,
+        "correct": 18,
+        "correct_with_eos": 18
+      },
+      "parity/view-0/cot": {
+        "n": 24,
+        "correct": 17,
+        "correct_with_eos": 17
+      },
+      "parity/view-0/oracle_rule": {
+        "n": 24,
+        "correct": 24,
+        "correct_with_eos": 24
+      },
+      "parity/view-0/autonomous_rule": {
+        "n": 24,
+        "correct": 24,
+        "correct_with_eos": 24,
+        "inputs_parseable_n": 24,
+        "inputs_parseable_correct": 24,
+        "inputs_correct_n": 20,
+        "inputs_correct_correct": 20,
+        "symbolic_correct": 24
+      },
+      "parity/view-1/direct": {
+        "n": 24,
+        "correct": 8,
+        "correct_with_eos": 8
+      },
+      "parity/view-1/cot": {
+        "n": 24,
+        "correct": 5,
+        "correct_with_eos": 5
+      },
+      "parity/view-1/oracle_rule": {
+        "n": 24,
+        "correct": 24,
+        "correct_with_eos": 24
+      },
+      "parity/view-1/autonomous_rule": {
+        "n": 24,
+        "correct": 17,
+        "correct_with_eos": 17,
+        "inputs_parseable_n": 21,
+        "inputs_parseable_correct": 16,
+        "inputs_correct_n": 10,
+        "inputs_correct_correct": 10,
+        "symbolic_correct": 16
+      },
+      "comparison/view-0/direct": {
+        "n": 24,
+        "correct": 0,
+        "correct_with_eos": 0,
+        "output_in_question_pair": 0
+      },
+      "comparison/view-0/cot": {
+        "n": 24,
+        "correct": 0,
+        "correct_with_eos": 0,
+        "output_in_question_pair": 0
+      },
+      "comparison/view-0/oracle_rule": {
+        "n": 24,
+        "correct": 0,
+        "correct_with_eos": 0,
+        "output_in_question_pair": 0,
+        "output_is_supplied_date": 0
+      },
+      "comparison/view-0/autonomous_rule": {
+        "n": 24,
+        "correct": 0,
+        "correct_with_eos": 0,
+        "output_in_question_pair": 0,
+        "output_is_supplied_date": 0,
+        "inputs_parseable_n": 24,
+        "inputs_parseable_correct": 0,
+        "inputs_correct_n": 16,
+        "inputs_correct_correct": 0,
+        "symbolic_correct": 24
+      },
+      "comparison/view-1/direct": {
+        "n": 24,
+        "correct": 0,
+        "correct_with_eos": 0,
+        "output_in_question_pair": 0
+      },
+      "comparison/view-1/cot": {
+        "n": 24,
+        "correct": 0,
+        "correct_with_eos": 0,
+        "output_in_question_pair": 0
+      },
+      "comparison/view-1/oracle_rule": {
+        "n": 24,
+        "correct": 0,
+        "correct_with_eos": 0,
+        "output_in_question_pair": 0,
+        "output_is_supplied_date": 0
+      },
+      "comparison/view-1/autonomous_rule": {
+        "n": 24,
+        "correct": 0,
+        "correct_with_eos": 0,
+        "output_in_question_pair": 0,
+        "output_is_supplied_date": 0,
+        "inputs_parseable_n": 18,
+        "inputs_parseable_correct": 0,
+        "inputs_correct_n": 2,
+        "inputs_correct_correct": 0,
+        "symbolic_correct": 10
+      }
+    },
+    "people": 24,
+    "independent_partner_pairs": 12,
+    "split": "development",
+    "no_training": true,
+    "limitations": [
+      "Oracle and autonomous rules use externally supplied text and a changed prompt.",
+      "Non-MP-CoT models did not train on the CoT instruction.",
+      "Host date-to-name mapping and symbolic ceilings are not model reasoning.",
+      "Twenty-four people are a fixed diagnostic subset, not population estimates."
+    ]
+  },
+  "shared_gpu": true,
+  "memory_fraction": 0.045,
+  "cuda_visible_devices": "5",
+  "peak_allocated_bytes": 666376192
+}

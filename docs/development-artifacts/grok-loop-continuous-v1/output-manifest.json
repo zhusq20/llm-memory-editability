@@ -1,0 +1,200 @@
+[
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/adjacent-changes.csv",
+    "kind": "analysis_output",
+    "bytes": 4032928,
+    "sha256": "efb5d9b8145e8c3d00c4a5a4126947e72ad211ccf42044c92ff40393a921fd24"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/analysis-definition.json",
+    "kind": "analysis_output",
+    "bytes": 2334,
+    "sha256": "a5c2af41444cb6f506088c105348f9d72cc1462a58d6ed48e4fb00a41d7adfb1"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/autonomous-hard.csv",
+    "kind": "analysis_output",
+    "bytes": 1529277,
+    "sha256": "bbc56e7eda498f163ab3af8c0b69c8b6db875b5263a14e9e43b29b80084f32b9"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/confirmation-all-ood.pdf",
+    "kind": "analysis_output",
+    "bytes": 42058,
+    "sha256": "96e73193c7dcda6aa5029a3782536b41222ff316afd8528cc2d9748c9619beef"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/confirmation-all-ood.png",
+    "kind": "analysis_output",
+    "bytes": 800245,
+    "sha256": "687d24424bbf520013c7ed235dc366b66fe0ea1f741b030000cb6657d4b4d923"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/confirmation-atomic.pdf",
+    "kind": "analysis_output",
+    "bytes": 42036,
+    "sha256": "d1a7e129ebfe5d8a08e459eaeea65cbdb8f713eb941d915adabf91d2697086a9"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/confirmation-atomic.png",
+    "kind": "analysis_output",
+    "bytes": 352992,
+    "sha256": "216df73389c18a5c9ca48ca69f0f01a1c145d37639466d59e5b18a4ba16f630d"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/confirmation-composition.pdf",
+    "kind": "analysis_output",
+    "bytes": 52014,
+    "sha256": "c3fe035d5fa7620dce526b60ade22b31c4ad7af082f1a91e398e0414e8223017"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/confirmation-composition.png",
+    "kind": "analysis_output",
+    "bytes": 608732,
+    "sha256": "987e634cf6a71566ac7dc3fde14b702b5ba255cc204f859e14dd90b4f0687a0b"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/confirmation-eos.pdf",
+    "kind": "analysis_output",
+    "bytes": 31511,
+    "sha256": "183eb582c46e6dd0df789b0cb54517650b2dac74376166f28cccd9c91fbf21b3"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/confirmation-eos.png",
+    "kind": "analysis_output",
+    "bytes": 223549,
+    "sha256": "7d173df86261859fb116bd6f0d4b70ed722bde585ab853f81039235f7a2c62be"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/continuous-trajectories.pdf",
+    "kind": "analysis_output",
+    "bytes": 161231,
+    "sha256": "dd61bfe26b03732aece5def4e4a3800b250ae85345bc861a97bb9ca2e20c6df7"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/decline-rebounds.csv",
+    "kind": "analysis_output",
+    "bytes": 1943774,
+    "sha256": "38edb41eebad81746c6f26206ebbdb63de16bbda242a77dcf53165299d56aec0"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/development-all.pdf",
+    "kind": "analysis_output",
+    "bytes": 40806,
+    "sha256": "6ae3c42d4ff98a69b170e7983ba65b70e7bdf67cc17e3cdd0992e7f29ae9f12a"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/development-all.png",
+    "kind": "analysis_output",
+    "bytes": 497152,
+    "sha256": "5d9016f3514bb838184527349915aefede3c1d7214b922d20475e0f5d3db7998"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/endpoints.csv",
+    "kind": "analysis_output",
+    "bytes": 506338,
+    "sha256": "c4f9b8c8984c7d2d4f2239c6c0bd7d9df0026ceab55f7a692c78bcb081381568"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/formal-nested-endpoints.csv",
+    "kind": "analysis_output",
+    "bytes": 67285,
+    "sha256": "fec5eb33550590eb1715f75a889981b26a25c1c84cf0435aef7a43676dfc96da"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/input-provenance.json",
+    "kind": "analysis_output",
+    "bytes": 961287,
+    "sha256": "195b90b2222652592955add88b0a497efe49451f00f2fe9cd06cc893a01846fc"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/matrix-audit.json",
+    "kind": "analysis_output",
+    "bytes": 373918,
+    "sha256": "c88d3463967def2ea016c206e3ebfa052129111c2c8f598507b9ac67466e01c2"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/nested-trajectories.csv",
+    "kind": "analysis_output",
+    "bytes": 3838288,
+    "sha256": "d4ee42a136ec193f0aa0045482a6295aeedb9545c47a9d322798ea77527da4a4"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/nodes.csv",
+    "kind": "analysis_output",
+    "bytes": 11862316,
+    "sha256": "aa9604825a7fef1d268310be0e2d971a2cc3d980ca0c04fb2291f5c78b5e3155"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/run-dynamics.csv",
+    "kind": "analysis_output",
+    "bytes": 1272706,
+    "sha256": "9baf9384e53eb792482cc1a2778c68c85336f6c529f9adf702ed4f6ea63bf5c2"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/sensitivity-all.pdf",
+    "kind": "analysis_output",
+    "bytes": 26212,
+    "sha256": "0e63cfe639399cd10d12888186a9830221af81ffa2d91b973b1495ef75ae4468"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/sensitivity-all.png",
+    "kind": "analysis_output",
+    "bytes": 306507,
+    "sha256": "13fc125f3793b126f1745041570e1f1471eefc05d0cd9fac217c6ab2466a1efc"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/source/analysis-definition.json",
+    "kind": "analysis_output",
+    "bytes": 2334,
+    "sha256": "a5c2af41444cb6f506088c105348f9d72cc1462a58d6ed48e4fb00a41d7adfb1"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/source/configs/grok-loop-confirmation-v1.json",
+    "kind": "analysis_output",
+    "bytes": 22182,
+    "sha256": "8c810b47c2f1ca00d27fb7c12cf7a3621b25aaeca89706e26264fa3c885a6940"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/source/configs/grok-loop-development-v1.json",
+    "kind": "analysis_output",
+    "bytes": 3445,
+    "sha256": "96c15d1b0103efb954e5b4177998380b3be9f96e64fcb9e98d07c8b185cff04a"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/source/configs/grok-loop-sensitivity-v1.json",
+    "kind": "analysis_output",
+    "bytes": 2172,
+    "sha256": "9cb714a9d1d90a3267d159766698762ea001706317987bd470f3e59b9556ef9a"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/source/scripts/report_grok_loop_continuous.py",
+    "kind": "analysis_output",
+    "bytes": 43727,
+    "sha256": "3fdfb3f8e3657ee2c84727ed57119f2ba40b90dfaee21ecd9003daf6d5ed10ce"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/source/tests/test_grok_loop_continuous.py",
+    "kind": "analysis_output",
+    "bytes": 11649,
+    "sha256": "7ce06fe99613bdd34d0131075091a3da66b030cf49402f95ef2cebea45b54342"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/summary.json",
+    "kind": "analysis_output",
+    "bytes": 316095,
+    "sha256": "49a5fe862c26051a9872bc7b4a3bb13fad75eb19660d34cfd89a4052be1fd7e0"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/world-trajectories.csv",
+    "kind": "analysis_output",
+    "bytes": 3942328,
+    "sha256": "87da87e54c9ff9dff44679cc4e56669502b000004d225355fd0431ab5087e242"
+  },
+  {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/docs/development-artifacts/grok-loop-continuous-v1/verification.json",
+    "kind": "analysis_output",
+    "bytes": 452,
+    "sha256": "d27f499b8a00d84ea68981e0209208d2f15322ef7572c378846f456571a076df"
+  }
+]

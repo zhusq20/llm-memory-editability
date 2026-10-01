@@ -1,0 +1,23 @@
+{
+  "status": "development_complete_requires_atomic_calibration",
+  "fixed_endpoint": 512,
+  "unchanged_original_architecture": true,
+  "all_parameters_jointly_trained": true,
+  "tests": {
+    "passed": 3,
+    "seconds": 6.85,
+    "command": ".venv/bin/python -m pytest tests/test_small_lm_composition.py -q"
+  },
+  "reload_predictions": 416,
+  "matching_initial_predictions": 208,
+  "source_hashes_verified": 5,
+  "observation": "Separate arm recalls both atomic facts and background compositions at 100%, but target two-hop is 6.25%.",
+  "limitation": "Linked arm second-hop standalone recall is 21.875%; full-pool two-hop differences are not a knowledge-matched mechanism test.",
+  "next_development_step": "Calibrate common standalone atomic rehearsal in both arms; retain this original development run.",
+  "confirmation_started": false,
+  "models_0_8b_and_1_7b_started": false,
+  "total_training_seconds": 101.12352694931906,
+  "total_process_seconds": 275.344358442002,
+  "total_input_tokens": 384444,
+  "total_supervised_tokens": 366012
+}

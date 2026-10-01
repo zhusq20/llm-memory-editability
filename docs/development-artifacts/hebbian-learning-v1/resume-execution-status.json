@@ -1,0 +1,31 @@
+{
+  "started_at": "2026-09-28T16:06:04.671267+00:00",
+  "supervisor_pid": 3070838,
+  "completed_stages": [
+    "training_matrix",
+    "completion_audit",
+    "diagnostic_export",
+    "final_report"
+  ],
+  "slots": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "status": "complete",
+  "stage": "final_report",
+  "child_pid": null,
+  "command": [
+    "/home/siqizhu4/miniconda3/bin/python",
+    "-u",
+    "scripts/report_hebbian_learning.py"
+  ],
+  "updated_at": "2026-09-28T16:48:40.422121+00:00",
+  "returncode": 0
+}

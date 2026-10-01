@@ -1,0 +1,434 @@
+{
+  "status": "complete",
+  "analysis_type": "post_hoc_existing_predictions_only",
+  "new_training_runs": 0,
+  "new_forward_passes": 0,
+  "endpoint_runs": 12,
+  "rescored_cells": 108,
+  "aggregation": "equal cohorts within world, then equal worlds; one initialization",
+  "limits": [
+    "Different role rows can contain different queries; not a factorial intervention.",
+    "First/second indicates position at evaluation, not position-restricted training.",
+    "No significance test or independent-world claim from query-level replication."
+  ],
+  "roles": [
+    {
+      "role": "both_composition",
+      "accuracy": 1.0,
+      "worlds": [
+        {
+          "world": 146011,
+          "accuracy": 1.0,
+          "cells": [
+            {
+              "world": 146011,
+              "arm": "A",
+              "split": "test_A_A",
+              "n": 59,
+              "correct": 59,
+              "accuracy": 1.0,
+              "answer_probability": 0.9999494743558474
+            },
+            {
+              "world": 146011,
+              "arm": "B",
+              "split": "test_B_B",
+              "n": 42,
+              "correct": 42,
+              "accuracy": 1.0,
+              "answer_probability": 0.9998474023687814
+            }
+          ]
+        },
+        {
+          "world": 146012,
+          "accuracy": 1.0,
+          "cells": [
+            {
+              "world": 146012,
+              "arm": "A",
+              "split": "test_A_A",
+              "n": 53,
+              "correct": 53,
+              "accuracy": 1.0,
+              "answer_probability": 0.9960513003045901
+            },
+            {
+              "world": 146012,
+              "arm": "B",
+              "split": "test_B_B",
+              "n": 54,
+              "correct": 54,
+              "accuracy": 1.0,
+              "answer_probability": 0.9997597712772296
+            }
+          ]
+        },
+        {
+          "world": 146013,
+          "accuracy": 1.0,
+          "cells": [
+            {
+              "world": 146013,
+              "arm": "A",
+              "split": "test_A_A",
+              "n": 50,
+              "correct": 50,
+              "accuracy": 1.0,
+              "answer_probability": 0.9966112327264659
+            },
+            {
+              "world": 146013,
+              "arm": "B",
+              "split": "test_B_B",
+              "n": 43,
+              "correct": 43,
+              "accuracy": 1.0,
+              "answer_probability": 0.9997761251010775
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "first_composition_only",
+      "accuracy": 0.4147501359839029,
+      "worlds": [
+        {
+          "world": 146011,
+          "accuracy": 0.4787273399926008,
+          "cells": [
+            {
+              "world": 146011,
+              "arm": "A",
+              "split": "test_A_B",
+              "n": 51,
+              "correct": 19,
+              "accuracy": 0.37254901960784315,
+              "answer_probability": 0.32067495956112674
+            },
+            {
+              "world": 146011,
+              "arm": "B",
+              "split": "test_B_A",
+              "n": 53,
+              "correct": 31,
+              "accuracy": 0.5849056603773585,
+              "answer_probability": 0.4933277845870515
+            }
+          ]
+        },
+        {
+          "world": 146012,
+          "accuracy": 0.3661904761904762,
+          "cells": [
+            {
+              "world": 146012,
+              "arm": "A",
+              "split": "test_A_B",
+              "n": 42,
+              "correct": 19,
+              "accuracy": 0.4523809523809524,
+              "answer_probability": 0.40215858777998276
+            },
+            {
+              "world": 146012,
+              "arm": "B",
+              "split": "test_B_A",
+              "n": 50,
+              "correct": 14,
+              "accuracy": 0.28,
+              "answer_probability": 0.29157142973205563
+            }
+          ]
+        },
+        {
+          "world": 146013,
+          "accuracy": 0.3993325917686318,
+          "cells": [
+            {
+              "world": 146013,
+              "arm": "A",
+              "split": "test_A_B",
+              "n": 62,
+              "correct": 26,
+              "accuracy": 0.41935483870967744,
+              "answer_probability": 0.34330671018496384
+            },
+            {
+              "world": 146013,
+              "arm": "B",
+              "split": "test_B_A",
+              "n": 58,
+              "correct": 22,
+              "accuracy": 0.3793103448275862,
+              "answer_probability": 0.3419914790217198
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "second_composition_only",
+      "accuracy": 0.4893914699522361,
+      "worlds": [
+        {
+          "world": 146011,
+          "accuracy": 0.48131705512393635,
+          "cells": [
+            {
+              "world": 146011,
+              "arm": "A",
+              "split": "test_B_A",
+              "n": 53,
+              "correct": 24,
+              "accuracy": 0.4528301886792453,
+              "answer_probability": 0.43595385117773516
+            },
+            {
+              "world": 146011,
+              "arm": "B",
+              "split": "test_A_B",
+              "n": 51,
+              "correct": 26,
+              "accuracy": 0.5098039215686274,
+              "answer_probability": 0.5141870053843624
+            }
+          ]
+        },
+        {
+          "world": 146012,
+          "accuracy": 0.4938095238095238,
+          "cells": [
+            {
+              "world": 146012,
+              "arm": "A",
+              "split": "test_B_A",
+              "n": 50,
+              "correct": 22,
+              "accuracy": 0.44,
+              "answer_probability": 0.4082717798240249
+            },
+            {
+              "world": 146012,
+              "arm": "B",
+              "split": "test_A_B",
+              "n": 42,
+              "correct": 23,
+              "accuracy": 0.5476190476190477,
+              "answer_probability": 0.5344960962443024
+            }
+          ]
+        },
+        {
+          "world": 146013,
+          "accuracy": 0.493047830923248,
+          "cells": [
+            {
+              "world": 146013,
+              "arm": "A",
+              "split": "test_B_A",
+              "n": 58,
+              "correct": 31,
+              "accuracy": 0.5344827586206896,
+              "answer_probability": 0.5115658934536776
+            },
+            {
+              "world": 146013,
+              "arm": "B",
+              "split": "test_A_B",
+              "n": 62,
+              "correct": 28,
+              "accuracy": 0.45161290322580644,
+              "answer_probability": 0.4487197465653627
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "neither_composition",
+      "accuracy": 0.030078970729394767,
+      "worlds": [
+        {
+          "world": 146011,
+          "accuracy": 0.028853914447134785,
+          "cells": [
+            {
+              "world": 146011,
+              "arm": "A",
+              "split": "test_B_B",
+              "n": 42,
+              "correct": 1,
+              "accuracy": 0.023809523809523808,
+              "answer_probability": 0.021812637271044273
+            },
+            {
+              "world": 146011,
+              "arm": "B",
+              "split": "test_A_A",
+              "n": 59,
+              "correct": 2,
+              "accuracy": 0.03389830508474576,
+              "answer_probability": 0.038190797557242945
+            }
+          ]
+        },
+        {
+          "world": 146012,
+          "accuracy": 0.028127183787561145,
+          "cells": [
+            {
+              "world": 146012,
+              "arm": "A",
+              "split": "test_B_B",
+              "n": 54,
+              "correct": 1,
+              "accuracy": 0.018518518518518517,
+              "answer_probability": 0.0336686370851439
+            },
+            {
+              "world": 146012,
+              "arm": "B",
+              "split": "test_A_A",
+              "n": 53,
+              "correct": 2,
+              "accuracy": 0.03773584905660377,
+              "answer_probability": 0.03813893158040519
+            }
+          ]
+        },
+        {
+          "world": 146013,
+          "accuracy": 0.033255813953488374,
+          "cells": [
+            {
+              "world": 146013,
+              "arm": "A",
+              "split": "test_B_B",
+              "n": 43,
+              "correct": 2,
+              "accuracy": 0.046511627906976744,
+              "answer_probability": 0.046321667098680366
+            },
+            {
+              "world": 146013,
+              "arm": "B",
+              "split": "test_A_A",
+              "n": 50,
+              "correct": 1,
+              "accuracy": 0.02,
+              "answer_probability": 0.02515410031649722
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "role": "matched_atomic_repetition",
+      "accuracy": 0.2501009690699638,
+      "worlds": [
+        {
+          "world": 146011,
+          "accuracy": 0.2919693301049233,
+          "cells": [
+            {
+              "world": 146011,
+              "arm": "repA",
+              "split": "test_A_A",
+              "n": 59,
+              "correct": 19,
+              "accuracy": 0.3220338983050847,
+              "answer_probability": 0.3012377106699359
+            },
+            {
+              "world": 146011,
+              "arm": "repB",
+              "split": "test_B_B",
+              "n": 42,
+              "correct": 11,
+              "accuracy": 0.2619047619047619,
+              "answer_probability": 0.17482011335934003
+            }
+          ]
+        },
+        {
+          "world": 146012,
+          "accuracy": 0.2620545073375262,
+          "cells": [
+            {
+              "world": 146012,
+              "arm": "repA",
+              "split": "test_A_A",
+              "n": 53,
+              "correct": 16,
+              "accuracy": 0.3018867924528302,
+              "answer_probability": 0.2703273748952459
+            },
+            {
+              "world": 146012,
+              "arm": "repB",
+              "split": "test_B_B",
+              "n": 54,
+              "correct": 12,
+              "accuracy": 0.2222222222222222,
+              "answer_probability": 0.20238769041182197
+            }
+          ]
+        },
+        {
+          "world": 146013,
+          "accuracy": 0.19627906976744186,
+          "cells": [
+            {
+              "world": 146013,
+              "arm": "repA",
+              "split": "test_A_A",
+              "n": 50,
+              "correct": 8,
+              "accuracy": 0.16,
+              "answer_probability": 0.16381664923319555
+            },
+            {
+              "world": 146013,
+              "arm": "repB",
+              "split": "test_B_B",
+              "n": 43,
+              "correct": 10,
+              "accuracy": 0.23255813953488372,
+              "answer_probability": 0.20320312916146993
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "docs/development-artifacts/grok-usage-v1/report-confirmation/nodes.csv": "ab1a411a9e9ad1ffe4a55a2755fef70fca86b1ca8f398a16a66ace7cda31936d",
+    "results/grok-usage-v1/confirmation/confirm-w146011-A/world.npz": "9a77d0747079aea7d7a2b949ecd1fd770d072355eb83c3afcf165832b2e1365e",
+    "results/grok-usage-v1/confirmation/confirm-w146011-A/predictions-0128000.npz": "cc1f1d8c995263dfb6e80edb7e6a3d8fc4bdf2263fb07b9a0fd831a908f89a95",
+    "results/grok-usage-v1/confirmation/confirm-w146011-B/world.npz": "d61d2e5e3d799351156af25db1982860780da4eeb87ffd7742e27bfab82678d9",
+    "results/grok-usage-v1/confirmation/confirm-w146011-B/predictions-0128000.npz": "800a2df0077d0e849e3576e09813f6bba72f4f53f73553714aa28ab1674bd69b",
+    "results/grok-usage-v1/confirmation/confirm-w146011-repA/world.npz": "0e08368a263a37f0388e2617398fd1dfddcdaf9291ea8b97e52708c778b40f7a",
+    "results/grok-usage-v1/confirmation/confirm-w146011-repA/predictions-0128000.npz": "70eac539cf8e22a961d0ed4371b02cd845bc20c4f11d1633526c4d8926bad412",
+    "results/grok-usage-v1/confirmation/confirm-w146011-repB/world.npz": "d39e720d30988c8594329df429f57696ea47bb89d4b0b146ae698ab665dd0ff9",
+    "results/grok-usage-v1/confirmation/confirm-w146011-repB/predictions-0128000.npz": "26077fefd2b9db1e7d6fe09c41740bae8280c2f70803e7b3ad9d961bf3345a28",
+    "results/grok-usage-v1/confirmation/confirm-w146012-A/world.npz": "3842e63240d5642b80cc9f042f84d2bdb43ba8cebfd8ad945372b6eb3e3b2f66",
+    "results/grok-usage-v1/confirmation/confirm-w146012-A/predictions-0128000.npz": "0f84030cf7de0c48e2a1dd9dce293315d8f7ab59a450839456498c1528e5afb1",
+    "results/grok-usage-v1/confirmation/confirm-w146012-B/world.npz": "9ee70c77e09db55c980b1a2d4119347e41a400106f95b3650df687614dc6e8b7",
+    "results/grok-usage-v1/confirmation/confirm-w146012-B/predictions-0128000.npz": "fdb33a1958c6f29a1f064d328a3598b5485dec8229869fae73f6f8d447c5bf5f",
+    "results/grok-usage-v1/confirmation/confirm-w146012-repA/world.npz": "1ef002282df6b456298e1addae22ffe9c3d831a61e8dd720f18e817ecd4c6b82",
+    "results/grok-usage-v1/confirmation/confirm-w146012-repA/predictions-0128000.npz": "d08917782e3c300738368b22bcaaf044fd4dd6216f783a3b457b7f5fd099b315",
+    "results/grok-usage-v1/confirmation/confirm-w146012-repB/world.npz": "eb5ab0d8d568fcafd37b64f9df3e889b3bc4b989c2507c51f4be6a85d4822bc5",
+    "results/grok-usage-v1/confirmation/confirm-w146012-repB/predictions-0128000.npz": "bb2324605d308beed93864a9972b249f155481caff1541ce1838eef041f2da48",
+    "results/grok-usage-v1/confirmation/confirm-w146013-A/world.npz": "0d83610bf57f6aec83bd91d72323117323c6400013d6550a1aece821b059d70e",
+    "results/grok-usage-v1/confirmation/confirm-w146013-A/predictions-0128000.npz": "506425e190a1872cbb144adce98631e532753a017dd74070378fd1984a65cf9a",
+    "results/grok-usage-v1/confirmation/confirm-w146013-B/world.npz": "79e7f3c769e257c445f34c5987f7351581cc1af821178a68ffc698416bd4c4d5",
+    "results/grok-usage-v1/confirmation/confirm-w146013-B/predictions-0128000.npz": "a335988a83b2fb234004a47d68763d5ba47e1d05280a7f5f43ca91e8c9a2c88b",
+    "results/grok-usage-v1/confirmation/confirm-w146013-repA/world.npz": "b717e0ef97edd6c7f46b4c8ca72691c6b78f6126e100c91f5c8f7bda5b027ad7",
+    "results/grok-usage-v1/confirmation/confirm-w146013-repA/predictions-0128000.npz": "1a8b8c8802e648ce4222fdf8f638e7e506fddcbe94a49f175087504f94de1ecd",
+    "results/grok-usage-v1/confirmation/confirm-w146013-repB/world.npz": "2266a9c7a7cca7f64222cf868fb30d3a435d5365acd6f0163fb886d931b23f43",
+    "results/grok-usage-v1/confirmation/confirm-w146013-repB/predictions-0128000.npz": "6c4fba58d3650b2a8a9156e7ce21e864fa634b4819a46fc19b70a7fea63460d6"
+  },
+  "analysis_sha256": "5caae8eba16e0dc855697553990734c95c4ffabf065e6b49f4f4103eed2168da"
+}

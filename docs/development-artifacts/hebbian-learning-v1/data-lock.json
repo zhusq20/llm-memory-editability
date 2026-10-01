@@ -1,0 +1,139 @@
+{
+  "time": "2026-09-28T04:32:25.688924+00:00",
+  "coverage": {
+    "F_form": {
+      "planned": 512,
+      "available": 623,
+      "actual": 512,
+      "relations": {
+        "P103": 5,
+        "P176": 8,
+        "P178": 39,
+        "P20": 108,
+        "P364": 107,
+        "P407": 31,
+        "P495": 107,
+        "P740": 107
+      }
+    },
+    "V_form": {
+      "planned": 128,
+      "available": 155,
+      "actual": 128,
+      "relations": {
+        "P103": 1,
+        "P176": 3,
+        "P178": 11,
+        "P20": 27,
+        "P364": 26,
+        "P407": 8,
+        "P495": 26,
+        "P740": 26
+      }
+    },
+    "B_dev": {
+      "planned": 32,
+      "available": 40,
+      "actual": 32,
+      "relations": {
+        "P178": 1,
+        "P20": 10,
+        "P495": 7,
+        "P740": 7,
+        "P364": 7
+      }
+    },
+    "B_eval": {
+      "planned": 128,
+      "available": 156,
+      "actual": 128,
+      "relations": {
+        "P176": 2,
+        "P178": 10,
+        "P20": 31,
+        "P364": 20,
+        "P407": 5,
+        "P495": 30,
+        "P740": 30
+      }
+    },
+    "C_dev": {
+      "planned": 64,
+      "available": 80,
+      "actual": 64,
+      "relations": {
+        "P176": 1,
+        "P20": 14,
+        "P364": 14,
+        "P407": 3,
+        "P495": 14,
+        "P740": 14,
+        "P178": 4
+      }
+    },
+    "C_eval": {
+      "planned": 256,
+      "available": 306,
+      "actual": 256,
+      "relations": {
+        "P178": 17,
+        "P20": 60,
+        "P364": 49,
+        "P407": 10,
+        "P495": 59,
+        "P740": 61
+      }
+    },
+    "R_keep": {
+      "planned": 256,
+      "available": 103,
+      "actual": 96,
+      "relations": {
+        "P103": 8,
+        "P178": 23,
+        "P20": 3,
+        "P364": 39,
+        "P407": 14,
+        "P495": 9
+      }
+    },
+    "V_keep": {
+      "planned": 128,
+      "available": 66,
+      "actual": 64,
+      "relations": {
+        "P103": 5,
+        "P178": 14,
+        "P20": 3,
+        "P364": 23,
+        "P407": 10,
+        "P495": 9
+      }
+    },
+    "U_keep": {
+      "planned": 256,
+      "available": 111,
+      "actual": 104,
+      "relations": {
+        "P103": 8,
+        "P176": 2,
+        "P178": 23,
+        "P20": 6,
+        "P364": 36,
+        "P407": 18,
+        "P495": 11
+      }
+    }
+  },
+  "subject_disjoint": true,
+  "files": {
+    "candidates.json": "ac4d2677ae1c2cdbf6d644fd91c32d748438f82223b942dd8e09acdbfb70ffbd",
+    "pools.json": "9134a1b266b9e0776c6f88d4aea201bae5127955ab4340e0308c4b46d55fb0e8",
+    "episodes.json": "a5d62cf631f488d4e1a674949bde2dac004a10735360ac3a5c42749fac966fd9",
+    "baseline.json": "8672a610f5db24078b414b611fe9049d0fb851690c6fc10176afe619bd2d23ce",
+    "text.json": "353acefa4e000821e74317342a9b9301747e7fb0a393a0b32dec02311ff0a95d"
+  },
+  "semantic_audit_sha256": "4720790f3999da2561f12d783c90ee510b2bd53dd9cccb6fe3641f7713df4132",
+  "revision": "Full-episode coverage reduction before model learning, where needed",
+  "status": "locked"
+}

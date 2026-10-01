@@ -1,0 +1,17 @@
+{
+  "locked_utc": "2026-09-30T02:50:28.171237+00:00",
+  "phase": "confirmation",
+  "files": {
+    "configs/grok-multihop-boundary-confirmation-v1.json": "a882c80b73bc53c535168734261b8786eddc955ca0acba58a9b6c21d897218fb",
+    "src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+    "src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+    "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+    "src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "scripts/run_grok_multihop.py": "c2609aa3bdd25da9ac2a47f0373cf47b2cabcd40be5f56e5678e85129501b840",
+    "docs/development-artifacts/grok-multihop-v1/boundary-confirmation-plan.json": "d32b4df098b87df74f7d2ac72975e51ef908258360d63156604006e8b49341b0"
+  },
+  "execution_core_unchanged": true,
+  "prior_tests_passed": 14,
+  "prior_GPU_execution_preflight": "preflight.json"
+}

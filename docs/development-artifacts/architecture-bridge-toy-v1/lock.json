@@ -1,0 +1,126 @@
+{
+  "created_utc": "2026-09-29T22:58:31.635623+00:00",
+  "config": {
+    "experiment": "architecture-bridge-toy-v1",
+    "scope": "Small controlled mechanism models, not Qwen replicas or GLM/Kimi validation",
+    "worlds": [
+      142931,
+      142932
+    ],
+    "initializations": [
+      1429311,
+      1429312
+    ],
+    "entities": 32,
+    "relations": 4,
+    "architectures": [
+      {
+        "name": "gqa",
+        "mixers": [
+          "gqa",
+          "gqa",
+          "gqa",
+          "gqa"
+        ]
+      },
+      {
+        "name": "hybrid",
+        "mixers": [
+          "gqa",
+          "delta",
+          "gqa",
+          "delta"
+        ]
+      }
+    ],
+    "width": 64,
+    "heads": 4,
+    "kv_heads": 2,
+    "mlp_hidden": 128,
+    "conv_kernel": 3,
+    "norm_eps": 1e-05,
+    "steps": 1024,
+    "nodes": [
+      0,
+      512,
+      1024
+    ],
+    "batch_per_kind": 32,
+    "lr": 0.001,
+    "warmup": 64,
+    "weight_decay": 0.1,
+    "gradient_clip": 1.0,
+    "diagnostic_cases": 16,
+    "eval_batch": 128,
+    "mlp_layer": 0,
+    "mlp_position": 2,
+    "mixer_layer": 1,
+    "mixer_position": 3,
+    "patch_targets": [
+      "mlp",
+      "mixer",
+      "joint"
+    ],
+    "patch_donors": [
+      "identity",
+      "correct",
+      "wrong",
+      "random_correct",
+      "random_wrong"
+    ],
+    "random_control_seed": 14293199,
+    "dtype": "float32 parameters, optimizer, training and evaluation; TF32 disabled",
+    "device": "cuda:2",
+    "cpu_threads": 2,
+    "initialization_pairing": "Each parameter initialized by seed and full name; identical named/shaped parameters are bit-identical across architectures",
+    "sampling_pairing": "Exact same saved atomic/composite index arrays within each world/init pair",
+    "evaluation": "All atoms, all training compositions, all held-out compositions, autonomous two calls, and fixed final-node donor interventions; entity answer plus EOS",
+    "intervention_scope": "One MLP branch output at L0/position2 and downstream mixer branch output at L1/position3. This is not a whole-state transplant or the real-model cache intervention.",
+    "policy": "Run all eight trajectories and all three nodes at fixed budget. No accuracy filtering, early stopping, test-selected layers, hyperparameter search, or budget extension. Save endpoints, all failures, exposure, hashes and raw predictions."
+  },
+  "sources": {
+    "configs/architecture-bridge-toy-v1.json": "4f064847f1eff7f7ca7c69fbe1c8a0fabeb8eac25220aa3fa601f9bd71cf8aef",
+    "src/llm_memory_editability/architecture_bridge_toy.py": "320d859c4d11b68299266d3f9bdb9a7e6867d635eb3d347827be082c60f0ffca",
+    "src/llm_memory_editability/twohop_depth.py": "870ad9f1f3a3736b77b1b0781d25961803d9d2e1df9aed1c709a669691b76def",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "scripts/run_architecture_bridge_toy.py": "d57b0b1fab3260fb40f283d8b74234b4458c47f99021f58c7f2001c51a8b2726",
+    "tests/test_architecture_bridge_toy.py": "40247df4ca0a5516e75118d604888a0d62670a9631ffff613725b7eedc6b327c"
+  },
+  "data": {
+    "data/architecture-bridge-toy-v1/world-142931.npz": "f6ea421c5184fdfdb8a4408f947907dd3b69907c6de3423fd384c4f0e8c6cc04",
+    "data/architecture-bridge-toy-v1/stream-142931-1429311.npz": "0422ebee1756ff2ec95dd9f412e64c260cf6bc99aba7c5a1564c34cefa9dc8d4",
+    "data/architecture-bridge-toy-v1/stream-142931-1429312.npz": "e7f01f51eea8bf5a71da89723669dbdbebd39b7f0b1d2b346ca198be311227fb",
+    "data/architecture-bridge-toy-v1/world-142932.npz": "e672a2856f99dfcd9ea77c2acc6d0b8181e0b98a8a764022cb49ba4a49b4e73f",
+    "data/architecture-bridge-toy-v1/stream-142932-1429311.npz": "0422ebee1756ff2ec95dd9f412e64c260cf6bc99aba7c5a1564c34cefa9dc8d4",
+    "data/architecture-bridge-toy-v1/stream-142932-1429312.npz": "e7f01f51eea8bf5a71da89723669dbdbebd39b7f0b1d2b346ca198be311227fb"
+  },
+  "world_audits": {
+    "142931": {
+      "atoms": 128,
+      "train_compositions": 256,
+      "test_compositions": 256,
+      "diagnostic_cases": 16,
+      "every_atom_train_composition_occurrences_per_hop": 2,
+      "balanced_answers": true,
+      "answer_free_donors": true
+    },
+    "142932": {
+      "atoms": 128,
+      "train_compositions": 256,
+      "test_compositions": 256,
+      "diagnostic_cases": 16,
+      "every_atom_train_composition_occurrences_per_hop": 2,
+      "balanced_answers": true,
+      "answer_free_donors": true
+    }
+  },
+  "environment": {
+    "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:27:36) [GCC 11.2.0]",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.5.3",
+    "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
+    "git_revision": "e279fc676f71e7e8cc8ce255faf68e26534ce311",
+    "gpu": "index, name, memory.used [MiB], memory.total [MiB]\n0, NVIDIA RTX PRO 6000 Blackwell Server Edition, 84249 MiB, 97887 MiB\n1, NVIDIA RTX PRO 6000 Blackwell Server Edition, 84249 MiB, 97887 MiB\n2, NVIDIA RTX PRO 6000 Blackwell Server Edition, 6758 MiB, 97887 MiB\n3, NVIDIA RTX PRO 6000 Blackwell Server Edition, 84249 MiB, 97887 MiB\n4, NVIDIA RTX PRO 6000 Blackwell Server Edition, 84249 MiB, 97887 MiB\n5, NVIDIA RTX PRO 6000 Blackwell Server Edition, 3 MiB, 97887 MiB\n6, NVIDIA RTX PRO 6000 Blackwell Server Edition, 28321 MiB, 97887 MiB\n7, NVIDIA RTX PRO 6000 Blackwell Server Edition, 64449 MiB, 97887 MiB\n8, NVIDIA RTX PRO 6000 Blackwell Server Edition, 30785 MiB, 97887 MiB\n9, NVIDIA RTX PRO 6000 Blackwell Server Edition, 32583 MiB, 97887 MiB"
+  },
+  "policy": "Run all eight trajectories and all three nodes at fixed budget. No accuracy filtering, early stopping, test-selected layers, hyperparameter search, or budget extension. Save endpoints, all failures, exposure, hashes and raw predictions."
+}

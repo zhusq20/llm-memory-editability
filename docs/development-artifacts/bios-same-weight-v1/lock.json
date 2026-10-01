@@ -1,0 +1,298 @@
+{
+  "created_unix": 1790814996.9850528,
+  "config": {
+    "protocol": "14.27",
+    "stage": "10k-development",
+    "world_seeds": [
+      142701,
+      142702
+    ],
+    "initialization_seeds": [
+      1427
+    ],
+    "people": 10000,
+    "data_root": "data/bios-original-v1",
+    "result_root": "results/bios-original-development-v1",
+    "source_manifest": "configs/bios-source-manifest.json",
+    "model": {
+      "vocab_size": 50257,
+      "width": 768,
+      "layers": 12,
+      "heads": 12,
+      "context": 512,
+      "rotary_fraction": 0.25,
+      "rotary_base": 10000,
+      "dropout": 0.0
+    },
+    "pretrain": {
+      "conditions": [
+        "S",
+        "M",
+        "MP"
+      ],
+      "passes": 540,
+      "nodes": [
+        0,
+        30,
+        90,
+        180,
+        360,
+        540
+      ],
+      "batch_size": 96,
+      "micro_batch_size": 24,
+      "learning_rate": 0.001,
+      "minimum_lr_ratio": 0.1,
+      "warmup_steps": 1000,
+      "weight_decay": 0.1,
+      "adam_betas": [
+        0.9,
+        0.999
+      ],
+      "adam_epsilon": 1e-06,
+      "gradient_clip": 1.0,
+      "precision": "bf16-autocast-fp32-parameters",
+      "compile": false
+    },
+    "adapt": {
+      "epochs": 10,
+      "batch_size": 48,
+      "micro_batch_size": 24,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.01,
+      "qv_rank": 8,
+      "embedding_rank": 128,
+      "lora_scale": 1.0
+    },
+    "task": {
+      "epochs": 10,
+      "conditions": [
+        "S",
+        "M",
+        "MP",
+        "MP-R",
+        "MP-Random",
+        "MP-CoT"
+      ],
+      "ranking_coefficient": 0.1,
+      "ranking_candidates_to_calibrate": [
+        0.1,
+        0.3
+      ],
+      "margin": 0.5,
+      "rule_repetitions_per_epoch": 100
+    },
+    "evaluation": {
+      "splits": [
+        "dev",
+        "test"
+      ],
+      "views": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "batch_size": 48,
+      "max_new_tokens": 96,
+      "pretrain_diagnostic_people": 128
+    },
+    "edit": {
+      "people_per_world": 16,
+      "steps": 64,
+      "nodes": [
+        0,
+        16,
+        32,
+        64
+      ],
+      "learning_rate_candidates": [
+        1e-05,
+        3e-05
+      ],
+      "target_batch": 32,
+      "replay_batch": 32,
+      "replay_pool": 256,
+      "kl_coefficient": 1.0
+    },
+    "formal": {
+      "status": "pending-development-calibration-and-configuration-freeze",
+      "people": 100000,
+      "world_seeds": [
+        142711,
+        142712,
+        142713
+      ],
+      "initialization_seeds": [
+        1427,
+        1428
+      ],
+      "pretrains": 18,
+      "adaptations": 18,
+      "task_branches": 36,
+      "edits": 2304
+    }
+  },
+  "cases_sha256": "db94e779a6286fee0618cc964803403d04f986380631cbf459328aa42ac0e0c4",
+  "sources": {
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_bios_same_weight.py": "171210aa00af1f2fc6d49e2dee40525e5c7e457982a70c722af564fedea1b47c",
+    "scripts/run_bios_original_trajectory.py": "4e848f34709ed920791c7e006c9da1cf28d37b662b6164e29778eff1955aede1",
+    "src/llm_memory_editability/bios_original_data.py": "092689c2a05aad564ff8a7c6e1ac669d7e0475908e525766cf70922037cd2488",
+    "src/llm_memory_editability/bios_original_model.py": "8a52e58d343320ccce9e2f1b43674cc6765b840bd4feebed4813f78296ab29a9",
+    "src/llm_memory_editability/bios_original_train.py": "86b2ef1be03223dff26bc7997b91143be81fb46fd29ab8650a9cde8a39eb6891",
+    "src/llm_memory_editability/bios_original_diagnostics.py": "6dd51ead7d16c1960740716fb73cb4409828666ac0332baae4c14730e39dd120",
+    "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26"
+  },
+  "endpoints": [
+    {
+      "world": 142701,
+      "condition": "S",
+      "stage": "pretrain",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/S/pretrain/pass-540.pt",
+      "checkpoint_sha256": "fb5646ebd1bd54da6451de9cbb0a6560a1d2ab826510a835f42586d32b880faa"
+    },
+    {
+      "world": 142701,
+      "condition": "S",
+      "stage": "adapt",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/S/adapt/final.pt",
+      "checkpoint_sha256": "0683a90478f5f53ca308d578bdeed04b686c2b99b7cf4124285fbb29e931c9ab"
+    },
+    {
+      "world": 142701,
+      "condition": "S",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/S/task/final.pt",
+      "checkpoint_sha256": "d2b33aeb970dbcec5e4c4b69d8205fdb59508774db762399ede755e3fe49a933"
+    },
+    {
+      "world": 142701,
+      "condition": "M",
+      "stage": "pretrain",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/M/pretrain/pass-540.pt",
+      "checkpoint_sha256": "9adb8c5a426fd6ea898bd489dec329923062fb535635612b63d37b4557e23dab"
+    },
+    {
+      "world": 142701,
+      "condition": "M",
+      "stage": "adapt",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/M/adapt/final.pt",
+      "checkpoint_sha256": "c13b5078cb9d527d6392e312c44b444aed8984afde2116397417cae02caf844b"
+    },
+    {
+      "world": 142701,
+      "condition": "M",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/M/task/final.pt",
+      "checkpoint_sha256": "b02c0485d875e89fbb9c8ed9e03c38f8b4941689a93f8a36610cea74a5dd6edd"
+    },
+    {
+      "world": 142701,
+      "condition": "MP",
+      "stage": "pretrain",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/MP/pretrain/pass-540.pt",
+      "checkpoint_sha256": "e3b65ca3cf33fd22e31a3d8e55eb8e70a713a3c983072294be7da26c8314d03c"
+    },
+    {
+      "world": 142701,
+      "condition": "MP",
+      "stage": "adapt",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/MP/adapt/final.pt",
+      "checkpoint_sha256": "669f96adc832535b3884a6aef0b287433e8d07efac7cd2ecc4256460e0757bd9"
+    },
+    {
+      "world": 142701,
+      "condition": "MP",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/MP/task/final.pt",
+      "checkpoint_sha256": "3ee56214b1bd8a30bd378e829e02386e21ef9124b0bfd18dbd9d00b98f9180e7"
+    },
+    {
+      "world": 142702,
+      "condition": "S",
+      "stage": "pretrain",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/S/pretrain/pass-540.pt",
+      "checkpoint_sha256": "a9f358c569340b1880336437235457a7593fe1078a1969597374919cc83272aa"
+    },
+    {
+      "world": 142702,
+      "condition": "S",
+      "stage": "adapt",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/S/adapt/final.pt",
+      "checkpoint_sha256": "d761fd0e01e7c20160fd6c65bf8f8441331663550587016a913196e3bdddba68"
+    },
+    {
+      "world": 142702,
+      "condition": "S",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/S/task/final.pt",
+      "checkpoint_sha256": "aba40a1c6f034afbc0588890b91bf30d1fe5aed3bc59d25962c205266628050f"
+    },
+    {
+      "world": 142702,
+      "condition": "M",
+      "stage": "pretrain",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/M/pretrain/pass-540.pt",
+      "checkpoint_sha256": "a17ce138197faa18e251e4fcbf8343351998adac1390dd1f6364715be9eaf50e"
+    },
+    {
+      "world": 142702,
+      "condition": "M",
+      "stage": "adapt",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/M/adapt/final.pt",
+      "checkpoint_sha256": "83d02129971cec7b3edb2fa12e8047dd1a7dd06ca4e500a1953815dffb4ec6ec"
+    },
+    {
+      "world": 142702,
+      "condition": "M",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/M/task/final.pt",
+      "checkpoint_sha256": "80dc2fa8206772cad796601bb1799eaae28b952972bd8ce7a6ac7ddc6eaad4da"
+    },
+    {
+      "world": 142702,
+      "condition": "MP",
+      "stage": "pretrain",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/MP/pretrain/pass-540.pt",
+      "checkpoint_sha256": "cec30453f5be406b4ab7e09648e7cc3c7e7f6819ff889176e6b291f464a41490"
+    },
+    {
+      "world": 142702,
+      "condition": "MP",
+      "stage": "adapt",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/MP/adapt/final.pt",
+      "checkpoint_sha256": "022b9c44bce6db9cfe07aaaa198819ae245789cbe16a19a0838952a8ae56dda6"
+    },
+    {
+      "world": 142702,
+      "condition": "MP",
+      "stage": "task",
+      "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/MP/task/final.pt",
+      "checkpoint_sha256": "46362d8f6c8e26c1958c76cf13b576d74fa37367350a6afc8e31dcc8bd5c1b9f"
+    }
+  ],
+  "people_per_world": 32,
+  "views": [
+    0,
+    1
+  ],
+  "native_batch": 4,
+  "qa_batch": 16,
+  "max_new_tokens": 96,
+  "native_max_new_tokens": 12,
+  "analysis": "Paired fixed development people; no new training or selection by results",
+  "limitations": [
+    "Native birthcity prefix supplies the true date.",
+    "Pretraining/adapt endpoints have not been trained on the parity rule format.",
+    "Autonomous and oracle conditions change prompts and computation budget."
+  ],
+  "inputs": {
+    "configs/bios-original-development-v1.json": "f9d27b755eefd142fd8f1ea1cc7eb808436cdc00c7327a5bdd2b3bfbb10b3977",
+    "docs/development-artifacts/bios-original-trajectory-v1/cases.json": "db94e779a6286fee0618cc964803403d04f986380631cbf459328aa42ac0e0c4",
+    "data/bios-original-v1/tokenizer/tokenizer.json": "8414cab924d8b9b33013f0d221c5862f365ee9be39c5c2bfae8a5a9e970478a6",
+    "data/bios-original-v1/world-142701/people.json": "396f836e74475dd103c7f8927c38821e2aef118b53a414e6c1bbe4df81126dae",
+    "data/bios-original-v1/world-142702/people.json": "3ad6297db8b8f5e733340a8efe7a63b6826104b423381200b868838437c95b18"
+  }
+}

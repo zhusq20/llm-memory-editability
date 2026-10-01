@@ -1,0 +1,12 @@
+{"endpoint": "world-142701-S-task", "summary": {"parity": {"n": 12, "correct": 12}, "date_comparison": {"n": 24, "correct": 24}}}
+{"endpoint": "world-142701-M-task", "summary": {"parity": {"n": 12, "correct": 12}, "date_comparison": {"n": 24, "correct": 24}}}
+{"endpoint": "world-142701-MP-task", "summary": {"parity": {"n": 12, "correct": 12}, "date_comparison": {"n": 24, "correct": 24}}}
+{"endpoint": "world-142701-MP-R-task", "summary": {"parity": {"n": 12, "correct": 12}, "date_comparison": {"n": 24, "correct": 24}}}
+{"endpoint": "world-142701-MP-Random-task", "summary": {"parity": {"n": 12, "correct": 12}, "date_comparison": {"n": 24, "correct": 24}}}
+{"endpoint": "world-142701-MP-CoT-task", "summary": {"parity": {"n": 12, "correct": 12}, "date_comparison": {"n": 24, "correct": 24}}}
+{"endpoint": "world-142702-S-task", "summary": {"parity": {"n": 12, "correct": 12}, "date_comparison": {"n": 24, "correct": 24}}}
+{"endpoint": "world-142702-M-task", "summary": {"parity": {"n": 12, "correct": 12}, "date_comparison": {"n": 24, "correct": 24}}}
+{"endpoint": "world-142702-MP-task", "summary": {"parity": {"n": 12, "correct": 12}, "date_comparison": {"n": 24, "correct": 24}}}
+{"endpoint": "world-142702-MP-R-task", "summary": {"parity": {"n": 12, "correct": 12}, "date_comparison": {"n": 24, "correct": 24}}}
+{"endpoint": "world-142702-MP-Random-task", "summary": {"parity": {"n": 12, "correct": 12}, "date_comparison": {"n": 24, "correct": 24}}}
+{"endpoint": "world-142702-MP-CoT-task", "summary": {"parity": {"n": 12, "correct": 12}, "date_comparison": {"n": 24, "correct": 24}}}

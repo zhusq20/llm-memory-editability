@@ -1,0 +1,2392 @@
+{
+  "schema_version": 1,
+  "completed_utc": "2026-09-29T23:15:59.038482+00:00",
+  "scope": "Natural pretrained-model architecture-bridge-v1 primary experiment, with separately recorded superseded costs. No new inference or training was performed to construct this manifest.",
+  "complete": true,
+  "expected_primary": {
+    "models": 2,
+    "cases_per_model": 56,
+    "learning_episodes_per_model": 4,
+    "steps_per_episode": 8,
+    "evaluation_nodes": [
+      0,
+      1,
+      4,
+      8
+    ]
+  },
+  "actual_primary": {
+    "cases": 112,
+    "learning_episodes": 8
+  },
+  "cost_interpretation": [
+    "seconds is the sum of record-local elapsed durations, not total elapsed wall-clock for the project or sum of last-run.json seconds. Concurrent execution, model loading, orchestration and failed work make those quantities different.",
+    "Every primary case JSON and every primary learning complete.json is counted exactly once. Existing superseded cases and superseded complete.json are counted separately; progress.json and checkpoints are not counted again.",
+    "Forward FLOPs use 2*P*input_tokens. Backward FLOPs use 4*P*backward_input_tokens as a full-gradient upper proxy although upstream parameters were frozen. Attention/recurrent-cache overhead is excluded.",
+    "Recorded successful case/episode costs exclude the unknown failed attempt cost, downloads, installations and separate model preflights. They therefore are not a complete end-to-end expenditure.",
+    "FP32 parameter bytes count only loaded text parameters, excluding activations, caches, gradients, optimizer, allocator reservation and unused checkpoint vision weights.",
+    "GPU peaks are observed allocated bytes from available last-run snapshots. Missing overwritten process snapshots prevent a claim that they are the exact all-process historical maximum. Do not sum GPU peaks."
+  ],
+  "models": {
+    "qwen3": {
+      "checkpoint_repo": "Qwen/Qwen3-0.6B-Base",
+      "checkpoint_revision": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd",
+      "runtime_dtype": "float32",
+      "loaded_text_parameters": 596049920,
+      "FP32_parameter_bytes": 2384199680,
+      "FP32_parameter_GiB": 2.220458984375,
+      "device": "cuda:2",
+      "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "primary_cases": [
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-0401ff280bda11eba7f7acde48001122.json",
+          "sha256": "e06c50a9d24e9ed5d7efb8432995feeb247305911885de81e29736db3eab9cc5",
+          "seconds": 1.8982929260237142,
+          "resources": {
+            "forward_calls": 105,
+            "input_tokens": 1337,
+            "generated_tokens": 50
+          },
+          "kind": "case",
+          "id": "0401ff280bda11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "development",
+          "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+          "intervention_rows": 0
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-0c585dbc0bde11eba7f7acde48001122.json",
+          "sha256": "07b5e1eb15c7f44ff19257214213501ebe773f9e1984d658e54a121fe0ea7eb4",
+          "seconds": 15.36853432096541,
+          "resources": {
+            "forward_calls": 814,
+            "input_tokens": 4579,
+            "generated_tokens": 562
+          },
+          "kind": "case",
+          "id": "0c585dbc0bde11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-22457b2c0bda11eba7f7acde48001122.json",
+          "sha256": "1a7e5266acc054c5f855741293a5d268360bbf815191902f306657a06e781e37",
+          "seconds": 18.495545618003234,
+          "resources": {
+            "forward_calls": 989,
+            "input_tokens": 14786,
+            "generated_tokens": 704
+          },
+          "kind": "case",
+          "id": "22457b2c0bda11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-4a8ffd360bdb11eba7f7acde48001122.json",
+          "sha256": "3fb71cfd7323a96c25dfa7333cdc8386f84dccae098c3df3d5d495df1c12c958",
+          "seconds": 17.278826232999563,
+          "resources": {
+            "forward_calls": 920,
+            "input_tokens": 13674,
+            "generated_tokens": 615
+          },
+          "kind": "case",
+          "id": "4a8ffd360bdb11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-4bfde8ec0bde11eba7f7acde48001122.json",
+          "sha256": "6f3e8d06540446a2e135fbf3dd8a7ed4d20f6a07137edb2e4dab93c31552685b",
+          "seconds": 16.900567099975888,
+          "resources": {
+            "forward_calls": 856,
+            "input_tokens": 8226,
+            "generated_tokens": 630
+          },
+          "kind": "case",
+          "id": "4bfde8ec0bde11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-54ae33e40bdd11eba7f7acde48001122.json",
+          "sha256": "5f74f36438c59ec31317e1694c5445645625a21fb1f4a8e03971bd928973874a",
+          "seconds": 16.873165909026284,
+          "resources": {
+            "forward_calls": 856,
+            "input_tokens": 7486,
+            "generated_tokens": 706
+          },
+          "kind": "case",
+          "id": "54ae33e40bdd11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-57e24dd60bdb11eba7f7acde48001122.json",
+          "sha256": "078d74105b60bce60216a785a1db5d695b0373c98bfe19933ef1d4015592e35c",
+          "seconds": 13.195468018006068,
+          "resources": {
+            "forward_calls": 684,
+            "input_tokens": 4932,
+            "generated_tokens": 612
+          },
+          "kind": "case",
+          "id": "57e24dd60bdb11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-5cb7d5260bde11eba7f7acde48001122.json",
+          "sha256": "d773eae5c9ebfaa4157d9e7fd3df69cc6507ea110c7dea8459b0cb73b4282cd8",
+          "seconds": 14.182002822984941,
+          "resources": {
+            "forward_calls": 741,
+            "input_tokens": 13294,
+            "generated_tokens": 490
+          },
+          "kind": "case",
+          "id": "5cb7d5260bde11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-60a128d80bdc11eba7f7acde48001122.json",
+          "sha256": "f8971304525647e79d199b28dd1f8ac8e6bd860d1b87258cc5fff53132f0e182",
+          "seconds": 1.3686399939469993,
+          "resources": {
+            "forward_calls": 67,
+            "input_tokens": 2432,
+            "generated_tokens": 53
+          },
+          "kind": "case",
+          "id": "60a128d80bdc11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "development",
+          "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+          "intervention_rows": 0
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-68bf3a380bdb11eba7f7acde48001122.json",
+          "sha256": "7de909a0cd30d6980bbb0b0cbdd3a7413e4a9e39943ae447e453f279d053cbfd",
+          "seconds": 14.116068318020552,
+          "resources": {
+            "forward_calls": 734,
+            "input_tokens": 3725,
+            "generated_tokens": 432
+          },
+          "kind": "case",
+          "id": "68bf3a380bdb11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-696ef1dc0bde11eba7f7acde48001122.json",
+          "sha256": "fa5760380b66e84402d4baa3a17a7a4d96c04a80a5347c7a3af7ab8e60ebeacf",
+          "seconds": 2.002646220033057,
+          "resources": {
+            "forward_calls": 102,
+            "input_tokens": 1521,
+            "generated_tokens": 87
+          },
+          "kind": "case",
+          "id": "696ef1dc0bde11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+          "intervention_rows": 0
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-786844020bdb11eba7f7acde48001122.json",
+          "sha256": "b6a438817099487bb034d2d5cef5cce15dd8535c55e9dae2ec022f61a9b70e86",
+          "seconds": 14.381811877014115,
+          "resources": {
+            "forward_calls": 750,
+            "input_tokens": 6974,
+            "generated_tokens": 267
+          },
+          "kind": "case",
+          "id": "786844020bdb11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-7b12db480bdd11eba7f7acde48001122.json",
+          "sha256": "772d21c952e4ce53010576eb865b49d840bef716d52ed40b443b6b2962a8a158",
+          "seconds": 18.896202224015724,
+          "resources": {
+            "forward_calls": 1070,
+            "input_tokens": 10418,
+            "generated_tokens": 565
+          },
+          "kind": "case",
+          "id": "7b12db480bdd11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "development",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-7bb996ce0bdb11eba7f7acde48001122.json",
+          "sha256": "67279270cc73b94b8709e9ecffc95dee0b1b3f7eefaa41415596181e9f60a3ec",
+          "seconds": 13.294622655957937,
+          "resources": {
+            "forward_calls": 694,
+            "input_tokens": 8045,
+            "generated_tokens": 522
+          },
+          "kind": "case",
+          "id": "7bb996ce0bdb11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-7d8986360bda11eba7f7acde48001122.json",
+          "sha256": "e0f0a74cd1d4c07eac89f4ab4c13399906af827bc108de78be6fa29d31d5501b",
+          "seconds": 19.333865306980442,
+          "resources": {
+            "forward_calls": 1037,
+            "input_tokens": 5979,
+            "generated_tokens": 812
+          },
+          "kind": "case",
+          "id": "7d8986360bda11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-8836b2260bd911eba7f7acde48001122.json",
+          "sha256": "ef0e10914cbff1b29f94d9d438670f2266a89579c27251ac088d30bdeb278d0d",
+          "seconds": 16.762768106011208,
+          "resources": {
+            "forward_calls": 861,
+            "input_tokens": 7237,
+            "generated_tokens": 732
+          },
+          "kind": "case",
+          "id": "8836b2260bd911eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-8ab49ff80bda11eba7f7acde48001122.json",
+          "sha256": "af0a2b8ac7bcdbf965de644055d5b2545f9e7e63e6c70534e12ec1c5abb692f6",
+          "seconds": 1.5172312769573182,
+          "resources": {
+            "forward_calls": 75,
+            "input_tokens": 2423,
+            "generated_tokens": 52
+          },
+          "kind": "case",
+          "id": "8ab49ff80bda11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+          "intervention_rows": 0
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-8b4280580bd911eba7f7acde48001122.json",
+          "sha256": "6ca37ec3e599666ca2453ac8602e818af192b7d84c2c73f5408221b104634883",
+          "seconds": 16.70263408496976,
+          "resources": {
+            "forward_calls": 880,
+            "input_tokens": 7453,
+            "generated_tokens": 603
+          },
+          "kind": "case",
+          "id": "8b4280580bd911eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-96e142e40bdb11eba7f7acde48001122.json",
+          "sha256": "1ff49247a4f1eef55204ce3b982d198dc1a6b34e36d2982e998524d770c3f6fc",
+          "seconds": 19.978022997966036,
+          "resources": {
+            "forward_calls": 1052,
+            "input_tokens": 5428,
+            "generated_tokens": 801
+          },
+          "kind": "case",
+          "id": "96e142e40bdb11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-b73268780bdd11eba7f7acde48001122.json",
+          "sha256": "8a7073f971c7178504457167a58cd89e81062c4c958bbddd88b1b44504553c59",
+          "seconds": 13.609634462976828,
+          "resources": {
+            "forward_calls": 695,
+            "input_tokens": 7760,
+            "generated_tokens": 623
+          },
+          "kind": "case",
+          "id": "b73268780bdd11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-c789d1a20bdd11eba7f7acde48001122.json",
+          "sha256": "08ecdd93bff8b7f9a1a6f6dc347a0b9fd24a37434071b15f5dbb44c506f52d1a",
+          "seconds": 12.53952989395475,
+          "resources": {
+            "forward_calls": 655,
+            "input_tokens": 3030,
+            "generated_tokens": 479
+          },
+          "kind": "case",
+          "id": "c789d1a20bdd11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-c81802060bdd11eba7f7acde48001122.json",
+          "sha256": "ab32b871833fc5df9825c6d4e32211d9254731750c2ea20487ec8c848929b241",
+          "seconds": 19.211442070954945,
+          "resources": {
+            "forward_calls": 980,
+            "input_tokens": 8895,
+            "generated_tokens": 655
+          },
+          "kind": "case",
+          "id": "c81802060bdd11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-cd813efe0bda11eba7f7acde48001122.json",
+          "sha256": "1cd96cf1052d6cf800beb4210ceac61687eb1486e523d1a176c4a5f1016e040d",
+          "seconds": 14.710922946978826,
+          "resources": {
+            "forward_calls": 778,
+            "input_tokens": 9249,
+            "generated_tokens": 552
+          },
+          "kind": "case",
+          "id": "cd813efe0bda11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-cece162a0bd911eba7f7acde48001122.json",
+          "sha256": "788a4e61ee5a7330fbb5854134abb0f8045550f74a2f035a779105790e55b9b6",
+          "seconds": 1.3866530200466514,
+          "resources": {
+            "forward_calls": 69,
+            "input_tokens": 1474,
+            "generated_tokens": 49
+          },
+          "kind": "case",
+          "id": "cece162a0bd911eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "development",
+          "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+          "intervention_rows": 0
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-d6f86e420bdc11eba7f7acde48001122.json",
+          "sha256": "72e2e1f1f892057254a5178552cb3361b1dd3b97a736cf76030a8ea19d214940",
+          "seconds": 14.402632864017505,
+          "resources": {
+            "forward_calls": 739,
+            "input_tokens": 14847,
+            "generated_tokens": 665
+          },
+          "kind": "case",
+          "id": "d6f86e420bdc11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-dcfa30e80bda11eba7f7acde48001122.json",
+          "sha256": "97774a8a0260ff411511ac35cd4eca4c69cde401e0f513fa452a5472463fe2d1",
+          "seconds": 14.383924002002459,
+          "resources": {
+            "forward_calls": 748,
+            "input_tokens": 4925,
+            "generated_tokens": 571
+          },
+          "kind": "case",
+          "id": "dcfa30e80bda11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-f1cc94540bdd11eba7f7acde48001122.json",
+          "sha256": "8005cfc203018aa0da001cdde1e633b768b871086cf91a430ddd7708e07c115f",
+          "seconds": 8.136898907017894,
+          "resources": {
+            "forward_calls": 407,
+            "input_tokens": 4271,
+            "generated_tokens": 335
+          },
+          "kind": "case",
+          "id": "f1cc94540bdd11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/2wiki-f7c2a5380bdd11eba7f7acde48001122.json",
+          "sha256": "293df9f1a45ce9cc941e461157fc7009b183ff1041f42c38c6cbf256ea7a61e9",
+          "seconds": 16.788068532012403,
+          "resources": {
+            "forward_calls": 911,
+            "input_tokens": 6667,
+            "generated_tokens": 743
+          },
+          "kind": "case",
+          "id": "f7c2a5380bdd11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-1002.json",
+          "sha256": "656529a44e365cc5ee6e85aa5014d13cd7ccbb0f052ab0c2ef1b889a6f110d9a",
+          "seconds": 9.871961664000992,
+          "resources": {
+            "forward_calls": 504,
+            "input_tokens": 1280,
+            "generated_tokens": 433
+          },
+          "kind": "case",
+          "id": "1002",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-1014.json",
+          "sha256": "e73335fa00d6ed5b356a6a116a496e3c8ae5478060b8d31a83c0c181eba435ff",
+          "seconds": 9.096439097018447,
+          "resources": {
+            "forward_calls": 470,
+            "input_tokens": 1263,
+            "generated_tokens": 321
+          },
+          "kind": "case",
+          "id": "1014",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-1044.json",
+          "sha256": "bcd60b53d89b7e5a7315b36ee59eb725c1be4acdacf9619d8f0da6ae383564cb",
+          "seconds": 7.635977263038512,
+          "resources": {
+            "forward_calls": 391,
+            "input_tokens": 1276,
+            "generated_tokens": 163
+          },
+          "kind": "case",
+          "id": "1044",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-1064.json",
+          "sha256": "ed76c2e20b875b5580e482b58065c5fd58bc3eecc9106b82e3529a659f14412f",
+          "seconds": 12.597084113047458,
+          "resources": {
+            "forward_calls": 679,
+            "input_tokens": 1543,
+            "generated_tokens": 581
+          },
+          "kind": "case",
+          "id": "1064",
+          "dataset": "mquake",
+          "split": "development",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-1100.json",
+          "sha256": "d49cba4b9a453339540306f7e357f2dc234887b8331a92024697f37e2c65e3cd",
+          "seconds": 7.57826728199143,
+          "resources": {
+            "forward_calls": 394,
+            "input_tokens": 1191,
+            "generated_tokens": 91
+          },
+          "kind": "case",
+          "id": "1100",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-1118.json",
+          "sha256": "7fd47c58f181da85c446e0b95409cc33613b7a94a52dae6ad6a6e376b6e102ed",
+          "seconds": 1.2655639779986814,
+          "resources": {
+            "forward_calls": 65,
+            "input_tokens": 181,
+            "generated_tokens": 51
+          },
+          "kind": "case",
+          "id": "1118",
+          "dataset": "mquake",
+          "split": "development",
+          "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+          "intervention_rows": 0
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-1121.json",
+          "sha256": "de5f84b3c795414b0d54483132154a70f13e1f4dd3d10890eef4469dfa3dbb58",
+          "seconds": 6.252503134019207,
+          "resources": {
+            "forward_calls": 289,
+            "input_tokens": 1001,
+            "generated_tokens": 140
+          },
+          "kind": "case",
+          "id": "1121",
+          "dataset": "mquake",
+          "split": "development",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-1129.json",
+          "sha256": "1e205b8ab14cd577100066a6f1bc9cc5c4fd2f13b2ac471df3e842a7b013feb9",
+          "seconds": 13.019303778011817,
+          "resources": {
+            "forward_calls": 681,
+            "input_tokens": 1496,
+            "generated_tokens": 607
+          },
+          "kind": "case",
+          "id": "1129",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-154.json",
+          "sha256": "6c5a9bba695e596390de4630fbf33fafaf4b48c1c7cf834f4955741314a6ff0b",
+          "seconds": 0.8783759100479074,
+          "resources": {
+            "forward_calls": 44,
+            "input_tokens": 148,
+            "generated_tokens": 32
+          },
+          "kind": "case",
+          "id": "154",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": "correct_bridge_contains_final_answer",
+          "intervention_rows": 0
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-172.json",
+          "sha256": "ca79bf69774eb97e2ce34b651337416ab4ae2b834ac549602dc6565de74bfb14",
+          "seconds": 10.80140166397905,
+          "resources": {
+            "forward_calls": 561,
+            "input_tokens": 1357,
+            "generated_tokens": 439
+          },
+          "kind": "case",
+          "id": "172",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-186.json",
+          "sha256": "a5ae13b2ec6ab8f6b7934690e07792e8336000289ec80e23ca759cb41d5a013b",
+          "seconds": 4.903467234980781,
+          "resources": {
+            "forward_calls": 259,
+            "input_tokens": 1071,
+            "generated_tokens": 136
+          },
+          "kind": "case",
+          "id": "186",
+          "dataset": "mquake",
+          "split": "development",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-201.json",
+          "sha256": "e66c283cf7f06721ebf2c4d62d387cf57d73232d6bd022ee956187f7cbfe99cb",
+          "seconds": 10.661318264959846,
+          "resources": {
+            "forward_calls": 541,
+            "input_tokens": 1356,
+            "generated_tokens": 395
+          },
+          "kind": "case",
+          "id": "201",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-218.json",
+          "sha256": "c7fac9da8d0d91eb6eab1cd365c89ae0a0bdfadf1afb3860932c8c95cf1bc09c",
+          "seconds": 9.585433358966839,
+          "resources": {
+            "forward_calls": 485,
+            "input_tokens": 1249,
+            "generated_tokens": 389
+          },
+          "kind": "case",
+          "id": "218",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-258.json",
+          "sha256": "a5c1c8548db35e070368417124c1d19ab90261bee9b9d0d7cd354d3442cd56ce",
+          "seconds": 7.535163100983482,
+          "resources": {
+            "forward_calls": 386,
+            "input_tokens": 1134,
+            "generated_tokens": 316
+          },
+          "kind": "case",
+          "id": "258",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-260.json",
+          "sha256": "3ddf5994b5384c1c89f775cc43dfe2096b6a250d830fc0627bda9aaed626fcb7",
+          "seconds": 8.927996504004113,
+          "resources": {
+            "forward_calls": 459,
+            "input_tokens": 1189,
+            "generated_tokens": 387
+          },
+          "kind": "case",
+          "id": "260",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-285.json",
+          "sha256": "844fb3545242f1f8a3f12d1060ae7ac4bff6564d3493bd6af9165bf8389c8586",
+          "seconds": 10.860371157003101,
+          "resources": {
+            "forward_calls": 564,
+            "input_tokens": 1343,
+            "generated_tokens": 467
+          },
+          "kind": "case",
+          "id": "285",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-381.json",
+          "sha256": "61595090c2784977116c7c40c700fb87fd812feb6b2e4b8ca1836a4b1d47684f",
+          "seconds": 9.016111214004923,
+          "resources": {
+            "forward_calls": 436,
+            "input_tokens": 1215,
+            "generated_tokens": 311
+          },
+          "kind": "case",
+          "id": "381",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-544.json",
+          "sha256": "ad2951858a9c8a848ac1a23d3279a7924e7223972caaa51543e7587b2c3055a3",
+          "seconds": 7.889419382961933,
+          "resources": {
+            "forward_calls": 395,
+            "input_tokens": 1227,
+            "generated_tokens": 167
+          },
+          "kind": "case",
+          "id": "544",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-549.json",
+          "sha256": "d0f6abdda936843a0db71b693d5fd83d9a7ac8edd66fbaf88bc9ddf0f17b389e",
+          "seconds": 16.838976701023057,
+          "resources": {
+            "forward_calls": 882,
+            "input_tokens": 1679,
+            "generated_tokens": 654
+          },
+          "kind": "case",
+          "id": "549",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-583.json",
+          "sha256": "ca3b5521262d72ae2c7c65ea884d862758a1dbbea8fc0df69c54f36f3f022324",
+          "seconds": 13.973552568990272,
+          "resources": {
+            "forward_calls": 725,
+            "input_tokens": 1591,
+            "generated_tokens": 603
+          },
+          "kind": "case",
+          "id": "583",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-6.json",
+          "sha256": "42d0fd0d08923c967ea5106c812e80b4c641a430327560a9b7a3a72e74d51ace",
+          "seconds": 6.9359050409984775,
+          "resources": {
+            "forward_calls": 358,
+            "input_tokens": 1022,
+            "generated_tokens": 287
+          },
+          "kind": "case",
+          "id": "6",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-649.json",
+          "sha256": "191ba86ba732f48a91d01893f35a11b020aab1347b39f15ca1c78ecbbcc0f9f6",
+          "seconds": 10.119269739021547,
+          "resources": {
+            "forward_calls": 528,
+            "input_tokens": 1370,
+            "generated_tokens": 455
+          },
+          "kind": "case",
+          "id": "649",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-691.json",
+          "sha256": "4c6c59842891abec7f88efd3a47575bcccb5cac617cd08bb7cab545abad8cc03",
+          "seconds": 11.74641394201899,
+          "resources": {
+            "forward_calls": 607,
+            "input_tokens": 1452,
+            "generated_tokens": 434
+          },
+          "kind": "case",
+          "id": "691",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-706.json",
+          "sha256": "365e6bb3ff9edca23c07cb9dfb32a9965339c6058ea76ef64eb0ceca23e3c222",
+          "seconds": 3.2502726039965637,
+          "resources": {
+            "forward_calls": 162,
+            "input_tokens": 990,
+            "generated_tokens": 89
+          },
+          "kind": "case",
+          "id": "706",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-743.json",
+          "sha256": "1b357ce94afd98bdd966915a93ef960fadec02952df38253a8b4d4680ada114d",
+          "seconds": 3.6936258440255187,
+          "resources": {
+            "forward_calls": 184,
+            "input_tokens": 1026,
+            "generated_tokens": 109
+          },
+          "kind": "case",
+          "id": "743",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-835.json",
+          "sha256": "3fff89125c1b91daa660a18a054e50b16d3d8145cea8c797b5bfa945918322c2",
+          "seconds": 10.255782290012576,
+          "resources": {
+            "forward_calls": 543,
+            "input_tokens": 1271,
+            "generated_tokens": 422
+          },
+          "kind": "case",
+          "id": "835",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-894.json",
+          "sha256": "9678449bb40e5d89ee86151c8092d2b05c647a7f250f30551ce45a7aa384b52c",
+          "seconds": 10.161515524960123,
+          "resources": {
+            "forward_calls": 534,
+            "input_tokens": 1328,
+            "generated_tokens": 460
+          },
+          "kind": "case",
+          "id": "894",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/cases/mquake-955.json",
+          "sha256": "0266466ebdbc8ffa317a46e93bd9a7421c61f0ea906c9c3ec2f25b4aa2b9a8ba",
+          "seconds": 1.1118010940263048,
+          "resources": {
+            "forward_calls": 56,
+            "input_tokens": 165,
+            "generated_tokens": 41
+          },
+          "kind": "case",
+          "id": "955",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+          "intervention_rows": 0
+        }
+      ],
+      "primary_learning": [
+        {
+          "path": "results/architecture-bridge-v1/qwen3/learning/0/complete.json",
+          "sha256": "aa8ceebbdbc7c42fda5149cd2b4df78cfeb273f743897b32647fda2ceaf40848",
+          "seconds": 30.476156844990328,
+          "resources": {
+            "forward_calls": 1316,
+            "input_tokens": 80953,
+            "generated_tokens": 784,
+            "backward_input_tokens": 25208,
+            "supervised_tokens": 32
+          },
+          "kind": "learning",
+          "episode": 0,
+          "target_id": "696ef1dc0bde11eba7f7acde48001122",
+          "restored_original": true,
+          "training_step_records": 8,
+          "node_count": 4
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/learning/1/complete.json",
+          "sha256": "8603dae95beec9f50ad31de4730b77c0dc9d0bfbe926a93802ddeba4e10df518",
+          "seconds": 30.16180608299328,
+          "resources": {
+            "forward_calls": 1256,
+            "input_tokens": 75845,
+            "generated_tokens": 632,
+            "backward_input_tokens": 22688,
+            "supervised_tokens": 40
+          },
+          "kind": "learning",
+          "episode": 1,
+          "target_id": "68bf3a380bdb11eba7f7acde48001122",
+          "restored_original": true,
+          "training_step_records": 8,
+          "node_count": 4
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/learning/2/complete.json",
+          "sha256": "9afa3d31fbdb483a7a6857c181e6a3e0fdc8a277ba0e35b0bbb4025dd4a960d4",
+          "seconds": 30.872517262992915,
+          "resources": {
+            "forward_calls": 1280,
+            "input_tokens": 79677,
+            "generated_tokens": 672,
+            "backward_input_tokens": 24576,
+            "supervised_tokens": 40
+          },
+          "kind": "learning",
+          "episode": 2,
+          "target_id": "4bfde8ec0bde11eba7f7acde48001122",
+          "restored_original": true,
+          "training_step_records": 8,
+          "node_count": 4
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen3/learning/3/complete.json",
+          "sha256": "34f272719bd14d8f203ff5ad61bfd285f42806cf9f1e933f298c96c964921e43",
+          "seconds": 27.21416719997069,
+          "resources": {
+            "forward_calls": 1088,
+            "input_tokens": 76501,
+            "generated_tokens": 568,
+            "backward_input_tokens": 23104,
+            "supervised_tokens": 32
+          },
+          "kind": "learning",
+          "episode": 3,
+          "target_id": "f1cc94540bdd11eba7f7acde48001122",
+          "restored_original": true,
+          "training_step_records": 8,
+          "node_count": 4
+        }
+      ],
+      "primary_case_totals": {
+        "record_count": 56,
+        "summed_record_seconds": 604.1798961599125,
+        "resources": {
+          "forward_calls": 31451,
+          "input_tokens": 223481,
+          "generated_tokens": 22947
+        },
+        "forward_flops_approximate": 266411664343040,
+        "backward_flops_full_gradient_upper_proxy": 0
+      },
+      "primary_learning_totals": {
+        "record_count": 4,
+        "summed_record_seconds": 118.72464739094721,
+        "resources": {
+          "forward_calls": 4940,
+          "input_tokens": 312976,
+          "generated_tokens": 2656,
+          "backward_input_tokens": 95576,
+          "supervised_tokens": 144
+        },
+        "forward_flops_approximate": 373098639523840,
+        "backward_flops_full_gradient_upper_proxy": 227872268615680
+      },
+      "primary_totals": {
+        "record_count": 60,
+        "summed_record_seconds": 722.9045435508597,
+        "resources": {
+          "forward_calls": 36391,
+          "input_tokens": 536457,
+          "generated_tokens": 25603,
+          "backward_input_tokens": 95576,
+          "supervised_tokens": 144
+        },
+        "forward_flops_approximate": 639510303866880,
+        "backward_flops_full_gradient_upper_proxy": 227872268615680
+      },
+      "superseded_archives": [
+        {
+          "amendment": "tokenizer_api",
+          "records": [],
+          "totals": {
+            "record_count": 0,
+            "summed_record_seconds": 0,
+            "resources": {},
+            "forward_flops_approximate": 0,
+            "backward_flops_full_gradient_upper_proxy": 0
+          }
+        },
+        {
+          "amendment": "learning_token_boundary",
+          "records": [
+            {
+              "path": "results/architecture-bridge-v1/qwen3/superseded-learning-boundary-v1/0/complete.json",
+              "sha256": "5b7fafc58034698acb2769bbc13da174f1af7b210dfb1d825c2c1b731467116e",
+              "seconds": 28.296720765007194,
+              "resources": {
+                "forward_calls": 1316,
+                "input_tokens": 80853,
+                "generated_tokens": 784,
+                "backward_input_tokens": 25168,
+                "supervised_tokens": 32
+              },
+              "kind": "learning",
+              "episode": 0,
+              "target_id": "696ef1dc0bde11eba7f7acde48001122",
+              "restored_original": true,
+              "training_step_records": 8,
+              "node_count": 4
+            },
+            {
+              "path": "results/architecture-bridge-v1/qwen3/superseded-learning-boundary-v1/1/complete.json",
+              "sha256": "d672c1cb123a7c3a1fe419abaa6fab6fccaf528bea6226650b7db6d62d6aefdb",
+              "seconds": 26.932402757985983,
+              "resources": {
+                "forward_calls": 1256,
+                "input_tokens": 75745,
+                "generated_tokens": 632,
+                "backward_input_tokens": 22648,
+                "supervised_tokens": 40
+              },
+              "kind": "learning",
+              "episode": 1,
+              "target_id": "68bf3a380bdb11eba7f7acde48001122",
+              "restored_original": true,
+              "training_step_records": 8,
+              "node_count": 4
+            },
+            {
+              "path": "results/architecture-bridge-v1/qwen3/superseded-learning-boundary-v1/2/complete.json",
+              "sha256": "61cf5fc014caa27ced1f37da4ea5904878b891da749a186e45de1449ada7d7f1",
+              "seconds": 27.935653152002487,
+              "resources": {
+                "forward_calls": 1280,
+                "input_tokens": 79577,
+                "generated_tokens": 672,
+                "backward_input_tokens": 24536,
+                "supervised_tokens": 40
+              },
+              "kind": "learning",
+              "episode": 2,
+              "target_id": "4bfde8ec0bde11eba7f7acde48001122",
+              "restored_original": true,
+              "training_step_records": 8,
+              "node_count": 4
+            },
+            {
+              "path": "results/architecture-bridge-v1/qwen3/superseded-learning-boundary-v1/3/complete.json",
+              "sha256": "efcd12d1455c05aa7212f54725b55283132218b1b7b96c3b13620ebd8646cfec",
+              "seconds": 23.491008648008574,
+              "resources": {
+                "forward_calls": 1088,
+                "input_tokens": 76401,
+                "generated_tokens": 568,
+                "backward_input_tokens": 23064,
+                "supervised_tokens": 32
+              },
+              "kind": "learning",
+              "episode": 3,
+              "target_id": "f1cc94540bdd11eba7f7acde48001122",
+              "restored_original": true,
+              "training_step_records": 8,
+              "node_count": 4
+            }
+          ],
+          "totals": {
+            "record_count": 4,
+            "summed_record_seconds": 106.65578532300424,
+            "resources": {
+              "forward_calls": 4940,
+              "input_tokens": 312576,
+              "generated_tokens": 2656,
+              "backward_input_tokens": 95416,
+              "supervised_tokens": 144
+            },
+            "forward_flops_approximate": 372621799587840,
+            "backward_flops_full_gradient_upper_proxy": 227490796666880
+          }
+        }
+      ],
+      "superseded_totals": {
+        "record_count": 4,
+        "summed_record_seconds": 106.65578532300424,
+        "resources": {
+          "forward_calls": 4940,
+          "input_tokens": 312576,
+          "generated_tokens": 2656,
+          "backward_input_tokens": 95416,
+          "supervised_tokens": 144
+        },
+        "forward_flops_approximate": 372621799587840,
+        "backward_flops_full_gradient_upper_proxy": 227490796666880
+      },
+      "primary_plus_superseded_recorded_totals": {
+        "record_count": 64,
+        "summed_record_seconds": 829.5603288738639,
+        "resources": {
+          "forward_calls": 41331,
+          "input_tokens": 849033,
+          "generated_tokens": 28259,
+          "backward_input_tokens": 190992,
+          "supervised_tokens": 288
+        },
+        "forward_flops_approximate": 1012132103454720,
+        "backward_flops_full_gradient_upper_proxy": 455363065282560
+      },
+      "observed_last_run_snapshots": [
+        {
+          "observed_utc": "2026-09-29T23:15:58.930943+00:00",
+          "source_path": "results/architecture-bridge-v1/qwen3/last-run.json",
+          "source_sha256": "e2b7df4d70786c08b573ed65af3b84acd3bca866d7399a2f1f9276f34138816f",
+          "contents": {
+            "seconds": 121.97878752095858,
+            "stats": {
+              "forward_calls": 4940,
+              "input_tokens": 312976,
+              "generated_tokens": 2656,
+              "backward_input_tokens": 95576,
+              "supervised_tokens": 144
+            },
+            "peak_gpu_bytes": 4516097536,
+            "device": "cuda:2",
+            "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+            "parameters": 596049920,
+            "flops_estimate_method": "Approximate 2*P*input_tokens forward plus 4*P*backward_input_tokens; attention/cache overhead excluded, backward estimate is a full-gradient upper proxy despite frozen upstream parameters.",
+            "forward_flops_estimate": 373098639523840,
+            "backward_flops_upper_proxy": 227872268615680,
+            "args": {
+              "model": "qwen3",
+              "device": "cuda:2",
+              "phase": "learning",
+              "split": "all",
+              "limit": null
+            }
+          }
+        }
+      ],
+      "maximum_peak_gpu_bytes_among_observed_last_run_snapshots": 4516097536,
+      "latest_status": {
+        "state": "complete_requested_phase",
+        "phase": "learning",
+        "split": "all",
+        "limit": null
+      }
+    },
+    "qwen35": {
+      "checkpoint_repo": "Qwen/Qwen3.5-0.8B-Base",
+      "checkpoint_revision": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+      "runtime_dtype": "float32",
+      "loaded_text_parameters": 752393024,
+      "FP32_parameter_bytes": 3009572096,
+      "FP32_parameter_GiB": 2.802882432937622,
+      "device": "cuda:2",
+      "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+      "primary_cases": [
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-0401ff280bda11eba7f7acde48001122.json",
+          "sha256": "7239093be6dc95c11d496b5b7982e25d893c7434ac8d36fec60713c05d2d06f4",
+          "seconds": 1.9329296000069007,
+          "resources": {
+            "forward_calls": 84,
+            "input_tokens": 1322,
+            "generated_tokens": 29
+          },
+          "kind": "case",
+          "id": "0401ff280bda11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "development",
+          "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+          "intervention_rows": 0
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-0c585dbc0bde11eba7f7acde48001122.json",
+          "sha256": "dc33b81f49571b0c2efa3f6872b54ce881e9091e0f95dd9c78753a99c08baee2",
+          "seconds": 10.091144239995629,
+          "resources": {
+            "forward_calls": 482,
+            "input_tokens": 4370,
+            "generated_tokens": 228
+          },
+          "kind": "case",
+          "id": "0c585dbc0bde11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-22457b2c0bda11eba7f7acde48001122.json",
+          "sha256": "ddcf591a241bdd2d664ed7abd86a805a0899ff0d08e81a471e9ab6cbe2034ea2",
+          "seconds": 18.786889798007905,
+          "resources": {
+            "forward_calls": 888,
+            "input_tokens": 14700,
+            "generated_tokens": 588
+          },
+          "kind": "case",
+          "id": "22457b2c0bda11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-4a8ffd360bdb11eba7f7acde48001122.json",
+          "sha256": "8278f93ab9de2f660185a82d12ddf3552919b5566338f70b46546f11b9a1f963",
+          "seconds": 12.130786850000732,
+          "resources": {
+            "forward_calls": 564,
+            "input_tokens": 12869,
+            "generated_tokens": 308
+          },
+          "kind": "case",
+          "id": "4a8ffd360bdb11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-4bfde8ec0bde11eba7f7acde48001122.json",
+          "sha256": "07a4567eb23235ab6fca17c5bddee0e1e8c9b9d5d8ddc28d44ce6b05a0bf0194",
+          "seconds": 19.58274064597208,
+          "resources": {
+            "forward_calls": 952,
+            "input_tokens": 8391,
+            "generated_tokens": 706
+          },
+          "kind": "case",
+          "id": "4bfde8ec0bde11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-54ae33e40bdd11eba7f7acde48001122.json",
+          "sha256": "a7019e0a2d6cc4d7c3025dee8e9ca289c6746091a5da77925ca71546d3175796",
+          "seconds": 19.19624138396466,
+          "resources": {
+            "forward_calls": 921,
+            "input_tokens": 7442,
+            "generated_tokens": 773
+          },
+          "kind": "case",
+          "id": "54ae33e40bdd11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-57e24dd60bdb11eba7f7acde48001122.json",
+          "sha256": "68ebcf104adc879ae281cc07aabde080fc021c1367172971b58f998d7275e5d2",
+          "seconds": 15.752465131983627,
+          "resources": {
+            "forward_calls": 758,
+            "input_tokens": 5129,
+            "generated_tokens": 666
+          },
+          "kind": "case",
+          "id": "57e24dd60bdb11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-5cb7d5260bde11eba7f7acde48001122.json",
+          "sha256": "efc818b78218a6bf516033c26c945c050f1753e2f7696f43d00da8e184765d46",
+          "seconds": 9.11326959298458,
+          "resources": {
+            "forward_calls": 417,
+            "input_tokens": 13093,
+            "generated_tokens": 166
+          },
+          "kind": "case",
+          "id": "5cb7d5260bde11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-60a128d80bdc11eba7f7acde48001122.json",
+          "sha256": "092cf8c902ed66fa6e1d07899c86d2de26d2ffd40c770b87f808f3aa072d2bec",
+          "seconds": 1.3815561350202188,
+          "resources": {
+            "forward_calls": 55,
+            "input_tokens": 2435,
+            "generated_tokens": 41
+          },
+          "kind": "case",
+          "id": "60a128d80bdc11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "development",
+          "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+          "intervention_rows": 0
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-68bf3a380bdb11eba7f7acde48001122.json",
+          "sha256": "2fdc4d0a4dfff1c98e180589fe449cb52db1c56227f5893ebf83e3eb0478b2e4",
+          "seconds": 10.013125967001542,
+          "resources": {
+            "forward_calls": 476,
+            "input_tokens": 3536,
+            "generated_tokens": 222
+          },
+          "kind": "case",
+          "id": "68bf3a380bdb11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-696ef1dc0bde11eba7f7acde48001122.json",
+          "sha256": "07baa7b0ef88a80e7dec140fdbc7de13017a1cf5792d04051e5e65fb7e539b56",
+          "seconds": 0.8463458209880628,
+          "resources": {
+            "forward_calls": 34,
+            "input_tokens": 1444,
+            "generated_tokens": 22
+          },
+          "kind": "case",
+          "id": "696ef1dc0bde11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+          "intervention_rows": 0
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-786844020bdb11eba7f7acde48001122.json",
+          "sha256": "e402f7aca1c77e91d8de8050d03b416653f29c0f8edf2b765392edf1c47866e7",
+          "seconds": 16.569548532017507,
+          "resources": {
+            "forward_calls": 752,
+            "input_tokens": 7011,
+            "generated_tokens": 266
+          },
+          "kind": "case",
+          "id": "786844020bdb11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-7b12db480bdd11eba7f7acde48001122.json",
+          "sha256": "434a4432ba0fc0b99460bf82b11da17b9a8325e2a93e6397cac516b345322175",
+          "seconds": 17.1635127759655,
+          "resources": {
+            "forward_calls": 775,
+            "input_tokens": 10175,
+            "generated_tokens": 266
+          },
+          "kind": "case",
+          "id": "7b12db480bdd11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "development",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-7bb996ce0bdb11eba7f7acde48001122.json",
+          "sha256": "f9100cf27b8af78c7ee872954470b0f3d5a8787ec1978693fc80154f4a45be63",
+          "seconds": 18.806520515994634,
+          "resources": {
+            "forward_calls": 920,
+            "input_tokens": 8376,
+            "generated_tokens": 727
+          },
+          "kind": "case",
+          "id": "7bb996ce0bdb11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-7d8986360bda11eba7f7acde48001122.json",
+          "sha256": "81ffa95a327a4d26e98c2a7c58fa1809aea4f3bce12867fec34b2e80c929676b",
+          "seconds": 10.347327027993742,
+          "resources": {
+            "forward_calls": 500,
+            "input_tokens": 5565,
+            "generated_tokens": 296
+          },
+          "kind": "case",
+          "id": "7d8986360bda11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-8836b2260bd911eba7f7acde48001122.json",
+          "sha256": "3d20d2cbc466bbaaae906dda8c473dfc27d2aef261472389cc7d2827736a6e6f",
+          "seconds": 11.992544276989065,
+          "resources": {
+            "forward_calls": 564,
+            "input_tokens": 7134,
+            "generated_tokens": 430
+          },
+          "kind": "case",
+          "id": "8836b2260bd911eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-8ab49ff80bda11eba7f7acde48001122.json",
+          "sha256": "ac58b413195c51fa0bfb8ff25afa922fede73e286eb3f6cb056ec415cdc4a757",
+          "seconds": 0.8419538339949213,
+          "resources": {
+            "forward_calls": 33,
+            "input_tokens": 2383,
+            "generated_tokens": 10
+          },
+          "kind": "case",
+          "id": "8ab49ff80bda11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+          "intervention_rows": 0
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-8b4280580bd911eba7f7acde48001122.json",
+          "sha256": "e98e0321983fcc5d28f124c9fb3077fa2a8244a82efc64bd17aaf64c540cb80a",
+          "seconds": 12.942945238028187,
+          "resources": {
+            "forward_calls": 561,
+            "input_tokens": 7044,
+            "generated_tokens": 281
+          },
+          "kind": "case",
+          "id": "8b4280580bd911eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-96e142e40bdb11eba7f7acde48001122.json",
+          "sha256": "4f270f96d62381d75b3151d6814917519e8b70431a9b25faf82d0462be7e2877",
+          "seconds": 10.680770827981178,
+          "resources": {
+            "forward_calls": 502,
+            "input_tokens": 4839,
+            "generated_tokens": 270
+          },
+          "kind": "case",
+          "id": "96e142e40bdb11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-b73268780bdd11eba7f7acde48001122.json",
+          "sha256": "e2872cd488cafa72671ef8e25208883d09639f5d54925694af26c3c50e028a33",
+          "seconds": 16.598668213002384,
+          "resources": {
+            "forward_calls": 812,
+            "input_tokens": 7910,
+            "generated_tokens": 718
+          },
+          "kind": "case",
+          "id": "b73268780bdd11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-c789d1a20bdd11eba7f7acde48001122.json",
+          "sha256": "3a6478b72108f7af1d2f56f793f48183f8ef8745d60dd199060c29b6c90a2a23",
+          "seconds": 19.189748295990285,
+          "resources": {
+            "forward_calls": 952,
+            "input_tokens": 3435,
+            "generated_tokens": 753
+          },
+          "kind": "case",
+          "id": "c789d1a20bdd11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-c81802060bdd11eba7f7acde48001122.json",
+          "sha256": "a03c084c17fb626f90a245ac32053ace80ef6ebb3019767f79b56b7aa25c26f7",
+          "seconds": 22.521348820999265,
+          "resources": {
+            "forward_calls": 1080,
+            "input_tokens": 9100,
+            "generated_tokens": 733
+          },
+          "kind": "case",
+          "id": "c81802060bdd11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-cd813efe0bda11eba7f7acde48001122.json",
+          "sha256": "610022c145d5e90e8504fa97debb1e27f97d7dac99b0bc2797456887c710ae98",
+          "seconds": 10.554475158976857,
+          "resources": {
+            "forward_calls": 450,
+            "input_tokens": 8954,
+            "generated_tokens": 220
+          },
+          "kind": "case",
+          "id": "cd813efe0bda11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-cece162a0bd911eba7f7acde48001122.json",
+          "sha256": "17684744f02b089797641f0f9e8ef4d17293c7cb48a63d7c6a0985268262affe",
+          "seconds": 1.358730337000452,
+          "resources": {
+            "forward_calls": 35,
+            "input_tokens": 1363,
+            "generated_tokens": 15
+          },
+          "kind": "case",
+          "id": "cece162a0bd911eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "development",
+          "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+          "intervention_rows": 0
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-d6f86e420bdc11eba7f7acde48001122.json",
+          "sha256": "7f8137ab1e843b64f7d66c6bc6050a0b7ef3ac9b5d164e02cc5e4b24cb1ff81a",
+          "seconds": 16.20878362399526,
+          "resources": {
+            "forward_calls": 778,
+            "input_tokens": 14687,
+            "generated_tokens": 683
+          },
+          "kind": "case",
+          "id": "d6f86e420bdc11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-dcfa30e80bda11eba7f7acde48001122.json",
+          "sha256": "11da588403cf4e329e010e2af1242edc40007382551afc73f79cc2bbc4715f18",
+          "seconds": 8.42544448201079,
+          "resources": {
+            "forward_calls": 395,
+            "input_tokens": 4607,
+            "generated_tokens": 215
+          },
+          "kind": "case",
+          "id": "dcfa30e80bda11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-f1cc94540bdd11eba7f7acde48001122.json",
+          "sha256": "740da67c714ea4347b83ac58633088aec2a9c432175c20033a7a2acaac06426d",
+          "seconds": 6.388594569987617,
+          "resources": {
+            "forward_calls": 288,
+            "input_tokens": 4149,
+            "generated_tokens": 212
+          },
+          "kind": "case",
+          "id": "f1cc94540bdd11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/2wiki-f7c2a5380bdd11eba7f7acde48001122.json",
+          "sha256": "2c88282ad680ba915c40de15979d6f3784432914e5099ab64a4a16d826968cd4",
+          "seconds": 8.613058855989948,
+          "resources": {
+            "forward_calls": 401,
+            "input_tokens": 6280,
+            "generated_tokens": 247
+          },
+          "kind": "case",
+          "id": "f7c2a5380bdd11eba7f7acde48001122",
+          "dataset": "2wiki",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-1002.json",
+          "sha256": "979a0684aad6e957a9411627f7d05de8c67b39feaf9a9c904e501d5dbbae0e0f",
+          "seconds": 8.800806887971703,
+          "resources": {
+            "forward_calls": 418,
+            "input_tokens": 1245,
+            "generated_tokens": 347
+          },
+          "kind": "case",
+          "id": "1002",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-1014.json",
+          "sha256": "7c8dc63dfb0cd77c10787f4080e4ff77796b59778ec3ee1fa1f55cb05fdc3c46",
+          "seconds": 9.994944938982371,
+          "resources": {
+            "forward_calls": 483,
+            "input_tokens": 1327,
+            "generated_tokens": 332
+          },
+          "kind": "case",
+          "id": "1014",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-1044.json",
+          "sha256": "29696e81ce3677f3eaafe183b44666269a8b9119638bc79942aa21ee169fcd9d",
+          "seconds": 8.305517364002299,
+          "resources": {
+            "forward_calls": 393,
+            "input_tokens": 1329,
+            "generated_tokens": 165
+          },
+          "kind": "case",
+          "id": "1044",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-1064.json",
+          "sha256": "0803f38fb2f049178e5110a636085cf40220d714b3a7ca9af8d399d2f46d02aa",
+          "seconds": 5.600942895980552,
+          "resources": {
+            "forward_calls": 205,
+            "input_tokens": 1120,
+            "generated_tokens": 107
+          },
+          "kind": "case",
+          "id": "1064",
+          "dataset": "mquake",
+          "split": "development",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-1100.json",
+          "sha256": "c72d9003ffa53f2ec8e8345d55e875d0847c966068685cb657dbce93f3d68f96",
+          "seconds": 7.832415621029213,
+          "resources": {
+            "forward_calls": 367,
+            "input_tokens": 1200,
+            "generated_tokens": 64
+          },
+          "kind": "case",
+          "id": "1100",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-1118.json",
+          "sha256": "dd88268d4768c3191b6838021dba1ea6f30f2223696b517f1802567baf8f7964",
+          "seconds": 0.6772560789831914,
+          "resources": {
+            "forward_calls": 27,
+            "input_tokens": 149,
+            "generated_tokens": 13
+          },
+          "kind": "case",
+          "id": "1118",
+          "dataset": "mquake",
+          "split": "development",
+          "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+          "intervention_rows": 0
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-1121.json",
+          "sha256": "feda182ec71ee7c3008954624e6b0070d2e3d13c2a2044a2a140a71cbb5fda65",
+          "seconds": 6.387230438005645,
+          "resources": {
+            "forward_calls": 265,
+            "input_tokens": 1028,
+            "generated_tokens": 117
+          },
+          "kind": "case",
+          "id": "1121",
+          "dataset": "mquake",
+          "split": "development",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-1129.json",
+          "sha256": "6623c034f86110028fcbdcaf93c5a8fbd82be6ac4f07c30dce6d947ae4a2ec09",
+          "seconds": 5.617908579995856,
+          "resources": {
+            "forward_calls": 262,
+            "input_tokens": 1128,
+            "generated_tokens": 186
+          },
+          "kind": "case",
+          "id": "1129",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-154.json",
+          "sha256": "6c995d664f6c8a0790e9c7c81e0186fabfa8528638d23ec62780721e2bb0e212",
+          "seconds": 0.7312682659830898,
+          "resources": {
+            "forward_calls": 31,
+            "input_tokens": 140,
+            "generated_tokens": 20
+          },
+          "kind": "case",
+          "id": "154",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": "correct_bridge_contains_final_answer",
+          "intervention_rows": 0
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-172.json",
+          "sha256": "12db92074f90d74b25219ff4ef0136f80b2929aa5add29340b63898d66028c3d",
+          "seconds": 4.7917288090102375,
+          "resources": {
+            "forward_calls": 213,
+            "input_tokens": 1045,
+            "generated_tokens": 92
+          },
+          "kind": "case",
+          "id": "172",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-186.json",
+          "sha256": "a1af328b79a59d387295bd24a0f6d4a48e89d39c8841c36167107d302632f978",
+          "seconds": 5.50951277196873,
+          "resources": {
+            "forward_calls": 241,
+            "input_tokens": 1104,
+            "generated_tokens": 118
+          },
+          "kind": "case",
+          "id": "186",
+          "dataset": "mquake",
+          "split": "development",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-201.json",
+          "sha256": "e2e65748d851ed000962c294f950d22b255a4f9e104fd76478a07d746fdf0b21",
+          "seconds": 6.849127356021199,
+          "resources": {
+            "forward_calls": 324,
+            "input_tokens": 1158,
+            "generated_tokens": 176
+          },
+          "kind": "case",
+          "id": "201",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-218.json",
+          "sha256": "0322a60fb3bfde135e225c2f49b8551c12ec22ae1a3ab174405c41038a8ea127",
+          "seconds": 3.4521680239704438,
+          "resources": {
+            "forward_calls": 146,
+            "input_tokens": 961,
+            "generated_tokens": 50
+          },
+          "kind": "case",
+          "id": "218",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-258.json",
+          "sha256": "59f197ba863e1bb273445a757f83360de6bbcf52d8bf46e0ca5fdcb57a025f60",
+          "seconds": 3.4651790600037202,
+          "resources": {
+            "forward_calls": 147,
+            "input_tokens": 946,
+            "generated_tokens": 77
+          },
+          "kind": "case",
+          "id": "258",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-260.json",
+          "sha256": "d9087a2c35d16a48d92d26b6353704db4d076007e144c849d14f2cef94b9da3c",
+          "seconds": 8.10135585599346,
+          "resources": {
+            "forward_calls": 380,
+            "input_tokens": 1161,
+            "generated_tokens": 307
+          },
+          "kind": "case",
+          "id": "260",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-285.json",
+          "sha256": "1511a041b3862e21712bb450e9fb91f9b60487cd3d95b1f1cd6cf3b05a4cd7a1",
+          "seconds": 4.236455106001813,
+          "resources": {
+            "forward_calls": 188,
+            "input_tokens": 1018,
+            "generated_tokens": 92
+          },
+          "kind": "case",
+          "id": "285",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-381.json",
+          "sha256": "506ba775185681dffb31f2880890801f020ac7d79eaeb909bf073695e47142b8",
+          "seconds": 5.549449265992735,
+          "resources": {
+            "forward_calls": 220,
+            "input_tokens": 1050,
+            "generated_tokens": 121
+          },
+          "kind": "case",
+          "id": "381",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-544.json",
+          "sha256": "a14cb0731f6868bddece912a64c488c5d231302eda8dbfbfeebb7f77f56616a7",
+          "seconds": 10.31860850402154,
+          "resources": {
+            "forward_calls": 506,
+            "input_tokens": 1389,
+            "generated_tokens": 273
+          },
+          "kind": "case",
+          "id": "544",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-549.json",
+          "sha256": "f6122943fd0a7ed5602fbc66b3034c8db0a86fc42525153b1e2142b3f639a59f",
+          "seconds": 15.729146255005617,
+          "resources": {
+            "forward_calls": 771,
+            "input_tokens": 1619,
+            "generated_tokens": 548
+          },
+          "kind": "case",
+          "id": "549",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-583.json",
+          "sha256": "4b57cb31d894b12a29f32a45a1ffe9f5da4e3a64681a1dccfe146a3a6d717aad",
+          "seconds": 7.171772300032899,
+          "resources": {
+            "forward_calls": 340,
+            "input_tokens": 1257,
+            "generated_tokens": 214
+          },
+          "kind": "case",
+          "id": "583",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-6.json",
+          "sha256": "ee23fda518bfd6f414f43670deb03c86c897c6d97f7ca20e6fadf9ff4f83aa77",
+          "seconds": 4.104585460969247,
+          "resources": {
+            "forward_calls": 184,
+            "input_tokens": 899,
+            "generated_tokens": 113
+          },
+          "kind": "case",
+          "id": "6",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-649.json",
+          "sha256": "46ce2f715ebb6341ee75387af4ec7f0cd62b3339f3e298616985b2fa1333706b",
+          "seconds": 3.685092495987192,
+          "resources": {
+            "forward_calls": 159,
+            "input_tokens": 1052,
+            "generated_tokens": 86
+          },
+          "kind": "case",
+          "id": "649",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-691.json",
+          "sha256": "28eda6f982e0893dd993f480fc79673925796f48edb1a191cff99673c536f4a0",
+          "seconds": 7.0905150169855915,
+          "resources": {
+            "forward_calls": 336,
+            "input_tokens": 1232,
+            "generated_tokens": 161
+          },
+          "kind": "case",
+          "id": "691",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-706.json",
+          "sha256": "79b3387ceb788f746f9f42572f1b3fb3153df544ab228862ee400f89867ed034",
+          "seconds": 4.7525068310205825,
+          "resources": {
+            "forward_calls": 217,
+            "input_tokens": 1096,
+            "generated_tokens": 143
+          },
+          "kind": "case",
+          "id": "706",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-743.json",
+          "sha256": "433ae703b1a5d73d555b8e105d60cf653776f86b99462256684cf2f9cedfbd0c",
+          "seconds": 14.58946836704854,
+          "resources": {
+            "forward_calls": 714,
+            "input_tokens": 1606,
+            "generated_tokens": 622
+          },
+          "kind": "case",
+          "id": "743",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-835.json",
+          "sha256": "440a65317591500e2497800f281e7e4ee81895a04989484a19989e96b63a3a42",
+          "seconds": 16.642595167038962,
+          "resources": {
+            "forward_calls": 819,
+            "input_tokens": 1598,
+            "generated_tokens": 678
+          },
+          "kind": "case",
+          "id": "835",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-894.json",
+          "sha256": "683938365b791b45c7f0348dbd46914790c4e210535656a801067e1eba71908b",
+          "seconds": 3.3776715049752966,
+          "resources": {
+            "forward_calls": 147,
+            "input_tokens": 992,
+            "generated_tokens": 74
+          },
+          "kind": "case",
+          "id": "894",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": null,
+          "intervention_rows": 22
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/cases/mquake-955.json",
+          "sha256": "04b0e3e412f11b24b04e1d3266f26e357d825543051eca1cc0201fdf2e56bd89",
+          "seconds": 0.7653734880150296,
+          "resources": {
+            "forward_calls": 33,
+            "input_tokens": 148,
+            "generated_tokens": 18
+          },
+          "kind": "case",
+          "id": "955",
+          "dataset": "mquake",
+          "split": "evaluation",
+          "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+          "intervention_rows": 0
+        }
+      ],
+      "primary_learning": [
+        {
+          "path": "results/architecture-bridge-v1/qwen35/learning/0/complete.json",
+          "sha256": "73ea1b9957987643514e9dcd3b0c9c36a2851ca66c082cde0c348d7edb703176",
+          "seconds": 26.312282902013976,
+          "resources": {
+            "forward_calls": 822,
+            "input_tokens": 80565,
+            "generated_tokens": 358,
+            "backward_input_tokens": 25176,
+            "supervised_tokens": 24
+          },
+          "kind": "learning",
+          "episode": 0,
+          "target_id": "696ef1dc0bde11eba7f7acde48001122",
+          "restored_original": true,
+          "training_step_records": 8,
+          "node_count": 4
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/learning/1/complete.json",
+          "sha256": "5b84fa737d0df7b0f9a681cbd022690ad9cc1beeeec30887fc4557259995aa16",
+          "seconds": 28.461046395997982,
+          "resources": {
+            "forward_calls": 936,
+            "input_tokens": 75735,
+            "generated_tokens": 328,
+            "backward_input_tokens": 22712,
+            "supervised_tokens": 40
+          },
+          "kind": "learning",
+          "episode": 1,
+          "target_id": "68bf3a380bdb11eba7f7acde48001122",
+          "restored_original": true,
+          "training_step_records": 8,
+          "node_count": 4
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/learning/2/complete.json",
+          "sha256": "6e28b2169f595d4a7c6da5c724f459b3a6bffbf55c9669e521ec46dc52c0ba53",
+          "seconds": 28.606822506990284,
+          "resources": {
+            "forward_calls": 929,
+            "input_tokens": 79536,
+            "generated_tokens": 329,
+            "backward_input_tokens": 24600,
+            "supervised_tokens": 40
+          },
+          "kind": "learning",
+          "episode": 2,
+          "target_id": "4bfde8ec0bde11eba7f7acde48001122",
+          "restored_original": true,
+          "training_step_records": 8,
+          "node_count": 4
+        },
+        {
+          "path": "results/architecture-bridge-v1/qwen35/learning/3/complete.json",
+          "sha256": "cb2f1513506476af119f98ba84e2da4e9840ce5cbf495ddf40a2fefc8a4e32be",
+          "seconds": 23.379468381986953,
+          "resources": {
+            "forward_calls": 820,
+            "input_tokens": 76379,
+            "generated_tokens": 308,
+            "backward_input_tokens": 23096,
+            "supervised_tokens": 32
+          },
+          "kind": "learning",
+          "episode": 3,
+          "target_id": "f1cc94540bdd11eba7f7acde48001122",
+          "restored_original": true,
+          "training_step_records": 8,
+          "node_count": 4
+        }
+      ],
+      "primary_case_totals": {
+        "record_count": 56,
+        "summed_record_seconds": 512.1620732638403,
+        "resources": {
+          "forward_calls": 23965,
+          "input_tokens": 217740,
+          "generated_tokens": 15405
+        },
+        "forward_flops_approximate": 327652114091520,
+        "backward_flops_full_gradient_upper_proxy": 0
+      },
+      "primary_learning_totals": {
+        "record_count": 4,
+        "summed_record_seconds": 106.7596201869892,
+        "resources": {
+          "forward_calls": 3507,
+          "input_tokens": 312215,
+          "generated_tokens": 1323,
+          "backward_input_tokens": 95584,
+          "supervised_tokens": 136
+        },
+        "forward_flops_approximate": 469816775976320,
+        "backward_flops_full_gradient_upper_proxy": 287666939224064
+      },
+      "primary_totals": {
+        "record_count": 60,
+        "summed_record_seconds": 618.9216934508295,
+        "resources": {
+          "forward_calls": 27472,
+          "input_tokens": 529955,
+          "generated_tokens": 16728,
+          "backward_input_tokens": 95584,
+          "supervised_tokens": 136
+        },
+        "forward_flops_approximate": 797468890067840,
+        "backward_flops_full_gradient_upper_proxy": 287666939224064
+      },
+      "superseded_archives": [
+        {
+          "amendment": "tokenizer_api",
+          "records": [
+            {
+              "path": "results/architecture-bridge-v1/qwen35/superseded-tokenizer-v1/2wiki-cece162a0bd911eba7f7acde48001122.json",
+              "sha256": "68249bf399571a16ec677b20447a06f4dd8e6d9c3ef28bf8796f11ef8f296f64",
+              "seconds": 0.8986330350162461,
+              "resources": {
+                "forward_calls": 35,
+                "input_tokens": 1369,
+                "generated_tokens": 15
+              },
+              "kind": "case",
+              "id": "cece162a0bd911eba7f7acde48001122",
+              "dataset": "2wiki",
+              "split": "development",
+              "exclusion_reason": "fewer_than_two_length_matched_wrong_bridges",
+              "intervention_rows": 0
+            }
+          ],
+          "totals": {
+            "record_count": 1,
+            "summed_record_seconds": 0.8986330350162461,
+            "resources": {
+              "forward_calls": 35,
+              "input_tokens": 1369,
+              "generated_tokens": 15
+            },
+            "forward_flops_approximate": 2060052099712,
+            "backward_flops_full_gradient_upper_proxy": 0
+          }
+        },
+        {
+          "amendment": "learning_token_boundary",
+          "records": [],
+          "totals": {
+            "record_count": 0,
+            "summed_record_seconds": 0,
+            "resources": {},
+            "forward_flops_approximate": 0,
+            "backward_flops_full_gradient_upper_proxy": 0
+          }
+        }
+      ],
+      "superseded_totals": {
+        "record_count": 1,
+        "summed_record_seconds": 0.8986330350162461,
+        "resources": {
+          "forward_calls": 35,
+          "input_tokens": 1369,
+          "generated_tokens": 15
+        },
+        "forward_flops_approximate": 2060052099712,
+        "backward_flops_full_gradient_upper_proxy": 0
+      },
+      "primary_plus_superseded_recorded_totals": {
+        "record_count": 61,
+        "summed_record_seconds": 619.8203264858457,
+        "resources": {
+          "forward_calls": 27507,
+          "input_tokens": 531324,
+          "generated_tokens": 16743,
+          "backward_input_tokens": 95584,
+          "supervised_tokens": 136
+        },
+        "forward_flops_approximate": 799528942167552,
+        "backward_flops_full_gradient_upper_proxy": 287666939224064
+      },
+      "observed_last_run_snapshots": [
+        {
+          "observed_utc": "2026-09-29T23:15:58.931130+00:00",
+          "source_path": "results/architecture-bridge-v1/qwen35/last-run.json",
+          "source_sha256": "65b2b044632c690afc2d6aa1b28b63795e4453b7aa22f3592bdddaf065ba10e4",
+          "contents": {
+            "seconds": 271.1935762119829,
+            "stats": {
+              "forward_calls": 10854,
+              "input_tokens": 412484,
+              "generated_tokens": 5793,
+              "backward_input_tokens": 95584,
+              "supervised_tokens": 136
+            },
+            "peak_gpu_bytes": 5210971648,
+            "device": "cuda:2",
+            "gpu_name": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+            "parameters": 752393024,
+            "flops_estimate_method": "Approximate 2*P*input_tokens forward plus 4*P*backward_input_tokens; attention/cache overhead excluded, backward estimate is a full-gradient upper proxy despite frozen upstream parameters.",
+            "forward_flops_estimate": 620700168223232,
+            "backward_flops_upper_proxy": 287666939224064,
+            "args": {
+              "model": "qwen35",
+              "device": "cuda:2",
+              "phase": "all",
+              "split": "all",
+              "limit": null
+            }
+          }
+        }
+      ],
+      "maximum_peak_gpu_bytes_among_observed_last_run_snapshots": 5210971648,
+      "latest_status": {
+        "state": "complete_requested_phase",
+        "phase": "all",
+        "split": "all",
+        "limit": null
+      }
+    }
+  },
+  "failed_attempts_with_unknown_cost": [
+    {
+      "path": "results/architecture-bridge-v1/qwen35/superseded-tokenizer-v1/failure.json",
+      "sha256": "6ee6b62ea0e8be545de65e4263c55728572e44a26f1436c8d002ce7d29ef4927",
+      "case": "96e142e40bdb11eba7f7acde48001122",
+      "available_keys": [
+        "case",
+        "traceback"
+      ],
+      "seconds": null,
+      "resources": null,
+      "reason": "Failure record has no timing or resource counters. Exact cost cannot be reconstructed; no extrapolation from successful cases."
+    }
+  ],
+  "provenance": [
+    {
+      "path": "docs/development-artifacts/architecture-bridge-v1/execution-lock-v1.json",
+      "sha256": "1e6cff1ee26c321a88c0572404b33f2e73b2b8099c3d7854ffd05153c79f4e7c"
+    },
+    {
+      "path": "docs/development-artifacts/architecture-bridge-v1/execution-lock-v2.json",
+      "sha256": "5317c25f248697a1f8051f057538e15ec9d9e8110bf64267667a8b2c5e1ec4bc"
+    },
+    {
+      "path": "docs/development-artifacts/architecture-bridge-v1/execution-lock.json",
+      "sha256": "ff9a73380c716b656412d4a529aaf032ff73537378ce2181a0bd04002ad791a2"
+    },
+    {
+      "path": "docs/development-artifacts/architecture-bridge-v1/tokenizer-amendment.json",
+      "sha256": "82022fd0de786e6d7e1c5c8dfcfe8ca4f4b8f56c56fdabb8cff852441dd9e981"
+    },
+    {
+      "path": "docs/development-artifacts/architecture-bridge-v1/learning-boundary-amendment.json",
+      "sha256": "c6105718a144a977334ac2536a41186d24eb122c903622a842db0b419b761f1f"
+    },
+    {
+      "path": "docs/development-artifacts/architecture-bridge-v1/tokenizer-consistency-audit.json",
+      "sha256": "d63240be07c9dcb69f2039733402e998161950ed7e56fd6bb8db86ccd77de2a1"
+    },
+    {
+      "path": "docs/development-artifacts/architecture-bridge-v1/learning-token-boundary-audit.json",
+      "sha256": "380e3e0267beaf814771e38b8710b2aedf32c740cbeaac58254a9d95c68df142"
+    },
+    {
+      "path": "docs/development-artifacts/architecture-bridge-v1/data-lock.json",
+      "sha256": "e0b5c2566ea0022e68dd389426bce11990cfe4fec2d2070f4edf651e32df2482"
+    }
+  ]
+}

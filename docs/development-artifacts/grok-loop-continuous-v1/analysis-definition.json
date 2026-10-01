@@ -1,0 +1,35 @@
+{
+  "analysis_kind": "exploratory reanalysis of existing predictions",
+  "generated_utc": "2026-09-30T19:13:49.587192+00:00",
+  "project_root": "/mnt/disk2_from_server2/siqizhu4/llm-memory",
+  "configs": [
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-loop-development-v1.json",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-loop-sensitivity-v1.json",
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/configs/grok-loop-confirmation-v1.json"
+  ],
+  "definitions": {
+    "p_answer": "mean_i exp(-saved NLL[i,0]); gold final-answer token, full vocabulary",
+    "p_eos_given_gold": "mean_i exp(-saved NLL[i,1]); teacher-forced gold answer",
+    "p_gold_sequence": "mean_i exp(-NLL[i,0]-NLL[i,1]); gold answer then EOS",
+    "complete_accuracy": "saved greedy answer equals target AND EOS after that generated answer",
+    "generated_eos_accuracy": "saved stop equals EOS id 1; answer correctness is separate",
+    "answer_correct_eos_wrong_fraction": "population fraction with correct answer but missing EOS",
+    "atomic_partition": "complete-fact membership in saved ID/OOD edge partition; both trained",
+    "world_summary": "average initializations within each world; then weight worlds equally",
+    "bands": "range of world means; descriptive, not confidence intervals",
+    "decline_rebound": "three consecutive saved nodes; decline then rebound, tolerance 1e-8",
+    "magnitude_counts": "1pp/5pp are descriptive bins; not significance or selection criteria",
+    "resolution": "observed changes span saved update intervals; no between-node inference",
+    "missingness": "null for absent or zero-denominator observations; never replaced by zero",
+    "scope": "no predictor, checkpoint selection, forward pass, training or historical rewriting",
+    "id_full": "test_full_composite measured at fixed endpoint only; never mixed with probe",
+    "autonomous": "hard scores only; saved external-call arrays have no NLL",
+    "unavailable_margin": "wrong-answer probabilities and logits not saved; P(correct)-P(incorrect) cannot be reconstructed"
+  },
+  "source": {
+    "path": "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/report_grok_loop_continuous.py",
+    "kind": "analysis_source",
+    "bytes": 43727,
+    "sha256": "3fdfb3f8e3657ee2c84727ed57119f2ba40b90dfaee21ecd9003daf6d5ed10ce"
+  }
+}

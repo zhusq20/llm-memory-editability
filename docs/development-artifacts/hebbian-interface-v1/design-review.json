@@ -1,0 +1,141 @@
+{
+  "review_type": "independent_design_review_with_subsequent_implementation_audit",
+  "date": "2026-09-29",
+  "reviewer": "theory_audit",
+  "status": "scientifically_interpretable_with_stated_limits; key_implementation_contracts_passed; formal_results_not_yet_reviewed",
+  "upstream": {
+    "repository": "https://github.com/HazyResearch/hebbian-mlps",
+    "commit": "41443978d2261f30a9749fe7a286c95be08b331e",
+    "paper": "https://arxiv.org/html/2607.10034v1",
+    "method_sources": {
+      "A.1.2_A.2.1_A.4.3": "SSFR; frozen fact MLP; attention trained on mapping A; replacement with a separately trained memory for mapping B without reader retraining.",
+      "A.4.5": "Standalone CE versus full-value-vector MSE was compared in the book-author language-modeling experiment. Moving that comparison to SSFR is an extension, not an exact replication of the reported approximately 90 percent CE result."
+    }
+  },
+  "primary_question": "When fact memories classify their stored keys successfully, does the standalone training objective affect whether a frozen surrounding reader can use a replacement memory for a new fact mapping?",
+  "claim_level": "Controlled synthetic behavioral comparison of memory usability and replacement, with targeted interface diagnostics.",
+  "accepted_matrix": {
+    "development_worlds": 1,
+    "formal_independent_worlds": 3,
+    "standalone_objectives": ["cross_entropy", "full_vector_mse"],
+    "fact_maps_per_world": ["A_reader_training", "B_replacement_evaluation"],
+    "paired_between_objectives": ["fact maps", "embedding tables", "MLP initialization within a map", "reader initialization", "training query stream", "evaluation prompts", "optimizer-step budgets"],
+    "num_facts": 128,
+    "embedding_dimension": 64,
+    "mlp_hidden_width": 256,
+    "mlp_activation": "swish",
+    "mlp_bias": true,
+    "junk_vocabulary_size": 9,
+    "junk_prefix_length": 9,
+    "junk_suffix_length": 9,
+    "reader_batch_size": 256,
+    "reader_steps": 4000,
+    "standalone_mlp_epochs": 10000,
+    "standalone_loss_cutoff": -1,
+    "reader_early_stopping": false,
+    "architecture": "One layer and one attention head; no positional encoding; frozen embeddings; identity frozen V/O projections; no attention or MLP residual; unit normalization at the MLP input and final output, following the SSFR paper preset. The SwiGLU fact memory with bias follows the book-author configuration; this differs from the bilinear gated-identity default described for the paper's SSFR GD capacity experiments.",
+    "formal_final_matrix": "Readers trained around CE-A and MSE-A are each evaluated with CE-B and MSE-B; surrounding weights remain fixed during all replacements.",
+    "interpretation_of_replicates": "Three worlds are the independent replication units. Objectives, individual queries, and repeated measurements within a world are paired or nested observations."
+  },
+  "necessary_comparisons": [
+    {
+      "name": "standalone_exact_keys",
+      "purpose": "Determine whether the stored facts are available before attributing failure to integration.",
+      "measurement": "Report fact-candidate accuracy, actual full-vocabulary head accuracy, and value-vector error for both A and B memories."
+    },
+    {
+      "name": "reader_A_on_fresh_A_contexts",
+      "purpose": "Determine whether each surrounding reader learned to use its original memory on fresh SSFR contexts.",
+      "measurement": "Evaluate final A accuracy using contexts distinct from the reader training stream. Keep failures in the primary results."
+    },
+    {
+      "name": "two_by_two_reader_memory_cross",
+      "purpose": "Separate dependence on which memory trained the reader from dependence on which replacement memory is being queried.",
+      "measurement": "Report all four CE/MSE reader-by-B-memory cells, with shared evaluation contexts and no reader updates. This is more informative than comparing only the two diagonal cells."
+    },
+    {
+      "name": "wrong_A_memory_on_B_labels",
+      "purpose": "Check whether B accuracy reflects using the replacement mapping instead of retained A behavior.",
+      "measurement": "Score the unmodified A memory against B labels on the identical B prompts. Report both all keys and the predetermined subset for which A and B labels differ; retain random mapping coincidences."
+    },
+    {
+      "name": "clean_query_through_actual_head",
+      "purpose": "Separate a memory/head classification failure from failure under the query actually supplied by attention.",
+      "measurement": "At the query position, replace only the MLP input by its exact stored key and retain the actual MLP, output normalization, and full-vocabulary head. This is an explicitly oracle diagnostic, not autonomous retrieval performance."
+    }
+  ],
+  "competitive_explanations": [
+    {
+      "explanation": "One objective has not learned the standalone facts, or one reader has not learned the A task within the budget.",
+      "design_response": "Inspect development learning curves and exact-key/full-head/A-reader performance before freezing the formal matrix. Formal failures remain reported; standalone-correct subsets are secondary and include coverage.",
+      "remaining_limit": "Matched optimizer steps do not establish equally optimized solutions. Fixed-budget differences are not intrinsic impossibility results or general objective rankings."
+    },
+    {
+      "explanation": "The apparent integration gap is caused by a different output candidate set.",
+      "design_response": "Official standalone accuracy uses only fact values whereas the Transformer head also includes junk and query tokens. Compare exact-key accuracy under the actual full head before attributing a gap to attention or modular incompatibility."
+    },
+    {
+      "explanation": "CE merely creates larger output norms than MSE.",
+      "design_response": "The SSFR final unit normalization cancels positive scalar output rescaling, up to numerical effects. Raw output-norm differences alone cannot explain final top-1 differences in this architecture. Describe output direction and the actual normalized interface instead.",
+      "remaining_limit": "Objective-dependent optimization, angular margins, and responses to imperfect queries can still differ. MSE versus CE does not isolate one of these mechanisms by itself."
+    },
+    {
+      "explanation": "The surrounding reader uses fact-specific information or a particular memory's behavior away from its training keys.",
+      "design_response": "Freeze the reader during B replacement; use the two-by-two cross and the clean-query diagnostic. The identity V/O and disabled residuals follow the paper's restricted architecture intended to discourage alternate fact storage.",
+      "remaining_limit": "These restrictions do not prove that all trainable reader computation is fact-independent. Replacement failure alone also combines a changed mapping with a refitted memory; distinguishing these causes completely would require a same-map independent refit control."
+    },
+    {
+      "explanation": "Test-aware stopping, different random streams, or unintended training during replacement produces the observed difference.",
+      "design_response": "Do not use B accuracy for model selection or early stopping. Evaluate frozen endpoints, isolate training/evaluation random streams, hash frozen surrounding weights, and verify restore/reload behavior."
+    }
+  ],
+  "development_and_formal_separation": {
+    "development": "The one development world is for checking scoring, optimization sufficiency, and implementation. Adjustments require a recorded reason and must be frozen before the three formal worlds are interpreted as confirmation. Lack of a CE/MSE difference is not a reason to tune for a larger difference.",
+    "formal": "Use all three independent worlds and both objectives. Do not select the best B endpoint, discard failures, resample inconvenient mappings, or append training based on formal outcomes while retaining the original fixed-budget interpretation.",
+    "mastery": "No universal 100 percent gate is imposed. Report necessary prerequisite accuracies and the extent to which their failures constrain interpretation."
+  },
+  "implementation_checks_reviewed": [
+    "Confirm the resolved SSFR paper settings rather than relying on configuration-class defaults, which differ in positional encoding and normalization.",
+    "Confirm CE/MSE refer to the standalone MLP objectives and both reader trainings use the same stated objective.",
+    "Confirm attention cannot see the answer token when predicting at Q, despite that token being present later in the generated sequence.",
+    "Confirm the clean-query intervention uses the stored key in the actual post-normalization coordinate system.",
+    "Confirm A and B memories are trained separately and never initialized from each other's trained weights. Record their initialization seeds; shared initial seeds across maps must be described as paired initialization rather than independent initialization.",
+    "Confirm per-objective pairing, full-vocabulary scoring, wrong-map labels, no B-dependent stopping, frozen weights during replacement, exact restoration, and checkpoint reload predictions."
+  ],
+  "implementation_audit": {
+    "test_file": "tests/test_hebbian_interface.py",
+    "pytest": "8 passed in 7.62 seconds",
+    "ruff_check": "passed",
+    "blocking_findings": [],
+    "test_scope": "Tiny CPU models; four standalone memories per world each trained for three epochs, two readers each trained for four steps. Two tiny worlds were used to test whether changing B influences A-reader training. No development or formal experiment training was run by this reviewer.",
+    "verified": [
+      "Only Q and K projection weights are trainable; V/O remain identity; embeddings and inserted memory are frozen; interfaces have unit L2 norm and there are no positional encodings or residuals.",
+      "Evaluation contexts are balanced over keys, preserve RNG state, are independent of mapping labels, and end at the query token. Training targets align with that query; the future answer is removed before training.",
+      "Changing a future answer cannot change earlier query logits, and deleting that answer gives the same query logits.",
+      "A constructed example passes fact-only classification while failing the full head, demonstrating that the candidate-set audit distinguishes a real confound.",
+      "Standalone normalized full-head scores match an exact-key intervention at the actual reader MLP input through the actual normalization and head.",
+      "Evaluation preserves parameter values, RNG state, training/evaluation mode, and hook registration state.",
+      "All four reader-by-B-memory scores reproduce after checkpoint reload; wrong-A-on-B uses unchanged A logits with B labels; swapping back restores original parameters and logits exactly.",
+      "Changing B's mapping changes fitted B-memory weights while leaving A memories, A-reader final weights, and reader training streams unchanged."
+    ],
+    "qualification": "A and B memories are fitted separately from the same starting initialization; the implementation and report should call this paired initialization rather than independent starting weights. The clean-query baseline is computed directly from the memory and shared frozen head; its equivalence to the actual hooked reader interface is covered by a test."
+  },
+  "relation_to_existing_project": {
+    "continuous_twohop": "Earlier continuous two-hop tests controlled a known value-to-key interface and its errors. This experiment instead trains a surrounding causal attention reader and evaluates replacement use in SSFR; it does not yet test two-hop value-to-key composition.",
+    "architecture_toy": "Earlier GQA/hybrid toy models were trained end to end and compared direct versus two-call composition and activation interventions. Here an independently trained, frozen fact memory is the manipulated module, and mapping B is never used to train the surrounding reader.",
+    "P1_P4": "Whole-memory replacement is not a constrained shared-parameter update. This experiment does not test the P1/P3 preservation geometry or the P4 gradient-flow rate."
+  },
+  "permitted_conclusions": [
+    "At this fixed scale, architecture, and training budget, quantify original-task learning and no-reader-retraining fact-mapping replacement for each objective.",
+    "If exact-key full-head accuracy is high but end-to-end B accuracy is lower, establish a gap between stored-key classification and usability under the reader's supplied queries in this setting.",
+    "If the cross-matrix shows an objective-dependent difference, describe a controlled objective effect on reader/memory compatibility; do not identify a unique internal cause without further discriminating evidence.",
+    "If both objectives transfer well, report that classification training suffices in this restricted setting; do not treat absence of the anticipated gap as failure or infer universal sufficiency."
+  ],
+  "unsupported_conclusions": [
+    "Full-vector MSE is necessary for memory integration, or CE cannot support it.",
+    "A universal architecture, optimization, storage-capacity, or two-hop reasoning limit has been established.",
+    "These synthetic results identify the cause of knowledge-editing or composition failures in pretrained Qwen, GLM, or Kimi models.",
+    "A successful whole-memory replacement demonstrates independent fact updates while preserving an arbitrary surrounding model's other behavior.",
+    "Three worlds establish broad statistical robustness or natural-language generalization."
+  ]
+}

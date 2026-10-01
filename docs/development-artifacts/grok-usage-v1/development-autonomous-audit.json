@@ -1,0 +1,365 @@
+{
+  "utc": "2026-09-30T20:39:19.389723+00:00",
+  "phase": "development",
+  "config": "configs/grok-usage-development-v1.json",
+  "config_sha256": "d9a844f2a628a864448f361675cc10f78dbe0e39eb54f1e93efa1292ea30da91",
+  "audit_script_sha256": "da28fb9db754496f9a065e3fb2d68ba0c722c7db5a758e4480608f582ddc034f",
+  "verified_execution_lock": {
+    "frozen_utc": "2026-09-30T20:26:15.662183+00:00",
+    "config": "configs/grok-usage-development-v1.json",
+    "files": {
+      "configs/grok-usage-development-v1.json": "d9a844f2a628a864448f361675cc10f78dbe0e39eb54f1e93efa1292ea30da91",
+      "docs/development-artifacts/grok-usage-v1/preregistration.md": "639b471dfcb251535a7c085cd29562d00d4a0e27b1116f006a224721dce93135",
+      "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+      "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+      "src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+      "src/llm_memory_editability/grok_loop_data.py": "504de57da94618578cf792a3963f99e2dac587424d74ceae6b4c02c1d9680a8e",
+      "src/llm_memory_editability/grok_loop_model.py": "07e84388997a1710e5c821e54cf6d23726e4289aab178347761e060851fea6cc",
+      "src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+      "src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851",
+      "src/llm_memory_editability/grok_usage_data.py": "cfce0e5835665933ee1a1561ee681ffa6520c564be7e2292d9206399f86e7ced",
+      "src/llm_memory_editability/grok_usage_train.py": "5509ab6b2ad0c93e185cdfc211a7ee5afef45a5021a74aa8ce8bce520f694f70",
+      "scripts/run_grok_usage.py": "c795ee59e25d772d0bf6c4bdd52f0a22956a85481cbec863a45317cb6cd4a151",
+      "tests/test_grok_usage_data.py": "ef02de4e5af2d1d5ec29b13bdb30a4d99b3fdb8ada462f9357f2b667648f7d52",
+      "tests/test_grok_usage_training.py": "2e77f5f67d4a924788064287905fb8d7b5a8e8b15668296db8a1b59b6b2a9448"
+    },
+    "git_head": "e279fc676f71e7e8cc8ce255faf68e26534ce311",
+    "working_tree_note": "Existing changes preserved; exact source hashes authoritative"
+  },
+  "device": "cuda:0",
+  "visible_devices": "6",
+  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+  "shared_gpu": true,
+  "precision": "FP32 weights and activations, TF32 enabled, no autocast",
+  "physical_batch_size": 1024,
+  "padded_length": 4,
+  "float_metric_atol": 1e-12,
+  "memory_fraction": 0.025,
+  "max_allocated_bytes": 37513728,
+  "expected_runs": 4,
+  "audited_runs": 4,
+  "exact_array_entries": 13504,
+  "passed": true,
+  "records": [
+    {
+      "run_id": "development-A",
+      "step": 128000,
+      "world_seed": 146001,
+      "arm": "A",
+      "n_queries": 844,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 844,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 844,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/development/development-A/weights-0128000.pt",
+      "checkpoint_sha256": "3fe87d116e73c4855790447048710eebca3ec8252096bd17da611682ecd8a95f",
+      "world_sha256": "bfe361b290a31833121d50a89dc5db82891eeaacd888acc5a84f273a27fe5359",
+      "predictions_sha256": "c8e4b26f1d0517355a73ec38ab5633745f91559c1ddc48459992ce71ceadc3f7",
+      "learning_sha256": "53c117ad34a99b60e20d71d1583326717389b5476ba5e6fc4c33db1e47730fde"
+    },
+    {
+      "run_id": "development-B",
+      "step": 128000,
+      "world_seed": 146001,
+      "arm": "B",
+      "n_queries": 844,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 844,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 844,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/development/development-B/weights-0128000.pt",
+      "checkpoint_sha256": "f162123df7fccad54bba221b6aea37e9999ad5a43baa8ee99ce2f632d525a8ff",
+      "world_sha256": "f59341f78b11e0484f33ea015b76dcf65a2e16fe69ad1c704aef404559b67494",
+      "predictions_sha256": "038b422563dd933c8b3a6b86fc36b98567258b5e3525c0f870feb9b37cebaf50",
+      "learning_sha256": "2d48276eef70f9c6e6536649e1d0cc75628564e61b17cba0586762c0893d4b19"
+    },
+    {
+      "run_id": "development-repA",
+      "step": 128000,
+      "world_seed": 146001,
+      "arm": "repA",
+      "n_queries": 844,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 844,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 844,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/development/development-repA/weights-0128000.pt",
+      "checkpoint_sha256": "58ae4a669d2ff07728cc8615eaedb4c59f9560ea2a6a7c7b40348b3dbd05f80a",
+      "world_sha256": "29668143a75ba8473174b206bda3b27abdfe6c949b7b1f27487bad3a9e64f331",
+      "predictions_sha256": "d679e23390f0c6e05a361c9f69007434f6e84b6dc422f229c76cc7ccace0dd33",
+      "learning_sha256": "14dac495c9ee51aed10f246030f5579a67eab7cf2a271079bc7c83a29882e17a"
+    },
+    {
+      "run_id": "development-repB",
+      "step": 128000,
+      "world_seed": 146001,
+      "arm": "repB",
+      "n_queries": 844,
+      "array_checks": [
+        {
+          "key": "autonomous_hop1_answer",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop1_stop",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_answer",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        },
+        {
+          "key": "autonomous_hop2_stop",
+          "shape": [
+            844
+          ],
+          "dtype": "int64",
+          "entries": 844,
+          "exact_match": true,
+          "mismatches": 0
+        }
+      ],
+      "expected_metrics": {
+        "n": 844,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "recomputed_metrics": {
+        "n": 844,
+        "calls": 2,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "all_intermediate_answers_and_eos_correct": 1.0,
+        "hop_accuracy": [
+          1.0,
+          1.0
+        ],
+        "extra_information": "given relation decomposition, own generated bridge entities"
+      },
+      "errors": [],
+      "passed": true,
+      "checkpoint": "results/grok-usage-v1/development/development-repB/weights-0128000.pt",
+      "checkpoint_sha256": "2a296adec97cec717c7213e9e07a05f2de64cfda370b06ad4fdbac88a2c6d7b4",
+      "world_sha256": "131c6acd038bb3807b399bd27dffb338537cc86dfbed4382889a18aca4f1ac80",
+      "predictions_sha256": "cbd57731f68ef08776c68dd91eab81dd8a9b19bcd3861b80773474e7b4e4f383",
+      "learning_sha256": "a3bca29a817561951afa22ff251633f7b47fbe23c1973c3b7e64bef89c53d9d4"
+    }
+  ]
+}

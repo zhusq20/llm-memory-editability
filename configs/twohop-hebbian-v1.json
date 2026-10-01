@@ -1,0 +1,15 @@
+{
+  "experiment": "twohop-hebbian-v1",
+  "protocol": "14.29",
+  "scope": "MQuAKE-derived controlled continuous-memory experiment; not a natural-language benchmark",
+  "seeds": [142901, 142902, 142903],
+  "entity_dimension": 64,
+  "relation_dimension": 16,
+  "hidden_widths": [128, 256, 512, 1024],
+  "ridge": 0.000001,
+  "interfaces": ["raw", "unit_norm"],
+  "training_information": "All unique original atomic facts from structurally eligible MQuAKE cases; no two-hop target supervision",
+  "evaluation": "All unique eligible original two-hop chains; candidate outputs are all entities in the retained graph",
+  "ambiguity_policy": "Exclude every chain containing a subject-relation key with multiple object IDs in the source subset",
+  "policy": "All 12 configurations and both interfaces; no outcome-selected width, seed, or case; oracle clean queries and certificates are offline diagnostics"
+}

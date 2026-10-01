@@ -1,0 +1,48 @@
+{
+  "utc": "2026-09-30T20:28:06.888440+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "arm": "A",
+      "audit": {
+        "checks": 56884,
+        "errors": [],
+        "max_nll_difference": 0.0,
+        "method": "reload saved endpoint; all evaluation splits, identical GPU/dtype/batch shape"
+      },
+      "max_memory": 95468032
+    },
+    {
+      "arm": "B",
+      "audit": {
+        "checks": 56884,
+        "errors": [],
+        "max_nll_difference": 0.0,
+        "method": "reload saved endpoint; all evaluation splits, identical GPU/dtype/batch shape"
+      },
+      "max_memory": 95468032
+    },
+    {
+      "arm": "repA",
+      "audit": {
+        "checks": 47744,
+        "errors": [],
+        "max_nll_difference": 0.0,
+        "method": "reload saved endpoint; all evaluation splits, identical GPU/dtype/batch shape"
+      },
+      "max_memory": 115451392
+    },
+    {
+      "arm": "repB",
+      "audit": {
+        "checks": 47744,
+        "errors": [],
+        "max_nll_difference": 0.0,
+        "method": "reload saved endpoint; all evaluation splits, identical GPU/dtype/batch shape"
+      },
+      "max_memory": 115451392
+    }
+  ],
+  "initializations_identical": true,
+  "paired_exposure_exact": true
+}

@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "models": 24,
+  "new_cases": 48,
+  "reference_cases": 96,
+  "all_checkpoints": 576,
+  "frozen_readout_checks": 48,
+  "missing": [],
+  "all_predictions_rescored": true,
+  "full_model_weights_hashed": false,
+  "frozen_weights_and_optimizer_steps_checked": true,
+  "source_sha256": "5e30b0211c0262edcd39e5ff01f13335d83a6f7b704a17ece81c722f53c24a8c"
+}

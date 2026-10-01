@@ -1,0 +1,17 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+real 16 / 2048 seconds 1.5
+real 144 / 2048 seconds 10.5
+real 272 / 2048 seconds 19.4
+real 400 / 2048 seconds 28.2
+real 528 / 2048 seconds 37.0
+real 656 / 2048 seconds 45.8
+real 784 / 2048 seconds 54.6
+real 912 / 2048 seconds 63.5
+real 1040 / 2048 seconds 72.3
+real 1168 / 2048 seconds 81.1
+real 1296 / 2048 seconds 89.8
+real 1424 / 2048 seconds 98.5
+real 1552 / 2048 seconds 107.6
+real 1680 / 2048 seconds 116.4
+real 1808 / 2048 seconds 125.2
+real 1936 / 2048 seconds 133.9

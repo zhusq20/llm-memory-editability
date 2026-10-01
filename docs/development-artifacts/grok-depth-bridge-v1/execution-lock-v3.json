@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-09-30T01:49:59.283745+00:00",
+  "revision": 3,
+  "files": {
+    "configs/grok-depth-bridge-v1.json": "871198ace50d2bb36493015e143cb78fce6ced5870c4e5c1bef7bbd24e9a376e",
+    "src/llm_memory_editability/grok_depth_bridge.py": "414a0dbf17c369ad6d15714c2c026aafc4fb12bb1813a3c056efe8035fe2773d",
+    "scripts/run_grok_depth_bridge.py": "8c917ab1c0befc6da226d01af2b4da97bbdeaac003b8cae1462baa7804b10aab",
+    "scripts/report_grok_depth_bridge.py": "cebcc93f64bf262865c95cbe5b472abb520aa134f172681a411de3acd07ee68b",
+    "tests/test_grok_depth_bridge.py": "b2bfdb3c5ed688056148ce5d6d671b5a96d08ca88339ac622cd88c73745ddd59",
+    "docs/development-artifacts/grok-depth-bridge-v1/preregistration.md": "be1b17488eee46e16e477e7146792dc12ec502e7364891858c5f35d48a8b270a",
+    "docs/development-artifacts/grok-depth-bridge-v1/numerical-amendment-v3.json": "a91378170de2f2981cf83b02bf26e14e25a714d3e31e8eefd588f69f78cd6cd2"
+  },
+  "tests_passed": 15,
+  "reason": "Maintain historical TF32 and four-position matrix shapes; donor accepts only h/r1 and adds fixed causal-invisible PAD suffix; no scientific design changes."
+}

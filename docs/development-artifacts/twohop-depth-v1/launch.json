@@ -1,0 +1,56 @@
+{
+  "time": "2026-09-29T08:31:57.762318+00:00",
+  "workers": [
+    {
+      "shard": 0,
+      "gpu": 2,
+      "pid": 1962196,
+      "command": [
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/.venv/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/twohop-depth-v1/execution-source/scripts/run_twohop_depth.py",
+        "worker",
+        "--shard",
+        "0",
+        "--shards",
+        "3",
+        "--device",
+        "cuda:2"
+      ]
+    },
+    {
+      "shard": 1,
+      "gpu": 4,
+      "pid": 1962197,
+      "command": [
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/.venv/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/twohop-depth-v1/execution-source/scripts/run_twohop_depth.py",
+        "worker",
+        "--shard",
+        "1",
+        "--shards",
+        "3",
+        "--device",
+        "cuda:4"
+      ]
+    },
+    {
+      "shard": 2,
+      "gpu": 5,
+      "pid": 1962198,
+      "command": [
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/.venv/bin/python",
+        "-u",
+        "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/twohop-depth-v1/execution-source/scripts/run_twohop_depth.py",
+        "worker",
+        "--shard",
+        "2",
+        "--shards",
+        "3",
+        "--device",
+        "cuda:5"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "spec": {
+    "world": 147011,
+    "initialization": 14702,
+    "heads_n": 128,
+    "bridges_n": 32,
+    "tails_n": 32,
+    "holdout_fraction": 0.2,
+    "width": 128,
+    "layers": 2,
+    "heads": 4,
+    "repeats": 2,
+    "dropout": 0.1,
+    "lr": 0.0003,
+    "weight_decay": 0.1,
+    "warmup": 1000,
+    "steps": 32000,
+    "batch_parts": [
+      32,
+      32,
+      64
+    ],
+    "nodes": [
+      0,
+      500,
+      1000,
+      2000,
+      4000,
+      8000,
+      16000,
+      24000,
+      32000
+    ],
+    "weight_nodes": [
+      0,
+      4000,
+      16000,
+      32000
+    ],
+    "arm": "P2",
+    "source_lock": "docs/development-artifacts/text-pretrain-v1/confirmation/lock.json",
+    "config_path": "configs/text-pretrain-confirmation-v1.json"
+  },
+  "node": 16000,
+  "checkpoint_sha256": "b6341cceb03f156fe25a3e03faeb048c11facf2120229dd1a87bb25f634c1256",
+  "script_sha256": "dc19f7eb6346be8083f5539042fa51f5232555e9c74b5095ee1240e0f6a7d4bf",
+  "donor_selection": "seeded background prefix per eligible query; no score selection",
+  "donor_valid_tokens": 4,
+  "patched_position": 3,
+  "source_never_sees_r2_or_answer": true,
+  "seconds": 2.469373009982519,
+  "results": [
+    {
+      "kind": "same_bridge",
+      "n": 181,
+      "coverage": 0.8044444444444444,
+      "baseline": {
+        "n": 181,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "answer_probability": 0.9964109764573323
+      },
+      "normal_counterfactual": {
+        "n": 181,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "answer_probability": 0.9989779252373712
+      },
+      "normal_counterfactual_heldout_fraction": 0.143646408839779,
+      "self_patch_probability_error": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conditions": [
+        {
+          "layer": 0,
+          "component": "attention",
+          "n": 181,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9977338887051325,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 8.593365669250488
+        },
+        {
+          "layer": 0,
+          "component": "mlp",
+          "n": 181,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9984086300786688,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 9.013864517211914
+        },
+        {
+          "layer": 0,
+          "component": "full",
+          "n": 181,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9980039481300017,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 9.314767837524414
+        },
+        {
+          "layer": 1,
+          "component": "attention",
+          "n": 181,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9964029449784295,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 8.275494575500488
+        },
+        {
+          "layer": 1,
+          "component": "mlp",
+          "n": 181,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9965446690169487,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 8.31441593170166
+        },
+        {
+          "layer": 1,
+          "component": "full",
+          "n": 181,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9973451442481405,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 8.454582214355469
+        },
+        {
+          "layer": 2,
+          "component": "attention",
+          "n": 181,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9964726501406885,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 8.273935317993164
+        },
+        {
+          "layer": 2,
+          "component": "mlp",
+          "n": 181,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9963570741000096,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 8.263994216918945
+        },
+        {
+          "layer": 2,
+          "component": "full",
+          "n": 181,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9973005326413318,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 8.440889358520508
+        },
+        {
+          "layer": 3,
+          "component": "attention",
+          "n": 181,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9964109764573323,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 8.264918327331543
+        },
+        {
+          "layer": 3,
+          "component": "mlp",
+          "n": 181,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9964109764573323,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 8.264918327331543
+        },
+        {
+          "layer": 3,
+          "component": "full",
+          "n": 181,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9964109764573323,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": 8.264918327331543
+        }
+      ]
+    },
+    {
+      "kind": "different_bridge",
+      "n": 225,
+      "coverage": 1.0,
+      "baseline": {
+        "n": 225,
+        "answer_accuracy": 0.0,
+        "accuracy": 0.0,
+        "answer_probability": 0.0002062975558807989
+      },
+      "normal_counterfactual": {
+        "n": 225,
+        "answer_accuracy": 1.0,
+        "accuracy": 1.0,
+        "answer_probability": 0.9945101014773051
+      },
+      "normal_counterfactual_heldout_fraction": 1.0,
+      "self_patch_probability_error": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "conditions": [
+        {
+          "layer": 0,
+          "component": "attention",
+          "n": 225,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0012219854198697987,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -12.416601181030273
+        },
+        {
+          "layer": 0,
+          "component": "mlp",
+          "n": 225,
+          "answer_accuracy": 0.013333333333333334,
+          "accuracy": 0.013333333333333334,
+          "answer_probability": 0.01929342404174368,
+          "original_answer_retained": 0.9733333333333334,
+          "target_competitor_margin": -11.52123737335205
+        },
+        {
+          "layer": 0,
+          "component": "full",
+          "n": 225,
+          "answer_accuracy": 0.1511111111111111,
+          "accuracy": 0.1511111111111111,
+          "answer_probability": 0.14996154620007374,
+          "original_answer_retained": 0.8133333333333334,
+          "target_competitor_margin": -7.831868648529053
+        },
+        {
+          "layer": 1,
+          "component": "attention",
+          "n": 225,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.00020509506525210922,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -13.477924346923828
+        },
+        {
+          "layer": 1,
+          "component": "mlp",
+          "n": 225,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0002019152711060595,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -13.536938667297363
+        },
+        {
+          "layer": 1,
+          "component": "full",
+          "n": 225,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.00020014750234227953,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -13.406126976013184
+        },
+        {
+          "layer": 2,
+          "component": "attention",
+          "n": 225,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0002051222728716441,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -13.469986915588379
+        },
+        {
+          "layer": 2,
+          "component": "mlp",
+          "n": 225,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.00020624222960626158,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -13.468904495239258
+        },
+        {
+          "layer": 2,
+          "component": "full",
+          "n": 225,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.00020514126798496513,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -13.404151916503906
+        },
+        {
+          "layer": 3,
+          "component": "attention",
+          "n": 225,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0002062975558807989,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -13.469629287719727
+        },
+        {
+          "layer": 3,
+          "component": "mlp",
+          "n": 225,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0002062975558807989,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -13.469629287719727
+        },
+        {
+          "layer": 3,
+          "component": "full",
+          "n": 225,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0002062975558807989,
+          "original_answer_retained": 1.0,
+          "target_competitor_margin": -13.469629287719727
+        }
+      ]
+    }
+  ]
+}

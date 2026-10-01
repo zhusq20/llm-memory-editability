@@ -1,0 +1,229 @@
+{
+  "config": "configs/grok-loop-confirmation-v1.json",
+  "configs": [
+    "configs/grok-loop-confirmation-v1.json"
+  ],
+  "runs": [
+    {
+      "run": "conf-w145011-i14501-h2-c1",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "already_complete"
+    },
+    {
+      "run": "conf-w145011-i14501-h2-l2",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "already_complete"
+    },
+    {
+      "run": "conf-w145011-i14501-h3-l1",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "already_complete"
+    },
+    {
+      "run": "conf-w145011-i14501-h4-cd",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "already_complete"
+    },
+    {
+      "run": "conf-w145011-i14502-h2-c2",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "already_complete"
+    },
+    {
+      "run": "conf-w145011-i14502-h3-c1",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "already_complete"
+    },
+    {
+      "run": "conf-w145011-i14502-h3-l2",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "already_complete"
+    },
+    {
+      "run": "conf-w145011-i14502-h4-l1",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "already_complete"
+    },
+    {
+      "run": "conf-w145012-i14501-h2-cd",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "already_complete"
+    },
+    {
+      "run": "conf-w145012-i14501-h3-c2",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "already_complete"
+    },
+    {
+      "run": "conf-w145012-i14501-h4-c1",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "already_complete"
+    },
+    {
+      "run": "conf-w145012-i14501-h4-l2",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "complete",
+      "started_utc": "2026-09-30T07:21:29.333656+00:00",
+      "resume": true,
+      "log": "docs/development-artifacts/grok-loop-v1/conf-w145012-i14501-h4-l2-resume.log",
+      "finished_utc": "2026-09-30T07:22:12.453265+00:00",
+      "exit_code": 0
+    },
+    {
+      "run": "conf-w145012-i14502-h2-l2",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "complete",
+      "started_utc": "2026-09-30T07:22:12.560177+00:00",
+      "resume": false,
+      "log": "docs/development-artifacts/grok-loop-v1/conf-w145012-i14502-h2-l2.log",
+      "finished_utc": "2026-09-30T07:28:05.954347+00:00",
+      "exit_code": 0
+    },
+    {
+      "run": "conf-w145012-i14502-h3-l1",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "complete",
+      "started_utc": "2026-09-30T07:28:06.200382+00:00",
+      "resume": false,
+      "log": "docs/development-artifacts/grok-loop-v1/conf-w145012-i14502-h3-l1.log",
+      "finished_utc": "2026-09-30T07:34:09.769902+00:00",
+      "exit_code": 0
+    },
+    {
+      "run": "conf-w145012-i14502-h4-c2",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "complete",
+      "started_utc": "2026-09-30T07:34:09.878243+00:00",
+      "resume": false,
+      "log": "docs/development-artifacts/grok-loop-v1/conf-w145012-i14502-h4-c2.log",
+      "finished_utc": "2026-09-30T07:38:53.031011+00:00",
+      "exit_code": 0
+    },
+    {
+      "run": "conf-w145013-i14501-h2-c1",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "complete",
+      "started_utc": "2026-09-30T07:38:53.136289+00:00",
+      "resume": false,
+      "log": "docs/development-artifacts/grok-loop-v1/conf-w145013-i14501-h2-c1.log",
+      "finished_utc": "2026-09-30T07:42:15.340943+00:00",
+      "exit_code": 0
+    },
+    {
+      "run": "conf-w145013-i14501-h2-c2",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "complete",
+      "started_utc": "2026-09-30T07:42:15.443482+00:00",
+      "resume": false,
+      "log": "docs/development-artifacts/grok-loop-v1/conf-w145013-i14501-h2-c2.log",
+      "finished_utc": "2026-09-30T07:46:27.239424+00:00",
+      "exit_code": 0
+    },
+    {
+      "run": "conf-w145013-i14501-h3-c1",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "complete",
+      "started_utc": "2026-09-30T07:46:27.359488+00:00",
+      "resume": false,
+      "log": "docs/development-artifacts/grok-loop-v1/conf-w145013-i14501-h3-c1.log",
+      "finished_utc": "2026-09-30T07:49:59.994631+00:00",
+      "exit_code": 0
+    },
+    {
+      "run": "conf-w145013-i14501-h3-cd",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "complete",
+      "started_utc": "2026-09-30T07:50:00.198664+00:00",
+      "resume": false,
+      "log": "docs/development-artifacts/grok-loop-v1/conf-w145013-i14501-h3-cd.log",
+      "finished_utc": "2026-09-30T07:56:58.261134+00:00",
+      "exit_code": 0
+    },
+    {
+      "run": "conf-w145013-i14501-h4-cd",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "complete",
+      "started_utc": "2026-09-30T07:56:58.369339+00:00",
+      "resume": false,
+      "log": "docs/development-artifacts/grok-loop-v1/conf-w145013-i14501-h4-cd.log",
+      "finished_utc": "2026-09-30T08:06:35.158559+00:00",
+      "exit_code": 0
+    },
+    {
+      "run": "conf-w145013-i14502-h2-l1",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "complete",
+      "started_utc": "2026-09-30T08:06:35.446228+00:00",
+      "resume": false,
+      "log": "docs/development-artifacts/grok-loop-v1/conf-w145013-i14502-h2-l1.log",
+      "finished_utc": "2026-09-30T08:12:47.834318+00:00",
+      "exit_code": 0
+    },
+    {
+      "run": "conf-w145013-i14502-h3-l2",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "complete",
+      "started_utc": "2026-09-30T08:12:47.997367+00:00",
+      "resume": false,
+      "log": "docs/development-artifacts/grok-loop-v1/conf-w145013-i14502-h3-l2.log",
+      "finished_utc": "2026-09-30T08:19:21.151451+00:00",
+      "exit_code": 0
+    },
+    {
+      "run": "conf-w145013-i14502-h4-l1",
+      "config": "configs/grok-loop-confirmation-v1.json",
+      "source_lock": "docs/development-artifacts/grok-loop-v1/confirmation-lock.json",
+      "gpu": 2,
+      "state": "complete",
+      "started_utc": "2026-09-30T08:19:21.528764+00:00",
+      "resume": false,
+      "log": "docs/development-artifacts/grok-loop-v1/conf-w145013-i14502-h4-l1.log",
+      "finished_utc": "2026-09-30T08:28:47.018230+00:00",
+      "exit_code": 0
+    }
+  ]
+}

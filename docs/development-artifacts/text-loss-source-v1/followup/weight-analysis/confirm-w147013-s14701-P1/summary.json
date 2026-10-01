@@ -1,0 +1,426 @@
+{
+  "world": 147013,
+  "initialization": 14701,
+  "config": "configs/text-loss-source-followup-v1.json",
+  "parent": "results/text-pretrain-v1/confirmation/confirm-w147013-s14701-P1",
+  "groups": {
+    "token": [
+      "token.weight"
+    ],
+    "attention": [
+      "blocks.0.attention.qkv.weight",
+      "blocks.0.attention.qkv.bias",
+      "blocks.0.attention.proj.weight",
+      "blocks.0.attention.proj.bias",
+      "blocks.1.attention.qkv.weight",
+      "blocks.1.attention.qkv.bias",
+      "blocks.1.attention.proj.weight",
+      "blocks.1.attention.proj.bias"
+    ],
+    "mlp": [
+      "blocks.0.mlp.up.weight",
+      "blocks.0.mlp.up.bias",
+      "blocks.0.mlp.down.weight",
+      "blocks.0.mlp.down.bias",
+      "blocks.1.mlp.up.weight",
+      "blocks.1.mlp.up.bias",
+      "blocks.1.mlp.down.weight",
+      "blocks.1.mlp.down.bias"
+    ],
+    "norm_position": [
+      "position.weight",
+      "blocks.0.ln1.weight",
+      "blocks.0.ln1.bias",
+      "blocks.0.ln2.weight",
+      "blocks.0.ln2.bias",
+      "blocks.1.ln1.weight",
+      "blocks.1.ln1.bias",
+      "blocks.1.ln2.weight",
+      "blocks.1.ln2.bias",
+      "ln_final.weight",
+      "ln_final.bias"
+    ]
+  },
+  "checkpoints": {
+    "A": "3a205292ea337adbcec888c0ede24dab1c09c7988b9d466fda04b95fe9704b43",
+    "N": "b8f51a7ccec8345391a19d6fc7913e4648205dbe0f5f97978fc9762579139163"
+  },
+  "sources": {
+    "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/analyze_text_loss_weights.py": "7da25957022229a4a99f7d3f815288c41243a8c4b4ef7524d8d6121d4aad5474"
+  },
+  "records": [
+    {
+      "recipient": "A",
+      "donor": "N",
+      "group": "self",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9998548454605043
+        },
+        "background_train": {
+          "n": 837,
+          "answer_accuracy": 0.997610513739546,
+          "accuracy": 0.997610513739546,
+          "answer_probability": 0.9852014879919722
+        },
+        "background_test": {
+          "n": 187,
+          "answer_accuracy": 0.9518716577540107,
+          "accuracy": 0.9518716577540107,
+          "answer_probability": 0.9117547146139298
+        },
+        "target_test": {
+          "n": 209,
+          "answer_accuracy": 0.5454545454545454,
+          "accuracy": 0.5454545454545454,
+          "answer_probability": 0.5307043266898791
+        }
+      }
+    },
+    {
+      "recipient": "A",
+      "donor": "N",
+      "group": "token",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9995617532171309
+        },
+        "background_train": {
+          "n": 837,
+          "answer_accuracy": 0.997610513739546,
+          "accuracy": 0.997610513739546,
+          "answer_probability": 0.9815530128768125
+        },
+        "background_test": {
+          "n": 187,
+          "answer_accuracy": 0.9197860962566845,
+          "accuracy": 0.9197860962566845,
+          "answer_probability": 0.877954278898271
+        },
+        "target_test": {
+          "n": 209,
+          "answer_accuracy": 0.507177033492823,
+          "accuracy": 0.507177033492823,
+          "answer_probability": 0.5379999287686448
+        }
+      }
+    },
+    {
+      "recipient": "A",
+      "donor": "N",
+      "group": "attention",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9999130215495825
+        },
+        "background_train": {
+          "n": 837,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9963151059127908
+        },
+        "background_test": {
+          "n": 187,
+          "answer_accuracy": 0.9679144385026738,
+          "accuracy": 0.9679144385026738,
+          "answer_probability": 0.946011115602631
+        },
+        "target_test": {
+          "n": 209,
+          "answer_accuracy": 0.6602870813397129,
+          "accuracy": 0.6602870813397129,
+          "answer_probability": 0.6320775841626937
+        }
+      }
+    },
+    {
+      "recipient": "A",
+      "donor": "N",
+      "group": "mlp",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9978522904217243
+        },
+        "background_train": {
+          "n": 837,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9965726108676359
+        },
+        "background_test": {
+          "n": 187,
+          "answer_accuracy": 0.9786096256684492,
+          "accuracy": 0.9786096256684492,
+          "answer_probability": 0.9553612144713733
+        },
+        "target_test": {
+          "n": 209,
+          "answer_accuracy": 0.8086124401913876,
+          "accuracy": 0.8086124401913876,
+          "answer_probability": 0.7521632326437934
+        }
+      }
+    },
+    {
+      "recipient": "A",
+      "donor": "N",
+      "group": "norm_position",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9998269028961658
+        },
+        "background_train": {
+          "n": 837,
+          "answer_accuracy": 0.998805256869773,
+          "accuracy": 0.998805256869773,
+          "answer_probability": 0.985294313075437
+        },
+        "background_test": {
+          "n": 187,
+          "answer_accuracy": 0.946524064171123,
+          "accuracy": 0.946524064171123,
+          "answer_probability": 0.9084935298657673
+        },
+        "target_test": {
+          "n": 209,
+          "answer_accuracy": 0.5311004784688995,
+          "accuracy": 0.5311004784688995,
+          "answer_probability": 0.5170059238161573
+        }
+      }
+    },
+    {
+      "recipient": "A",
+      "donor": "N",
+      "group": "all",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 0.821875,
+          "accuracy": 0.821875,
+          "answer_probability": 0.8037253352921809
+        },
+        "background_train": {
+          "n": 837,
+          "answer_accuracy": 0.973715651135006,
+          "accuracy": 0.973715651135006,
+          "answer_probability": 0.955469510660439
+        },
+        "background_test": {
+          "n": 187,
+          "answer_accuracy": 0.9197860962566845,
+          "accuracy": 0.9197860962566845,
+          "answer_probability": 0.8699705702885189
+        },
+        "target_test": {
+          "n": 209,
+          "answer_accuracy": 0.6172248803827751,
+          "accuracy": 0.6172248803827751,
+          "answer_probability": 0.560384094551245
+        }
+      }
+    },
+    {
+      "recipient": "N",
+      "donor": "A",
+      "group": "self",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 0.821875,
+          "accuracy": 0.821875,
+          "answer_probability": 0.8037253352921809
+        },
+        "background_train": {
+          "n": 837,
+          "answer_accuracy": 0.973715651135006,
+          "accuracy": 0.973715651135006,
+          "answer_probability": 0.955469510660439
+        },
+        "background_test": {
+          "n": 187,
+          "answer_accuracy": 0.9197860962566845,
+          "accuracy": 0.9197860962566845,
+          "answer_probability": 0.8699705702885189
+        },
+        "target_test": {
+          "n": 209,
+          "answer_accuracy": 0.6172248803827751,
+          "accuracy": 0.6172248803827751,
+          "answer_probability": 0.560384094551245
+        }
+      }
+    },
+    {
+      "recipient": "N",
+      "donor": "A",
+      "group": "token",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 0.9765625,
+          "accuracy": 0.9765625,
+          "answer_probability": 0.9488151419678615
+        },
+        "background_train": {
+          "n": 837,
+          "answer_accuracy": 0.996415770609319,
+          "accuracy": 0.996415770609319,
+          "answer_probability": 0.9777739853948675
+        },
+        "background_test": {
+          "n": 187,
+          "answer_accuracy": 0.93048128342246,
+          "accuracy": 0.93048128342246,
+          "answer_probability": 0.8949165352804457
+        },
+        "target_test": {
+          "n": 209,
+          "answer_accuracy": 0.6076555023923444,
+          "accuracy": 0.6076555023923444,
+          "answer_probability": 0.5732612285177937
+        }
+      }
+    },
+    {
+      "recipient": "N",
+      "donor": "A",
+      "group": "attention",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 0.996875,
+          "accuracy": 0.996875,
+          "answer_probability": 0.9928800447843968
+        },
+        "background_train": {
+          "n": 837,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9965349397351665
+        },
+        "background_test": {
+          "n": 187,
+          "answer_accuracy": 0.9893048128342246,
+          "accuracy": 0.9893048128342246,
+          "answer_probability": 0.949093612399012
+        },
+        "target_test": {
+          "n": 209,
+          "answer_accuracy": 0.784688995215311,
+          "accuracy": 0.784688995215311,
+          "answer_probability": 0.7169406063073208
+        }
+      }
+    },
+    {
+      "recipient": "N",
+      "donor": "A",
+      "group": "mlp",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9996407117694617
+        },
+        "background_train": {
+          "n": 837,
+          "answer_accuracy": 0.998805256869773,
+          "accuracy": 0.998805256869773,
+          "answer_probability": 0.9932402631928844
+        },
+        "background_test": {
+          "n": 187,
+          "answer_accuracy": 0.9518716577540107,
+          "accuracy": 0.9518716577540107,
+          "answer_probability": 0.9109319611427619
+        },
+        "target_test": {
+          "n": 209,
+          "answer_accuracy": 0.6411483253588517,
+          "accuracy": 0.6411483253588517,
+          "answer_probability": 0.5970173709358547
+        }
+      }
+    },
+    {
+      "recipient": "N",
+      "donor": "A",
+      "group": "norm_position",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 0.80625,
+          "accuracy": 0.80625,
+          "answer_probability": 0.7841577786704764
+        },
+        "background_train": {
+          "n": 837,
+          "answer_accuracy": 0.984468339307049,
+          "accuracy": 0.984468339307049,
+          "answer_probability": 0.9678344422152428
+        },
+        "background_test": {
+          "n": 187,
+          "answer_accuracy": 0.9518716577540107,
+          "accuracy": 0.9518716577540107,
+          "answer_probability": 0.8944114424925755
+        },
+        "target_test": {
+          "n": 209,
+          "answer_accuracy": 0.6794258373205742,
+          "accuracy": 0.6794258373205742,
+          "answer_probability": 0.6514906111431881
+        }
+      }
+    },
+    {
+      "recipient": "N",
+      "donor": "A",
+      "group": "all",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9998548454605043
+        },
+        "background_train": {
+          "n": 837,
+          "answer_accuracy": 0.997610513739546,
+          "accuracy": 0.997610513739546,
+          "answer_probability": 0.9852014879919722
+        },
+        "background_test": {
+          "n": 187,
+          "answer_accuracy": 0.9518716577540107,
+          "accuracy": 0.9518716577540107,
+          "answer_probability": 0.9117547146139298
+        },
+        "target_test": {
+          "n": 209,
+          "answer_accuracy": 0.5454545454545454,
+          "accuracy": 0.5454545454545454,
+          "answer_probability": 0.5307043266898791
+        }
+      }
+    }
+  ],
+  "claim": "Conditional effects of transplanting paired training-induced parameter differences; not independent semantic storage modules."
+}

@@ -1,0 +1,22 @@
+{
+  "python": "3.12.7 | packaged by Anaconda, Inc. | (main, Oct  4 2024, 13:27:36) [GCC 11.2.0]",
+  "platform": "Linux-6.8.0-90-generic-x86_64-with-glibc2.39",
+  "packages": {
+    "torch": "2.8.0+cu128",
+    "numpy": "2.5.3",
+    "transformers": "4.57.3",
+    "matplotlib": "3.11.2",
+    "tqdm": "4.70.1"
+  },
+  "dependency_deviations": [
+    "numpy 2.5.3 exceeds official numpy<2; core imports verified, optional pandas/scipy sweep dependencies absent; reuse only exercised low-level code"
+  ],
+  "source_commit": "41443978d2261f30a9749fe7a286c95be08b331e",
+  "source_license": "Apache-2.0",
+  "gpu_snapshot": "0, NVIDIA RTX PRO 6000 Blackwell Server Edition, 84249 MiB, 0 %\n1, NVIDIA RTX PRO 6000 Blackwell Server Edition, 84249 MiB, 0 %\n2, NVIDIA RTX PRO 6000 Blackwell Server Edition, 0 MiB, 0 %\n3, NVIDIA RTX PRO 6000 Blackwell Server Edition, 84249 MiB, 0 %\n4, NVIDIA RTX PRO 6000 Blackwell Server Edition, 84249 MiB, 0 %\n5, NVIDIA RTX PRO 6000 Blackwell Server Edition, 0 MiB, 0 %\n6, NVIDIA RTX PRO 6000 Blackwell Server Edition, 60981 MiB, 0 %\n7, NVIDIA RTX PRO 6000 Blackwell Server Edition, 64449 MiB, 83 %\n8, NVIDIA RTX PRO 6000 Blackwell Server Edition, 63447 MiB, 100 %\n9, NVIDIA RTX PRO 6000 Blackwell Server Edition, 65243 MiB, 89 %\n",
+  "numerics": {
+    "dtype": "float32",
+    "tf32": false,
+    "mixed_precision": false
+  }
+}

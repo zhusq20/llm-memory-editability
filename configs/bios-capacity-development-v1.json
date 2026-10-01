@@ -1,0 +1,75 @@
+{
+  "protocol": "v2.5-development",
+  "phase": "development only; existing worlds, no confirmatory claim",
+  "worlds": [
+    0,
+    1
+  ],
+  "initialization_seeds": [
+    0
+  ],
+  "conditions": [
+    "A",
+    "B",
+    "C"
+  ],
+  "widths": [
+    64,
+    128,
+    256
+  ],
+  "layers": 8,
+  "head_dimension": 64,
+  "learning_rates": [
+    0.0001,
+    0.0003
+  ],
+  "steps": 28672,
+  "checkpoints": [
+    0,
+    896,
+    1792,
+    3584,
+    7168,
+    10752,
+    14336,
+    21504,
+    28672
+  ],
+  "capacity_runs": 42,
+  "holdout_widths": [
+    64,
+    128,
+    256,
+    768
+  ],
+  "holdout_learning_rate": 0.0001,
+  "holdout_runs": 24,
+  "stage_order": [
+    "capacity",
+    "holdout"
+  ],
+  "qa_split": "half of each company/old-exception stratum; fixed world-dependent seed",
+  "unchanged": [
+    "truth",
+    "organization seed 0",
+    "document batch 16",
+    "QA batch 28",
+    "loss weights 0.8/0.2",
+    "AdamW weight decay 0.1",
+    "warmup 16 epochs",
+    "clip norm 1"
+  ],
+  "candidate_plateau_rule": "14336 to 28672 base accuracy absolute change <=0.005 and base answer NLL relative change <=0.05, separately per learning rate; descriptive only",
+  "limitations": [
+    "One initialization per world; only two previously used development worlds",
+    "No claim of mathematical capacity bound",
+    "Width changes head count at fixed dimension per head",
+    "Atomic trainable identity tokens retained in this width-only study",
+    "Half QA receives twice the exposure per included query at fixed stream budget",
+    "No editing runs in this batch",
+    "No outcome-dependent budget extension or exclusions"
+  ],
+  "control_width": 768,
+  "control_learning_rate": 0.0001
+}

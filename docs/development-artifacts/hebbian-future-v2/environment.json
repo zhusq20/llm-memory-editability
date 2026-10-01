@@ -1,0 +1,17 @@
+{
+  "python": "3.13.9 | packaged by Anaconda, Inc. | (main, Oct 21 2025, 19:16:10) [GCC 11.2.0]",
+  "executable": "/home/siqizhu4/miniconda3/bin/python",
+  "packages": {
+    "torch": "2.11.0",
+    "transformers": "4.57.3",
+    "numpy": "1.26.4",
+    "matplotlib": "3.10.8",
+    "tokenizers": "0.22.1"
+  },
+  "model_sha256": "cd2a512003e2f9f3cd3c32a9c3573f820bb28c940f73c57b1ddaa983d9223eba",
+  "model_matches_v1": true,
+  "dtype": "float32",
+  "tf32": false,
+  "real_attention": "eager",
+  "chain_attention": "torch SDPA causal"
+}

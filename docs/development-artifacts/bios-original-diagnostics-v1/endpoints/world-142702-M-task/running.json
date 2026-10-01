@@ -1,0 +1,10 @@
+{
+  "endpoint": "world-142702-M-task",
+  "started_unix": 1790800007.7806213,
+  "pid": 4128650,
+  "device": "cuda:0",
+  "cuda_visible_devices": "5",
+  "memory_fraction": 0.045,
+  "shared_gpu": true,
+  "torch_version": "2.8.0+cu128"
+}

@@ -1,0 +1,29 @@
+{
+  "endpoint": {
+    "id": "world-142702-M-adapt",
+    "world": 142702,
+    "init": 1427,
+    "condition": "M",
+    "stage": "adapt",
+    "checkpoint": "results/bios-original-development-v1/world-142702/init-1427/M/adapt/final.pt",
+    "checkpoint_sha256": "83d02129971cec7b3edb2fa12e8047dd1a7dd06ca4e500a1953815dffb4ec6ec",
+    "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142702-M-adapt.json",
+    "audit_sample_sha256": "eab82ba5757516820f475c7c9b623f27b26f8a81361067a5f9d74b03cdc3b02e"
+  },
+  "seconds": 3.6001292569562793,
+  "audit": {
+    "rows": 96,
+    "generation_mismatches": 0,
+    "eos_mismatches": 0,
+    "correctness_mismatches": 0,
+    "max_abs_full_logp_difference": 0.0,
+    "exact_original_batch": true,
+    "precision": "FP32 parameters, BF16 autocast, TF32 enabled",
+    "status": "passed"
+  },
+  "diagnostics": null,
+  "shared_gpu": true,
+  "memory_fraction": 0.045,
+  "cuda_visible_devices": "5",
+  "peak_allocated_bytes": 661848576
+}

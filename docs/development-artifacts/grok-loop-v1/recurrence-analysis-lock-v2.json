@@ -1,0 +1,21 @@
+{
+  "frozen_utc": "2026-09-30T04:40:25.323607+00:00",
+  "revision": 2,
+  "previous_lock": "docs/development-artifacts/grok-loop-v1/recurrence-analysis-lock.json",
+  "previous_lock_sha256": "ccaa2ee762189c3eea284145bdbfe55fa5d9f106c2f450e405eec14d8b6e1410",
+  "change_reason": "Add explicit rejection of training/runtime Python, Torch, NumPy, CUDA, GPU-family and FP32/TF32 environment mismatches; v1 recorded environment but did not compare each field.",
+  "numerical_changes": false,
+  "numerical_scope": "Model construction, parameter loading, repeats assignment, evaluate_rows and prediction/scoring formulas unchanged; no historical output overwritten.",
+  "files": {
+    "scripts/evaluate_grok_loop_recurrence.py": "0f7f081e60a8e86bdc1b82c80104eef6943da21fbddf3c12714144cd70c6dc43",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+    "src/llm_memory_editability/grok_depth_data.py": "c1451a0647ef7c25567398efd63848dbb44fdf066d07718c02f7e556e6c8b94a",
+    "src/llm_memory_editability/grok_loop_model.py": "07e84388997a1710e5c821e54cf6d23726e4289aab178347761e060851fea6cc",
+    "src/llm_memory_editability/grok_multihop.py": "67ed1f37b04fbef7031f208e5ca140aea1b6158adb64ec8b0fe12217eb53cdbc",
+    "src/llm_memory_editability/grok_multihop_data.py": "d417b4d39e70cfa4010a8cd737a362d8159d73c2377330b04bf471a5079da851"
+  },
+  "scope": "Independent analysis lock; no self-reference or training-lock dependency cycle.",
+  "verification": "Five CPU evidence tests passed; ruff check/format passed. Formal execution additionally verifies current device against saved training GPU family.",
+  "tests_sha256": "ff9cdb55200cbd6f45567ae9ddee2bfd2cd650d7dcf5e17c9291fd38a45ccedb"
+}

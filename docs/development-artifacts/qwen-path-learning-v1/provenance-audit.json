@@ -1,0 +1,9 @@
+{
+  "checks": {
+    "baseline_source_snapshot": true,
+    "screening_inputs_unchanged": true,
+    "original_labels_and_relations": true,
+    "original_wiki_files": true
+  },
+  "passed": true
+}

@@ -1,0 +1,137 @@
+{
+  "status": "complete",
+  "utc": "2026-10-01T02:20:18.814061+00:00",
+  "expected_runs": 15,
+  "completed_runs": 15,
+  "total_nodes": 99,
+  "total_weight_nodes": 36,
+  "total_scored_rows": 530559,
+  "total_steps": 192000,
+  "supervised_tokens": 196608000,
+  "estimated_flops": 3093980774400000,
+  "training_seconds": 1046.8650951839518,
+  "frozen_sources_unchanged": true,
+  "phases": {
+    "development": {
+      "runs": [
+        {
+          "run": "development-restricted",
+          "complete_sha256": "eefe1ea519c56294a03ba317cae7361e36113d9965d634e805e9b7f2295bd0c8",
+          "latest_sha256": "03e4b97963aa3db18051fad4d5d47a219431ff25ed38e4ce06c30bb89cb5dd2a",
+          "prediction_nodes": 9,
+          "weight_nodes": 4
+        },
+        {
+          "run": "development-broad",
+          "complete_sha256": "14de871c199a8ad2f91dc39acc962bf451f4e3b5eb04ea01bfadbfde161da893",
+          "latest_sha256": "83f2f3f1ed2eb7effbd4b9899098b7ccf5c1fd4cf8439f13c6218d234d3adb1e",
+          "prediction_nodes": 9,
+          "weight_nodes": 4
+        },
+        {
+          "run": "development-positive",
+          "complete_sha256": "9e9e4f696c0710b6d196e654965542e99d11924963aed989c36169d88c5c8d10",
+          "latest_sha256": "4e45bde30747337de4a1314bf690b141aa1de83cb638b1fec81dd6a2100752ff",
+          "prediction_nodes": 9,
+          "weight_nodes": 4
+        }
+      ],
+      "verified_sha256": "0c93d13b00b9541ab83f2f8eb7e5e5f777189ec1a7dd0f2f07fd13e9d994b81d",
+      "source_lock_sha256": "ace3840aecd11d8f1cd83f7981f99a6339efcf1bf2b0f22af39cc1fb9f0ef047"
+    },
+    "confirmation": {
+      "runs": [
+        {
+          "run": "confirm-w148011-i14801-restricted",
+          "complete_sha256": "e4a24ca05c9a9c3329c22ce28d851472b3499f146eb60f263ad6da42f09c7d4e",
+          "latest_sha256": "d430b2916255d371e7441a1a3710b0f6619b8f06314824df26fe36c6f4f0d520",
+          "prediction_nodes": 6,
+          "weight_nodes": 2
+        },
+        {
+          "run": "confirm-w148011-i14801-broad",
+          "complete_sha256": "cbcb334686a01df347fe7f30cabcf0a8f7fb1a35e29e7b4df0d2dc135dfd088b",
+          "latest_sha256": "67ac7db0c7e70e6ee242820c070d7e0a57115f115531c4dfc655053bb4c759bf",
+          "prediction_nodes": 6,
+          "weight_nodes": 2
+        },
+        {
+          "run": "confirm-w148011-i14802-restricted",
+          "complete_sha256": "e86a9bb2f82a46fd52e31095b40d862ac42d44423eb264387f48ee67520a3dce",
+          "latest_sha256": "96f2e6996c4df514e67eb46a2fc6fbe422f20dc4c9087a329469e876452f2d1c",
+          "prediction_nodes": 6,
+          "weight_nodes": 2
+        },
+        {
+          "run": "confirm-w148011-i14802-broad",
+          "complete_sha256": "f33e992cec62d5621601fa5af19df12e3b0bdbb704328cc2a3fef6764ea19e4a",
+          "latest_sha256": "1dc8d82e8f0d77366afbb4051b9d397ed625204815e62955f40013d759447c12",
+          "prediction_nodes": 6,
+          "weight_nodes": 2
+        },
+        {
+          "run": "confirm-w148012-i14801-restricted",
+          "complete_sha256": "0d4c50db1d751dabc4c27d4fd8400a87b61f3d2000b18f3e521a51e270cb356f",
+          "latest_sha256": "7259e470ddee0018a34f4609730f4f66702db625001948a31e804790369f03a8",
+          "prediction_nodes": 6,
+          "weight_nodes": 2
+        },
+        {
+          "run": "confirm-w148012-i14801-broad",
+          "complete_sha256": "f65c2742d1724019095de21f9bcc2e57d62e3005e11f9a5866fc8b44d9f3d529",
+          "latest_sha256": "2e8255424fdd77ddd2d91bb487dfef21a3c17db9fa4f425eb35d6fdba8475cf3",
+          "prediction_nodes": 6,
+          "weight_nodes": 2
+        },
+        {
+          "run": "confirm-w148012-i14802-restricted",
+          "complete_sha256": "cc382cc07ab05f85c8e9dec00d9505d59d379bcd09bac56cfcee781505be8bd5",
+          "latest_sha256": "9f0af37e656e13d6e34f8bad965c2ccc4372752d4e8ae75c8db1bd86e1f1521b",
+          "prediction_nodes": 6,
+          "weight_nodes": 2
+        },
+        {
+          "run": "confirm-w148012-i14802-broad",
+          "complete_sha256": "c2bf36fa69fdf2353b596351cb06e3509c109e9f58cb07b77239114a7b4d8125",
+          "latest_sha256": "7d3b55d37018484074a5c8b7399ae2c8307d779f62a75a3b3970798b6c39530d",
+          "prediction_nodes": 6,
+          "weight_nodes": 2
+        },
+        {
+          "run": "confirm-w148013-i14801-restricted",
+          "complete_sha256": "a7e0eb1442b41a8c2e86189f605a41285f0bfd918b377fea14f1e211ada0216d",
+          "latest_sha256": "1b1cb8d2174eea05aa71684fc861a947c8f2468c545b89edf190d23ed2910665",
+          "prediction_nodes": 6,
+          "weight_nodes": 2
+        },
+        {
+          "run": "confirm-w148013-i14801-broad",
+          "complete_sha256": "e1ff75a02b7b0191fa3aa5a91b909a48f0c159c4dde40431a6b4b381f845c05b",
+          "latest_sha256": "9703115546228d4f3a550fd105909c786a2a76a8d22df5a8a91e7d667fd57d4b",
+          "prediction_nodes": 6,
+          "weight_nodes": 2
+        },
+        {
+          "run": "confirm-w148013-i14802-restricted",
+          "complete_sha256": "b31bdce177cfebbca40bf824b30e07ac27e7dc8a7587ddc6e6be65a077bc905a",
+          "latest_sha256": "f6f19f5993f7236dfcf51526adc7c8b8277ae9f0e2c7342f21e8a445d5af115e",
+          "prediction_nodes": 6,
+          "weight_nodes": 2
+        },
+        {
+          "run": "confirm-w148013-i14802-broad",
+          "complete_sha256": "8eaabea2ad7243e8c3adbcc7527bc6076fb8d1194c3ab90cba779f8e57948ce1",
+          "latest_sha256": "d516a93f14f2879dcf699e62a3947c45db8102ce0956b720f1d1e2278df8c4d5",
+          "prediction_nodes": 6,
+          "weight_nodes": 2
+        }
+      ],
+      "verified_sha256": "886f43db9ce1be815a50e09ba8bd2bfad66d797309797ddd48be9fe6c5c1aac3",
+      "source_lock_sha256": "e1f39df18611068420d3c742b0586bfd08b8e3f154af5061994e94114ef4ef24"
+    }
+  },
+  "artifacts": {
+    "docs/development-artifacts/text-structure-v1/environment.json": "48aa9755e1f848dfb326fcc63bbe0e939b3e7640c3ec67c25411be8c77f3e349",
+    "docs/development-artifacts/text-structure-v1/validation.json": "73ba0abe3476e993e1eaa6698baf8f8ad1272e0d70970816aab95181c70af365"
+  }
+}

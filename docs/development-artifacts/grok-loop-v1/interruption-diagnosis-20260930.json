@@ -1,0 +1,58 @@
+{
+  "checked_utc": "2026-09-30T07:20:05.568000+00:00",
+  "finding": "Training command and paused postprocessing command ended during owning Codex thread shutdown at 05:55:26 UTC. Training was launched as a session-managed exec command, not a detached job.",
+  "certainty": "Shutdown and both command failures directly recorded; causal attribution to session cleanup strongly supported. Trigger for thread shutdown and exact OS signal not recorded.",
+  "sources": {
+    "session": "/home/siqizhu4/.codex/sessions/2026/09/30/rollout-2026-09-30T03-47-00-01a0f06c-3bee-72e2-8c59-d9c8d81e8460.jsonl",
+    "runtime_log_db": "/home/siqizhu4/.codex/logs_2.sqlite",
+    "pause_record": "docs/development-artifacts/grok-loop-v1/monitor-paused.json"
+  },
+  "command_exit_events": [
+    {
+      "timestamp": "2026-09-30T05:55:26.029Z",
+      "process_id": "55448",
+      "command": [
+        "/bin/bash",
+        "-lc",
+        ".venv/bin/python scripts/postprocess_grok_loop.py --configs configs/grok-loop-sensitivity-v1.json configs/grok-loop-confirmation-v1.json --gpus 2 5"
+      ],
+      "status": "failed",
+      "exit_code": -1,
+      "stderr": ""
+    },
+    {
+      "timestamp": "2026-09-30T05:55:26.040Z",
+      "process_id": "69808",
+      "command": [
+        "/bin/bash",
+        "-lc",
+        ".venv/bin/python scripts/execute_grok_loop.py --config configs/grok-loop-sensitivity-v1.json --additional-configs configs/grok-loop-confirmation-v1.json --gpus 2 5 --per-gpu 2"
+      ],
+      "status": "failed",
+      "exit_code": -1,
+      "stderr": ""
+    }
+  ],
+  "runtime_shutdown_events": [
+    {
+      "timestamp_utc": "2026-09-30T05:55:26+00:00",
+      "target": "codex_core::session::handlers",
+      "message": "session_loop{thread_id=01a0f06c-3bee-72e2-8c59-d9c8d81e8460}:submission_dispatch{otel.name=\"op.dispatch.shutdown\" submission.id=\"01a0f0e1-d0cc-7590-adc8-a38fae14ad5a\" codex.op=\"shutdown\"}: Shutting down Codex instance"
+    },
+    {
+      "timestamp_utc": "2026-09-30T05:55:26+00:00",
+      "target": "codex_core::session::handlers",
+      "message": "session_loop{thread_id=01a0f06c-3bee-72e2-8c59-d9c8d81e8460}: Submission sub=Submission { id: \"01a0f0e1-d0cc-7590-adc8-a38fae14ad5a\", op: Shutdown, trace: None, parent_turn_id: None, root_turn_id: None }"
+    },
+    {
+      "timestamp_utc": "2026-09-30T05:55:26+00:00",
+      "target": "codex_app_server::thread_state",
+      "message": "clearing thread listener during thread-state teardown thread_id=01a0f06c-3bee-72e2-8c59-d9c8d81e8460 listener_generation=1 had_listener=true had_active_turn=false"
+    }
+  ],
+  "limitations": [
+    "Kernel/system logs inaccessible to current user.",
+    "exit_code -1 is the tool record; not interpreted as a specific POSIX signal."
+  ],
+  "training_restarted": false
+}

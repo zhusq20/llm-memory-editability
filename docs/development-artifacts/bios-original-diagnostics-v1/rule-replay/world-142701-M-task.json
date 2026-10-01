@@ -1,0 +1,355 @@
+{
+  "endpoint": {
+    "id": "world-142701-M-task",
+    "world": 142701,
+    "init": 1427,
+    "condition": "M",
+    "stage": "task",
+    "checkpoint": "results/bios-original-development-v1/world-142701/init-1427/M/task/final.pt",
+    "checkpoint_sha256": "b02c0485d875e89fbb9c8ed9e03c38f8b4941689a93f8a36610cea74a5dd6edd",
+    "audit_sample": "docs/development-artifacts/bios-original-diagnostics-v1/audit-inputs/world-142701-M-task.json",
+    "audit_sample_sha256": "97de0bb2b8f89765d905d6ff88b3cb9711c10ffa1d1369cddb1f356de42ec1b1"
+  },
+  "summary": {
+    "parity": {
+      "n": 12,
+      "correct": 12
+    },
+    "date_comparison": {
+      "n": 24,
+      "correct": 24
+    }
+  },
+  "rows": [
+    {
+      "index": 0,
+      "task": "parity",
+      "prompt": "Question: Is January an even-numbered month?\nAnswer:",
+      "target": "no",
+      "generated": "no",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 1,
+      "task": "parity",
+      "prompt": "Question: Is February an even-numbered month?\nAnswer:",
+      "target": "yes",
+      "generated": "yes",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 2,
+      "task": "parity",
+      "prompt": "Question: Is March an even-numbered month?\nAnswer:",
+      "target": "no",
+      "generated": "no",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 3,
+      "task": "parity",
+      "prompt": "Question: Is April an even-numbered month?\nAnswer:",
+      "target": "yes",
+      "generated": "yes",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 4,
+      "task": "parity",
+      "prompt": "Question: Is May an even-numbered month?\nAnswer:",
+      "target": "no",
+      "generated": "no",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 5,
+      "task": "parity",
+      "prompt": "Question: Is June an even-numbered month?\nAnswer:",
+      "target": "yes",
+      "generated": "yes",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 6,
+      "task": "parity",
+      "prompt": "Question: Is July an even-numbered month?\nAnswer:",
+      "target": "no",
+      "generated": "no",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 7,
+      "task": "parity",
+      "prompt": "Question: Is August an even-numbered month?\nAnswer:",
+      "target": "yes",
+      "generated": "yes",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 8,
+      "task": "parity",
+      "prompt": "Question: Is September an even-numbered month?\nAnswer:",
+      "target": "no",
+      "generated": "no",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 9,
+      "task": "parity",
+      "prompt": "Question: Is October an even-numbered month?\nAnswer:",
+      "target": "yes",
+      "generated": "yes",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 10,
+      "task": "parity",
+      "prompt": "Question: Is November an even-numbered month?\nAnswer:",
+      "target": "no",
+      "generated": "no",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 11,
+      "task": "parity",
+      "prompt": "Question: Is December an even-numbered month?\nAnswer:",
+      "target": "yes",
+      "generated": "yes",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 12,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, October 26, 1923 or August 26, 1925?\nAnswer:",
+      "target": "October 26, 1923",
+      "generated": "October 26, 1923",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 13,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, January 13, 2007 or May 20, 1953?\nAnswer:",
+      "target": "May 20, 1953",
+      "generated": "May 20, 1953",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 14,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, October 6, 1920 or July 1, 2073?\nAnswer:",
+      "target": "October 6, 1920",
+      "generated": "October 6, 1920",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 15,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, April 13, 2004 or January 11, 1955?\nAnswer:",
+      "target": "January 11, 1955",
+      "generated": "January 11, 1955",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 16,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, April 23, 1930 or December 23, 2025?\nAnswer:",
+      "target": "April 23, 1930",
+      "generated": "April 23, 1930",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 17,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, November 16, 2075 or August 4, 1972?\nAnswer:",
+      "target": "August 4, 1972",
+      "generated": "August 4, 1972",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 18,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, December 28, 2024 or December 1, 2068?\nAnswer:",
+      "target": "December 28, 2024",
+      "generated": "December 28, 2024",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 19,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, May 28, 2048 or August 12, 2040?\nAnswer:",
+      "target": "August 12, 2040",
+      "generated": "August 12, 2040",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 20,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, April 22, 1902 or March 26, 1979?\nAnswer:",
+      "target": "April 22, 1902",
+      "generated": "April 22, 1902",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 21,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, June 3, 2041 or June 26, 1949?\nAnswer:",
+      "target": "June 26, 1949",
+      "generated": "June 26, 1949",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 22,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, January 28, 1939 or June 19, 1971?\nAnswer:",
+      "target": "January 28, 1939",
+      "generated": "January 28, 1939",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 23,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, September 7, 2059 or January 21, 2007?\nAnswer:",
+      "target": "January 21, 2007",
+      "generated": "January 21, 2007",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 24,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, March 5, 1943 or September 25, 2090?\nAnswer:",
+      "target": "March 5, 1943",
+      "generated": "March 5, 1943",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 25,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, June 12, 2090 or September 26, 2001?\nAnswer:",
+      "target": "September 26, 2001",
+      "generated": "September 26, 2001",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 26,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, May 28, 2055 or April 19, 2071?\nAnswer:",
+      "target": "May 28, 2055",
+      "generated": "May 28, 2055",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 27,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, February 9, 2004 or September 16, 1987?\nAnswer:",
+      "target": "September 16, 1987",
+      "generated": "September 16, 1987",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 28,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, February 28, 2032 or June 23, 2045?\nAnswer:",
+      "target": "February 28, 2032",
+      "generated": "February 28, 2032",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 29,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, December 23, 2028 or April 19, 1926?\nAnswer:",
+      "target": "April 19, 1926",
+      "generated": "April 19, 1926",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 30,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, April 3, 1923 or October 25, 2041?\nAnswer:",
+      "target": "April 3, 1923",
+      "generated": "April 3, 1923",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 31,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, November 4, 2062 or December 12, 1930?\nAnswer:",
+      "target": "December 12, 1930",
+      "generated": "December 12, 1930",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 32,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, June 26, 2025 or November 4, 2067?\nAnswer:",
+      "target": "June 26, 2025",
+      "generated": "June 26, 2025",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 33,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, November 26, 2089 or April 4, 1945?\nAnswer:",
+      "target": "April 4, 1945",
+      "generated": "April 4, 1945",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 34,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, May 12, 2063 or May 26, 2079?\nAnswer:",
+      "target": "May 12, 2063",
+      "generated": "May 12, 2063",
+      "eos": true,
+      "correct": true
+    },
+    {
+      "index": 35,
+      "task": "date_comparison",
+      "prompt": "Question: Which date is earlier, August 6, 2037 or May 27, 2023?\nAnswer:",
+      "target": "May 27, 2023",
+      "generated": "May 27, 2023",
+      "eos": true,
+      "correct": true
+    }
+  ],
+  "seconds": 2.8628865730715916,
+  "input_sha256": "62ec71bcfe9f2684ac5956e5a5e8a0bc594c1a66aeaa2ede613b0275c91fcb29",
+  "script_sha256": "ecbf37f207d4355c65ef5013127f02025431536d529eb101c2038fa1d7acb5e8",
+  "exploratory": true,
+  "shared_gpu": true,
+  "precision": "FP32 parameters, BF16 autocast, TF32 enabled"
+}

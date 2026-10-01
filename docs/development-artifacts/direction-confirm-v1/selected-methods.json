@@ -1,0 +1,2888 @@
+{
+  "baseline": [
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    }
+  ],
+  "mechanism": [
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    }
+  ],
+  "fixed": [
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5006,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5005,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5007,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5004,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5001,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5002,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5000,
+      "success": 0.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    },
+    {
+      "world": 5003,
+      "success": 1.0,
+      "method": "func-hard-gn"
+    }
+  ]
+}

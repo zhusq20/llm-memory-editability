@@ -1,0 +1,496 @@
+{
+  "status": "complete",
+  "utc": "2026-10-01T02:13:27.290387+00:00",
+  "phase": "development",
+  "scores": {
+    "atomic": {
+      "restricted": 1.0,
+      "broad": 1.0,
+      "positive": 1.0
+    },
+    "train_composite": {
+      "restricted": 1.0,
+      "broad": 1.0,
+      "positive": 1.0
+    },
+    "id_test": {
+      "restricted": 0.0,
+      "broad": 0.1262135922330097,
+      "positive": 0.49514563106796117
+    },
+    "first_only": {
+      "restricted": 0.0,
+      "broad": 0.0022271714922048997,
+      "positive": 0.0
+    },
+    "second_only": {
+      "restricted": 0.51953125,
+      "broad": 0.80078125,
+      "positive": 0.9453125
+    },
+    "background_neither": {
+      "restricted": 0.0,
+      "broad": 0.00390625,
+      "positive": 0.015625
+    },
+    "strict_test": {
+      "restricted": 0.004728132387706856,
+      "broad": 0.0,
+      "positive": 0.16784869976359337
+    }
+  },
+  "world_effects": [
+    {
+      "world": 148001,
+      "split": "atomic",
+      "restricted": 1.0,
+      "broad": 1.0,
+      "effect_pp": 0.0
+    },
+    {
+      "world": 148001,
+      "split": "train_composite",
+      "restricted": 1.0,
+      "broad": 1.0,
+      "effect_pp": 0.0
+    },
+    {
+      "world": 148001,
+      "split": "id_test",
+      "restricted": 0.0,
+      "broad": 0.1262135922330097,
+      "effect_pp": 12.62135922330097
+    },
+    {
+      "world": 148001,
+      "split": "first_only",
+      "restricted": 0.0,
+      "broad": 0.0022271714922048997,
+      "effect_pp": 0.22271714922048996
+    },
+    {
+      "world": 148001,
+      "split": "second_only",
+      "restricted": 0.51953125,
+      "broad": 0.80078125,
+      "effect_pp": 28.125
+    },
+    {
+      "world": 148001,
+      "split": "background_neither",
+      "restricted": 0.0,
+      "broad": 0.00390625,
+      "effect_pp": 0.390625
+    },
+    {
+      "world": 148001,
+      "split": "strict_test",
+      "restricted": 0.004728132387706856,
+      "broad": 0.0,
+      "effect_pp": -0.4728132387706856
+    }
+  ],
+  "details": [
+    {
+      "run": "development-restricted",
+      "world": 148001,
+      "initialization": 14801,
+      "arm": "restricted",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9998432758264244
+        },
+        "train_composite": {
+          "n": 256,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9999379476066679
+        },
+        "positive_train": {
+          "n": 64,
+          "answer_accuracy": 0.015625,
+          "accuracy": 0.015625,
+          "answer_probability": 0.017221771256013402
+        },
+        "id_test": {
+          "n": 103,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0035689562344940148
+        },
+        "first_only": {
+          "n": 449,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 2.2716148335256744e-05
+        },
+        "second_only": {
+          "n": 256,
+          "answer_accuracy": 0.51953125,
+          "accuracy": 0.51953125,
+          "answer_probability": 0.5312266656204097
+        },
+        "background_neither": {
+          "n": 256,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.00015459823922534107
+        },
+        "strict_test": {
+          "n": 423,
+          "answer_accuracy": 0.004728132387706856,
+          "accuracy": 0.004728132387706856,
+          "answer_probability": 0.008132001871067572
+        },
+        "id_test_conditional": {
+          "n": 103,
+          "coverage": 1.0,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0035689562344940148
+        },
+        "id_test_two_calls": {
+          "n": 103,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9998929396416377,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        },
+        "first_only_conditional": {
+          "n": 449,
+          "coverage": 1.0,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 2.2716148335256744e-05
+        },
+        "first_only_two_calls": {
+          "n": 449,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9999177311204855,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        },
+        "second_only_conditional": {
+          "n": 256,
+          "coverage": 1.0,
+          "answer_accuracy": 0.51953125,
+          "accuracy": 0.51953125,
+          "answer_probability": 0.5312266656204097
+        },
+        "second_only_two_calls": {
+          "n": 256,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.999890424311161,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        },
+        "background_neither_conditional": {
+          "n": 256,
+          "coverage": 1.0,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.00015459823922534107
+        },
+        "background_neither_two_calls": {
+          "n": 256,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9999202564358711,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        },
+        "strict_test_conditional": {
+          "n": 423,
+          "coverage": 1.0,
+          "answer_accuracy": 0.004728132387706856,
+          "accuracy": 0.004728132387706856,
+          "answer_probability": 0.008132001871067572
+        },
+        "strict_test_two_calls": {
+          "n": 423,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9999205447539652,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "run": "development-broad",
+      "world": 148001,
+      "initialization": 14801,
+      "arm": "broad",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9997021110728384
+        },
+        "train_composite": {
+          "n": 256,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9994911779649556
+        },
+        "positive_train": {
+          "n": 64,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0026491955995868732
+        },
+        "id_test": {
+          "n": 103,
+          "answer_accuracy": 0.1262135922330097,
+          "accuracy": 0.1262135922330097,
+          "answer_probability": 0.14903798737537127
+        },
+        "first_only": {
+          "n": 449,
+          "answer_accuracy": 0.0022271714922048997,
+          "accuracy": 0.0022271714922048997,
+          "answer_probability": 0.004150872689116483
+        },
+        "second_only": {
+          "n": 256,
+          "answer_accuracy": 0.80078125,
+          "accuracy": 0.80078125,
+          "answer_probability": 0.7885734040385586
+        },
+        "background_neither": {
+          "n": 256,
+          "answer_accuracy": 0.00390625,
+          "accuracy": 0.00390625,
+          "answer_probability": 0.0054658000132673835
+        },
+        "strict_test": {
+          "n": 423,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0005645947414780262
+        },
+        "id_test_conditional": {
+          "n": 103,
+          "coverage": 1.0,
+          "answer_accuracy": 0.1262135922330097,
+          "accuracy": 0.1262135922330097,
+          "answer_probability": 0.14903798737537127
+        },
+        "id_test_two_calls": {
+          "n": 103,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.999925204272409,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        },
+        "first_only_conditional": {
+          "n": 449,
+          "coverage": 1.0,
+          "answer_accuracy": 0.0022271714922048997,
+          "accuracy": 0.0022271714922048997,
+          "answer_probability": 0.004150872689116483
+        },
+        "first_only_two_calls": {
+          "n": 449,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9999067008097081,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        },
+        "second_only_conditional": {
+          "n": 256,
+          "coverage": 1.0,
+          "answer_accuracy": 0.80078125,
+          "accuracy": 0.80078125,
+          "answer_probability": 0.7885734040385586
+        },
+        "second_only_two_calls": {
+          "n": 256,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9999243151396513,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        },
+        "background_neither_conditional": {
+          "n": 256,
+          "coverage": 1.0,
+          "answer_accuracy": 0.00390625,
+          "accuracy": 0.00390625,
+          "answer_probability": 0.0054658000132673835
+        },
+        "background_neither_two_calls": {
+          "n": 256,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9999084286391735,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        },
+        "strict_test_conditional": {
+          "n": 423,
+          "coverage": 1.0,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0005645947414780262
+        },
+        "strict_test_two_calls": {
+          "n": 423,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9998821238535798,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        }
+      }
+    },
+    {
+      "run": "development-positive",
+      "world": 148001,
+      "initialization": 14801,
+      "arm": "positive",
+      "metrics": {
+        "atomic": {
+          "n": 640,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9997889365069568
+        },
+        "train_composite": {
+          "n": 320,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9999233558773994
+        },
+        "positive_train": {
+          "n": 64,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9998757727444172
+        },
+        "id_test": {
+          "n": 103,
+          "answer_accuracy": 0.49514563106796117,
+          "accuracy": 0.49514563106796117,
+          "answer_probability": 0.4768704432978304
+        },
+        "first_only": {
+          "n": 449,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0020845562308104866
+        },
+        "second_only": {
+          "n": 256,
+          "answer_accuracy": 0.9453125,
+          "accuracy": 0.9453125,
+          "answer_probability": 0.9209053352860792
+        },
+        "background_neither": {
+          "n": 256,
+          "answer_accuracy": 0.015625,
+          "accuracy": 0.015625,
+          "answer_probability": 0.012433725516516916
+        },
+        "strict_test": {
+          "n": 423,
+          "answer_accuracy": 0.16784869976359337,
+          "accuracy": 0.16784869976359337,
+          "answer_probability": 0.15616901260897662
+        },
+        "id_test_conditional": {
+          "n": 103,
+          "coverage": 1.0,
+          "answer_accuracy": 0.49514563106796117,
+          "accuracy": 0.49514563106796117,
+          "answer_probability": 0.4768704432978304
+        },
+        "id_test_two_calls": {
+          "n": 103,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9999491890657295,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        },
+        "first_only_conditional": {
+          "n": 449,
+          "coverage": 1.0,
+          "answer_accuracy": 0.0,
+          "accuracy": 0.0,
+          "answer_probability": 0.0020845562308104866
+        },
+        "first_only_two_calls": {
+          "n": 449,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.999846714243857,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        },
+        "second_only_conditional": {
+          "n": 256,
+          "coverage": 1.0,
+          "answer_accuracy": 0.9453125,
+          "accuracy": 0.9453125,
+          "answer_probability": 0.9209053352860792
+        },
+        "second_only_two_calls": {
+          "n": 256,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9999518897384405,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        },
+        "background_neither_conditional": {
+          "n": 256,
+          "coverage": 1.0,
+          "answer_accuracy": 0.015625,
+          "accuracy": 0.015625,
+          "answer_probability": 0.012433725516516916
+        },
+        "background_neither_two_calls": {
+          "n": 256,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9998511131852865,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        },
+        "strict_test_conditional": {
+          "n": 423,
+          "coverage": 1.0,
+          "answer_accuracy": 0.16784869976359337,
+          "accuracy": 0.16784869976359337,
+          "answer_probability": 0.15616901260897662
+        },
+        "strict_test_two_calls": {
+          "n": 423,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_probability": 0.9998840839023004,
+          "path_accuracy": 1.0,
+          "first_accuracy": 1.0
+        }
+      }
+    }
+  ],
+  "budget": {
+    "steps": 96000,
+    "supervised_tokens": 98304000,
+    "estimated_flops": 1546990387200000,
+    "training_seconds": 547.5528846489033
+  },
+  "source_lock_sha256": "ace3840aecd11d8f1cd83f7981f99a6339efcf1bf2b0f22af39cc1fb9f0ef047",
+  "audit_sha256": "ed8e6b98c676a1ca2fd6f5c0bf60965eaafdb8b479682d99d493c667f45992f9"
+}

@@ -1,0 +1,128 @@
+{
+  "0": {
+    "step": 0,
+    "exposure": {
+      "steps": 0,
+      "atomic_examples": 0,
+      "training_composite_examples": 0,
+      "valid_input_tokens": 0,
+      "processed_tokens_including_padding": 0,
+      "supervised_answer_eos_tokens": 0
+    },
+    "metrics": {
+      "atomic": {
+        "n": 128,
+        "answer_accuracy": 0.0,
+        "exact_answer_eos": 0.0,
+        "answer_nll": 3.725985050201416
+      },
+      "train": {
+        "n": 256,
+        "answer_accuracy": 0.0,
+        "exact_answer_eos": 0.0,
+        "answer_nll": 3.726350784301758
+      },
+      "test": {
+        "n": 256,
+        "answer_accuracy": 0.0,
+        "exact_answer_eos": 0.0,
+        "answer_nll": 3.7292332649230957
+      },
+      "two_call": {
+        "n": 256,
+        "exact_answer_eos": 0.0
+      },
+      "test_given_both_atoms": {
+        "n": 0,
+        "coverage": 0.0,
+        "exact_answer_eos": null
+      }
+    },
+    "checkpoint_sha256": "5c1963fad255eb5eeb444feba3830ac3132cac0fb9c559d783f8939ec71436c8",
+    "prediction_sha256": "b2f6f45b7d4f4a7a8dcd5a7bd782d7955ce60e04e99b1da20cd8ac93d79dac65"
+  },
+  "512": {
+    "step": 512,
+    "exposure": {
+      "steps": 512,
+      "atomic_examples": 16384,
+      "training_composite_examples": 16384,
+      "valid_input_tokens": 180224,
+      "processed_tokens_including_padding": 196608,
+      "supervised_answer_eos_tokens": 65536
+    },
+    "metrics": {
+      "atomic": {
+        "n": 128,
+        "answer_accuracy": 1.0,
+        "exact_answer_eos": 1.0,
+        "answer_nll": 0.040149979293346405
+      },
+      "train": {
+        "n": 256,
+        "answer_accuracy": 0.9921875,
+        "exact_answer_eos": 0.9921875,
+        "answer_nll": 0.07369326055049896
+      },
+      "test": {
+        "n": 256,
+        "answer_accuracy": 0.1171875,
+        "exact_answer_eos": 0.1171875,
+        "answer_nll": 4.597403526306152
+      },
+      "two_call": {
+        "n": 256,
+        "exact_answer_eos": 1.0
+      },
+      "test_given_both_atoms": {
+        "n": 256,
+        "coverage": 1.0,
+        "exact_answer_eos": 0.1171875
+      }
+    },
+    "checkpoint_sha256": "536c6a671a2688aad0a20a6d1985e6d984ca7e5c4155da2a8afa766a086fd702",
+    "prediction_sha256": "943b5abec12381b377c6a2877e8ee9b1e6ce406121945da247ea322954aecd2c"
+  },
+  "1024": {
+    "step": 1024,
+    "exposure": {
+      "steps": 1024,
+      "atomic_examples": 32768,
+      "training_composite_examples": 32768,
+      "valid_input_tokens": 360448,
+      "processed_tokens_including_padding": 393216,
+      "supervised_answer_eos_tokens": 131072
+    },
+    "metrics": {
+      "atomic": {
+        "n": 128,
+        "answer_accuracy": 1.0,
+        "exact_answer_eos": 1.0,
+        "answer_nll": 0.003967211581766605
+      },
+      "train": {
+        "n": 256,
+        "answer_accuracy": 1.0,
+        "exact_answer_eos": 1.0,
+        "answer_nll": 0.004227561876177788
+      },
+      "test": {
+        "n": 256,
+        "answer_accuracy": 0.1015625,
+        "exact_answer_eos": 0.1015625,
+        "answer_nll": 5.9545793533325195
+      },
+      "two_call": {
+        "n": 256,
+        "exact_answer_eos": 1.0
+      },
+      "test_given_both_atoms": {
+        "n": 256,
+        "coverage": 1.0,
+        "exact_answer_eos": 0.1015625
+      }
+    },
+    "checkpoint_sha256": "810d6ce0d73895fd1f93fa53342995e872349ab2e4ae099919745d1206ba36bd",
+    "prediction_sha256": "722f33340a7e969b43d7b57236d222b1eac0e290d91bebf2eb2e85cf9d8e92bb"
+  }
+}

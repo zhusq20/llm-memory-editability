@@ -1,0 +1,22 @@
+{
+  "created": "2026-09-28T01:41:52.224240+00:00",
+  "new_trajectories_audited": 48,
+  "all_source_hashes_match": true,
+  "all_new_steps_and_optimizer_ages_match": true,
+  "predictions_precede_all_new_edits": true,
+  "endpoint_D_independently_reconstructed": true,
+  "all_endpoint_generation_recomputed": true,
+  "new_training": 0,
+  "new_edits": 48,
+  "reused_edits": 48,
+  "paired_people": 24,
+  "worlds": 2,
+  "initial_controls": 288,
+  "final_controls": 384,
+  "trajectory_nodes": 1152,
+  "tests_passed": 8,
+  "native_D_generation_matches": 96,
+  "membership_correct": 96,
+  "old_focal_D_correct": 24,
+  "old_direct_facts_correct": 48
+}

@@ -1,0 +1,33 @@
+{
+  "complete": true,
+  "complete_pairs": 12,
+  "learning_pairs": 72,
+  "two_step_pairs": 24,
+  "missing": [],
+  "incomplete_organization_blocks": [],
+  "model_weights_read": false,
+  "edit_cases": 0,
+  "direct_steps": [
+    0,
+    1280,
+    2560,
+    5120,
+    10240,
+    15360
+  ],
+  "autonomous_two_step_steps": [
+    15360
+  ],
+  "intermediate_two_step_status": "Not produced by the frozen context trainer",
+  "source_roots": {
+    "isolated": "/tmp/llm-memory-siqizhu4-mechanism-20260927/p3-context/width-256",
+    "unrestricted": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-cross-scale-dev-v1/width-256",
+    "unrestricted_two_step": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/bios-mechanism-dev-v1/p0/two-step/width-256"
+  },
+  "script_sha256": "07437177a8dca6fad152332ddf968afcaf3d5b62c52224752ec99e113186d1cf",
+  "helper_sha256": "ebcf1f56f2df098ec9b6b96e188c064f8468ab4086e1bf8928ba95217e0c758b",
+  "cohorts": "Fixed original people; all/ordinary/original_exception; no mastery filtering",
+  "root_measure": "Person-weighted corresponding root; repeated people can share one root. True organization indexes separate fact scoring only, never the inference bridge.",
+  "inference": "Original unrestricted attention; full value plus EOS; model-generated bridge",
+  "uncertainty": "No query-level confidence intervals; two development worlds reused"
+}

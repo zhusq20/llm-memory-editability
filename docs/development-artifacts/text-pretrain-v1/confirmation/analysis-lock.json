@@ -1,0 +1,12 @@
+{
+  "created_unix": 1790816022.7855124,
+  "position": 3,
+  "nodes": [
+    16000,
+    32000
+  ],
+  "sources": {
+    "scripts/analyze_text_pretrain.py": "dc19f7eb6346be8083f5539042fa51f5232555e9c74b5095ee1240e0f6a7d4bf",
+    "docs/development-artifacts/text-pretrain-v1/confirmation-plan.md": "2b6ac72d135925ef2837d3f9e6a749f97cfd461379aed5267ec9bca44f045db3"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "created_utc": "2026-09-29T23:12:28.045227+00:00",
+  "type": "Engineering alignment of supervised/KL prompt token IDs with frozen generation prompt IDs",
+  "trigger": "Independent source audit found merged question-mark/newline BPE token in Qwen3 training/KL prompts, whereas generation encodes base prompt and suffix separately.",
+  "repair": "prompt_suffix_ids concatenates separately encoded base prompt and suffix for both E supervision and R/U next-token KL; generation and intervention paths unchanged.",
+  "old_execution_lock": "execution-lock-v2.json",
+  "active_execution_lock": "execution-lock.json",
+  "old_execution_lock_sha256": "5317c25f248697a1f8051f057538e15ec9d9e8110bf64267667a8b2c5e1ec4bc",
+  "active_execution_lock_sha256": "ff9a73380c716b656412d4a529aaf032ff73537378ce2181a0bd04002ad791a2",
+  "evidence": "learning-token-boundary-audit.json; all E4/R4/U8 checked for both models",
+  "rerun": "Qwen3 fixed original four learning episodes, 8 steps each, same inputs, original checkpoint, hyperparameters, nodes and scoring. No target selection by outcomes.",
+  "unchanged": "Qwen3 intervention cases; all Qwen3.5 inputs and results; frozen config/cases/learning/preregistration.",
+  "qwen35_running_implementation_revision": 2,
+  "qwen35_retention_reason": "Its original joint encoding equals corrected segmented encoding for all E/R/U prompts; no token IDs or computation change.",
+  "archive": "results/architecture-bridge-v1/qwen3/superseded-learning-boundary-v1",
+  "archived_learning_files_original_paths_sha256": {
+    "results/architecture-bridge-v1/qwen3/learning/2/progress.json": "e9d6b7aef40b19b2d1b1511aa44b19a2f23cf5fd903b6930bbc35a16689f80ac",
+    "results/architecture-bridge-v1/qwen3/learning/2/endpoint.pt": "8e77ca05c7986aa84db24340717b9016c37a090424a5e1479ae7d5e5c4cccdba",
+    "results/architecture-bridge-v1/qwen3/learning/2/complete.json": "61cf5fc014caa27ced1f37da4ea5904878b891da749a186e45de1449ada7d7f1",
+    "results/architecture-bridge-v1/qwen3/learning/3/progress.json": "af7e01791daf7ffc61219090ce224a9ae9eee4d67537f2b85bf45df63fa27784",
+    "results/architecture-bridge-v1/qwen3/learning/3/endpoint.pt": "532a830a337a88d68f1f67576d488ea414261f942bb771e49f96ca6225edff09",
+    "results/architecture-bridge-v1/qwen3/learning/3/complete.json": "efcd12d1455c05aa7212f54725b55283132218b1b7b96c3b13620ebd8646cfec",
+    "results/architecture-bridge-v1/qwen3/learning/0/progress.json": "27942e36380475370b1ec4938567e8f859d831ddbca610f6d276096236c6bd1f",
+    "results/architecture-bridge-v1/qwen3/learning/0/endpoint.pt": "8519bc8349f8c14142f09cae6b0028f79e13417bdb17359784a8dc0d949ac708",
+    "results/architecture-bridge-v1/qwen3/learning/0/complete.json": "5b7fafc58034698acb2769bbc13da174f1af7b210dfb1d825c2c1b731467116e",
+    "results/architecture-bridge-v1/qwen3/learning/1/progress.json": "963703e997ea3255ef7baff8a90dfefee521341d829eb0a33a66b860efd450c2",
+    "results/architecture-bridge-v1/qwen3/learning/1/endpoint.pt": "79d00b3cdd2573ba8459136ec40db582c310a62995be9b86097929778cd269d6",
+    "results/architecture-bridge-v1/qwen3/learning/1/complete.json": "d672c1cb123a7c3a1fe419abaa6fab6fccaf528bea6226650b7db6d62d6aefdb"
+  },
+  "regression_test": "test_learning_and_replay_preserve_generation_token_boundaries",
+  "additional_training_steps": 32,
+  "retention": "Superseded Qwen3 episodes retained outside primary learning folder; their costs are separately reported."
+}
