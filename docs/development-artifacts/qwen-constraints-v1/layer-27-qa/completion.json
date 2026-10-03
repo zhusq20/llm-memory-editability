@@ -1,9 +1,0 @@
-{
-  "time": "2026-09-29T01:02:49.348436+00:00",
-  "interventions": 396,
-  "restored_parameter_hash": "ee74beeaf1fbb5903ae9516a5951dafe31bee61e72dce3206457b4f213c2ddf5",
-  "restoration_max_margin_error": 0.0,
-  "predictions_sha256": "24cbd8085ba3adb6ed1c9133755e74bd5d5d6dce8c5f195b80f2a5ae6cc55f78",
-  "interventions_sha256": "b3eab1dfa47afb692f323035a072f65324aed6e315174ff64e3b451b58914364",
-  "elapsed_seconds": 120.7752206325531
-}

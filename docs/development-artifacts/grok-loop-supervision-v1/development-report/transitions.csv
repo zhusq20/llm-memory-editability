@@ -1,3 +1,0 @@
-world,initialization,arm,n,correct_to_correct,correct_to_wrong,wrong_to_correct,wrong_to_wrong,source_r4_correct_n,source_r4_correct_coverage,r4_on_source_correct,r8_on_source_correct
-145001,14501,single,540,53,2,164,321,197,0.3648148148148148,0.1116751269035533,0.45685279187817257
-145001,14501,multi,540,141,9,97,293,197,0.3648148148148148,0.41116751269035534,0.5786802030456852

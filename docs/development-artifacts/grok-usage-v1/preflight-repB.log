@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_grok_usage.py", line 101, in <module>
-    main()
-  File "/mnt/disk2_from_server2/siqizhu4/llm-memory/scripts/run_grok_usage.py", line 39, in main
-    raise ValueError(f"Execution source changed: {relative}")
-ValueError: Execution source changed: src/llm_memory_editability/grok_usage_data.py

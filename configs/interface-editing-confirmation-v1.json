@@ -1,0 +1,911 @@
+{
+  "batch": "interface-editing-confirmation-v1",
+  "module": "interface_editing",
+  "gpus": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "specs": [
+    {
+      "name": "confirmation-w774101-i775101-aligned",
+      "phase": "confirmation",
+      "arm": "aligned",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774101-i775101-aligned",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "replay_n": 32,
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_weight": 1.0
+    },
+    {
+      "name": "confirmation-w774101-i775101-bridge_ce",
+      "phase": "confirmation",
+      "arm": "bridge_ce",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774101-i775101-bridge_ce",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "replay_n": 32,
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_weight": 1.0
+    },
+    {
+      "name": "confirmation-w774101-i775102-aligned",
+      "phase": "confirmation",
+      "arm": "aligned",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774101-i775102-aligned",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "replay_n": 32,
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_weight": 1.0
+    },
+    {
+      "name": "confirmation-w774101-i775102-bridge_ce",
+      "phase": "confirmation",
+      "arm": "bridge_ce",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774101-i775102-bridge_ce",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "replay_n": 32,
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_weight": 1.0
+    },
+    {
+      "name": "confirmation-w774102-i775101-aligned",
+      "phase": "confirmation",
+      "arm": "aligned",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774102-i775101-aligned",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "replay_n": 32,
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_weight": 1.0
+    },
+    {
+      "name": "confirmation-w774102-i775101-bridge_ce",
+      "phase": "confirmation",
+      "arm": "bridge_ce",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774102-i775101-bridge_ce",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "replay_n": 32,
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_weight": 1.0
+    },
+    {
+      "name": "confirmation-w774102-i775102-aligned",
+      "phase": "confirmation",
+      "arm": "aligned",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774102-i775102-aligned",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "replay_n": 32,
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_weight": 1.0
+    },
+    {
+      "name": "confirmation-w774102-i775102-bridge_ce",
+      "phase": "confirmation",
+      "arm": "bridge_ce",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774102-i775102-bridge_ce",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "replay_n": 32,
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_weight": 1.0
+    },
+    {
+      "name": "confirmation-w774103-i775101-aligned",
+      "phase": "confirmation",
+      "arm": "aligned",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774103-i775101-aligned",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "replay_n": 32,
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_weight": 1.0
+    },
+    {
+      "name": "confirmation-w774103-i775101-bridge_ce",
+      "phase": "confirmation",
+      "arm": "bridge_ce",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774103-i775101-bridge_ce",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "replay_n": 32,
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_weight": 1.0
+    },
+    {
+      "name": "confirmation-w774103-i775102-aligned",
+      "phase": "confirmation",
+      "arm": "aligned",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774103-i775102-aligned",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "replay_n": 32,
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_weight": 1.0
+    },
+    {
+      "name": "confirmation-w774103-i775102-bridge_ce",
+      "phase": "confirmation",
+      "arm": "bridge_ce",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774103-i775102-bridge_ce",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "replay_n": 32,
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_weight": 1.0
+    }
+  ],
+  "additional_sources": [
+    "tests/test_interface_editing.py",
+    "docs/development-artifacts/memory-interface-next-v1/design.md",
+    "scripts/report_interface_editing.py",
+    "tests/test_report_interface_editing.py",
+    "docs/development-artifacts/memory-interface-next-v1/container/Dockerfile",
+    "docs/development-artifacts/memory-interface-next-v1/container/dependency-manifest.json",
+    "tests/test_interface_runtime_contracts.py"
+  ],
+  "runtime": {
+    "docker_context": "lm-memory",
+    "docker_host": "unix:///run/docker-lm-memory/docker.sock",
+    "image": "sha256:bd2a622ec8273f54786cd4029f55b717bcc488afeb688bee4f98c0bd5127bfe5",
+    "python": "/opt/conda/bin/python",
+    "cpus": 4,
+    "memory": "16g",
+    "env": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "XDG_CACHE_HOME": "/tmp/cache",
+      "TORCH_HOME": "/tmp/torch",
+      "TORCHINDUCTOR_CACHE_DIR": "/tmp/torchinductor",
+      "TRITON_CACHE_DIR": "/tmp/triton"
+    }
+  },
+  "selected_lr": 1e-05,
+  "development_decision": {
+    "phase": "development",
+    "selected_lr": 1e-05,
+    "thresholds": {
+      "E_new": 0.9,
+      "U_atomic": 0.98,
+      "necessary_atomic": 0.98
+    },
+    "selection_uses": [
+      "edit E_new target success",
+      "parent-correct U_atomic retention",
+      "parent-correct necessary_atomic retention"
+    ],
+    "weighting": "Each preselected target of each parent has equal weight. Retention is conditioned within target before averaging targets.",
+    "undefined_policy": "Every target must have nonempty parent-correct U and necessary denominators; otherwise lr is ineligible.",
+    "sham_policy": "Sham target is E_old and is reported separately; sham success never dilutes edit failure.",
+    "D_used_for_selection": false,
+    "status": "selected",
+    "candidates": [
+      {
+        "lr": 1e-05,
+        "targets": 16,
+        "parents": [
+          "development-v2-w770011-i771011-aligned_0.3",
+          "development-v2-w770011-i771011-bridge_ce"
+        ],
+        "means_target_equal": {
+          "E_new": 1.0,
+          "U_atomic": 0.9970988900100908,
+          "necessary_atomic": 1.0
+        },
+        "all_retention_denominators_nonempty": true,
+        "eligible": true
+      },
+      {
+        "lr": 3e-05,
+        "targets": 16,
+        "parents": [
+          "development-v2-w770011-i771011-aligned_0.3",
+          "development-v2-w770011-i771011-bridge_ce"
+        ],
+        "means_target_equal": {
+          "E_new": 1.0,
+          "U_atomic": 0.9963420787083754,
+          "necessary_atomic": 1.0
+        },
+        "all_retention_denominators_nonempty": true,
+        "eligible": true
+      },
+      {
+        "lr": 0.0001,
+        "targets": 16,
+        "parents": [
+          "development-v2-w770011-i771011-aligned_0.3",
+          "development-v2-w770011-i771011-bridge_ce"
+        ],
+        "means_target_equal": {
+          "E_new": 1.0,
+          "U_atomic": 0.9916120080726539,
+          "necessary_atomic": 1.0
+        },
+        "all_retention_denominators_nonempty": true,
+        "eligible": true
+      }
+    ],
+    "selection_input_sha256": "8de171d3717ade8254ac1636ad2484aea6120d7b26cbfb8183b69119cdbeefb1",
+    "selection_inputs": [
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "first_familiar-00",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.9989909182643795,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 2,
+        "necessary_n": 2
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "first_familiar-01",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.9919273461150353,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "first_strict-00",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.9848637739656912,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "first_strict-01",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.992936427850656,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "second_familiar-00",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.9889001009081736,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "second_familiar-01",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.9899091826437941,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 2,
+        "necessary_n": 2
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "second_strict-00",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.9919273461150353,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "second_strict-01",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.9899091826437941,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "first_familiar-00",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9969727547931383,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 2,
+        "necessary_n": 2
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "first_familiar-01",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9939455095862765,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "first_strict-00",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9909182643794148,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "first_strict-01",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9939455095862765,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "second_familiar-00",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9969727547931383,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "second_familiar-01",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.992936427850656,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 2,
+        "necessary_n": 2
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "second_strict-00",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9969727547931383,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "second_strict-01",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9989909182643795,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "first_familiar-00",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9979818365287588,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 2,
+        "necessary_n": 2
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "first_familiar-01",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.992936427850656,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "first_strict-00",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9909182643794148,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "first_strict-01",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9939455095862765,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "second_familiar-00",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9949545913218971,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "second_familiar-01",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9949545913218971,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 2,
+        "necessary_n": 2
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "second_strict-00",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9949545913218971,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-aligned_0.3",
+        "case_id": "second_strict-01",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9989909182643795,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "first_familiar-00",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.9969727547931383,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 2,
+        "necessary_n": 2
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "first_familiar-01",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.992936427850656,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "first_strict-00",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.992936427850656,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "first_strict-01",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.992936427850656,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "second_familiar-00",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.9868819374369324,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "second_familiar-01",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.9919273461150353,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 2,
+        "necessary_n": 2
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "second_strict-00",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.9899091826437941,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "second_strict-01",
+        "lr": 0.0001,
+        "E_new": 1.0,
+        "U_atomic": 0.9919273461150353,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "first_familiar-00",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 1.0,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 2,
+        "necessary_n": 2
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "first_familiar-01",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9989909182643795,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "first_strict-00",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9989909182643795,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "first_strict-01",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9979818365287588,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "second_familiar-00",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 1.0,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "second_familiar-01",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9979818365287588,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 2,
+        "necessary_n": 2
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "second_strict-00",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9979818365287588,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "second_strict-01",
+        "lr": 1e-05,
+        "E_new": 1.0,
+        "U_atomic": 1.0,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "first_familiar-00",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9989909182643795,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 2,
+        "necessary_n": 2
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "first_familiar-01",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9979818365287588,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "first_strict-00",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9959636730575177,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "first_strict-01",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9979818365287588,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "second_familiar-00",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9989909182643795,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "second_familiar-01",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9959636730575177,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 2,
+        "necessary_n": 2
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "second_strict-00",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 0.9959636730575177,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 3,
+        "necessary_n": 3
+      },
+      {
+        "parent": "development-v2-w770011-i771011-bridge_ce",
+        "case_id": "second_strict-01",
+        "lr": 3e-05,
+        "E_new": 1.0,
+        "U_atomic": 1.0,
+        "necessary_atomic": 1.0,
+        "U_parent_correct_n": 991,
+        "U_n": 991,
+        "necessary_parent_correct_n": 4,
+        "necessary_n": 4
+      }
+    ]
+  },
+  "development_decision_sha256": "b48bcb794e47b23460ad595b286106384ecb7d00b91f1ec5314e7e4523ecd94a"
+}

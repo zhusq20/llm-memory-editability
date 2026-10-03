@@ -1,6 +1,0 @@
-{
-  "passed": true,
-  "long_generation_groups": 36,
-  "geometry_recomputations": 270,
-  "max_cpu_nll_error": 2.037501118934415e-06
-}

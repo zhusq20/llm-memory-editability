@@ -3,23 +3,35 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .venv/
+.venv-wandb/
+wandb/
 venv/
 build/
 dist/
 .pytest_cache/
 .ruff_cache/
+.cache/
 .coverage
 htmlcov/
 
-# Generated experiments and large local assets
-results/
-data/
-checkpoints/
+# GitHub stores code, configuration and development instructions.
+# Experiment data and research artifacts are archived on Hugging Face.
+/data/
+/results/
+/checkpoints/
+/docs/*
+!/docs/experimental-protocol.md
 *.npy
 *.npz
+# Model/optimizer states and Docker image archives remain local.
 *.pt
 *.pth
 *.safetensors
+*.ckpt
+*.onnx
+pytorch_model*.bin
+optimizer*.bin
+**/container/image.tar
 
 # Local settings and credentials
 .env

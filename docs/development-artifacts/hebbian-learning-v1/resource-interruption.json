@@ -1,9 +1,0 @@
-{
-  "time": "2026-09-28T05:07:59.173756+00:00",
-  "reason": "Other jobs grew to about 89 GiB/card on GPUs 4/5/7/8/9; five formal formation workers OOM during initial evaluation.",
-  "old_controller_pid": 2945495,
-  "recovery_supervisor_pid": 2962303,
-  "action": "Let healthy GPU3 worker finish its assigned models, then resume outstanding matrix on four GPU3 worker slots.",
-  "source_math_and_optimizer_unchanged": true,
-  "checkpoint_policy": "resume same run and metadata from latest complete checkpoint; preserve failed logs"
-}

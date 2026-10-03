@@ -1,7 +1,0 @@
-{
-  "capture_restores_initial_weights": true,
-  "three_steps_max_weight_error": 0.0,
-  "seconds_per_step": 0.0012650072999531403,
-  "torch": "2.8.0+cu128",
-  "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition"
-}

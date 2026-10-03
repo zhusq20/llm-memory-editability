@@ -1,0 +1,38 @@
+{
+  "experiment": "natural-composition-confirmation-v1",
+  "phase": "confirmation",
+  "model_repo": "Qwen/Qwen3-0.6B-Base",
+  "model_revision": "da87bfb608c14b7cf20ba1ce41287e8de496c0cd",
+  "model_path": "results/natural-composition-confirmation-v1/cache/qwen3-0.6b-base",
+  "artifact_root": "docs/development-artifacts/natural-composition-confirmation-v1/amendment-v2/confirmation",
+  "output_root": "results/natural-composition-confirmation-v1/amendment-v2/confirmation",
+  "world_seeds": [
+    970101,
+    970102,
+    970103
+  ],
+  "training_seed": 971001,
+  "arms": [
+    "low",
+    "high"
+  ],
+  "steps": 512,
+  "nodes": [
+    0,
+    128,
+    256,
+    512
+  ],
+  "atomic_per_step": 16,
+  "compositions_per_step": 4,
+  "atomic_loss_weight": 0.8,
+  "learning_rate": 2e-05,
+  "minimum_learning_rate": 2e-06,
+  "warmup_steps": 20,
+  "weight_decay": 0.0,
+  "gradient_clip": 1.0,
+  "eval_batch": 32,
+  "max_new_tokens": 16,
+  "device": "cuda:6",
+  "cpu_threads": 4
+}

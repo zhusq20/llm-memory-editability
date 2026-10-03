@@ -1,3 +1,0 @@
-{"state": "running", "step": 0, "budget": 16, "arm": "repA", "updated_utc": "2026-09-30T20:26:25.790611+00:00", "test_composite": 0.0, "training_seconds": 0.0}
-{"state": "running", "step": 8, "budget": 16, "arm": "repA", "updated_utc": "2026-09-30T20:26:27.287586+00:00", "test_composite": 0.0, "training_seconds": 0.05158269498497248}
-{"state": "trained", "step": 16, "budget": 16, "arm": "repA", "updated_utc": "2026-09-30T20:26:28.817423+00:00", "test_composite": 0.0, "training_seconds": 0.08905072102788836}

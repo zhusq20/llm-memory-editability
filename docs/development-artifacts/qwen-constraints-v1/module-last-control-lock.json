@@ -1,8 +1,0 @@
-{
-  "time": "2026-09-29T01:07:08.755709+00:00",
-  "scope": "Follow-up after the first eight groups; all cases, no selection or retuning",
-  "source_sha256": "559a73756938552c9b5bc3c6536b7adb92beb35a0c49bc6b3bf01475bba499e1",
-  "plan_sha256": "4e734c1f19f7f78f5352d9fdb96ef3c1e9420c8633a43953f0b0669e98fc3dfd",
-  "interventions": 576,
-  "prediction": "Last-token feature preservation can fail to preserve middle-layer final responses; it is sufficient at final layer 27."
-}

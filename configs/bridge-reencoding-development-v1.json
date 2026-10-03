@@ -1,0 +1,103 @@
+{
+  "batch": "bridge-reencoding-development-v1",
+  "module": "bridge_reencoding",
+  "gpus": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "specs": [
+    {
+      "name": "development-baseline",
+      "phase": "development",
+      "arm": "baseline",
+      "parent_dir": "results/representation-alignment-v1/runs/development-v2-w770011-i771011-baseline",
+      "alphas": [
+        0,
+        0.1,
+        0.5,
+        1
+      ],
+      "variants": [
+        "norm_matched",
+        "paper_unit"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "development-bridge_ce",
+      "phase": "development",
+      "arm": "bridge_ce",
+      "parent_dir": "results/representation-alignment-v1/runs/development-v2-w770011-i771011-bridge_ce",
+      "alphas": [
+        0,
+        0.1,
+        0.5,
+        1
+      ],
+      "variants": [
+        "norm_matched",
+        "paper_unit"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "development-aligned_0.3",
+      "phase": "development",
+      "arm": "aligned_0.3",
+      "parent_dir": "results/representation-alignment-v1/runs/development-v2-w770011-i771011-aligned_0.3",
+      "alphas": [
+        0,
+        0.1,
+        0.5,
+        1
+      ],
+      "variants": [
+        "norm_matched",
+        "paper_unit"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    }
+  ],
+  "additional_sources": [
+    "tests/test_bridge_reencoding.py",
+    "tests/test_representation_alignment.py",
+    "docs/development-artifacts/memory-interface-next-v1/design.md",
+    "scripts/report_bridge_reencoding.py",
+    "tests/test_report_bridge_reencoding.py",
+    "docs/development-artifacts/memory-interface-next-v1/container/Dockerfile",
+    "docs/development-artifacts/memory-interface-next-v1/container/dependency-manifest.json",
+    "tests/test_interface_runtime_contracts.py"
+  ],
+  "runtime": {
+    "docker_context": "lm-memory",
+    "docker_host": "unix:///run/docker-lm-memory/docker.sock",
+    "image": "sha256:bd2a622ec8273f54786cd4029f55b717bcc488afeb688bee4f98c0bd5127bfe5",
+    "python": "/opt/conda/bin/python",
+    "cpus": 4,
+    "memory": "16g",
+    "env": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "XDG_CACHE_HOME": "/tmp/cache",
+      "TORCH_HOME": "/tmp/torch",
+      "TORCHINDUCTOR_CACHE_DIR": "/tmp/torchinductor",
+      "TRITON_CACHE_DIR": "/tmp/triton"
+    }
+  }
+}

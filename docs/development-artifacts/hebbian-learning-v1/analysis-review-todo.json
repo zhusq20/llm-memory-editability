@@ -1,6 +1,0 @@
-{
-  "pending": [
-    "After matrix completes, refine endpoint_first_success: require no earlier all-three-view success; retain a separate unconfirmed endpoint flag and explain right-censoring overlap. Add meaningful trajectory test. Preserve training source snapshot and record analysis-only correction.",
-    "Run full independent audit and update README/CONTRIBUTING/protocol status only after matrix and audit complete."
-  ]
-}

@@ -1,7 +1,0 @@
-{
-  "created_unix": 1790818136.0150099,
-  "sources": {
-    "scripts/analyze_text_loss_weights.py": "380625b385bb9efc94fcfaa6e8f9245935d165ec2a06d42aa62ad60a8b9e4e56",
-    "docs/development-artifacts/text-loss-source-v1/weight-analysis-plan.md": "c9f6d675fc52d019810833c266f7f78905d522cf35d8533ee34f7fe415a0056f"
-  }
-}

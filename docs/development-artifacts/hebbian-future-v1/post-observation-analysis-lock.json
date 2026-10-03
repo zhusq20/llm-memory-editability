@@ -1,8 +1,0 @@
-{
-  "timing": "Supplementary controls after initial real outcomes; endpoint checks after all runs",
-  "files": {
-    "scripts/check_hebbian_future_controls.py": "3fbe567f97866345c0884000f87a8bafce6e33ec7c56a579da5df7b440802e18",
-    "scripts/audit_hebbian_future_endpoints.py": "82025561e33c8340ebf3ac4f51d9be34816b9a2159c852b5f8ff103ee0023172",
-    "scripts/analyze_hebbian_future.py": "7adda8b3c088a05bf79a66d6811130bc4cada8882c8818c398b7438775979565"
-  }
-}

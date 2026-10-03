@@ -1,9 +1,0 @@
-width,step,comparison
-256,0,equal
-256,32,tradeoff_both_nondominated
-256,128,tradeoff_both_nondominated
-256,512,tradeoff_both_nondominated
-768,0,equal
-768,32,tradeoff_both_nondominated
-768,128,tradeoff_both_nondominated
-768,512,balanced_dominates

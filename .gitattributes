@@ -1,1 +1,2 @@
-docs/development-artifacts/grok-loop-v1/mechanism-report/summary.json filter=lfs diff=lfs merge=lfs -text
+# GitHub stores source code and configuration only.
+# Experiment artifacts are hosted at https://huggingface.co/datasets/zsqzz/llm-memory-editability

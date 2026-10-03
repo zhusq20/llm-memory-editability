@@ -1,6 +1,0 @@
-{
-  "registered_unix": 1790703506.4473054,
-  "trigger": "80/128 MQuAKE main short-CoT outputs lack the final-answer marker. Format/output-budget concern, not a change to the frozen main result.",
-  "scope": "All 256 fixed main-model evaluation cases, same prompt and scoring, 256 maximum output tokens. Added compute explicitly reported.",
-  "note": "Registration write follows launch; execution script and launch lock specify the condition before supplementary results."
-}

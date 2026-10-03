@@ -1,6 +1,0 @@
-{
-  "utc": "2026-09-30T20:26:15.712416+00:00",
-  "reason": "Data source formatting completed after first source lock; rejected attempts retained; AST equality verified; rerun all four preflights in new phase directory",
-  "ast_identical": true,
-  "previous_success": "results/grok-usage-v1/preflight/preflight-A"
-}

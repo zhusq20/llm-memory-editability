@@ -1,2 +1,0 @@
-{"run": "conf-w145013-i14501-h4-cd", "split": "test_composite", "output": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/grok-loop-v1/mechanism-confirmation/conf-w145013-i14501-h4-cd/step-0128000-test_composite"}
-{"run": "conf-w145013-i14501-h4-cd", "split": "ood_composite", "output": "/mnt/disk2_from_server2/siqizhu4/llm-memory/results/grok-loop-v1/mechanism-confirmation/conf-w145013-i14501-h4-cd/step-0128000-ood_composite"}

@@ -1,8 +1,0 @@
-{"state": "running", "step": 72000, "budget": 128000, "updated_utc": "2026-09-30T07:21:49.678159+00:00", "hops": 2, "layers": 2, "atomic": 1.0, "train": 1.0, "test_probe": 0.966903073286052}
-{"state": "running", "step": 80000, "budget": 128000, "updated_utc": "2026-09-30T07:22:06.939674+00:00", "hops": 2, "layers": 2, "atomic": 1.0, "train": 1.0, "test_probe": 0.9692671394799054}
-{"state": "running", "step": 88000, "budget": 128000, "updated_utc": "2026-09-30T07:22:16.616919+00:00", "hops": 2, "layers": 2, "atomic": 1.0, "train": 1.0, "test_probe": 0.9598108747044918}
-{"state": "running", "step": 96000, "budget": 128000, "updated_utc": "2026-09-30T07:22:28.377872+00:00", "hops": 2, "layers": 2, "atomic": 1.0, "train": 1.0, "test_probe": 0.9598108747044918}
-{"state": "running", "step": 104000, "budget": 128000, "updated_utc": "2026-09-30T07:22:43.864654+00:00", "hops": 2, "layers": 2, "atomic": 1.0, "train": 1.0, "test_probe": 0.9574468085106383}
-{"state": "running", "step": 112000, "budget": 128000, "updated_utc": "2026-09-30T07:22:58.968689+00:00", "hops": 2, "layers": 2, "atomic": 1.0, "train": 1.0, "test_probe": 0.9621749408983451}
-{"state": "running", "step": 120000, "budget": 128000, "updated_utc": "2026-09-30T07:23:14.145900+00:00", "hops": 2, "layers": 2, "atomic": 1.0, "train": 1.0, "test_probe": 0.9787234042553191}
-{"state": "complete", "step": 128000, "budget": 128000, "updated_utc": "2026-09-30T07:23:30.540442+00:00", "hops": 2, "layers": 2, "atomic": 1.0, "train": 1.0, "test_probe": 0.9787234042553191}

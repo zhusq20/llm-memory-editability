@@ -1,6 +1,0 @@
-{
-  "open_rows_recomputed_from_raw_matrices": 324,
-  "max_absolute_discrepancy": 2.424727085781342e-13,
-  "broken_report_links": [],
-  "interpretation": "independent Torch FP64 arithmetic cross-check; no refitting or new model runs"
-}

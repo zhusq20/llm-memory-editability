@@ -1,9 +1,0 @@
-{
-  "locked_at": "2026-09-28T05:19:49.556648+00:00",
-  "scope": "C_eval sensitivity fixed before C_eval trajectories; B_eval supplementary retrospective analysis",
-  "trigger": "3 repeated subjects link C_eval episodes (0,6), (1,7), (2,4); remaining singleton components (3), (5).",
-  "original_primary_analysis": "Unchanged eight-episode paired bootstrap and exact signs; two Q-AUC comparisons Holm-adjusted",
-  "supplement": "Mean retains equal episode weights; bootstrap five subject-connected components, 10000 draws, seed20260928; exact sign flips shared within each component. Report intervals and unadjusted sensitivity p separately.",
-  "data_audit_sha256": "541da9d548b68e6f908bd0a86ac2ac3dfa907371e38f57442996c85d1d75d79f",
-  "original_plan_changed": false
-}

@@ -1,9 +1,0 @@
-{
-  "created_unix": 1790818164.196213,
-  "sources": {
-    "scripts/analyze_text_loss_weights.py": "7da25957022229a4a99f7d3f815288c41243a8c4b4ef7524d8d6121d4aad5474",
-    "docs/development-artifacts/text-loss-source-v1/weight-analysis-plan.md": "c9f6d675fc52d019810833c266f7f78905d522cf35d8533ee34f7fe415a0056f"
-  },
-  "supersedes": "docs/development-artifacts/text-loss-source-v1/weight-analysis-lock.json",
-  "reason": "Split a long string literal before any followup analysis. No scientific or runtime behavior change."
-}

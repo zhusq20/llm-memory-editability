@@ -1,6 +1,6 @@
 # 实验协议与复现约定
 
-更新：2026-10-01。当前研究方向、理论与待办见[计划](hebbian-learning-plan-v1.md)，最终状态与数字见[结果汇总](results.md)。本协议集中保留共同规则及现有脚本需要读取的历史契约。历史完整协议已存在于[执行时冻结快照](development-artifacts/qwen-path-learning-v1/execution-source/docs/experimental-protocol.md)，不再维护另一份状态长文。
+更新：2026-10-02。当前研究方向、理论与待办见[计划](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md)，最终状态与数字见[结果汇总](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/results.md)。本协议集中保留共同规则及现有脚本需要读取的历史契约。历史完整协议已存在于[执行时冻结快照](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/development-artifacts/qwen-path-learning-v1/execution-source/docs/experimental-protocol.md)，不再维护另一份状态长文。
 
 ## 研究范围与证据
 
@@ -21,7 +21,7 @@
 
 每批分别记录初始化来源、计损失的词元位置、样本配比和可更新参数；“预训练/微调”不能代替这些定义。同为交叉熵，既可监督全序列，也可只监督答案。
 
-grok两/三/四跳为随机初始化、全部参数训练、最终实体与EOS等权监督；没有中间答案目标。训练EOS时使用正确答案，生成评价时使用模型自产答案。历史深度批次按合并数据集逐例采样，改变组合数量也改变混合比例；Loop批次每批固定32条单跳与224条组合，两流分别均匀遍历，组合覆盖变化不改变每步单跳占比。公式和实现入口见[当前训练目标](hebbian-learning-plan-v1.md#training-objective)。
+grok两/三/四跳为随机初始化、全部参数训练、最终实体与EOS等权监督；没有中间答案目标。训练EOS时使用正确答案，生成评价时使用模型自产答案。历史深度批次按合并数据集逐例采样，改变组合数量也改变混合比例；Loop批次每批固定32条单跳与224条组合，两流分别均匀遍历，组合覆盖变化不改变每步单跳占比。公式和实现入口见[当前训练目标](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md#training-objective)。
 
 ## 评价与统计
 
@@ -33,11 +33,11 @@ E成功、D传播、U损伤及局部保持分别报告。损伤分母只含编�
 
 按独立世界或预定案例单位做配对分析，同一模型的种子、层、查询和精度重测的相关性须说明。置信区间、多重校正和预定/事后分析分别注明。历史确认与停止规则保留；后续探索可以研究小效应与负结果，不事后删臂。
 
-少量世界优先公开逐世界差值和原始分母；查询级区间不解释为跨世界泛化区间。机制干预先指定部位、供体可访问信息及覆盖；逐题最佳部位只作探索上界，激活修复不等于参数编辑。新批的竞争解释、有限比较与预算见[整改设计](hebbian-learning-plan-v1.md#research-rectification)。
+少量世界优先公开逐世界差值和原始分母；查询级区间不解释为跨世界泛化区间。机制干预先指定部位、供体可访问信息及覆盖；逐题最佳部位只作探索上界，激活修复不等于参数编辑。新批的竞争解释、有限比较与预算见[整改设计](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md#research-rectification)。
 
-存储与多跳计算的新比较以[根本问题定义](hebbian-learning-plan-v1.md#frontier-question-20261001)为准：独立参数量、事实负载、逻辑跳数与展开轮数分别记录；固定词表和参数时，不能随实体数增长Embedding后称等容量。区分规定输入上的单跳提取、链上全部必要事实与完整多跳结果；逐轮检查原子和格式，轮数不假定等于跳数。原子事实、目标路径及等价首尾关系的训练曝光分开核查；每事实曝光匹配与总训练计算匹配是不同协议。有限训练的负载边界称经验容量，不直接作为架构上限。旧批评分不追溯改变。
+存储与多跳计算的新比较以[根本问题定义](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md#frontier-question-20261001)为准：独立参数量、事实负载、逻辑跳数与展开轮数分别记录；固定词表和参数时，不能随实体数增长Embedding后称等容量。区分规定输入上的单跳提取、链上全部必要事实与完整多跳结果；逐轮检查原子和格式，轮数不假定等于跳数。原子事实、目标路径及等价首尾关系的训练曝光分开核查；每事实曝光匹配与总训练计算匹配是不同协议。有限训练的负载边界称经验容量，不直接作为架构上限。旧批评分不追溯改变。
 
-本次用户授权的storage-composition-v1使用完整标准Transformer和Loop Transformer，全部Embedding、位置、Q/K/V、输出投影、残差、LayerNorm和4倍MLP保留并训练；过度简化记忆网络仅保留历史结论。固定词表和测试子图，低/高负载为1024/6144，必要原子总曝光匹配。主评分、背景操作、严格无组合角色池与轮数诊断见[当前计划](hebbian-learning-plan-v1.md#standard-storage-composition)和[开发修订](development-artifacts/storage-composition-v1/amendment-20261001.md)。
+本次用户授权的storage-composition-v1使用完整标准Transformer和Loop Transformer，全部Embedding、位置、Q/K/V、输出投影、残差、LayerNorm和4倍MLP保留并训练；过度简化记忆网络仅保留历史结论。固定词表和测试子图，低/高负载为1024/6144，必要原子总曝光匹配。主评分、背景操作、严格无组合角色池与轮数诊断见[当前计划](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md#standard-storage-composition)和[开发修订](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/development-artifacts/storage-composition-v1/amendment-20261001.md)。
 
 ## 执行与复现
 
@@ -45,9 +45,11 @@ E成功、D传播、U损伤及局部保持分别报告。损伤分母只含编�
 
 数据/权重保存在批次专属 `data/`、`results/`；小型证据与源码快照在 `docs/development-artifacts/`。已冻结产物和原有审计哈希保持原样。旧批次精确复现读取对应快照；文档整理不会使新的工作区文本自动成为旧实验的执行源码。
 
+**后续新批的人工查看与W&B记录。** 用户于2026-10-02要求后续默认启用W&B，账号/团队 `zhusq20`、项目 `llm-memory-editability`，见[默认配置](../configs/experiment-tracking-defaults.json)。训练启动时一并启动[独立记录进程](../scripts/track_experiment_wandb.py)，按实际optimizer step记录损失、分任务准确率/NLL及分母、曝光/token/FLOPs、耗时和吞吐，系统指标绑定训练PID与分配GPU；每轨迹一个run、每批一个group，向用户提供链接。记录进程只读训练产物，不加入CUDA Graph或每步梯度路径；原始记录、失败、预测和权重仍按原协议保存。在线中断恢复复用run ID，以云端已同步step消除重复；离线恢复单列片段。凭据不进入源码、配置或冻结产物，后续批次封存记录源码、配置及SDK版本。已有冻结训练不因未来偏好追加或修改。
+
 ## 历史契约兼容段落
 
-以下§16–18属于已经完成的历史实验，其中的“下一步”“本轮未执行”均为当时判断；最新结论见[历史批次汇总](results.md#organization)。保留原编号及正文，是因为 `bios_context_gradient`、`bios_followup`、`bios_path_transfer`、`bios_path_minimal` 和Jacobian脚本按这些标题提取契约。原冻结版本仍以各批 `preregistration.md` 为准；这里仅将已删除报告的链接改指向统一汇总。
+以下§16–18属于已经完成的历史实验，其中的“下一步”“本轮未执行”均为当时判断；最新结论见[历史批次汇总](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/results.md#organization)。保留原编号及正文，是因为 `bios_context_gradient`、`bios_followup`、`bios_path_transfer`、`bios_path_minimal` 和Jacobian脚本按这些标题提取契约。原冻结版本仍以各批 `preregistration.md` 为准；这里仅将已删除报告的链接改指向统一汇总。
 
 ## 16. v2.11 上下文统计与真实早期梯度：独立开发实验
 
@@ -85,7 +87,7 @@ E成功、D传播、U损伤及局部保持分别报告。损伤分母只含编�
 
 主答案终点的position平均余弦为0.294758，8个配对均为正（0.285295–0.314340），shuffled为0.003046；32/128步分别为0.417277/0.370646，shuffled为0.004572/0.004762。全部24个嵌套对比的position方向预测均高于对应shuffled，不把它们视为24个独立世界。token版本方向几乎相同；含位置版本改善幅度但仍不准确：0/32/128步相对向量误差1.155656/2.323419/2.642302，范数比0.944658/2.555004/2.841119。全部答案对比的原始向量误差均大于零预测基线1；未事后拟合比例。EOS方向预测接近零或不稳定，combined余弦为0.260532/0.317912/0.339491。
 
-阻断跨事实注意力后，主投影梯度的最大相对消减残差4.33437×10⁻⁸；监督bigram不变、上下文统计差异消失，符合配对控制。当前结论是“数据统计提供部分可重复的早期方向信号，但原始向量近似不准”，值得继续追踪，尚不解释后期知识组织或编辑收益。下一项有区分度的建议是复用同状态，保留完整网络和反传、仅改为均匀注意力，区分QK选择与省略下游变换两种误差来源；本轮未执行。完整边界与数据见[实验报告](results.md#organization)和[全部数值](development-artifacts/context-gradient-v1/report.md)。
+阻断跨事实注意力后，主投影梯度的最大相对消减残差4.33437×10⁻⁸；监督bigram不变、上下文统计差异消失，符合配对控制。当前结论是“数据统计提供部分可重复的早期方向信号，但原始向量近似不准”，值得继续追踪，尚不解释后期知识组织或编辑收益。下一项有区分度的建议是复用同状态，保留完整网络和反传、仅改为均匀注意力，区分QK选择与省略下游变换两种误差来源；本轮未执行。完整边界与数据见[实验报告](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/results.md#organization)和[全部数值](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/development-artifacts/context-gradient-v1/report.md)。
 
 ## 17. v2.12 组织×编辑监督配比与第一层均匀注意力对照
 
@@ -133,7 +135,7 @@ R接近U而U仍远离P时，优先检查P省略的残差/下游变换及完整�
 
 保留50%类平衡作为行为候选、25%作为较温和参照；不继续把它称为组织匹配劣势的修复。下一轮验证需要区分平均传播收益与组织匹配条件获益较少两项预测；连接v2.9时在共同E39目标下重做对照，其事实均匀基线为3/39，不能混用E93的3/93。独立新世界的具体矩阵围绕更新后的预测另立；本轮不因完整机制未识别而否决部分行为收益。
 
-机制下一项优先做第一层输出投影的逐位置梯度分解：在完整均匀第一层网络中区分监督位置与非监督位置经后续层反传的贡献，再替换零残差基线误差信号，以定位统计预测缺口。使用真实反向信号的分解只算诊断，不冒称独立语料预测器。本轮未新增自然语言或大规模训练。[完整结果](results.md#organization)与[完成审计](development-artifacts/followup-v1/audit.json)保留所有配比、配对块、分母、曲线与来源。
+机制下一项优先做第一层输出投影的逐位置梯度分解：在完整均匀第一层网络中区分监督位置与非监督位置经后续层反传的贡献，再替换零残差基线误差信号，以定位统计预测缺口。使用真实反向信号的分解只算诊断，不冒称独立语料预测器。本轮未新增自然语言或大规模训练。[完整结果](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/results.md#organization)与[完成审计](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/development-artifacts/followup-v1/audit.json)保留所有配比、配对块、分母、曲线与来源。
 
 ## 18. v2.13 Transformer计算路径与知识促进／干扰
 
@@ -215,9 +217,9 @@ full：原模型完整反传。no_cross：仅将第5–7层attention输入到输
 
 阶段A/B、两层最小模型及局部Jacobian核验均已完成。成熟模型的24个冲突案例中，23个正确答案概率增加，却24个都失去相对冲突答案的竞争优势；原主步长未改变自由生成。最小模型表明高度相似特征仍可对应相反更新，真实参数敏感度不可省略。跨位置路径在2/6案例有局部因果作用，但48条完整轨迹中的冲突配对查询仍全部失败；不将局部改善写成普遍修复。
 
-下一候选转为控制真实MLP特征可变性及新旧答案对比方向，并联合评价源成功、竞争margin及实际生成；具体训练范围、预算和独立世界另锁。本轮不继续增加样本或挑层追求正结果。所有阶段、负结果、数学适用范围与完整计数见[结果报告](results.md#organization)。
+下一候选转为控制真实MLP特征可变性及新旧答案对比方向，并联合评价源成功、竞争margin及实际生成；具体训练范围、预算和独立世界另锁。本轮不继续增加样本或挑层追求正结果。所有阶段、负结果、数学适用范围与完整计数见[结果报告](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/results.md#organization)。
 
-本轮最终相关测试39项通过，13个新增Python文件的格式／静态检查通过；文档本地链接与全部冻结输入核验通过。完成清单见[阶段A/B完成清单](development-artifacts/path-transfer-v1/completion.json)及[最小模型与数学核验完成清单](development-artifacts/path-minimal-v1/completion.json)。
+本轮最终相关测试39项通过，13个新增Python文件的格式／静态检查通过；文档本地链接与全部冻结输入核验通过。完成清单见[阶段A/B完成清单](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/development-artifacts/path-transfer-v1/completion.json)及[最小模型与数学核验完成清单](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/development-artifacts/path-minimal-v1/completion.json)。
 
 ### 18.10 完成后复盘：区分监督信息、局部可行性与特征重组
 

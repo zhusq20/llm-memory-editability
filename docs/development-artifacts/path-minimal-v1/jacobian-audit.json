@@ -1,9 +1,0 @@
-{
-  "finished_at": "2026-09-27T20:45:50.582094+00:00",
-  "fact_pairs": 6,
-  "small_steps": 72,
-  "max_normalized_identity_error": 2.2558421265233538e-07,
-  "positive_euclidean_negative_true_pairs": 6,
-  "small_step_sign_agreement": 1.0,
-  "source_improved_count": 72
-}

@@ -1,0 +1,427 @@
+{
+  "batch": "bridge-reencoding-confirmation-v1",
+  "module": "bridge_reencoding",
+  "gpus": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "specs": [
+    {
+      "name": "confirmation-w774101-i775101-aligned",
+      "phase": "confirmation",
+      "arm": "aligned",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774101-i775101-aligned",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774101-i775101-baseline",
+      "phase": "confirmation",
+      "arm": "baseline",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774101-i775101-baseline",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774101-i775101-bridge_ce",
+      "phase": "confirmation",
+      "arm": "bridge_ce",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774101-i775101-bridge_ce",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774101-i775102-aligned",
+      "phase": "confirmation",
+      "arm": "aligned",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774101-i775102-aligned",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774101-i775102-baseline",
+      "phase": "confirmation",
+      "arm": "baseline",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774101-i775102-baseline",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774101-i775102-bridge_ce",
+      "phase": "confirmation",
+      "arm": "bridge_ce",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774101-i775102-bridge_ce",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774102-i775101-aligned",
+      "phase": "confirmation",
+      "arm": "aligned",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774102-i775101-aligned",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774102-i775101-baseline",
+      "phase": "confirmation",
+      "arm": "baseline",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774102-i775101-baseline",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774102-i775101-bridge_ce",
+      "phase": "confirmation",
+      "arm": "bridge_ce",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774102-i775101-bridge_ce",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774102-i775102-aligned",
+      "phase": "confirmation",
+      "arm": "aligned",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774102-i775102-aligned",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774102-i775102-baseline",
+      "phase": "confirmation",
+      "arm": "baseline",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774102-i775102-baseline",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774102-i775102-bridge_ce",
+      "phase": "confirmation",
+      "arm": "bridge_ce",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774102-i775102-bridge_ce",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774103-i775101-aligned",
+      "phase": "confirmation",
+      "arm": "aligned",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774103-i775101-aligned",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774103-i775101-baseline",
+      "phase": "confirmation",
+      "arm": "baseline",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774103-i775101-baseline",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774103-i775101-bridge_ce",
+      "phase": "confirmation",
+      "arm": "bridge_ce",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774103-i775101-bridge_ce",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774103-i775102-aligned",
+      "phase": "confirmation",
+      "arm": "aligned",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774103-i775102-aligned",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774103-i775102-baseline",
+      "phase": "confirmation",
+      "arm": "baseline",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774103-i775102-baseline",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    },
+    {
+      "name": "confirmation-w774103-i775102-bridge_ce",
+      "phase": "confirmation",
+      "arm": "bridge_ce",
+      "parent_dir": "results/representation-alignment-v1/runs/confirmation-w774103-i775102-bridge_ce",
+      "alphas": [
+        0,
+        1.0
+      ],
+      "variants": [
+        "norm_matched"
+      ],
+      "conditions": [
+        "self_decode",
+        "wrong_entity",
+        "oracle"
+      ],
+      "batch_size": 512
+    }
+  ],
+  "additional_sources": [
+    "tests/test_bridge_reencoding.py",
+    "tests/test_representation_alignment.py",
+    "docs/development-artifacts/memory-interface-next-v1/design.md",
+    "scripts/report_bridge_reencoding.py",
+    "tests/test_report_bridge_reencoding.py",
+    "docs/development-artifacts/memory-interface-next-v1/container/Dockerfile",
+    "docs/development-artifacts/memory-interface-next-v1/container/dependency-manifest.json",
+    "tests/test_interface_runtime_contracts.py"
+  ],
+  "runtime": {
+    "docker_context": "lm-memory",
+    "docker_host": "unix:///run/docker-lm-memory/docker.sock",
+    "image": "sha256:bd2a622ec8273f54786cd4029f55b717bcc488afeb688bee4f98c0bd5127bfe5",
+    "python": "/opt/conda/bin/python",
+    "cpus": 4,
+    "memory": "16g",
+    "env": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "XDG_CACHE_HOME": "/tmp/cache",
+      "TORCH_HOME": "/tmp/torch",
+      "TORCHINDUCTOR_CACHE_DIR": "/tmp/torchinductor",
+      "TRITON_CACHE_DIR": "/tmp/triton"
+    }
+  },
+  "fixed_alpha": 1.0,
+  "development_decision": {
+    "phase": "development",
+    "status": "selected",
+    "selected_alpha": 1.0,
+    "selection_arm": "bridge_ce",
+    "selection_variant": "norm_matched",
+    "selection_condition": "self_decode",
+    "atomic_drop_tolerance": 0.01,
+    "rule": "highest familiar holdout accuracy with <=.01 atomic drop; ties use smaller alpha",
+    "strict_used_for_selection": false,
+    "other_training_arms_used_for_selection": false,
+    "candidates": [
+      {
+        "alpha": 0.0,
+        "eligible": true,
+        "complete_across_development_models": true,
+        "familiar_accuracy_world_equal": 0.3861003861003861,
+        "minimum_atomic_delta": 0.0
+      },
+      {
+        "alpha": 0.1,
+        "eligible": true,
+        "complete_across_development_models": true,
+        "familiar_accuracy_world_equal": 0.416988416988417,
+        "minimum_atomic_delta": 0.0
+      },
+      {
+        "alpha": 0.5,
+        "eligible": true,
+        "complete_across_development_models": true,
+        "familiar_accuracy_world_equal": 0.5366795366795367,
+        "minimum_atomic_delta": 0.0
+      },
+      {
+        "alpha": 1.0,
+        "eligible": true,
+        "complete_across_development_models": true,
+        "familiar_accuracy_world_equal": 0.6216216216216216,
+        "minimum_atomic_delta": 0.0
+      }
+    ],
+    "ready_for_frozen_comparison": true,
+    "pending_audits": [],
+    "missing_arm_cells": [],
+    "missing_selected_alpha_runs": []
+  },
+  "development_decision_sha256": "41f37cffca8a83d04f4fe7f0ea1c5185e277bd1c79715d5b133dd7834287d2bb"
+}

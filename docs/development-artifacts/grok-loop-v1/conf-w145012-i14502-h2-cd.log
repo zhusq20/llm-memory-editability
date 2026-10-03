@@ -1,6 +1,0 @@
-{"state": "running", "step": 0, "budget": 128000, "updated_utc": "2026-09-30T05:55:12.304796+00:00", "hops": 2, "layers": 4, "atomic": 0.0, "train": 0.0, "test_probe": 0.0}
-{"state": "running", "step": 100, "budget": 128000, "updated_utc": "2026-09-30T05:55:13.253281+00:00", "hops": 2, "layers": 4, "atomic": 0.0, "train": 0.0, "test_probe": 0.0}
-{"state": "running", "step": 250, "budget": 128000, "updated_utc": "2026-09-30T05:55:14.105368+00:00", "hops": 2, "layers": 4, "atomic": 0.0, "train": 0.0, "test_probe": 0.0}
-{"state": "running", "step": 500, "budget": 128000, "updated_utc": "2026-09-30T05:55:15.472798+00:00", "hops": 2, "layers": 4, "atomic": 0.025390625, "train": 0.05497131931166348, "test_probe": 0.04018912529550828}
-{"state": "running", "step": 1000, "budget": 128000, "updated_utc": "2026-09-30T05:55:17.556570+00:00", "hops": 2, "layers": 4, "atomic": 0.0693359375, "train": 0.09894837476099426, "test_probe": 0.0591016548463357}
-{"state": "running", "step": 2000, "budget": 128000, "updated_utc": "2026-09-30T05:55:21.056222+00:00", "hops": 2, "layers": 4, "atomic": 0.25390625, "train": 0.44980879541108987, "test_probe": 0.12056737588652482}

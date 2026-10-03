@@ -1,8 +1,0 @@
-{
-  "time": "2026-09-28T05:04:57.087896+00:00",
-  "reason": "Shared server GPU occupancy increased to about 69 GB per card; evaluate large formation geometry in batches of 24 and accumulate FP64 CPU statistics. Training objectives, training batches, nodes and hyperparameter criteria unchanged.",
-  "source_snapshot": "docs/development-artifacts/hebbian-learning-v1/execution-source-v2",
-  "trainer_sha256": "71ca785eafbe3438da45c4f5fa543a62424f1fd5176b04b317b0c78e7c96ecbf",
-  "affected_measurements": "C formal-node prompt features/geometry; rounding differences checked against whole-batch evaluation",
-  "training_phase": "Before formal C parents; C development uses original source snapshot"
-}

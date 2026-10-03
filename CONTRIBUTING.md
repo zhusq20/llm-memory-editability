@@ -2,7 +2,7 @@
 
 ## 研究与表达
 
-主线是预训练中的事实知识与可迁移计算如何共同形成。[当前计划](docs/hebbian-learning-plan-v1.md)维护训练呈现、组合使用经历及学习过程的研究方向，[结果汇总](docs/results.md)维护批次状态，[实验协议](docs/experimental-protocol.md)定义评价与记录规范。
+主线是预训练中的事实知识与可迁移计算如何共同形成。[当前计划](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md)维护训练呈现、组合使用经历及学习过程的研究方向，[结果汇总](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/results.md)维护批次状态，[实验协议](docs/experimental-protocol.md)定义评价与记录规范。
 
 积极借鉴已有论文；解释整合与由此形成的方法论可以构成贡献。保留小效应、条件性收益和负结果，不把显著性或掌握率作为所有探索的统一淘汰门槛。历史批次的冻结判据仍按原契约解释；路径学习开发停止、确认实验未获支持等结果不得事后改写。
 
@@ -30,4 +30,4 @@
 
 日常更新集中到计划、结果汇总和README，避免追加重复的状态长文。已被统一文档替代的旧报告直接删除；需要执行时原文时查看各批冻结快照。旧报告生成器可能重新生成已合并的文件，需审阅后把新增信息并入汇总。协议保留的§16–18标题供现有脚本读取，调整时须核对调用方。
 
-原版bioS优先采用 Physics of Language Models 官方材料与任务。开发流水线完成状态、100k主矩阵及日期更新的执行边界以[当前计划](docs/hebbian-learning-plan-v1.md#bios)为准；不从历史扩展草案自动叠加训练预算。
+原版bioS优先采用 Physics of Language Models 官方材料与任务。开发流水线完成状态、100k主矩阵及日期更新的执行边界以[当前计划](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md#bios)为准；不从历史扩展草案自动叠加训练预算。

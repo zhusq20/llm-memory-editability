@@ -1,0 +1,131 @@
+{
+  "experiment": "realworld-composition-v1",
+  "status": "confirmation_running",
+  "priority": "first_new_experiment_real_world_data",
+  "execution_ready": true,
+  "design": "docs/development-artifacts/realworld-composition-v1/design.md",
+  "source_audit": "docs/development-artifacts/realworld-composition-v1/source-audit.json",
+  "dataset": {
+    "name": "2WikiMultiHopQA",
+    "repository": "https://github.com/Alab-NII/2wikimultihop",
+    "repository_revision": "13800e5be57df1b4040b9b1588c6c811779e69e9",
+    "archive": "data/realworld-composition-v1/raw/data_ids_april7.zip",
+    "sha256": "95df2bf56fdabe034e27aebc580e02264232203cf52552f9efe8a919e5529eef",
+    "task": "native_connected_two_edge_compositional_questions",
+    "regime": "adapted_closed_book_fact_recall; evaluation_atoms_are_learned",
+    "combination_training_source": "official_train_excluding_development_groups",
+    "combination_evaluation_source": "official_dev_excluding_development_groups_and_known_prior_cases",
+    "original_questions": true,
+    "fabricated_facts": false,
+    "augmentation": "none_in_first_batch",
+    "prior_project_access": true,
+    "final_split_frozen": true,
+    "semantic_review_complete": true,
+    "semantic_review_scope": "Fixed 400-case assistant source-consistency review; not full-corpus fact verification.",
+    "development_split_frozen": true,
+    "confirmation_candidate_prepared": true,
+    "canonical_name_collisions_between_phases": 244,
+    "confirmation_name_isolation": "canonical plus source annotation plus all official aliases after author normalization",
+    "confirmation_head_bridge_name_overlap": 0,
+    "confirmation_data_lock": "docs/development-artifacts/realworld-composition-v1/confirmation/confirmation-data-lock.json",
+    "confirmation_atoms": 65968,
+    "confirmation_train_compositions": 56121,
+    "confirmation_evaluation_compositions": 3729,
+    "confirmation_oo": 1283
+  },
+  "architecture_candidates": [
+    {
+      "name": "standard8",
+      "unique_layers": 8,
+      "repeats": 1
+    },
+    {
+      "name": "loop4x2",
+      "unique_layers": 4,
+      "repeats": 2
+    },
+    {
+      "name": "standard4",
+      "unique_layers": 4,
+      "repeats": 1
+    }
+  ],
+  "model": {
+    "initialization": "random; shared_reference_prefix_per_seed",
+    "hidden_size": 768,
+    "attention_heads": 12,
+    "mlp_ratio": 4,
+    "base_vocabulary": "fixed_GPT2_tokenizer_no_entity_tokens",
+    "sequence_limit": 256,
+    "generation_limit": 64
+  },
+  "training_candidates": {
+    "effective_batch_size": 512,
+    "microbatch_size": 128,
+    "gradient_accumulation": 4,
+    "optimizer": "AdamW",
+    "learning_rate": 5e-05,
+    "weight_decay": 0.1,
+    "warmup_steps": 2000,
+    "schedule": "constant_after_warmup",
+    "gradient_clip": 1,
+    "loss": "per_example_mean_answer_and_EOS_CE",
+    "sampling": "merged_atomic_and_native_composition_epoch_shuffle",
+    "dropout": 0.1
+  },
+  "budget_candidates": {
+    "preflight_runs": 3,
+    "preflight_steps_per_run": 8,
+    "preflight_updates": 24,
+    "development_runs": 3,
+    "development_steps_per_run": 32000,
+    "development_updates": 96000,
+    "confirmation_initializations": 3,
+    "confirmation_runs": 9,
+    "confirmation_steps_per_run": 300000,
+    "confirmation_updates": 2700000,
+    "total_scientific_updates": 2796000,
+    "confirmation_budget_frozen": true
+  },
+  "tracking": {
+    "enabled": true,
+    "entity": "zhusq20",
+    "project": "llm-memory-editability",
+    "group": "realworld-composition-v1",
+    "start_with_training": true
+  },
+  "next_steps": [
+    "complete_registered_confirmation_training",
+    "independent_endpoint_reload_and_author_scorer_recount",
+    "paired_initialization_and_knowledge_coverage_analysis"
+  ],
+  "execution_ready_phase": "confirmation",
+  "development_execution_config": "configs/realworld-composition-development-v1.json",
+  "data_lock": "docs/development-artifacts/realworld-composition-v1/data-lock.json",
+  "development_execution_lock": "docs/development-artifacts/realworld-composition-v1/development-execution-lock.json",
+  "development_completed": true,
+  "development_completion": "docs/development-artifacts/realworld-composition-v1/development-completion.json",
+  "confirmation_execution_config": "configs/realworld-composition-confirmation-v1.json",
+  "confirmation_execution_lock": "docs/development-artifacts/realworld-composition-v1/confirmation/confirmation-execution-lock.json",
+  "confirmation_controller_state": "results/realworld-composition-confirmation-v1/controller-state.json",
+  "confirmation_started": true,
+  "confirmed_budget": {
+    "confirmation_runs": 9,
+    "steps_per_run": 300000,
+    "confirmation_updates": 2700000,
+    "development_updates": 96000,
+    "total_scientific_updates": 2796000,
+    "additional_full_size_engineering_updates": 72,
+    "additional_width32_engineering_updates": 27
+  },
+  "training_confirmed": {
+    "effective_batch_size": 512,
+    "microbatch_size": 512,
+    "gradient_accumulation": 1,
+    "learning_rate": 5e-05,
+    "weight_decay": 0.1,
+    "warmup_steps": 2000,
+    "steps_per_run": 300000,
+    "execution_config": "configs/realworld-composition-confirmation-v1.json"
+  }
+}

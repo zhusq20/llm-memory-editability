@@ -1,3 +1,0 @@
-dataset,n,max_tokens,em,alias_em,final_marker_count,mastered_n,conditional_em,delta_direct_em,lower,upper
-mquake,128,256,0.3671875,0.46875,122,30,0.7333333333333333,0.1328125,0.0625,0.203125
-2wiki,128,256,0.3671875,0.46875,127,37,0.8108108108108109,0.0859375,0.0078125,0.171875

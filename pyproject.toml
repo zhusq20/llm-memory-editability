@@ -15,6 +15,8 @@ dev = ["pytest>=8,<10", "ruff>=0.6,<1"]
 neural = ["torch>=2.5,<3"]
 bios-original = ["torch==2.8.0", "tokenizers==0.22.2"]
 analysis = ["matplotlib>=3.9,<4"]
+tracking = ["wandb==0.30.0"]
+archive = ["huggingface-hub>=0.30,<1"]
 
 [project.scripts]
 memory-editability = "llm_memory_editability.cli:main"

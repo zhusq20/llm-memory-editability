@@ -1,9 +1,0 @@
-{
-  "learning_runs": 12,
-  "learning_checkpoints": 72,
-  "edit_cases": 96,
-  "edit_checkpoints": 384,
-  "errors": [],
-  "passed": true,
-  "complete": true
-}

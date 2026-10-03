@@ -1,9 +1,0 @@
-world,phase,cohort,n,correct,new_actual,old_default,no_EOS,other
-0,high,all18,216,30,79,81,0,26
-0,high,heldout9,108,20,43,27,0,18
-0,low,all18,216,15,140,56,0,5
-0,low,heldout9,108,5,73,25,0,5
-1,high,all18,216,29,78,85,0,24
-1,high,heldout9,108,17,42,30,0,19
-1,low,all18,216,21,153,39,0,3
-1,low,heldout9,108,8,84,13,0,3

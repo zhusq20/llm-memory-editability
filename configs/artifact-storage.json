@@ -1,0 +1,19 @@
+{
+  "github_repository": "https://github.com/zhusq20/llm-memory-editability",
+  "github_scope": "Source, tests, configuration and development instructions",
+  "github_max_file_bytes_exclusive": 200000000,
+  "huggingface_repository": "zsqzz/llm-memory-editability",
+  "huggingface_repository_type": "dataset",
+  "upload_status": "pending_valid_huggingface_write_credentials",
+  "huggingface_url": "https://huggingface.co/datasets/zsqzz/llm-memory-editability",
+  "huggingface_paths": {
+    "data/": "data/",
+    "results/": "results/",
+    "docs/": "docs/",
+    "research_readme": "project-docs/README.md",
+    "snapshot_manifest": "ARCHIVE_MANIFEST.json"
+  },
+  "huggingface_file_size_limit_bytes": null,
+  "excluded_artifacts": ["model weights", "optimizer states", "Docker image archives"],
+  "snapshot_note": "Running experiments are archived as file-level snapshots. Later outputs require another upload."
+}
