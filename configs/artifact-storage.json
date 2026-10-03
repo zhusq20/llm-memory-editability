@@ -4,16 +4,28 @@
   "github_max_file_bytes_exclusive": 200000000,
   "huggingface_repository": "zsqzz/llm-memory-editability",
   "huggingface_repository_type": "dataset",
-  "upload_status": "pending_valid_huggingface_write_credentials",
+  "upload_status": "verified",
   "huggingface_url": "https://huggingface.co/datasets/zsqzz/llm-memory-editability",
   "huggingface_paths": {
     "data/": "data/",
     "results/": "results/",
     "docs/": "docs/",
     "research_readme": "project-docs/README.md",
-    "snapshot_manifest": "ARCHIVE_MANIFEST.json"
+    "snapshot_manifest": "ARCHIVE_MANIFEST.json",
+    "numerical_array_bundles": "array-archives/",
+    "numerical_array_index": "ARRAY_ARCHIVES.json"
   },
   "huggingface_file_size_limit_bytes": null,
-  "excluded_artifacts": ["model weights", "optimizer states", "Docker image archives"],
-  "snapshot_note": "Running experiments are archived as file-level snapshots. Later outputs require another upload."
+  "excluded_artifacts": [
+    "model weights",
+    "optimizer states",
+    "Docker image archives"
+  ],
+  "snapshot_note": "Running experiments are archived as file-level snapshots. Later outputs require another upload.",
+  "numerical_array_storage": "Per-experiment tar.gz bundles; original paths and per-file SHA256 are preserved. The download helper verifies and restores selected arrays.",
+  "huggingface_revision": "742098e8a5437c2640ee0634a4617ae5a88fc46a",
+  "logical_artifact_files": 62376,
+  "verified_remote_files": 19073,
+  "numerical_array_files": 43358,
+  "numerical_array_bundles": 24
 }

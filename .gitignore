@@ -19,6 +19,9 @@ htmlcov/
 /data/
 /results/
 /checkpoints/
+/array-archives/
+/ARRAY_ARCHIVES.json
+/ARCHIVE_MANIFEST.json
 /docs/*
 !/docs/experimental-protocol.md
 *.npy

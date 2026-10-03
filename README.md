@@ -4,17 +4,18 @@
 
 本 GitHub 仓库保存源码、测试、配置与开发说明。实验数据、原始预测、日志、学习曲线、研究报告和冻结执行材料的目标存储为 [Hugging Face 数据集仓库](https://huggingface.co/datasets/zsqzz/llm-memory-editability)。单个 GitHub 文件必须小于 200 MB；此限制不适用于 Hugging Face。模型权重、优化器状态与 Docker 镜像归档不上传。
 
-2026-10-04 归档状态：本地快照和校验清单已准备，Hugging Face 因写入 token 过期尚未上传。下面列出目标路径，上传完成后才可访问和下载。原始实验材料仍保存在实验主机。
+2026-10-04 快照归档已完成：62,376 份原始材料，其中 43,358 份数组收录于 24 个归档包。远端文件大小及内容哈希核验通过。固定版本为 [742098e8a543](https://huggingface.co/datasets/zsqzz/llm-memory-editability/tree/742098e8a5437c2640ee0634a4617ae5a88fc46a)；原始实验材料仍保存在实验主机。
 
 ## 实验材料
 
-Hugging Face 中保留原项目相对路径，下载后可继续使用原脚本。
+Hugging Face 中保留原项目相对路径。NumPy 数组按实验批次打包以减少小文件上传请求；下载脚本核对归档及数组 SHA256，并自动恢复所选文件到原目录，之后可继续使用原实验脚本。
 
 | 材料 | Hugging Face 链接 |
 | --- | --- |
 | 实验数据集与 tokenizer | [data/](https://huggingface.co/datasets/zsqzz/llm-memory-editability/tree/main/data) |
-| 原始预测、数值数组、日志和运行状态 | [results/](https://huggingface.co/datasets/zsqzz/llm-memory-editability/tree/main/results) |
+| 原始预测、日志和运行状态 | [results/](https://huggingface.co/datasets/zsqzz/llm-memory-editability/tree/main/results) |
 | 冻结配置、源码快照、审计和图表 | [docs/development-artifacts/](https://huggingface.co/datasets/zsqzz/llm-memory-editability/tree/main/docs/development-artifacts) |
+| 数值数组归档及原路径索引 | [array-archives/](https://huggingface.co/datasets/zsqzz/llm-memory-editability/tree/main/array-archives)、[ARRAY_ARCHIVES.json](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/ARRAY_ARCHIVES.json) |
 | 研究结果汇总 | [docs/results.md](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/results.md) |
 | 研究计划 | [docs/hebbian-learning-plan-v1.md](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md) |
 | 完整研究进度索引 | [project-docs/README.md](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/project-docs/README.md) |
@@ -44,10 +45,10 @@ python scripts/download_experiment_artifacts.py
 python scripts/download_experiment_artifacts.py \
   --include 'results/parametric-architecture-development-v1/**' \
   --include 'docs/development-artifacts/parametric-architecture-development-v1/**'
-python scripts/download_experiment_artifacts.py --revision DATASET_COMMIT_SHA
+python scripts/download_experiment_artifacts.py --revision 742098e8a5437c2640ee0634a4617ae5a88fc46a
 ```
 
-私有数据集需要先在本机配置 Hugging Face 访问权限；凭据不要写进仓库。下载器只恢复 `data/`、`results/`、`docs/`，不会覆盖本仓库 README 或当前源码。未上传的权重需从原实验存储单独恢复。
+私有数据集需要先在本机配置 Hugging Face 访问权限；凭据不要写进仓库。下载器恢复 `data/`、`results/`、`docs/`，并保存清单与所需数组归档；不会覆盖本仓库 README 或当前源码。未上传的权重需从原实验存储单独恢复。
 
 ## 开发
 
