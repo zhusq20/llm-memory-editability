@@ -1,0 +1,244 @@
+{
+  "data_file": "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/confirmation-v1.json",
+  "data_sha256": "f9df622fe531a77aea397d9ac5e46768e175a13c9d60f8ae3b687fdb0274be27",
+  "tokenizer": "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/tokenizer",
+  "model": {
+    "vocab_size": 50257,
+    "positions": 1024,
+    "hidden_size": 768,
+    "attention_heads": 12,
+    "dropout": 0.1,
+    "mlp_ratio": 4,
+    "sequence_limit": 256,
+    "generation_limit": 64
+  },
+  "evaluation_nodes": [
+    0,
+    1000,
+    2000,
+    4000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    200000,
+    300000
+  ],
+  "resume_checkpoint_interval": 5000,
+  "batch": "oo-optimizer-attribution-v1",
+  "experiment": "oo-optimizer-attribution-v1",
+  "phase": "runs",
+  "results_root": "/ossfs/workspace/llm-memory-editability/results/oo-optimizer-attribution-v1",
+  "gpus": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:a994f1a1886220693eb26b7ff201147fbd4b49477d335ab2707330cab771063f",
+    "python": "/opt/conda/bin/python",
+    "cpus": 4,
+    "memory": "48g"
+  },
+  "tracking": {
+    "enabled": true,
+    "entity": "zhusq20",
+    "project": "llm-memory-editability",
+    "group": "oo-optimizer-attribution-v1",
+    "mode": "online"
+  },
+  "historical_config": "/ossfs/workspace/llm-memory-editability/configs/realworld-composition-confirmation-v1.json",
+  "historical_config_sha256": "e07ca3d7cfe0d14d3d3f36d2a778afd1dc2a688753117aee8008a7ec324d508e",
+  "wait_for_results_root": "/ossfs/workspace/llm-memory-editability/results/parametric-architecture-main-v1",
+  "wait_for_runs": [
+    "m8-init1",
+    "w8-init1",
+    "ihc8-init1",
+    "hc8-init1",
+    "d8-init1",
+    "m8-init2",
+    "w8-init2",
+    "ihc8-init2",
+    "hc8-init2",
+    "d8-init2",
+    "m8-init3",
+    "w8-init3",
+    "ihc8-init3",
+    "hc8-init3",
+    "d8-init3"
+  ],
+  "full_curve_nodes": [
+    0,
+    16000,
+    32000,
+    64000,
+    128000,
+    200000,
+    300000
+  ],
+  "scope": "Exploratory 2x2 LR/decay attribution on a previously examined real graph; two paired initializations, 300k steps each. Six new training runs and two immutable reused baselines.",
+  "additional_sources": [
+    "scripts/execute_oo_optimizer_attribution.py",
+    "scripts/analyze_oo_budget_attribution.py",
+    "tests/test_oo_optimizer_attribution.py",
+    "docs/development-artifacts/oo-optimizer-attribution-v1/protocol.md",
+    "configs/oo-optimizer-attribution-v1.json",
+    "tests/test_realworld_composition.py",
+    "tests/test_parametric_architecture_controller.py"
+  ],
+  "runs": [
+    {
+      "name": "loop-lr1e4-wd03-init1",
+      "unique_layers": 4,
+      "repeats": 2,
+      "initialization": 811201,
+      "sampling_seed": 812201,
+      "dropout_seed": 813201,
+      "steps": 300000,
+      "batch_size": 512,
+      "microbatch_size": 512,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.3,
+      "warmup_steps": 2000,
+      "architecture": "loop4x2"
+    },
+    {
+      "name": "loop-lr1e4-wd01-init1",
+      "unique_layers": 4,
+      "repeats": 2,
+      "initialization": 811201,
+      "sampling_seed": 812201,
+      "dropout_seed": 813201,
+      "steps": 300000,
+      "batch_size": 512,
+      "microbatch_size": 512,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.1,
+      "warmup_steps": 2000,
+      "architecture": "loop4x2"
+    },
+    {
+      "name": "loop-lr5e5-wd03-init1",
+      "unique_layers": 4,
+      "repeats": 2,
+      "initialization": 811201,
+      "sampling_seed": 812201,
+      "dropout_seed": 813201,
+      "steps": 300000,
+      "batch_size": 512,
+      "microbatch_size": 512,
+      "learning_rate": 5e-05,
+      "weight_decay": 0.3,
+      "warmup_steps": 2000,
+      "architecture": "loop4x2"
+    },
+    {
+      "name": "loop-lr1e4-wd03-init2",
+      "unique_layers": 4,
+      "repeats": 2,
+      "initialization": 811202,
+      "sampling_seed": 812202,
+      "dropout_seed": 813202,
+      "steps": 300000,
+      "batch_size": 512,
+      "microbatch_size": 512,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.3,
+      "warmup_steps": 2000,
+      "architecture": "loop4x2"
+    },
+    {
+      "name": "loop-lr1e4-wd01-init2",
+      "unique_layers": 4,
+      "repeats": 2,
+      "initialization": 811202,
+      "sampling_seed": 812202,
+      "dropout_seed": 813202,
+      "steps": 300000,
+      "batch_size": 512,
+      "microbatch_size": 512,
+      "learning_rate": 0.0001,
+      "weight_decay": 0.1,
+      "warmup_steps": 2000,
+      "architecture": "loop4x2"
+    },
+    {
+      "name": "loop-lr5e5-wd03-init2",
+      "unique_layers": 4,
+      "repeats": 2,
+      "initialization": 811202,
+      "sampling_seed": 812202,
+      "dropout_seed": 813202,
+      "steps": 300000,
+      "batch_size": 512,
+      "microbatch_size": 512,
+      "learning_rate": 5e-05,
+      "weight_decay": 0.3,
+      "warmup_steps": 2000,
+      "architecture": "loop4x2"
+    }
+  ],
+  "reused_baselines": [
+    {
+      "spec": {
+        "name": "confirmation-loop4x2-init1",
+        "unique_layers": 4,
+        "repeats": 2,
+        "initialization": 811201,
+        "sampling_seed": 812201,
+        "dropout_seed": 813201,
+        "steps": 300000,
+        "batch_size": 512,
+        "microbatch_size": 512,
+        "learning_rate": 5e-05,
+        "weight_decay": 0.1,
+        "warmup_steps": 2000,
+        "architecture": "loop4x2"
+      },
+      "path": "/ossfs/workspace/llm-memory-editability/results/realworld-composition-confirmation-v1/confirmation/confirmation-loop4x2-init1",
+      "files_sha256": {
+        "run.json": "f8fd280022b2d40edc717a7c908da922c5f4e75b24b24ae87f8bcea4e68ffaca",
+        "audit.json": "65dd2501f545ba6a5f4e29a6f5707039c04756c01a2afd8ca5a6bc7363bc5b67",
+        "complete.json": "302fd8420cb4e54e2d144fe51665d5e6f21f8f2f6619677f3f409857f1b10049",
+        "learning.json": "8e045439cc66d0aad1cf20a3fc633117bcb095dacc929b43c514217cb36d1f98",
+        "endpoint.json": "96f329a5597797d5f70621138c7b46c0a346e38cdbd63d52875151969bb3a966",
+        "endpoint-predictions.json": "b398a209a41b70eca35f49127131ee5e0204f1b06205e9c6cf5e19f9dfc92c26",
+        "predictions-0000000.json": "7c46eb5f120c43519b45faf46a8879669a5d253931c1a208216151ea740788af"
+      }
+    },
+    {
+      "spec": {
+        "name": "confirmation-loop4x2-init2",
+        "unique_layers": 4,
+        "repeats": 2,
+        "initialization": 811202,
+        "sampling_seed": 812202,
+        "dropout_seed": 813202,
+        "steps": 300000,
+        "batch_size": 512,
+        "microbatch_size": 512,
+        "learning_rate": 5e-05,
+        "weight_decay": 0.1,
+        "warmup_steps": 2000,
+        "architecture": "loop4x2"
+      },
+      "path": "/ossfs/workspace/llm-memory-editability/results/realworld-composition-confirmation-v1/confirmation/confirmation-loop4x2-init2",
+      "files_sha256": {
+        "run.json": "c185f8a370caa84baf8a5ffff8c830d70ed18a8788dbfb0c39b3fccfb5d7a144",
+        "audit.json": "e5974adfa9bc5ba6e1c8cf8fd80fcefcf84d6341c218f0f12afc4a0efa697a2a",
+        "complete.json": "1d495b341e72191527cac14e9cfdf0cb80fafb6fe617c8d98761884f6a2d387c",
+        "learning.json": "c07a77df26c6e4e9f8e3a6e229b5d8c8af7ea31e93ed984a9a9c4e521734a48d",
+        "endpoint.json": "93a5cee6e0f93a88ace0c6520af2e5a5a4a3542e7da91c4cbad1cc67d50b5f4c",
+        "endpoint-predictions.json": "6f19e925d39316f7cda5ae461047c48a881a57cb25afae2c660d248fb9766a58",
+        "predictions-0000000.json": "1d82aa7ad1af2ccc1eb0913c461b0330ea0e2f8438823a5c552bc96fe67e7657"
+      }
+    }
+  ],
+  "baseline_curve_carriers": [
+    "loop-lr1e4-wd03-init1",
+    "loop-lr1e4-wd03-init2"
+  ]
+}

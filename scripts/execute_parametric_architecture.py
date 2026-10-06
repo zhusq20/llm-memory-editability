@@ -203,7 +203,8 @@ def controller(config_path):
         return control_locked(config, config_path, root)
 
 
-def control_locked(config, config_path, root):
+def control_locked(config, config_path, root, *, command_builder=None):
+    command_builder = command_builder or container_command
     assert digest(config_path) == read(config["execution_lock"])["config_sha256"]
     for path, expected in config["source_files"].items():
         assert digest(path) == expected, f"Frozen source changed: {path}"
@@ -298,7 +299,7 @@ def control_locked(config, config_path, root):
                     raise RuntimeError(f"Review recorded failure before resuming {spec['name']}")
                 out.mkdir(parents=True, exist_ok=True)
                 attempt = len(list(out.glob("container-command-*.json"))) + 1
-                name, command = container_command(config, config_path, spec, out, gpu, attempt)
+                name, command = command_builder(config, config_path, spec, out, gpu, attempt)
                 write(out / f"container-command-{attempt}.json", {"name": name, "command": command})
                 log = (out / "worker.log").open("a")
                 proc = subprocess.Popen(command, stdout=log, stderr=subprocess.STDOUT)

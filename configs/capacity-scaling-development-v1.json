@@ -1,0 +1,69 @@
+{
+  "batch": "capacity-scaling-development-v1",
+  "phase": "development",
+  "scope": "One new development world; load localization and fixed-target background control. Not a confirmation or scaling-law fit.",
+  "results_root": "/ossfs/workspace/llm-memory-editability/results/capacity-scaling-development-v1",
+  "gpus": [2, 3],
+  "predecessors": [
+    "/ossfs/workspace/llm-memory-editability/results/parametric-architecture-main-v1",
+    "/ossfs/workspace/llm-memory-editability/results/oo-optimizer-attribution-v1"
+  ],
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:a994f1a1886220693eb26b7ff201147fbd4b49477d335ab2707330cab771063f",
+    "python": "/opt/conda/bin/python",
+    "cpus": 2,
+    "memory": "12g"
+  },
+  "tracking": {
+    "enabled": true,
+    "entity": "zhusq20",
+    "project": "llm-memory-editability",
+    "group": "capacity-scaling-development-v1",
+    "mode": "online"
+  },
+  "base_spec": {
+    "world_seed": 96100617,
+    "initialization": 96100623,
+    "stream_seed": 96100629,
+    "max_heads": 65536,
+    "values_n": 256,
+    "relations": 4,
+    "width": 64,
+    "heads_n": 256,
+    "epochs": 1000,
+    "batch_size": 512,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "warmup_steps": 100,
+    "evaluation_per_pool": 2048,
+    "evaluation_batch_size": 512,
+    "evaluation_epochs": [0, 10, 30, 100, 300, 1000, 3000],
+    "checkpoint_epochs": 25,
+    "log_steps": 1000,
+    "max_wall_seconds": 21600
+  },
+  "calibration_learning_rates": [0.001, 0.003],
+  "selection_rule": "minimum 0.5*atomic.answer_nll + 0.5*train_composition.answer_nll at 1000 exposures; tie: smaller LR; no held-out score selection",
+  "prerequisite_thresholds": {"atomic": 0.95, "train_composition": 0.95, "II": 0.8},
+  "long_calibration_epochs": 3000,
+  "load_heads": [256, 1024, 4096, 16384],
+  "fixed_target_support_heads": 256,
+  "capacity_thresholds": {"atomic": 0.95, "II": 0.8},
+  "sensitivity_thresholds": {"atomic": [0.9, 0.99], "II": [0.5, 0.9]},
+  "budget": {
+    "maximum_training_runs": 9,
+    "maximum_gpu_hours_excluding_audit": 54,
+    "maximum_audit_seconds_per_run": 1200,
+    "maximum_gpu_hours_including_audit": 57,
+    "automatic_new_widths": false,
+    "automatic_new_architectures": false,
+    "automatic_confirmation": false
+  },
+  "additional_sources": [
+    "scripts/execute_capacity_scaling.py",
+    "scripts/run_capacity_scaling.py",
+    "tests/test_capacity_scaling.py",
+    "docs/development-artifacts/capacity-scaling-development-v1/protocol.md"
+  ]
+}

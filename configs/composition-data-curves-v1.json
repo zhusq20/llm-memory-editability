@@ -1,0 +1,60 @@
+{
+  "batch": "composition-data-curves-v1",
+  "results_root": "/ossfs/workspace/llm-memory-editability/results/composition-data-curves-v1",
+  "gpus": [0, 1],
+  "preflight": "/ossfs/workspace/experiment-runs/composition-data-curves-v1-preflight/cuda.json",
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:a994f1a1886220693eb26b7ff201147fbd4b49477d335ab2707330cab771063f",
+    "python": "/opt/conda/bin/python",
+    "cpus": 2,
+    "memory": "12g"
+  },
+  "base_spec": {
+    "entities": 128,
+    "max_entities": 4096,
+    "relations": 32,
+    "degree": 16,
+    "id_fraction": 0.95,
+    "test_fraction": 0.1,
+    "width": 64,
+    "heads": 4,
+    "dropout": 0.1,
+    "lr": 0.0001,
+    "weight_decay": 0.1,
+    "warmup": 2000,
+    "batch_size": 256,
+    "evaluation_size": 2048,
+    "compute_steps": 128000,
+    "target_exposures": 4000,
+    "max_wall_seconds": 43200
+  },
+  "development_world": 961006101,
+  "confirmation_worlds": [961006111, 961006112, 961006113],
+  "initialization": 961006121,
+  "stream_seed": 961006131,
+  "calibration_layers": [2, 4],
+  "calibration_steps": [128000, 512000],
+  "calibration_thresholds": {"atomic": 0.95, "train_composition": 0.95, "II": 0.8},
+  "selection_rule": "development world only; prefer 2 layers if its fixed endpoint passes, otherwise 4; one predeclared common budget extension if neither passes",
+  "anchor_phi": 7.2,
+  "support_phi": [0, 0.5, 1, 2, 4, 7.2, 12.6],
+  "load_entities": [128, 256, 512, 1024, 2048, 4096],
+  "load_gate": {"atomic": 0.95, "train_composition": 0.95, "II": 0.8},
+  "tracking": {"enabled": true, "entity": "zhusq20", "project": "llm-memory-editability", "mode": "online"},
+  "budget": {
+    "maximum_training_runs": 40,
+    "maximum_gpu_hours": 64,
+    "per_run_wall_seconds": 43200,
+    "extension_target_exposures": 8000,
+    "automatic_new_learning_rates": false,
+    "automatic_new_architectures": false
+  },
+  "interpretation": {
+    "primary_level": "controlled synthetic behavior; no universal capacity law or internal MLP attribution",
+    "knowledge_entropy": "F log2(N), conditional on relation keys; composition support adds zero independent bits",
+    "load_graphs": "closed random graphs at each N, same registered world-family seeds but different facts; not a nested-fact intervention",
+    "world_weighting": "three independent world families, one initialization each; do not pool queries as independent worlds",
+    "budgets": "128000 updates gives identical executed-shape FLOPs; matched average record exposures is a separate comparison"
+  }
+}
