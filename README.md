@@ -2,7 +2,7 @@
 
 研究知识学习的三个层次：**知识能被回答、能被组合、更新后能继续被使用**。每一层都有独立的实验和机制解释，共同回答训练与模型结构怎样形成可提取、可复用、可更新的知识。
 
-**当前研究入口：[Roadmap](docs/roadmap.md)。** 以三层已有观察为基础，推进[实际Transformer的数学解释](docs/memory-scaling-theory.md#transformer-conditional-results)与[通用架构的学习效率比较](docs/roadmap.md#architecture-efficiency)。顺序新知识迁移、写入目标比较和回放复测的完成结果见[结果汇总](docs/results.md#updating)；第一层的学习与提取、第二层的组合使用继续各自构成论文内容。
+**当前研究入口：[Roadmap](docs/roadmap.md)。** 论文主线采用[路径一致性工作假说](docs/roadmap.md#path-consistency)：事实只在它被学过或被改写的计算路径上可用，组合与更新传播取决于新用途是否经过同一路径。当前先完成相关论文复现，并对编辑复现执行预先冻结的跳位分组分析。顺序新知识迁移、写入目标比较和回放复测的完成结果见[结果汇总](docs/results.md#updating)；第一层的学习与提取、第二层的组合使用继续各自构成论文内容。
 
 最新[Loop同起点与规模开发比较](docs/results.md#loop-learning-v1)完成16条训练及独立重载：共享、解共享、仅MLP共享、浅层参照，以及宽度/循环扩展。代码同时记录知识学习、组合使用、新增后使用和实际Transformer跨调用梯度；当前结果未建立Loop的三层统一效率优势。
 

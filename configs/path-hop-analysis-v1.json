@@ -1,0 +1,143 @@
+{
+  "batch": "path-hop-analysis-v1",
+  "kind": "pre-registered analysis of existing reproduction outputs; no training, no new model forward",
+  "frozen_on": "2026-10-08",
+  "freeze_statement": "冻结时，编写者未读取 mquake-paper-reproduction-v1 或 rippleedits-paper-reproduction-v1 的任何逐例记录或汇总；两批进度文件只含按总跳数的汇总，不含按被编辑事实跳位的分组。分组计数只来自公开数据，数据SHA256与两批冻结配置一致。",
+  "protocol": "docs/development-artifacts/path-hop-analysis-v1/protocol.md",
+  "roadmap": "docs/roadmap.md#path-consistency",
+  "script": "scripts/analyze_path_hop_position.py",
+  "hypothesis": "路径一致性工作假说：更新只传到使用被写入计算路径的查询。ROME/MEMIT在显式主体词元上写入；被编辑事实作首跳时组合问题含该主体，作后续跳时主体只作为隐含桥实体出现。",
+  "bootstrap": {
+    "iterations": 10000,
+    "seed": 20261008,
+    "interval": [
+      0.025,
+      0.975
+    ],
+    "unit": "case; MQuAKE resampled jointly within hop-count strata, RippleEdits over all analysed cases"
+  },
+  "mquake": {
+    "source_batch": "mquake-paper-reproduction-v1",
+    "runs": [
+      "gpt-j-6B-rome",
+      "gpt-j-6B-memit"
+    ],
+    "data": "MQuAKE-CF-3k.json",
+    "data_sha256": "ce27a39c39f2983512b9b5578fadea5fbe352e5368f49d64f38d37ce304edc80",
+    "max_cases": 3000,
+    "groups": "single-edit cases; first = edited fact at hop 1, later = edited fact at hop >= 2; hop position by the reproduction's own subject/relation/new-target matching in new_triples",
+    "primary_hop_counts": [
+      2,
+      3
+    ],
+    "stratum_weighting": "equal weight over 2-hop and 3-hop strata",
+    "scores": "reproduction's frozen scores: direct = any of 3 questions exact alias match; cot = any CoT answer exact alias match; prerequisites = baseline direct correct, all new single hops correct after edit, all edits successful",
+    "primary": {
+      "M1": "full pool, direct: first - later",
+      "M2": "full pool, interaction: (first - later | direct) - (first - later | cot)"
+    },
+    "secondary": {
+      "S1": "M1 and M2 in the prerequisite subset, with coverage",
+      "S2": "old answer retained after edit (cases whose old and new alias sets are disjoint), per cell",
+      "S3": "4-hop single-edit cells and multi-edit cases (includes hop 1 or not): descriptive only"
+    },
+    "data_only_cell_counts": {
+      "2-hop/2-edits/includes-hop-1": 487,
+      "2-hop/edited-hop-1": 213,
+      "2-hop/edited-hop-2": 300,
+      "3-hop/2-edits/includes-hop-1": 157,
+      "3-hop/2-edits/no-hop-1": 177,
+      "3-hop/3-edits/includes-hop-1": 310,
+      "3-hop/edited-hop-1": 198,
+      "3-hop/edited-hop-2": 107,
+      "3-hop/edited-hop-3": 51,
+      "4-hop/2-edits/includes-hop-1": 147,
+      "4-hop/2-edits/no-hop-1": 99,
+      "4-hop/3-edits/includes-hop-1": 158,
+      "4-hop/3-edits/no-hop-1": 104,
+      "4-hop/4-edits/includes-hop-1": 268,
+      "4-hop/edited-hop-1": 15,
+      "4-hop/edited-hop-2": 149,
+      "4-hop/edited-hop-3": 36,
+      "4-hop/edited-hop-4": 24
+    }
+  },
+  "rippleedits": {
+    "source_batch": "rippleedits-paper-reproduction-v1",
+    "runs": [
+      "gpt2-xl-rome-popular",
+      "gpt2-xl-rome-random",
+      "gpt2-xl-rome-recent"
+    ],
+    "data_sha256": {
+      "popular.json": "fe668f11871d3e1df8039be89124d5d39a443db0e9d1ded623d190f9e6a3296e",
+      "random.json": "f99e625e6b00225498d4843f4e3a688b391cdd98e6f9ee85608f72a1e28c2d40",
+      "recent.json": "bc71807ea72280e2587bd1974fc79ae7e23aa24b1d5887bcdced40d448910547"
+    },
+    "groups": "CI tests (edited subject explicit, edited fact at hop 1) versus CII tests (edited subject is the implicit first-hop target, edited fact at hop 2); tests failing this structure are excluded and counted",
+    "scores": "author evaluator outcomes saved by the reproduction: PASSED/FAILED among executed tests of successfully edited cases",
+    "primary": {
+      "R1": "per subset, test-level accuracy CI - CII, case-resampled interval"
+    },
+    "secondary": {
+      "R2": "cases containing both axes: mean within-case CI - CII, descriptive"
+    },
+    "data_only_counts": {
+      "popular.json": {
+        "CI": {
+          "cases": 274,
+          "tests": 1781,
+          "structure_valid_tests": 1781
+        },
+        "CII": {
+          "cases": 120,
+          "tests": 445,
+          "structure_valid_tests": 445
+        },
+        "cases_with_both": 26
+      },
+      "random.json": {
+        "CI": {
+          "cases": 627,
+          "tests": 2985,
+          "structure_valid_tests": 2985
+        },
+        "CII": {
+          "cases": 207,
+          "tests": 746,
+          "structure_valid_tests": 746
+        },
+        "cases_with_both": 20
+      },
+      "recent.json": {
+        "CI": {
+          "cases": 829,
+          "tests": 9789,
+          "structure_valid_tests": 9789
+        },
+        "CII": {
+          "cases": 285,
+          "tests": 1139,
+          "structure_valid_tests": 1137
+        },
+        "cases_with_both": 101
+      }
+    }
+  },
+  "predictions": {
+    "P1": "M1 > 0 for both ROME and MEMIT",
+    "P2": "M2 > 0: explicit CoT bridge tokens shrink the hop-position gap",
+    "P3": "R1 > 0 in each RippleEdits subset",
+    "P4": "S2: old answer retained more often when the edit is at a later hop"
+  },
+  "interpretation": {
+    "supports": "P1 and P2 hold for both editors, with P3 in the same direction",
+    "against": "M1 interval at or below 0 for both editors, or P1 holds while M2 is about 0 (then case or entity-type differences explain the gap better than path mismatch)",
+    "limits": "groups are different cases, so entity types and relations differ; M2 is the within-case control; RippleEdits has no CoT control; one model per benchmark; this tests the natural-model consequence of the hypothesis, not its controlled-model mechanism"
+  },
+  "not_permitted": [
+    "running analyze on incomplete or unaudited runs",
+    "changing groups, strata, scores or bootstrap settings after reading outcomes",
+    "replacing the full-pool primary with the prerequisite subset"
+  ]
+}
