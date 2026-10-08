@@ -29,6 +29,7 @@ ARMS = {
     "IHC8": (8, 1, "identity_mhc"),
     "HC8": (8, 1, "mhc"),
     "M4": (4, 1, "moe"),
+    "W4": (4, 1, "wide"),
     "LM4R2": (4, 2, "moe"),
 }
 

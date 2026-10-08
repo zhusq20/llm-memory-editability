@@ -1,0 +1,561 @@
+{
+  "batch": "write-target-confirmation-v1",
+  "module": "write_target_editing",
+  "gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "runtime": {
+    "docker_context": "lm-memory",
+    "docker_host": "unix:///run/docker-lm-memory/docker.sock",
+    "image": "sha256:a994f1a1886220693eb26b7ff201147fbd4b49477d335ab2707330cab771063f",
+    "python": "/opt/conda/bin/python",
+    "cpus": 4,
+    "memory": "24g",
+    "env": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "XDG_CACHE_HOME": "/tmp/cache",
+      "TORCH_HOME": "/tmp/torch",
+      "TORCHINDUCTOR_CACHE_DIR": "/tmp/torchinductor",
+      "TRITON_CACHE_DIR": "/tmp/triton"
+    }
+  },
+  "specs": [
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774101-i775101-final_ce",
+      "phase": "confirmation",
+      "arm": "final_ce",
+      "objectives": [
+        "final_ce"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774101-i775101-aligned",
+      "parent_checkpoint_sha256": "9ba1147aa9e3593d1d02bcdb85e414d997537b95741d1961dcc26fddaac8642f",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774101-i775101-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774101-i775101-early_ce",
+      "phase": "confirmation",
+      "arm": "early_ce",
+      "objectives": [
+        "early_ce"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774101-i775101-aligned",
+      "parent_checkpoint_sha256": "9ba1147aa9e3593d1d02bcdb85e414d997537b95741d1961dcc26fddaac8642f",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774101-i775101-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774101-i775101-early_ce_align",
+      "phase": "confirmation",
+      "arm": "early_ce_align",
+      "objectives": [
+        "early_ce_align"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774101-i775101-aligned",
+      "parent_checkpoint_sha256": "9ba1147aa9e3593d1d02bcdb85e414d997537b95741d1961dcc26fddaac8642f",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774101-i775101-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774101-i775102-final_ce",
+      "phase": "confirmation",
+      "arm": "final_ce",
+      "objectives": [
+        "final_ce"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774101-i775102-aligned",
+      "parent_checkpoint_sha256": "4dc0b7662668de0c0f5d01a696bef70ce46916fe9a04e229a31a26a59710aad3",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774101-i775102-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774101-i775102-early_ce",
+      "phase": "confirmation",
+      "arm": "early_ce",
+      "objectives": [
+        "early_ce"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774101-i775102-aligned",
+      "parent_checkpoint_sha256": "4dc0b7662668de0c0f5d01a696bef70ce46916fe9a04e229a31a26a59710aad3",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774101-i775102-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774101-i775102-early_ce_align",
+      "phase": "confirmation",
+      "arm": "early_ce_align",
+      "objectives": [
+        "early_ce_align"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774101-i775102-aligned",
+      "parent_checkpoint_sha256": "4dc0b7662668de0c0f5d01a696bef70ce46916fe9a04e229a31a26a59710aad3",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774101-i775102-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774102-i775101-final_ce",
+      "phase": "confirmation",
+      "arm": "final_ce",
+      "objectives": [
+        "final_ce"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774102-i775101-aligned",
+      "parent_checkpoint_sha256": "9fc43fcc48b8d82d8b3d0780ad92905888185ac037372d186668a249abf19808",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774102-i775101-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774102-i775101-early_ce",
+      "phase": "confirmation",
+      "arm": "early_ce",
+      "objectives": [
+        "early_ce"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774102-i775101-aligned",
+      "parent_checkpoint_sha256": "9fc43fcc48b8d82d8b3d0780ad92905888185ac037372d186668a249abf19808",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774102-i775101-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774102-i775101-early_ce_align",
+      "phase": "confirmation",
+      "arm": "early_ce_align",
+      "objectives": [
+        "early_ce_align"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774102-i775101-aligned",
+      "parent_checkpoint_sha256": "9fc43fcc48b8d82d8b3d0780ad92905888185ac037372d186668a249abf19808",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774102-i775101-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774102-i775102-final_ce",
+      "phase": "confirmation",
+      "arm": "final_ce",
+      "objectives": [
+        "final_ce"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774102-i775102-aligned",
+      "parent_checkpoint_sha256": "f2432dd48e266c85a91b19a6c1049555bc9067142d63155ba84d666bb8a469b7",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774102-i775102-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774102-i775102-early_ce",
+      "phase": "confirmation",
+      "arm": "early_ce",
+      "objectives": [
+        "early_ce"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774102-i775102-aligned",
+      "parent_checkpoint_sha256": "f2432dd48e266c85a91b19a6c1049555bc9067142d63155ba84d666bb8a469b7",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774102-i775102-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774102-i775102-early_ce_align",
+      "phase": "confirmation",
+      "arm": "early_ce_align",
+      "objectives": [
+        "early_ce_align"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774102-i775102-aligned",
+      "parent_checkpoint_sha256": "f2432dd48e266c85a91b19a6c1049555bc9067142d63155ba84d666bb8a469b7",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774102-i775102-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774103-i775101-final_ce",
+      "phase": "confirmation",
+      "arm": "final_ce",
+      "objectives": [
+        "final_ce"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774103-i775101-aligned",
+      "parent_checkpoint_sha256": "56845c38b7bd88a6358cb31c3f375ccd63bd7bcac38d0edd0ddb46bf388c28d7",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774103-i775101-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774103-i775101-early_ce",
+      "phase": "confirmation",
+      "arm": "early_ce",
+      "objectives": [
+        "early_ce"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774103-i775101-aligned",
+      "parent_checkpoint_sha256": "56845c38b7bd88a6358cb31c3f375ccd63bd7bcac38d0edd0ddb46bf388c28d7",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774103-i775101-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774103-i775101-early_ce_align",
+      "phase": "confirmation",
+      "arm": "early_ce_align",
+      "objectives": [
+        "early_ce_align"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774103-i775101-aligned",
+      "parent_checkpoint_sha256": "56845c38b7bd88a6358cb31c3f375ccd63bd7bcac38d0edd0ddb46bf388c28d7",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774103-i775101-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774103-i775102-final_ce",
+      "phase": "confirmation",
+      "arm": "final_ce",
+      "objectives": [
+        "final_ce"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774103-i775102-aligned",
+      "parent_checkpoint_sha256": "b3679fba3d439b50ed1ea89f94e1bea5366f6fa9540cb9af40da4beddf5161a3",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774103-i775102-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774103-i775102-early_ce",
+      "phase": "confirmation",
+      "arm": "early_ce",
+      "objectives": [
+        "early_ce"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774103-i775102-aligned",
+      "parent_checkpoint_sha256": "b3679fba3d439b50ed1ea89f94e1bea5366f6fa9540cb9af40da4beddf5161a3",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774103-i775102-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "confirmation-w774103-i775102-early_ce_align",
+      "phase": "confirmation",
+      "arm": "early_ce_align",
+      "objectives": [
+        "early_ce_align"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/confirmation-w774103-i775102-aligned",
+      "parent_checkpoint_sha256": "b3679fba3d439b50ed1ea89f94e1bea5366f6fa9540cb9af40da4beddf5161a3",
+      "candidate_seed": 780101,
+      "per_cell": 4,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-confirmation-v1/runs/confirmation-w774103-i775102-aligned",
+      "tracking_group": "write-target-confirmation-v1"
+    }
+  ],
+  "additional_sources": [
+    "tests/test_write_target_editing.py",
+    "scripts/run_write_target_editing.py",
+    "docs/development-artifacts/learning-use-20261007/protocol.md",
+    "configs/write-target-editing-v1.json",
+    "results/write-target-development-v1/development-decision.json"
+  ],
+  "development_operational_gate": "results/write-target-development-v1/development-decision.json",
+  "allocated_optimizer_updates": 73728
+}

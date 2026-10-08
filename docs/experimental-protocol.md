@@ -1,10 +1,10 @@
 # 实验协议与复现约定
 
-更新：2026-10-02。当前研究方向、理论与待办见[计划](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md)，最终状态与数字见[结果汇总](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/results.md)。本协议集中保留共同规则及现有脚本需要读取的历史契约。历史完整协议已存在于[执行时冻结快照](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/development-artifacts/qwen-path-learning-v1/execution-source/docs/experimental-protocol.md)，不再维护另一份状态长文。
+更新：2026-10-07。当前研究方向与待办统一见[Roadmap](roadmap.md)，数字与状态见[结果汇总](results.md)，推导见[理论依据](memory-scaling-theory.md)。本协议保留共同执行规则及旧脚本读取的历史契约。历史完整协议见[执行时冻结快照](development-artifacts/qwen-path-learning-v1/execution-source/docs/experimental-protocol.md)。
 
 ## 研究范围与证据
 
-研究知识形成、学习效率、独立更新及组合调用。数学结论注明架构、输入、冻结参数、损失、度量及适用条件；实测分别报告行为、局部响应与长期轨迹。干预的方向性/特异性与表示可读出分别评价，不从一次patch成功或一个梯度恒等式推导完整机制。
+研究知识能被回答、能被组合、更新后能继续被使用三个层次，每层分别建立实验和解释。数学结论注明架构、输入、冻结参数、损失、度量及适用条件；实测分别报告行为、局部响应与长期轨迹。干预的方向性/特异性与表示可读出分别评价，不从一次patch成功或一个梯度恒等式推导完整机制。
 
 原版bioS、历史bioS-Work符号图、CounterFact自然语言事实和公开两跳基准是不同任务。固定数据集标签不自动代表当前现实真值；保留来源、许可、模型revision、适配及语义审查范围。数据来源与具体数量以各批配置/锁为准。
 
@@ -21,7 +21,7 @@
 
 每批分别记录初始化来源、计损失的词元位置、样本配比和可更新参数；“预训练/微调”不能代替这些定义。同为交叉熵，既可监督全序列，也可只监督答案。
 
-grok两/三/四跳为随机初始化、全部参数训练、最终实体与EOS等权监督；没有中间答案目标。训练EOS时使用正确答案，生成评价时使用模型自产答案。历史深度批次按合并数据集逐例采样，改变组合数量也改变混合比例；Loop批次每批固定32条单跳与224条组合，两流分别均匀遍历，组合覆盖变化不改变每步单跳占比。公式和实现入口见[当前训练目标](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md#training-objective)。
+历史grok两/三/四跳为随机初始化、全部参数训练、最终实体与EOS等权监督，没有中间答案目标。训练EOS时使用正确答案，生成评价时使用模型自产答案。历史深度批次按合并数据集逐例采样，改变组合数量也改变混合比例；Loop批次每批固定32条单跳与224条组合，两流分别均匀遍历，组合覆盖变化不改变每步单跳占比。实现入口见[Loop训练](../src/llm_memory_editability/grok_loop_train.py)与[使用经历训练](../src/llm_memory_editability/grok_usage_train.py)，精确复现采用相应批次冻结源码；这些配方不自动成为全部新实验的默认值。
 
 ## 评价与统计
 
@@ -33,11 +33,11 @@ E成功、D传播、U损伤及局部保持分别报告。损伤分母只含编�
 
 按独立世界或预定案例单位做配对分析，同一模型的种子、层、查询和精度重测的相关性须说明。置信区间、多重校正和预定/事后分析分别注明。历史确认与停止规则保留；后续探索可以研究小效应与负结果，不事后删臂。
 
-少量世界优先公开逐世界差值和原始分母；查询级区间不解释为跨世界泛化区间。机制干预先指定部位、供体可访问信息及覆盖；逐题最佳部位只作探索上界，激活修复不等于参数编辑。新批的竞争解释、有限比较与预算见[整改设计](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md#research-rectification)。
+少量世界优先公开逐世界差值和原始分母；查询级区间不解释为跨世界泛化区间。机制干预先指定部位、供体可访问信息及覆盖；逐题最佳部位只作探索上界，激活修复不等于参数编辑。新设计围绕[roadmap中的关键比较](roadmap.md#next-experiments)明确竞争解释，实际预算由对应执行协议固定。
 
-存储与多跳计算的新比较以[根本问题定义](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md#frontier-question-20261001)为准：独立参数量、事实负载、逻辑跳数与展开轮数分别记录；固定词表和参数时，不能随实体数增长Embedding后称等容量。区分规定输入上的单跳提取、链上全部必要事实与完整多跳结果；逐轮检查原子和格式，轮数不假定等于跳数。原子事实、目标路径及等价首尾关系的训练曝光分开核查；每事实曝光匹配与总训练计算匹配是不同协议。有限训练的负载边界称经验容量，不直接作为架构上限。旧批评分不追溯改变。
+存储与多跳计算按[三个层次的问题](roadmap.md#question)分别解释：独立参数量、事实负载、逻辑跳数与展开轮数分别记录；固定词表和参数时，不能随实体数增长Embedding后称等容量。区分规定输入上的单跳提取、链上全部必要事实与完整多跳结果；逐轮检查原子和格式，轮数不假定等于跳数。原子事实、目标路径及等价首尾关系的训练曝光分开核查；每事实曝光匹配与总训练计算匹配是不同协议。有限训练的负载边界称经验容量，不直接作为架构上限。旧批评分不追溯改变。
 
-本次用户授权的storage-composition-v1使用完整标准Transformer和Loop Transformer，全部Embedding、位置、Q/K/V、输出投影、残差、LayerNorm和4倍MLP保留并训练；过度简化记忆网络仅保留历史结论。固定词表和测试子图，低/高负载为1024/6144，必要原子总曝光匹配。主评分、背景操作、严格无组合角色池与轮数诊断见[当前计划](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md#standard-storage-composition)和[开发修订](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/development-artifacts/storage-composition-v1/amendment-20261001.md)。
+已完成的storage-composition-v1使用完整标准Transformer和Loop Transformer，保留并训练Embedding、位置、Q/K/V、输出投影、残差、LayerNorm和4倍MLP；低/高负载1024/6144，固定词表与测试子图并匹配必要原子曝光。其范围与评分见原[开发修订](development-artifacts/storage-composition-v1/amendment-20261001.md)，不作为当前待启动矩阵。
 
 ## 执行与复现
 
@@ -49,7 +49,7 @@ E成功、D传播、U损伤及局部保持分别报告。损伤分母只含编�
 
 ## 历史契约兼容段落
 
-以下§16–18属于已经完成的历史实验，其中的“下一步”“本轮未执行”均为当时判断；最新结论见[历史批次汇总](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/results.md#organization)。保留原编号及正文，是因为 `bios_context_gradient`、`bios_followup`、`bios_path_transfer`、`bios_path_minimal` 和Jacobian脚本按这些标题提取契约。原冻结版本仍以各批 `preregistration.md` 为准；这里仅将已删除报告的链接改指向统一汇总。
+以下§16–18属于已经完成的历史实验，其中的“下一步”“本轮未执行”均为当时判断；当前证据见[历史批次汇总](results.md#organization)。保留原编号及正文，是因为 `bios_context_gradient`、`bios_followup`、`bios_path_transfer`、`bios_path_minimal` 和Jacobian脚本按这些标题提取契约。原冻结版本仍以各批 `preregistration.md` 为准；本次整理不修改以下契约正文。
 
 ## 16. v2.11 上下文统计与真实早期梯度：独立开发实验
 

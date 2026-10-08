@@ -1,0 +1,108 @@
+{
+  "skill": "academic-research-suite",
+  "adapter_version": "3.23.0",
+  "repository": "https://github.com/Imbad0202/academic-research-skills-codex.git",
+  "commit": "52228e8280dd1770e18ecfc3b1fdf16b13b58104",
+  "source_path": "skills/academic-research-suite",
+  "installed_at_utc": "2026-10-08T00:22:37.831380+00:00",
+  "scope": "repo",
+  "destination": "/ossfs/workspace/llm-memory-editability/.agents/skills/academic-research-suite",
+  "license": "CC-BY-NC-4.0",
+  "license_file": "LICENSE",
+  "source_file_count": 2637,
+  "source_total_bytes": 38362505,
+  "source_tree_sha256": "f23f4207128919283995c3cc7ca294784620c94e1ffac498f14d75e907a192d0",
+  "source_tree_hash_method": "SHA256 of UTF-8 JSON mapping relative paths to file SHA256, sort_keys=true, separators=(comma,colon)",
+  "local_additions": [
+    "LICENSE",
+    "INSTALLATION.json"
+  ],
+  "validation": {
+    "source_files_byte_identical": true,
+    "upstream_checkout_static_gates_passed": [
+      "desktop-plugin-bundle",
+      "manifest",
+      "single-root-skill",
+      "root-router",
+      "hook-safety",
+      "reviewer-fixture",
+      "upstream-lock",
+      "topology-experiment"
+    ],
+    "installed_skill_gates": {
+      "single-root-skill": {
+        "ok": true,
+        "messages": [
+          "single root skill is the only Codex-discoverable skill",
+          "5 core workflows match disk, root router, and full-runtime manifest",
+          "1 separately sourced workflow(s) excluded from core parity"
+        ]
+      },
+      "root-router": {
+        "ok": true,
+        "messages": [
+          "root router routing-core block is byte-identical to the canonical ARS core",
+          "root router description uses 912/1024 Unicode code points"
+        ]
+      },
+      "hook-safety": {
+        "ok": true,
+        "messages": [
+          "1 hook command(s) are disabled-by-default and pass static safety checks"
+        ]
+      },
+      "reviewer-fixture": {
+        "ok": true,
+        "messages": [
+          "paper-reviewer full-mode fixture preserves independent reviewer sections before synthesis"
+        ]
+      },
+      "upstream-lock": {
+        "ok": true,
+        "messages": [
+          "upstream lock pins academic-research-skills@6ab4b03"
+        ]
+      },
+      "topology-experiment": {
+        "ok": true,
+        "messages": [
+          "topology experiment cohort freezes 10 tasks across reviewer and research/pipeline strata",
+          "26 task-arm plans have valid input digests and acyclic DAGs"
+        ]
+      }
+    },
+    "codex_discovery": {
+      "codex_version": "0.156.1",
+      "repo_skills": [
+        {
+          "name": "academic-research-suite",
+          "path": "/ossfs/workspace/llm-memory-editability/.agents/skills/academic-research-suite/SKILL.md",
+          "scope": "repo",
+          "enabled": true
+        },
+        {
+          "name": "llm-memory-research",
+          "path": "/ossfs/workspace/llm-memory-editability/.agents/skills/llm-memory-research/SKILL.md",
+          "scope": "repo",
+          "enabled": true
+        }
+      ],
+      "repo_skill_errors": []
+    },
+    "project_existing_instructions_unchanged": true,
+    "project_ruff_scan": {
+      "excluded_imported_files": 485,
+      "remaining_files": 652,
+      "other_project_files_unchanged": true
+    }
+  },
+  "project_integration": {
+    "ruff_exclusion_file": "pyproject.toml",
+    "ruff_excluded_directory": ".agents/skills/academic-research-suite"
+  },
+  "usage": {
+    "working_directory": "/ossfs/workspace/llm-memory-editability",
+    "invocation": "$academic-research-suite",
+    "project_rules": ".agents/skills/llm-memory-research/SKILL.md"
+  }
+}

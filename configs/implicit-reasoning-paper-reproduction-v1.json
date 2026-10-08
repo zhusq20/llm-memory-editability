@@ -1,0 +1,78 @@
+{
+  "batch": "implicit-reasoning-paper-reproduction-v1",
+  "module": "paper_reproduction",
+  "gpus": [
+    0,
+    1
+  ],
+  "runtime": {
+    "docker_context": "lm-memory",
+    "docker_host": "unix:///run/docker-lm-memory/docker.sock",
+    "image": "sha256:24c345d3a3690bf481a4be1832078c1ad4cfd3637073237ab259a145cf95aa6c",
+    "python": "/opt/conda/bin/python",
+    "cpus": 4,
+    "memory": "16g",
+    "env": {
+      "PYTHONHASHSEED": "0",
+      "HF_HUB_OFFLINE": "1",
+      "TRANSFORMERS_OFFLINE": "1"
+    }
+  },
+  "additional_sources": [
+    "tests/test_paper_reproduction.py"
+  ],
+  "specs": [
+    {
+      "name": "only_ii-seed42",
+      "arm": "only_ii",
+      "seed": 42,
+      "max_steps": 1000000,
+      "save_steps": 50000,
+      "save_step_dense": 40000,
+      "save_step_dense_interval": 2000,
+      "log_steps": 100,
+      "dataset": "/ossfs/workspace/llm-memory-editability/data/implicit-reasoning-paper-reproduction-v1/only_ii",
+      "data_file": "/ossfs/workspace/llm-memory-editability/data/implicit-reasoning-paper-reproduction-v1/data-audit.json",
+      "data_files": {
+        "train.json": "6f48e0bece52062f0fa9d5aae4a76438638b1607a8eae8408ee3e7bace422c4b",
+        "valid.json": "d631cd092cfc5f57a5e51a2f2bb7091935b892dedfddfb33e23e1d6bfb1ccb0d",
+        "test.json": "3d8d526e3efddc2000d876a21eebc60979541868149343ce4df15c46bf243d6c",
+        "vocab.json": "51f3a0975cf006a0d050600701eb7efc44158b42b68abb0ab85a6647a366620b"
+      },
+      "tokenizer": "/ossfs/workspace/llm-memory-editability/data/implicit-reasoning-paper-reference-v1/gpt2",
+      "reference_model": "/ossfs/workspace/llm-memory-editability/data/implicit-reasoning-paper-reference-v1/gpt2",
+      "world_sha256": "554a9a479f6e528bef1ff5c7586f4a67f6683dd039e401d8087ccdcdd1086b14",
+      "paper": "Ye et al., NeurIPS 2025",
+      "original_experiment": "Section 2.3 / Figure 3",
+      "data_seed": 42,
+      "paper_data_commit": "d024e6bf353d167a8a140204bfa26b342ab1e824",
+      "author_training_commit": "734ca654ec7a71dd6737d640407fac14491d538c"
+    },
+    {
+      "name": "ii_plus_id-seed42",
+      "arm": "ii_plus_id",
+      "seed": 42,
+      "max_steps": 1000000,
+      "save_steps": 50000,
+      "save_step_dense": 40000,
+      "save_step_dense_interval": 2000,
+      "log_steps": 100,
+      "dataset": "/ossfs/workspace/llm-memory-editability/data/implicit-reasoning-paper-reproduction-v1/ii_plus_id",
+      "data_file": "/ossfs/workspace/llm-memory-editability/data/implicit-reasoning-paper-reproduction-v1/data-audit.json",
+      "data_files": {
+        "train.json": "fe63e765e4f9b37c033094939006f58f7c70fe40561af70c8df5a6b7790fe751",
+        "valid.json": "d631cd092cfc5f57a5e51a2f2bb7091935b892dedfddfb33e23e1d6bfb1ccb0d",
+        "test.json": "3d8d526e3efddc2000d876a21eebc60979541868149343ce4df15c46bf243d6c",
+        "vocab.json": "51f3a0975cf006a0d050600701eb7efc44158b42b68abb0ab85a6647a366620b"
+      },
+      "tokenizer": "/ossfs/workspace/llm-memory-editability/data/implicit-reasoning-paper-reference-v1/gpt2",
+      "reference_model": "/ossfs/workspace/llm-memory-editability/data/implicit-reasoning-paper-reference-v1/gpt2",
+      "world_sha256": "554a9a479f6e528bef1ff5c7586f4a67f6683dd039e401d8087ccdcdd1086b14",
+      "paper": "Ye et al., NeurIPS 2025",
+      "original_experiment": "Section 2.3 / Figure 3",
+      "data_seed": 42,
+      "paper_data_commit": "d024e6bf353d167a8a140204bfa26b342ab1e824",
+      "author_training_commit": "734ca654ec7a71dd6737d640407fac14491d538c"
+    }
+  ]
+}

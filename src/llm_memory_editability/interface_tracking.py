@@ -136,7 +136,11 @@ def drain_runs(sdk, root, runs_dir, settings, *, once=False, tracker_factory=Non
                 return {str(path): cursor for path, cursor in finished.items()}
             manifest = root / "controller-state.json"
             state = tracking.read_json(manifest) if manifest.exists() else {}
-            terminal = state.get("state") in {"complete", "finished_with_failures"}
+            terminal = state.get("state") in {
+                "complete",
+                "finished_with_failures",
+                "development_prerequisite_not_met",
+            }
             # Rescan AFTER all SDK calls and after reading the controller's
             # terminal state, so runs born during initialization cannot vanish.
             fresh = discover_runs(runs_dir)

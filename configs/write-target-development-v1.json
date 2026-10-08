@@ -1,0 +1,124 @@
+{
+  "batch": "write-target-development-v1",
+  "module": "write_target_editing",
+  "gpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "runtime": {
+    "docker_context": "lm-memory",
+    "docker_host": "unix:///run/docker-lm-memory/docker.sock",
+    "image": "sha256:a994f1a1886220693eb26b7ff201147fbd4b49477d335ab2707330cab771063f",
+    "python": "/opt/conda/bin/python",
+    "cpus": 4,
+    "memory": "24g",
+    "env": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "XDG_CACHE_HOME": "/tmp/cache",
+      "TORCH_HOME": "/tmp/torch",
+      "TORCHINDUCTOR_CACHE_DIR": "/tmp/torchinductor",
+      "TRITON_CACHE_DIR": "/tmp/triton"
+    }
+  },
+  "specs": [
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "development-final_ce",
+      "phase": "development",
+      "arm": "final_ce",
+      "objectives": [
+        "final_ce"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/development-v2-w770011-i771011-aligned_0.3",
+      "parent_checkpoint_sha256": "cb1e034f7174cc081d9802d27df7827f8aa8650927dd603be10fde07e4ed868d",
+      "candidate_seed": 780011,
+      "per_cell": 2,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-development-v1/runs/development-aligned_0.3-lr1e-05",
+      "tracking_group": "write-target-development-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "development-early_ce",
+      "phase": "development",
+      "arm": "early_ce",
+      "objectives": [
+        "early_ce"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/development-v2-w770011-i771011-aligned_0.3",
+      "parent_checkpoint_sha256": "cb1e034f7174cc081d9802d27df7827f8aa8650927dd603be10fde07e4ed868d",
+      "candidate_seed": 780011,
+      "per_cell": 2,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-development-v1/runs/development-aligned_0.3-lr1e-05",
+      "tracking_group": "write-target-development-v1"
+    },
+    {
+      "module": "write_target_editing",
+      "nodes": [
+        0,
+        32,
+        128,
+        512
+      ],
+      "lr": 1e-05,
+      "parameter_scope": "mlp",
+      "block_index": 0,
+      "replay_n": 32,
+      "replay_weight": 1.0,
+      "early_weight": 0.3,
+      "alignment_weight": 0.3,
+      "eval_batch_size": 512,
+      "name": "development-early_ce_align",
+      "phase": "development",
+      "arm": "early_ce_align",
+      "objectives": [
+        "early_ce_align"
+      ],
+      "parent_dir": "/ossfs/workspace/llm-memory-editability/results/representation-alignment-v1/runs/development-v2-w770011-i771011-aligned_0.3",
+      "parent_checkpoint_sha256": "cb1e034f7174cc081d9802d27df7827f8aa8650927dd603be10fde07e4ed868d",
+      "candidate_seed": 780011,
+      "per_cell": 2,
+      "diagnostic_existing_dir": "/ossfs/workspace/llm-memory-editability/results/interface-editing-development-v1/runs/development-aligned_0.3-lr1e-05",
+      "tracking_group": "write-target-development-v1"
+    }
+  ],
+  "additional_sources": [
+    "tests/test_write_target_editing.py",
+    "scripts/run_write_target_editing.py",
+    "docs/development-artifacts/learning-use-20261007/protocol.md",
+    "configs/write-target-editing-v1.json"
+  ]
+}

@@ -2,7 +2,7 @@
 
 ## 研究与表达
 
-主线是预训练中的事实知识与可迁移计算如何共同形成。[当前计划](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md)维护训练呈现、组合使用经历及学习过程的研究方向，[结果汇总](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/results.md)维护批次状态，[实验协议](docs/experimental-protocol.md)定义评价与记录规范。
+主线是知识学习的三个层次：知识能被回答、能被组合、更新后能继续被使用。每层都有独立实验和解释。[Roadmap](docs/roadmap.md)是唯一当前规划，[结果汇总](docs/results.md)维护证据和批次状态，[理论依据](docs/memory-scaling-theory.md)维护推导，[实验协议](docs/experimental-protocol.md)定义评价与执行规范。
 
 积极借鉴已有论文；解释整合与由此形成的方法论可以构成贡献。保留小效应、条件性收益和负结果，不把显著性或掌握率作为所有探索的统一淘汰门槛。历史批次的冻结判据仍按原契约解释；路径学习开发停止、确认实验未获支持等结果不得事后改写。
 
@@ -10,7 +10,7 @@
 
 ## 开发检查
 
-安装命令见 [README](README.md#开发与复现)。代码修改运行相关测试与 `ruff check` / `ruff format --check`；纯文档修改检查本地链接、标题锚点、预算与状态，不启动训练。
+安装命令见[README](README.md#安装与下载)。代码修改运行相关测试与 `ruff check` / `ruff format --check`；纯文档修改检查本地链接、标题锚点、预算与状态，不启动训练。
 
 日常静态检查排除 `docs/development-artifacts/` 中的冻结源码，保留原内容与审计哈希。完整测试需要相关批次的本地 `data/`、`results/` 与固定模型tokenizer；正式重载审计仍使用批次冻结环境。
 
@@ -28,6 +28,8 @@
 
 数据和权重写入批次专属 `data/`、`results/`；提交可审查的配置、来源清单、小型统计与复现命令。冻结设计、源码、哈希与审计产物保留原文，不把历史快照中的“当前”当成最新状态。
 
-日常更新集中到计划、结果汇总和README，避免追加重复的状态长文。已被统一文档替代的旧报告直接删除；需要执行时原文时查看各批冻结快照。旧报告生成器可能重新生成已合并的文件，需审阅后把新增信息并入汇总。协议保留的§16–18标题供现有脚本读取，调整时须核对调用方。
+当前方向和待办只更新roadmap；结果按三层合并到汇总，README仅维护导航。删除被替代的重复规划；有独立科学细节的历史报告放入 `docs/reports/` 或保留对应批次冻结证据，不因偏离当前主线删除原始结果。旧报告生成器可能重新生成已合并的文件，需审阅后再整合。协议§16–18由现有脚本按标题截取，必须保留兼容正文。旧计划路径只作兼容入口，历史复现须读原冻结文件。
 
-原版bioS优先采用 Physics of Language Models 官方材料与任务。开发流水线完成状态、100k主矩阵及日期更新的执行边界以[当前计划](https://huggingface.co/datasets/zsqzz/llm-memory-editability/blob/main/docs/hebbian-learning-plan-v1.md#bios)为准；不从历史扩展草案自动叠加训练预算。
+原版bioS采用 Physics of Language Models 官方材料与任务。已完成开发用于第一层的学习与提取研究；100k主矩阵及日期更新等旧候选按[roadmap范围](docs/roadmap.md#scope)处理，不从历史草案自动叠加预算。
+
+当前roadmap作为仓库入口随代码维护；原始研究材料的存储规则保持。下载远端历史快照前核对目标范围，避免覆盖当前活动文档；未同步的本机内容不能称远端已发布。

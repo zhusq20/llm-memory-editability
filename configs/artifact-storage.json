@@ -1,6 +1,6 @@
 {
   "github_repository": "https://github.com/zhusq20/llm-memory-editability",
-  "github_scope": "Source, tests, configuration and development instructions",
+  "github_scope": "Source, tests, configuration, development instructions and the current research roadmap (docs/roadmap.md)",
   "github_max_file_bytes_exclusive": 200000000,
   "huggingface_repository": "zsqzz/llm-memory-editability",
   "huggingface_repository_type": "dataset",

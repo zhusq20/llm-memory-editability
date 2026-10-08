@@ -14,7 +14,7 @@ dist/
 .coverage
 htmlcov/
 
-# GitHub stores code, configuration and development instructions.
+# GitHub stores code, configuration, development instructions and the current roadmap.
 # Experiment data and research artifacts are archived on Hugging Face.
 /data/
 /results/
@@ -24,6 +24,7 @@ htmlcov/
 /ARCHIVE_MANIFEST.json
 /docs/*
 !/docs/experimental-protocol.md
+!/docs/roadmap.md
 *.npy
 *.npz
 # Model/optimizer states and Docker image archives remain local.
