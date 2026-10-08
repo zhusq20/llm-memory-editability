@@ -1,14 +1,14 @@
 # 知识学习与推理研究 Roadmap
 
-更新：2026-10-08。本文是项目唯一的当前研究路线图，统一论文立意、三个层次的问题、已有证据和下一步优先级。实验数字与状态由[结果汇总](results.md)维护，推导见[理论依据](memory-scaling-theory.md)，执行规则见[实验协议](experimental-protocol.md)。本轮顺序新知识迁移和写入目标比较已完成，53个开发/正式任务全部通过独立重载与云端核验；范围见[本轮执行协议](development-artifacts/learning-use-20261007/protocol.md)，完成证据见[批次清单](../results/learning-use-20261007/completion-manifest.json)。历史批次的原始结果与冻结契约保持原样。
+更新：2026-10-09。本文是项目唯一的当前研究路线图，统一论文立意、三个层次的问题、已有证据和下一步优先级。实验数字与状态由[结果汇总](results.md)维护，推导见[理论依据](memory-scaling-theory.md)，执行规则见[实验协议](experimental-protocol.md)。本轮顺序新知识迁移和写入目标比较已完成，53个开发/正式任务全部通过独立重载与云端核验；范围见[本轮执行协议](development-artifacts/learning-use-20261007/protocol.md)，完成证据见[批次清单](../results/learning-use-20261007/completion-manifest.json)。历史批次的原始结果与冻结契约保持原样。
 
 随后按用户要求查阅论文并复测旧任务回放，另16任务全部完成并通过独立重载与云端核验；见[文献配方结果](results.md#sequential-replay-v1)和[完成清单](../results/sequential-replay-literature-v1/completion-manifest.json)。
 
 Loop同起点及宽度/循环扩展另16任务已完成，共192000更新，独立重载与W&B云端核验全部通过；见[新结果](results.md#loop-learning-v1)及[完成清单](../results/loop-learning-20261007/completion-manifest.json)。已记录三层学习曲线、80个训练池微观诊断节点和128个实际更新节点；当前未建立共享参数的三层统一效率优势。
 
-**当前优先级：先复现论文，再寻找缺口。** 用户于2026-10-08明确要求停止继续由agent自行设计实验的推进方式，先实际复现相关论文中对本项目有贡献价值的关键比较。已有理论和实验保留，但新的架构、损失、写入位置或保持方法不因旧候选仍在本文而自动入队。
+**当前优先级：先复现论文，再寻找缺口；九条本批复现与五条冻结跳位分析现已完成。** 用户于2026-10-08明确要求停止继续由agent自行设计实验的推进方式，先实际复现相关论文中对本项目有贡献价值的关键比较。已有理论和实验保留，但新的架构、损失、写入位置或保持方法不因旧候选仍在本文而自动入队。
 
-**论文主线：路径一致性工作假说。** 用户于2026-10-08采纳：事实只在它被学过或被改写的那条计算路径上可用；能否被组合、更新能否传播，取决于新用途是否经过同一条路径。三层由这一假说串起，各层仍有独立实验。它是待检验假说，复现结果可以否定它；见[第1.1节](#path-consistency)。架构效率比较因此降级，只保留Loop与普通独立层这一对机制对比。
+**论文主线：路径一致性工作假说。** 用户于2026-10-08采纳：事实只在它被学过或被改写的那条计算路径上可用；能否被组合、更新能否传播，取决于新用途是否经过同一条路径。三层由这一假说串起，各层仍有独立实验。它是待检验假说，复现结果可以否定它；见[第1.1节](#path-consistency)。架构效率比较因此降级，只保留Loop与普通独立层这一对机制对比。本轮自然模型预定分析只给部分支持：ROME的CoT缩小跳位差距8.34pp，MEMIT约0pp，RippleEdits未在每个发布池建立首跳优势；完整结果见[结果汇总](results.md#path-hop-analysis-v1)，不能把该假说写成已成立的统一机制。
 
 **此前路线与已完成结果。** 统一研究参数知识如何被学会、怎样被推理过程调用，以及这些过程随知识负载、独立参数、执行深度和训练量怎样变化。两条路线相互检验：严格基于实际Transformer解释三层能力的分离；用受控架构比较检验学习成本与微观更新过程。此前主比较采用普通四层Transformer、两层执行两轮的Loop、同Loop加首轮共享KV。普通模型各层独立随机初始化；已有复制相同初值后分别训练的模型只作辅助机制证据，不代替普通模型。用户要求避免重复历史失败实验；复用兼容对照，只补缺失条件。用户已授权先启动，`loop-kv-learning-development-v1`四条新增训练、独立重载及云端核验于2026-10-07全部完成，复用两条旧Loop；见[冻结协议](development-artifacts/loop-kv-learning-development-v1/protocol.md)及[完整结果](results.md#loop-kv-learning-v1)。共享KV未稳定改善新增知识使用，当前先解释结果并逐项审查历史设计，不自动扩展网格。用户随后授权的[MoE顺序学习比较](#moe-sequential-next)已经完成：复用两条普通模型、新增四条48,000更新，独立重载与W&B全部通过。MoE的BB22.66%低于普通23.44%，配对方向混合；旧组合终点较高但原正确AA保持较低，尚未建立三层统一效率优势。当前先解释已有结果，不自动追加网格。Delta系列与mHC暂缓；其重新进入须有明确新问题。已有观察是起点，不预设架构优势，也不要求先完整解决第三层才形成论文。
 
@@ -98,7 +98,7 @@ Loop同起点及宽度/循环扩展另16任务已完成，共192000更新，独�
 
 | 顺序 | 工作 | 完成后应能回答 |
 | --- | --- | --- |
-| 当前，零训练 | [跳位分组预定分析](#paper-reproduction-first)：MQuAKE/RippleEdits复现完成且独立重放通过后执行 | 自然模型中编辑是否按被编辑事实的跳位传播，CoT显式桥实体能否缩小差距 |
+| 已完成，零训练 | [跳位分组预定分析](results.md#path-hop-analysis-v1)：五条复现全部重放通过，五份分析及图表已保存 | 两编辑器都有首跳优势；CoT缩小差距只在ROME获支持，RippleEdits方向与覆盖不一致，统一解释未建立 |
 | 当前，零训练 | 按[路径一致性](#path-consistency)的统一分类只读重制已有结果；先定5–6张论文主图的位置，新实验须对应图位 | 哪些已有结果直接进入正文，主图还缺哪项比较 |
 | 复现之后，须另行授权 | 普通独立层的对齐目标格式比较；功效充足的首/次跳×共享×写入层位编辑；地址世界中的编辑传播 | 路径一致性在受控模型中是否成立 |
 | 本轮已完成数学整理 | 完整pre-LN计算图、最后MLP的保护/写入条件、Loop共享梯度推导及CPU数值核查 | 哪些行为蕴含不成立；共享严格改变了什么 |
@@ -130,21 +130,21 @@ Loop同起点及宽度/循环扩展另16任务已完成，共192000更新，独�
 训练目标或目标操作未成立时，保留结果并定位该前提；不把低分立即归因于架构上限，也不以扩展矩阵代替解释。下一项若仍仅重复“熟悉改善、新知识组合低”的历史模式，就结束该配方的扩展，记录边界。
 
 <a id="paper-reproduction-first"></a>
-### 5.0 当前：复现相关论文的关键实验
+### 5.0 已完成：相关论文的关键实验复现与预定分析
 
 先按原文回答“复现了什么”，再讨论“缺了什么”。保留三个层次的论文结构，不用新架构网格代替对已有方法的检验。
 
 | 原论文与原实验 | 对本项目的用途 | 去重与当前状态 |
 | --- | --- | --- |
-| Ye et al. 2025 §2.3 / Figure 3：只学Train-II，与Train-II加ID原子监督 | 校准原子事实是否必需，以及怎样影响组合学习时间；直接连接第一、二层 | **首批v2两条正式长训练运行中。** 原始8层GPT-2、batch 1024、每臂百万迭代；数据审计、6项契约测试、18,986条全池CUDA短训练与新进程重载通过。首次尝试在训练前因补齐词表类别解码失败，记录保留。见[原配方](development-artifacts/implicit-reasoning-paper-reproduction-v1/protocol.md)、[解码修订与冻结源](development-artifacts/implicit-reasoning-paper-reproduction-v2/protocol.md)；当前尚无科学复现结论 |
-| 同论文 §2.4 / Appendix D.1：事实在第二跳的训练覆盖限制 | 检验“单跳会答”与“某个使用角色已学会”怎样分离 | **两条百万步训练运行中，GPU2/3。** 使用作者角色限制生成器和完整训练实现；1900条限制事实全部进入过首跳，第二跳训练曝光为0。仅Train-II / 加全部原子监督，共享组合及14000评价池；全训练池审查、两条CUDA短训练与全池独立重载通过。见[协议](development-artifacts/second-hop-paper-reproduction-v1/protocol.md) |
-| MQuAKE 的参数编辑成功与编辑后多跳问答比较 | 校准第三层的原始现象及自然模型评价，区分编辑成功与派生使用 | **GPT-J ROME/MEMIT两条全量任务已提交，GPU4/5。** 原Table3的3000案例，各例独立编辑后恢复；原提示及默认超参数，记录直接编辑、必要单跳、多跳与CoT，条件子集另报覆盖。项目既有小样本/自制干预不是本比较。作者未发布参数编辑评价脚本，生成上限与答案截取约定明确保留。见[协议与差异](development-artifacts/paper-reproductions-parallel-v1/protocol.md) |
-| RippleEdits 的直接编辑与关系连带变化评价 | 检查论文怎样定义应更新与应保持的关系，给第三层建立可用基线 | **GPT-2 XL + ROME三条全发布池已提交。** POPULAR/RANDOM在GPU6/7，RECENT排队；用作者捆绑编辑器与原TestRunner/Evaluator，按论文20新token、生成文本和任一金对象评分。发布池实际885/1922/1948，与论文统计有差异；标签、前提筛选及编辑失败保留覆盖，不冒称同一批具体案例。见[固定契约](development-artifacts/paper-reproductions-parallel-v1/protocol.md) |
+| Ye et al. 2025 §2.3 / Figure 3：只学Train-II，与Train-II加ID原子监督 | 校准原子事实是否必需，以及怎样影响组合学习时间；直接连接第一、二层 | **两条各百万迭代均完成，全18986查询重载通过。** Test-II为54.77/99.57%，无原子监督的单跳问法0%；方向支持原子监督加速与能力分离，单世界/初始化不建立普遍规律。首次补齐词表解码失败保留。见[结果](results.md#implicit-reasoning-paper-reproduction-v2)、[原配方](development-artifacts/implicit-reasoning-paper-reproduction-v1/protocol.md)、[修订](development-artifacts/implicit-reasoning-paper-reproduction-v2/protocol.md) |
+| 同论文 §2.4 / Appendix D.1：事实在第二跳的训练覆盖限制 | 检验“单跳会答”与“某个使用角色已学会”怎样分离 | **两条各百万迭代均完成，全14000查询重载通过。** 普通Test-II为95.90/99.57%，受限第二跳两臂均2/3000；加全原子监督后单跳约99.8%，仍未形成受限角色使用。1900事实的首跳曝光及零第二跳曝光已核查。见[结果](results.md#second-hop-paper-reproduction-v1)、[协议](development-artifacts/second-hop-paper-reproduction-v1/protocol.md) |
+| MQuAKE 的参数编辑成功与编辑后多跳问答比较 | 校准第三层的原始现象及自然模型评价，区分编辑成功与派生使用 | **ROME/MEMIT各3000案例均完成，各66030查询独立重放通过。** 直接编辑88.10/95.53%，多跳7.37/7.63%，CoT21.20/13.13%；条件池另报覆盖。作者未公开参数编辑评分脚本，保留生成上限与答案截取差异。见[结果](results.md#paper-edit-reproductions-v1)、[协议](development-artifacts/paper-reproductions-parallel-v1/protocol.md) |
+| RippleEdits 的直接编辑与关系连带变化评价 | 检查论文怎样定义应更新与应保持的关系，给第三层建立可用基线 | **POPULAR/RANDOM/RECENT全885/1922/1948案例均完成且重放通过。** RECENT使用原冻结源码七段全量重放收尾，调度历史与退出码保留；109空标签案例仍记录为排除。原作者Evaluator及固定生成评分保留，发布池差异不隐去。见[结果与预定分析](results.md#path-hop-analysis-v1)、[调度修订](../results/rippleedits-paper-reproduction-v1/schedule-amendment.json)、[协议](development-artifacts/paper-reproductions-parallel-v1/protocol.md) |
 | Grokked Transformers 2024 与 Physics of Language Models bioS | 复用已完成的原配方或开发证据，校准长期优化、知识形成及提取 | 原2024长训练已完成，不重跑；bioS开发完成，不冒称原论文全规模复现 |
 
-**跳位分组预定分析（path-hop-analysis-v1，已冻结，零训练）。** 在两项编辑复现结果产生前，按[路径一致性](#path-consistency)冻结分组：MQuAKE单编辑案例按被编辑事实在首跳或后续跳分组（2跳213/300、3跳198/158），主比较为直接回答的组差及其与CoT组差之差；RippleEdits比较CI（被编辑主体显式、编辑事实作首跳）与CII（被编辑主体为隐含桥、编辑事实作第二跳）。冻结时未读取两批任何逐例记录或汇总；脚本只在运行完成且独立重放审计通过后执行，沿用复现原评分。RippleEdits原文已分轴报告CI/CII，本分析的增量是同一复现上的预定跳位比较和MQuAKE同案例CoT对照。见[协议](development-artifacts/path-hop-analysis-v1/protocol.md)、[契约](../configs/path-hop-analysis-v1.json)与[脚本](../scripts/analyze_path_hop_position.py)。
+**跳位分组预定分析（path-hop-analysis-v1，已冻结，零训练，已完成）。** 在编辑结果产生前冻结：MQuAKE单编辑案例按首跳或后续跳分组（2跳213/300、3跳198/158），主比较为直接回答组差及其与CoT组差之差；RippleEdits比较CI与CII。只在各运行完成且独立重放通过后执行，评分、分层及10000次案例bootstrap未改。ROME/MEMIT主池首跳优势25.34/24.15pp，CoT缩小量8.34/0.003pp；RippleEdits的POPULAR支持首跳优势，RANDOM次跳仅1有效测试，RECENT点估计反向但区间跨零。没有用条件池或同案例小子集替代主比较。见[原冻结契约](../configs/path-hop-analysis-v1.json)、[脚本](../scripts/analyze_path_hop_position.py)、[完整结果](results.md#path-hop-analysis-v1)、[完成清单](../results/path-hop-analysis-v1/completion-manifest.json)及[主图](../results/path-hop-analysis-v1/hop-position-summary.pdf)。
 
-用户于2026-10-08进一步授权编写代码并行执行优先原实验，新增上述7任务；已有第一行GPU0/1任务继续保留。16项最终检查及五条编辑CUDA短测/独立重放通过；padding、keyword输入hook及开发cloze计分修正的历史保留。第2–4节及5.1–5.5原有扩展候选暂缓，待论文复现结果后再评估。合成图seed42为单世界/单初始化，编辑案例也不是独立新世界；论文未公开的种子、环境差异、源代码修正及完整评分分母必须保留。原实验复现与后续扩展分开立契约；在没有最终结果前，不把候选缺口写成突破点。
+用户于2026-10-08进一步授权编写代码并行执行优先原实验，新增上述7任务，保留原Figure 3两条；九条科学任务现都有通过的终点审计，原失败、源码修正及数据/环境/评分差异保留。2026-10-09用户要求完成剩余两条审计和冻结分组分析，五条分析及汇总图已完成；RECENT的串行审计只在七段完整验证通过后被替代，当前LM科学容器均已退出。W&B本地追踪均到终点，本次未独立核验云端。第2–4节及5.1–5.5原有扩展仍须另行授权。合成图seed42为单世界/单初始化，编辑案例不是独立新世界；原论文未公开条件及完整分母保留。原实验复现与后续扩展分开立契约，不把这些已知现象或执行完成自动当作新贡献。
 
 <a id="sequential-transfer"></a>
 ### 5.1 已完成主实验：先学组合，再学新事实

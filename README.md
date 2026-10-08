@@ -2,7 +2,7 @@
 
 研究知识学习的三个层次：**知识能被回答、能被组合、更新后能继续被使用**。每一层都有独立的实验和机制解释，共同回答训练与模型结构怎样形成可提取、可复用、可更新的知识。
 
-**当前研究入口：[Roadmap](docs/roadmap.md)。** 论文主线采用[路径一致性工作假说](docs/roadmap.md#path-consistency)：事实只在它被学过或被改写的计算路径上可用，组合与更新传播取决于新用途是否经过同一路径。当前先完成相关论文复现，并对编辑复现执行预先冻结的跳位分组分析。顺序新知识迁移、写入目标比较和回放复测的完成结果见[结果汇总](docs/results.md#updating)；第一层的学习与提取、第二层的组合使用继续各自构成论文内容。
+**当前研究入口：[Roadmap](docs/roadmap.md)。** 论文主线采用[路径一致性工作假说](docs/roadmap.md#path-consistency)：事实只在它被学过或被改写的计算路径上可用，组合与更新传播取决于新用途是否经过同一路径。相关论文复现与预先冻结的跳位分组分析已完成；[自然模型结果](docs/results.md#path-hop-analysis-v1)尚未建立统一路径机制。顺序新知识迁移、写入目标比较和回放复测的完成结果见[结果汇总](docs/results.md#updating)；第一层的学习与提取、第二层的组合使用继续各自构成论文内容。
 
 最新[Loop同起点与规模开发比较](docs/results.md#loop-learning-v1)完成16条训练及独立重载：共享、解共享、仅MLP共享、浅层参照，以及宽度/循环扩展。代码同时记录知识学习、组合使用、新增后使用和实际Transformer跨调用梯度；当前结果未建立Loop的三层统一效率优势。
 
@@ -20,9 +20,9 @@
 
 ## 实验材料
 
-本GitHub仓库保存源码、测试、配置、开发说明和当前roadmap。实验数据、原始预测、日志、学习曲线、详细研究报告与冻结材料按[存储配置](configs/artifact-storage.json)归档到 [Hugging Face 数据集仓库](https://huggingface.co/datasets/zsqzz/llm-memory-editability)。GitHub单文件小于200 MB；权重、优化器状态及Docker镜像不上传。
+本GitHub仓库保存源码、测试、配置、开发说明，以及当前roadmap、结果汇总、理论依据和实验协议。实验数据、原始预测、日志、学习曲线、历史详细研究报告与冻结材料按[存储配置](configs/artifact-storage.json)归档到 [Hugging Face 数据集仓库](https://huggingface.co/datasets/zsqzz/llm-memory-editability)。权重、优化器状态及Docker镜像不上传。
 
-本机结果和理论文档可从上表阅读；仅克隆代码仓库时，按下节下载研究材料。远端是归档快照，可能落后于本机；当前roadmap随代码维护，不以远端旧计划覆盖。
+当前结果汇总和理论文档可从上表直接阅读；复核原始证据时，按下节下载研究材料。Hugging Face远端是归档快照，可能落后于本机；当前研究文档随代码维护，不以远端旧计划覆盖。
 
 | 归档材料 | 路径 |
 | --- | --- |
