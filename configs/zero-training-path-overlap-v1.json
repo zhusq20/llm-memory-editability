@@ -1,0 +1,173 @@
+{
+  "batch": "zero-training-path-overlap-v1",
+  "kind": "pre-registered zero-training analysis: Z1 path-overlap interventions on existing grokking-reproduction-v1 weights, plus the readout of the already frozen S1/S2 of path-hop-analysis-v1; no training, no parameter update is kept",
+  "frozen_on": "2026-10-10",
+  "roadmap": "docs/roadmap.md#zhang2026-next",
+  "freeze_statement": "写于主机sn4622122392，该机没有grokking-reproduction-v1权重，也没有results/path-hop-analysis-v1。冻结时已读：8条运行的原生学习曲线（HF learning.json，下列节点选择只依据它们）；bridge-workspace-v1在700k/1M/1.5M节点的异桥交换与桥分量删除端点（roadmap 2026-10-10重读）；写入目标逐编辑重读；MQuAKE部分逐案例记录预览（ROME 1–1709例、MEMIT 1–1791例）。仓库与HF归档中没有任何Z1干预结果。S1/S2的判读规则写于上述MQuAKE预览之后，因此对S1/S2不是盲写；Z1对其主统计是盲写。",
+  "source": {
+    "batch": "grokking-reproduction-v1",
+    "config": "configs/grokking-reproduction-development-v1.json",
+    "data": "results/grokking-reproduction-v1/data",
+    "world_sha256": "e31ec9959ce0a7b25465191a1d9ef8e83ec42163ed967fa56a60605f6ac1c3b4",
+    "panels_sha256": "8655858c0de4646cfb5c7ea1779b5374ef28b492e6ac59bb6eda9e89c7936bf9",
+    "checkpoint": "results/grokking-reproduction-v1/development/{run}/checkpoint-{step:07d}.pt",
+    "learning_curve": "results/grokking-reproduction-v1/development/{run}/learning.json",
+    "stored_predictions": "results/grokking-reproduction-v1/development/{run}/predictions-{step:07d}-{panel}.npz",
+    "runs": [
+      "standard8-phi3.6-wd0.1",
+      "standard8-phi7.2-wd0.1",
+      "standard8-phi12.6-wd0.1",
+      "standard8-phi7.2-wd0.3",
+      "loop4x2-phi3.6-wd0.1",
+      "loop4x2-phi7.2-wd0.1",
+      "loop4x2-phi12.6-wd0.1",
+      "loop4x2-phi7.2-wd0.3"
+    ],
+    "nodes": [
+      0,
+      1000,
+      2000,
+      4000,
+      8000,
+      16000,
+      32000,
+      64000,
+      128000,
+      256000,
+      512000,
+      700000,
+      1000000,
+      1500000
+    ]
+  },
+  "execution": {
+    "host": "experiment host with the grokking-reproduction-v1 weights; fixed LM image, docker --context lm-memory, one container per GPU",
+    "code": "src/llm_memory_editability/path_overlap.py; scripts/run_zero_training_path_overlap.py; scripts/read_path_hop_secondary.py",
+    "output": "results/zero-training-path-overlap-v1/{run}/{step:07d}/",
+    "numerics": "eval mode, dropout off, float32 forward with explicit causal softmax attention (no autocast, no SDPA); every intervention is a forward-time edit, parameters are never written",
+    "replication_check": "fp32 baseline answers are compared with the stored bf16 predictions of the same node on all seven panels; required agreement >= 0.95 on every panel at every node with step >= 16000, and >= 0.99 on test_ii at 1.5M of each run. Below 16000 steps near-tied logits make bf16/fp32 argmax disagreements expected: agreement is reported, and the node stops only below 0.50. A failure stops the run and is kept; it signals a wrong checkpoint/data mapping, not a scientific outcome. (Amended 2026-10-10 before any run, from 'step >= 1000'.)",
+    "scoring": "answer token only (argmax over the full vocabulary at the answer position equals the true tail). The stop token is not generated; learning.json 'accuracy' also requires the stop token, so all baselines are this batch's own answer accuracy, recomputed at each node.",
+    "hashes": "sha256 of every checkpoint read, world.npz, panels.npz and the three code files is written to each node output"
+  },
+  "z1": {
+    "question": "同一事实f=(b,r2)作单跳查询与作次跳时，是否经过同一组因果必需的参数单元？",
+    "component": "fact-selective MLP units. Unit u=(unique block j, neuron n). Parameter-level zero ablation of u = zeroing row n of block j's mlp.c_proj weight, implemented as multiplying GELU activation n of block j by 0 at every position of the executions in the chosen scope.",
+    "executions": "execution e=0..7. Loop 4x2: block e mod 4, round 1 = e 0-3, round 2 = e 4-7. Standard 8: block e.",
+    "scopes": {
+      "loop": [
+        "all",
+        "round1",
+        "round2"
+      ],
+      "standard": [
+        "all"
+      ]
+    },
+    "fact_sample": "per run, fixed across that run's nodes: 256 ID facts and 256 OOD facts drawn with seed 20261011 among facts that are the second fact of >= 3 eligible-kind chains. ID f: chains of kind II (first fact ID) that are NOT in this run's training support (train_order[:round(phi*38000)]). OOD f: chains of kind IO. Up to 16 such chains per fact, chosen with the same seed.",
+    "selection_on_single_hop_only": {
+      "query": "atomic prompt [b, r2], answer position 1",
+      "margin": "logit_t - max_{v != t} logit_v over the full vocabulary, float32",
+      "attribution": "s_u = -d margin / d g_u at g = 1, where g_u multiplies activation u in all executions and positions (first-order estimate of the margin drop from zero-ablating u)",
+      "k_grid": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      "k_star": "smallest k in the grid such that zero-ablating the top-k units (scope all) changes the atomic answer away from t; none -> fact 'not localized'",
+      "selectivity_controls": {
+        "same_subject": "the other atoms with head b (other relations)",
+        "same_answer": "up to 16 other atoms with tail t (different head), chosen with seed",
+        "random": "64 random atoms with head != b, one fixed draw per run with seed 20261012"
+      },
+      "selective": "at k_star, among control atoms answered correctly at baseline, retention >= 0.90 separately for same_subject, same_answer and random; a control group that is empty after the baseline filter counts as passed and is flagged",
+      "requirement": "f answered correctly at baseline. Two-hop outcomes are never used for selection."
+    },
+    "two_hop_measure": {
+      "eligible_query": "a sampled chain [h, r1, r2] whose second fact is f, answered correctly (answer token) at baseline, and whose first fact (h, r1)->b is answered correctly as an atomic prompt at baseline",
+      "T_scope": "fraction of eligible queries whose answer is no longer t when S_f (the k_star units) is ablated in that scope",
+      "R_scope": "the same for a random control set: k_star units drawn uniformly without replacement from the same unique blocks with the same per-block counts, excluding S_f; one draw per fact, seed from (20261013, fact index)",
+      "delta": "Delta_scope = mean over selective facts with >= 1 eligible query of (T_scope - R_scope); fact-level bootstrap 10000 draws, seed 20261014, percentile [0.025, 0.975]",
+      "descriptive": [
+        "first-fact atomic retention under S_f (all executions)",
+        "same-bridge other-relation retention: up to 4 chains [h, r1, r2'] sharing f's first fact, with r2' != r2, under the round2 (Loop) or all (standard) scope",
+        "Loop atomic decomposition: atomic flip of f under S_f in round1 only and round2 only",
+        "Standard depth decomposition: T_all for S_f restricted to blocks 0-3 and to blocks 4-7",
+        "mean answer-margin change for S_f and for the random control",
+        "facts passing only the same_subject and random controls (same_answer ignored), as a secondary population",
+        "trained II chains of ID facts, reported apart from untrained ones"
+      ]
+    },
+    "primary_nodes": {
+      "loop": "Loop nodes with learning.json test_io >= 0.50 and atomic_ood >= 0.90: phi3.6 1.5M; phi7.2/wd.1 512k, 700k, 1M, 1.5M; phi12.6 512k, 700k, 1M, 1.5M; phi7.2/wd.3 256k, 512k, 700k, 1M, 1.5M (14 nodes)",
+      "standard": "standard-8 nodes with learning.json test_ii >= 0.50: phi7.2/wd.1 128k-1.5M (6); phi12.6 16k-1.5M (9); phi7.2/wd.3 64k-1.5M (7) (22 nodes); phi3.6 never reaches 0.50",
+      "power": "a node is powered for a fact kind when >= 30 selective facts of that kind have >= 1 eligible query. Majorities are taken over powered primary nodes; if fewer than half of the primary nodes are powered, the corresponding verdict is 'inconclusive'. All other nodes are reported descriptively."
+    },
+    "primary_statistic": {
+      "loop": "Delta_round2 for OOD facts (IO chains); round specificity Delta_round1 for OOD facts",
+      "standard": "Delta_all for ID facts (untrained II chains)"
+    },
+    "interpretation": {
+      "loop_supports": "at a majority of powered Loop primary nodes, Delta_round2 >= 0.50 and Delta_round1 <= 0.20: the units necessary for f's single-hop answer are needed for f's second-hop use in round 2 and not in round 1",
+      "loop_against": "at a majority of powered Loop primary nodes, Delta_round2 <= 0.10: IO succeeds but the single-hop necessary units do not carry the second hop. Then path consistency is narrowed to 'parameter sharing changes the write-use kernel', and F3 becomes a descriptive figure",
+      "loop_partial": "anything else",
+      "standard_separate_copy": "at a majority of powered standard primary nodes Delta_all <= 0.10: ID facts' second-hop use does not need the single-hop necessary units (separate upper-layer copy, as in Zhang et al.)",
+      "standard_shared": "at a majority Delta_all >= 0.50: the standard model's second-hop use shares the single-hop units, contrary to the separate-copy account; must be reinterpreted",
+      "standard_partial": "anything else",
+      "id_facts_in_loop": "Delta_round2 / Delta_round1 for ID facts in Loop: secondary, same thresholds, reported but not part of the verdict"
+    },
+    "ported_diagnostics_descriptive": {
+      "source": "Zhang et al. 2026 repository zzl-strong/two_hop (scripts 8, 11, 5), ported to ReproductionGPT; the author scripts are read, not executed",
+      "attention_window_masking": "Appendix E: zero the attention weight from the answer position to the subject/bridge position and renormalize, in a window of executed layers centred at each of the 8 executions (window 3: [c-1, c+1]; also window 1). Edges: atomic 1->0 on atomic_id/atomic_ood; two-hop 2->1 and 1->0 on train_ii/test_ii/test_io/test_oi/test_oo. Answer accuracy per centre.",
+      "layerwise_cosine": "Appendix G: for second facts of train_ii (ID) and test_io (OOD) panel chains, cosine between the atomic prompt's token-0 state at boundary i and the mean two-hop bridge-slot (position 1) state at boundary j, and atomic token 1 versus two-hop position 2; boundary 0 is the token embedding without position embedding; 9x9 matrices averaged over facts",
+      "bridge_patching": "Section 4.2: 3000 ID and 3000 OOD tuples (seed 20261015). Target: train_ii panel chain (h, r1, r2 -> t). Position-1 state at the output of execution L replaced by the position-1 state of an atomic prefix [h', r1'] with the same tail b (ID prefix with (h', r1') != (h, r1), or OOD prefix); position-2 state replaced by that of a training chain with the same r2 and a different answer. Success: answer t. L = 1..8.",
+      "logit_lens": "bridge readout accuracy at position 1 after every execution, per two-hop panel"
+    }
+  },
+  "s1_s2_readout": {
+    "source_contract": "configs/path-hop-analysis-v1.json (frozen 2026-10-08; S1/S2 already computed by scripts/analyze_path_hop_position.py)",
+    "inputs": [
+      "results/path-hop-analysis-v1/gpt-j-6B-rome.json",
+      "results/path-hop-analysis-v1/gpt-j-6B-memit.json",
+      "results/path-hop-analysis-v1/completion-manifest.json"
+    ],
+    "fields": {
+      "S1": "secondary_prerequisite_subset: coverage, estimate {direct, cot, interaction}, interval, cells",
+      "S2": "primary_full_pool.cells[{2,3}-hop/{first,later}]: old_answer_retained and old_answer_cases"
+    },
+    "no_recomputation": "the readout copies the frozen numbers; it does not re-score, re-group or re-bootstrap",
+    "reading": {
+      "S1_prerequisite_failure": "for each editor: if the S1 interaction (M2 within the prerequisite subset) has a 95% interval with low > 0, the full-pool pattern of that editor is read as consistent with prerequisite failure (within the subset the explicit bridge narrows the hop gap). If the interval includes 0 or lies below it, the against pattern persists within the subset and case composition remains the better explanation.",
+      "S1_power": "if the later group in the prerequisite subset has < 30 cases in either hop stratum, S1 for that editor is reported as underpowered",
+      "S2_P4": "P4 holds for an editor and stratum when old_answer_retained(later) > old_answer_retained(first); reported per stratum with counts and as the equal-weight mean difference; no interval was frozen for S2, so none is added",
+      "preview": "once the formal numbers are read, the HF partial-record preview numbers are removed from roadmap and results and replaced by them"
+    }
+  },
+  "outputs": {
+    "per_node": "z1.json, ported.json, hashes.json in results/zero-training-path-overlap-v1/{run}/{step:07d}/",
+    "summary": "results/zero-training-path-overlap-v1/summary.json: verdicts computed mechanically from the per-node outputs by the analyze step",
+    "s1s2": "results/zero-training-path-overlap-v1/s1s2-readout.json"
+  },
+  "not_permitted": [
+    "using two-hop outcomes to select S_f, k_star or facts",
+    "changing nodes, thresholds, k grid, controls or scopes after any Z1 output is read",
+    "replacing a failed replication check by re-running with a different checkpoint mapping without recording the failure",
+    "describing Z1 as independent replications across nodes or runs",
+    "re-scoring or re-grouping the path-hop-analysis-v1 outputs in the S1/S2 readout",
+    "re-introducing the withdrawn Z2 interventions under another name without a new question"
+  ],
+  "withdrawn": {
+    "z2": {
+      "date": "2026-10-10",
+      "decided_by": "user",
+      "when": "before any run; no Z2 output was ever computed",
+      "reason": "On the same grokking-reproduction-v1 weights, bridge-workspace-v1 already erased the bridge input-embedding component and swapped it (x1, x2) to another bridge at 700k/1M/1.5M (8 of the 23 planned main nodes); DiscoLoop-style self-decode/true/wrong re-encoding was already run in bridge-reencoding-v1 on the small shared-block models. What remained (same-bridge amplification, earlier nodes, cosine, Stage-1) completes those results without a new question. F4 uses the existing results and the 2026-10-10 re-read.",
+      "record": "the withdrawn design (closure statistic, 23 main nodes, decision rules) is summarised in docs/roadmap.md §5.0.1; the earlier draft of this file, configs/zero-training-path-format-v1.json, was never committed or run"
+    }
+  }
+}
