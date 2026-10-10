@@ -1,5 +1,9 @@
 # 参与开发
 
+## GitHub推送认证
+
+通过HTTPS推送到GitHub时，可使用用户提供的个人访问令牌（PAT）认证。令牌由凭据管理器或进程环境提供，不写入文档、远端URL、仓库文件或日志。文档仅记录认证方式，不保存令牌值。
+
 ## 研究与表达
 
 主线是知识学习的三个层次：知识能被回答、能被组合、更新后能继续被使用。每层都有独立实验和解释。[Roadmap](docs/roadmap.md)是唯一当前规划，[结果汇总](docs/results.md)维护证据和批次状态，[理论依据](docs/memory-scaling-theory.md)维护推导，[实验协议](docs/experimental-protocol.md)定义评价与执行规范。
