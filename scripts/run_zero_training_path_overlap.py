@@ -1,6 +1,6 @@
-"""Execute and analyze zero-training-path-overlap-v1 (Z1 path-overlap interventions).
+"""Execute and analyze zero-training-path-overlap-v3 (Z1 path-overlap interventions).
 
-The contract is configs/zero-training-path-overlap-v1.json; the bridge-format
+The contract is configs/zero-training-path-overlap-v3.json; the bridge-format
 check (Z2) is withdrawn there and is not run. ``run`` evaluates the existing
 grokking-reproduction-v1 checkpoints of one run node by node in float32. It
 first replicates the stored predictions of that node; if the check fails it
@@ -66,9 +66,9 @@ from llm_memory_editability.path_overlap import (
 )
 
 PROJECT = Path(__file__).resolve().parents[1]
-CONTRACT = PROJECT / "configs/zero-training-path-overlap-v1.json"
+CONTRACT = PROJECT / "configs/zero-training-path-overlap-v3.json"
 ROOT = Path("results/grokking-reproduction-v1")
-OUT = Path("results/zero-training-path-overlap-v1")
+OUT = Path("results/zero-training-path-overlap-v3")
 FAILURE = "replication-failure.json"
 SELECTION = "selection-stage"
 

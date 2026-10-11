@@ -1,0 +1,152 @@
+{
+  "batch": "edit-scope-development-v1",
+  "study_kind": "planned_U1_development_only",
+  "authorization": "2026-10-11 user requests further experiments and parallel planned experiments on GPUs2-7",
+  "source": {
+    "root": "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1",
+    "run": "loop4x2-phi7.2-wd0.1",
+    "step": 1500000
+  },
+  "selection": {
+    "seed": 2026101102,
+    "id_cases": 16,
+    "ood_cases": 16,
+    "affected_chains": 8,
+    "unrelated_atoms": 64,
+    "unrelated_chains": 64,
+    "same_answer_atoms": 16,
+    "replay_atoms": 32,
+    "replay_chains": 32,
+    "min_affected_chains": 1
+  },
+  "development": {
+    "learning_rates": [
+      1e-05,
+      0.0001
+    ],
+    "endpoints": [
+      10,
+      50,
+      100
+    ],
+    "precision": "bf16",
+    "save_endpoints": [
+      100
+    ],
+    "max_updates_per_arm": 6400,
+    "max_updates_all_arms": 38400,
+    "selection_rule": "Any future learning-rate/step selection uses only target-edit success and unrelated retention, never propagation; no formal confirmation automatically follows"
+  },
+  "tracking": {
+    "enabled": true,
+    "entity": "zhusq20",
+    "project": "llm-memory-editability",
+    "run_names": {
+      "first-joint": "edit-scope-development-v1-first-joint",
+      "first-round1": "edit-scope-development-v1-first-round1",
+      "first-round2": "edit-scope-development-v1-first-round2",
+      "second-joint": "edit-scope-development-v1-second-joint",
+      "second-round1": "edit-scope-development-v1-second-round1",
+      "second-round2": "edit-scope-development-v1-second-round2"
+    }
+  },
+  "execution": {
+    "container_prefix": "edit-scope-dev-v1",
+    "physical_gpus": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "source_files": [
+      "scripts/execute_knowledge_followups.py",
+      "scripts/run_edit_scope_development.py",
+      "tests/test_edit_scope_development.py",
+      "configs/edit-scope-development-v1.json",
+      "docs/development-artifacts/edit-scope-development-v1/protocol.md"
+    ],
+    "input_files": [
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/data/world.npz",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/data/panels.npz",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/data/complete.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/development/loop4x2-phi7.2-wd0.1/checkpoint-1500000.pt"
+    ],
+    "tasks": [
+      {
+        "name": "first-joint",
+        "script": "scripts/run_edit_scope_development.py",
+        "arguments": [
+          "--arm",
+          "first-joint"
+        ],
+        "audit_arguments": [
+          "--audit-dir",
+          "{out}"
+        ]
+      },
+      {
+        "name": "first-round1",
+        "script": "scripts/run_edit_scope_development.py",
+        "arguments": [
+          "--arm",
+          "first-round1"
+        ],
+        "audit_arguments": [
+          "--audit-dir",
+          "{out}"
+        ]
+      },
+      {
+        "name": "first-round2",
+        "script": "scripts/run_edit_scope_development.py",
+        "arguments": [
+          "--arm",
+          "first-round2"
+        ],
+        "audit_arguments": [
+          "--audit-dir",
+          "{out}"
+        ]
+      },
+      {
+        "name": "second-joint",
+        "script": "scripts/run_edit_scope_development.py",
+        "arguments": [
+          "--arm",
+          "second-joint"
+        ],
+        "audit_arguments": [
+          "--audit-dir",
+          "{out}"
+        ]
+      },
+      {
+        "name": "second-round1",
+        "script": "scripts/run_edit_scope_development.py",
+        "arguments": [
+          "--arm",
+          "second-round1"
+        ],
+        "audit_arguments": [
+          "--audit-dir",
+          "{out}"
+        ]
+      },
+      {
+        "name": "second-round2",
+        "script": "scripts/run_edit_scope_development.py",
+        "arguments": [
+          "--arm",
+          "second-round2"
+        ],
+        "audit_arguments": [
+          "--audit-dir",
+          "{out}"
+        ]
+      }
+    ],
+    "after_batch": "z1-position-followup-development-v1"
+  }
+}

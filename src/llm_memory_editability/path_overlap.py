@@ -1,7 +1,9 @@
 """Zero-training path-overlap (Z1) interventions.
 
-The contract is configs/zero-training-path-overlap-v1.json, frozen before any Z1
-outcome existed. The bridge-format check (Z2) is withdrawn there and has no code
+The scientific design was fixed before Z1 output. The contract is
+configs/zero-training-path-overlap-v3.json; its execution-agreement gate was
+lowered by explicit user instruction after v2 selection stopped. The bridge-format
+check (Z2) is withdrawn there and has no code
 here. The contract's pre-specified fallback selection (amendment of 2026-10-11,
 also before any Z1 output) is computed beside the primary design. Every forward
 runs the existing grokking-reproduction-v1 weights in float32 with explicit
@@ -29,7 +31,7 @@ from transformers import GPT2Config
 
 from .grokking_reproduction import ReproductionGPT
 
-BATCH = "zero-training-path-overlap-v1"
+BATCH = "zero-training-path-overlap-v3"
 PANELS_ATOMIC = ("atomic_id", "atomic_ood")
 PANELS_TWO_HOP = ("train_ii", "test_ii", "test_io", "test_oi", "test_oo")
 CODE_FILES = (
@@ -67,6 +69,8 @@ def contract_parameters(contract):
         raise ValueError("Z2 must be recorded as withdrawn and absent from the contract")
     z1 = contract["z1"]
     sel = z1["selection_on_single_hop_only"]
+    if not sel["attribution"].startswith("s_u = +d margin / d g_u"):
+        raise ValueError("Attribution must rank the predicted margin drop, +d margin/d g")
     two = z1["two_hop_measure"]
     nodes, interp = z1["primary_nodes"], z1["interpretation"]
     ported = z1["ported_diagnostics_descriptive"]
@@ -360,7 +364,10 @@ def predict(ex, tokens, position, target=None, *, units=None, scope="all", edges
 
 
 def attribution(ex, tokens, target, *, top, ablated=None, batch=128):
-    """Top units by s_u = -d margin / d g_u, gate shared over all executions.
+    """Top units by s_u = +d margin / d g_u, gate shared over all executions.
+
+    Removing a unit decreases its gate by one, so its first-order margin drop
+    is +d margin/d g. Rank this drop descending, rather than the signed change.
 
     Without `ablated` the gradient is taken at g = 1 (primary design). With
     `ablated` ([N, width] flat unit indices) those units are zero-ablated first,
@@ -382,7 +389,7 @@ def attribution(ex, tokens, target, *, top, ablated=None, batch=128):
             g = ex.gates_for(a, len(part)).requires_grad_(True)
         logits = ex.logits(part, 1, gates=g, gate_scope=everything)
         (grad,) = torch.autograd.grad(margin(logits, t).sum(), g)
-        score = -grad.reshape(len(part), -1)
+        score = grad.reshape(len(part), -1)
         if ablated is not None:
             score = score.scatter(1, a, float("-inf"))
         ranked.append(score.topk(top, dim=-1).indices.cpu())

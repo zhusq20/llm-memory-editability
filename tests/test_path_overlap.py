@@ -43,7 +43,7 @@ from llm_memory_editability.path_overlap import (
 )
 
 PROJECT = Path(__file__).resolve().parents[1]
-CONTRACT = PROJECT / "configs/zero-training-path-overlap-v1.json"
+CONTRACT = PROJECT / "configs/zero-training-path-overlap-v3.json"
 RUN = "loop4x2-phi7.2-wd0.1"
 STEP = 1500000
 
@@ -188,7 +188,7 @@ def test_contract_parameters_are_read_from_the_frozen_text(params):
 
 def test_contract_records_the_fallback_amendment_before_any_output():
     contract = json.loads(CONTRACT.read_text())
-    (amendment,) = contract["amendments"]
+    amendment = contract["amendments"][0]
     assert amendment["date"] == "2026-10-11" and amendment["decided_by"] == "user"
     assert "before any Z1 output existed" in amendment["when"]
     assert "no attention components" in contract["z1"]["fallback_selection"]["component"]
@@ -465,6 +465,112 @@ def test_selection_stage_matches_the_full_run_selection(tiny, params, design):
         assert kinds[kind]["powered"] is False  # tiny sample, power needs 30 facts
 
 
+def test_attribution_selects_units_whose_removal_lowers_the_correct_margin():
+    """Finite differences and an actual answer flip fix the sign semantics."""
+
+    class LinearExecutor:
+        device = torch.device("cpu")
+        unique = 1
+        neurons = 2
+
+        @staticmethod
+        def scope(_):
+            return frozenset({0})
+
+        @staticmethod
+        def logits(tokens, position, *, gates, gate_scope):
+            value = 2 * gates[:, 0, 0] - gates[:, 0, 1]
+            return torch.stack((value, torch.zeros_like(value)), dim=1)
+
+    ex = LinearExecutor()
+    tokens, target = np.array([[0, 0]]), np.array([0])
+    gates = torch.ones(1, 1, 2)
+    baseline = margin(
+        ex.logits(tokens, 1, gates=gates, gate_scope=ex.scope("all")), torch.tensor(target)
+    )
+    drops, derivatives = [], []
+    for unit in range(2):
+        deleted = gates.clone()
+        deleted[0, 0, unit] = 0
+        drops.append(
+            float(
+                baseline
+                - margin(
+                    ex.logits(tokens, 1, gates=deleted, gate_scope=ex.scope("all")),
+                    torch.tensor(target),
+                )
+            )
+        )
+        plus, minus = gates.clone(), gates.clone()
+        plus[0, 0, unit] += 1e-3
+        minus[0, 0, unit] -= 1e-3
+        derivatives.append(
+            float(
+                (
+                    margin(
+                        ex.logits(tokens, 1, gates=plus, gate_scope=ex.scope("all")),
+                        torch.tensor(target),
+                    )
+                    - margin(
+                        ex.logits(tokens, 1, gates=minus, gate_scope=ex.scope("all")),
+                        torch.tensor(target),
+                    )
+                )
+                / 2e-3
+            )
+        )
+    assert drops == [2.0, -1.0]
+    assert np.allclose(derivatives, drops, atol=1e-3)
+    selected = attribution(ex, tokens, target, top=1)
+    assert selected.tolist() == [[0]]
+    deleted = gates.clone()
+    deleted[0, 0, selected[0, 0]] = 0
+    assert ex.logits(tokens, 1, gates=deleted, gate_scope=ex.scope("all")).argmax(-1).item() == 1
+
+
+def test_v2_only_corrects_selection_sign_without_changing_the_scientific_comparison():
+    old = json.loads((PROJECT / "configs/zero-training-path-overlap-v1.json").read_text())
+    new = json.loads((PROJECT / "configs/zero-training-path-overlap-v2.json").read_text())
+    assert (
+        sha256(PROJECT / new["supersedes_unexecuted_contract"]["path"])
+        == new["supersedes_unexecuted_contract"]["sha256"]
+    )
+    assert old["source"] == new["source"]
+    assert new["amendments"][:-1] == old["amendments"]
+    scientific = copy.deepcopy(new["z1"])
+    scientific["selection_on_single_hop_only"]["attribution"] = old["z1"][
+        "selection_on_single_hop_only"
+    ]["attribution"]
+    assert scientific == old["z1"]
+    changed = json.loads(CONTRACT.read_text())
+    changed["z1"]["selection_on_single_hop_only"]["attribution"] = old["z1"][
+        "selection_on_single_hop_only"
+    ]["attribution"]
+    with pytest.raises(ValueError, match="predicted margin drop"):
+        contract_parameters(changed)
+
+
+def test_v3_only_lowers_execution_agreement_after_explicit_user_instruction():
+    previous = json.loads((PROJECT / "configs/zero-training-path-overlap-v2.json").read_text())
+    current, settings = load_contract(CONTRACT)
+    assert previous["z1"] == current["z1"]
+    assert previous["source"] == current["source"]
+    assert current["amendments"][:-1] == previous["amendments"]
+    assert current["amendments"][-1]["decided_by"].startswith("user explicitly instructed")
+    assert (
+        previous["execution"]["replication_check"]
+        .replace(">= 0.99", ">= 0.95")
+        .replace(
+            "it signals a wrong checkpoint/data mapping",
+            "it signals insufficient execution agreement requiring a separate "
+            "mapping/numerical-precision check",
+        )
+        == current["execution"]["replication_check"]
+    )
+    assert settings["replication"]["final_test_ii"] == 0.95
+    assert settings["replication"]["min_agreement"] == 0.95
+
+
 def test_attribution_at_an_ablated_point_excludes_the_ablated_units(tiny):
     world, ex = tiny["world"], Executor(tiny["model"])
     atoms = np.arange(6)
@@ -478,7 +584,7 @@ def test_attribution_at_an_ablated_point_excludes_the_ablated_units(tiny):
     g = ex.gates_for(torch.as_tensor(first), len(atoms)).requires_grad_(True)
     logits = ex.logits(t, 1, gates=g, gate_scope=ex.scope("all"))
     (grad,) = torch.autograd.grad(margin(logits, torch.as_tensor(tails)).sum(), g)
-    score = (-grad.reshape(len(atoms), -1)).scatter(1, torch.as_tensor(first), float("-inf"))
+    score = grad.reshape(len(atoms), -1).scatter(1, torch.as_tensor(first), float("-inf"))
     assert np.array_equal(nxt, score.topk(5, dim=-1).indices.numpy())
     with pytest.raises(ValueError, match="no -1 padding"):
         attribution(ex, tokens, tails, top=2, ablated=np.full((6, 2), -1))

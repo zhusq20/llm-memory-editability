@@ -1,0 +1,166 @@
+{
+  "batch": "z1-position-followup-development-v1",
+  "study_kind": "posthoc_mechanism_diagnostic",
+  "authorization": "2026-10-11 user requests Z1 explanation, further experiments and parallel planned experiments on GPUs2-7",
+  "source": {
+    "root": "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1",
+    "science_root": "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1",
+    "contract": "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/frozen/source/configs/zero-training-path-overlap-v3.json"
+  },
+  "nodes": [
+    {
+      "run": "loop4x2-phi3.6-wd0.1",
+      "step": 1500000
+    },
+    {
+      "run": "loop4x2-phi7.2-wd0.1",
+      "step": 1500000
+    },
+    {
+      "run": "loop4x2-phi12.6-wd0.1",
+      "step": 1500000
+    },
+    {
+      "run": "loop4x2-phi7.2-wd0.3",
+      "step": 1500000
+    },
+    {
+      "run": "standard8-phi7.2-wd0.1",
+      "step": 1500000
+    },
+    {
+      "run": "standard8-phi7.2-wd0.3",
+      "step": 1500000
+    }
+  ],
+  "analysis": {
+    "bootstrap_draws": 10000,
+    "seed": 20261014,
+    "fact_limit": null,
+    "selection": "exact original primary_design S/R and sample; no reselection",
+    "new_binary_verdict": false,
+    "modes": {
+      "loop": [
+        "baseline",
+        "baseline_prefix_identity",
+        "round1_all",
+        "round2_all",
+        "round1_last",
+        "round1_prefix",
+        "round1_all_prefix_restored",
+        "round2_last"
+      ],
+      "standard": [
+        "baseline",
+        "baseline_prefix_identity",
+        "all8_all",
+        "all8_last",
+        "all8_prefix"
+      ]
+    }
+  },
+  "tracking": {
+    "enabled": true,
+    "entity": "zhusq20",
+    "project": "llm-memory-editability"
+  },
+  "execution": {
+    "container_prefix": "z1-pos-dev-v1",
+    "physical_gpus": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "source_files": [
+      "scripts/execute_knowledge_followups.py",
+      "scripts/run_path_overlap_followup.py",
+      "tests/test_path_overlap_followup.py",
+      "configs/z1-position-followup-development-v1.json",
+      "docs/development-artifacts/z1-position-followup-development-v1/protocol.md"
+    ],
+    "input_files": [
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/data/world.npz",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/data/panels.npz",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/data/complete.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/frozen/source/configs/zero-training-path-overlap-v3.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/development/loop4x2-phi3.6-wd0.1/checkpoint-1500000.pt",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/loop4x2-phi3.6-wd0.1/1500000/z1.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/loop4x2-phi3.6-wd0.1/1500000/hashes.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/development/loop4x2-phi7.2-wd0.1/checkpoint-1500000.pt",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/loop4x2-phi7.2-wd0.1/1500000/z1.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/loop4x2-phi7.2-wd0.1/1500000/hashes.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/development/loop4x2-phi12.6-wd0.1/checkpoint-1500000.pt",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/loop4x2-phi12.6-wd0.1/1500000/z1.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/loop4x2-phi12.6-wd0.1/1500000/hashes.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/development/loop4x2-phi7.2-wd0.3/checkpoint-1500000.pt",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/loop4x2-phi7.2-wd0.3/1500000/z1.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/loop4x2-phi7.2-wd0.3/1500000/hashes.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/development/standard8-phi7.2-wd0.1/checkpoint-1500000.pt",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/standard8-phi7.2-wd0.1/1500000/z1.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/standard8-phi7.2-wd0.1/1500000/hashes.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/development/standard8-phi7.2-wd0.3/checkpoint-1500000.pt",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/standard8-phi7.2-wd0.3/1500000/z1.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/standard8-phi7.2-wd0.3/1500000/hashes.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/reference/gpt2/config.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/loop4x2-phi3.6-wd0.1/1500000/ported.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/loop4x2-phi7.2-wd0.1/1500000/ported.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/loop4x2-phi12.6-wd0.1/1500000/ported.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/loop4x2-phi7.2-wd0.3/1500000/ported.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/standard8-phi7.2-wd0.1/1500000/ported.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/execution-attempts/source-base-mount-v1/standard8-phi7.2-wd0.3/1500000/ported.json"
+    ],
+    "tasks": [
+      {
+        "name": "loop4x2-phi3.6-wd0.1",
+        "script": "scripts/run_path_overlap_followup.py",
+        "arguments": [
+          "--node-index",
+          "0"
+        ]
+      },
+      {
+        "name": "loop4x2-phi7.2-wd0.1",
+        "script": "scripts/run_path_overlap_followup.py",
+        "arguments": [
+          "--node-index",
+          "1"
+        ]
+      },
+      {
+        "name": "loop4x2-phi12.6-wd0.1",
+        "script": "scripts/run_path_overlap_followup.py",
+        "arguments": [
+          "--node-index",
+          "2"
+        ]
+      },
+      {
+        "name": "loop4x2-phi7.2-wd0.3",
+        "script": "scripts/run_path_overlap_followup.py",
+        "arguments": [
+          "--node-index",
+          "3"
+        ]
+      },
+      {
+        "name": "standard8-phi7.2-wd0.1",
+        "script": "scripts/run_path_overlap_followup.py",
+        "arguments": [
+          "--node-index",
+          "4"
+        ]
+      },
+      {
+        "name": "standard8-phi7.2-wd0.3",
+        "script": "scripts/run_path_overlap_followup.py",
+        "arguments": [
+          "--node-index",
+          "5"
+        ]
+      }
+    ]
+  }
+}
