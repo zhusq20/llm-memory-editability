@@ -502,8 +502,31 @@ def bootstrap_mean(values, spec):
 CONTROLS = ("same_subject", "same_answer", "random")
 
 
-def z1_node(ex, world, sample, atom_answer, p, scopes):
-    """All Z1 measurements at one node. Two-hop outcomes never enter selection."""
+def _ablate(ex, owner, items, rows, scope, tokens_fn, position, targets):
+    """Answers and margins of items, item j under the units rows[owner[j]]."""
+    if not len(owner):
+        return np.zeros(0, np.int64), np.zeros(0, np.float32)
+    width = max(1, max(len(rows[o]) for o in owner))
+    padded = pad_units([rows[o] for o in owner], width)
+    return predict(ex, tokens_fn(items), position, targets, units=padded, scope=scope)
+
+
+def _per_fact(n, owner, values, facts_index):
+    out = np.full(n, np.nan)
+    for i in facts_index:
+        mask = owner == i
+        if mask.any():
+            out[i] = float(np.mean(values[mask]))
+    return out
+
+
+def z1_selection(ex, world, sample, atom_answer, p):
+    """Z1 selection at one node, from single-hop prompts only.
+
+    Finds S_f (the k_star units) by attribution and the k grid, draws its random
+    control units and measures selectivity on the control atoms. No two-hop
+    query is evaluated here; z1_node and the selection-only stage both call it.
+    """
     q = p["z1"]
     neurons, unique = ex.neurons, ex.unique
     facts = sample["facts"]
@@ -535,22 +558,6 @@ def z1_node(ex, world, sample, atom_answer, p, scopes):
         for i in range(n)
     ]
 
-    def ablate(owner, items, rows, scope, tokens_fn, position, targets):
-        """Answers and margins of items, item j under the units rows[owner[j]]."""
-        if not len(owner):
-            return empty, np.zeros(0, np.float32)
-        width = max(1, max(len(rows[o]) for o in owner))
-        padded = pad_units([rows[o] for o in owner], width)
-        return predict(ex, tokens_fn(items), position, targets, units=padded, scope=scope)
-
-    def per_fact(owner, values, facts_index):
-        out = np.full(n, np.nan)
-        for i in facts_index:
-            mask = owner == i
-            if mask.any():
-                out[i] = float(np.mean(values[mask]))
-        return out
-
     # Selectivity controls under S_f in all executions.
     retention = {}
     for name in CONTROLS:
@@ -558,8 +565,8 @@ def z1_node(ex, world, sample, atom_answer, p, scopes):
             [(int(i), sample[name][i][atom_correct[sample[name][i]]]) for i in localized]
         )
         targets = world.atoms[items, 2] + world.eo
-        answer, _ = ablate(owner, items, units, "all", world.atomic_tokens, 1, targets)
-        retention[name] = per_fact(owner, answer == targets, localized)
+        answer, _ = _ablate(ex, owner, items, units, "all", world.atomic_tokens, 1, targets)
+        retention[name] = _per_fact(n, owner, answer == targets, localized)
     threshold = q["retention"]
 
     # A control group left empty by the baseline filter passes and is flagged (contract).
@@ -571,8 +578,108 @@ def z1_node(ex, world, sample, atom_answer, p, scopes):
             out = out & (np.nan_to_num(retention[name], nan=empty_value) >= threshold)
         return out
 
-    selective = passes(CONTROLS)
-    secondary = passes(("same_subject", "random"))
+    return {
+        "tails": tails,
+        "atom_correct": atom_correct,
+        "baseline_ok": baseline_ok,
+        "k_star": k_star,
+        "localized": localized,
+        "units": units,
+        "controls": controls,
+        "retention": retention,
+        "selective": passes(CONTROLS),
+        "secondary": passes(("same_subject", "random")),
+    }
+
+
+def selection_records(sample, sel):
+    """Per-fact selection fields, identical in z1.json and in the selection-only stage."""
+    records = []
+    for i in range(len(sample["facts"])):
+        k = sel["k_star"][i]
+        records.append(
+            {
+                "atom": int(sample["facts"][i]),
+                "kind": str(sample["kinds"][i]),
+                "baseline_correct": bool(sel["baseline_ok"][i]),
+                "k_star": int(k) if k > 0 else None,
+                "retention": {
+                    name: None
+                    if np.isnan(sel["retention"][name][i])
+                    else float(sel["retention"][name][i])
+                    for name in CONTROLS
+                },
+                "control_empty": {
+                    name: bool(k > 0 and not np.any(sel["atom_correct"][sample[name][i]]))
+                    for name in CONTROLS
+                },
+                "selective": bool(sel["selective"][i]),
+                "selective_secondary": bool(sel["secondary"][i]),
+                "units": sel["units"][i].tolist(),
+                "control_units": sel["controls"][i].tolist(),
+            }
+        )
+    return records
+
+
+def eligible_counts(ex, world, sample, atom_correct):
+    """Eligible untrained chains per fact, from unablated answers only.
+
+    A chain is eligible when its two-hop answer and its first fact's atomic
+    answer are correct at baseline (contract z1.two_hop_measure.eligible_query).
+    The selection-only stage uses this to count powered nodes; no unit is ablated.
+    """
+    owner, items = _flat(list(enumerate(sample["chains"])))
+    targets = world.chains[items, 3] + world.eo
+    answer = predict(ex, world.chain_tokens(items), 2)
+    eligible = (answer == targets) & atom_correct[world.first[items]]
+    return np.bincount(owner[eligible], minlength=len(sample["facts"]))
+
+
+def summarize_selection(records, eligible, q):
+    """Per-kind counts of the selection-only stage, including the contract's power rule."""
+    out = {}
+    for kind in ("id", "ood"):
+        rows = [(r, int(e)) for r, e in zip(records, eligible, strict=True) if r["kind"] == kind]
+        baseline = sum(r["baseline_correct"] for r, _ in rows)
+        localized = sum(r["k_star"] is not None for r, _ in rows)
+        powered_facts = [e for r, e in rows if r["selective"] and e >= 1]
+        hist = {}
+        for r, _ in rows:
+            if r["k_star"]:
+                hist[str(r["k_star"])] = hist.get(str(r["k_star"]), 0) + 1
+        out[kind] = {
+            "sampled": len(rows),
+            "baseline_correct": baseline,
+            "localized": localized,
+            "not_localized": baseline - localized,
+            "not_localized_rate": (baseline - localized) / baseline if baseline else None,
+            "selective": sum(r["selective"] for r, _ in rows),
+            "selective_secondary": sum(r["selective_secondary"] for r, _ in rows),
+            "selective_with_eligible": len(powered_facts),
+            "eligible_queries_of_selective": int(sum(powered_facts)),
+            "powered": len(powered_facts) >= q["power"],
+            "k_star_histogram": hist,
+        }
+    return out
+
+
+def z1_node(ex, world, sample, atom_answer, p, scopes):
+    """All Z1 measurements at one node. Two-hop outcomes never enter selection."""
+    q = p["z1"]
+    neurons = ex.neurons
+    facts = sample["facts"]
+    n = len(facts)
+    sel = z1_selection(ex, world, sample, atom_answer, p)
+    tails, atom_correct = sel["tails"], sel["atom_correct"]
+    k_star, localized = sel["k_star"], sel["localized"]
+    units, controls = sel["units"], sel["controls"]
+
+    def ablate(owner, items, rows, scope, tokens_fn, position, targets):
+        return _ablate(ex, owner, items, rows, scope, tokens_fn, position, targets)
+
+    def per_fact(owner, values, facts_index):
+        return _per_fact(n, owner, values, facts_index)
 
     # Two-hop transfer: untrained (primary) and trained II chains.
     two_hop = {}
@@ -596,26 +703,8 @@ def z1_node(ex, world, sample, atom_answer, p, scopes):
             "outcomes": outcomes,
         }
 
-    records = []
-    for i in range(n):
-        rec = {
-            "atom": int(facts[i]),
-            "kind": str(sample["kinds"][i]),
-            "baseline_correct": bool(baseline_ok[i]),
-            "k_star": int(k_star[i]) if k_star[i] > 0 else None,
-            "retention": {
-                name: None if np.isnan(retention[name][i]) else float(retention[name][i])
-                for name in CONTROLS
-            },
-            "control_empty": {
-                name: bool(k_star[i] > 0 and not np.any(atom_correct[sample[name][i]]))
-                for name in CONTROLS
-            },
-            "selective": bool(selective[i]),
-            "selective_secondary": bool(secondary[i]),
-            "units": units[i].tolist(),
-            "control_units": controls[i].tolist(),
-        }
+    records = selection_records(sample, sel)
+    for i, rec in enumerate(records):
         for label, block in two_hop.items():
             mask = block["owner"] == i
             rec[f"{label}_sampled"] = int(np.sum(block["sampled"] == i))
@@ -624,7 +713,6 @@ def z1_node(ex, world, sample, atom_answer, p, scopes):
                 for (scope, which), (flip, change) in block["outcomes"].items():
                     rec[f"{label}_{which}_{scope}"] = float(flip[mask].mean())
                     rec[f"{label}_{which}_{scope}_margin"] = float(change[mask].mean())
-        records.append(rec)
 
     # Descriptive items (never part of a verdict).
     base = two_hop["untrained"]

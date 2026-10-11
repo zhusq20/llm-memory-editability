@@ -13,6 +13,7 @@ import torch
 from torch.nn import functional as F
 from transformers import GPT2Config
 
+from llm_memory_editability import path_overlap
 from llm_memory_editability.grokking_reproduction import ReproductionGPT, build_graph
 from llm_memory_editability.path_overlap import (
     CODE_FILES,
@@ -20,6 +21,7 @@ from llm_memory_editability.path_overlap import (
     World,
     bootstrap_mean,
     contract_parameters,
+    eligible_counts,
     load_contract,
     load_model,
     majority_verdict,
@@ -28,9 +30,12 @@ from llm_memory_editability.path_overlap import (
     random_units,
     replication,
     sample_facts,
+    selection_records,
     sha256,
+    summarize_selection,
     window_edges,
     z1_node,
+    z1_selection,
 )
 
 PROJECT = Path(__file__).resolve().parents[1]
@@ -392,3 +397,111 @@ def test_run_keeps_the_replication_failure_and_stops(tiny, tmp_path):
     assert [p.name for p in node.iterdir()] == [runner.FAILURE]
     failure = json.loads((node / runner.FAILURE).read_text())
     assert any(f.startswith("test_ii") for f in failure["failures"])
+
+
+SELECTION_FIELDS = (
+    "atom",
+    "kind",
+    "baseline_correct",
+    "k_star",
+    "retention",
+    "control_empty",
+    "selective",
+    "selective_secondary",
+    "units",
+    "control_units",
+)
+
+
+def test_selection_stage_matches_the_full_run_selection(tiny, params):
+    p = small(params)
+    world, ex = tiny["world"], Executor(tiny["model"])
+    sample = sample_facts(world, tiny["phi"], p)
+    atom_answer = predict(ex, world.atomic_tokens(np.arange(len(world.atoms))), 1)
+    full = z1_node(ex, world, sample, atom_answer, p, ["all", "round1", "round2"])
+    sel = z1_selection(ex, world, sample, atom_answer, p)
+    records = selection_records(sample, sel)
+    for a, b in zip(full["facts"], records, strict=True):
+        assert {f: a[f] for f in SELECTION_FIELDS} == {f: b[f] for f in SELECTION_FIELDS}
+    eligible = eligible_counts(ex, world, sample, sel["atom_correct"])
+    for i, rec in enumerate(full["facts"]):
+        if rec["k_star"] is not None:
+            assert rec["untrained_eligible"] == eligible[i]
+    kinds = summarize_selection(records, eligible, p["z1"])
+    for kind in ("id", "ood"):
+        assert (
+            kinds[kind]["selective_with_eligible"]
+            == full["kinds"][kind]["primary/untrained"]["facts_with_eligible"]
+        )
+        assert kinds[kind]["localized"] == full["kinds"][kind]["localized"]
+        assert kinds[kind]["powered"] is False  # tiny sample, power needs 30 facts
+
+
+def test_select_never_ablates_a_two_hop_query(tiny, params, tmp_path, monkeypatch):
+    runner = load_runner()
+    calls = []
+
+    def guarded(ex, tokens, position, target=None, *, units=None, scope="all", edges=None):
+        two_hop = np.asarray(tokens).shape[1] == 3
+        if two_hop and (units is not None or edges is not None):
+            raise AssertionError("selection stage evaluated an ablated two-hop query")
+        calls.append((two_hop, units is not None))
+        return predict(ex, tokens, position, target, units=units, scope=scope, edges=edges)
+
+    monkeypatch.setattr(path_overlap, "predict", guarded)
+    monkeypatch.setattr(runner, "predict", guarded)
+    root = tmp_path / "root"
+    checkpoint_root(tiny, root)
+    contract = tiny_contract(root, tmp_path / "contract.json")
+    out = tmp_path / "out"
+    args = argparse.Namespace(
+        contract=contract, root=root, out=out, run=RUN, steps=[STEP], gpu=None
+    )
+    runner.select(args)
+    assert (False, True) in calls and (True, False) in calls  # atom ablations, two-hop baseline
+    assert not (out / RUN).exists(), "the contract's per-node directory must stay untouched"
+    node = out / runner.SELECTION / RUN / f"{STEP:07d}"
+    assert [p.name for p in node.iterdir()] == ["selection.json"]
+    record = json.loads((node / "selection.json").read_text())
+    assert record["complete"] is True and record["replication"]["failures"] == []
+    assert set(record["kinds"]) == {"id", "ood"}
+    assert all("untrained_eligible" in r and "units" in r for r in record["facts"])
+    assert not any(k.startswith("untrained_S_") for r in record["facts"] for k in r)
+    runner.select(args)  # a complete selection node is skipped
+    again = json.loads((node / "selection.json").read_text())
+    assert again["completed_utc"] == record["completed_utc"]
+
+
+def test_selection_feasibility_applies_the_power_rule(params, tmp_path):
+    runner = load_runner()
+    selection_out = tmp_path / "selection-stage"
+
+    def write(run_name, step, ood, id_):
+        node = selection_out / run_name / f"{step:07d}"
+        node.mkdir(parents=True)
+        kinds = {
+            kind: {
+                "selective_with_eligible": count,
+                "not_localized_rate": 0.1,
+                "powered": count >= params["z1"]["power"],
+            }
+            for kind, count in (("ood", ood), ("id", id_))
+        }
+        (node / "selection.json").write_text(json.dumps({"complete": True, "kinds": kinds}))
+
+    loop = [("loop4x2-phi7.2-wd0.1", s) for s in (512000, 700000, 1000000, 1500000)]
+    standard = [("standard8-phi7.2-wd0.1", s) for s in (700000, 1000000, 1500000)]
+    for (run_name, step), ood in zip(loop, (40, 31, 29, 5), strict=True):
+        write(run_name, step, ood, 50)
+    for (run_name, step), id_ in zip(standard[:2], (10, 12), strict=True):
+        write(run_name, step, 0, id_)
+    result = runner.selection_feasibility(selection_out, loop, standard, params)
+    assert result["loop_ood"]["powered_nodes"] == 2 and result["loop_ood"]["enough_powered"]
+    assert result["loop_id_secondary"]["powered_nodes"] == 4
+    assert result["standard_id"]["state"] == "incomplete"
+    assert result["standard_id"]["missing"] == ["standard8-phi7.2-wd0.1@1500000"]
+    assert result["standard_id"]["enough_powered"] is None
+    write(*standard[2], 0, 3)
+    result = runner.selection_feasibility(selection_out, loop, standard, params)
+    assert result["standard_id"]["powered_nodes"] == 0
+    assert result["standard_id"]["enough_powered"] is False

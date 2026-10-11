@@ -558,7 +558,9 @@ TTT在本轮的价值是提供有文献依据、可操控的写入与后续读�
 - 执行前的可行性检查（2026-10-11按[Feng等](#feng2025)补充；冻结契约未修订）：
   - 风险：事实若在多层冗余存储，消融其中一份会被其他副本补偿，冻结计划中“能翻转单跳答案的最少单元数”可能不存在（记为未定位）。有功效的检查点不足半数时，判读为无法判定。另外，本实验只消融MLP神经元，而该文发现attention也存储事实。
   - 做法：冻结计划规定选择阶段只用单跳查询、从不使用两跳结果。因此先在全部检查点上只执行选择阶段，统计每个检查点有选择性的事实数与未定位比例。若有功效的检查点不足半数，在计算任何两跳结果之前写出修订（例如加入attention输出单元或成组消融），并记录时间。
-  - 代码（2026-10-11已对齐现行契约`configs/zero-training-path-overlap-v1.json`并提交）：`src/llm_memory_editability/path_overlap.py`、`scripts/run_zero_training_path_overlap.py`，测试为`tests/test_path_overlap.py`。早先草稿指向从未提交的`zero-training-path-format-v1.json`，并含已撤下的桥实体格式检验；对齐后，桥实体格式检验的代码全部删除，契约不对或仍含Z2时代码直接报错。完成的检查点只输出契约规定的`z1.json`、`ported.json`、`hashes.json`：复现检查结果记在`hashes.json`中，检查失败时只保留`replication-failure.json`并停止。运行脚本还没有“只执行选择阶段”的模式；若采纳上一条做法，上机前须先加上。
+  - 代码（2026-10-11已对齐现行契约`configs/zero-training-path-overlap-v1.json`并提交）：`src/llm_memory_editability/path_overlap.py`、`scripts/run_zero_training_path_overlap.py`，测试为`tests/test_path_overlap.py`。早先草稿指向从未提交的`zero-training-path-format-v1.json`，并含已撤下的桥实体格式检验；对齐后，桥实体格式检验的代码全部删除，契约不对或仍含Z2时代码直接报错。完成的检查点只输出契约规定的`z1.json`、`ported.json`、`hashes.json`：复现检查结果记在`hashes.json`中，检查失败时只保留`replication-failure.json`并停止。
+  - 只执行选择阶段（2026-10-11加入运行脚本）：`select`子命令与完整运行调用同一段选择代码，只额外用未消融的两跳答案统计合格查询，从不对两跳查询做消融；结果写入`results/zero-training-path-overlap-v1/selection-stage/{run}/{step}/selection.json`，不触碰契约规定的检查点目录。`select-summary`按契约的功效规则（每类事实至少30条选择性事实各有至少1条合格查询），统计三个判读组中有功效的主检查点数，以及是否达到半数。测试核对了选择结果与完整运行逐项一致。
+  - 修订的限制：冻结计划的不允许事项包括“读到任何Z1输出之后，改变检查点、阈值、k网格、对照或消融范围”，选择阶段的统计也属于Z1输出。因此，若据此修订，修订记录须写明只读过选择阶段的统计、没有计算任何消融后的两跳结果，并说明修订是否触及上述事项；加入attention输出单元或成组消融改变的是消融成分的定义，须由用户决定后再写入契约。
 
 **桥实体格式检验（契约编号Z2；2026-10-10撤下）。** 原计划在同样8条×14个检查点的第一次迭代末做解码—再编码与同一桥实体放大。撤下原因见下段。
 

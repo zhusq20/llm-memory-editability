@@ -10,7 +10,16 @@ also recording the replication check. ``analyze`` reads only the node outputs
 and applies the frozen interpretation mechanically. ``plan`` lists the 8 x 14
 node tasks and their state.
 
+``select`` runs the selection stage only, as a feasibility check before any
+two-hop outcome exists (roadmap §5.0.1). It uses the same selection code as
+``run``, adds eligible-query counts from unablated two-hop answers, and never
+ablates a two-hop query. It writes selection-stage/{run}/{step}/selection.json
+and leaves the contract's per-node directories untouched. ``select-summary``
+counts powered primary nodes per verdict group, using the contract's power rule.
+
 Usage on the experiment host (inside the fixed LM image):
+  python scripts/run_zero_training_path_overlap.py select --run loop4x2-phi7.2-wd0.1 --gpu 0
+  python scripts/run_zero_training_path_overlap.py select-summary
   python scripts/run_zero_training_path_overlap.py run --run loop4x2-phi7.2-wd0.1 --gpu 0
   python scripts/run_zero_training_path_overlap.py analyze
 """
@@ -31,6 +40,7 @@ from llm_memory_editability.path_overlap import (
     CODE_FILES,
     Executor,
     World,
+    eligible_counts,
     load_contract,
     load_model,
     majority_verdict,
@@ -38,9 +48,12 @@ from llm_memory_editability.path_overlap import (
     predict,
     replication,
     sample_facts,
+    selection_records,
     sha256,
+    summarize_selection,
     z1_loop_flags,
     z1_node,
+    z1_selection,
     z1_standard_flags,
 )
 
@@ -49,18 +62,20 @@ CONTRACT = PROJECT / "configs/zero-training-path-overlap-v1.json"
 ROOT = Path("results/grokking-reproduction-v1")
 OUT = Path("results/zero-training-path-overlap-v1")
 FAILURE = "replication-failure.json"
+SELECTION = "selection-stage"
 
 
 def node_dir(out, run, step):
     return Path(out) / run / f"{step:07d}"
 
 
-def complete(node):
-    path = node / "hashes.json"
+def complete(node, name="hashes.json"):
+    path = node / name
     return path.exists() and json.loads(path.read_text()).get("complete") is True
 
 
-def run(args):
+def prepare(args):
+    """Contract, device, verified data and the requested nodes of one run."""
     contract, p = load_contract(args.contract)
     assert p["code_files"] == CODE_FILES, "Code files differ from the contract"
     assert p["outputs"][-1] == "hashes.json", "hashes.json must be the last per-node output"
@@ -81,6 +96,32 @@ def run(args):
     code = {
         name: (sha256(PROJECT / name) if (PROJECT / name).exists() else None) for name in CODE_FILES
     }
+    return contract, p, device, root, data, world, steps, code
+
+
+def checked_model(root, run, step, world, device, node, p):
+    """Load one checkpoint and pass the replication check, or keep the failure and stop."""
+    model, spec, checkpoint = load_model(root, run, step, world.metadata, device)
+    ex = Executor(model)
+    rep, failures = replication(ex, world, root, run, step, p)
+    if failures:
+        write_json(
+            node / FAILURE,
+            {
+                "run": run,
+                "step": step,
+                "panels": rep,
+                "failures": failures,
+                "checkpoint": str(checkpoint),
+                "created_utc": utc(),
+            },
+        )
+        raise SystemExit(f"Replication check failed at {run}@{step}: {failures}")
+    return model, ex, spec, checkpoint, rep
+
+
+def run(args):
+    contract, p, device, root, data, world, steps, code = prepare(args)
     for step in steps:
         node = node_dir(args.out, args.run, step)
         if complete(node):
@@ -100,24 +141,10 @@ def run(args):
             timing[stage] = time.perf_counter() - since
             return time.perf_counter()
 
-        model, spec, checkpoint = load_model(root, args.run, step, world.metadata, device)
-        ex = Executor(model)
-        clock = mark("load", started)
-        rep, failures = replication(ex, world, root, args.run, step, p)
-        clock = mark("replication", clock)
-        if failures:
-            write_json(
-                node / FAILURE,
-                {
-                    "run": args.run,
-                    "step": step,
-                    "panels": rep,
-                    "failures": failures,
-                    "checkpoint": str(checkpoint),
-                    "created_utc": utc(),
-                },
-            )
-            raise SystemExit(f"Replication check failed at {args.run}@{step}: {failures}")
+        model, ex, spec, checkpoint, rep = checked_model(
+            root, args.run, step, world, device, node, p
+        )
+        clock = mark("load_and_replication", started)
         atom_answer = predict(ex, world.atomic_tokens(np.arange(len(world.atoms))), 1)
         sample = sample_facts(world, spec["phi"], p)
         scopes = p["z1"]["scopes"]["loop" if spec["repeats"] > 1 else "standard"]
@@ -153,7 +180,7 @@ def run(args):
                 "panels_sha256": sha256(data / "panels.npz"),
                 "contract_sha256": sha256(args.contract),
                 "code_sha256": code,
-                "replication": {"panels": rep, "failures": failures},
+                "replication": {"panels": rep, "failures": []},
                 "outputs_sha256": {name: sha256(node / name) for name in p["outputs"][:-1]},
                 "seconds": timing,
                 "peak_memory_bytes": int(torch.cuda.max_memory_allocated(device))
@@ -173,6 +200,124 @@ def run(args):
         del model, ex
         if device.type == "cuda":
             torch.cuda.empty_cache()
+
+
+def select(args):
+    """Selection stage only: S_f, selectivity and eligible-query counts, no two-hop ablation."""
+    contract, p, device, root, data, world, steps, code = prepare(args)
+    for step in steps:
+        node = node_dir(Path(args.out) / SELECTION, args.run, step)
+        if complete(node, "selection.json"):
+            print(
+                json.dumps({"run": args.run, "step": step, "state": "skipped, complete"}),
+                flush=True,
+            )
+            continue
+        node.mkdir(parents=True, exist_ok=True)
+        started = time.perf_counter()
+        model, ex, spec, checkpoint, rep = checked_model(
+            root, args.run, step, world, device, node, p
+        )
+        atom_answer = predict(ex, world.atomic_tokens(np.arange(len(world.atoms))), 1)
+        sample = sample_facts(world, spec["phi"], p)
+        sel = z1_selection(ex, world, sample, atom_answer, p)
+        records = selection_records(sample, sel)
+        eligible = eligible_counts(ex, world, sample, sel["atom_correct"])
+        for rec, count in zip(records, eligible, strict=True):
+            rec["untrained_eligible"] = int(count)
+        write_json(
+            node / "selection.json",
+            {
+                "complete": True,
+                "stage": "selection only (feasibility check before any two-hop outcome)",
+                "two_hop": "unablated answers of the sampled untrained chains, used only to count "
+                "eligible queries; no two-hop query was evaluated under any ablation",
+                "run": args.run,
+                "step": step,
+                "phi": spec["phi"],
+                "fact_sample_sha256": sample["sha256"],
+                "power_rule": f">= {p['z1']['power']} selective facts with >= 1 eligible query",
+                "kinds": summarize_selection(records, eligible, p["z1"]),
+                "facts": records,
+                "replication": {"panels": rep, "failures": []},
+                "checkpoint": str(checkpoint),
+                "checkpoint_sha256": sha256(checkpoint),
+                "contract_sha256": sha256(args.contract),
+                "code_sha256": code,
+                "seconds": time.perf_counter() - started,
+                "device": torch.cuda.get_device_name(device) if device.type == "cuda" else "cpu",
+                "torch": torch.__version__,
+                "completed_utc": utc(),
+            },
+        )
+        print(json.dumps({"run": args.run, "step": step, "state": "selection done"}), flush=True)
+        del model, ex
+        if device.type == "cuda":
+            torch.cuda.empty_cache()
+
+
+def selection_feasibility(selection_out, loop_nodes, standard_nodes, p):
+    """Powered primary nodes per verdict group, read from selection.json files.
+
+    A group would be judged 'inconclusive' when fewer than half of its primary
+    nodes are powered (majority_verdict); enough_powered is the complement.
+    """
+    groups = {
+        "loop_ood": (loop_nodes, "ood"),
+        "loop_id_secondary": (loop_nodes, "id"),
+        "standard_id": (standard_nodes, "id"),
+    }
+    out = {}
+    for label, (nodes, kind) in groups.items():
+        rows, missing = [], []
+        for run_name, step in nodes:
+            node = node_dir(selection_out, run_name, step)
+            if not complete(node, "selection.json"):
+                missing.append(f"{run_name}@{step}")
+                continue
+            summary = json.loads((node / "selection.json").read_text())["kinds"][kind]
+            rows.append(
+                {
+                    "node": f"{run_name}@{step}",
+                    "selective_with_eligible": summary["selective_with_eligible"],
+                    "not_localized_rate": summary["not_localized_rate"],
+                    "powered": summary["powered"],
+                }
+            )
+        powered = sum(r["powered"] for r in rows)
+        out[label] = {
+            "state": "incomplete" if missing else "complete",
+            "missing": missing,
+            "primary_nodes": len(nodes),
+            "powered_nodes": powered,
+            "enough_powered": None if missing else powered >= len(nodes) / 2,
+            "nodes": rows,
+        }
+    return out
+
+
+def select_summary(args):
+    contract, p = load_contract(args.contract)
+    curves = learning_curves(args.root, p["runs"])
+    loop_nodes, standard_nodes = primary_nodes(curves, p)
+    selection_out = Path(args.out) / SELECTION
+    groups = selection_feasibility(selection_out, loop_nodes, standard_nodes, p)
+    summary = {
+        "batch": contract["batch"],
+        "contract_sha256": sha256(args.contract),
+        "created_utc": utc(),
+        "stage": "selection only; no two-hop query was evaluated under any ablation",
+        "groups": groups,
+    }
+    write_json(selection_out / "selection-summary.json", summary)
+    print(
+        json.dumps(
+            {
+                label: [g["state"], g["powered_nodes"], g["primary_nodes"], g["enough_powered"]]
+                for label, g in groups.items()
+            }
+        )
+    )
 
 
 # Analysis ---------------------------------------------------------------------
@@ -316,17 +461,24 @@ def main():
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
     )
     sub = parser.add_subparsers(dest="command", required=True)
-    for name in ("run", "analyze", "plan"):
+    commands = {
+        "run": run,
+        "select": select,
+        "select-summary": select_summary,
+        "analyze": analyze,
+        "plan": plan,
+    }
+    for name in commands:
         s = sub.add_parser(name)
         s.add_argument("--contract", type=Path, default=CONTRACT)
         s.add_argument("--root", type=Path, default=ROOT)
         s.add_argument("--out", type=Path, default=OUT)
-        if name == "run":
+        if name in ("run", "select"):
             s.add_argument("--run", required=True)
             s.add_argument("--steps", type=int, nargs="*")
             s.add_argument("--gpu", type=int)
     args = parser.parse_args()
-    {"run": run, "analyze": analyze, "plan": plan}[args.command](args)
+    commands[args.command](args)
 
 
 if __name__ == "__main__":
