@@ -1,0 +1,854 @@
+{
+  "batch": "parallel-readouts-development-v1",
+  "phase": "development",
+  "module": "sequential_phrasing_readout",
+  "template_family_id": "single-imperative-paraphrase-v1",
+  "templates": {
+    "father": "Name the father of {subject}.",
+    "mother": "Name the mother of {subject}.",
+    "child": "Name a child of {subject}.",
+    "spouse": "Name the spouse of {subject}.",
+    "director": "Name the director of {subject}.",
+    "performer": "Name the performer of {subject}.",
+    "composer": "Name the composer of {subject}.",
+    "founded by": "Name the founder of {subject}.",
+    "educated at": "Name the educational institution attended by {subject}.",
+    "employer": "Name the employer of {subject}.",
+    "publisher": "Name the publisher of {subject}.",
+    "date of birth": "Give the birth date of {subject}.",
+    "date of death": "Give the death date of {subject}.",
+    "place of birth": "Name the birthplace of {subject}.",
+    "place of death": "Name the place where {subject} died.",
+    "place of burial": "Name the burial place of {subject}.",
+    "cause of death": "Give the cause of death of {subject}.",
+    "country of citizenship": "Name a country of citizenship of {subject}.",
+    "country": "Name the country that {subject} is in.",
+    "award received": "Name an award received by {subject}."
+  },
+  "canonical_minimum_token_match_fraction": 1.0,
+  "audit_nll_absolute_tolerance": 1e-05,
+  "compatible_source_files": [
+    {
+      "module": "bios_model.py",
+      "original_path": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/sequential-transfer-development-v1/source/src/llm_memory_editability/bios_model.py",
+      "sha256": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d"
+    },
+    {
+      "module": "grok_depth.py",
+      "original_path": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/sequential-transfer-development-v1/source/src/llm_memory_editability/grok_depth.py",
+      "sha256": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26"
+    },
+    {
+      "module": "grokking_reproduction.py",
+      "original_path": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/sequential-transfer-development-v1/source/src/llm_memory_editability/grokking_reproduction.py",
+      "sha256": "7e3a89d96f6fef7bd4665ac46dd1acb6e7cb461c6878647ecc7c6f425ac31117"
+    },
+    {
+      "module": "realworld_composition.py",
+      "original_path": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/sequential-transfer-development-v1/source/src/llm_memory_editability/realworld_composition.py",
+      "sha256": "323f1cdb0f3c25a085e95b6f85fe352b1a91274aa5b3bbaca4e0686fdb4510c0"
+    },
+    {
+      "module": "realworld_composition_data.py",
+      "original_path": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/sequential-transfer-development-v1/source/src/llm_memory_editability/realworld_composition_data.py",
+      "sha256": "7208e0d0789f0287963b6e36d2646171e334f40ee365af13af79944f81e221be"
+    },
+    {
+      "module": "sequential_transfer.py",
+      "original_path": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/sequential-transfer-development-v1/source/src/llm_memory_editability/sequential_transfer.py",
+      "sha256": "6eab684539f4ce84f44058d3988dcec055471ab6ae7cd9cf0ffc3fc0150e424d"
+    }
+  ],
+  "tokenizer_files": [
+    {
+      "name": "merges.txt",
+      "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+    },
+    {
+      "name": "special_tokens_map.json",
+      "sha256": "8bcf4e58d0970bbcb3b111a4c1e297c082fbf61253b14b3c0c8f2972ccb61ba4"
+    },
+    {
+      "name": "tokenizer.json",
+      "sha256": "a6aa29bf8416d74ad795a73262b1aa3f985564ee338adbee7ffbc5861f78b6b8"
+    },
+    {
+      "name": "tokenizer_config.json",
+      "sha256": "f7cd5e1168079212fdf834ed8113826afe1384b42c39024753c09d3eac9335c0"
+    },
+    {
+      "name": "vocab.json",
+      "sha256": "3ba3c3109ff33976c4bd966589c11ee14fcaa1f4c9e5e154c2ed7f99d80709e7"
+    }
+  ],
+  "specs": [
+    {
+      "name": "development-i840071-joint",
+      "source_run_dir": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-joint",
+      "source_run_json_sha256": "27dba1b56fb28725edb2c100832e370bd69a4bba7c530cd658e4be11deef5f61",
+      "data_file": "/ossfs/workspace/llm-memory-editability/data/sequential-transfer-v1/development.json",
+      "data_sha256": "3f66cd319651dd4c7e5e060d2cfdb00fedf2f15839862a309097ae17b9a2d7e6",
+      "tokenizer": "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/tokenizer",
+      "checkpoints": {
+        "stage_a": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-joint/stage-a.pt",
+          "sha256": "c0e0552ab8c87e3f97870a736f2c0bc64908082c841a9d8f118cd4abdadbd315",
+          "step": 8000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-joint/predictions-0008000.json",
+          "predictions_sha256": "9dbce7f1968a41eb4fbf41869febc4427b29e1febd3ce4215267746f377f218d"
+        },
+        "final": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-joint/latest.pt",
+          "sha256": "4d5c53704342b6574406237a6d1c08f723bddddc6f8463e003cf4ecaf3c691eb",
+          "step": 12000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-joint/predictions-0012000.json",
+          "predictions_sha256": "828fe5401d3fd2f234f2b2d2cc8c397212058b86603b7971b43012a56762c038"
+        }
+      }
+    },
+    {
+      "name": "development-i840071-sequential_atomic",
+      "source_run_dir": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_atomic",
+      "source_run_json_sha256": "51c87ba7737470844b6c2f040147067d1ad3b26238e88a29e99e591b75a9e854",
+      "data_file": "/ossfs/workspace/llm-memory-editability/data/sequential-transfer-v1/development.json",
+      "data_sha256": "3f66cd319651dd4c7e5e060d2cfdb00fedf2f15839862a309097ae17b9a2d7e6",
+      "tokenizer": "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/tokenizer",
+      "checkpoints": {
+        "stage_a": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_atomic/stage-a.pt",
+          "sha256": "544f77057423a5ebc69d34229e44ea242083e8cc038d6efeb7a540609aab2af8",
+          "step": 8000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_atomic/predictions-0008000.json",
+          "predictions_sha256": "82f1f68dd22994189eca33888537f6b7377d4346fbc2d0a0b510c26f311a48c4"
+        },
+        "final": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_atomic/latest.pt",
+          "sha256": "d207146b2e21a64b8ae6a5e9e9fcccd285ea5130ee40bf436961c4b293c15f06",
+          "step": 12000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_atomic/predictions-0012000.json",
+          "predictions_sha256": "bb50f0b3c155e179fcbf4d71608d6017eb598dce39caf704a8c7515f04da02fc"
+        }
+      }
+    },
+    {
+      "name": "development-i840071-sequential_composition",
+      "source_run_dir": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition",
+      "source_run_json_sha256": "4d72aca36a9b7d55c5a6c9d035e83f442f63bd93760a671b9d3516cf9ff8822b",
+      "data_file": "/ossfs/workspace/llm-memory-editability/data/sequential-transfer-v1/development.json",
+      "data_sha256": "3f66cd319651dd4c7e5e060d2cfdb00fedf2f15839862a309097ae17b9a2d7e6",
+      "tokenizer": "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/tokenizer",
+      "checkpoints": {
+        "stage_a": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition/stage-a.pt",
+          "sha256": "888516fc01da2fd45ff741f7cef1317b75ef98c8aa80fd7a414809cdb5667c7a",
+          "step": 8000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition/predictions-0008000.json",
+          "predictions_sha256": "48dfceb8c5beb426a07e02216638448118fdc1c8afe5245b2c607209127b64ab"
+        },
+        "final": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition/latest.pt",
+          "sha256": "2732c923aefe47e6a9e3a16c05c6f68b6b0213cb5b29b9723cbecc4501044543",
+          "step": 12000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition/predictions-0012000.json",
+          "predictions_sha256": "30e7625dbe7a80e27378bbf048aa0be7f05e51e76f1c5761b73e5c56365c804d"
+        }
+      }
+    },
+    {
+      "name": "development-i840071-sequential_composition_sham",
+      "source_run_dir": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition_sham",
+      "source_run_json_sha256": "523762e21369c9238935be19dc8d7547ba6b24204c2d7f46a22f20f954cc35a8",
+      "data_file": "/ossfs/workspace/llm-memory-editability/data/sequential-transfer-v1/development.json",
+      "data_sha256": "3f66cd319651dd4c7e5e060d2cfdb00fedf2f15839862a309097ae17b9a2d7e6",
+      "tokenizer": "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/tokenizer",
+      "checkpoints": {
+        "stage_a": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition_sham/stage-a.pt",
+          "sha256": "bdb33cfbec010cf3e4a53a4a49b1de3ae656f76e08f065990d095d14c36a7c4e",
+          "step": 8000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition_sham/predictions-0008000.json",
+          "predictions_sha256": "48dfceb8c5beb426a07e02216638448118fdc1c8afe5245b2c607209127b64ab"
+        },
+        "final": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition_sham/latest.pt",
+          "sha256": "5c306c45695ae5a5b384c78c1b98169852f935bf1d0ac132e27f9ff300adf00a",
+          "step": 12000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition_sham/predictions-0012000.json",
+          "predictions_sha256": "5ee9a83aa85840ea4541f809d31a7c8cc1ea5078c17b4c7d6ee41b46c2f677e7"
+        }
+      }
+    },
+    {
+      "name": "development-i840072-joint",
+      "source_run_dir": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-joint",
+      "source_run_json_sha256": "866bd7f0daa3422d4a1705ed50902baefbb78b0a5997b25a0a8d28d3f734c7cd",
+      "data_file": "/ossfs/workspace/llm-memory-editability/data/sequential-transfer-v1/development.json",
+      "data_sha256": "3f66cd319651dd4c7e5e060d2cfdb00fedf2f15839862a309097ae17b9a2d7e6",
+      "tokenizer": "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/tokenizer",
+      "checkpoints": {
+        "stage_a": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-joint/stage-a.pt",
+          "sha256": "bc0e5a699ae79090b4b33585f0bc1c67ef97841b30a1c806ebcec76156bfa06f",
+          "step": 8000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-joint/predictions-0008000.json",
+          "predictions_sha256": "63e95f09711740a1f773662f7f97d64cd75b4c69e8e50180e3d1b23d83b13e74"
+        },
+        "final": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-joint/latest.pt",
+          "sha256": "c5043623e18eb3233deae4089b8ec55ccd66e74a9d0857732450cb0c1214c047",
+          "step": 12000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-joint/predictions-0012000.json",
+          "predictions_sha256": "709c56f0d89c569765112966258da855297d40ed25f0db96447615b780b9ec52"
+        }
+      }
+    },
+    {
+      "name": "development-i840072-sequential_atomic",
+      "source_run_dir": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_atomic",
+      "source_run_json_sha256": "68fcfc1034ebe2d81286f4f93904ffc46835a031e6c59883977a0e7396a01c22",
+      "data_file": "/ossfs/workspace/llm-memory-editability/data/sequential-transfer-v1/development.json",
+      "data_sha256": "3f66cd319651dd4c7e5e060d2cfdb00fedf2f15839862a309097ae17b9a2d7e6",
+      "tokenizer": "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/tokenizer",
+      "checkpoints": {
+        "stage_a": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_atomic/stage-a.pt",
+          "sha256": "9e192f3de6226d6aa7fc24d059a4e70ab1bcde1510912757d291dade58a4a8b7",
+          "step": 8000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_atomic/predictions-0008000.json",
+          "predictions_sha256": "578f4229c9a2c8c7ea3493b9d0591dd536b6ef0b5c81a1bf763896339a92940d"
+        },
+        "final": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_atomic/latest.pt",
+          "sha256": "c5ac3ecaa2cfbdd496c8d4c755aa4bb4f352939231f1d998c007583e1135d40f",
+          "step": 12000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_atomic/predictions-0012000.json",
+          "predictions_sha256": "7288981689253c614edb0ea5e32639c81842da255a1aadcef21ab6e756e48320"
+        }
+      }
+    },
+    {
+      "name": "development-i840072-sequential_composition",
+      "source_run_dir": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition",
+      "source_run_json_sha256": "69fc4dfb3e09c56615a5e763792f643d27fe9b80081ae600053498ee7c1e23d3",
+      "data_file": "/ossfs/workspace/llm-memory-editability/data/sequential-transfer-v1/development.json",
+      "data_sha256": "3f66cd319651dd4c7e5e060d2cfdb00fedf2f15839862a309097ae17b9a2d7e6",
+      "tokenizer": "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/tokenizer",
+      "checkpoints": {
+        "stage_a": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition/stage-a.pt",
+          "sha256": "ba1f791e3b22c34706378d03f46a213e746b66939d74876adc41ee9dafd0e556",
+          "step": 8000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition/predictions-0008000.json",
+          "predictions_sha256": "6f038a7c3dbb768f82bbfa768f4d21f7e7d803f437fe2031ab32ff64e4bb9740"
+        },
+        "final": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition/latest.pt",
+          "sha256": "551096c1442830b475f3250568fb071984a7a56eaf61a78a6903f45ebb86f99e",
+          "step": 12000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition/predictions-0012000.json",
+          "predictions_sha256": "008b8d6739ca1cee955339d6d66a4c4c3ee7b68334d78b70a82f67eb534c5ed9"
+        }
+      }
+    },
+    {
+      "name": "development-i840072-sequential_composition_sham",
+      "source_run_dir": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition_sham",
+      "source_run_json_sha256": "1df019d09a4a59de0f5499a3929f2f9f02e260f570680824f1415bb690b2c484",
+      "data_file": "/ossfs/workspace/llm-memory-editability/data/sequential-transfer-v1/development.json",
+      "data_sha256": "3f66cd319651dd4c7e5e060d2cfdb00fedf2f15839862a309097ae17b9a2d7e6",
+      "tokenizer": "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/tokenizer",
+      "checkpoints": {
+        "stage_a": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition_sham/stage-a.pt",
+          "sha256": "4f19937b53388a4b7e4527f134bfb39c6e2a45c5ac16430403b2075841474e5c",
+          "step": 8000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition_sham/predictions-0008000.json",
+          "predictions_sha256": "6f038a7c3dbb768f82bbfa768f4d21f7e7d803f437fe2031ab32ff64e4bb9740"
+        },
+        "final": {
+          "path": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition_sham/latest.pt",
+          "sha256": "6f79784027c9cf92cd174fae09e7b35c3267af657dd5bbe677ad41466cb7c153",
+          "step": 12000,
+          "predictions_file": "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition_sham/predictions-0012000.json",
+          "predictions_sha256": "cae531a0832d75c71aa377f2de303de580a85938de47300f8b183d071fd1f32f"
+        }
+      }
+    }
+  ],
+  "training_updates": 0,
+  "limitations": [
+    "One historical knowledge graph with two initializations; all runs are development evidence.",
+    "Alternative imperative wording changes query form and tokens, so failures include unfamiliar phrasing or instructions.",
+    "Semantically equivalent templates were selected without reading alternative evaluation outcomes.",
+    "Alternative complete questions never entered original training; shared words and relation phrases can still be familiar.",
+    "All A/B atomic facts remain covered, including historically unexposed or unused facts; no accuracy-based selection.",
+    "No confirmation sweep, optimizer restoration or new training is authorized for this batch."
+  ],
+  "new_optimizer_updates": 0,
+  "evidence_class": "post_hoc_development_readouts",
+  "restoration": {
+    "source_batch": "/ossfs/workspace/research-recovery/edit-scope-development-v1",
+    "roles": [
+      "first",
+      "second"
+    ],
+    "learning_rates": [
+      1e-05,
+      0.0001
+    ],
+    "cases_per_shard": 32,
+    "states": [
+      "00",
+      "11",
+      "10",
+      "01"
+    ],
+    "native_gates": "exact all arrays before any hybrid",
+    "worlds": 1,
+    "initializations": 1
+  },
+  "tracking": {
+    "enabled": true,
+    "entity": "zhusq20",
+    "project": "llm-memory-editability",
+    "mode": "online",
+    "scientific_update_count": 0
+  },
+  "execution": {
+    "lanes": {
+      "1": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "2": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "3": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "4": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "5": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "6": [
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "7": [
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87
+      ]
+    },
+    "tasks": [
+      {
+        "name": "restore-first-lr1e5",
+        "kind": "restoration",
+        "gpu": 2,
+        "script": "scripts/run_edit_scope_restoration.py",
+        "science_arguments": [
+          "run",
+          "--source-batch",
+          "/ossfs/workspace/research-recovery/edit-scope-development-v1",
+          "--role",
+          "first",
+          "--learning-rate",
+          "1e-5",
+          "--out",
+          "{out}"
+        ],
+        "audit_arguments": [
+          "audit",
+          "--out",
+          "{out}",
+          "--audit-out",
+          "{audit_out}"
+        ],
+        "smoke_arguments": [
+          "--limit",
+          "1"
+        ]
+      },
+      {
+        "name": "restore-first-lr1e4",
+        "kind": "restoration",
+        "gpu": 3,
+        "script": "scripts/run_edit_scope_restoration.py",
+        "science_arguments": [
+          "run",
+          "--source-batch",
+          "/ossfs/workspace/research-recovery/edit-scope-development-v1",
+          "--role",
+          "first",
+          "--learning-rate",
+          "1e-4",
+          "--out",
+          "{out}"
+        ],
+        "audit_arguments": [
+          "audit",
+          "--out",
+          "{out}",
+          "--audit-out",
+          "{audit_out}"
+        ],
+        "smoke_arguments": [
+          "--limit",
+          "1"
+        ]
+      },
+      {
+        "name": "restore-second-lr1e5",
+        "kind": "restoration",
+        "gpu": 4,
+        "script": "scripts/run_edit_scope_restoration.py",
+        "science_arguments": [
+          "run",
+          "--source-batch",
+          "/ossfs/workspace/research-recovery/edit-scope-development-v1",
+          "--role",
+          "second",
+          "--learning-rate",
+          "1e-5",
+          "--out",
+          "{out}"
+        ],
+        "audit_arguments": [
+          "audit",
+          "--out",
+          "{out}",
+          "--audit-out",
+          "{audit_out}"
+        ],
+        "smoke_arguments": [
+          "--limit",
+          "1"
+        ]
+      },
+      {
+        "name": "restore-second-lr1e4",
+        "kind": "restoration",
+        "gpu": 5,
+        "script": "scripts/run_edit_scope_restoration.py",
+        "science_arguments": [
+          "run",
+          "--source-batch",
+          "/ossfs/workspace/research-recovery/edit-scope-development-v1",
+          "--role",
+          "second",
+          "--learning-rate",
+          "1e-4",
+          "--out",
+          "{out}"
+        ],
+        "audit_arguments": [
+          "audit",
+          "--out",
+          "{out}",
+          "--audit-out",
+          "{audit_out}"
+        ],
+        "smoke_arguments": [
+          "--limit",
+          "1"
+        ]
+      },
+      {
+        "name": "phrase-0",
+        "kind": "phrasing",
+        "gpu": 1,
+        "script": "scripts/run_sequential_phrasing_readout.py",
+        "science_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840071-joint",
+          "--out",
+          "{out}"
+        ],
+        "audit_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840071-joint",
+          "--out",
+          "{out}",
+          "--audit",
+          "--audit-out",
+          "{audit_out}"
+        ],
+        "smoke_arguments": [
+          "--limit",
+          "8"
+        ],
+        "audit_smoke_arguments": [
+          "--limit",
+          "8"
+        ]
+      },
+      {
+        "name": "phrase-1",
+        "kind": "phrasing",
+        "gpu": 6,
+        "script": "scripts/run_sequential_phrasing_readout.py",
+        "science_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840071-sequential_atomic",
+          "--out",
+          "{out}"
+        ],
+        "audit_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840071-sequential_atomic",
+          "--out",
+          "{out}",
+          "--audit",
+          "--audit-out",
+          "{audit_out}"
+        ],
+        "smoke_arguments": [
+          "--limit",
+          "8"
+        ],
+        "audit_smoke_arguments": [
+          "--limit",
+          "8"
+        ]
+      },
+      {
+        "name": "phrase-2",
+        "kind": "phrasing",
+        "gpu": 7,
+        "script": "scripts/run_sequential_phrasing_readout.py",
+        "science_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840071-sequential_composition",
+          "--out",
+          "{out}"
+        ],
+        "audit_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840071-sequential_composition",
+          "--out",
+          "{out}",
+          "--audit",
+          "--audit-out",
+          "{audit_out}"
+        ],
+        "smoke_arguments": [
+          "--limit",
+          "8"
+        ],
+        "audit_smoke_arguments": [
+          "--limit",
+          "8"
+        ]
+      },
+      {
+        "name": "phrase-3",
+        "kind": "phrasing",
+        "gpu": 2,
+        "script": "scripts/run_sequential_phrasing_readout.py",
+        "science_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840071-sequential_composition_sham",
+          "--out",
+          "{out}"
+        ],
+        "audit_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840071-sequential_composition_sham",
+          "--out",
+          "{out}",
+          "--audit",
+          "--audit-out",
+          "{audit_out}"
+        ],
+        "smoke_arguments": [
+          "--limit",
+          "8"
+        ],
+        "audit_smoke_arguments": [
+          "--limit",
+          "8"
+        ]
+      },
+      {
+        "name": "phrase-4",
+        "kind": "phrasing",
+        "gpu": 3,
+        "script": "scripts/run_sequential_phrasing_readout.py",
+        "science_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840072-joint",
+          "--out",
+          "{out}"
+        ],
+        "audit_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840072-joint",
+          "--out",
+          "{out}",
+          "--audit",
+          "--audit-out",
+          "{audit_out}"
+        ],
+        "smoke_arguments": [
+          "--limit",
+          "8"
+        ],
+        "audit_smoke_arguments": [
+          "--limit",
+          "8"
+        ]
+      },
+      {
+        "name": "phrase-5",
+        "kind": "phrasing",
+        "gpu": 4,
+        "script": "scripts/run_sequential_phrasing_readout.py",
+        "science_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840072-sequential_atomic",
+          "--out",
+          "{out}"
+        ],
+        "audit_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840072-sequential_atomic",
+          "--out",
+          "{out}",
+          "--audit",
+          "--audit-out",
+          "{audit_out}"
+        ],
+        "smoke_arguments": [
+          "--limit",
+          "8"
+        ],
+        "audit_smoke_arguments": [
+          "--limit",
+          "8"
+        ]
+      },
+      {
+        "name": "phrase-6",
+        "kind": "phrasing",
+        "gpu": 5,
+        "script": "scripts/run_sequential_phrasing_readout.py",
+        "science_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840072-sequential_composition",
+          "--out",
+          "{out}"
+        ],
+        "audit_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840072-sequential_composition",
+          "--out",
+          "{out}",
+          "--audit",
+          "--audit-out",
+          "{audit_out}"
+        ],
+        "smoke_arguments": [
+          "--limit",
+          "8"
+        ],
+        "audit_smoke_arguments": [
+          "--limit",
+          "8"
+        ]
+      },
+      {
+        "name": "phrase-7",
+        "kind": "phrasing",
+        "gpu": 1,
+        "script": "scripts/run_sequential_phrasing_readout.py",
+        "science_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840072-sequential_composition_sham",
+          "--out",
+          "{out}"
+        ],
+        "audit_arguments": [
+          "--config",
+          "{config}",
+          "--run-name",
+          "development-i840072-sequential_composition_sham",
+          "--out",
+          "{out}",
+          "--audit",
+          "--audit-out",
+          "{audit_out}"
+        ],
+        "smoke_arguments": [
+          "--limit",
+          "8"
+        ],
+        "audit_smoke_arguments": [
+          "--limit",
+          "8"
+        ]
+      }
+    ],
+    "source_files": [
+      "scripts/execute_parallel_readouts.py",
+      "scripts/track_parallel_readout.py",
+      "scripts/verify_parallel_readouts_cloud.py",
+      "scripts/run_edit_scope_restoration.py",
+      "scripts/run_sequential_phrasing_readout.py",
+      "scripts/run_edit_scope_development.py",
+      "tests/test_parallel_readouts_execution.py",
+      "tests/test_edit_scope_restoration.py",
+      "tests/test_sequential_phrasing_readout.py",
+      "docs/development-artifacts/parallel-readouts-development-v1/protocol.md",
+      "configs/parallel-readouts-development-v1.json",
+      "configs/sequential-phrasing-readout-development-v1.json"
+    ],
+    "input_files": [
+      "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/tokenizer/merges.txt",
+      "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/tokenizer/special_tokens_map.json",
+      "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/tokenizer/tokenizer.json",
+      "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/tokenizer/tokenizer_config.json",
+      "/ossfs/workspace/llm-memory-editability/data/realworld-composition-v1/tokenizer/vocab.json",
+      "/ossfs/workspace/llm-memory-editability/data/sequential-transfer-v1/development.json",
+      "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/sequential-transfer-development-v1/source/src/llm_memory_editability/bios_model.py",
+      "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/sequential-transfer-development-v1/source/src/llm_memory_editability/grok_depth.py",
+      "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/sequential-transfer-development-v1/source/src/llm_memory_editability/grokking_reproduction.py",
+      "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/sequential-transfer-development-v1/source/src/llm_memory_editability/realworld_composition.py",
+      "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/sequential-transfer-development-v1/source/src/llm_memory_editability/realworld_composition_data.py",
+      "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/sequential-transfer-development-v1/source/src/llm_memory_editability/sequential_transfer.py",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-joint/latest.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-joint/predictions-0008000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-joint/predictions-0012000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-joint/run.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-joint/stage-a.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_atomic/latest.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_atomic/predictions-0008000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_atomic/predictions-0012000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_atomic/run.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_atomic/stage-a.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition/latest.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition/predictions-0008000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition/predictions-0012000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition/run.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition/stage-a.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition_sham/latest.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition_sham/predictions-0008000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition_sham/predictions-0012000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition_sham/run.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840071-sequential_composition_sham/stage-a.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-joint/latest.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-joint/predictions-0008000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-joint/predictions-0012000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-joint/run.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-joint/stage-a.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_atomic/latest.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_atomic/predictions-0008000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_atomic/predictions-0012000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_atomic/run.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_atomic/stage-a.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition/latest.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition/predictions-0008000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition/predictions-0012000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition/run.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition/stage-a.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition_sham/latest.pt",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition_sham/predictions-0008000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition_sham/predictions-0012000.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition_sham/run.json",
+      "/ossfs/workspace/llm-memory-editability/results/sequential-transfer-development-v1/runs/development-i840072-sequential_composition_sham/stage-a.pt",
+      "/ossfs/workspace/research-recovery/edit-scope-development-v1/completion-manifest.json",
+      "/ossfs/workspace/research-recovery/edit-scope-development-v1/frozen/config.json",
+      "/ossfs/workspace/research-recovery/edit-scope-development-v1/runs/first-joint/audit.json",
+      "/ossfs/workspace/research-recovery/edit-scope-development-v1/runs/first-joint/case-bank.json",
+      "/ossfs/workspace/research-recovery/edit-scope-development-v1/runs/first-joint/complete.json",
+      "/ossfs/workspace/research-recovery/edit-scope-development-v1/runs/first-joint/summary.json",
+      "/ossfs/workspace/research-recovery/edit-scope-development-v1/runs/second-joint/audit.json",
+      "/ossfs/workspace/research-recovery/edit-scope-development-v1/runs/second-joint/case-bank.json",
+      "/ossfs/workspace/research-recovery/edit-scope-development-v1/runs/second-joint/complete.json",
+      "/ossfs/workspace/research-recovery/edit-scope-development-v1/runs/second-joint/summary.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/data/complete.json",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/data/panels.npz",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/data/world.npz",
+      "/ossfs/workspace/research-recovery/zero-training-path-overlap-v3/inputs/grokking-reproduction-v1/development/loop4x2-phi7.2-wd0.1/checkpoint-1500000.pt"
+    ],
+    "hard_timeout_seconds": 21600,
+    "no_automatic_retry": true,
+    "preserved_running_task": "lm-perk-v1-perk-train"
+  }
+}
