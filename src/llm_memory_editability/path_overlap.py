@@ -2,8 +2,10 @@
 
 The contract is configs/zero-training-path-overlap-v1.json, frozen before any Z1
 outcome existed. The bridge-format check (Z2) is withdrawn there and has no code
-here. Every forward runs the existing grokking-reproduction-v1 weights in
-float32 with explicit causal softmax attention (no autocast, no SDPA, no TF32).
+here. The contract's pre-specified fallback selection (amendment of 2026-10-11,
+also before any Z1 output) is computed beside the primary design. Every forward
+runs the existing grokking-reproduction-v1 weights in float32 with explicit
+causal softmax attention (no autocast, no SDPA, no TF32).
 Interventions are forward-time edits: MLP activation gates, attention edge masks
 and residual-state replacements. No parameter is ever written.
 
@@ -138,6 +140,21 @@ def contract_parameters(contract):
     p["z1"]["bootstrap"] = {"iterations": int(draws), "seed": int(seed), "interval": [low, high]}
     n_id, n_ood, seed = p["z1"]["patch"]
     p["z1"]["patch"] = {"id": n_id, "ood": n_ood, "seed": seed}
+    # Pre-specified fallback design (amendment 2026-10-11, before any Z1 output).
+    fallback = z1["fallback_selection"]
+    for anchor in (
+        "iterative attribution",
+        "with the units in S zero-ablated",
+        "add the top (k - |S|) units not in S",
+    ):
+        if anchor not in fallback["procedure"]:
+            raise ValueError(f"Contract fallback procedure no longer states {anchor!r}")
+    if (
+        "if at least half are powered the verdict comes from the primary design"
+        not in (fallback["verdict_source"])
+    ):
+        raise ValueError("Contract fallback verdict-source rule changed")
+    p["z1"]["fallback_k_grid"] = [int(k) for k in fallback["k_grid_fallback"]]
     return p
 
 
@@ -342,18 +359,32 @@ def predict(ex, tokens, position, target=None, *, units=None, scope="all", edges
     return answer, (torch.cat(margins).numpy() if margins else np.zeros(0, np.float32))
 
 
-def attribution(ex, tokens, target, *, top, batch=128):
-    """Top units by s_u = -d margin / d g_u at g = 1, gate shared over all executions."""
+def attribution(ex, tokens, target, *, top, ablated=None, batch=128):
+    """Top units by s_u = -d margin / d g_u, gate shared over all executions.
+
+    Without `ablated` the gradient is taken at g = 1 (primary design). With
+    `ablated` ([N, width] flat unit indices) those units are zero-ablated first,
+    the gradient is taken at that point and they are excluded from the ranking
+    (one step of the fallback design's iterative attribution).
+    """
     tokens = torch.as_tensor(np.asarray(tokens), device=ex.device)
     target = torch.as_tensor(np.asarray(target), device=ex.device)
     ranked = []
     everything = ex.scope("all")
     for start in range(0, len(tokens), batch):
         part, t = tokens[start : start + batch], target[start : start + batch]
-        g = torch.ones(len(part), ex.unique, ex.neurons, device=ex.device, requires_grad=True)
+        if ablated is None:
+            g = torch.ones(len(part), ex.unique, ex.neurons, device=ex.device, requires_grad=True)
+        else:
+            a = torch.as_tensor(np.asarray(ablated[start : start + batch]), device=ex.device)
+            if bool((a < 0).any()):
+                raise ValueError("Ablated unit rows must be complete (no -1 padding)")
+            g = ex.gates_for(a, len(part)).requires_grad_(True)
         logits = ex.logits(part, 1, gates=g, gate_scope=everything)
         (grad,) = torch.autograd.grad(margin(logits, t).sum(), g)
         score = -grad.reshape(len(part), -1)
+        if ablated is not None:
+            score = score.scatter(1, a, float("-inf"))
         ranked.append(score.topk(top, dim=-1).indices.cpu())
     return torch.cat(ranked).numpy() if ranked else np.zeros((0, top), np.int64)
 
@@ -520,10 +551,53 @@ def _per_fact(n, owner, values, facts_index):
     return out
 
 
-def z1_selection(ex, world, sample, atom_answer, p):
+DESIGNS = ("primary_design", "fallback_design")
+
+
+def _primary_k_star(ex, world, facts, tails, ok, grid):
+    """Primary design: one attribution at g = 1, then the smallest flipping top-k."""
+    top = max(grid)
+    ranked = np.full((len(facts), top), -1, dtype=np.int64)
+    if len(ok):
+        ranked[ok] = attribution(ex, world.atomic_tokens(facts[ok]), tails[ok], top=top)
+    k_star = np.full(len(facts), -1, dtype=np.int64)
+    for k in grid:
+        pending = ok[k_star[ok] < 0]
+        if not len(pending):
+            break
+        answer = predict(ex, world.atomic_tokens(facts[pending]), 1, units=ranked[pending, :k])
+        k_star[pending[answer != tails[pending]]] = k
+    return ranked, k_star
+
+
+def _fallback_k_star(ex, world, facts, tails, ok, grid):
+    """Fallback design (contract z1.fallback_selection): iterative attribution.
+
+    For each k, re-attribute with the units already chosen zero-ablated, add
+    the top (k - |S|) new units, then test whether ablating S flips the answer.
+    """
+    chosen = np.full((len(facts), max(grid)), -1, dtype=np.int64)
+    k_star = np.full(len(facts), -1, dtype=np.int64)
+    pending, size = ok, 0
+    for k in grid:
+        if not len(pending):
+            break
+        tokens = world.atomic_tokens(facts[pending])
+        ablated = chosen[pending, :size] if size else None
+        chosen[pending, size:k] = attribution(
+            ex, tokens, tails[pending], top=k - size, ablated=ablated
+        )
+        answer = predict(ex, tokens, 1, units=chosen[pending, :k])
+        flipped = answer != tails[pending]
+        k_star[pending[flipped]] = k
+        pending, size = pending[~flipped], k
+    return chosen, k_star
+
+
+def z1_selection(ex, world, sample, atom_answer, p, design="primary_design"):
     """Z1 selection at one node, from single-hop prompts only.
 
-    Finds S_f (the k_star units) by attribution and the k grid, draws its random
+    Finds S_f (the k_star units) with the given design, draws its random
     control units and measures selectivity on the control atoms. No two-hop
     query is evaluated here; z1_node and the selection-only stage both call it.
     """
@@ -536,19 +610,17 @@ def z1_selection(ex, world, sample, atom_answer, p):
     atom_correct = atom_answer == world.atoms[:, 2] + world.eo
     baseline_ok = atom_correct[facts]
 
-    # Selection on the single-hop prompt only: attribution, then the k grid.
-    top = max(q["k_grid"])
-    ranked = np.full((n, top), -1, dtype=np.int64)
+    # Selection on the single-hop prompt only.
+    grids = {"primary_design": q["k_grid"], "fallback_design": q["fallback_k_grid"]}
+    if design not in grids:
+        raise ValueError(design)
+    # Random controls draw each block's count from that block's other units, so a
+    # set may hold at most half of a block (GPT-2 width 768: 1536 of 3072).
+    if max(grids[design]) > neurons // 2:
+        raise ValueError(f"k grid of {design} exceeds half of the {neurons} units per block")
     ok = np.flatnonzero(baseline_ok)
-    if len(ok):
-        ranked[ok] = attribution(ex, world.atomic_tokens(facts[ok]), tails[ok], top=top)
-    k_star = np.full(n, -1, dtype=np.int64)
-    for k in q["k_grid"]:
-        pending = ok[k_star[ok] < 0]
-        if not len(pending):
-            break
-        answer = predict(ex, world.atomic_tokens(facts[pending]), 1, units=ranked[pending, :k])
-        k_star[pending[answer != tails[pending]]] = k
+    finder = _primary_k_star if design == "primary_design" else _fallback_k_star
+    ranked, k_star = finder(ex, world, facts, tails, ok, grids[design])
     localized = np.flatnonzero(k_star > 0)
     units = [ranked[i, : k_star[i]] if k_star[i] > 0 else empty for i in range(n)]
     controls = [
@@ -664,13 +736,13 @@ def summarize_selection(records, eligible, q):
     return out
 
 
-def z1_node(ex, world, sample, atom_answer, p, scopes):
-    """All Z1 measurements at one node. Two-hop outcomes never enter selection."""
+def z1_node(ex, world, sample, atom_answer, p, scopes, design="primary_design"):
+    """All Z1 measurements at one node for one design. Two-hop outcomes never enter selection."""
     q = p["z1"]
     neurons = ex.neurons
     facts = sample["facts"]
     n = len(facts)
-    sel = z1_selection(ex, world, sample, atom_answer, p)
+    sel = z1_selection(ex, world, sample, atom_answer, p, design)
     tails, atom_correct = sel["tails"], sel["atom_correct"]
     k_star, localized = sel["k_star"], sel["localized"]
     units, controls = sel["units"], sel["controls"]
@@ -1042,6 +1114,15 @@ def majority_verdict(flags_support, flags_against, powered, total):
     if flags_against > powered / 2:
         return "against"
     return "partial"
+
+
+def verdict_source(primary_powered, primary_nodes):
+    """Contract z1.fallback_selection.verdict_source for one verdict group.
+
+    The primary design supplies the verdict when at least half of the group's
+    primary nodes are powered under it; otherwise the fallback design does.
+    """
+    return "primary_design" if primary_powered >= primary_nodes / 2 else "fallback_design"
 
 
 def z1_loop_flags(block, p):

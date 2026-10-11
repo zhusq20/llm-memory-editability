@@ -121,6 +121,27 @@
       "standard_partial": "anything else",
       "id_facts_in_loop": "Delta_round2 / Delta_round1 for ID facts in Loop: secondary, same thresholds, reported but not part of the verdict"
     },
+    "fallback_selection": {
+      "added": "2026-10-11, decided by the user before any Z1 output existed",
+      "purpose": "redundant storage can leave the primary top-k set unable to flip the atomic answer ('not localized'); this fallback addresses only that failure",
+      "component": "same fact-selective MLP units and zero ablation as the primary design; no attention components",
+      "procedure": "iterative attribution on [b, r2]: S starts empty; for each k in k_grid_fallback ascending, recompute s_u = -d margin / d g_u with the units in S zero-ablated (all executions and positions), add the top (k - |S|) units not in S, then zero-ablate S (scope all); k_star_fallback = first k that changes the atomic answer away from t; none -> not localized",
+      "k_grid_fallback": [
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024
+      ],
+      "unchanged": "fact sample, selectivity controls and the 0.90 threshold, random control units, eligible queries, scopes, T/R/Delta, bootstrap, primary nodes, power rule, majority rule, all interpretation thresholds",
+      "verdict_source": "per verdict group, count primary nodes powered under the primary design from selection-stage information only; if at least half are powered the verdict comes from the primary design, otherwise from the fallback design (labelled 'fallback'); if the fallback also leaves fewer than half powered, the verdict is 'inconclusive'; both designs are computed at every node and reported in full"
+    },
     "ported_diagnostics_descriptive": {
       "source": "Zhang et al. 2026 repository zzl-strong/two_hop (scripts 8, 11, 5), ported to ReproductionGPT; the author scripts are read, not executed",
       "attention_window_masking": "Appendix E: zero the attention weight from the answer position to the subject/bridge position and renormalize, in a window of executed layers centred at each of the 8 executions (window 3: [c-1, c+1]; also window 1). Edges: atomic 1->0 on atomic_id/atomic_ood; two-hop 2->1 and 1->0 on train_ii/test_ii/test_io/test_oi/test_oo. Answer accuracy per centre.",
@@ -159,7 +180,8 @@
     "replacing a failed replication check by re-running with a different checkpoint mapping without recording the failure",
     "describing Z1 as independent replications across nodes or runs",
     "re-scoring or re-grouping the path-hop-analysis-v1 outputs in the S1/S2 readout",
-    "re-introducing the withdrawn Z2 interventions under another name without a new question"
+    "re-introducing the withdrawn Z2 interventions under another name without a new question",
+    "choosing between the primary and fallback designs by anything other than z1.fallback_selection.verdict_source"
   ],
   "withdrawn": {
     "z2": {
@@ -169,5 +191,14 @@
       "reason": "On the same grokking-reproduction-v1 weights, bridge-workspace-v1 already erased the bridge input-embedding component and swapped it (x1, x2) to another bridge at 700k/1M/1.5M (8 of the 23 planned main nodes); DiscoLoop-style self-decode/true/wrong re-encoding was already run in bridge-reencoding-v1 on the small shared-block models. What remained (same-bridge amplification, earlier nodes, cosine, Stage-1) completes those results without a new question. F4 uses the existing results and the 2026-10-10 re-read.",
       "record": "the withdrawn design (closure statistic, 23 main nodes, decision rules) is summarised in docs/roadmap.md §5.0.1; the earlier draft of this file, configs/zero-training-path-format-v1.json, was never committed or run"
     }
-  }
+  },
+  "amendments": [
+    {
+      "date": "2026-10-11",
+      "decided_by": "user",
+      "when": "before any Z1 output existed: the user confirmed that neither the selection-only stage (select) nor run had been executed on any host",
+      "change": "added z1.fallback_selection, a pre-specified fallback selection (iterative attribution, k up to 1024, MLP units only) with a fixed verdict-source rule, and the matching not_permitted entry; every primary-design setting is unchanged",
+      "reason": "redundantly stored facts can leave the primary design without enough localized facts, so a group verdict would be 'inconclusive'; the fallback is fixed now so that no choice is made after any Z1 output is read (roadmap §5.0.1)"
+    }
+  ]
 }

@@ -10,12 +10,18 @@ also recording the replication check. ``analyze`` reads only the node outputs
 and applies the frozen interpretation mechanically. ``plan`` lists the 8 x 14
 node tasks and their state.
 
+Both selection designs of the contract are computed at every node: the primary
+design and the pre-specified fallback (iterative attribution, z1.fallback_selection).
+Each verdict group reports the verdict of the design chosen by the contract's
+verdict-source rule; the other design is reported too.
+
 ``select`` runs the selection stage only, as a feasibility check before any
 two-hop outcome exists (roadmap §5.0.1). It uses the same selection code as
 ``run``, adds eligible-query counts from unablated two-hop answers, and never
 ablates a two-hop query. It writes selection-stage/{run}/{step}/selection.json
 and leaves the contract's per-node directories untouched. ``select-summary``
-counts powered primary nodes per verdict group, using the contract's power rule.
+counts powered primary nodes per verdict group and design, using the contract's
+power rule, and names the design the verdict will come from.
 
 Usage on the experiment host (inside the fixed LM image):
   python scripts/run_zero_training_path_overlap.py select --run loop4x2-phi7.2-wd0.1 --gpu 0
@@ -38,6 +44,7 @@ import torch
 from llm_memory_editability.grok_depth import utc, write_json
 from llm_memory_editability.path_overlap import (
     CODE_FILES,
+    DESIGNS,
     Executor,
     World,
     eligible_counts,
@@ -51,6 +58,7 @@ from llm_memory_editability.path_overlap import (
     selection_records,
     sha256,
     summarize_selection,
+    verdict_source,
     z1_loop_flags,
     z1_node,
     z1_selection,
@@ -148,18 +156,20 @@ def run(args):
         atom_answer = predict(ex, world.atomic_tokens(np.arange(len(world.atoms))), 1)
         sample = sample_facts(world, spec["phi"], p)
         scopes = p["z1"]["scopes"]["loop" if spec["repeats"] > 1 else "standard"]
-        z1 = z1_node(ex, world, sample, atom_answer, p, scopes)
-        z1.update(
-            {
-                "run": args.run,
-                "step": step,
-                "phi": spec["phi"],
-                "fact_sample_sha256": sample["sha256"],
-                "atomic_all_answer_accuracy": float(
-                    np.mean(atom_answer == world.atoms[:, 2] + world.eo)
-                ),
-            }
-        )
+        z1 = {
+            "run": args.run,
+            "step": step,
+            "phi": spec["phi"],
+            "fact_sample_sha256": sample["sha256"],
+            "atomic_all_answer_accuracy": float(
+                np.mean(atom_answer == world.atoms[:, 2] + world.eo)
+            ),
+            # Both designs at every node; the verdict source is fixed by the contract.
+            **{
+                design: z1_node(ex, world, sample, atom_answer, p, scopes, design)
+                for design in DESIGNS
+            },
+        }
         write_json(node / "z1.json", z1)
         clock = mark("z1", clock)
         write_json(
@@ -220,11 +230,19 @@ def select(args):
         )
         atom_answer = predict(ex, world.atomic_tokens(np.arange(len(world.atoms))), 1)
         sample = sample_facts(world, spec["phi"], p)
-        sel = z1_selection(ex, world, sample, atom_answer, p)
-        records = selection_records(sample, sel)
-        eligible = eligible_counts(ex, world, sample, sel["atom_correct"])
-        for rec, count in zip(records, eligible, strict=True):
-            rec["untrained_eligible"] = int(count)
+        atom_correct = atom_answer == world.atoms[:, 2] + world.eo
+        eligible = eligible_counts(ex, world, sample, atom_correct)
+        designs = {}
+        for design in DESIGNS:
+            records = selection_records(
+                sample, z1_selection(ex, world, sample, atom_answer, p, design)
+            )
+            for rec, count in zip(records, eligible, strict=True):
+                rec["untrained_eligible"] = int(count)
+            designs[design] = {
+                "kinds": summarize_selection(records, eligible, p["z1"]),
+                "facts": records,
+            }
         write_json(
             node / "selection.json",
             {
@@ -237,8 +255,7 @@ def select(args):
                 "phi": spec["phi"],
                 "fact_sample_sha256": sample["sha256"],
                 "power_rule": f">= {p['z1']['power']} selective facts with >= 1 eligible query",
-                "kinds": summarize_selection(records, eligible, p["z1"]),
-                "facts": records,
+                "designs": designs,
                 "replication": {"panels": rep, "failures": []},
                 "checkpoint": str(checkpoint),
                 "checkpoint_sha256": sha256(checkpoint),
@@ -256,43 +273,61 @@ def select(args):
             torch.cuda.empty_cache()
 
 
-def selection_feasibility(selection_out, loop_nodes, standard_nodes, p):
-    """Powered primary nodes per verdict group, read from selection.json files.
-
-    A group would be judged 'inconclusive' when fewer than half of its primary
-    nodes are powered (majority_verdict); enough_powered is the complement.
-    """
-    groups = {
+def verdict_groups(loop_nodes, standard_nodes):
+    return {
         "loop_ood": (loop_nodes, "ood"),
         "loop_id_secondary": (loop_nodes, "id"),
         "standard_id": (standard_nodes, "id"),
     }
+
+
+def selection_feasibility(selection_out, loop_nodes, standard_nodes, p):
+    """Powered primary nodes per verdict group and design, read from selection.json files.
+
+    A design leaves a group 'inconclusive' when fewer than half of its primary
+    nodes are powered (majority_verdict); enough_powered is the complement. The
+    verdict source follows the contract rule (verdict_source).
+    """
     out = {}
-    for label, (nodes, kind) in groups.items():
-        rows, missing = [], []
+    for label, (nodes, kind) in verdict_groups(loop_nodes, standard_nodes).items():
+        rows = {design: [] for design in DESIGNS}
+        missing = []
         for run_name, step in nodes:
             node = node_dir(selection_out, run_name, step)
             if not complete(node, "selection.json"):
                 missing.append(f"{run_name}@{step}")
                 continue
-            summary = json.loads((node / "selection.json").read_text())["kinds"][kind]
-            rows.append(
-                {
-                    "node": f"{run_name}@{step}",
-                    "selective_with_eligible": summary["selective_with_eligible"],
-                    "not_localized_rate": summary["not_localized_rate"],
-                    "powered": summary["powered"],
-                }
-            )
-        powered = sum(r["powered"] for r in rows)
-        out[label] = {
+            record = json.loads((node / "selection.json").read_text())
+            for design in DESIGNS:
+                summary = record["designs"][design]["kinds"][kind]
+                rows[design].append(
+                    {
+                        "node": f"{run_name}@{step}",
+                        "selective_with_eligible": summary["selective_with_eligible"],
+                        "not_localized_rate": summary["not_localized_rate"],
+                        "powered": summary["powered"],
+                    }
+                )
+        group = {
             "state": "incomplete" if missing else "complete",
             "missing": missing,
             "primary_nodes": len(nodes),
-            "powered_nodes": powered,
-            "enough_powered": None if missing else powered >= len(nodes) / 2,
-            "nodes": rows,
         }
+        for design in DESIGNS:
+            powered = sum(r["powered"] for r in rows[design])
+            group[design] = {
+                "powered_nodes": powered,
+                "enough_powered": None if missing else powered >= len(nodes) / 2,
+                "nodes": rows[design],
+            }
+        if missing:
+            group["verdict_source"] = None
+            group["expected_inconclusive"] = None
+        else:
+            source = verdict_source(group["primary_design"]["powered_nodes"], len(nodes))
+            group["verdict_source"] = source
+            group["expected_inconclusive"] = not group[source]["enough_powered"]
+        out[label] = group
     return out
 
 
@@ -313,7 +348,13 @@ def select_summary(args):
     print(
         json.dumps(
             {
-                label: [g["state"], g["powered_nodes"], g["primary_nodes"], g["enough_powered"]]
+                label: {
+                    "state": g["state"],
+                    "primary_nodes": g["primary_nodes"],
+                    "powered": {d: g[d]["powered_nodes"] for d in DESIGNS},
+                    "verdict_source": g["verdict_source"],
+                    "expected_inconclusive": g["expected_inconclusive"],
+                }
                 for label, g in groups.items()
             }
         )
@@ -364,14 +405,14 @@ def read(out, run_name, step, name):
     return json.loads((node / name).read_text())
 
 
-def z1_verdict(out, nodes, kind, flags, p):
+def z1_verdict(out, nodes, kind, flags, p, design):
     rows, missing = [], []
     for run_name, step in nodes:
         z1 = read(out, run_name, step, "z1.json")
         if z1 is None:
             missing.append(f"{run_name}@{step}")
             continue
-        block = z1["kinds"][kind]["primary/untrained"]
+        block = z1[design]["kinds"][kind]["primary/untrained"]
         rows.append(
             {
                 "node": f"{run_name}@{step}",
@@ -395,15 +436,40 @@ def z1_verdict(out, nodes, kind, flags, p):
     }
 
 
+STANDARD_LABELS = {"supports": "separate_copy", "against": "shared"}
+
+
+def group_verdict(out, nodes, kind, flags, p, labels=None):
+    """Verdicts of both designs and the reported verdict chosen by the contract rule.
+
+    The source is decided from the primary design's powered-node count, which
+    rests on selection-stage information only (selective facts and unablated
+    eligible queries), never on an ablated two-hop outcome.
+    """
+    labels = labels or {}
+    by_design = {}
+    for design in DESIGNS:
+        result = z1_verdict(out, nodes, kind, flags, p, design)
+        result["verdict"] = labels.get(result["verdict"], result["verdict"])
+        by_design[design] = result
+    primary = by_design["primary_design"]
+    if (
+        primary["verdict"] == "incomplete"
+        or by_design["fallback_design"]["verdict"] == "incomplete"
+    ):
+        return {"verdict": "incomplete", "verdict_source": None, **by_design}
+    source = verdict_source(primary["powered_nodes"], primary["primary_nodes"])
+    return {"verdict": by_design[source]["verdict"], "verdict_source": source, **by_design}
+
+
 def analyze(args):
     contract, p = load_contract(args.contract)
     curves = learning_curves(args.root, p["runs"])
     loop_nodes, standard_nodes = primary_nodes(curves, p)
-    loop = z1_verdict(args.out, loop_nodes, "ood", z1_loop_flags, p)
-    loop_id = z1_verdict(args.out, loop_nodes, "id", z1_loop_flags, p)
-    standard = z1_verdict(args.out, standard_nodes, "id", z1_standard_flags, p)
-    standard["verdict"] = {"supports": "separate_copy", "against": "shared"}.get(
-        standard["verdict"], standard["verdict"]
+    loop = group_verdict(args.out, loop_nodes, "ood", z1_loop_flags, p)
+    loop_id = group_verdict(args.out, loop_nodes, "id", z1_loop_flags, p)
+    standard = group_verdict(
+        args.out, standard_nodes, "id", z1_standard_flags, p, labels=STANDARD_LABELS
     )
     available = sum(complete(node_dir(args.out, r, s)) for r in p["runs"] for s in p["nodes"])
     summary = {
@@ -413,8 +479,10 @@ def analyze(args):
         "nodes_complete": available,
         "nodes_expected": len(p["runs"]) * len(p["nodes"]),
         "z1": {"loop_ood": loop, "loop_id_secondary": loop_id, "standard_id": standard},
-        "note": "verdicts computed mechanically from the frozen thresholds; nodes are repeated "
-        "measurements of one trajectory per run, not independent replications",
+        "note": "verdicts computed mechanically from the frozen thresholds; each group's reported "
+        "verdict comes from the design named in verdict_source (contract "
+        "z1.fallback_selection); nodes are repeated measurements of one trajectory per run, "
+        "not independent replications",
     }
     write_json(Path(args.out) / "summary.json", summary)
     print(

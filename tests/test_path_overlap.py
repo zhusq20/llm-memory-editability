@@ -19,12 +19,15 @@ from llm_memory_editability.path_overlap import (
     CODE_FILES,
     Executor,
     World,
+    attribution,
     bootstrap_mean,
     contract_parameters,
     eligible_counts,
     load_contract,
     load_model,
     majority_verdict,
+    margin,
+    pad_units,
     ported_node,
     predict,
     random_units,
@@ -33,6 +36,7 @@ from llm_memory_editability.path_overlap import (
     selection_records,
     sha256,
     summarize_selection,
+    verdict_source,
     window_edges,
     z1_node,
     z1_selection,
@@ -140,6 +144,7 @@ def small(params):
         same_answer=4,
         random_atoms=8,
         k_grid=[1, 2, 4, 8, 16, 32, 64],
+        fallback_k_grid=[1, 2, 4, 8, 16, 32, 64],  # tiny blocks have 192 units
         same_bridge=2,
         bootstrap={"iterations": 200, "seed": 1, "interval": [0.025, 0.975]},
         patch={"id": 40, "ood": 20, "seed": 3},
@@ -178,6 +183,16 @@ def test_contract_parameters_are_read_from_the_frozen_text(params):
     assert params["code_files"] == CODE_FILES
     assert params["outputs"] == ("z1.json", "ported.json", "hashes.json")
     assert "z2" not in params
+    assert params["z1"]["fallback_k_grid"] == [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]
+
+
+def test_contract_records_the_fallback_amendment_before_any_output():
+    contract = json.loads(CONTRACT.read_text())
+    (amendment,) = contract["amendments"]
+    assert amendment["date"] == "2026-10-11" and amendment["decided_by"] == "user"
+    assert "before any Z1 output existed" in amendment["when"]
+    assert "no attention components" in contract["z1"]["fallback_selection"]["component"]
+    assert any("fallback" in rule for rule in contract["not_permitted"])
 
 
 def test_contract_guard_rejects_other_contracts():
@@ -188,6 +203,14 @@ def test_contract_guard_rejects_other_contracts():
         contract_parameters({**contract, "z2": {}})
     with pytest.raises(ValueError, match="Z2 must be recorded as withdrawn"):
         contract_parameters({**contract, "withdrawn": {}})
+    changed = copy.deepcopy(contract)
+    changed["z1"]["fallback_selection"]["procedure"] = "attribution once at g = 1"
+    with pytest.raises(ValueError, match="fallback procedure"):
+        contract_parameters(changed)
+    changed = copy.deepcopy(contract)
+    changed["z1"]["fallback_selection"]["verdict_source"] = "pick the design with more support"
+    with pytest.raises(ValueError, match="verdict-source"):
+        contract_parameters(changed)
 
 
 def test_runner_paths_follow_the_contract(params):
@@ -341,6 +364,7 @@ def tiny_contract(root, path):
     z1["fact_sample"] = cut(z1["fact_sample"], ">= 3 eligible-kind", ">= 1 eligible-kind")
     z1["fact_sample"] = cut(z1["fact_sample"], "Up to 16 such chains", "Up to 4 such chains")
     sel["k_grid"] = [1, 2, 4, 8, 16, 32, 64]
+    z1["fallback_selection"]["k_grid_fallback"] = [1, 2, 4, 8, 16, 32, 64]
     controls = sel["selectivity_controls"]
     controls["same_answer"] = cut(controls["same_answer"], "up to 16", "up to 4")
     controls["random"] = cut(controls["random"], "64 random", "8 random")
@@ -372,7 +396,10 @@ def test_run_writes_exactly_the_contract_outputs(tiny, params, tmp_path):
     assert set(hashes["code_sha256"]) == set(CODE_FILES)
     assert all(v is not None for v in hashes["code_sha256"].values())
     z1 = json.loads((node / "z1.json").read_text())
-    assert z1["run"] == RUN and z1["scopes"] == ["all", "round1", "round2"]
+    assert z1["run"] == RUN
+    for design in path_overlap.DESIGNS:
+        assert z1[design]["scopes"] == ["all", "round1", "round2"]
+        assert set(z1[design]["kinds"]) == {"id", "ood"}
     runner.run(args)  # a complete node is skipped, not recomputed
     assert (
         json.loads((node / "hashes.json").read_text())["completed_utc"] == hashes["completed_utc"]
@@ -413,13 +440,14 @@ SELECTION_FIELDS = (
 )
 
 
-def test_selection_stage_matches_the_full_run_selection(tiny, params):
+@pytest.mark.parametrize("design", ["primary_design", "fallback_design"])
+def test_selection_stage_matches_the_full_run_selection(tiny, params, design):
     p = small(params)
     world, ex = tiny["world"], Executor(tiny["model"])
     sample = sample_facts(world, tiny["phi"], p)
     atom_answer = predict(ex, world.atomic_tokens(np.arange(len(world.atoms))), 1)
-    full = z1_node(ex, world, sample, atom_answer, p, ["all", "round1", "round2"])
-    sel = z1_selection(ex, world, sample, atom_answer, p)
+    full = z1_node(ex, world, sample, atom_answer, p, ["all", "round1", "round2"], design)
+    sel = z1_selection(ex, world, sample, atom_answer, p, design)
     records = selection_records(sample, sel)
     for a, b in zip(full["facts"], records, strict=True):
         assert {f: a[f] for f in SELECTION_FIELDS} == {f: b[f] for f in SELECTION_FIELDS}
@@ -435,6 +463,61 @@ def test_selection_stage_matches_the_full_run_selection(tiny, params):
         )
         assert kinds[kind]["localized"] == full["kinds"][kind]["localized"]
         assert kinds[kind]["powered"] is False  # tiny sample, power needs 30 facts
+
+
+def test_attribution_at_an_ablated_point_excludes_the_ablated_units(tiny):
+    world, ex = tiny["world"], Executor(tiny["model"])
+    atoms = np.arange(6)
+    tokens, tails = world.atomic_tokens(atoms), world.atoms[atoms, 2] + world.eo
+    first = attribution(ex, tokens, tails, top=3)
+    assert np.array_equal(first, attribution(ex, tokens, tails, top=3, ablated=None))
+    nxt = attribution(ex, tokens, tails, top=5, ablated=first)
+    assert not any(set(a) & set(b) for a, b in zip(first, nxt, strict=True))
+    # The gradient is taken with the first units zero-ablated, not at g = 1.
+    t = torch.as_tensor(tokens)
+    g = ex.gates_for(torch.as_tensor(first), len(atoms)).requires_grad_(True)
+    logits = ex.logits(t, 1, gates=g, gate_scope=ex.scope("all"))
+    (grad,) = torch.autograd.grad(margin(logits, torch.as_tensor(tails)).sum(), g)
+    score = (-grad.reshape(len(atoms), -1)).scatter(1, torch.as_tensor(first), float("-inf"))
+    assert np.array_equal(nxt, score.topk(5, dim=-1).indices.numpy())
+    with pytest.raises(ValueError, match="no -1 padding"):
+        attribution(ex, tokens, tails, top=2, ablated=np.full((6, 2), -1))
+
+
+def test_fallback_design_grows_one_set_by_reattribution(tiny, params):
+    p = small(params)
+    world, ex = tiny["world"], Executor(tiny["model"])
+    sample = sample_facts(world, tiny["phi"], p)
+    atom_answer = predict(ex, world.atomic_tokens(np.arange(len(world.atoms))), 1)
+    # With a one-step grid both designs take the top unit at g = 1.
+    one = copy.deepcopy(p)
+    one["z1"]["k_grid"] = one["z1"]["fallback_k_grid"] = [1]
+    primary = z1_selection(ex, world, sample, atom_answer, one, "primary_design")
+    fallback = z1_selection(ex, world, sample, atom_answer, one, "fallback_design")
+    assert np.array_equal(primary["k_star"], fallback["k_star"])
+    assert all(
+        np.array_equal(a, b) for a, b in zip(primary["units"], fallback["units"], strict=True)
+    )
+    sel = z1_selection(ex, world, sample, atom_answer, p, "fallback_design")
+    grid = set(p["z1"]["fallback_k_grid"])
+    for k, units in zip(sel["k_star"], sel["units"], strict=True):
+        if k > 0:
+            assert k in grid and len(units) == k == len(set(units.tolist()))
+    flipped = [i for i, k in enumerate(sel["k_star"]) if k > 0]
+    assert flipped, "the tiny model should localize some facts under the fallback design"
+    answers = predict(
+        ex,
+        world.atomic_tokens(sample["facts"][flipped]),
+        1,
+        units=pad_units([sel["units"][i] for i in flipped], max(1, max(sel["k_star"]))),
+    )
+    assert np.all(answers != sel["tails"][flipped])
+    with pytest.raises(ValueError):
+        z1_selection(ex, world, sample, atom_answer, p, "other_design")
+    # The contract's grid (up to 1024) fits GPT-2 width 768 but not 192-unit tiny blocks.
+    with pytest.raises(ValueError, match="exceeds half"):
+        z1_selection(ex, world, sample, atom_answer, params, "fallback_design")
+    assert params["z1"]["fallback_k_grid"][-1] <= 4 * 768 // 2
 
 
 def test_select_never_ablates_a_two_hop_query(tiny, params, tmp_path, monkeypatch):
@@ -464,44 +547,99 @@ def test_select_never_ablates_a_two_hop_query(tiny, params, tmp_path, monkeypatc
     assert [p.name for p in node.iterdir()] == ["selection.json"]
     record = json.loads((node / "selection.json").read_text())
     assert record["complete"] is True and record["replication"]["failures"] == []
-    assert set(record["kinds"]) == {"id", "ood"}
-    assert all("untrained_eligible" in r and "units" in r for r in record["facts"])
-    assert not any(k.startswith("untrained_S_") for r in record["facts"] for k in r)
+    assert set(record["designs"]) == set(path_overlap.DESIGNS)
+    for block in record["designs"].values():
+        assert set(block["kinds"]) == {"id", "ood"}
+        assert all("untrained_eligible" in r and "units" in r for r in block["facts"])
+        assert not any(k.startswith("untrained_S_") for r in block["facts"] for k in r)
     runner.select(args)  # a complete selection node is skipped
     again = json.loads((node / "selection.json").read_text())
     assert again["completed_utc"] == record["completed_utc"]
 
 
-def test_selection_feasibility_applies_the_power_rule(params, tmp_path):
+def test_verdict_source_rule():
+    assert verdict_source(7, 14) == "primary_design"
+    assert verdict_source(6, 14) == "fallback_design"
+    assert verdict_source(11, 22) == "primary_design" and verdict_source(0, 22) == "fallback_design"
+
+
+def test_selection_feasibility_applies_the_power_rule_per_design(params, tmp_path):
     runner = load_runner()
     selection_out = tmp_path / "selection-stage"
+    power = params["z1"]["power"]
 
-    def write(run_name, step, ood, id_):
+    def write(run_name, step, counts):
+        """counts: {design: (ood, id)} selective facts with an eligible query."""
         node = selection_out / run_name / f"{step:07d}"
         node.mkdir(parents=True)
-        kinds = {
-            kind: {
-                "selective_with_eligible": count,
-                "not_localized_rate": 0.1,
-                "powered": count >= params["z1"]["power"],
+        designs = {
+            design: {
+                "kinds": {
+                    kind: {
+                        "selective_with_eligible": count,
+                        "not_localized_rate": 0.1,
+                        "powered": count >= power,
+                    }
+                    for kind, count in zip(("ood", "id"), pair, strict=True)
+                }
             }
-            for kind, count in (("ood", ood), ("id", id_))
+            for design, pair in counts.items()
         }
-        (node / "selection.json").write_text(json.dumps({"complete": True, "kinds": kinds}))
+        (node / "selection.json").write_text(json.dumps({"complete": True, "designs": designs}))
 
     loop = [("loop4x2-phi7.2-wd0.1", s) for s in (512000, 700000, 1000000, 1500000)]
     standard = [("standard8-phi7.2-wd0.1", s) for s in (700000, 1000000, 1500000)]
     for (run_name, step), ood in zip(loop, (40, 31, 29, 5), strict=True):
-        write(run_name, step, ood, 50)
+        write(run_name, step, {"primary_design": (ood, 50), "fallback_design": (ood + 20, 60)})
     for (run_name, step), id_ in zip(standard[:2], (10, 12), strict=True):
-        write(run_name, step, 0, id_)
+        write(run_name, step, {"primary_design": (0, id_), "fallback_design": (0, 3 * id_)})
     result = runner.selection_feasibility(selection_out, loop, standard, params)
-    assert result["loop_ood"]["powered_nodes"] == 2 and result["loop_ood"]["enough_powered"]
-    assert result["loop_id_secondary"]["powered_nodes"] == 4
-    assert result["standard_id"]["state"] == "incomplete"
-    assert result["standard_id"]["missing"] == ["standard8-phi7.2-wd0.1@1500000"]
-    assert result["standard_id"]["enough_powered"] is None
-    write(*standard[2], 0, 3)
-    result = runner.selection_feasibility(selection_out, loop, standard, params)
-    assert result["standard_id"]["powered_nodes"] == 0
-    assert result["standard_id"]["enough_powered"] is False
+    loop_ood = result["loop_ood"]
+    assert loop_ood["primary_design"]["powered_nodes"] == 2
+    assert loop_ood["verdict_source"] == "primary_design"
+    assert loop_ood["expected_inconclusive"] is False
+    assert result["loop_id_secondary"]["primary_design"]["powered_nodes"] == 4
+    standard_id = result["standard_id"]
+    assert standard_id["state"] == "incomplete" and standard_id["verdict_source"] is None
+    assert standard_id["missing"] == ["standard8-phi7.2-wd0.1@1500000"]
+    write(*standard[2], {"primary_design": (0, 3), "fallback_design": (0, 9)})
+    standard_id = runner.selection_feasibility(selection_out, loop, standard, params)["standard_id"]
+    assert standard_id["primary_design"]["powered_nodes"] == 0
+    assert standard_id["fallback_design"]["powered_nodes"] == 2  # 30 and 36 reach the rule
+    assert standard_id["verdict_source"] == "fallback_design"
+    assert standard_id["expected_inconclusive"] is False
+
+
+def test_group_verdict_reports_the_design_named_by_the_rule(params, tmp_path):
+    runner = load_runner()
+    out = tmp_path / "out"
+    nodes = [("standard8-phi7.2-wd0.1", s) for s in (700000, 1000000, 1500000, 128000)]
+
+    def write(step, primary_facts, primary_delta, fallback_facts, fallback_delta):
+        node = out / "standard8-phi7.2-wd0.1" / f"{step:07d}"
+        node.mkdir(parents=True)
+        (node / "hashes.json").write_text(json.dumps({"complete": True}))
+        z1 = {}
+        for design, facts, delta in (
+            ("primary_design", primary_facts, primary_delta),
+            ("fallback_design", fallback_facts, fallback_delta),
+        ):
+            block = {"facts_with_eligible": facts, "all": {"delta": delta, "interval": None}}
+            z1[design] = {"kinds": {"id": {"primary/untrained": block}}}
+        (node / "z1.json").write_text(json.dumps(z1))
+
+    # Primary design: only 1 of 4 nodes powered -> verdict comes from the fallback design.
+    write(700000, 40, 0.0, 40, 0.02)
+    write(1000000, 5, 0.9, 50, 0.05)
+    write(1500000, 3, 0.9, 45, 0.01)
+    write(128000, 2, 0.9, 35, 0.6)
+    result = runner.group_verdict(
+        out, nodes, "id", runner.z1_standard_flags, params, labels=runner.STANDARD_LABELS
+    )
+    assert result["primary_design"]["verdict"] == "inconclusive"
+    assert result["verdict_source"] == "fallback_design"
+    assert result["verdict"] == result["fallback_design"]["verdict"] == "separate_copy"
+    missing = runner.group_verdict(
+        out, nodes + [("standard8-phi7.2-wd0.1", 64000)], "id", runner.z1_standard_flags, params
+    )
+    assert missing["verdict"] == "incomplete" and missing["verdict_source"] is None
