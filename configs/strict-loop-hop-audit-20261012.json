@@ -1,0 +1,255 @@
+{
+  "experiment": "strict-loop-hop-audit-20261012",
+  "device": "cpu",
+  "training_updates": 0,
+  "analysis_status": "retrospective replay of all 24 frozen confirmation Loop1x2 endpoints plus 3 specified development references; original scores already known",
+  "primary_score": "Unconstrained top-1 final entity from a single prompt-only forward; no EOS forward or generated-token feedback",
+  "interpretation": "Tests achieved answering at trained lengths, not unseen-length extrapolation or proof of sequential graph traversal",
+  "runs": [
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761101-i762101-d128-phi1-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761101-i762101-d128-phi4-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761101-i762101-d256-phi1-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761101-i762101-d256-phi4-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761101-i762102-d128-phi1-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761101-i762102-d128-phi4-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761101-i762102-d256-phi1-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761101-i762102-d256-phi4-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761102-i762101-d128-phi1-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761102-i762101-d128-phi4-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761102-i762101-d256-phi1-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761102-i762101-d256-phi4-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761102-i762102-d128-phi1-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761102-i762102-d128-phi4-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761102-i762102-d256-phi1-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761102-i762102-d256-phi4-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761103-i762101-d128-phi1-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761103-i762101-d128-phi4-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761103-i762101-d256-phi1-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761103-i762101-d256-phi4-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761103-i762102-d128-phi1-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761103-i762102-d128-phi4-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761103-i762102-d256-phi1-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "confirmation",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/multihop-scaling-v1/confirmation/w761103-i762102-d256-phi4-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/multihop-scaling-v1/confirmation/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "development",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/depth-step-v1/w751011-i752011-d128-l1-r1-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/depth-step-v1/source",
+      "architecture": [
+        1,
+        1
+      ]
+    },
+    {
+      "group": "development",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/depth-step-v1/w751011-i752011-d128-l1-r2-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/depth-step-v1/source",
+      "architecture": [
+        1,
+        2
+      ]
+    },
+    {
+      "group": "development",
+      "run_root": "/ossfs/workspace/llm-memory-editability/results/depth-step-v1/w751011-i752011-d128-l2-r1-s64000",
+      "frozen_source": "/ossfs/workspace/llm-memory-editability/docs/development-artifacts/depth-step-v1/source",
+      "architecture": [
+        2,
+        1
+      ]
+    }
+  ],
+  "archived_agreement_floor": 0.95,
+  "revision": "v2: retain CPU/CUDA discrepancies and both scores; require exact architecture and at least 95% token agreement per split. v1 is retained."
+}
