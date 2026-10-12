@@ -1,0 +1,144 @@
+{
+  "batch": "self-decode-alignment-development-v1",
+  "authorization": "2026-10-12 user requested selecting and conducting the next experiment; user explicitly requested KV x self-decoded alignment 2x2 and accepted self-CE controls",
+  "phase": "development on a previously observed world; not independent confirmation",
+  "input_root": "/ossfs/workspace/llm-memory-editability/results/grokking-reproduction-v1",
+  "source_run": "loop4x2-phi7.2-wd0.1",
+  "spec": {
+    "name": "self-decode-alignment-development-v1",
+    "unique_layers": 4,
+    "repeats": 2,
+    "phi": 7.2,
+    "weight_decay": 0.1,
+    "initialization": 791101,
+    "stream_seed": 792101,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 300000
+  },
+  "dropout_seed": 20261012,
+  "arms": {
+    "baseline": {
+      "kind": "none",
+      "coefficient": 0.0,
+      "scope": "all",
+      "first_round_kv": false
+    },
+    "self_ce": {
+      "kind": "self_ce",
+      "coefficient": 0.3,
+      "scope": "all",
+      "first_round_kv": false
+    },
+    "alignment": {
+      "kind": "alignment",
+      "coefficient": 0.3,
+      "scope": "all",
+      "first_round_kv": false
+    },
+    "kv": {
+      "kind": "none",
+      "coefficient": 0.0,
+      "scope": "all",
+      "first_round_kv": true
+    },
+    "kv_self_ce": {
+      "kind": "self_ce",
+      "coefficient": 0.3,
+      "scope": "all",
+      "first_round_kv": true
+    },
+    "kv_alignment": {
+      "kind": "alignment",
+      "coefficient": 0.3,
+      "scope": "all",
+      "first_round_kv": true
+    }
+  },
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000
+  ],
+  "checkpoint_nodes": [
+    0,
+    300000
+  ],
+  "heartbeat_steps": 1000,
+  "smoke_steps": 32,
+  "evaluation_batch_size": 256,
+  "audit_loss_atol": 1e-06,
+  "audit_loss_rtol": 1e-06,
+  "primary": "fixed 300k test_oi answer+generated-end accuracy; factorial interaction (kv_alignment-kv)-(alignment-baseline), plus joint versus each single treatment",
+  "secondary": [
+    "all seven original panels",
+    "atomic accuracy and learning curves",
+    "test_ii/test_io/test_oo",
+    "actual exposure, tokens, compute and wall time",
+    "confidence and loss-gradient scale",
+    "same difference-in-differences on II/IO/OO and atoms",
+    "self_ce versus alignment under each KV condition"
+  ],
+  "diagnostics": {
+    "nodes": [
+      16000,
+      128000,
+      512000,
+      1500000
+    ],
+    "runs": [
+      "loop4x2-phi7.2-wd0.1"
+    ],
+    "panels": [
+      "atomic_id",
+      "atomic_ood",
+      "train_ii",
+      "test_ii",
+      "test_io",
+      "test_oi",
+      "test_oo"
+    ],
+    "rows_per_panel": 256,
+    "selection": "first 256 in the existing frozen panel order; never outcome-filtered",
+    "replacement_scopes": [
+      "none",
+      "r1",
+      "all",
+      "consistent"
+    ],
+    "precision": "bf16 autocast, float32 weights; batch size 64",
+    "purpose": "development risk assessment only; acute replacement is not a validity gate for training adaptation"
+  },
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:0087c5381ef5286d30b022825ab773f044fa15c161e5999ff5b47fbab681b18a",
+    "cpus_per_task": 8,
+    "memory_gib_per_task": 48,
+    "gpus": {
+      "baseline": 0,
+      "self_ce": 1,
+      "alignment": 2,
+      "kv": 3,
+      "kv_self_ce": 4,
+      "kv_alignment": 5
+    },
+    "hard_timeout_hours": 12,
+    "automatic_retry": false
+  },
+  "scope_limits": [
+    "no intermediate truth in training loss",
+    "no KV window/repeat/detach/architecture grid, PERK training, or alteration of completed experiments",
+    "no scientific early stopping or checkpoint selection by results",
+    "no automatic longer run, loss grid, or new-world confirmation",
+    "equal coefficients are not equal gradient or compute budgets",
+    "300k negative results do not establish long-budget impossibility"
+  ],
+  "kv_semantics": "First round same-layer K/V plus full current causal prefix, one shared softmax; both banks j<=i; gradients connected; per-forward cache reset. Same existing FirstRoundKVGPT adaptation; no local window, no detach, no extra parameters."
+}

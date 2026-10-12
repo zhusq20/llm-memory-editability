@@ -1,5 +1,91 @@
 # 研究结果：知识的回答、组合与更新后使用
 
+<a id="supervised-alignment-development-v1"></a>
+**2026-10-12原监督位置对齐、同位置KV与DiscoLoop：六组增补全部完成。** 北京时间08:03完成训练、独立审计、比较汇总及云端终点核验。复用前批普通Loop，只新增六臂各300,000步、合计1,800,000更新。固定镜像138项契约、CUDA基线输出/全部梯度/连续优化一致性及六臂32步短训练、新容器重载已通过。
+
+共同设定：Wang φ7.2/wd.1、2000实体/200关系、273600条训练组合，宽768、四个完整GPT块循环两轮；同一第0步权重、样本流及dropout种子。以下均为固定300k终点的答案与EOS联合准确率（%），OI为预定主指标，不选择最佳节点。
+
+| 方法 | 原子ID | 原子OOD | 训练II | 测试II | IO | OI | OO |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 普通Loop（共同基线） | 100.00 | 99.75 | 100.00 | 99.33 | 43.07 | 33.50 | 3.44 |
+| 原标签方向对齐 | 100.00 | 99.95 | 99.97 | 98.93 | 36.57 | 41.23 | 3.74 |
+| 仅同位置KV | 100.00 | 99.85 | 99.97 | 99.03 | 43.20 | 33.07 | 3.34 |
+| 同位置KV＋原标签对齐 | 100.00 | 99.95 | 100.00 | 97.80 | 29.90 | 32.67 | 2.59 |
+| 原标签中间CE | 100.00 | 99.95 | 99.87 | 87.27 | 7.50 | 7.03 | 0.50 |
+| 同位置KV＋原标签CE | 99.97 | 100.00 | 99.93 | 85.00 | 8.37 | 6.10 | 0.35 |
+| DiscoLoop | 99.97 | 98.80 | 99.90 | 99.93 | 97.53 | 99.30 | 95.66 |
+
+**观察与边界。** DiscoLoop的OI/IO/OO为99.30/97.53/95.66%，较基线分别增加65.80/54.47/92.22个百分点；原子OOD为98.80%，低于基线99.75%。原标签对齐的OI增加7.73个百分点，但IO下降6.50个百分点；不能称全面改善。同位置KV单独OI差为−0.43个百分点，融合相对对齐单独下降8.57个百分点、相对KV单独下降0.40个百分点，四格交互为−8.13个百分点。对齐相对匹配CE的OI差：无KV为+34.20个百分点、有KV为+26.57个百分点；匹配CE自身严重退化，不能仅靠胜过CE声称通用优势。
+
+**成本。** 每臂普通样本曝光153,474,816，有效输入token 594,323,514、普通监督token 306,949,632；相同步数与曝光不代表相同计算。估算矩阵训练FLOPs及实测训练时间如下，耗时为本次并行调度观测，不当作独占GPU基准。
+
+| 方法 | 估算矩阵训练FLOPs（×10¹⁷） | 训练秒数 |
+| --- | ---: | ---: |
+| 普通Loop（共同基线） | 2.832 | 4691.5 |
+| 方向对齐 | 3.079 | 5112.0 |
+| 仅同位置KV | 2.833 | 4293.8 |
+| 同位置KV＋原标签对齐 | 3.080 | 4725.7 |
+| 原标签中间CE | 3.574 | 5716.4 |
+| 同位置KV＋原标签CE | 3.575 | 5328.1 |
+| DiscoLoop | 5.802 | 8060.8 |
+
+DiscoLoop估算矩阵训练计算量约为基线2.05倍；推理也保留软解码再编码通道。原标签对齐采用原监督位置的概率加权`1-cos`；旧批采用全位置自预测的单位方向平方距离。新旧配方还改变KV范围，不能将差值单独归因于位置、标签、损失尺度或缓存范围。DiscoLoop为Wang设定上的GPT适配，不是原论文完整复现。
+
+**复核。** 六条正式训练及六个新容器终点审计均正常退出，全七池逐token答案/EOS和检查点哈希核对通过。云端核验覆盖运行状态、300k步数及审计摘要，不代表逐个历史点核对；本次读取已有云端核验记录。2026-10-12北京时间08:35通过LM Docker API核对，两批容器均已退出且LM无运行容器。
+
+[冻结配置](../configs/supervised-alignment-development-v1.json)、[协议（本地归档）](development-artifacts/supervised-alignment-development-v1/protocol.md)、[完成清单（本地归档）](../results/supervised-alignment-development-v1/completion-manifest.json)、[完整统计（本地归档）](../results/supervised-alignment-development-v1/factorial-summary.json)。GitHub保存本节结果、代码和配置；原始权重、预测、协议与执行产物按仓库规则保留在`/ossfs/workspace/research-recovery/supervised-alignment-development-v1/`等本地持久目录，本次不声称已上传新的数据归档。
+
+W&B：[方向对齐](https://wandb.ai/zhusq20/llm-memory-editability/runs/0o7t9wud)；[同位置KV＋原标签对齐](https://wandb.ai/zhusq20/llm-memory-editability/runs/hbru0rg3)；[原标签中间CE](https://wandb.ai/zhusq20/llm-memory-editability/runs/kglnutwj)；[同位置KV＋原标签CE](https://wandb.ai/zhusq20/llm-memory-editability/runs/w8c0zjlb)；[仅同位置KV](https://wandb.ai/zhusq20/llm-memory-editability/runs/lr3lx6gc)；[DiscoLoop](https://wandb.ai/zhusq20/llm-memory-editability/runs/ci3x3pk1)。
+
+证据SHA-256：
+
+- `factorial-summary.json`：`b8b0305d03129d49def026c04d4dade3f8428791adc5484e7cda125ad583f622`。
+- `completion-manifest.json`：`fbceeb46f826c6eb14fde5f6e0cb2115a31735c2ef26e8353167a3394be38afd`。
+- `cloud-verification.json`：`183501651847dbc059ab68289ceb71c3928d52bb85a0b837264d6e336c4af69e`。
+
+只支持一个已观察知识图、一个初始化上的开发观察；查询或检查点不是独立世界。300k结果不能证明长期无效，组合成绩不能代替知识改写后的传播与保持检验。不自动追加长训、新图或旧KV网格。
+
+<a id="self-decode-alignment-development-v1"></a>
+**2026-10-12自解码对齐×全前缀KV：六臂全部完成。** 北京时间06:15完成训练、独立审计与云端终点核验，各300,000步、合计1,800,000更新。固定镜像58项契约、六臂CUDA短训练与新容器重载已通过。首次cgroup只读失败发生在模型执行前，失败及独立挂载修复记录保留，不计作科学负结果。
+
+共同设定：Wang φ7.2/wd.1、2000实体/200关系、273600条训练组合，宽768、四个完整GPT块循环两轮；同一第0步权重、样本流及dropout种子。以下均为固定300k终点的答案与EOS联合准确率（%），OI为预定主指标，不选择最佳节点。
+
+| 方法 | 原子ID | 原子OOD | 训练II | 测试II | IO | OI | OO |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 普通Loop（共同基线） | 100.00 | 99.75 | 100.00 | 99.33 | 43.07 | 33.50 | 3.44 |
+| 自预测CE | 100.00 | 100.00 | 100.00 | 99.43 | 55.67 | 35.87 | 5.04 |
+| 自解码方向对齐 | 100.00 | 99.85 | 99.90 | 98.50 | 5.77 | 35.77 | 1.00 |
+| 全前缀KV | 100.00 | 99.85 | 99.93 | 97.77 | 30.20 | 25.90 | 1.75 |
+| 全前缀KV＋自预测CE | 100.00 | 99.90 | 100.00 | 98.77 | 43.30 | 30.40 | 2.69 |
+| 全前缀KV＋自解码对齐 | 100.00 | 99.95 | 100.00 | 95.20 | 3.23 | 17.73 | 0.75 |
+
+**观察与边界。** 自解码对齐的OI较基线增加2.27个百分点，但较自预测CE低0.10个百分点；IO从43.07%降到5.77%。融合OI为17.73%，低于KV单独25.90%和对齐单独35.77%；四格交互为−10.43个百分点。无KV/有KV条件下，对齐相对CE的OI差分别为−0.10/−12.67个百分点。未建立方向约束的额外作用或融合收益，保留其他池退化结果。
+
+**成本。** 每臂普通样本曝光153,474,816，有效输入token 594,323,514、普通监督token 306,949,632；相同步数与曝光不代表相同计算。估算矩阵训练FLOPs及实测训练时间如下，耗时为本次并行调度观测，不当作独占GPU基准。
+
+| 方法 | 估算矩阵训练FLOPs（×10¹⁷） | 训练秒数 |
+| --- | ---: | ---: |
+| 普通Loop（共同基线） | 2.832 | 4691.5 |
+| 自预测CE | 4.812 | 7174.7 |
+| 方向对齐 | 3.327 | 5509.4 |
+| 全前缀KV | 2.833 | 4290.2 |
+| 全前缀KV＋自预测CE | 4.813 | 6804.8 |
+| 全前缀KV＋自解码对齐 | 3.328 | 5120.9 |
+
+**复核。** 六条正式训练及六个新容器终点审计均正常退出，全七池逐token答案/EOS和检查点哈希核对通过。云端核验覆盖运行状态、300k步数及审计摘要，不代表逐个历史点核对；本次读取已有云端核验记录。2026-10-12北京时间08:35通过LM Docker API核对，两批容器均已退出且LM无运行容器。
+
+[冻结配置](../configs/self-decode-alignment-development-v1.json)、[协议（本地归档）](development-artifacts/self-decode-alignment-development-v1/protocol.md)、[完成清单（本地归档）](../results/self-decode-alignment-development-v1/completion-manifest.json)、[完整统计（本地归档）](../results/self-decode-alignment-development-v1/factorial-summary.json)。GitHub保存本节结果、代码和配置；原始权重、预测、协议与执行产物按仓库规则保留在`/ossfs/workspace/research-recovery/self-decode-alignment-development-v1/`等本地持久目录，本次不声称已上传新的数据归档。
+
+W&B：[普通Loop（共同基线）](https://wandb.ai/zhusq20/llm-memory-editability/runs/958fikwd)；[自预测CE](https://wandb.ai/zhusq20/llm-memory-editability/runs/bl1sffdw)；[方向对齐](https://wandb.ai/zhusq20/llm-memory-editability/runs/d4ac6c6r)；[全前缀KV](https://wandb.ai/zhusq20/llm-memory-editability/runs/vuxpe3de)；[全前缀KV＋自预测CE](https://wandb.ai/zhusq20/llm-memory-editability/runs/3mq2bck9)；[全前缀KV＋自解码对齐](https://wandb.ai/zhusq20/llm-memory-editability/runs/xweqi1as)。
+
+证据SHA-256：
+
+- `factorial-summary.json`：`b8aca4fb72bfd227f1457352c705f72223cfe7c46f17dcdd11a62806e310bd36`。
+- `completion-manifest.json`：`3b0a9bc034fa443b2f312482fcab82dfe3b057e7d04eec177d969e8e5295745f`。
+- `cloud-verification.json`：`2cef0d2de84bb5d538a2b6051f15964d4cd3e24ca7f5b9795ab9a8209a05bb24`。
+
+只支持一个已观察知识图、一个初始化上的开发观察；查询或检查点不是独立世界。300k结果不能证明长期无效，组合成绩不能代替知识改写后的传播与保持检验。不自动追加长训、新图或旧KV网格。
+
 本页按论文的三个层次整理已有证据：**知识能被回答，能被组合，更新后能继续被使用。** 当前待回答的问题、实验优先级和尚未执行的计划统一放在 [roadmap](roadmap.md)，本页只记录已经得到的结果。
 
 ## 读者导引

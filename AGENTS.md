@@ -4,6 +4,12 @@
 
 开始分析、研究讨论、实验设计、代码修改或文档写作前，完整阅读并遵循[项目研究原则](.agents/skills/llm-memory-research/SKILL.md)。上下文恢复后若原则不在上下文中，重新读取。
 
+2026-10-12完成状态更新：`self-decode-alignment-development-v1`于北京时间06:15、`supervised-alignment-development-v1`于08:03全部完成，各六臂300k步、合计360万新增更新；七池独立重载与W&B云端终点状态/步数/审计摘要核验均通过。08:35实际LM Docker无运行容器，两批训练及审计退出码均为0。不重启旧入口。DiscoLoop OI/IO/OO为99.30/97.53/95.66%，估算矩阵训练FLOPs为基线约2.05倍；原监督对齐OI41.23%（基线33.50%），但IO下降；两批KV融合均未超过对齐单独。完整七池及成本见[结果](docs/results.md#supervised-alignment-development-v1)。只是一张已观察图/一个初始化，不证明通用效率、唯一机制或更新传播；没有追加新训练。以下启动记载保留历史，本段完成状态优先。
+
+2026-10-12用户随后采纳六组增补并要求编写代码、并行启动。`supervised-alignment-development-v1`已提交：原监督标签概率加权的对齐/中间CE各有无同位置首轮KV两组，另加仅同位置KV与DiscoLoop，共六臂各300k步、180万新增更新；复用前批普通Loop基线。固定镜像138项契约、CUDA基线逐值/全部梯度/连续优化一致性、六臂全尺寸32步短训与新容器七池重载全部通过。北京时间05:36启动控制器，先用GPU6/7/0/3运行四臂，另两臂随旧训练及审计完成释放资源后自动并行，不抢占旧批次。恢复先读[新增协议](docs/development-artifacts/supervised-alignment-development-v1/protocol.md)、本批`controller-process.json`、`controller-state.json`、`science-schedule.json`及实际LM Docker状态，不重复提交。新损失为原监督位置的`1-cos`，不是旧全位置自预测平方距离；KV仅直接读取同位置缓存，当前轮仍读因果前缀。可选第七臂、长训、新图及旧网格均未加入。正式终点、独立审计与云端核验尚待完成，当前没有新科学结论。
+
+2026-10-12用户授权选择并开展下一项实验，随后明确要求利用八张卡并行做**首轮KV×自解码表示对齐**二乘二，并确认另保留自预测CE对照。`self-decode-alignment-development-v1`六臂已提交GPU0–5各300k步（总180万新增更新），同Wang φ7.2/wd.1图、原第0步权重与共同数据流；主四格另加有/无KV两条CE。固定镜像58项契约、六条CUDA短训与新容器七池逐token重载通过；固定权重诊断已完成，尚无正式训练结论。首次容器启动因cgroup只读未进入模型执行，失败保留；LM在无运行容器时恢复独立挂载namespace，其他项目未动。恢复先读[本批协议](docs/development-artifacts/self-decode-alignment-development-v1/protocol.md)、`results/self-decode-alignment-development-v1/controller-process.json`与`controller-state.json`、`runtime-repair/amendment.json`和实际LM Docker状态，不重复提交。该授权只重新打开KV与新增无真值损失的交互问题，不恢复旧窗口/R/detach/mHC网格，不自动追加长期训练或新图确认。
+
 2026-10-07用户明确：论文围绕知识学习的三个层次——**知识能被回答、能被组合、更新后能继续被使用**。每层分别做实验并解释；第一层不是后两层的掌握率检查。表达清楚直白，不因话题与文献重合就回避重要问题。
 
 用户随后明确两条推进路线：**严格基于实际Transformer架构的数学解释**，以及**通用架构降低三层能力学习成本的验证**。Loop、MoE、DeltaNet、Gated DeltaNet和mHC均可研究；从观察推导机制或由数学启发实验均可。保留完整残差、归一化、attention/MLP等实际计算，简化时写明条件；不以抽象记忆类比代替模型证明，不预设架构必有优势。训练效率须区分数据曝光、token、计算和总/激活参数，第三层还需计入旧能力保持。这是此前路线授权；当前执行优先级以用户2026-10-08的“先复现论文”要求和roadmap为准。
