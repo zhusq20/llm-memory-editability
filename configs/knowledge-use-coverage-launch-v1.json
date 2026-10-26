@@ -1,0 +1,44 @@
+{
+  "batch": "knowledge-use-coverage-v1",
+  "host": "sn4622128200",
+  "output": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1",
+  "factorial_batch": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-method-factorial-1000-v1",
+  "factorial_analysis": "/mnt/disk2_from_server2/siqizhu4/llm-memory-editability/results/knowledge-factorial-analysis-20261025/summary.json",
+  "factorial_collector_receipt": "/mnt/disk2_from_server2/siqizhu4/llm-memory-editability/results/knowledge-factorial-analysis-20261025/collector-state.json",
+  "scope_decision_receipt": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1/scope-decision.json",
+  "scope": "down",
+  "source_tar": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1/source.tar",
+  "source_tar_sha256": "c4f8c5f26727cc2c11f70b53d076a4b46720986a5549767e22924d57ea429b2a",
+  "source_dir": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1/source",
+  "scientific_config": "configs/knowledge-use-coverage-v1.json",
+  "scientific_config_sha256": "3f5b154d003d25c5db094a6c411dccbcee91c541e47206d224bb3706eff99bcb",
+  "wandb_token_file": "/home/siqizhu4/.cache/lm-memory-ce-ablation/wandb-token",
+  "lanes": [
+    {
+      "gpu": 4,
+      "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+      "cpus": "0-9"
+    },
+    {
+      "gpu": 6,
+      "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+      "cpus": "50-59"
+    },
+    {
+      "gpu": 8,
+      "gpu_uuid": "GPU-237b631e-30d6-9478-6513-e98b8f974f64",
+      "cpus": "60-69"
+    }
+  ],
+  "runtime": {
+    "image": "sha256:8eb44ee1611fe88f5a7113eb271cae9a0894fe0e95c988360b994f79e4017eba",
+    "hf_cache": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-read-interface-development-v1/hf-cache",
+    "deps": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-method-diagnosis-development-v1/deps",
+    "upstream": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-method-diagnosis-development-v1/upstream",
+    "minimum_free_gpu_mib": 85000,
+    "maximum_idle_gpu_used_mib": 512,
+    "poll_seconds": 30,
+    "master_port_base": 29620
+  },
+  "lock_directory": "/tmp/lm-memory-gpu-locks-1015"
+}

@@ -1,6 +1,6 @@
 # 实验协议与复现约定
 
-更新：2026-10-07（规则）；2026-10-10按统一术语重写语言；2026-10-11补充记忆状态、更新操作与组合任务的范围区分，历史契约不变。术语见[Roadmap §0](roadmap.md#glossary)。
+更新：2026-10-07（规则）；2026-10-10按统一术语重写语言；2026-10-11补充记忆状态、更新操作与组合任务的范围区分，历史契约不变。2026-10-22整理时按既有决定同步W&B默认团队。术语见[Roadmap术语](roadmap.md#glossary)。
 
 本文规定本项目各批实验共同遵守的数据、训练目标、评价、统计与复现规则，并原样保留旧脚本仍要读取的历史预注册分析计划。本文不记录研究方向和结果：当前研究方向与待办统一见[Roadmap](roadmap.md)，数字与状态见[结果汇总](results.md)，推导见[理论依据](memory-scaling-theory.md)。历史上完整的协议文本见[执行时冻结快照](development-artifacts/qwen-path-learning-v1/execution-source/docs/experimental-protocol.md)。
 
@@ -130,7 +130,7 @@
 - 数据与权重保存在每批专属的 `data/`、`results/` 目录；小型证据与源码快照保存在 `docs/development-artifacts/`。已冻结的产物和原有审计哈希保持原样。原因：改动它们会使已有审计无法复核。
 - 精确复现旧批次时读取对应的快照。整理文档不会使工作区中的新文本自动成为旧实验的执行源码。原因：旧实验的结论只对它当时实际运行的代码成立。
 
-**新批次的人工查看与W&B记录。** 2026-10-02用户决定：之后的新批次默认启用W&B记录，账号/团队为 `zhusq20`，项目为 `llm-memory-editability`，见[默认配置](../configs/experiment-tracking-defaults.json)。目的是让人在训练过程中直接查看曲线。具体规则：
+**新批次的人工查看与W&B记录。** 2026-10-18（America/Chicago）用户更新：之后的新批次默认启用W&B记录，团队为 `zsqzz`（Academic Team），项目为 `llm-memory-editability`；已冻结、排队或在训批次保留原团队与run ID，结束后复制，不重启训练改归属。见[默认配置](../configs/experiment-tracking-defaults.json)。目的是让人在训练过程中直接查看曲线。具体规则：
 
 - 训练启动时同时启动[独立记录进程](../scripts/track_experiment_wandb.py)。它按实际optimizer step记录：损失；各任务的准确率、NLL及其分母；曝光次数、token数和FLOPs；耗时和吞吐。系统指标绑定到训练进程的PID和分配的GPU。
 - 每条训练轨迹对应一个W&B run，每批实验对应一个group，并把链接提供给用户。

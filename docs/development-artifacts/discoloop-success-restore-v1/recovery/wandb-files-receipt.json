@@ -1,0 +1,33 @@
+{
+  "run": "zhusq20/llm-memory-editability/ci3x3pk1",
+  "files": [
+    {
+      "name": "config.yaml",
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/wandb-files/config.yaml",
+      "md5": "4NsKHm9Hbpq2UU18U7IygA==",
+      "sha256": "94506ead255c4e9b572ea7b6132a1008bf03bd17401fd90c226a2d86c1881abd",
+      "bytes": 4303
+    },
+    {
+      "name": "requirements.txt",
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/wandb-files/requirements.txt",
+      "md5": "gtao6TdM76WrOY2e/H/evQ==",
+      "sha256": "dde54f306b56703f4c35b7cc01dcab3320804b25a10c7d40362ad33e8e0626cf",
+      "bytes": 7256
+    },
+    {
+      "name": "wandb-metadata.json",
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/wandb-files/wandb-metadata.json",
+      "md5": "kZA4UaAActgHKKJ/qkhl4A==",
+      "sha256": "63d8c98964db2c14ab6f111df04328acea3e480fb79018884bb1277fba8aea38",
+      "bytes": 2560
+    },
+    {
+      "name": "wandb-summary.json",
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/wandb-files/wandb-summary.json",
+      "md5": "BkyidXkjf7heMXeESUy/Bw==",
+      "sha256": "51c2071c077c6ca2f59186fc234f2f2d561ce2d578a8bb613da9069e040818f5",
+      "bytes": 2573
+    }
+  ]
+}

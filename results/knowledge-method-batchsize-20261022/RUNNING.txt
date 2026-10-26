@@ -1,0 +1,49 @@
+Knowledge batch-size continuation, 2026-10-22 UTC.
+User authorization: continue current progress without restarting from base; maximize throughput with larger physical batches.
+Persistent batch: knowledge-method-factorial-1000-v1, host sn4622128200, GPU3/6/8 only.
+22:33 UTC controller431447 adopted the six running jobs; prior controller3640662 retired.
+At adoption all six old containers continued running; two down-LoRA arms remained pending.
+The controller waits for newer committed checkpoints, migrates one arm per GPU at a time, probes batches, restores source state, then continues.
+This submission record is not proof that a larger batch has already started. Check current states and Docker.
+
+Read first:
+  runtime/amendment.json
+  runtime/controller-process.json
+  ../knowledge-method-speedup-20261022/runtime/../schedule-amendment.json
+  parent batch controller-state.json and execution locks
+  runtime/handoff/ and runtime/execution/
+  runtime/runs/ARM/restore-before-probe.json, benchmark.json, selection.json, progress.json
+
+Target per arm remains1489200 sample exposures /5epochs, not372300 optimizer updates after the switch.
+Preserve original runs/ARM/resume.pt. New checkpoints: runtime/runs/ARM/resume.pt.
+Weights, Adam moments/counters, RNG and data cursor are restored; engineering probe updates are discarded.
+Record any post-checkpoint replay separately. W&B IDs remain unchanged:
+https://wandb.ai/zsqzz/llm-memory-editability
+
+CPU tests12 passed; Ruff check/format passed. Initial engineering permission/cache/format failures are retained.
+CUDA and selected-batch status must be read from each run. No claim of overall speedup yet.
+Frozen extension-v1 files copied into each container root-owned0444/0555; original frozen sources unchanged.
+Do not restart the old controller, duplicate a live training process, or automatically retry failed attempts.
+
+23:10 UTC verification: four arms have resumed real training, with exact weights/Adam restoration and RNG recovery.
+  sft_full: batch16, source25000 updates/100000 exposures; probe9.998->21.397 samples/s (2.14x).
+  pd_down: batch8, source35000/140000; probe13.242->19.414 samples/s (1.47x); batch16 was slower.
+  sft_down: batch16, source50000/200000; probe19.306->33.861 samples/s (1.75x).
+  pd_lora: batch4, source30000/120000; batch8 exceeded its allowance alongside sft_full16.
+sft_lora and pd_full still run their original containers while waiting for fresh committed checkpoints.
+Two down-LoRA arms remain pending and will use the same batch selection when admitted.
+The controller is active; read latest-verification.json and the live controller rather than assuming all six migrated.
+
+All four current W&B runs were read back as running with their original IDs, new batch metrics and continuation configs.
+Post-stop old-curve audit supersedes pre-stop selection estimates:
+  sft_full1800, pd_down500, pd_lora800, sft_down1000 observed replay updates, plus up to99 unreported updates each.
+SFT-full recorded300 more updates during its stop; first cloud points can be skipped by the pre-stop log offset.
+All recorded local continuation curves remain under runtime/runs/ARM/curve.jsonl. Do not restart training for tracking repair.
+Progress CUDA peaks include engineering probes; use benchmark.json for the separately measured pressure peaks.
+Shared-resource short probes are not measurements of total elapsed-time acceleration.
+
+2026-10-23 recovery: controller1725118 supersedes exited431447.
+Read ../queue-recovery-20261023/HANDOFF.txt and knowledge/controller-process.json.
+GPU pool4/3/6/8; user explicitly released GPU4 old created reservation.
+Original four training processes retained; two down-LoRA arms newly admitted.
+Actual batch selection and scientific training must be read from per-arm progress.

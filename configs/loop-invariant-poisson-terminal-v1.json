@@ -1,0 +1,146 @@
+{
+  "batch": "loop-invariant-poisson-terminal-v1",
+  "status": "implementation_only_not_launched",
+  "authorization": "2026-10-24: implement masked full-batch execution and repeat bounded GPU validation; no formal training launch.",
+  "question": "Train the invariant carry with one terminal supervised-token-mean loss, independent per-sequence Poisson depth and full backpropagation.",
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "schedule_seed": 2026102001,
+    "unique_layers": 1,
+    "evaluation_repeats": 4,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "final_lr_fraction": 0.1,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "grad_clip": 1.0,
+    "ema_decay": 0.999,
+    "batch_size": 512,
+    "steps": 1500000,
+    "objective": "terminal_token_mean",
+    "backpropagation": "full",
+    "execution": "masked_batch",
+    "depth_sampling": {
+      "distribution": "poisson",
+      "mean": 8.0,
+      "minimum": 1,
+      "maximum": 16,
+      "scope": "sequence",
+      "truncation": "reject"
+    }
+  },
+  "handoff": {
+    "initial_beta": 0.55,
+    "score_hidden": 16,
+    "score_clip": 8.0,
+    "score_seed": 2026102002,
+    "first_round_input": "embedding"
+  },
+  "dropout_seed": 2026101604,
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000,
+    400000,
+    500000,
+    600000,
+    700000,
+    800000,
+    900000,
+    1000000,
+    1100000,
+    1200000,
+    1300000,
+    1400000,
+    1500000
+  ],
+  "evaluation_rounds": [
+    4,
+    8
+  ],
+  "grid_rounds": 32,
+  "grid_joint_rounds": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "evaluation_batch_size": 256,
+  "heartbeat_steps": 1000,
+  "smoke_steps": 200,
+  "input_origin": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+    "reuse": "Exact existing 40000-example world and 43000-query panels used by every DiscoLoop/gate multi-hop arm"
+  },
+  "input_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+  "paired_recipe": {
+    "initial_backbone_sha256": "39a487823c05311a223db99c3d0e2df3e7a1752498e261337f4298abe0cfa7b0",
+    "note": "Every arm's backbone at step 0 must equal the reused ungated DiscoLoop's step-0 model; handoff parameters are created without consuming the global RNG."
+  },
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:b7933a57d6a4702700b6b2578fe0cc697f91b2080ef5e18d8fb916443281eacd",
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "cpu_threads": 2,
+    "memory_gib": 16,
+    "gpu_memory_fraction": 0.16,
+    "minimum_free_gpu_mib": 18000,
+    "maximum_idle_gpu_used_mib": 512
+  },
+  "tracking": {
+    "provider": "wandb",
+    "entity": "zsqzz",
+    "project": "llm-memory-editability",
+    "mode": "online"
+  },
+  "arms": {
+    "invariant": {
+      "handoff": "invariant"
+    }
+  },
+  "primary": "EMA R8; also R4/R16/R32 and raw weights. R32 extrapolates beyond sampled training depth. No new result exists.",
+  "budget": {
+    "new_scientific_updates_authorized": 0,
+    "recipe_steps_if_separately_authorized": 1500000
+  },
+  "loss": {
+    "normalization": "sum CE over all valid supervised tokens / total valid tokens in the logical batch",
+    "ignore_index": -100,
+    "supervision": "terminal_only",
+    "execution": "sample independent depths first; advance the full batch; freeze h/N/D/p at each endpoint without detach; one backward, clip and update",
+    "current_data": "one answer token and one EOS token per sample; no separate category weights"
+  }
+}

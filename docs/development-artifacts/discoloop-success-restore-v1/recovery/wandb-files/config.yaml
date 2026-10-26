@@ -1,0 +1,115 @@
+_wandb:
+    value:
+        cli_version: 0.30.0
+        e:
+            e2wtbr1yb3jwplu0isz1szu8xr1vf8jv:
+                args:
+                    - track
+                    - --arm
+                    - discoloop
+                cpu_count: 96
+                cpu_count_logical: 192
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "858993459200"
+                        used: "263792324608"
+                executable: /tmp/lm-perk-method-venv/bin/python
+                git:
+                    commit: 4f7d802cf2fbdad5615d661e6f9f58d89c31414f
+                    remote: https://github.com/zhusq20/llm-memory-editability.git
+                gpu: NVIDIA L20X
+                gpu_count: 8
+                gpu_nvidia:
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "150754820096"
+                      name: NVIDIA L20X
+                      uuid: GPU-29aadd37-21f7-ab26-16c2-d65c3436f14e
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "150754820096"
+                      name: NVIDIA L20X
+                      uuid: GPU-a856eab4-8752-ca4c-a7d8-feb83b55d857
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "150754820096"
+                      name: NVIDIA L20X
+                      uuid: GPU-72fb68d1-9a2d-d71a-e818-9047bfa8a49e
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "150754820096"
+                      name: NVIDIA L20X
+                      uuid: GPU-dfe46246-0962-2dfa-b843-905989baf908
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "150754820096"
+                      name: NVIDIA L20X
+                      uuid: GPU-28e65f84-73f7-4b69-2389-b5332a25e850
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "150754820096"
+                      name: NVIDIA L20X
+                      uuid: GPU-137774ac-355f-e997-23b4-51750fc87ab5
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "150754820096"
+                      name: NVIDIA L20X
+                      uuid: GPU-f9a34488-1194-5e60-9087-dec32e68f61d
+                    - architecture: Hopper
+                      cudaCores: 16896
+                      memoryTotal: "150754820096"
+                      name: NVIDIA L20X
+                      uuid: GPU-48c5760f-6c03-d7b1-4783-e5e5fbd83b6c
+                host: gpulingjun010010012206.os30
+                memory:
+                    total: "858993459200"
+                os: Linux-5.10.134-19.100.al8.x86_64-x86_64-with-glibc2.32
+                program: /ossfs/workspace/research-recovery/supervised-alignment-development-v1/source/scripts/execute_supervised_alignment.py
+                python: CPython 3.10.16
+                root: /ossfs/workspace/research-recovery/supervised-alignment-development-v1/tracking/discoloop
+                startedAt: "2026-10-11T21:48:06.763811Z"
+                writerId: e2wtbr1yb3jwplu0isz1szu8xr1vf8jv
+        m: []
+        python_version: 3.10.16
+        t:
+            "3":
+                - 2
+                - 13
+                - 16
+                - 62
+            "4": 3.10.16
+            "5": 0.30.0
+            "12": 0.30.0
+            "13": linux-x86_64
+arm:
+    value: discoloop
+auxiliary:
+    value:
+        coefficient: 0
+        discoloop: true
+        discoloop_alpha: 1
+        discoloop_eps: 1e-06
+        discoloop_temperature: 1
+        first_round_kv: false
+        kind: none
+        scope: supervised
+batch:
+    value: supervised-alignment-development-v1
+freeze_sha256:
+    value: 31d38948eab069e02b5966123b194c49f4206831bc03bbd0591417cc0207c735
+physical_gpu:
+    value: 2
+spec:
+    value:
+        batch_size: 512
+        initialization: 791101
+        lr: 0.0001
+        name: supervised-alignment-development-v1
+        phi: 7.2
+        repeats: 2
+        steps: 300000
+        stream_seed: 792101
+        unique_layers: 4
+        warmup: 2000
+        weight_decay: 0.1

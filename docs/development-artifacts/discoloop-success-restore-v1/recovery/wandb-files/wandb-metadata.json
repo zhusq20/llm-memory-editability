@@ -1,0 +1,91 @@
+{
+  "os": "Linux-5.10.134-19.100.al8.x86_64-x86_64-with-glibc2.32",
+  "python": "CPython 3.10.16",
+  "startedAt": "2026-10-11T21:48:06.763811Z",
+  "args": [
+    "track",
+    "--arm",
+    "discoloop"
+  ],
+  "program": "/ossfs/workspace/research-recovery/supervised-alignment-development-v1/source/scripts/execute_supervised_alignment.py",
+  "git": {
+    "remote": "https://github.com/zhusq20/llm-memory-editability.git",
+    "commit": "4f7d802cf2fbdad5615d661e6f9f58d89c31414f"
+  },
+  "root": "/ossfs/workspace/research-recovery/supervised-alignment-development-v1/tracking/discoloop",
+  "host": "gpulingjun010010012206.os30",
+  "executable": "/tmp/lm-perk-method-venv/bin/python",
+  "cpu_count": 96,
+  "cpu_count_logical": 192,
+  "gpu": "NVIDIA L20X",
+  "gpu_count": 8,
+  "disk": {
+    "/": {
+      "total": "858993459200",
+      "used": "263792324608"
+    }
+  },
+  "memory": {
+    "total": "858993459200"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA L20X",
+      "memoryTotal": "150754820096",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-29aadd37-21f7-ab26-16c2-d65c3436f14e"
+    },
+    {
+      "name": "NVIDIA L20X",
+      "memoryTotal": "150754820096",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-a856eab4-8752-ca4c-a7d8-feb83b55d857"
+    },
+    {
+      "name": "NVIDIA L20X",
+      "memoryTotal": "150754820096",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-72fb68d1-9a2d-d71a-e818-9047bfa8a49e"
+    },
+    {
+      "name": "NVIDIA L20X",
+      "memoryTotal": "150754820096",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-dfe46246-0962-2dfa-b843-905989baf908"
+    },
+    {
+      "name": "NVIDIA L20X",
+      "memoryTotal": "150754820096",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-28e65f84-73f7-4b69-2389-b5332a25e850"
+    },
+    {
+      "name": "NVIDIA L20X",
+      "memoryTotal": "150754820096",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-137774ac-355f-e997-23b4-51750fc87ab5"
+    },
+    {
+      "name": "NVIDIA L20X",
+      "memoryTotal": "150754820096",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-f9a34488-1194-5e60-9087-dec32e68f61d"
+    },
+    {
+      "name": "NVIDIA L20X",
+      "memoryTotal": "150754820096",
+      "cudaCores": 16896,
+      "architecture": "Hopper",
+      "uuid": "GPU-48c5760f-6c03-d7b1-4783-e5e5fbd83b6c"
+    }
+  ],
+  "cudaVersion": "12.8",
+  "writerId": "e2wtbr1yb3jwplu0isz1szu8xr1vf8jv"
+}

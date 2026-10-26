@@ -1,0 +1,251 @@
+{
+  "status": "original_data_restored_and_historical_initial_parameters_exactly_reconstructed; original_trained_endpoint_unavailable_in_checked_sources",
+  "input_root": "data/discoloop-success-restore-v1/original",
+  "inputs": [
+    {
+      "path": "data/discoloop-success-restore-v1/original/data/complete.json",
+      "sha256": "c60b3c65e6ab889d78b2b0fa6b17cf82ee8739ce14cb2ae18897fe3b10cfda83",
+      "bytes": 725
+    },
+    {
+      "path": "data/discoloop-success-restore-v1/original/data/panels.npz",
+      "sha256": "8655858c0de4646cfb5c7ea1779b5374ef28b492e6ac59bb6eda9e89c7936bf9",
+      "bytes": 132763
+    },
+    {
+      "path": "data/discoloop-success-restore-v1/original/data/world.npz",
+      "sha256": "e31ec9959ce0a7b25465191a1d9ef8e83ec42163ed967fa56a60605f6ac1c3b4",
+      "bytes": 7445175
+    },
+    {
+      "path": "data/discoloop-success-restore-v1/original/development/loop4x2-phi7.2-wd0.1/checkpoint-0000000.pt",
+      "sha256": "81e95a16656904a511f901b30966a4b4c4f1de708b67b5712d3e8cd2933fe347",
+      "bytes": 277743111
+    },
+    {
+      "path": "data/discoloop-success-restore-v1/original/development/loop4x2-phi7.2-wd0.1/reconstruction-receipt.json",
+      "sha256": "17e814d05f2da50f2bc6c79a46a048a3a58e2eceacbf7cdb80b406c97b1a7c0c",
+      "bytes": 2410
+    },
+    {
+      "path": "data/discoloop-success-restore-v1/original/reference/gpt2/config.json",
+      "sha256": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4",
+      "bytes": 665
+    }
+  ],
+  "data_identity": {
+    "world": 790101,
+    "world_sha256": "e31ec9959ce0a7b25465191a1d9ef8e83ec42163ed967fa56a60605f6ac1c3b4",
+    "panels_sha256": "8655858c0de4646cfb5c7ea1779b5374ef28b492e6ac59bb6eda9e89c7936bf9",
+    "entities": 2000,
+    "relations": 200,
+    "degree": 20,
+    "atomic_id": 38000,
+    "atomic_ood": 2000,
+    "candidate_train_ii": 718004,
+    "full_test_ii": 3668,
+    "panels": {
+      "atomic_id": 3000,
+      "atomic_ood": 2000,
+      "train_ii": 3000,
+      "test_ii": 3000,
+      "test_io": 3000,
+      "test_oi": 3000,
+      "test_oo": 2004
+    },
+    "base_vocabulary": 50257,
+    "vocab_size": 52463,
+    "entity_offset": 50257,
+    "relation_offset": 52257,
+    "end_marker": 52460,
+    "pad_token": 50256,
+    "created_utc": "2026-10-02T02:20:14.696133+00:00"
+  },
+  "training_support": {
+    "phi": 7.2,
+    "ordinary_atomic_facts": 40000,
+    "ordinary_II_compositions": 273600,
+    "stream_seed": 792101
+  },
+  "initialization": {
+    "schema": "discoloop-step0-reconstruction-v1",
+    "checkpoint": "data/discoloop-success-restore-v1/original/development/loop4x2-phi7.2-wd0.1/checkpoint-0000000.pt",
+    "checkpoint_sha256": "81e95a16656904a511f901b30966a4b4c4f1de708b67b5712d3e8cd2933fe347",
+    "checkpoint_bytes": 277743111,
+    "historical_initial_model_sha256": "ba0af28431d36db482f2676c1e111a725cf51041c3dca9d006dd10d7a7c18518",
+    "reconstructed_initial_model_sha256": "ba0af28431d36db482f2676c1e111a725cf51041c3dca9d006dd10d7a7c18518",
+    "initial_parameters_match_historical_digest": true,
+    "original_checkpoint_file_bytes_restored": false,
+    "original_300k_weights_restored": false,
+    "initialization": 791101,
+    "parameters": 69431040,
+    "spec": {
+      "name": "loop4x2-phi7.2-wd0.1",
+      "unique_layers": 4,
+      "repeats": 2,
+      "phi": 7.2,
+      "weight_decay": 0.1,
+      "initialization": 791101,
+      "stream_seed": 792101,
+      "lr": 0.0001,
+      "warmup": 2000,
+      "batch_size": 512,
+      "steps": 300000
+    },
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.3",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "training_updates": 0,
+    "independent_host_weights_only_reload_passed": true,
+    "source_digest_record": "results/grokking-reproduction-v1/development/loop4x2-phi7.2-wd0.1/run.json at HF 6c580455ce1667274ea592c1c88f5d0fb1e5a190",
+    "initialization_history": [
+      {
+        "stage": "initial_check_container",
+        "status": "import_failed_before_model_initialization",
+        "reason": "root container could not traverse private 700 source directories"
+      },
+      {
+        "stage": "fixed_seed_cpu_check",
+        "status": "passed",
+        "tensor_digest": "ba0af28431d36db482f2676c1e111a725cf51041c3dca9d006dd10d7a7c18518",
+        "weights_saved": false
+      },
+      {
+        "stage": "save_container_bind",
+        "status": "mount_failed_before_model_initialization",
+        "reason": "Docker daemon could not traverse existing private data parent; existing private mode was preserved"
+      },
+      {
+        "stage": "fixed_seed_cpu_save_via_stdout",
+        "status": "passed",
+        "weights_saved": true,
+        "tensor_digest": "ba0af28431d36db482f2676c1e111a725cf51041c3dca9d006dd10d7a7c18518"
+      }
+    ],
+    "scope": "Reconstructed fixed-seed initial tensors match archived historical digest; serialized bytes are newly produced, not the original file; no historical trained endpoint recovered"
+  },
+  "historical_run": {
+    "wandb": "https://wandb.ai/zhusq20/llm-memory-editability/runs/ci3x3pk1",
+    "state": "finished",
+    "config": {
+      "arm": "discoloop",
+      "spec": {
+        "lr": 0.0001,
+        "phi": 7.2,
+        "name": "supervised-alignment-development-v1",
+        "steps": 300000,
+        "warmup": 2000,
+        "repeats": 2,
+        "batch_size": 512,
+        "stream_seed": 792101,
+        "weight_decay": 0.1,
+        "unique_layers": 4,
+        "initialization": 791101
+      },
+      "batch": "supervised-alignment-development-v1",
+      "auxiliary": {
+        "kind": "none",
+        "scope": "supervised",
+        "discoloop": true,
+        "coefficient": 0,
+        "discoloop_eps": 1e-06,
+        "first_round_kv": false,
+        "discoloop_alpha": 1,
+        "discoloop_temperature": 1
+      },
+      "physical_gpu": 2,
+      "freeze_sha256": "31d38948eab069e02b5966123b194c49f4206831bc03bbd0591417cc0207c735"
+    },
+    "step": 300000,
+    "independent_audit_passed": true,
+    "panels": {
+      "atomic_id": {
+        "n": 3000,
+        "answer_and_EOS_accuracy": 0.9996666666666668
+      },
+      "atomic_ood": {
+        "n": 2000,
+        "answer_and_EOS_accuracy": 0.988
+      },
+      "train_ii": {
+        "n": 3000,
+        "answer_and_EOS_accuracy": 0.999
+      },
+      "test_ii": {
+        "n": 3000,
+        "answer_and_EOS_accuracy": 0.9993333333333332
+      },
+      "test_io": {
+        "n": 3000,
+        "answer_and_EOS_accuracy": 0.9753333333333334
+      },
+      "test_oi": {
+        "n": 3000,
+        "answer_and_EOS_accuracy": 0.993
+      },
+      "test_oo": {
+        "n": 2004,
+        "answer_and_EOS_accuracy": 0.9565868263473054
+      }
+    },
+    "actual_tracking_host": "gpulingjun010010012206.os30",
+    "tracking_git_commit": "4f7d802cf2fbdad5615d661e6f9f58d89c31414f",
+    "run_files": 4,
+    "logged_artifacts": 0,
+    "source_checkpoint_digest_fields_present": false
+  },
+  "hf": {
+    "repo": "zsqzz/llm-memory-editability",
+    "revision": "6c580455ce1667274ea592c1c88f5d0fb1e5a190",
+    "array_archive": {
+      "path": "array-archives/results--grokking-reproduction-v1.tar.gz",
+      "bytes": 873212794,
+      "sha256": "0dfe4eedc158032690546dd85a2e11663a9922e5470a084dc20b89414e16786b"
+    },
+    "restoration_receipt": "docs/development-artifacts/discoloop-success-restore-v1/recovery/hf-restoration-receipt.json",
+    "current_revision_is_same": true,
+    "checkpoint_files": 0,
+    "supervised_batch_files": 0
+  },
+  "source": {
+    "original_grokking_frozen_source": "docs/development-artifacts/discoloop-success-restore-v1/recovery/hf-frozen-grokking/docs/development-artifacts/grokking-reproduction-v1/source",
+    "original_grokking_all_10_freeze_files_verified": true,
+    "original_supervised_frozen_source_available": false,
+    "original_supervised_freeze_sha256": "31d38948eab069e02b5966123b194c49f4206831bc03bbd0591417cc0207c735",
+    "current_runner": "scripts/run_supervised_alignment.py",
+    "current_runner_sha256": "7ad4ab4eb8b2c7706aece7ff36a8d5121c034d261483ebea96074ea7e5f73271",
+    "current_runner_not_claimed_original_frozen_bytes": true
+  },
+  "local_search": {
+    "roots": [
+      "/mnt/disk2_from_server2/siqizhu4/llm-memory/data",
+      "/mnt/disk2_from_server2/siqizhu4/llm-memory/results",
+      "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent",
+      "/mnt/disk2_from_server2/siqizhu4/tmp",
+      "/mnt/disk2_from_server2/siqizhu4/models",
+      "/mnt/disk2_from_server2/siqizhu4/mnt"
+    ],
+    "hidden_and_ignored_paths_included": true,
+    "original_target_batch_or_Wang_checkpoint_paths_found": false,
+    "other_users_or_whole_disk_scanned": false
+  },
+  "ssh": {
+    "config_file_present": false,
+    "known_host_entries_for_historical_12206": 0,
+    "known_host_entries_for_prior_2239": 0,
+    "connections_attempted": 0,
+    "reason": "No existing configured/trusted old-host connection. No trust or credential changes were authorized or made."
+  },
+  "missing_for_original_trained_endpoint_replay": [
+    "Original supervised-alignment-development-v1/discoloop/checkpoint-0300000.pt and original complete/audit provenance with checkpoint SHA",
+    "Original supervised frozen source plus freeze.json matching cloud freeze SHA 31d38948eab069e02b5966123b194c49f4206831bc03bbd0591417cc0207c735"
+  ],
+  "minimum_for_new_recipe_reconstruction": [
+    "Restored original/data/{world.npz,panels.npz,complete.json}",
+    "Restored original/reference/gpt2/config.json",
+    "New step0 checkpoint whose initial tensor digest exactly matches archived ba0af284...",
+    "Original successful DiscoLoop spec in configs/supervised-alignment-development-v1.json (alpha1,temperature1,eps1e-6; 4 physical layers times2; width768; lr1e-4; wd.1; warmup2000; batch512; 300000 updates; dropout seed20261012)",
+    "A separately frozen reviewed execution implementation and new batch identity; no old controller reuse"
+  ],
+  "scientific_training_started_by_recovery": false
+}

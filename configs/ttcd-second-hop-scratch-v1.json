@@ -1,0 +1,74 @@
+{
+  "batch": "ttcd-second-hop-scratch-v1",
+  "authorization": "2026-10-15 user requested addition of the from-scratch experiment code; no formal training launched",
+  "scratch": {"version": 1},
+  "phase": "New smaller symbolic development world; equation-(6) GPT adaptation, not original TTCD or Wang reproduction",
+  "seed": 20261015,
+  "phi": 2.0,
+  "data_dir": "data/ttcd-second-hop-scratch-v1",
+  "model_config": "data/ttcd-second-hop-scratch-v1/gpt2-config.json",
+  "world": {"seed": 20261015, "entities": 256, "relations": 32, "degree": 8, "holdout": 0.1},
+  "model": {"width": 128, "heads": 4, "unique_layers": 2, "repeats": 2, "intermediate": 512, "positions": 64},
+  "models": {
+    "discoloop": {
+      "checkpoint": "results/ttcd-second-hop-scratch-v1/discoloop/training/parent.pt",
+      "step": 30000,
+      "discoloop": true
+    },
+    "loop": {
+      "checkpoint": "results/ttcd-second-hop-scratch-v1/loop/training/parent.pt",
+      "step": 30000,
+      "discoloop": false
+    }
+  },
+  "training": {
+    "warmup_steps": 20000,
+    "adaptation_steps": 10000,
+    "batch_size": 128,
+    "learning_rate": 0.001,
+    "minimum_learning_rate": 0.00001,
+    "lr_warmup_steps": 200,
+    "weight_decay": 0.1,
+    "gradient_clip": 1.0,
+    "validation_every": 1000,
+    "validation_panel_size": 256,
+    "loss_weights": {"atoms": 1.0, "chains": 1.0, "reader": 1.0, "fast_atomic": 1.0, "fast_retention": 1.0},
+    "selection": "Fixed final step only; retain failures. No edited two-hop labels/readouts select training settings or checkpoint. Budgets and learning rates are unvalidated development starting values."
+  },
+  "methods": ["ttcd", "atomic_ce", "sham"],
+  "cases": {"seed": 20261015, "calibration_cases": 8, "evaluation_cases": 16, "affected": 8, "controls": 16},
+  "reading_gate": {"minimum_cases_per_group": 8, "minimum_accuracy": 0.6, "selection": "Held-out correction facts, long-window atomic answer accuracy only. Gate failure is preserved; no automatic retraining."},
+  "writer": {
+    "teacher_window": 32,
+    "student_window": 16,
+    "gap": 17,
+    "steps": 4,
+    "learning_rate": 0.001,
+    "variant": "TTCD equation (6) in GPT GELU; local shared QKV/residual, first round only, all physical MLP down matrices. Per-example fast states in outer training. No original v9 conv/projection/normalization."
+  },
+  "atomic_ce": {"steps": 20, "learning_rate": 0.0001},
+  "runtime": {
+    "gpus": {"discoloop": 8, "loop": 9},
+    "cpu_threads": 4,
+    "memory_gib": 48,
+    "gpu_memory_max_mib": 1024,
+    "gpu_utilization_max": 5,
+    "tracking": "online",
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "python": "/mnt/disk2_from_server2/siqizhu4/llm-memory/.venv/bin/python",
+    "execution": "Independent explicit lm-memory Docker context; frozen source and pinned image; no default Docker fallback",
+    "timeout_hours": 12
+  },
+  "scope": [
+    "Random initialization, compact symbolic vocabulary; no old 300k checkpoint, tokenizer download or pretrained teacher",
+    "All old atomic facts may be learned, including role-OOD facts. Only II ordinary composition support is trained",
+    "Warmup trains old atomic/II answers plus long-window corrected atomic reading; adaptation adds differentiable TTCD writing and independent atomic read/retention",
+    "No corrected two-hop labels or corrected composite queries during either training stage",
+    "Correction training facts exclude calibration and evaluation edited target facts; all D queries are outside ordinary composition training support",
+    "Each training batch item has independent fast matrices, reset every episode; all repeated physical-layer executions share its matrix",
+    "At test time backbone frozen, write only second-hop atomic correction, then clear text/KV and retain only fast matrices",
+    "Both models share initialization tensors and data stream, with independently random physical layers; compare exposure and report different compute",
+    "Independent training reload audit precedes reading calibration and closed-context edit evaluation",
+    "One development world and one initialization; no universal mechanism or efficiency claim"
+  ]
+}

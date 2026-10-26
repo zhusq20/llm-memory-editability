@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "utc": "2026-10-17T08:55:39.164784+00:00",
+  "reason": "Source verification on NFS can outlast the first resource snapshot; recheck GPU immediately before container creation and again before start.",
+  "scientific_source_changed": false,
+  "configuration_changed": false,
+  "training_containers_stopped": false,
+  "previous_controller_pid": 558545,
+  "previous_controller_signal": "SIGTERM; preserve and recover existing containers",
+  "scheduler_guard": "runtime-amendment/guard_gated_depth_launch.py",
+  "scheduler_guard_sha256": "81523b21748e24a28af2dd88f59a300ca30a0d8594cbfb4468ac2a2ba6a70db8",
+  "guard_tests_sha256": "e51b5120aee12cd849f7f1640fca2ba818c212aa176f17801fdbc3c2ff2bb6ff",
+  "freeze_sha256": "e3bff651ff4177a5d954a081ec575036abc9877f96e230c2891f43c338b7bcf2",
+  "validation": {
+    "guard_and_controller_tests": 18,
+    "passed": true,
+    "additional_guard_tests": 3,
+    "ruff": "passed"
+  },
+  "observed_existing_smokes": {
+    "N-Fixed": {
+      "steps": 32,
+      "container_exit": 0
+    },
+    "N-Full": {
+      "steps": 32,
+      "container_exit": 0
+    }
+  }
+}

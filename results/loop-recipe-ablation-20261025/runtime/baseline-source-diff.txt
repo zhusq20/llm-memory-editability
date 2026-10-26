@@ -1,0 +1,445 @@
+--- baseline/scripts/launch_loop_fourway.py
+
++++ current/scripts/launch_loop_fourway.py
+
+@@ -171,7 +171,7 @@
+
+             "--pids-limit",
+             "256",
+             "--network",
+-            "bridge",
++            "host",
+             "--tmpfs",
+             "/tmp:rw,nosuid,nodev,size=2g",
+             "--user",
+--- baseline/scripts/run_loop_fourway.py
+
++++ current/scripts/run_loop_fourway.py
+
+@@ -67,16 +67,18 @@
+
+         pad_token_id=metadata["pad_token"],
+         use_cache=False,
+     )
+-    if name == "infiloop":
++    arm = config["arms"][name]
++    options = {**config["handoff"], **{k: v for k, v in arm.items() if k != "handoff"}}
++    if arm["handoff"] == "infiloop":
+         model = InfiLoopGPT(
+             hf,
+             training["evaluation_repeats"],
+             state_seed=config["infiloop_state_seed"],
+-            **config["handoff"],
++            **options,
+         )
+     else:
+         model = LoopNativeHandoffGPT(
+-            hf, training["evaluation_repeats"], handoff=ARMS[name], **config["handoff"]
++            hf, training["evaluation_repeats"], handoff=arm["handoff"], **options
+         )
+     torch.manual_seed(config["dropout_seed"])
+     return model.to(device)
+@@ -100,23 +102,26 @@
+
+     total = rounds * native.matmul_flops(cfg, batch, sequence=length, output_positions=0)
+     total += 3 * 2 * batch * slots * width * vocab
+     if model.handoff == "invariant":
+-        total += (3 * 2 + 2) * batch * length * width * vocab
++        feedback = model.feedback_to_candidate
++        total += (3 * 2 + 2 * feedback) * batch * length * width * vocab
+         total += rounds * (
+-            3 * 4 * batch * length * width * vocab
++            3 * (2 + 2 * feedback) * batch * length * width * vocab
+             + 3 * 2 * batch * length * model.handoff_score_in.shape[0] * 6
+         )
+     elif model.handoff == "additive":
+         total += (rounds - 1) * 3 * 4 * batch * length * width * vocab
+     elif model.handoff == "infiloop":
+         total += (3 * rounds + 1) * 2 * batch * length * width
++        if model.feedback_to_candidate:
++            total += rounds * 3 * 4 * batch * length * width * vocab
+     return total
+ 
+ 
+ @contextmanager
+-def implementation():
++def implementation(validator=validate_config):
+     replacements = {
+         "initialize": initialize,
+-        "validate_config": validate_config,
++        "validate_config": validator,
+         "backward_batch": backward_batch,
+         "terminal_step_flops": terminal_step_flops,
+         "handoff_parameter_count": lambda kind, width, hidden=16: (
+@@ -133,14 +138,9 @@
+
+             setattr(native, key, value)
+ 
+ 
+-def main():
+-    parser = argparse.ArgumentParser(description=__doc__)
+-    parser.add_argument("--config", type=Path, required=True)
+-    parser.add_argument("--base", type=Path, required=True)
+-    parser.add_argument("--arm", choices=list(ARMS), required=True)
+-    args = parser.parse_args()
+-    config = json.loads(args.config.read_text())
+-    validate_config(config)
++def run(config, config_path, base, arm, *, validator=validate_config):
++    """Common execution with a batch-specific matrix and authorization validator."""
++    validator(config)
+     torch.set_num_threads(config["runtime"]["cpu_threads"])
+     torch.set_num_interop_threads(1)
+     torch.cuda.set_device(0)
+@@ -150,16 +150,16 @@
+
+     if secret.exists():
+         os.environ["WANDB_API_KEY"] = secret.read_text().strip()
+     holder = {}
+-    out = args.base / "runs" / args.arm
++    out = base / "runs" / arm
+ 
+     def track(metadata):
+-        holder["log"] = native.tracker_for(config, args.arm, out, args.config)
++        holder["log"] = native.tracker_for(config, arm, out, config_path)
+         return holder["log"]
+ 
+     try:
+-        with implementation():
+-            native.train(config, args.arm, out, False, args.config, track, torch.device("cuda:0"))
+-            native.grid(config, args.arm, args.base, args.config, torch.device("cuda:0"))
++        with implementation(validator):
++            native.train(config, arm, out, False, config_path, track, torch.device("cuda:0"))
++            native.grid(config, arm, base, config_path, torch.device("cuda:0"))
+     except BaseException:
+         if "log" in holder:
+             holder["log"].run.finish(exit_code=1)
+@@ -169,5 +169,15 @@
+
+             holder["log"].run.finish()
+ 
+ 
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--config", type=Path, required=True)
++    parser.add_argument("--base", type=Path, required=True)
++    parser.add_argument("--arm", choices=list(ARMS), required=True)
++    args = parser.parse_args()
++    config = json.loads(args.config.read_text())
++    run(config, args.config, args.base, args.arm)
++
++
+ if __name__ == "__main__":
+     main()
+--- baseline/src/llm_memory_editability/loop_comparison.py
+
++++ current/src/llm_memory_editability/loop_comparison.py
+
+@@ -1,4 +1,4 @@
+
+-"""Four loop mechanisms on the agreed shared GPT backbone.
++"""Four loop mechanisms and their feedback controls on the agreed shared GPT backbone.
+ 
+ InfiLoop is a single-stream adaptation of the authors' Connection, initialization
+ and raw-candidate recurrence, not their Sudoku H/L/grid architecture. Reference:
+@@ -19,8 +19,14 @@
+
+ class InfiLoopGPT(LoopNativeHandoffGPT):
+     """Original scored raw candidates and fixed random prior on a common backbone."""
+ 
+-    def __init__(self, config, repeats, *, state_seed, **options):
+-        super().__init__(config, repeats, handoff="content", **options)
++    def __init__(self, config, repeats, *, state_seed, feedback_to_candidate=False, **options):
++        super().__init__(
++            config,
++            repeats,
++            handoff="content",
++            feedback_to_candidate=feedback_to_candidate,
++            **options,
++        )
+         self.handoff = "infiloop"
+         # Author initialization: variance-corrected truncated N(0,1), fixed buffer.
+         # Use a separate RNG so all four methods retain identical backbone weights.
+@@ -56,6 +62,10 @@
+
+     def aggregate_round(self, state, injection, *, first_round=False):
+         high, numerator, denominator = state[:3]
+         candidate = self._round(high + injection)
++        if self.feedback_to_candidate:
++            # The added control changes only the candidate H -> H + q(H).
++            # InfiLoop still scores/aggregates it without normalizing the value.
++            candidate = _loss_dtype(candidate) + self._decoded_feedback(candidate)[1]
+         weight = self.content_weight(candidate)
+         numerator = self.beta * numerator + weight * candidate.float()
+         denominator = self.beta * denominator + weight
+--- baseline/src/llm_memory_editability/loop_native_handoff.py
+
++++ current/src/llm_memory_editability/loop_native_handoff.py
+
+@@ -1,7 +1,7 @@
+
+ """Loop-native handoff between rounds of a shared GPT block (InfiLoop-style carry).
+ 
+-All handoffs share the GPT-2 block and tied readout. Except for ``plain``, they
+-use DiscoLoop feedback q(H) = RMSNorm(E^T softmax(E ln_f(H) / tau)).
++All handoffs share the GPT-2 block and tied readout. By default, except for
++``plain``, they use DiscoLoop feedback q(H) = RMSNorm(E^T softmax(E ln_f(H) / tau)).
+ 
+ ``plain``      Ordinary Loop: pass raw H directly to the next shared block call.
+ ``additive``   The existing DiscoLoop chain: a round passes H + q(H) to the next one.
+@@ -36,6 +36,10 @@
+
+ then the recurrence above for t >= 2. Its carry also retains the original embedding
+ (including embedding dropout), so continuing a trajectory never reinjects a new draw.
+ The default retains the historical recurrence for existing configs/checkpoints.
++
++The feedback ablation sets feedback_to_candidate=False: c_t = RMSNorm(H_t).
++It retains the decoded probabilities in the invariant score, but never constructs
++or adds the decoded embedding. All historical configurations default to True.
+ """
+ 
+ from __future__ import annotations
+@@ -81,6 +85,7 @@
+
+         score_seed=0,
+         eps=1e-6,
+         first_round_input="state_plus_embedding",
++        feedback_to_candidate=True,
+     ):
+         if handoff not in SUPPORTED_HANDOFFS:
+             raise ValueError(f"Unknown handoff: {handoff}")
+@@ -90,6 +95,8 @@
+
+             raise ValueError("score_clip must be finite and positive")
+         if first_round_input not in ("embedding", "state_plus_embedding"):
+             raise ValueError("Unknown first-round input rule")
++        if type(feedback_to_candidate) is not bool:
++            raise ValueError("feedback_to_candidate must be a boolean")
+         super().__init__(
+             config,
+             repeats,
+@@ -101,6 +108,7 @@
+
+         )
+         self.handoff, self.score_clip, self.eps = handoff, score_clip, eps
+         self.first_round_input = first_round_input
++        self.feedback_to_candidate = feedback_to_candidate
+         if handoff in ("additive", "plain"):
+             return
+         self.handoff_beta_logit = nn.Parameter(
+@@ -124,10 +132,14 @@
+
+     def beta(self):
+         return torch.sigmoid(_loss_dtype(self.handoff_beta_logit))
+ 
++    def _decoded_probabilities(self, state):
++        """Decode for scoring without projecting probabilities back to embeddings."""
++        logits = _readout(self, state)
++        return (_loss_dtype(logits) / self.discoloop_temperature).softmax(-1)
++
+     def _decoded_feedback(self, state):
+         """Return the full-vocabulary decode and q(state), both float32."""
+-        logits = _readout(self, state)
+-        probability = (_loss_dtype(logits) / self.discoloop_temperature).softmax(-1)
++        probability = self._decoded_probabilities(state)
+         soft = F.linear(probability, self.transformer.wte.weight.T)
+         return probability, rms_normalize(soft, self.discoloop_eps)
+ 
+@@ -162,7 +174,13 @@
+
+ 
+     def initial_state(self, injection):
+         state = (injection, injection, injection.new_ones((*injection.shape[:-1], 1)))
+-        probability = self._decoded_feedback(injection)[0] if self.handoff == "invariant" else None
++        probability = None
++        if self.handoff == "invariant":
++            probability = (
++                self._decoded_feedback(injection)[0]
++                if self.feedback_to_candidate
++                else self._decoded_probabilities(injection)
++            )
+         state = (*state, probability)
+         return (*state, injection) if self.first_round_input == "embedding" else state
+ 
+@@ -173,8 +191,12 @@
+
+             injection if first_round and self.first_round_input == "embedding" else h + injection
+         )
+         output = self._round(block_input)
+-        probability, feedback = self._decoded_feedback(output)
+-        candidate = rms_normalize(_loss_dtype(output) + feedback, self.eps)
++        if self.feedback_to_candidate:
++            probability, feedback = self._decoded_feedback(output)
++            candidate = rms_normalize(_loss_dtype(output) + feedback, self.eps)
++        else:
++            probability = self._decoded_probabilities(output)
++            candidate = rms_normalize(output, self.eps)
+         weight = (
+             self.score(candidate, h, probability, previous_probability)
+             .clamp(-self.score_clip, self.score_clip)
+--- baseline/tests/test_loop_comparison.py
+
++++ current/tests/test_loop_comparison.py
+
+@@ -1,4 +1,4 @@
+
+-"""Minimal contracts for the four-method comparison before a long run."""
++"""Contracts for the four-method comparison and its two feedback controls."""
+ 
+ import copy
+ import importlib.util
+@@ -12,9 +12,13 @@
+
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ sys.path.insert(0, str(ROOT / "scripts"))
++import run_loop_feedback_controls as controls  # noqa: E402
+ import run_loop_fourway as runner  # noqa: E402
+ 
+ from llm_memory_editability.loop_comparison import endpoint_loss, terminal_logits  # noqa: E402
++from llm_memory_editability.loop_native_handoff import rms_normalize  # noqa: E402
++
++ALL_ARMS = [*runner.ARMS, *controls.ARMS]
+ 
+ 
+ def config():
+@@ -23,6 +27,7 @@
+
+ 
+ def model(arm):
+     c = config()
++    c["arms"].update(controls.ARMS)
+     c["model"].update(
+         n_embd=12, n_head=3, n_positions=12, n_ctx=12, resid_pdrop=0, embd_pdrop=0, attn_pdrop=0
+     )
+@@ -39,12 +44,15 @@
+
+     torch.set_num_threads(before)
+ 
+ 
+-@pytest.mark.parametrize("arm", list(runner.ARMS))
++@pytest.mark.parametrize("arm", ALL_ARMS)
+ def test_masked_endpoints_and_gradients_match_independent_trajectories(arm):
+     a = model(arm)
+-    if arm == "infiloop":
++    if a.handoff == "infiloop":
+         with torch.no_grad():
+             a.handoff_query.uniform_(-0.1, 0.1)
++    elif a.handoff == "invariant":
++        with torch.no_grad():
++            a.handoff_score_out.add_(0.1)
+     b = copy.deepcopy(a)
+     tokens = torch.tensor([[2, 4, 7, 8, 1], [3, 2, 9, 1, 5], [5, 2, 6, 8, 3]])
+     positions = torch.tensor([[1, 3], [1, 2], [2, 4]])
+@@ -72,7 +80,7 @@
+
+ 
+ 
+ def test_same_backbone_and_one_block_for_every_arm():
+-    models = [model(arm) for arm in runner.ARMS]
++    models = [model(arm) for arm in ALL_ARMS]
+     assert len({runner.native.backbone_digest(m) for m in models}) == 1
+     assert all(len(m.transformer.h) == 1 for m in models)
+     runner.validate_config(config())
+@@ -117,10 +125,100 @@
+
+     torch.testing.assert_close(actual.handoff_beta_logit.grad, connection.beta_logit.grad[0])
+ 
+ 
+-@pytest.mark.parametrize("arm", list(runner.ARMS))
++@pytest.mark.parametrize("arm", ALL_ARMS)
+ def test_future_answer_cannot_change_answer_position(arm):
+     m = model(arm)
+     x = torch.tensor([[2, 4, 7, 8, 1], [2, 4, 7, 3, 5]])
+     pos = torch.tensor([[2], [2]])
+     logits = terminal_logits(m, x, pos, [8, 8])
+     torch.testing.assert_close(logits[0], logits[1], rtol=0, atol=0)
++
++
++def test_infiloop_feedback_changes_only_candidate_before_original_connection(monkeypatch):
++    actual, baseline = model("infiloop-feedback"), model("infiloop")
++    for key, value in actual.state_dict().items():
++        torch.testing.assert_close(value, baseline.state_dict()[key], rtol=0, atol=0)
++    with torch.no_grad():
++        actual.handoff_query.uniform_(-0.1, 0.1)
++    baseline.load_state_dict(actual.state_dict())
++    e = torch.randn(2, 5, 12)
++    output = torch.randn_like(e, requires_grad=True)
++    feedback = torch.randn_like(e, requires_grad=True)
++    monkeypatch.setattr(actual, "_round", lambda x: output)
++    monkeypatch.setattr(actual, "_decoded_feedback", lambda x: (None, feedback))
++    clone = (output + feedback).detach().clone().requires_grad_(True)
++    monkeypatch.setattr(baseline, "_round", lambda x: clone)
++    state, gamma = actual.aggregate_round(actual.initial_state(e), e)
++    expected, expected_gamma = baseline.aggregate_round(baseline.initial_state(e), e)
++    for a, b in zip(state[:3], expected[:3], strict=True):
++        torch.testing.assert_close(a, b, rtol=0, atol=0)
++    torch.testing.assert_close(gamma, expected_gamma, rtol=0, atol=0)
++    state[0].square().sum().backward()
++    expected[0].square().sum().backward()
++    torch.testing.assert_close(output.grad, clone.grad)
++    torch.testing.assert_close(feedback.grad, clone.grad)
++
++
++def test_invariant_removes_embedding_projection_but_keeps_probability_score(monkeypatch):
++    actual = model("invariant-no-feedback")
++    with torch.no_grad():
++        actual.handoff_score_out.fill_(0.5)
++
++    def forbidden(*args):
++        raise AssertionError("The removed embedding-feedback branch was evaluated")
++
++    monkeypatch.setattr(actual, "_decoded_feedback", forbidden)
++    monkeypatch.setattr(actual, "_discoloop_boundary", forbidden)
++    e = torch.randn(2, 5, 12)
++    old = actual.initial_state(e)
++    output = torch.randn_like(e, requires_grad=True)
++    probability = actual._decoded_probabilities(output)
++    probability.retain_grad()
++    monkeypatch.setattr(actual, "_round", lambda x: output)
++    monkeypatch.setattr(actual, "_decoded_probabilities", lambda x: probability)
++    state, gamma = actual.aggregate_round(old, e, first_round=True)
++    candidate = rms_normalize(output, actual.eps)
++    expected_weight = (
++        actual.score(candidate, old[0], probability, old[3]).clamp(-8, 8).exp()[..., None]
++    )
++    denominator = actual.beta * old[2] + expected_weight
++    expected = (actual.beta * old[1] + expected_weight * candidate) / denominator
++    torch.testing.assert_close(state[0], expected)
++    torch.testing.assert_close(gamma, expected_weight / denominator)
++    assert state[3] is probability
++    state[0].square().sum().backward()
++    assert probability.grad is not None and probability.grad.abs().sum() > 0
++    assert output.grad is not None and output.grad.abs().sum() > 0
++
++
++@pytest.mark.parametrize("arm", list(controls.ARMS))
++def test_control_continuation_trace_and_reload_retain_the_same_endpoint(arm):
++    actual = model(arm)
++    tokens = torch.tensor([[2, 4, 7, 8, 1]])
++    positions = torch.tensor([[1, 3]])
++    _, state = actual.run(tokens, positions, rounds=2)
++    continued, _ = actual.run(tokens, positions, rounds=3, state=state, carry=False)
++    expected = terminal_logits(actual, tokens, positions, [5])
++    trace = actual.trace(tokens, positions, 5)[0][-1]
++    reloaded = model(arm)
++    reloaded.load_state_dict(actual.state_dict())
++    torch.testing.assert_close(continued, expected, rtol=0, atol=0)
++    torch.testing.assert_close(trace, expected, rtol=0, atol=0)
++    torch.testing.assert_close(reloaded.run(tokens, positions, 5)[0], expected, rtol=0, atol=0)
++
++
++def test_feedback_control_recipe_is_paired_and_separate_from_fourway():
++    c = json.loads((ROOT / "configs" / f"{controls.BATCH}.json").read_text())
++    controls.validate_config(c)
++    with pytest.raises(ValueError):
++        runner.validate_config(c)
++    for change in ("candidate", "seed", "budget"):
++        altered = copy.deepcopy(c)
++        if change == "candidate":
++            altered["arms"]["invariant-no-feedback"]["feedback_to_candidate"] = True
++        elif change == "seed":
++            altered["training"]["initialization"] += 1
++        else:
++            altered["budget"]["arms"] += 1
++        with pytest.raises(ValueError):
++            controls.validate_config(altered)

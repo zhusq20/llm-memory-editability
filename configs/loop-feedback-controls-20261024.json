@@ -1,0 +1,185 @@
+{
+  "batch": "loop-feedback-controls-20261024",
+  "status": "authorized_for_formal_training",
+  "authorization": "2026-10-24 America/Chicago: user explicitly authorizes two additional runs at 1,500,000 updates each, sharing two sufficiently free GPUs with the existing four-arm comparison after resource checks; do not interrupt existing tasks.",
+  "question": "Within each existing method, what changes when decoded embedding feedback is added to InfiLoop or removed from invariant while retaining its probability-based score?",
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "schedule_seed": 2026102001,
+    "unique_layers": 1,
+    "evaluation_repeats": 8,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "final_lr_fraction": 0.1,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "grad_clip": 1.0,
+    "ema_decay": 0.999,
+    "batch_size": 512,
+    "steps": 1500000,
+    "objective": "terminal_token_mean",
+    "backpropagation": "full",
+    "execution": "masked_batch",
+    "depth_sampling": {
+      "distribution": "poisson",
+      "mean": 8.0,
+      "minimum": 1,
+      "maximum": 16,
+      "scope": "sequence",
+      "truncation": "reject"
+    }
+  },
+  "handoff": {
+    "initial_beta": 0.55,
+    "score_hidden": 16,
+    "score_clip": 8.0,
+    "score_seed": 2026102002,
+    "first_round_input": "embedding"
+  },
+  "dropout_seed": 2026101604,
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000,
+    400000,
+    500000,
+    600000,
+    700000,
+    800000,
+    900000,
+    1000000,
+    1100000,
+    1200000,
+    1300000,
+    1400000,
+    1500000
+  ],
+  "evaluation_rounds": [
+    4,
+    8,
+    16
+  ],
+  "grid_rounds": 32,
+  "grid_joint_rounds": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "evaluation_batch_size": 256,
+  "heartbeat_steps": 100,
+  "smoke_steps": 200,
+  "input_origin": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+    "reuse": "Exact existing 40000-example world and 43000-query panels used by every DiscoLoop/gate multi-hop arm"
+  },
+  "input_root": "/input",
+  "paired_recipe": {
+    "initial_backbone_sha256": "39a487823c05311a223db99c3d0e2df3e7a1752498e261337f4298abe0cfa7b0",
+    "note": "Every arm's backbone at step 0 must equal the reused ungated DiscoLoop's step-0 model; handoff parameters are created without consuming the global RNG."
+  },
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:b7933a57d6a4702700b6b2578fe0cc697f91b2080ef5e18d8fb916443281eacd",
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "cpu_threads": 2,
+    "memory_gib": 16,
+    "gpu_memory_fraction": 0.16,
+    "minimum_free_gpu_mib": 40000,
+    "sharing": "one additional control per selected existing four-arm GPU",
+    "selected_gpu_indices": [
+      4,
+      8
+    ],
+    "per_task_peak_headroom_mib": 6144,
+    "whole_gpu_headroom_mib": 8192
+  },
+  "tracking": {
+    "provider": "wandb",
+    "entity": "zsqzz",
+    "project": "llm-memory-editability",
+    "mode": "online"
+  },
+  "arms": {
+    "infiloop-feedback": {
+      "handoff": "infiloop",
+      "feedback_to_candidate": true
+    },
+    "invariant-no-feedback": {
+      "handoff": "invariant",
+      "feedback_to_candidate": false
+    }
+  },
+  "primary": "EMA R8 full-pool answer accuracy; also EMA R4/R16 and final raw/EMA R4/R8/R16/R32. Equal steps/exposure, not equal FLOPs.",
+  "budget": {
+    "per_arm_updates": 1500000,
+    "arms": 2,
+    "restarts_of_held_initialization_jobs": 0,
+    "new_scientific_updates_authorized": 3000000
+  },
+  "loss": {
+    "normalization": "sum CE over all valid supervised tokens / total valid tokens in the logical batch",
+    "ignore_index": -100,
+    "supervision": "terminal_only",
+    "execution": "sample independent depths first; advance the full batch; freeze h/N/D/p at each endpoint without detach; one backward, clip and update",
+    "current_data": "one answer token and one EOS token per sample; no separate category weights"
+  },
+  "infiloop_state_seed": 2026102401,
+  "architecture_scope": {
+    "common": "GPT2 shared block, width768, heads12, one layer, tied embeddings/readout, causal attention, dropout0.1",
+    "infiloop-feedback": "Same InfiLoop random initial state, scoring, learned beta and N/D aggregation; candidate is H + RMSNorm(E^T softmax(LMHead(H))). No outer candidate normalization; feedback is included at every active round including the terminal candidate.",
+    "invariant-no-feedback": "Same embedding-first initialization, invariant score and normalized history; candidate is RMSNorm(H). Decode probabilities still enter the score; no probability-to-embedding projection and no feedback addition."
+  },
+  "source_references": [
+    {
+      "name": "DiscoLoop symbolic task and equations4-6",
+      "url": "https://arxiv.org/html/2607.00341v2",
+      "implementation_status": "Paper recurrence reproduced on common backbone; no author repository identified in paper or public repository search"
+    },
+    {
+      "name": "InfiLoop released implementation",
+      "url": "https://github.com/pixeli99/InfiLoop/blob/63716a9c46723d3592c8ad4fc5819855f22aaa47/sudoku/model.py",
+      "commit": "63716a9c46723d3592c8ad4fc5819855f22aaa47",
+      "adaptation": "Preserve fixed random initial-state rule, raw candidate, Connection score/start/forward; one stream on causal GPT backbone as confirmed by user"
+    }
+  ],
+  "paired_baselines": {
+    "batch": "loop-fourway-terminal-20261024",
+    "infiloop-feedback": "infiloop",
+    "invariant-no-feedback": "invariant",
+    "reuse": "Reuse the existing two baseline runs; do not restart or modify the four-arm batch."
+  }
+}

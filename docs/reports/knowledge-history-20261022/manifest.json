@@ -1,0 +1,162 @@
+{
+  "date": "2026-10-22",
+  "timezone": "America/Chicago",
+  "scope": "documentation_only",
+  "new_scientific_updates": 0,
+  "sources": {
+    "AGENTS.md": {
+      "sha256": "94842908d315f2059216cd1bfd33dbd9078bdbe55ec5faafc76a6a86e5479316",
+      "lines": 95,
+      "characters": 9773
+    },
+    "README.md": {
+      "sha256": "95d4acf87e98f6fe2f25cd8fbb42bb15ba6fe6dc93b9072b0977c9f0b91fdb17",
+      "lines": 92,
+      "characters": 3962
+    },
+    "CONTRIBUTING.md": {
+      "sha256": "ac1b8750475862ce67bac8b9238bc1c4619ca7c7ba1ba77e542481c1311cc3ba",
+      "lines": 41,
+      "characters": 1938
+    },
+    ".gitignore": {
+      "sha256": "19a6ff9b849ad90a5e7b31506a0fdc76ad8e2533e76da3771073323c36e97a2a",
+      "lines": 49,
+      "characters": 813
+    },
+    "docs/roadmap.md": {
+      "sha256": "b31e5cca6c0d7ac4751d8e3961f766fc31c7959d42cfc57ef8cd037da6e075cf",
+      "lines": 448,
+      "characters": 28262
+    },
+    "docs/results.md": {
+      "sha256": "8b87c77daf6576b1f164bcc1885a158e843a34b90efd44735221a8e92abdf86d",
+      "lines": 2166,
+      "characters": 174840
+    },
+    "docs/memory-scaling-theory.md": {
+      "sha256": "f5319e5c0eba903e8eb4e57b966737e69b7854e520525f6bc9ac6ea10749858a",
+      "lines": 1147,
+      "characters": 72378
+    },
+    "docs/experimental-protocol.md": {
+      "sha256": "436b8d425987b008b01d46da6374668c20351071e56727a7b9b2227c5cb0c8fb",
+      "lines": 326,
+      "characters": 24093
+    },
+    "docs/loop-roadmap.md": {
+      "sha256": "924e181ace5559f69495c1da80967d2b30e4c9d24a3a4fb2c2d43e43bc9e2053",
+      "lines": 67,
+      "characters": 3815
+    },
+    "docs/loop-history.md": {
+      "sha256": "92ba73be4b51b118931d26c39f39750616a06129106754b5a06d86271ed67a66",
+      "lines": 43,
+      "characters": 4088
+    },
+    "docs/reports/loop-evidence-history-20261022.md": {
+      "sha256": "7138287d5034d4457f288c40af79adb88187258c0bda9737d7b310b4cc0a72b0",
+      "lines": 693,
+      "characters": 75015
+    },
+    "docs/reports/lm-knowledge-progress-review-20261021.md": {
+      "sha256": "6c87aca5f092d6550d2b257e0857e6655d8ce9231764ffadc3945bd883fe35e3",
+      "lines": 37,
+      "characters": 2712
+    },
+    "docs/reports/lm-knowledge-methods-and-memory-20261021.md": {
+      "sha256": "2c26b7e6f589bca7515764c8c61ad4496d22ce0972f0b19a55494dda2f2d4618",
+      "lines": 101,
+      "characters": 9320
+    }
+  },
+  "outputs": {
+    "docs/reports/knowledge-history-20261022/agents.md": {
+      "sha256": "0cdc433777503a80feff83175d262a8f0b9509e0471c3882e48f29fb925922de",
+      "lines": 97,
+      "characters": 10061
+    },
+    "docs/reports/knowledge-history-20261022/roadmap.md": {
+      "sha256": "39a953b711a6777b81b4f5daeccbc023c77f821ed66cb90e59229db497a36329",
+      "lines": 450,
+      "characters": 28766
+    },
+    "docs/reports/knowledge-history-20261022/results.md": {
+      "sha256": "a82c14d3adeafa9f2d0f7b0cb07db4fe356284fbefe8027c065667df63b1d3e8",
+      "lines": 2168,
+      "characters": 177222
+    },
+    "docs/reports/knowledge-history-20261022/theory.md": {
+      "sha256": "2d889d673061f82e081c667dd771f82f4e1764eab45e4b79df0d5f9962d0749c",
+      "lines": 1149,
+      "characters": 72983
+    },
+    "docs/roadmap.md": {
+      "sha256": "8a4d9663dcdd5028f39c168eaed52ea015d518b6ca02ba50b6d3c182596e346b",
+      "lines": 192,
+      "characters": 12801
+    },
+    "docs/results.md": {
+      "sha256": "bb49e8e12fb070c7b3f6d49755c25bb18c517e877aef8718c2a494a56311c9c3",
+      "lines": 288,
+      "characters": 34048
+    },
+    "AGENTS.md": {
+      "sha256": "0098b94e0d8b8de4cab232175cfcbb464207146ff68de62eefbadb3c2ff23284",
+      "lines": 76,
+      "characters": 4988
+    },
+    "docs/memory-scaling-theory.md": {
+      "sha256": "e0d5777d40e1b4d0929d043fa5c6dc130c031dc94fec5f98dce9b6ac05300b05",
+      "lines": 666,
+      "characters": 38061
+    },
+    "README.md": {
+      "sha256": "402202b6ffcd61c9c71048d686fab528d54f12f27633770fc2a00b9c77537241",
+      "lines": 77,
+      "characters": 3438
+    },
+    "CONTRIBUTING.md": {
+      "sha256": "421a639d6f367890f52149e5c2b669e64d9f56309ee0d0d18d8b7fc29b57bcd4",
+      "lines": 47,
+      "characters": 2239
+    },
+    "docs/experimental-protocol.md": {
+      "sha256": "c8a6a7e66268c64bd2334ee13ccdac97b8a46a9dbbb099d9dc698a12b0215625",
+      "lines": 326,
+      "characters": 24186
+    },
+    "docs/reports/lm-knowledge-progress-review-20261021.md": {
+      "sha256": "0b17867c3f90a03f30297c1c69c6b4faad7aa30465f023fb91555add4560d104",
+      "lines": 39,
+      "characters": 2903
+    },
+    "docs/reports/lm-knowledge-methods-and-memory-20261021.md": {
+      "sha256": "b27cd55dbfa813bf7f275350a9682100e128e455f37a968b6544cf22879669d0",
+      "lines": 103,
+      "characters": 9511
+    },
+    ".gitignore": {
+      "sha256": "1d46a9aad636698adb2fd0ba5f47103a8beb57f68e5680d3d38b7f3ca7695a27",
+      "lines": 53,
+      "characters": 973
+    },
+    "docs/reports/knowledge-history-20261022/README.md": {
+      "sha256": "56abd2d5415af29014d87077b1ccb7cdcbf9575ab9a3fb78d7e0f2c5665acfd7",
+      "lines": 16,
+      "characters": 703
+    }
+  },
+  "snapshots": {
+    "AGENTS.md": "agents.md",
+    "docs/roadmap.md": "roadmap.md",
+    "docs/results.md": "results.md",
+    "docs/memory-scaling-theory.md": "theory.md"
+  },
+  "snapshot_transform": "historical banner and relative Markdown link rebasing only",
+  "preserved": [
+    "scientific artifacts and frozen protocols",
+    "docs/loop-roadmap.md",
+    "experimental-protocol sections 16-18"
+  ]
+}

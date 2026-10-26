@@ -1,0 +1,238 @@
+{
+  "batch": "loop-invariant-robustness-v1",
+  "authorization": "2026-10-21 user requests stability, changed-data sensitivity and InfiLoop-style depth extension experiments.",
+  "status": "preparing authorized eight paired training runs and zero-training depth replay",
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2",
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "cpu_threads": 2,
+    "memory_gib": 16,
+    "gpu_memory_fraction": 0.16,
+    "minimum_free_gpu_mib": 18000,
+    "maximum_idle_gpu_used_mib": 512,
+    "gpu_candidates": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "maximum_parallel": 4,
+    "cpu_sets": [
+      "70,71",
+      "72,73",
+      "74,75",
+      "76,77"
+    ]
+  },
+  "jobs": {
+    "init-1-invariant": {
+      "kind": "new",
+      "condition": "init-1",
+      "arm": "invariant",
+      "config": "configs/loop-invariant-robustness-v1/init-1.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "init-1-ema": {
+      "kind": "new",
+      "condition": "init-1",
+      "arm": "ema",
+      "config": "configs/loop-invariant-robustness-v1/init-1.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "init-2-invariant": {
+      "kind": "new",
+      "condition": "init-2",
+      "arm": "invariant",
+      "config": "configs/loop-invariant-robustness-v1/init-2.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "init-2-ema": {
+      "kind": "new",
+      "condition": "init-2",
+      "arm": "ema",
+      "config": "configs/loop-invariant-robustness-v1/init-2.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "new-world-invariant": {
+      "kind": "new",
+      "condition": "new-world",
+      "arm": "invariant",
+      "config": "configs/loop-invariant-robustness-v1/new-world.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "new-world-ema": {
+      "kind": "new",
+      "condition": "new-world",
+      "arm": "ema",
+      "config": "configs/loop-invariant-robustness-v1/new-world.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "many-to-one-invariant": {
+      "kind": "new",
+      "condition": "many-to-one",
+      "arm": "invariant",
+      "config": "configs/loop-invariant-robustness-v1/many-to-one.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "many-to-one-ema": {
+      "kind": "new",
+      "condition": "many-to-one",
+      "arm": "ema",
+      "config": "configs/loop-invariant-robustness-v1/many-to-one.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "old-invariant": {
+      "kind": "reused",
+      "arm": "invariant",
+      "config": "configs/loop-native-handoff-development-v1.json",
+      "run": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-native-handoff-development-v1/runs/invariant",
+      "stages": [
+        "depth"
+      ]
+    },
+    "old-ema": {
+      "kind": "reused",
+      "arm": "ema",
+      "config": "configs/loop-native-handoff-development-v1.json",
+      "run": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-native-handoff-development-v1/runs/ema",
+      "stages": [
+        "depth"
+      ]
+    },
+    "old-content": {
+      "kind": "reused",
+      "arm": "content",
+      "config": "configs/loop-native-handoff-development-v1.json",
+      "run": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-native-handoff-development-v1/runs/content",
+      "stages": [
+        "depth"
+      ]
+    },
+    "old-recipe-additive": {
+      "kind": "reused",
+      "arm": "recipe-additive",
+      "config": "configs/loop-native-handoff-development-v1.json",
+      "run": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-native-handoff-development-v1/runs/recipe-additive",
+      "stages": [
+        "depth"
+      ]
+    },
+    "old-invariant-raw": {
+      "kind": "reused",
+      "arm": "invariant",
+      "config": "configs/loop-native-handoff-development-v1.json",
+      "run": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-native-handoff-development-v1/runs/invariant",
+      "stages": [
+        "depth"
+      ],
+      "weights": "raw",
+      "deep": false
+    }
+  },
+  "depth_tiers": [
+    {
+      "name": "full-r256",
+      "rows": null,
+      "rounds": 256
+    },
+    {
+      "name": "sample1024-r1024",
+      "rows": 1024,
+      "rounds": 1024
+    },
+    {
+      "name": "sample256-r16384",
+      "rows": 256,
+      "rounds": 16384
+    }
+  ],
+  "budget": {
+    "new_scientific_runs": 8,
+    "steps_per_run": 1500000,
+    "new_updates": 12000000,
+    "smoke_steps_per_run": 32
+  },
+  "tracking": {
+    "provider": "wandb",
+    "entity": "zsqzz",
+    "project": "llm-memory-editability",
+    "mode": "online"
+  },
+  "execution_order": [
+    "old-invariant",
+    "init-1-invariant",
+    "init-1-ema",
+    "new-world-invariant",
+    "new-world-ema",
+    "many-to-one-invariant",
+    "many-to-one-ema",
+    "init-2-invariant",
+    "init-2-ema",
+    "old-ema",
+    "old-content",
+    "old-recipe-additive",
+    "old-invariant-raw"
+  ]
+}

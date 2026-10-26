@@ -1,0 +1,76 @@
+{
+  "batch": "ttcd-architecture-comparison-v1",
+  "authorization": "User explicitly requested ordinary Transformer, Loop and DiscoLoop TTCD controls, reuse checkpoints first, then confirmed rebuilding both missing foundations with the same original recipe, parallel GPU8/9.",
+  "seed": 20261015,
+  "architectures": [
+    "transformer",
+    "loop",
+    "discoloop"
+  ],
+  "new_training_architectures": [
+    "transformer",
+    "loop"
+  ],
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "gpus": {
+      "transformer": 8,
+      "loop": 9
+    },
+    "cpu_sets": {
+      "transformer": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "loop": [
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    "cpu_threads": 4,
+    "memory_gib": 96,
+    "gpu_memory_max_mib": 1024,
+    "gpu_utilization_max": 5,
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "timeout_hours": 48,
+    "wait_timeout_hours": 24,
+    "tracking": "online",
+    "uid": 1015,
+    "gid": 1016,
+    "minimum_persistent_free_gib": 400
+  },
+  "reuse": {
+    "discoloop": {
+      "foundation_batch": "discoloop-success-restore-v1",
+      "adaptation_batch": "ttcd-successful-base-v1",
+      "arm": "stream",
+      "double_new_batch": "ttcd-double-new-eval-v1",
+      "double_new_arm": "stream",
+      "training_restarted": false
+    }
+  },
+  "new_scientific_updates": 640000,
+  "per_new_architecture": {
+    "foundation": 300000,
+    "common": 10000,
+    "stream": 10000
+  },
+  "primary_metrics": [
+    "double_new_pair_equal_accuracy_t32",
+    "earlier_written_fact_retention_by_age",
+    "unedited_atomic_and_composition_baseline_correct_retention"
+  ],
+  "formal_panel_sha256": "ade07fa92e528f1b19bbc10965d984f747ed7f7daf66f5eafa254971ac7d08f6",
+  "quality_policy": "Fixed budget full results; identity/numerical failures stop; capability and correction-reader accuracies report prerequisites without selecting or excluding architectures.",
+  "architecture_configs": {
+    "transformer": "configs/ttcd-architecture-comparison-v1-transformer.json",
+    "loop": "configs/ttcd-architecture-comparison-v1-loop.json"
+  },
+  "short_training": false,
+  "latest_user_instruction": "Skip all short training; start the formal300k foundations directly, then identical TTCD adaptation."
+}

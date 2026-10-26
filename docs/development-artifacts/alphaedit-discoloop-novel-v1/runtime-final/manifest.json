@@ -1,0 +1,12 @@
+{
+  "purpose": "Executed recovery code before final local formatting; scientific source separately frozen",
+  "files": {
+    "resume_alphaedit_discoloop.py": "677fe4e05e7f2b9d66a8bd698996b3f11da25bb7f86e66629445b19c98043e50",
+    "resume_alphaedit_discoloop_v2.py": "f962b3fa17803968cba2d82566ea39d72b733db31e3180f641e6450279216c95",
+    "resume_alphaedit_discoloop_v3.py": "b93b8a15ff7a9138993aa3a083030f7e73900053e577c97bbac49cbdb6066746",
+    "resume_alphaedit_discoloop_v4.py": "835c676eb751fba208ba04235f6928a32be7d6d14ef214c565bf758b8ed7a438",
+    "resume_alphaedit_discoloop_v5.py": "594e35172140437ee96d9c77ef9d66392f8f27fad39f0e6825e54f870b0b619f",
+    "resume_alphaedit_discoloop_v6.py": "6667ba9d269f4d7ba3fbb1fc1075c8bd95d3d86aa55cd167dd2e4493438eabdb",
+    "resume_alphaedit_discoloop_v7.py": "4ac67c74e8d3d976afe78fa31631ffe5dabd9f211596c50d29815700ddb2bb9d"
+  }
+}

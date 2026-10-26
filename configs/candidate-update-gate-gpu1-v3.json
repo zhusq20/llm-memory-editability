@@ -1,0 +1,176 @@
+{
+  "batch": "candidate-update-gate-multihop-v1",
+  "authorization": "User requested one additional arm changing the joint gate input from H to C=H+gq; inherit the paired 1500000-step multihop recipe.",
+  "input_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 1500000
+  },
+  "dropout_seed": 2026101604,
+  "arms": {
+    "candidate-token": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "update_mode": "token",
+      "initial_update": 0.95
+    }
+  },
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000,
+    400000,
+    500000,
+    600000,
+    700000,
+    800000,
+    900000,
+    1000000,
+    1100000,
+    1200000,
+    1300000,
+    1400000,
+    1500000
+  ],
+  "heartbeat_steps": 1000,
+  "evaluation_batch_size": 256,
+  "smoke_steps": 32,
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:fa200da9dd78d3423ffc30572bda8b88a5b1c7e72a25509bf63e6ae4a5a3ef6f",
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "cpu_threads": 2,
+    "cpu_first": 4,
+    "memory_gib": 16,
+    "tracking": "online",
+    "gpu_memory_fraction": 0.16,
+    "stage_timeout_hours": 168,
+    "poll_seconds": 20,
+    "gpu": 1,
+    "gpu_uuid": "GPU-364f0e00-7f5f-e6a7-9fea-03eb31c0bb3b",
+    "display_anomaly_user_authorized": false,
+    "base_image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2"
+  },
+  "primary": "Fixed 1500000-step graphB three-hop full-vocabulary answer accuracy at R4, compared with the existing joint gate conditioned on H. Retain 300k, every original node, all 11 pools and endpoint R1-4.",
+  "limits": [
+    "One already-observed world and initialization; no new world or general language-model conclusion.",
+    "Only the joint gate conditioning input changes from H to C=H+g(H)q(H). Boundary remains X+u(C)(C-X); final raw H readout is unchanged.",
+    "Exactly matching initial parameters and forward values at zero gate weight; gate-weight gradients can differ immediately. No claim of identical optimizer trajectories.",
+    "Same immutable local Docker image, training data, seeds, optimizer and evaluation as the joint-H reference. Different physical GPU and concurrent machine load; no exclusive-host speed claim.",
+    "Full Transformer and one vocabulary channel are computed each nonfinal round; no compute skipping or extra supervision.",
+    "Existing joint-H and other baselines are read-only; only one new 1500000-step scientific arm."
+  ],
+  "input_origin": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+    "reuse": "Exact existing 40000-example world and 43000-query panels; do not merge with the 25000-example variant"
+  },
+  "baseline": {
+    "root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/dual-gate-multihop-v1/attempts/preflight-repair-v2",
+    "run": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/dual-gate-multihop-v1/attempts/preflight-repair-v2/runs/paper",
+    "config": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/dual-gate-multihop-v1/attempts/preflight-repair-v2/source/configs/dual-gate-multihop-v1.json",
+    "initial_model_sha256": "755bfed1fc5bc95d52b874743a09ec1c2b2c1053a3c303376ff00715f36c75d1",
+    "model_sha256": "1c96eddb2dfae4d6c5a6e06f0128a75dc18fe6c711c33e3a9961a837c619bc6a",
+    "files": {
+      "run.json": "c300701a418fae56dcd7c685ff8c91da8a4100aa5b8b16e5e89a0840a681ad30",
+      "complete.json": "54ba8585b7e5076b9b144093c9d682fc243cde200ec0e72a3ef392ef3eed0b80",
+      "audit.json": "2adb16ec681ab7e82576bb9d4c71509ad90179841676763d7614820ef999df3a",
+      "grid.json": "b1f9566505aa94152ddd72c877db9dd6d2337097a3ac073ceb0563a4148e13fd",
+      "grid-audit.json": "42fba8706bdf9c4687097953a52a824a7be0eaa40dddac60f31202c09c48adea",
+      "exposure.npz": "a88eaeb762b83a9bfdcf053387ad6cb4226bde9ed0dd1f1c7b51ff732dd5577e",
+      "learning.json": "d7f0aae8edd75fa2527a11c06bb66fa387ce2f3cc2d7d88ca1c0b0563e69d456",
+      "canonical-result.json": "1386f05aca68c65353520b727753f8b48ad3d6ef22f23fb386e91c65e3f9da6c",
+      "cloud-audit.json": "2ddc13b2712f140c72be853192fcc7fe461b5117dd6b447834b4ebf706034827",
+      "checkpoint-0000000.pt": "c93c6258b42b1c6b703171fecc995a4106b2269ef899affd590d4bdf6f09fd83",
+      "checkpoint-0300000.pt": "698b153a077edbfef77e8501d7b94e1702d8145b7caf93fb1bcad3b4d0d5b18b"
+    },
+    "source_files": {
+      "scripts/run_loop_hop.py": "89ace5fde790a000c3b9b9e8aaad0c43a2cadc5f1daf22e05a41f8dab5913946",
+      "scripts/run_loop_hop_depth.py": "2dd47dce0ce0a78c8d08885f2b167c8e3e96f3e42775cc433835207dc5211e59",
+      "scripts/run_supervised_alignment.py": "7ad4ab4eb8b2c7706aece7ff36a8d5121c034d261483ebea96074ea7e5f73271",
+      "scripts/run_dual_gate.py": "86c17bdae4419246ea5acc683fefa17e1d602c51e85c8b50328ab98ccab4e5fb",
+      "src/llm_memory_editability/dual_gate.py": "5e0f69b1ce38ce7c2b749e6df94aa6e90622efd5d7028a8dc8de2ab853478534",
+      "src/llm_memory_editability/supervised_alignment.py": "9c84f60e536d5bd39919a2b3037b7ecc416dc5fc2a9f2da16ae3c5855524ec74",
+      "src/llm_memory_editability/self_decode_alignment.py": "1bfd5c15da162ea032caa0579eae6b06b7316e497b3e7ccd747c3252212138a3",
+      "src/llm_memory_editability/grokking_reproduction.py": "7e3a89d96f6fef7bd4665ac46dd1acb6e7cb461c6878647ecc7c6f425ac31117",
+      "src/llm_memory_editability/loop_hop_data.py": "940efb287f125d1f4b14bc71e72a967d9fd2685723bf41f6e93b632532d64dd6",
+      "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+      "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+      "src/llm_memory_editability/experiment_tracking.py": "2afe9e767123bee16cf56f59c6c2953a100338ecf1f971945c4968a064551866"
+    },
+    "source_image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee"
+  },
+  "budget": {
+    "new_scientific_updates": 1500000,
+    "new_scientific_arms": 1,
+    "reused_baseline_updates": 0,
+    "engineering_smoke_updates": 0,
+    "engineering_restored_preflight_updates": 1
+  },
+  "execution_policy": {
+    "pretraining_smoke": false,
+    "pretraining_reload": false,
+    "posttraining_independent_audit": false,
+    "endpoint_inference_grid": true,
+    "reason": "Retain earlier short-training/independent-reload waiver; one discarded engineering update checks the newly placed gate and CUDA graph."
+  },
+  "gate_scope": "continuous_update_and_new_paper_injection",
+  "paired_recipe": {
+    "config": "configs/joint-update-gate-multihop-v1.json",
+    "sha256": "19b01a341f13762f8c743bde2d565e32b235babc959321ca1e8a41892f43a114"
+  },
+  "gate_condition": "normalized_joint_candidate",
+  "comparison": {
+    "batch": "joint-update-gate-multihop-v1",
+    "arm": "joint-token",
+    "freeze_sha256": "e330392b3a5adbd06111e9b958322c084f72b42779e1bcd4422262442f8542e6"
+  },
+  "scheduling_recovery": {
+    "attempt": "gpu1-recovery-v3",
+    "failed_attempt_freeze_sha256": "97a2c6cc7f8993588f4f061a8abe613d2a8c08e29580d822200884e5c3e7db39",
+    "reason": "GPU1 predecessor completed train and grid with exit0. User requests this candidate arm on GPU1. Preserve both failed attempts; check mount readability/writeability and retain daemon stderr in new attempt.",
+    "maximum_concurrent_owned_gpus": 4,
+    "dependency": {
+      "root": "/mnt/disk2_from_server2/siqizhu4/llm-memory-editability/results/ungated-loop-continuation-v1/execution",
+      "arm": "disco-l1-r4",
+      "config_sha256": "5e193e71cb652197d7da0e74cebf9177334487ebf02ace93c5384938aa79249f"
+    },
+    "recovery_state": "Restart deterministic initialization in a separate attempt; first run last retained checkpoint step0. Unsaved work before termination unknown, not declared zero.",
+    "additional_scientific_arms": 0,
+    "authorization": "User explicitly confirmed moving this failed candidate-gate experiment to now-idle GPU1: ok,请你安排这个吧",
+    "previous_attempt": "resource-recovery-v2"
+  }
+}

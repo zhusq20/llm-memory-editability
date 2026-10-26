@@ -1,67 +1,89 @@
 # 项目工作入口
 
-## 研究与文档
+<a id="研究与文档"></a>
+## 先读什么
 
-开始分析、研究讨论、实验设计、代码修改或文档写作前，完整阅读并遵循[项目研究原则](.agents/skills/llm-memory-research/SKILL.md)。上下文恢复后若原则不在上下文中，重新读取。
+开始分析、研究讨论、实验设计、代码或文档修改前，完整阅读[项目研究原则](.agents/skills/llm-memory-research/SKILL.md)；上下文恢复后若原则不在上下文中，重新读取。修改遵循[CONTRIBUTING](CONTRIBUTING.md)。
 
-2026-10-12完成状态更新：`self-decode-alignment-development-v1`于北京时间06:15、`supervised-alignment-development-v1`于08:03全部完成，各六臂300k步、合计360万新增更新；七池独立重载与W&B云端终点状态/步数/审计摘要核验均通过。08:35实际LM Docker无运行容器，两批训练及审计退出码均为0。不重启旧入口。DiscoLoop OI/IO/OO为99.30/97.53/95.66%，估算矩阵训练FLOPs为基线约2.05倍；原监督对齐OI41.23%（基线33.50%），但IO下降；两批KV融合均未超过对齐单独。完整七池及成本见[结果](docs/results.md#supervised-alignment-development-v1)。只是一张已观察图/一个初始化，不证明通用效率、唯一机制或更新传播；没有追加新训练。以下启动记载保留历史，本段完成状态优先。
+- LM Knowledge当前目标与优先级只读[Roadmap](docs/roadmap.md)，关键证据读[结果摘要](docs/results.md)。真实Qwen的PD／SFT × 参数范围八组已完成；当前用途覆盖及改写比较按独立契约推进，实时状态读其controller与实际LM Docker。
+- Loop架构工作另读[Loop路线图](docs/loop-roadmap.md)，两份规划分开维护。
+- 数学问题按需读[理论依据](docs/memory-scaling-theory.md)，执行与评价按[实验协议](docs/experimental-protocol.md)。
+- 早期指令、已完成批次、旧候选与被覆盖的运行状态已收进[历史文档](docs/reports/knowledge-history-20261022/README.md)。不要把其中“当前／下一步／运行中”当作新指令；仅在复核对应问题时读取。
 
-2026-10-12用户随后采纳六组增补并要求编写代码、并行启动。`supervised-alignment-development-v1`已提交：原监督标签概率加权的对齐/中间CE各有无同位置首轮KV两组，另加仅同位置KV与DiscoLoop，共六臂各300k步、180万新增更新；复用前批普通Loop基线。固定镜像138项契约、CUDA基线逐值/全部梯度/连续优化一致性、六臂全尺寸32步短训与新容器七池重载全部通过。北京时间05:36启动控制器，先用GPU6/7/0/3运行四臂，另两臂随旧训练及审计完成释放资源后自动并行，不抢占旧批次。恢复先读[新增协议](docs/development-artifacts/supervised-alignment-development-v1/protocol.md)、本批`controller-process.json`、`controller-state.json`、`science-schedule.json`及实际LM Docker状态，不重复提交。新损失为原监督位置的`1-cos`，不是旧全位置自预测平方距离；KV仅直接读取同位置缓存，当前轮仍读因果前缀。可选第七臂、长训、新图及旧网格均未加入。正式终点、独立审计与云端核验尚待完成，当前没有新科学结论。
+<a id="论文主线与既有研究约定"></a>
+## 研究取向与去重
 
-2026-10-12用户授权选择并开展下一项实验，随后明确要求利用八张卡并行做**首轮KV×自解码表示对齐**二乘二，并确认另保留自预测CE对照。`self-decode-alignment-development-v1`六臂已提交GPU0–5各300k步（总180万新增更新），同Wang φ7.2/wd.1图、原第0步权重与共同数据流；主四格另加有/无KV两条CE。固定镜像58项契约、六条CUDA短训与新容器七池逐token重载通过；固定权重诊断已完成，尚无正式训练结论。首次容器启动因cgroup只读未进入模型执行，失败保留；LM在无运行容器时恢复独立挂载namespace，其他项目未动。恢复先读[本批协议](docs/development-artifacts/self-decode-alignment-development-v1/protocol.md)、`results/self-decode-alignment-development-v1/controller-process.json`与`controller-state.json`、`runtime-repair/amendment.json`和实际LM Docker状态，不重复提交。该授权只重新打开KV与新增无真值损失的交互问题，不恢复旧窗口/R/detach/mHC网格，不自动追加长期训练或新图确认。
+**论文组织的长期约定（2026-10-25用户明确）：**
 
-2026-10-07用户明确：论文围绕知识学习的三个层次——**知识能被回答、能被组合、更新后能继续被使用**。每层分别做实验并解释；第一层不是后两层的掌握率检查。表达清楚直白，不因话题与文献重合就回避重要问题。
+1. **从理论愿景出发组织实验与论证，不能从已有实验结果反向拼装论文主张。** 先明确希望知识与推理具备什么能力、需要解释哪些计算条件，再安排关键比较；已有结果用于支持、修正或反驳主张。区分理论愿景、数学结论、工作假说与实测，不把事后整合说成事前预测。
+2. **不能为了规避论点与前文的重复性而放弃有价值的论点。** 前文章节、此前讨论或已有论文涉及过的重要问题仍应保留；通过明确其在定义、解释、实验和方法中的不同作用来组织，精简重复表述，不能删掉必要论点。准确归属与历史查重不构成论点禁区，也不授权无意义重跑。
 
-用户随后明确两条推进路线：**严格基于实际Transformer架构的数学解释**，以及**通用架构降低三层能力学习成本的验证**。Loop、MoE、DeltaNet、Gated DeltaNet和mHC均可研究；从观察推导机制或由数学启发实验均可。保留完整残差、归一化、attention/MLP等实际计算，简化时写明条件；不以抽象记忆类比代替模型证明，不预设架构必有优势。训练效率须区分数据曝光、token、计算和总/激活参数，第三层还需计入旧能力保持。这是此前路线授权；当前执行优先级以用户2026-10-08的“先复现论文”要求和roadmap为准。
+**研究范围更正（2026-10-25用户明确）：** 不开展同一模型不同预训练阶段的比较，开销过大且偏离当前主线。“预训练后知识编辑容易干扰旧知识”用于辅助说明研究动机与解释，不将预训练过程设为独立研究目标，不预设遗忘必然发生，也不把当前更新损失归因于预训练历史。具体作用见[Roadmap](docs/roadmap.md#pretraining-insight-role-20261025)。
 
-2026-10-08 用户明确否定继续由agent自行设计实验的推进方式，要求先挑出相关论文中对本项目有贡献价值的原实验，实际复现后再寻找缺口。当前先复现 Ye et al. (NeurIPS 2025)《How do Transformers Learn Implicit Reasoning?》§2.3 / Figure 3 的两条监督曲线：只学Train-II与Train-II加ID原子事实。使用作者数据函数及其指定的训练仓库，不把缩小版、自制损失或架构比较称为原实验复现。现有2024年grokking长训练保留，不重复提交。来源、配方、必要代码修正及实际执行状态见[roadmap](docs/roadmap.md#paper-reproduction-first)和[本批协议](docs/development-artifacts/implicit-reasoning-paper-reproduction-v1/protocol.md)。原模型、原评分、单世界/初始化、环境差异与未完成状态须明确；论文缺口不能在结果出来前当作已建立贡献。 v1首次尝试在训练前因未映射补齐词表类别解码失败，完整保留；6项契约及全18,986条CUDA短训练/新进程重载通过后，已提交[修订v2](docs/development-artifacts/implicit-reasoning-paper-reproduction-v2/protocol.md)两条百万迭代任务，GPU0/1独立容器运行中，不重启v1。
+**论文贡献定位（2026-10-25用户补充）：** 完整愿景可能需要新的架构与方法，不能把全面实现愿景设成本稿成文条件。论文从知识与推理连接的统一视角解释问题、归纳解决原则，常规知识编辑也可作为有价值的实现与证据。区分已有方法的局部改善、架构提供的条件和未来目标；“可能需要新架构”不升级为现有架构不可能实现的结论。具体方案组织见[Roadmap](docs/roadmap.md#solution-principles-20261025)。
 
-2026-10-08用户采纳**路径一致性**作为论文主线的工作假说：事实只在它被学过或被改写的那条计算路径上可用，能否组合、更新能否传播取决于新用途是否经过同一路径。三层仍各自做实验，由这一假说串起；它可被复现结果否定，不能在证据出来前写成已建立结论，见[roadmap §1.1](docs/roadmap.md#path-consistency)。已在两项编辑复现产生结果前冻结[跳位分组契约](configs/path-hop-analysis-v1.json)（`path-hop-analysis-v1`，零训练），只在对应运行完成且独立重放审计通过后执行，不改分组。架构效率比较降级为Loop与普通独立层的机制对比；容量bits、MoE/KV/mHC/Delta扩展不再默认入队。复现之后的受控比较须另行授权。
+论文开展与实验取舍维护在[Roadmap的理论愿景与实验论证](docs/roadmap.md#paper-vision-20261025)，跨批次证据和当前状态维护在[结果摘要](docs/results.md#knowledge-paper-synthesis-20261025)。
 
-2026-10-09用户要求完成剩余两条审计及冻结分组分析：九条论文复现均有通过的终点验证，五条编辑复现的预定跳位分析全部完成，见[完成清单](results/path-hop-analysis-v1/completion-manifest.json)与[结果](docs/results.md#path-hop-analysis-v1)。RECENT按原冻结源码在七个独立容器中全池分段重放，1948案例/45042查询、11034次恢复及全部参数哈希通过；完整覆盖和原记录哈希核对后才停止冗余串行审计。原控制器、进度及退出码保留于[干预记录](results/rippleedits-paper-reproduction-v1/audit-scheduling-intervention-20261009/plan.json)，当前controller按替代证据收尾；不重启训练或重复编辑。ROME的CoT缩小跳位差距8.34pp，MEMIT约0pp；RippleEdits未建立各池稳定首跳优势，路径一致性仍为工作假说。分组、评分、bootstrap均未修改。W&B本地终点已到，本次没有新做云端独立核验；复现之后的新训练仍须另行授权。以上完成状态更新前文运行中的历史记录。
+**研究判断更正（2026-10-22用户明确）：不应该把之前论文讨论过的任何方法视为“不能再作为新发现”。** 不能仅因已有论文或此前研究讨论涉及某种方法、现象或思路，就排除相关研究方向，或断言它不能成为本研究的发现与贡献。文献用于借鉴方法、理解证据和准确归属；发现与贡献应根据本研究实际建立的结果、解释和方法论判断。下述历史去重要求用于避免无意义重复，不能被解释为对已有方法或重要问题的先验否定。
 
-唯一当前规划是[Roadmap](docs/roadmap.md)。[结果汇总](docs/results.md)维护科学证据，[理论依据](docs/memory-scaling-theory.md)维护推导，[实验协议](docs/experimental-protocol.md)维护共同规则及历史机器契约。README只作导航，不再追加逐时调度播报。旧计划文件只留脚本兼容入口，不作为另一份路线。
+2026-10-22用户明确要求：**LM Knowledge选题要寻找新的突破点，提出idea前先查历史实验与假设，不能把旧实验探究换一种说法当作新的研究目标。** 先核对[路线图的选题要求](docs/roadmap.md#idea-history-check)、结果汇总、相关批次协议及用户已有评价，覆盖已完成、失败、停止、运行中与已规划的工作。每个候选想法都要说明最接近的历史假设与实验、已有结果、尚未回答的问题，以及本次实质改变什么、为什么可能带来新的认识。更名、换术语、换叙事或仅换数据、模型、模块组合和扩大网格，本身不构成新目标；复现、补证与旧方向延伸须如实标注。找不到实质新增问题时直接说明，不为提出idea而包装旧问题。
 
-2026-10-08用户进一步明确授权编写代码并行运行优先的原论文实验。新增7任务已提交：`second-hop-paper-reproduction-v1`两条百万步训练在GPU2/3；`mquake-paper-reproduction-v1`两条GPT-J 6B ROME/MEMIT全3000案例在GPU4/5；`rippleedits-paper-reproduction-v1`的GPT-2 XL ROME POPULAR/RANDOM在GPU6/7，RECENT由控制器排队。GPU0/1原Figure3训练继续保留，不重启。16项最终契约检查、两条第二跳全14000查询短训练重载、五条编辑CUDA短测及新进程逐token重放通过。编辑v1短测使用错误padding，MEMIT另有keyword输入hook失败，全部保留；v2恢复作者右侧编辑padding，生成单独左侧补齐，GPT-J输入适配前后logits和梯度不变。开发原文本进一步校准cloze对象名前缀计分，不改旧产物。来源、固定镜像、完整矩阵、数据/环境/评分差异见[并行复现协议](docs/development-artifacts/paper-reproductions-parallel-v1/protocol.md)。Ripple发布池为885/1922/1948，不能冒称论文同一具体样本；空标签、前提筛选和编辑失败全部保留覆盖。本批仍运行中，没有最终科学结论，恢复时读取各批冻结配置、controller和实际Docker进程，不重复提交。
+论文核心是“知识在哪里、推理在哪里、二者怎样连接”，四部分为会答、能组合、更新后能用、架构。两条解释原则是单向连接，以及答案监督写入的地址与内容；工作假说、数学条件与实验观察须区分。架构是核心层次；重视整体可解释性、直观性与新颖性，不以逐级因果检验为主体，不在论点和计划中反复强调setting限制。重要问题即使与文献重叠也照写。
 
-2026-10-07用户要求先核对完整历史，避免持续重做失败实验，并考虑将首轮共享KV接入当前Loop路线；随后质疑“解共享”用语及复制相同随机初值作为普通模型基线。表达直接说明具体做法。新实验先对照roadmap的[历史去重表](docs/roadmap.md#history-dedup)，说明已有批次、改变的变量和新增问题，优先复用兼容对照与检查点。当前[主比较](docs/roadmap.md#loop-kv-next)为普通四层Transformer、两层Loop两轮、同Loop加共享KV；普通模型各层独立随机初始化，已有复制初值模型仅作辅助机制证据。用户随后明确授权先launch，`loop-kv-learning-development-v1`四条新增训练、独立重载及W&B云端核验现已全部完成：48,000新增更新、复用两条旧Loop，GPU0–3容器已退出。固定镜像50项测试、四条CUDA短训练及旧样本流/关闭KV一致性核验通过。共享KV的BB净增配对一负一正、均值与原Loop同为3.91pp，终点21.09%低于原Loop22.66%；预定后续门槛未通过，无B续训未启动，不扩大网格。原四格计划未启动。旧R/宽度、mHC网格、回放比例及普通原子编辑失败不再默认入队；有明确新条件时保留重新研究的可能。
+先借鉴原论文的方法与关键比较，再解释扩展新增了什么；旧M3/E3、小模型TTCD不能代替自然模型原方法。借鉴J-space的写法与实验组织，不在Qwen上复现其Claude结论。真实Transformer推导保留残差、归一化、attention与MLP等实际计算，简化写明条件；不另建内部特征表现预测器。
 
-用户要求用人能听懂的语言逐项解释历史实验，并由用户评价其常见程度与合理性。按设计合并种子及重试，分别说想问什么、实际改变什么、结果、设计限制、是否值得再做；不要一次要求用户评价整个长表。方法判断与用户评价分别记录，不能把用户未回复当成认可。[历史设计清单](results/history-design-review-20261007/catalog.json)及[用户评价记录](results/history-design-review-20261007/user-reviews.json)维护审查游标。用户评价旧共享KV实验为“设计有问题或没有必要”，并明确原因是“已反复失败，没必要再扩展”。结束当前知识任务的共享KV配方扩展，撤下无B续训及R/窗口/detach/mHC/世界网格的后续候选；不能仅换数据呈现、架构组合或实验名称就延续同一失败问题。保留已有熟悉收益与负结果，不把用户评价改写成架构普遍无效的证明。复制初值对照不当作普通模型主证据；继续逐项审查其它设计，未授权新训练。
+新比较先核对[历史索引](docs/results.md#history-index)，说明已有批次、改变的变量与新增问题，优先复用兼容对照。已完成的论文复现、写入目标、顺序迁移、回放、MoE及旧KV等批次不重跑；原始负结果、开发停止、确认失败和环境失败保留。
 
-用户于2026-10-07授权设计并利用空闲GPU并行开展的顺序新知识迁移、写入目标比较均已完成：四个开发/正式批次共53个任务，独立重载和W&B云端核验全部通过。具体结果与后续问题见roadmap和结果汇总，不从旧执行入口重复提交。用户在会话中的授权优先，既有批次按自己的冻结契约解释。
+用户已结束当前知识任务中反复失败的共享KV配方扩展；不能只换名称、呈现或架构组合继续同一问题。后续明确授权的独立批次仍按各自契约执行。复制相同初值的模型仅作机制辅助，普通模型主对照各层独立初始化。历史设计按设计合并种子与重试，逐项解释，用户评价与方法判断分开；[未回复不视为认可](results/history-design-review-20261007/user-reviews.json)。
 
-用户随后授权先查论文、再按相近配方实测旧组合回放。`sequential-replay-development-v1` / `sequential-replay-paired-v1` 共16任务、100,000新增更新均已完成，独立重载及云端核验全部通过。复用旧阶段A权重开展配对扩展，未重启旧训练；来源与结果见roadmap和结果汇总。完整回放优于本轮原子回放，但BB20.83%与前轮20.57%接近，不能称突破先前水平。
+<a id="实验恢复与已完成批次"></a>
+## 运行批次的恢复入口
 
-用户随后明确授权进行的MoE顺序学习三臂比较已经完成。`moe-sequential-development-v1`普通独立四层D4、top-2八专家M4、近等总参数宽MLP W4，采用同一已观察2Wiki开发划分、两个初始化及A8000/B4000完整回放；复用两条D4，只新增四条48,000更新。76项契约测试、四条CUDA短训练、旧D4的A/B四端点7,900条预测复算通过；新增四条科学训练、独立重载及W&B云端核验全部完成，容器退出、GPU释放。普通/MoE/宽BB23.44/22.66/21.09%，净增7.81/5.47/3.91pp，原正确AA保持80.74/77.72/72.86%。MoE旧AA终点较高、估算矩阵FLOPs约少14%，但BB配对方向混合、原正确AA保持较低，本实现耗时更长；未建立三层统一效率优势。结果、解释及完成清单见roadmap和结果汇总；不重启、不自动追加专家/路由/lr网格。该授权及完成状态更新此前“未授权新训练”的历史状态，旧批次产物未改。
+以下为已有交接与完成证据的定位信息（LM Knowledge于2026-10-25更新），**不是实时状态或启动命令**。先读批次最新`controller-process.json`、`controller-state.json`、`schedule-amendment.json`（如有）、冻结配置和执行锁，再核对对应主机实际LM Docker。训练完成、独立重载通过与W&B核验是不同状态。禁止重复提交、按旧GPU表重启、抢占运行任务，或为修追踪记录重启训练。
 
-## 实验恢复与已完成批次
+| 工作 | 最近交接与恢复顺序 |
+| --- | --- |
+| LM Knowledge八组 | 2026-10-25八组均完成1489200次样本曝光，独立重载、本地终点评测与云端核验通过；见[统一分析](results/knowledge-factorial-analysis-20261025/report.md)。原batch接续、失败和重算记录保留，不重启训练 |
+| LM Knowledge用途覆盖 | 全参数PD／SFT A/B/C及原子改写按独立契约执行。先读[用途覆盖交接](results/knowledge-use-coverage-20261025/RUNNING.txt)、其runtime下最新controller、schedule-amendment、budget-selection与实际LM Docker。最新核对见[结果摘要](docs/results.md#knowledge-use-coverage-v1)，交接启动快照不代表实时状态 |
 
-恢复时先读取该批 `results/<batch>/controller-process.json`、`controller-state.json`、`schedule-amendment.json`（如有），再核对对应冻结配置、执行锁和实际Docker进程。不要根据旧文档中的GPU分配重启旧入口、重复提交或抢占运行实验。使用原冻结源码；调度修订和失败记录保留在相应批次目录。
+八组已完成；以下保留10-22接续的恢复与复核约束，不作为新启动要求。用户当时授权从现有进度增大batch，覆盖此前“batch4／372300步不变”的执行要求。保留旧权重、Adam、RNG与样本位置；按曝光延续学习率，试跑后恢复原状态，重算量单列。接续任务使用完整CPU快照、32MiB/s后台保存；间隔60000样本或1800秒。每任务最长输入显存检查后预留6GiB、整卡另留8GiB，外部进程和预约阻止入场；代码仍create-copy-start、容器root所有0444/0555。原冻结源码、检查点和失败记录保留，不重启旧入口。CUDA试跑、实际接续与最终重载分别核验；整体加速倍数未测定。
 
-2026-10-07本次整理核对的近期完成批次包括 `independent-alignment-v1`、`shared-cache-branch-v1`、`knowledge-change-v1`、`residual-cache-comparison-v1`、`composition-data-curves-v1`、`loop-block-depth-v1`，以及 `write-target-{development,confirmation}-v1` 和 `sequential-transfer-{development,confirmation}-v1`。状态与结果入口见[结果汇总](docs/results.md)；已完成批次不得重启。科学训练完成、独立重载通过和W&B同步是不同状态，不相互代替。
 
-保留容量开发早期停止、后续完整扫描授权、负结果与所有失败记录。`capacity-stability-check-v1`的四条科学训练已完成，其历史W&B初始化失败不能改写成云端已完成。`residual-cache-comparison-v1`的GPU冲突暂停/恢复见其 `scheduling-intervention/`，受干预任务耗时不当作独占GPU基准。涉及三个旧世界的配对扩展不称新世界确认。
+## Loop研究入口与恢复
 
-## Docker与资源
+用户2026-10-22要求压缩历史文档、减少旧方向误导。Loop先读[当前摘要](docs/loop-roadmap.md)，再按[问题索引](docs/loop-history.md)查相关旧证据；不默认通读全部流水账。旧报告中的“当前／优先／下一步”只指写作当时，不能据此恢复旧方向。交接重要性已反复研究，不包装成新idea；提出候选须说明旧证据、仍未解释的现象与实质新增条件。
 
-LM Memory Editability 与 D157/OpenTinker 是不同项目。LM实验显式使用 `docker --context lm-memory`，socket为 `/run/docker-lm-memory/docker.sock`，data-root为 `/workspaces/docker-lm-memory`；不得套用D157或默认D159环境。
+**2026-10-24用户最新决定：七条未启动初始化实验全部暂缓。** `init-1-ema`、`init-1-loop`、`init-1-discoloop`、`init-2-invariant`、`init-2-ema`、`init-2-loop`、`init-2-discoloop`，各150万步，共1050万步。先收齐已完成结果，尤其新初始化1 invariant，再统一分析。恢复须新的明确授权；空卡、W&B修复或旧共享GPU授权不自动恢复训练。
 
-相同依赖共享固定LM镜像，每个实验独立容器，分别指定GPU、CPU/内存、端口、临时目录和持久输出。启动前查看实际资源占用，用户要求尽可能并行，但不得抢占其它运行任务。结果和恢复材料保存在 `/ossfs/workspace`；`/workspaces`是计入本机配额的临时卷。
+- 先读[最新交接](results/loop-queue-target-20261021/RUNNING.txt)、`runtime/training-hold.json`、`schedule-amendment.json`及controller。目标控制器已退出，状态`paused_by_user`；公共工程入口已加hold检查，旧源队列继续退役。不得绕过守卫、恢复旧manifest或提交旧控制器。
+- 主比较17条中10条已保存150万步终点，7条暂缓。目标8条完成本地grid/depth；多对一loop/discoloop的cloud配置核验失败保留，其余6条通过。源新初始化1 invariant／新置换ema已收集终点和曲线，尚缺源机退出及独立grid/depth/cloud核验；不重训。
+- state-MLP150万步及关闭dropout的50万步实验均完成重载与云端核验；前者B四跳60.90%，后者0%。新初始化1 invariant四跳50.06%。[汇总与缺口](results/loop-results-20261024/report.md)。
+- native四臂、position三臂、10-12对齐两批及目标旧模型补充深度评测已完成；保留历史审计状态。所有失败、迁移重算和冻结材料保留。只读整理新增训练0，暂缓不改原科学配方。
 
-已有环境记录：[容器运行配置](docs/development-artifacts/memory-interface-next-v1/container/runtime.json)、[镜像归档说明](docs/development-artifacts/memory-interface-next-v1/container/archive-manifest.json)。清理前核对状态、依赖和挂载，保留日志及元数据；通过Docker API删除明确可清理的停止容器，不手删存储层、不重启其它实验。
+被替代的启动、迁移、失败与核验叙述保存在[入口历史](docs/reports/loop-evidence-history-20261022.md#entry-history)，不能覆盖上述恢复规则。
+
+<a id="docker与资源"></a>
+## Docker、资源与存储
+
+LM Memory Editability与D157/OpenTinker是不同项目。LM实验显式使用`docker --context lm-memory`，socket `/run/docker-lm-memory/docker.sock`，data-root `/workspaces/docker-lm-memory`；不得套用D157或默认D159环境。
+
+相同依赖共享固定LM镜像，每实验独立容器，分别指定GPU、CPU／内存、端口、临时目录和持久输出。启动前查实际资源，尽可能并行但不抢占。结果和恢复材料放`/ossfs/workspace`；`/workspaces`是计入本机配额的临时卷。环境见[运行配置](docs/development-artifacts/memory-interface-next-v1/container/runtime.json)、[镜像归档](docs/development-artifacts/memory-interface-next-v1/container/archive-manifest.json)。清理前核对状态、依赖与挂载，保留日志和元数据；通过Docker API删除明确可清理的停止容器，不手删存储层、不重启其它实验。
 
 ## 本机Python与CUDA
 
-仅对主机 `gpulingjun010010012239.os30` 的当前Alibaba Cloud Linux 3环境：启动Python、PyTorch、训练、torchrun或Jupyter前，将 `/lib64` 放在 `LD_LIBRARY_PATH` 最前，保留选定解释器与原有库路径。每次独立shell都需设置：
+仅对`gpulingjun010010012239.os30`的当前Alibaba Cloud Linux 3环境：启动Python、PyTorch、训练、torchrun或Jupyter前，每次独立shell把`/lib64`置于`LD_LIBRARY_PATH`最前，保留原路径和选定解释器：
 
 ```bash
 LD_LIBRARY_PATH="/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}" python your_script.py
 ```
 
-这是已验证的进程级修复：默认CUDA compat库曾与驱动不匹配。不能假定系统动态链接配置已经永久修复，也不把主机方案套到新容器。驱动、镜像或机器改变后重新核对库路径并实际计算验证；GPU枚举不代替矩阵计算、反向和同步。
+这是进程级CUDA compat修复，不套到新容器。驱动、镜像或机器改变后，核对库路径并做矩阵计算、反向和同步；枚举GPU不能代替实际验证。
 
-## 追踪与验证
+<a id="追踪与验证"></a>
+## 追踪与维护
 
-新实验默认启用Weights & Biases：团队 `zhusq20`，项目 `llm-memory-editability`，使用[默认配置](configs/experiment-tracking-defaults.json)。训练启动时同步启动记录进程，提供项目或运行链接，记录曲线、配置、步数、曝光、耗时与GPU资源。凭据只保存在本机凭据文件，不写入仓库或日志。
+新实验默认W&B团队`zsqzz`（Academic Team）、项目`llm-memory-editability`，用[默认配置](configs/experiment-tracking-defaults.json)。已冻结、排队或在训批次保留原团队、run ID与配方；结束后复制，不能重启改归属。`zhusq20`历史保留，[复制状态](results/wandb-academic-copy-20261019/status.json)单列；`capacity-stability-check-v1`历史初始化失败不能改称云端已完成。
 
-代码与文档修改遵循[CONTRIBUTING](CONTRIBUTING.md)。不得修改已有冻结训练以追溯满足新偏好。原始数据、权重、日志、配置和源码哈希保留；纯文档整理不启动训练。
+训练与记录进程同时启动，提供项目或run链接，记录曲线、配置、步数、曝光、耗时与GPU。凭据只放本机凭据文件，不入仓库或日志。保留原数据、权重、日志、配置和源码哈希，不追溯改冻结训练。
+
+只在对应路线图维护当前方向；结果按主题更新，批次调度留在交接，README只作导航。纯文档修改检查链接、锚点、状态和预算，不启动训练；本次历史压缩未改变既有授权。

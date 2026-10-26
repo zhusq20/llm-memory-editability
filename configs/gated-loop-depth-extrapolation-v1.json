@@ -1,0 +1,201 @@
+{
+  "batch": "gated-loop-depth-extrapolation-v1",
+  "authorization": "2026-10-17 user supplied whole-loop depth-extrapolation proposal and explicitly requested implementation plus launch on idle GPUs or queue after current jobs.",
+  "arms": {
+    "N-Full": {
+      "feedback_beta": 0,
+      "gate_mode": "full"
+    },
+    "N-Fixed": {
+      "feedback_beta": 0,
+      "gate_mode": "fixed"
+    },
+    "N-Gate": {
+      "feedback_beta": 0,
+      "gate_mode": "token"
+    },
+    "Q-Full": {
+      "feedback_beta": 1,
+      "gate_mode": "full"
+    },
+    "Q-Fixed": {
+      "feedback_beta": 1,
+      "gate_mode": "fixed"
+    },
+    "Q-Gate": {
+      "feedback_beta": 1,
+      "gate_mode": "token"
+    }
+  },
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "smoke": {
+    "seed": 101,
+    "steps": 32
+  },
+  "pilot": {
+    "seed": 101,
+    "steps": 20000,
+    "minimum_atom_accuracy": 0.95,
+    "minimum_train_k3to5": 0.9,
+    "minimum_val_k3to5": 0.8
+  },
+  "data": {
+    "world_seed": 2026101701,
+    "layout_seed": 2026101702,
+    "entities_per_graph": 256,
+    "relations": 4,
+    "slots": 20,
+    "train_templates": {
+      "2": 8,
+      "3": 32,
+      "4": 64,
+      "5": 128
+    },
+    "evaluation_templates": 4,
+    "long_hops": [
+      6,
+      8,
+      10,
+      12,
+      16,
+      20
+    ]
+  },
+  "model": {
+    "n_layer": 2,
+    "n_embd": 256,
+    "n_head": 4,
+    "n_inner": 1024,
+    "n_positions": 22,
+    "n_ctx": 22,
+    "resid_pdrop": 0.0,
+    "embd_pdrop": 0.0,
+    "attn_pdrop": 0.0,
+    "layer_norm_epsilon": 1e-05,
+    "activation_function": "gelu_new",
+    "use_cache": false
+  },
+  "gate": {
+    "initial_alpha": 0.9,
+    "terminal_special_case": false,
+    "norm_affine": false,
+    "shared_across_loops": true
+  },
+  "training": {
+    "loops": 5,
+    "steps": 100000,
+    "batch_size": 128,
+    "learning_rate": 0.0005,
+    "weight_decay": 0.1,
+    "warmup_steps": 1000,
+    "clip": 1.0,
+    "precision": "bfloat16",
+    "validation_every": 1000,
+    "log_every": 100,
+    "checkpoint_every": 10000,
+    "loss": "final_answer_ce_only",
+    "checkpoint_selection": "macro_A_short_validation_R5_then_lower_ce_then_earliest"
+  },
+  "evaluation": {
+    "loops": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      16,
+      20,
+      24,
+      32
+    ],
+    "batch_size": 128,
+    "diagnostic_per_group": 32,
+    "bootstrap_replicates": 1000,
+    "bootstrap_seed": 2026101703,
+    "robust_loops": [
+      6,
+      8,
+      10,
+      12,
+      16,
+      20
+    ]
+  },
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:bc325b1d554d9bb46cf729ee6532ce40ebc764438da8cac2f8e8f796d70f6f2a",
+    "host": "sn4622128200",
+    "tracking": "online",
+    "maximum_parallel": 2,
+    "gpu_candidates": [
+      1,
+      2,
+      0,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "cpu_sets": [
+      [
+        72,
+        73,
+        74,
+        75
+      ],
+      [
+        76,
+        77,
+        78,
+        79
+      ]
+    ],
+    "memory_gib": 32,
+    "minimum_free_gpu_mib": 18000,
+    "maximum_idle_gpu_used_mib": 512,
+    "maximum_idle_gpu_utilization": 5,
+    "poll_seconds": 30,
+    "previous_queue_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-discoloop-lr-control-v1/sn4622128200-run",
+    "previous_queue_lanes": {
+      "1": [
+        "loop-lr5e-4",
+        "discoloop-lr2e-4"
+      ],
+      "2": [
+        "loop-lr1e-3",
+        "discoloop-lr5e-4"
+      ]
+    },
+    "reserved_predecessors": [
+      {
+        "name": "norm-handoff-multihop-v1",
+        "root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/norm-handoff-multihop-v1/sn4622128200/run",
+        "gpus": [
+          4,
+          1,
+          2
+        ],
+        "policy": "active_controller_only",
+        "process_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/norm-handoff-multihop-v1/sn4622128200"
+      }
+    ]
+  },
+  "budget": {
+    "smoke_updates": 192,
+    "pilot_updates": 120000,
+    "conditional_formal_updates": 1800000,
+    "formal_trajectories": 18,
+    "additional_followups_authorized": false
+  },
+  "scope": "One new development graph pair, three paired initialization/data-order seeds. Does not establish multi-world generality; no conditional follow-up grid is auto-launched."
+}

@@ -1,0 +1,212 @@
+{
+  "batch": "loop-dropout-development-v1",
+  "status": "authorized 2026-10-22; one paired zero-dropout experiment without interfering with existing jobs",
+  "authorization": "那你先找空卡跑一条关闭dropout的实验，其余配方和初值保持不变，复用现有对照，不要影响正在跑的任务，重点看四跳准确率后期还会不会持续退化。",
+  "question": "Does disabling dropout alone prevent the late decline in graph-B four-hop accuracy observed in the paired state-MLP run?",
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.0,
+    "embd_pdrop": 0.0,
+    "resid_pdrop": 0.0,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "schedule_seed": 2026102001,
+    "unique_layers": 1,
+    "evaluation_repeats": 4,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "final_lr_fraction": 0.1,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "grad_clip": 1.0,
+    "ema_decay": 0.999,
+    "batch_size": 512,
+    "steps": 1500000,
+    "segments": 2,
+    "first_segment_rounds": [
+      4,
+      6
+    ],
+    "later_segment_rounds": [
+      1,
+      4
+    ]
+  },
+  "handoff": {
+    "initial_beta": 0.55,
+    "score_hidden": 16,
+    "score_clip": 8.0,
+    "score_seed": 2026102002
+  },
+  "arms": {
+    "state-mlp": {
+      "handoff": "state-mlp"
+    }
+  },
+  "dropout_seed": 2026101604,
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000,
+    400000,
+    500000
+  ],
+  "evaluation_rounds": [
+    4,
+    8
+  ],
+  "grid_rounds": 32,
+  "grid_joint_rounds": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "evaluation_batch_size": 256,
+  "heartbeat_steps": 1000,
+  "smoke_steps": 32,
+  "input_origin": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+    "reuse": "Exact existing 40000-example world and 43000-query panels used by every DiscoLoop/gate multi-hop arm"
+  },
+  "input_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+  "paired_recipe": {
+    "initial_backbone_sha256": "39a487823c05311a223db99c3d0e2df3e7a1752498e261337f4298abe0cfa7b0",
+    "note": "Exact full initial state-MLP tensors, original data and sample/depth schedule, original optimizer and 1500000-step learning-rate horizon. Only the three dropout probabilities change; execution stops at 500000.",
+    "initial_model_sha256": "70289bd6aa675caded73065118b76b917282dcb81b040c2ef5ef7d1d69cc3640"
+  },
+  "reused_comparators": {
+    "state-mlp": {
+      "run": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-state-handoff-development-v1/artifacts/runs/state-mlp",
+      "new_training_updates": 0,
+      "matching_interval_steps": [
+        0,
+        500000
+      ],
+      "baseline_config_sha256": "319d0694e288512f52f43074f6aa101a3fd4cac3af4956e4eca5bf362c81bd45",
+      "training_may_continue": true
+    }
+  },
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:c77af324439d8a2f838b57c3a386fc8477135015a361e4fbf6a8389facbf9f14",
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "cpu_threads": 2,
+    "memory_gib": 16,
+    "gpu_memory_fraction": 0.16,
+    "minimum_free_gpu_mib": 18000,
+    "maximum_idle_gpu_used_mib": 512,
+    "gpu_candidates": [
+      0,
+      5,
+      8,
+      4,
+      7,
+      9,
+      1,
+      2,
+      6
+    ],
+    "cpu_set": "84,85",
+    "poll_seconds": 30,
+    "jobs_per_gpu": 1,
+    "automatic_retry": false,
+    "maximum_local_user_gpus": 4,
+    "owner": "siqizhu4",
+    "excluded_gpu_ids": [
+      3
+    ],
+    "idle_confirmations": 2,
+    "priority_batches": [
+      {
+        "controller_state": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-queue-target-20261021/controller-state.json",
+        "schedule_amendment": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-queue-target-20261021/schedule-amendment.json",
+        "fallback_gpu_ids": [
+          1,
+          6,
+          3,
+          2
+        ]
+      },
+      {
+        "controller_state": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-state-handoff-development-v1/controller-state.json",
+        "fixed_gpu_ids": [
+          0
+        ]
+      }
+    ]
+  },
+  "tracking": {
+    "provider": "wandb",
+    "entity": "zsqzz",
+    "project": "llm-memory-editability",
+    "mode": "online"
+  },
+  "primary": "At fixed 500000 steps, compare graph-B four-hop full-vocabulary answer accuracy at EMA R8 against the reused dropout-0.1 control. Report complete paired R4/R8 curves, especially 256000/300000/400000/500000, endpoint minus 256000 (percentage points), raw R4, B2/B3 and all other panels. No best checkpoint or successful horizon selected. Preserve the original 1500000-step LR horizon.",
+  "budget": {
+    "new_scientific_arms": 1,
+    "new_scientific_updates": 500000,
+    "final_steps_per_arm": 500000,
+    "learning_rate_horizon_steps": 1500000,
+    "engineering_smoke_updates_per_arm": 32,
+    "new_world_updates": 0
+  },
+  "score_design": {
+    "inputs": [
+      "previous_state",
+      "candidate"
+    ],
+    "hidden": 16,
+    "activation": "gelu",
+    "output": "scalar score; existing normalized history aggregation",
+    "additional_normalization": false
+  },
+  "comparison": "One paired dropout ablation of the unchanged state-MLP model and training recipe; no additional gate, normalization, supervision, data or initialization changes.",
+  "source_references": {
+    "gru": "https://aclanthology.org/D14-1179.pdf#page=3",
+    "highway": "https://arxiv.org/pdf/1505.00387",
+    "gtrxl": "https://proceedings.mlr.press/v119/parisotto20a/parisotto20a.pdf#page=3",
+    "infiloop": "https://arxiv.org/pdf/2610.11570v2#page=4",
+    "paired_execution": {
+      "baseline_config": "/mnt/disk2_from_server2/siqizhu4/llm-memory-editability/results/loop-state-handoff-development-v1/runtime/source/configs/loop-state-handoff-development-v1.json",
+      "previous_design": "docs/development-artifacts/loop-dropout-recipe-design-v1/design.json",
+      "execution_protocol": "docs/development-artifacts/loop-dropout-development-v1/protocol.md"
+    }
+  },
+  "limits": [
+    "One previously observed world and original initialization; no independent-world or seed confirmation.",
+    "Dropout removal is a training-recipe ablation; success would not establish which of the three sites caused the decline.",
+    "The 500000-step execution cap tests the observed decline interval, not the full 1500000-step endpoint.",
+    "The original control may continue its frozen training; compare only fixed matching checkpoints through 500000.",
+    "All old queues, reservations, code, identities and budgets remain intact."
+  ],
+  "execution_stop_step": 500000
+}

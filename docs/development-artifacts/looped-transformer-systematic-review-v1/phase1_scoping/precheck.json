@@ -1,0 +1,3302 @@
+{
+  "schema": "ltsr-precheck/1",
+  "title": "执行可行性预检记录（§3.2.1）",
+  "protocol": {
+    "path": "/mnt/disk2/siqizhu4/llm-memory-editability/docs/development-artifacts/looped-transformer-systematic-review-v1/phase1_scoping/protocol.md",
+    "version": "v0.2（草案，未冻结）",
+    "sha256_at_precheck": "51a74597d28db365db942366fc0e4598821285f2d24690c9c7e7809af061d4f2",
+    "modified_by_precheck": false
+  },
+  "executed_by": "检索执行者子代理（claude-opus-5-5，Anthropic），代主会话执行",
+  "execution_utc": {
+    "start": "2026-10-12T02:55:30Z",
+    "end": "2026-10-12T03:22:37Z"
+  },
+  "nominal_search_date": "2026-10-12",
+  "scope": "只读计数与可达性。检索式只读总数；未查看非候选记录内容。召回预演只取附录E候选本身的记录；例外是两次按标题核实时看到了非候选记录的标题（第23号的arXiv标题检索另返回5条HRM相关记录；第24号的S2短语检索返回2条其他记录），未看其摘要，也不作为检索结果使用。ACL全量BibTeX按§3.2.1第3条下载后由程序计数；为确认字段格式只查看过文件开头两条（与主题无关的2026年研讨会条目），未输出命中记录；S2分页只取paperId用于与候选求交。另做少量诊断计数（短语级、分类与停用词核对）。未筛选、未提取。所有抓取内容按数据处理",
+  "access_rules_followed": {
+    "arXiv_min_interval_s": 3.2,
+    "s2_min_interval_s": 1.5,
+    "s2_backoff": "2,4,8,…,256秒×U(0.8,1.2)，每请求最多8次重试",
+    "no_bypass": "OpenReview验证页未绕过；请求头只用说明性User-Agent或curl默认值，未伪造浏览器"
+  },
+  "searches": [
+    {
+      "id": "AX-1a",
+      "source": "arXiv",
+      "endpoint": "https://export.arxiv.org/api/query",
+      "query": "( (ti:\"looped transformer\" OR abs:\"looped transformer\") OR (ti:\"looped transformers\" OR abs:\"looped transformers\") OR (ti:\"looping transformer\" OR abs:\"looping transformer\") OR (ti:\"looping transformers\" OR abs:\"looping transformers\") OR (ti:\"looped language model\" OR abs:\"looped language model\") OR (ti:\"looped language models\" OR abs:\"looped language models\") OR (ti:\"looped LLM\" OR abs:\"looped LLM\") OR (ti:\"looped LLMs\" OR abs:\"looped LLMs\") OR (ti:\"looped model\" OR abs:\"looped model\") OR (ti:\"looped models\" OR abs:\"looped models\") OR (ti:\"looped network\" OR abs:\"looped network\") OR (ti:\"looped networks\" OR abs:\"looped networks\") OR (ti:\"recurrent depth\" OR abs:\"recurrent depth\") OR (ti:\"recurrent-depth\" OR abs:\"recurrent-depth\") OR (ti:\"depth recurrence\" OR abs:\"depth recurrence\") OR (ti:\"depth-recurrent\" OR abs:\"depth-recurrent\") OR (ti:\"depth recurrent\" OR abs:\"depth recurrent\") OR (ti:\"depth-wise recurrence\" OR abs:\"depth-wise recurrence\") OR (ti:\"depthwise recurrence\" OR abs:\"depthwise recurrence\") OR (ti:\"recurrence in depth\" OR abs:\"recurrence in depth\") OR (ti:\"recurrent in depth\" OR abs:\"recurrent in depth\") OR (ti:\"universal transformer\" OR abs:\"universal transformer\") OR (ti:\"universal transformers\" OR abs:\"universal transformers\") OR (ti:\"recursive transformer\" OR abs:\"recursive transformer\") OR (ti:\"recursive transformers\" OR abs:\"recursive transformers\") OR (ti:\"relaxed recursive\" OR abs:\"relaxed recursive\") OR (ti:\"mixture-of-recursions\" OR abs:\"mixture-of-recursions\") OR (ti:\"mixture of recursions\" OR abs:\"mixture of recursions\") OR (ti:\"hierarchical reasoning model\" OR abs:\"hierarchical reasoning model\") OR (ti:\"hierarchical reasoning models\" OR abs:\"hierarchical reasoning models\") OR (ti:\"tiny recursive model\" OR abs:\"tiny recursive model\") OR (ti:\"tiny recursive models\" OR abs:\"tiny recursive models\") OR (ti:\"weight-tied transformer\" OR abs:\"weight-tied transformer\") OR (ti:\"weight-tied transformers\" OR abs:\"weight-tied transformers\") OR (ti:\"parameter-shared transformer\" OR abs:\"parameter-shared transformer\") OR (ti:\"parameter-shared transformers\" OR abs:\"parameter-shared transformers\") OR (ti:\"shared-parameter transformer\" OR abs:\"shared-parameter transformer\") OR (ti:\"test-time depth\" OR abs:\"test-time depth\") OR (ti:\"latent iteration\" OR abs:\"latent iteration\") OR (ti:\"latent iterations\" OR abs:\"latent iterations\") ) AND submittedDate:[202401010000 TO 202610122359]",
+      "params": {
+        "start": 0,
+        "max_results": 1,
+        "sortBy": "submittedDate",
+        "sortOrder": "ascending"
+      },
+      "url_length": 3192,
+      "utc": "2026-10-12T02:57:52Z",
+      "http_status": 200,
+      "response_type": "Atom",
+      "count_field": "opensearch:totalResults",
+      "count": 503,
+      "retries": 0,
+      "wait_s": 0.0,
+      "split_into_subqueries": false,
+      "round": 0,
+      "reviewer_reference": "v0.1 AX-1 = 351（短语集较少，不可直接比较）",
+      "comparison": "+152（+43%）；预期内：v0.2新增短语。其中looped model(s)/network(s)两组短语单独201条（152条不含Transformer区块），AX-1a有190/503条不在四个分类内，见issues I-4"
+    },
+    {
+      "id": "AX-1b",
+      "source": "arXiv",
+      "endpoint": "https://export.arxiv.org/api/query",
+      "query": "( (ti:\"recurrent transformer\" OR abs:\"recurrent transformer\") OR (ti:\"recurrent transformers\" OR abs:\"recurrent transformers\") OR (ti:\"depth extrapolation\" OR abs:\"depth extrapolation\") OR (ti:\"recursive reasoning\" OR abs:\"recursive reasoning\") ) AND (cat:cs.LG OR cat:cs.CL OR cat:cs.AI OR cat:stat.ML) AND submittedDate:[202401010000 TO 202610122359]",
+      "params": {
+        "start": 0,
+        "max_results": 1,
+        "sortBy": "submittedDate",
+        "sortOrder": "ascending"
+      },
+      "url_length": 549,
+      "utc": "2026-10-12T02:57:56Z",
+      "http_status": 200,
+      "response_type": "Atom",
+      "count_field": "opensearch:totalResults",
+      "count": 97,
+      "retries": 0,
+      "wait_s": 0.0,
+      "split_into_subqueries": false,
+      "round": 0,
+      "reviewer_reference": "无（v0.2新拆出）",
+      "comparison": "—"
+    },
+    {
+      "id": "AX-2",
+      "source": "arXiv",
+      "endpoint": "https://export.arxiv.org/api/query",
+      "query": "( (ti:\"weight tying\" OR abs:\"weight tying\") OR (ti:\"weight-tying\" OR abs:\"weight-tying\") OR (ti:\"weight-tied\" OR abs:\"weight-tied\") OR (ti:\"weight tied\" OR abs:\"weight tied\") OR (ti:\"weight sharing\" OR abs:\"weight sharing\") OR (ti:\"weight-sharing\" OR abs:\"weight-sharing\") OR (ti:\"weight-shared\" OR abs:\"weight-shared\") OR (ti:\"tied weights\" OR abs:\"tied weights\") OR (ti:\"tied layers\" OR abs:\"tied layers\") OR (ti:\"layer tying\" OR abs:\"layer tying\") OR (ti:\"parameter sharing\" OR abs:\"parameter sharing\") OR (ti:\"parameter-sharing\" OR abs:\"parameter-sharing\") OR (ti:\"parameter-shared\" OR abs:\"parameter-shared\") OR (ti:\"shared parameters\" OR abs:\"shared parameters\") OR (ti:\"shared weights\" OR abs:\"shared weights\") OR (ti:\"shared layers\" OR abs:\"shared layers\") OR (ti:\"shared block\" OR abs:\"shared block\") OR (ti:\"layer sharing\" OR abs:\"layer sharing\") OR (ti:\"cross-layer sharing\" OR abs:\"cross-layer sharing\") OR (ti:\"cross-layer parameter sharing\" OR abs:\"cross-layer parameter sharing\") OR (ti:\"layer reuse\" OR abs:\"layer reuse\") OR (ti:\"reusing layers\" OR abs:\"reusing layers\") OR (ti:\"repeated layers\" OR abs:\"repeated layers\") OR (ti:\"repeating layers\" OR abs:\"repeating layers\") OR (ti:\"layer repetition\" OR abs:\"layer repetition\") OR (ti:\"layer recurrence\" OR abs:\"layer recurrence\") OR (ti:\"recurrent layers\" OR abs:\"recurrent layers\") OR (ti:\"iterative refinement\" OR abs:\"iterative refinement\") OR (ti:\"recurrent refinement\" OR abs:\"recurrent refinement\") OR (ti:\"deep equilibrium\" OR abs:\"deep equilibrium\") OR (ti:\"latent reasoning\" OR abs:\"latent reasoning\") OR (ti:\"latent thoughts\" OR abs:\"latent thoughts\") OR (ti:\"latent thought\" OR abs:\"latent thought\") OR (ti:looped OR abs:looped) OR (ti:looping OR abs:looping) ) AND ( (ti:transformer OR abs:transformer) OR (ti:transformers OR abs:transformers) OR (ti:\"language model\" OR abs:\"language model\") OR (ti:\"language models\" OR abs:\"language models\") OR (ti:LLM OR abs:LLM) OR (ti:LLMs OR abs:LLMs) OR (ti:attention OR abs:attention) ) AND ( abs:depth OR abs:layer OR abs:layers OR abs:iteration OR abs:iterations OR abs:recurrent OR abs:recurrence OR abs:recursion OR abs:recursive OR abs:\"test-time compute\" ) AND (cat:cs.LG OR cat:cs.CL OR cat:cs.AI OR cat:stat.ML) AND submittedDate:[202401010000 TO 202610122359]",
+      "params": {
+        "start": 0,
+        "max_results": 1,
+        "sortBy": "submittedDate",
+        "sortOrder": "ascending"
+      },
+      "url_length": 3070,
+      "utc": "2026-10-12T02:58:00Z",
+      "http_status": 200,
+      "response_type": "Atom",
+      "count_field": "opensearch:totalResults",
+      "count": 2787,
+      "retries": 0,
+      "wait_s": 0.0,
+      "split_into_subqueries": false,
+      "round": 0,
+      "reviewer_reference": "v0.1 AX-2 拆分三子查询 218 / 1,268 / 1,585（未去重，合计3,071）",
+      "comparison": "2,787 ≤ 三子查询之和3,071，与v0.1一致（并集）"
+    },
+    {
+      "id": "AX-3",
+      "source": "arXiv",
+      "endpoint": "https://export.arxiv.org/api/query",
+      "query": "( ti:loop OR ti:loops OR ti:looped OR ti:looping OR ti:recurrent OR ti:recurrence OR ti:recursion OR ti:recursive OR ti:iterative OR ti:\"fixed point\" OR ti:\"fixed-point\" OR ti:equilibrium OR ti:halting OR ti:\"adaptive computation\" OR ti:\"adaptive depth\" OR ti:\"dynamic depth\" OR ti:ponder OR ti:pondering ) AND ( (ti:transformer OR abs:transformer) OR (ti:transformers OR abs:transformers) OR (ti:\"language model\" OR abs:\"language model\") OR (ti:\"language models\" OR abs:\"language models\") OR (ti:LLM OR abs:LLM) OR (ti:LLMs OR abs:LLMs) OR (ti:attention OR abs:attention) ) AND ( abs:depth OR abs:layer OR abs:layers OR abs:shared OR abs:sharing OR abs:tied OR abs:iterations ) AND (cat:cs.LG OR cat:cs.CL OR cat:cs.AI OR cat:stat.ML) AND submittedDate:[202401010000 TO 202610122359]",
+      "params": {
+        "start": 0,
+        "max_results": 1,
+        "sortBy": "submittedDate",
+        "sortOrder": "ascending"
+      },
+      "url_length": 1067,
+      "utc": "2026-10-12T02:58:04Z",
+      "http_status": 200,
+      "response_type": "Atom",
+      "count_field": "opensearch:totalResults",
+      "count": 1098,
+      "retries": 0,
+      "wait_s": 0.0,
+      "split_into_subqueries": false,
+      "round": 0,
+      "reviewer_reference": "v0.1 AX-3 = 1,098",
+      "comparison": "完全相同（AX-3未改）"
+    },
+    {
+      "id": "AX-4",
+      "source": "arXiv",
+      "endpoint": "https://export.arxiv.org/api/query",
+      "query": "( (ti:\"two-hop\" OR abs:\"two-hop\") OR (ti:\"2-hop\" OR abs:\"2-hop\") OR (ti:\"multi-hop\" OR abs:\"multi-hop\") OR (ti:multihop OR abs:multihop) OR (ti:\"implicit reasoning\" OR abs:\"implicit reasoning\") OR (ti:\"latent multi-hop\" OR abs:\"latent multi-hop\") OR (ti:\"compositional generalization\" OR abs:\"compositional generalization\") OR (ti:\"compositional generalisation\" OR abs:\"compositional generalisation\") OR (ti:\"knowledge composition\" OR abs:\"knowledge composition\") OR (ti:\"compositional reasoning\" OR abs:\"compositional reasoning\") OR (ti:\"bridge entity\" OR abs:\"bridge entity\") OR (ti:\"bridge entities\" OR abs:\"bridge entities\") ) AND ( (ti:recurrent OR abs:recurrent) OR (ti:recurrence OR abs:recurrence) OR (ti:loop OR abs:loop) OR (ti:looped OR abs:looped) OR (ti:looping OR abs:looping) OR (ti:\"weight sharing\" OR abs:\"weight sharing\") OR (ti:\"weight-sharing\" OR abs:\"weight-sharing\") OR (ti:\"parameter sharing\" OR abs:\"parameter sharing\") OR (ti:\"weight-tied\" OR abs:\"weight-tied\") OR (ti:\"weight tying\" OR abs:\"weight tying\") OR (ti:\"cross-layer\" OR abs:\"cross-layer\") OR (ti:\"shared layers\" OR abs:\"shared layers\") OR (ti:\"layer sharing\" OR abs:\"layer sharing\") OR (ti:reuse OR abs:reuse) OR (ti:reusing OR abs:reusing) OR (ti:iterative OR abs:iterative) OR (ti:recursion OR abs:recursion) OR (ti:recursive OR abs:recursive) ) AND ( (ti:transformer OR abs:transformer) OR (ti:transformers OR abs:transformers) OR (ti:\"language model\" OR abs:\"language model\") OR (ti:\"language models\" OR abs:\"language models\") OR (ti:LLM OR abs:LLM) OR (ti:LLMs OR abs:LLMs) OR (ti:attention OR abs:attention) ) AND (cat:cs.LG OR cat:cs.CL OR cat:cs.AI OR cat:stat.ML) AND submittedDate:[202401010000 TO 202610122359]",
+      "params": {
+        "start": 0,
+        "max_results": 1,
+        "sortBy": "submittedDate",
+        "sortOrder": "ascending"
+      },
+      "url_length": 2312,
+      "utc": "2026-10-12T02:58:08Z",
+      "http_status": 200,
+      "response_type": "Atom",
+      "count_field": "opensearch:totalResults",
+      "count": 313,
+      "retries": 0,
+      "wait_s": 0.0,
+      "split_into_subqueries": false,
+      "round": 0,
+      "reviewer_reference": "审查者组合×循环示例 = 265（用词少于AX-4）",
+      "comparison": "+48（+18%）；预期内：v0.2组合与循环区块词更多"
+    },
+    {
+      "id": "AX-3b",
+      "source": "arXiv",
+      "endpoint": "https://export.arxiv.org/api/query",
+      "query": "( (ti:recurrent OR abs:recurrent) OR (ti:recurrence OR abs:recurrence) OR (ti:loop OR abs:loop) OR (ti:looped OR abs:looped) OR (ti:looping OR abs:looping) ) AND ( (ti:transformer OR abs:transformer) OR (ti:transformers OR abs:transformers) OR (ti:\"language model\" OR abs:\"language model\") OR (ti:\"language models\" OR abs:\"language models\") OR (ti:LLM OR abs:LLM) OR (ti:LLMs OR abs:LLMs) OR (ti:attention OR abs:attention) ) AND ( (ti:\"two-hop\" OR abs:\"two-hop\") OR (ti:\"2-hop\" OR abs:\"2-hop\") OR (ti:\"multi-hop\" OR abs:\"multi-hop\") OR (ti:multihop OR abs:multihop) OR (ti:\"implicit reasoning\" OR abs:\"implicit reasoning\") OR (ti:\"latent multi-hop\" OR abs:\"latent multi-hop\") OR (ti:\"compositional generalization\" OR abs:\"compositional generalization\") OR (ti:\"compositional generalisation\" OR abs:\"compositional generalisation\") OR (ti:\"knowledge composition\" OR abs:\"knowledge composition\") OR (ti:\"compositional reasoning\" OR abs:\"compositional reasoning\") OR (ti:\"bridge entity\" OR abs:\"bridge entity\") OR (ti:\"bridge entities\" OR abs:\"bridge entities\") OR (ti:\"in depth\" OR abs:\"in depth\") OR (ti:\"depth-wise\" OR abs:\"depth-wise\") OR (ti:depthwise OR abs:depthwise) OR (ti:\"across layers\" OR abs:\"across layers\") OR (ti:\"same layers\" OR abs:\"same layers\") OR (ti:\"same block\" OR abs:\"same block\") OR (ti:\"shared block\" OR abs:\"shared block\") OR (ti:\"shared weights\" OR abs:\"shared weights\") OR (ti:\"tied weights\" OR abs:\"tied weights\") OR (ti:\"number of iterations\" OR abs:\"number of iterations\") OR (ti:\"more iterations\" OR abs:\"more iterations\") OR (ti:\"test-time compute\" OR abs:\"test-time compute\") OR (ti:\"test-time scaling\" OR abs:\"test-time scaling\") OR (ti:\"latent reasoning\" OR abs:\"latent reasoning\") ) AND (cat:cs.LG OR cat:cs.CL OR cat:cs.AI OR cat:stat.ML) AND submittedDate:[202401010000 TO 202610122359]",
+      "params": {
+        "start": 0,
+        "max_results": 1,
+        "sortBy": "submittedDate",
+        "sortOrder": "ascending"
+      },
+      "url_length": 2477,
+      "utc": "2026-10-12T02:58:12Z",
+      "http_status": 200,
+      "response_type": "Atom",
+      "count_field": "opensearch:totalResults",
+      "count": 551,
+      "retries": 0,
+      "wait_s": 0.0,
+      "split_into_subqueries": false,
+      "round": 2,
+      "reviewer_reference": "无（v0.1整体放宽为8,758，已废弃）",
+      "comparison": "—"
+    },
+    {
+      "id": "SS-1",
+      "source": "Semantic Scholar",
+      "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search/bulk",
+      "query": "\"looped transformer\" | \"looping transformer\" | \"looped language model\" | \"looped llm\" | \"looped model\" | \"looped network\" | \"recurrent depth\" | \"depth recurrence\" | \"depth recurrent\" | \"depthwise recurrence\" | \"depth-wise recurrence\" | \"recurrence in depth\" | \"recurrent in depth\" | \"universal transformer\" | \"recursive transformer\" | \"relaxed recursive\" | \"mixture of recursions\" | \"hierarchical reasoning model\" | \"tiny recursive model\" | \"recursive reasoning\" | \"weight-tied transformer\" | \"parameter-shared transformer\" | \"shared-parameter transformer\" | \"recurrent transformer\" | \"depth extrapolation\" | \"test-time depth\" | \"latent iteration\"",
+      "params": {
+        "fields": "paperId",
+        "fieldsOfStudy": "Computer Science",
+        "publicationDateOrYear": "2023-07-01:"
+      },
+      "url_length": 1126,
+      "utc": "2026-10-12T02:58:46Z",
+      "http_status": 200,
+      "response_type": "JSON",
+      "count_field": "total",
+      "count": 1160,
+      "retries": 3,
+      "n_429": 3,
+      "wait_s": 12.5,
+      "attempt_statuses": [
+        429,
+        429,
+        429,
+        200
+      ],
+      "split_into_subqueries": false,
+      "round": 0,
+      "reviewer_reference": "无",
+      "comparison": "—（SS-1为arXiv AX-1a+AX-1b的2.1倍：S2不限分类、做词干化、含非arXiv记录）",
+      "count_stability_check": "之后用fields=paperId分页取ID（只用于与候选求交，不保存非候选ID），实取1160条，与total一致"
+    },
+    {
+      "id": "SS-2",
+      "source": "Semantic Scholar",
+      "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search/bulk",
+      "query": "( \"weight tying\" | \"weight tied\" | \"weight sharing\" | \"weight shared\" | \"tied weights\" | \"tied layers\" | \"layer tying\" | \"parameter sharing\" | \"parameter shared\" | \"shared parameters\" | \"shared weights\" | \"shared layers\" | \"shared block\" | \"layer sharing\" | \"cross-layer sharing\" | \"cross-layer parameter sharing\" | \"layer reuse\" | \"reusing layers\" | \"repeated layers\" | \"repeating layers\" | \"layer repetition\" | \"layer recurrence\" | \"recurrent layers\" | \"iterative refinement\" | \"recurrent refinement\" | \"deep equilibrium\" | \"latent reasoning\" | \"latent thoughts\" ) + ( transformer | \"language model\" | llm | attention ) + ( depth | layer | iteration | recurrent | recurrence | recursion | recursive | \"test-time compute\" )",
+      "params": {
+        "fields": "paperId",
+        "fieldsOfStudy": "Computer Science",
+        "publicationDateOrYear": "2023-07-01:"
+      },
+      "url_length": 1313,
+      "utc": "2026-10-12T02:59:01Z",
+      "http_status": 200,
+      "response_type": "JSON",
+      "count_field": "total",
+      "count": 2109,
+      "retries": 0,
+      "n_429": 0,
+      "wait_s": 0.0,
+      "attempt_statuses": [
+        200
+      ],
+      "split_into_subqueries": false,
+      "round": 0,
+      "reviewer_reference": "v0.1 SS-2 = 2,109（首次429，重试成功）",
+      "comparison": "完全相同（SS-2未改）；本次首次请求未遇429",
+      "count_stability_check": "之后用fields=paperId分页取ID（只用于与候选求交，不保存非候选ID），实取2109条，与total一致"
+    },
+    {
+      "id": "SS-4",
+      "source": "Semantic Scholar",
+      "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search/bulk",
+      "query": "( \"two-hop\" | \"2-hop\" | \"multi-hop\" | multihop | \"implicit reasoning\" | \"latent multi-hop\" | \"compositional generalization\" | \"knowledge composition\" | \"compositional reasoning\" | \"bridge entity\" ) + ( recurrent | recurrence | loop | \"weight sharing\" | \"parameter sharing\" | \"weight tied\" | \"weight tying\" | \"cross-layer\" | \"shared layers\" | \"layer sharing\" | reuse | iterative | recursion | recursive ) + ( transformer | \"language model\" | llm | attention )",
+      "params": {
+        "fields": "paperId",
+        "fieldsOfStudy": "Computer Science",
+        "publicationDateOrYear": "2023-07-01:"
+      },
+      "url_length": 887,
+      "utc": "2026-10-12T02:59:03Z",
+      "http_status": 200,
+      "response_type": "JSON",
+      "count_field": "total",
+      "count": 527,
+      "retries": 3,
+      "n_429": 3,
+      "wait_s": 14.4,
+      "attempt_statuses": [
+        429,
+        429,
+        429,
+        200
+      ],
+      "split_into_subqueries": false,
+      "round": 0,
+      "reviewer_reference": "无",
+      "comparison": "—",
+      "count_stability_check": "之后用fields=paperId分页取ID（只用于与候选求交，不保存非候选ID），实取527条，与total一致"
+    },
+    {
+      "id": "SS-3b",
+      "source": "Semantic Scholar",
+      "endpoint": "https://api.semanticscholar.org/graph/v1/paper/search/bulk",
+      "query": "( recurrent | recurrence | loop ) + ( transformer | \"language model\" | llm ) + ( \"in depth\" | \"depth-wise\" | depthwise | \"across layers\" | \"same layers\" | \"same block\" | \"shared block\" | \"shared weights\" | \"tied weights\" | \"number of iterations\" | \"more iterations\" | \"test-time compute\" | \"test-time scaling\" | \"latent reasoning\" | \"two-hop\" | \"multi-hop\" | \"compositional generalization\" | \"implicit reasoning\" | \"knowledge composition\" )",
+      "params": {
+        "fields": "paperId",
+        "fieldsOfStudy": "Computer Science",
+        "publicationDateOrYear": "2023-07-01:"
+      },
+      "url_length": 867,
+      "utc": "2026-10-12T02:59:20Z",
+      "http_status": 200,
+      "response_type": "JSON",
+      "count_field": "total",
+      "count": 944,
+      "retries": 4,
+      "n_429": 4,
+      "wait_s": 26.6,
+      "attempt_statuses": [
+        429,
+        429,
+        429,
+        429,
+        200
+      ],
+      "split_into_subqueries": false,
+      "round": 2,
+      "reviewer_reference": "无",
+      "comparison": "—",
+      "count_stability_check": "之后用fields=paperId分页取ID（只用于与候选求交，不保存非候选ID），实取944条，与total一致"
+    },
+    {
+      "id": "ACL-R1",
+      "source": "ACL Anthology（本地正则）",
+      "endpoint": "https://aclanthology.org/anthology+abstracts.bib.gz",
+      "query": "附录A.3/A.4命中规则（逐字转录）",
+      "http_status": 200,
+      "response_type": "BibTeX (gzip)",
+      "count": 12,
+      "round": 0,
+      "note": null
+    },
+    {
+      "id": "ACL-R2",
+      "source": "ACL Anthology（本地正则）",
+      "endpoint": "https://aclanthology.org/anthology+abstracts.bib.gz",
+      "query": "附录A.3/A.4命中规则（逐字转录）",
+      "http_status": 200,
+      "response_type": "BibTeX (gzip)",
+      "count": 28,
+      "round": 0,
+      "note": null
+    },
+    {
+      "id": "ACL-R3",
+      "source": "ACL Anthology（本地正则）",
+      "endpoint": "https://aclanthology.org/anthology+abstracts.bib.gz",
+      "query": "附录A.3/A.4命中规则（逐字转录）",
+      "http_status": 200,
+      "response_type": "BibTeX (gzip)",
+      "count": 42,
+      "round": 0,
+      "note": null
+    },
+    {
+      "id": "ACL-R4",
+      "source": "ACL Anthology（本地正则）",
+      "endpoint": "https://aclanthology.org/anthology+abstracts.bib.gz",
+      "query": "附录A.3/A.4命中规则（逐字转录）",
+      "http_status": 200,
+      "response_type": "BibTeX (gzip)",
+      "count": 42,
+      "round": 0,
+      "note": null
+    },
+    {
+      "id": "ACL-R1∪R2∪R3∪R4",
+      "source": "ACL Anthology（本地正则）",
+      "endpoint": "https://aclanthology.org/anthology+abstracts.bib.gz",
+      "query": "附录A.3/A.4命中规则（逐字转录）",
+      "http_status": 200,
+      "response_type": "BibTeX (gzip)",
+      "count": 107,
+      "round": 0,
+      "note": null
+    },
+    {
+      "id": "ACL-R3b",
+      "source": "ACL Anthology（本地正则）",
+      "endpoint": "https://aclanthology.org/anthology+abstracts.bib.gz",
+      "query": "附录A.3/A.4命中规则（逐字转录）",
+      "http_status": 200,
+      "response_type": "BibTeX (gzip)",
+      "count": 20,
+      "round": 2,
+      "note": "R3b中不属于第0轮并集的新增 = 7"
+    }
+  ],
+  "round0_totals": {
+    "arXiv_sum_AX1a_1b_2_3_4": 4798,
+    "SemanticScholar_sum_SS1_2_4": 3796,
+    "ACL_sum_R1_R2_R3_R4": 124,
+    "ACL_union_R1_to_R4": 107,
+    "all_sources_before_dedup": 8718,
+    "round2_expansion_counts": {
+      "AX-3b": 551,
+      "SS-3b": 944,
+      "ACL-R3b": 20
+    }
+  },
+  "quantity_guard": {
+    "rule": "§3.2.1第6条/§3.3.4第6条：单条>5,000或合并去重前>10,000需报告用户",
+    "max_single_query": {
+      "id": "AX-2",
+      "count": 2787
+    },
+    "single_query_over_5000": false,
+    "round0_total_over_10000": false,
+    "triggered": false,
+    "note": "第0轮8,718条，为阈值的87%"
+  },
+  "arxiv_phrase_level_counts": {
+    "note": "§3.3.5的预演：每个短语单独计数（第一组按AX-1a/1b的分类条件，第四组组合区块加CAT+DATE）",
+    "AX-1a": [
+      {
+        "phrase": "looped transformer",
+        "count": 121
+      },
+      {
+        "phrase": "looped transformers",
+        "count": 121
+      },
+      {
+        "phrase": "looping transformer",
+        "count": 121
+      },
+      {
+        "phrase": "looping transformers",
+        "count": 121
+      },
+      {
+        "phrase": "looped language model",
+        "count": 35
+      },
+      {
+        "phrase": "looped language models",
+        "count": 35
+      },
+      {
+        "phrase": "looped LLM",
+        "count": 39
+      },
+      {
+        "phrase": "looped LLMs",
+        "count": 39
+      },
+      {
+        "phrase": "looped model",
+        "count": 177
+      },
+      {
+        "phrase": "looped models",
+        "count": 177
+      },
+      {
+        "phrase": "looped network",
+        "count": 24
+      },
+      {
+        "phrase": "looped networks",
+        "count": 24
+      },
+      {
+        "phrase": "recurrent depth",
+        "count": 49
+      },
+      {
+        "phrase": "recurrent-depth",
+        "count": 49
+      },
+      {
+        "phrase": "depth recurrence",
+        "count": 21
+      },
+      {
+        "phrase": "depth-recurrent",
+        "count": 21
+      },
+      {
+        "phrase": "depth recurrent",
+        "count": 21
+      },
+      {
+        "phrase": "depth-wise recurrence",
+        "count": 1
+      },
+      {
+        "phrase": "depthwise recurrence",
+        "count": 0
+      },
+      {
+        "phrase": "recurrence in depth",
+        "count": 7
+      },
+      {
+        "phrase": "recurrent in depth",
+        "count": 7
+      },
+      {
+        "phrase": "universal transformer",
+        "count": 26
+      },
+      {
+        "phrase": "universal transformers",
+        "count": 26
+      },
+      {
+        "phrase": "recursive transformer",
+        "count": 14
+      },
+      {
+        "phrase": "recursive transformers",
+        "count": 14
+      },
+      {
+        "phrase": "relaxed recursive",
+        "count": 2
+      },
+      {
+        "phrase": "mixture-of-recursions",
+        "count": 4
+      },
+      {
+        "phrase": "mixture of recursions",
+        "count": 4
+      },
+      {
+        "phrase": "hierarchical reasoning model",
+        "count": 16
+      },
+      {
+        "phrase": "hierarchical reasoning models",
+        "count": 16
+      },
+      {
+        "phrase": "tiny recursive model",
+        "count": 26
+      },
+      {
+        "phrase": "tiny recursive models",
+        "count": 26
+      },
+      {
+        "phrase": "weight-tied transformer",
+        "count": 2
+      },
+      {
+        "phrase": "weight-tied transformers",
+        "count": 2
+      },
+      {
+        "phrase": "parameter-shared transformer",
+        "count": 3
+      },
+      {
+        "phrase": "parameter-shared transformers",
+        "count": 3
+      },
+      {
+        "phrase": "shared-parameter transformer",
+        "count": 0
+      },
+      {
+        "phrase": "test-time depth",
+        "count": 7
+      },
+      {
+        "phrase": "latent iteration",
+        "count": 7
+      },
+      {
+        "phrase": "latent iterations",
+        "count": 7
+      }
+    ],
+    "AX-1b": [
+      {
+        "phrase": "recurrent transformer",
+        "count": 52
+      },
+      {
+        "phrase": "recurrent transformers",
+        "count": 52
+      },
+      {
+        "phrase": "depth extrapolation",
+        "count": 4
+      },
+      {
+        "phrase": "recursive reasoning",
+        "count": 42
+      }
+    ],
+    "AX-4_composition_block": [
+      {
+        "phrase": "two-hop",
+        "count": 54
+      },
+      {
+        "phrase": "2-hop",
+        "count": 24
+      },
+      {
+        "phrase": "multi-hop",
+        "count": 1569
+      },
+      {
+        "phrase": "multihop",
+        "count": 58
+      },
+      {
+        "phrase": "implicit reasoning",
+        "count": 101
+      },
+      {
+        "phrase": "latent multi-hop",
+        "count": 6
+      },
+      {
+        "phrase": "compositional generalization",
+        "count": 264
+      },
+      {
+        "phrase": "compositional generalisation",
+        "count": 21
+      },
+      {
+        "phrase": "knowledge composition",
+        "count": 10
+      },
+      {
+        "phrase": "compositional reasoning",
+        "count": 190
+      },
+      {
+        "phrase": "bridge entity",
+        "count": 15
+      },
+      {
+        "phrase": "bridge entities",
+        "count": 15
+      }
+    ],
+    "AX-1a_without_DATE": 1280
+  },
+  "diagnostics": {
+    "AX-1a_AND_CAT": {
+      "query": "( (ti:\"looped transformer\" OR abs:\"looped transformer\") OR (ti:\"looped transformers\" OR abs:\"looped transformers\") OR (ti:\"looping transformer\" OR abs:\"looping transformer\") OR (ti:\"looping transformers\" OR abs:\"looping transformers\") OR (ti:\"looped language model\" OR abs:\"looped language model\") OR (ti:\"looped language models\" OR abs:\"looped language models\") OR (ti:\"looped LLM\" OR abs:\"looped LLM\") OR (ti:\"looped LLMs\" OR abs:\"looped LLMs\") OR (ti:\"looped model\" OR abs:\"looped model\") OR (ti:\"looped models\" OR abs:\"looped models\") OR (ti:\"looped network\" OR abs:\"looped network\") OR (ti:\"looped networks\" OR abs:\"looped networks\") OR (ti:\"recurrent depth\" OR abs:\"recurrent depth\") OR (ti:\"recurrent-depth\" OR abs:\"recurrent-depth\") OR (ti:\"depth recurrence\" OR abs:\"depth recurrence\") OR (ti:\"depth-recurrent\" OR abs:\"depth-recurrent\") OR (ti:\"depth recurrent\" OR abs:\"depth recurrent\") OR (ti:\"depth-wise recurrence\" OR abs:\"depth-wise recurrence\") OR (ti:\"depthwise recurrence\" OR abs:\"depthwise recurrence\") OR (ti:\"recurrence in depth\" OR abs:\"recurrence in depth\") OR (ti:\"recurrent in depth\" OR abs:\"recurrent in depth\") OR (ti:\"universal transformer\" OR abs:\"universal transformer\") OR (ti:\"universal transformers\" OR abs:\"universal transformers\") OR (ti:\"recursive transformer\" OR abs:\"recursive transformer\") OR (ti:\"recursive transformers\" OR abs:\"recursive transformers\") OR (ti:\"relaxed recursive\" OR abs:\"relaxed recursive\") OR (ti:\"mixture-of-recursions\" OR abs:\"mixture-of-recursions\") OR (ti:\"mixture of recursions\" OR abs:\"mixture of recursions\") OR (ti:\"hierarchical reasoning model\" OR abs:\"hierarchical reasoning model\") OR (ti:\"hierarchical reasoning models\" OR abs:\"hierarchical reasoning models\") OR (ti:\"tiny recursive model\" OR abs:\"tiny recursive model\") OR (ti:\"tiny recursive models\" OR abs:\"tiny recursive models\") OR (ti:\"weight-tied transformer\" OR abs:\"weight-tied transformer\") OR (ti:\"weight-tied transformers\" OR abs:\"weight-tied transformers\") OR (ti:\"parameter-shared transformer\" OR abs:\"parameter-shared transformer\") OR (ti:\"parameter-shared transformers\" OR abs:\"parameter-shared transformers\") OR (ti:\"shared-parameter transformer\" OR abs:\"shared-parameter transformer\") OR (ti:\"test-time depth\" OR abs:\"test-time depth\") OR (ti:\"latent iteration\" OR abs:\"latent iteration\") OR (ti:\"latent iterations\" OR abs:\"latent iterations\") ) AND (cat:cs.LG OR cat:cs.CL OR cat:cs.AI OR cat:stat.ML) AND submittedDate:[202401010000 TO 202610122359]",
+      "count": 313
+    },
+    "AX-1a_ANDNOT_CAT": {
+      "query": "( (ti:\"looped transformer\" OR abs:\"looped transformer\") OR (ti:\"looped transformers\" OR abs:\"looped transformers\") OR (ti:\"looping transformer\" OR abs:\"looping transformer\") OR (ti:\"looping transformers\" OR abs:\"looping transformers\") OR (ti:\"looped language model\" OR abs:\"looped language model\") OR (ti:\"looped language models\" OR abs:\"looped language models\") OR (ti:\"looped LLM\" OR abs:\"looped LLM\") OR (ti:\"looped LLMs\" OR abs:\"looped LLMs\") OR (ti:\"looped model\" OR abs:\"looped model\") OR (ti:\"looped models\" OR abs:\"looped models\") OR (ti:\"looped network\" OR abs:\"looped network\") OR (ti:\"looped networks\" OR abs:\"looped networks\") OR (ti:\"recurrent depth\" OR abs:\"recurrent depth\") OR (ti:\"recurrent-depth\" OR abs:\"recurrent-depth\") OR (ti:\"depth recurrence\" OR abs:\"depth recurrence\") OR (ti:\"depth-recurrent\" OR abs:\"depth-recurrent\") OR (ti:\"depth recurrent\" OR abs:\"depth recurrent\") OR (ti:\"depth-wise recurrence\" OR abs:\"depth-wise recurrence\") OR (ti:\"depthwise recurrence\" OR abs:\"depthwise recurrence\") OR (ti:\"recurrence in depth\" OR abs:\"recurrence in depth\") OR (ti:\"recurrent in depth\" OR abs:\"recurrent in depth\") OR (ti:\"universal transformer\" OR abs:\"universal transformer\") OR (ti:\"universal transformers\" OR abs:\"universal transformers\") OR (ti:\"recursive transformer\" OR abs:\"recursive transformer\") OR (ti:\"recursive transformers\" OR abs:\"recursive transformers\") OR (ti:\"relaxed recursive\" OR abs:\"relaxed recursive\") OR (ti:\"mixture-of-recursions\" OR abs:\"mixture-of-recursions\") OR (ti:\"mixture of recursions\" OR abs:\"mixture of recursions\") OR (ti:\"hierarchical reasoning model\" OR abs:\"hierarchical reasoning model\") OR (ti:\"hierarchical reasoning models\" OR abs:\"hierarchical reasoning models\") OR (ti:\"tiny recursive model\" OR abs:\"tiny recursive model\") OR (ti:\"tiny recursive models\" OR abs:\"tiny recursive models\") OR (ti:\"weight-tied transformer\" OR abs:\"weight-tied transformer\") OR (ti:\"weight-tied transformers\" OR abs:\"weight-tied transformers\") OR (ti:\"parameter-shared transformer\" OR abs:\"parameter-shared transformer\") OR (ti:\"parameter-shared transformers\" OR abs:\"parameter-shared transformers\") OR (ti:\"shared-parameter transformer\" OR abs:\"shared-parameter transformer\") OR (ti:\"test-time depth\" OR abs:\"test-time depth\") OR (ti:\"latent iteration\" OR abs:\"latent iteration\") OR (ti:\"latent iterations\" OR abs:\"latent iterations\") ) AND submittedDate:[202401010000 TO 202610122359] ANDNOT (cat:cs.LG OR cat:cs.CL OR cat:cs.AI OR cat:stat.ML)",
+      "count": 190
+    },
+    "looped_model_network_phrases": {
+      "query": "( (ti:\"looped model\" OR abs:\"looped model\") OR (ti:\"looped models\" OR abs:\"looped models\") OR (ti:\"looped network\" OR abs:\"looped network\") OR (ti:\"looped networks\" OR abs:\"looped networks\") ) AND submittedDate:[202401010000 TO 202610122359]",
+      "count": 201
+    },
+    "looped_model_network_phrases_ANDNOT_B": {
+      "query": "( (ti:\"looped model\" OR abs:\"looped model\") OR (ti:\"looped models\" OR abs:\"looped models\") OR (ti:\"looped network\" OR abs:\"looped network\") OR (ti:\"looped networks\" OR abs:\"looped networks\") ) AND submittedDate:[202401010000 TO 202610122359] ANDNOT ( (ti:transformer OR abs:transformer) OR (ti:transformers OR abs:transformers) OR (ti:\"language model\" OR abs:\"language model\") OR (ti:\"language models\" OR abs:\"language models\") OR (ti:LLM OR abs:LLM) OR (ti:LLMs OR abs:LLMs) OR (ti:attention OR abs:attention) )",
+      "count": 152
+    },
+    "closed-loop_model_or_network": {
+      "query": "( (ti:\"closed-loop model\" OR abs:\"closed-loop model\") OR (ti:\"closed-loop models\" OR abs:\"closed-loop models\") OR (ti:\"closed-loop network\" OR abs:\"closed-loop network\") OR (ti:\"closed-loop networks\" OR abs:\"closed-loop networks\") ) AND submittedDate:[202401010000 TO 202610122359]",
+      "count": 38
+    },
+    "in_depth_phrase": {
+      "query": "(ti:\"in depth\" OR abs:\"in depth\") AND (cat:cs.LG OR cat:cs.CL OR cat:cs.AI OR cat:stat.ML) AND submittedDate:[202401010000 TO 202610122359]",
+      "count": 7540
+    },
+    "depth_word": {
+      "query": "(ti:depth OR abs:depth) AND (cat:cs.LG OR cat:cs.CL OR cat:cs.AI OR cat:stat.ML) AND submittedDate:[202401010000 TO 202610122359]",
+      "count": 7540
+    },
+    "same_block_phrase": {
+      "query": "(ti:\"same block\" OR abs:\"same block\") AND (cat:cs.LG OR cat:cs.CL OR cat:cs.AI OR cat:stat.ML) AND submittedDate:[202401010000 TO 202610122359]",
+      "count": 21
+    },
+    "block_word": {
+      "query": "(ti:block OR abs:block) AND (cat:cs.LG OR cat:cs.CL OR cat:cs.AI OR cat:stat.ML) AND submittedDate:[202401010000 TO 202610122359]",
+      "count": 6465
+    }
+  },
+  "acl_anthology_local_regex": {
+    "file": "会话临时目录（未入库）",
+    "entries_total": 131654,
+    "entries_2024_2026": 37803,
+    "entries_2024_2026_with_abstract": 35563,
+    "entry_types_2024_2026": {
+      "proceedings": 556,
+      "inproceedings": 36805,
+      "article": 432,
+      "book": 10
+    },
+    "entries_without_parsed_title": 0,
+    "group_hits_2024_2026": {
+      "R2": 28,
+      "any_round0": 107,
+      "R3": 42,
+      "R4": 42,
+      "R3b": 20,
+      "R4_only_not_in_R1_R2_R3": 38,
+      "R1": 12,
+      "R3b_new_beyond_round0": 7
+    },
+    "group_hits_by_year": {
+      "2024": {
+        "R2": 4,
+        "any_round0": 10,
+        "R3": 4,
+        "R4": 2,
+        "R3b": 2
+      },
+      "2025": {
+        "R3": 14,
+        "any_round0": 42,
+        "R3b": 6,
+        "R1": 5,
+        "R4": 21,
+        "R2": 8
+      },
+      "2026": {
+        "R2": 16,
+        "any_round0": 55,
+        "R3": 24,
+        "R4": 19,
+        "R3b": 12,
+        "R1": 7
+      }
+    },
+    "normalisation": "LaTeX commands removed, braces stripped, --/--- -> -, whitespace collapsed; then NFKC + dash unification + case-insensitive per A.3; no keywords field present in ACL BibTeX"
+  },
+  "reachability": [
+    {
+      "source": "arXiv API",
+      "url": "https://export.arxiv.org/api/query",
+      "utc": "2026-10-12T02:57:52Z",
+      "http_status": 200,
+      "response_type": "Atom",
+      "note": "http://被301重定向到https://；max_results=0返回500（I-1）"
+    },
+    {
+      "source": "Semantic Scholar bulk search",
+      "url": "https://api.semanticscholar.org/graph/v1/paper/search/bulk",
+      "utc": "2026-10-12T02:58:46Z",
+      "http_status": 200,
+      "response_type": "JSON",
+      "note": "无密钥，多次429后成功（I-7）"
+    },
+    {
+      "source": "Semantic Scholar /references",
+      "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2405.15071/references?fields=paperId&limit=1",
+      "utc": "2026-10-12T03:17:25Z",
+      "http_status": 200,
+      "response_type": "JSON",
+      "note": "limit=1、fields=paperId，只看状态"
+    },
+    {
+      "source": "Semantic Scholar /citations",
+      "url": "https://api.semanticscholar.org/graph/v1/paper/arXiv:2405.15071/citations?fields=paperId&limit=1",
+      "utc": "2026-10-12T03:17:25Z",
+      "http_status": 200,
+      "response_type": "JSON",
+      "note": "limit=1、fields=paperId，只看状态"
+    },
+    {
+      "source": "arXiv HTML（引文追踪替补）",
+      "url": "https://arxiv.org/html/2405.15071",
+      "utc": "2026-10-12T03:17:25Z",
+      "http_status": 200,
+      "response_type": "HTML (HEAD)",
+      "note": "只做HEAD"
+    },
+    {
+      "source": "ACL Anthology全量BibTeX",
+      "url": "https://aclanthology.org/anthology+abstracts.bib.gz",
+      "utc": "2026-10-12T02:59:59Z（HEAD）/ 2026-10-12T03:00:04Z（GET）",
+      "http_status": 200,
+      "response_type": "application/x-gzip (BibTeX)",
+      "last_modified": "Sat, 10 Oct 2026 22:05:40 GMT",
+      "content_length_bytes": 42548978,
+      "sha256": "85a532922aa2e8d3da7c4b0b4318f3ca03a8d81d134ecb35e52ade7346d38242",
+      "note": "按§3.2.1第3条下载到会话临时目录计数；正式检索须重新下载并存档"
+    },
+    {
+      "source": "OpenReview API v2",
+      "url": "https://api2.openreview.net/notes?forum=vJgG20sjea",
+      "utc": "2026-10-12T03:17:06Z",
+      "http_status": 403,
+      "response_type": "JSON ChallengeRequiredError",
+      "note": "未尝试绕过"
+    },
+    {
+      "source": "OpenReview API v2（场次枚举）",
+      "url": "https://api2.openreview.net/notes?invitation=ICLR.cc/2026/Conference/-/Submission&limit=1",
+      "utc": "2026-10-12T03:17:11Z",
+      "http_status": 403,
+      "response_type": "JSON ChallengeRequiredError",
+      "note": "未尝试绕过"
+    },
+    {
+      "source": "OpenReview论坛页",
+      "url": "https://openreview.net/forum?id=vJgG20sjea",
+      "utc": "2026-10-12T03:17:09Z",
+      "http_status": 307,
+      "response_type": "重定向到/challenge?redirect=…（浏览器验证页）",
+      "note": "未跟随、未绕过"
+    },
+    {
+      "source": "用户提供的PDF（第4号）",
+      "path": "/mnt/disk2/siqizhu4/llm-memory-editability/papers/34319_How_Weight_Tying_Elicits.pdf",
+      "sha256": "ef8aa94a2189a0972498feca6b025a2290f0af76c45952a9c8f50113b19bbc81",
+      "matches_expected": true,
+      "size_bytes": 867772,
+      "pages": 23
+    },
+    {
+      "source": "通用网页检索",
+      "note": "预检未执行附录A.5查询（执行会看到记录内容）；正式检索时由主会话用网页检索工具执行"
+    },
+    {
+      "source": "DBLP",
+      "note": "v0.2已不再使用，未重测"
+    }
+  ],
+  "recall_rehearsal": {
+    "note": "只作预检，不是§3.3.4的正式召回检查；正式检查用冻结检索式重做",
+    "summary": {
+      "denominator_note": "预演分母=除第4号外的23篇；核心判据与子问题3类型尚未判定，正式分母可能缩小",
+      "combined_db_round0": {
+        "hit": 23,
+        "n": 23,
+        "recall": 1.0,
+        "cp95": [
+          0.8518,
+          1.0
+        ]
+      },
+      "debug_group": {
+        "hit": 12,
+        "n": 12,
+        "cp95": [
+          0.7354,
+          1.0
+        ]
+      },
+      "holdout_group": {
+        "hit": 11,
+        "n": 11,
+        "cp95": [
+          0.7151,
+          1.0
+        ]
+      },
+      "per_source": {
+        "arXiv_round0": 23,
+        "SemanticScholar_round0": 22,
+        "ACL_Anthology": 0,
+        "local_regex_on_arXiv_text_round0": 23
+      },
+      "per_query_hits": {
+        "AX-1a": [
+          1,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          23,
+          24
+        ],
+        "AX-1b": [
+          1,
+          3,
+          24
+        ],
+        "AX-2": [
+          1,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "AX-3": [
+          1,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          24
+        ],
+        "AX-4": [
+          1,
+          2,
+          3,
+          21,
+          22
+        ],
+        "AX-3b": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          19,
+          20,
+          21,
+          23
+        ],
+        "SS-1": [
+          1,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          23
+        ],
+        "SS-2": [
+          6,
+          7,
+          8,
+          16,
+          17,
+          19,
+          20,
+          21
+        ],
+        "SS-4": [
+          1,
+          2,
+          3,
+          17,
+          21,
+          22
+        ],
+        "SS-3b": [
+          1,
+          2,
+          3,
+          5,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          19,
+          20,
+          21,
+          23
+        ]
+      },
+      "group1_only_misses": [
+        2,
+        22
+      ],
+      "caught_only_by_group4": [
+        2,
+        22
+      ],
+      "misses": {
+        "combined_db": [],
+        "SemanticScholar": [
+          24
+        ],
+        "ACL_Anthology": "全部23篇不在ACL全量BibTeX中（按标题前45字符检索0命中；第2号arXiv注释为EMNLP 2026 Findings，论文集尚未发布）"
+      },
+      "identifier_mismatch": [],
+      "nonexistent": [],
+      "outside_window": [],
+      "method": "arXiv组命中：同一检索式加id_list过滤（API只返回id_list中满足search_query的记录）；S2组命中：fields=paperId分页取全部ID后与候选的S2 paperId求交，非候选ID未保存；本地正则：对arXiv标题+摘要执行A.3/A.4规则（arXiv无关键词字段）"
+    },
+    "table": [
+      {
+        "no": 1,
+        "group": "调试组",
+        "provided_description": "DiscoLoop",
+        "provided_identifier": "arXiv 2607.00341",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3",
+          "R4"
+        ],
+        "local_regex_R3b": true,
+        "local_regex_terms": {
+          "R1": [
+            "looped transformers",
+            "looped-transformer",
+            "recurrent transformers"
+          ],
+          "R2a": [
+            "looped",
+            "looping"
+          ],
+          "R2b": [
+            "language models",
+            "transformer",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "depth",
+            "layers",
+            "recurrence",
+            "recurrent"
+          ],
+          "R3(T)": [
+            "looping"
+          ],
+          "R3d(A)": [
+            "depth",
+            "layers"
+          ],
+          "R4k": [
+            "bridge entity",
+            "multi-hop",
+            "two-hop"
+          ],
+          "R4s": [
+            "loop",
+            "looped",
+            "looping",
+            "recurrence",
+            "recurrent",
+            "reusing"
+          ],
+          "R3b_d2": []
+        },
+        "exists": true,
+        "verified_via": "arXiv id_list",
+        "arxiv_id": "2607.00341",
+        "latest_version": "v2",
+        "title": "DiscoLoop: Looping Discrete Embeddings and Continuous Hidden States for Multi-hop Reasoning",
+        "authors_first3": [
+          "Hengyu Fu",
+          "Tianyu Guo",
+          "Zixuan Wang"
+        ],
+        "n_authors": 8,
+        "primary_category": "cs.CL",
+        "arxiv_comment": "16 pages, 7 figures",
+        "identifier_matches_description": "相符",
+        "first_public_date_v1_utc": "2026-07-01T02:32:02Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-1b",
+          "AX-2",
+          "AX-3",
+          "AX-4"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "d79b73cbf9bf48f34bce5a69d7ca1abf4e6d80f2",
+          "publicationDate": "2026-07-01",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1",
+          "SS-4"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 2,
+        "group": "留出组",
+        "provided_description": "Zhang等，\"Why Knowing Both Hops Is Not Enough\"",
+        "provided_identifier": "arXiv 2608.07261",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R4"
+        ],
+        "local_regex_R3b": true,
+        "local_regex_terms": {
+          "R1": [],
+          "R2a": [],
+          "R2b": [
+            "language models",
+            "llms",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "layers",
+            "recurrent"
+          ],
+          "R3(T)": [],
+          "R3d(A)": [
+            "layers"
+          ],
+          "R4k": [
+            "multi-hop",
+            "two-hop"
+          ],
+          "R4s": [
+            "recurrent",
+            "reuse"
+          ],
+          "R3b_d2": [
+            "across layers"
+          ]
+        },
+        "exists": true,
+        "verified_via": "arXiv id_list",
+        "arxiv_id": "2608.07261",
+        "latest_version": "v3",
+        "title": "Why Knowing Both Hops Is Not Enough: Understanding Two-Hop Generalization in Language Models",
+        "authors_first3": [
+          "Zili Zhang",
+          "Yilin Wang",
+          "Heng Wang"
+        ],
+        "n_authors": 5,
+        "primary_category": "cs.CL",
+        "arxiv_comment": "EMNLP 2026, findings",
+        "identifier_matches_description": "相符",
+        "first_public_date_v1_utc": "2026-08-07T14:17:34Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-4"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "48d4056450a732a42abd8e8a090e415685a45baf",
+          "publicationDate": "2026-08-07",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-4"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 3,
+        "group": "调试组",
+        "provided_description": "Kohli等，\"Loop, Think, & Generalize\"",
+        "provided_identifier": "arXiv 2604.07822",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R3",
+          "R4"
+        ],
+        "local_regex_R3b": true,
+        "local_regex_terms": {
+          "R1": [
+            "depth extrapolation",
+            "recurrent-depth"
+          ],
+          "R2a": [],
+          "R2b": [
+            "language models",
+            "transformer",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "depth",
+            "iterations",
+            "layers",
+            "recurrence",
+            "recurrent"
+          ],
+          "R3(T)": [
+            "loop",
+            "recurrent"
+          ],
+          "R3d(A)": [
+            "depth",
+            "iterations",
+            "layers"
+          ],
+          "R4k": [
+            "compositional generalization",
+            "implicit reasoning",
+            "multi-hop"
+          ],
+          "R4s": [
+            "iterative",
+            "loop",
+            "recurrence",
+            "recurrent"
+          ],
+          "R3b_d2": [
+            "more iterations"
+          ]
+        },
+        "exists": true,
+        "verified_via": "arXiv id_list",
+        "arxiv_id": "2604.07822",
+        "latest_version": "v2",
+        "title": "Loop, Think, & Generalize: Implicit Reasoning in Recurrent-Depth Transformers",
+        "authors_first3": [
+          "Harsh Kohli",
+          "Srinivasan Parthasarathy",
+          "Huan Sun"
+        ],
+        "n_authors": 4,
+        "primary_category": "cs.CL",
+        "arxiv_comment": "21 pages, 21 figures. Accepted at COLM 2026",
+        "identifier_matches_description": "相符",
+        "first_public_date_v1_utc": "2026-04-09T05:24:32Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-1b",
+          "AX-2",
+          "AX-3",
+          "AX-4"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "e1cf9fadef9be5d27401a50e7b66b3ed05066af9",
+          "publicationDate": "2026-04-09",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1",
+          "SS-4"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 4,
+        "group": "留出组",
+        "provided_description": "匿名ICLR 2027投稿34319，\"How Weight Tying Elicits Iterative Computation in Looped Transformers\"",
+        "provided_identifier": "OpenReview vJgG20sjea；用户PDF",
+        "in_db_recall_denominator": false,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3",
+          "R4"
+        ],
+        "local_regex_R3b": true,
+        "local_regex_terms": {
+          "R1": [
+            "looped model",
+            "looped models",
+            "looped transformers"
+          ],
+          "R2a": [
+            "looped",
+            "shared block",
+            "weight tying"
+          ],
+          "R2b": [
+            "transformers"
+          ],
+          "R2c(A)": [
+            "iteration",
+            "iterations",
+            "layer",
+            "layers"
+          ],
+          "R3(T)": [
+            "iterative",
+            "looped"
+          ],
+          "R3d(A)": [
+            "iterations",
+            "layer",
+            "layers",
+            "shared"
+          ],
+          "R4k": [
+            "multi-hop"
+          ],
+          "R4s": [
+            "iterative",
+            "looped",
+            "weight tying"
+          ],
+          "R3b_d2": [
+            "same block",
+            "shared block"
+          ]
+        },
+        "exists": true,
+        "verified_via": "用户PDF（OpenReview返回403 ChallengeRequiredError，论坛ID无法核实）",
+        "identifier_matches_description": "标题一致；页眉\"Under review as a conference paper at ICLR 2027\"、匿名；PDF中未见投稿号34319，OpenReview ID vJgG20sjea未能核实",
+        "title": "How Weight Tying Elicits Iterative Computation in Looped Transformers",
+        "first_public_date": "无法程序核实；PDF元数据CreationDate 2026-09-26T10:37:34Z",
+        "in_window": "是（按§3.1.4用户PDF规则：页眉ICLR 2027 ⇒ 不早于2024-01-01；文件系统创建2026-10-10T19:21:49Z、git提交98ff5e9于2026-10-11T00:17:05Z ⇒ 不晚于检索日）",
+        "arxiv_groups_hit": "不适用（无arXiv记录）",
+        "s2_present": false,
+        "s2_groups_hit": "不适用",
+        "acl_present": false,
+        "db_hit_round0": "不计入分母",
+        "pdf_sha256": "ef8aa94a2189a0972498feca6b025a2290f0af76c45952a9c8f50113b19bbc81",
+        "pdf_sha256_expected": "ef8aa94a2189a0972498feca6b025a2290f0af76c45952a9c8f50113b19bbc81",
+        "pdf_sha256_matches": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 5,
+        "group": "调试组",
+        "provided_description": "Monea等（未提供标题）",
+        "provided_identifier": "arXiv 2610.02383",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": true,
+        "local_regex_terms": {
+          "R1": [
+            "looped language models",
+            "looped models",
+            "looped transformers"
+          ],
+          "R2a": [
+            "looped"
+          ],
+          "R2b": [
+            "language models",
+            "transformer",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "layers",
+            "recursion"
+          ],
+          "R3(T)": [
+            "looped"
+          ],
+          "R3d(A)": [
+            "layers",
+            "shared",
+            "sharing"
+          ],
+          "R4k": [],
+          "R4s": [
+            "looped",
+            "recursion"
+          ],
+          "R3b_d2": [
+            "same layers"
+          ]
+        },
+        "exists": true,
+        "verified_via": "arXiv id_list",
+        "arxiv_id": "2610.02383",
+        "latest_version": "v1",
+        "title": "The Surprising Effectiveness of Shared Memory in Looped Transformers",
+        "authors_first3": [
+          "Giovanni Monea",
+          "Keshav Ramji",
+          "Yousef El-Kurdi"
+        ],
+        "n_authors": 7,
+        "primary_category": "cs.LG",
+        "arxiv_comment": null,
+        "identifier_matches_description": "第一作者Giovanni Monea，标题\"The Surprising Effectiveness of Shared Memory in Looped Transformers\"，相符",
+        "first_public_date_v1_utc": "2026-10-01T19:05:18Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "40ae26ba0e49e04231d0c0f0590f4153aff765fd",
+          "publicationDate": "2026-10-01",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 6,
+        "group": "留出组",
+        "provided_description": "Mixture-of-Recursions",
+        "provided_identifier": "arXiv 2507.10524",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": false,
+        "local_regex_terms": {
+          "R1": [
+            "mixture-of-recursions",
+            "recursive transformer"
+          ],
+          "R2a": [
+            "parameter sharing"
+          ],
+          "R2b": [
+            "attention",
+            "language models",
+            "transformer"
+          ],
+          "R2c(A)": [
+            "depth",
+            "layers",
+            "recursion",
+            "recursive"
+          ],
+          "R3(T)": [
+            "recursive"
+          ],
+          "R3d(A)": [
+            "depth",
+            "layers",
+            "shared",
+            "sharing"
+          ],
+          "R4k": [],
+          "R4s": [
+            "parameter sharing",
+            "recursion",
+            "recursive",
+            "reuses"
+          ],
+          "R3b_d2": []
+        },
+        "exists": true,
+        "verified_via": "arXiv id_list",
+        "arxiv_id": "2507.10524",
+        "latest_version": "v3",
+        "title": "Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation",
+        "authors_first3": [
+          "Sangmin Bae",
+          "Yujin Kim",
+          "Reza Bayat"
+        ],
+        "n_authors": 11,
+        "primary_category": "cs.CL",
+        "arxiv_comment": "38 pages, 9 figures, 17 tables, codes at https://github.com/raymin0223/mixture_of_recursions",
+        "identifier_matches_description": "相符",
+        "first_public_date_v1_utc": "2025-07-14T17:49:00Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": false,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "875418bb21265276be9298b50e52a6c53ff3a202",
+          "publicationDate": "2025-07-14",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1",
+          "SS-2"
+        ],
+        "s2_SS3b_hit": false,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 7,
+        "group": "调试组",
+        "provided_description": "LoopFormer",
+        "provided_identifier": "arXiv 2602.11451",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": true,
+        "local_regex_terms": {
+          "R1": [
+            "looped transformer",
+            "looped transformers"
+          ],
+          "R2a": [
+            "latent reasoning",
+            "looped"
+          ],
+          "R2b": [
+            "language models",
+            "transformer",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "depth",
+            "iterations"
+          ],
+          "R3(T)": [
+            "looped"
+          ],
+          "R3d(A)": [
+            "depth",
+            "iterations"
+          ],
+          "R4k": [],
+          "R4s": [
+            "loop",
+            "looped",
+            "loops"
+          ],
+          "R3b_d2": [
+            "latent reasoning"
+          ]
+        },
+        "exists": true,
+        "verified_via": "arXiv id_list",
+        "arxiv_id": "2602.11451",
+        "latest_version": "v1",
+        "title": "LoopFormer: Elastic-Depth Looped Transformers for Latent Reasoning via Shortcut Modulation",
+        "authors_first3": [
+          "Ahmadreza Jeddi",
+          "Marco Ciccone",
+          "Babak Taati"
+        ],
+        "n_authors": 3,
+        "primary_category": "cs.CL",
+        "arxiv_comment": "ICLR2026",
+        "identifier_matches_description": "相符",
+        "first_public_date_v1_utc": "2026-02-11T23:58:28Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "ec2982331d588edc49210f8c98872a6425eb5b1d",
+          "publicationDate": "2026-02-11",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1",
+          "SS-2"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 8,
+        "group": "留出组",
+        "provided_description": "STARS",
+        "provided_identifier": "arXiv 2605.26733",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": true,
+        "local_regex_terms": {
+          "R1": [
+            "depth recurrence",
+            "looped language models"
+          ],
+          "R2a": [
+            "latent reasoning",
+            "looped"
+          ],
+          "R2b": [
+            "language models"
+          ],
+          "R2c(A)": [
+            "depth",
+            "iteration",
+            "recurrence",
+            "recurrent"
+          ],
+          "R3(T)": [
+            "looped",
+            "recurrent"
+          ],
+          "R3d(A)": [
+            "depth"
+          ],
+          "R4k": [],
+          "R4s": [
+            "loop",
+            "looped",
+            "recurrence",
+            "recurrent"
+          ],
+          "R3b_d2": [
+            "latent reasoning",
+            "test-time scaling"
+          ]
+        },
+        "exists": true,
+        "verified_via": "arXiv id_list",
+        "arxiv_id": "2605.26733",
+        "latest_version": "v1",
+        "title": "Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in Looped Language Models",
+        "authors_first3": [
+          "Xiao-Wen Yang",
+          "Ziyu Han",
+          "Xi-Hua Zhang"
+        ],
+        "n_authors": 7,
+        "primary_category": "cs.LG",
+        "arxiv_comment": "ICML 2026",
+        "identifier_matches_description": "标题为\"Stabilizing Recurrent Dynamics for Test-Time Scalable Latent Reasoning in Looped Language Models\"；摘要中提出STARS（STAbility-driven Recurrent Scaling），相符",
+        "first_public_date_v1_utc": "2026-05-26T09:11:12Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "cd58131f935a25d1c5091af50ee6e9d19cc13b8c",
+          "publicationDate": "2026-05-26",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1",
+          "SS-2"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 9,
+        "group": "调试组",
+        "provided_description": "Fully Looped Transformer",
+        "provided_identifier": "arXiv 2605.18797",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": true,
+        "local_regex_terms": {
+          "R1": [
+            "looped models",
+            "looped transformer"
+          ],
+          "R2a": [
+            "looped"
+          ],
+          "R2b": [
+            "attention",
+            "transformer"
+          ],
+          "R2c(A)": [
+            "iterations",
+            "layers",
+            "test-time compute"
+          ],
+          "R3(T)": [
+            "loop",
+            "looped"
+          ],
+          "R3d(A)": [
+            "iterations",
+            "layers"
+          ],
+          "R4k": [],
+          "R4s": [
+            "loop",
+            "looped",
+            "reuses",
+            "reusing"
+          ],
+          "R3b_d2": [
+            "test-time compute"
+          ]
+        },
+        "exists": true,
+        "verified_via": "arXiv id_list",
+        "arxiv_id": "2605.18797",
+        "latest_version": "v2",
+        "title": "Simply Stabilizing the Loop via Fully Looped Transformer",
+        "authors_first3": [
+          "Rao Fu",
+          "Zixuan Yang",
+          "Jiankun Zhang"
+        ],
+        "n_authors": 7,
+        "primary_category": "cs.LG",
+        "arxiv_comment": null,
+        "identifier_matches_description": "标题为\"Simply Stabilizing the Loop via Fully Looped Transformer\"，相符",
+        "first_public_date_v1_utc": "2026-05-11T07:21:53Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "65809ff729e08e476c6e08cb36044488ae701779",
+          "publicationDate": "2026-05-11",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 10,
+        "group": "留出组",
+        "provided_description": "DeepLoop",
+        "provided_identifier": "arXiv 2607.13491",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": false,
+        "local_regex_terms": {
+          "R1": [
+            "looped language models",
+            "looped transformer",
+            "looped transformers",
+            "recurrent depth"
+          ],
+          "R2a": [
+            "looped"
+          ],
+          "R2b": [
+            "language models",
+            "transformer",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "depth",
+            "layer",
+            "recurrent"
+          ],
+          "R3(T)": [
+            "looped"
+          ],
+          "R3d(A)": [
+            "depth",
+            "layer",
+            "shared",
+            "tied"
+          ],
+          "R4k": [],
+          "R4s": [
+            "loop",
+            "looped",
+            "recurrent",
+            "reuse"
+          ],
+          "R3b_d2": []
+        },
+        "exists": true,
+        "verified_via": "arXiv id_list",
+        "arxiv_id": "2607.13491",
+        "latest_version": "v2",
+        "title": "DeepLoop: Depth Scaling for Looped Transformers",
+        "authors_first3": [
+          "Shuzhen Li",
+          "Yifan Zhang",
+          "Jiacheng Guo"
+        ],
+        "n_authors": 5,
+        "primary_category": "cs.LG",
+        "arxiv_comment": "25 pages",
+        "identifier_matches_description": "相符",
+        "first_public_date_v1_utc": "2026-07-15T06:37:05Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "a2ee529627fdc36e33f89cbd156e1b356f33a35b",
+          "publicationDate": "2026-07-15",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 11,
+        "group": "调试组",
+        "provided_description": "Hyperloop",
+        "provided_identifier": "arXiv 2604.21254",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2"
+        ],
+        "local_regex_R3b": false,
+        "local_regex_terms": {
+          "R1": [
+            "looped transformer",
+            "looped transformers"
+          ],
+          "R2a": [
+            "looped"
+          ],
+          "R2b": [
+            "llm",
+            "llms",
+            "transformer",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "depth",
+            "layers"
+          ],
+          "R3(T)": [],
+          "R3d(A)": [
+            "depth",
+            "layers"
+          ],
+          "R4k": [],
+          "R4s": [
+            "loop",
+            "looped",
+            "reuse"
+          ],
+          "R3b_d2": []
+        },
+        "exists": true,
+        "verified_via": "arXiv id_list",
+        "arxiv_id": "2604.21254",
+        "latest_version": "v3",
+        "title": "Hyperloop Transformers",
+        "authors_first3": [
+          "Abbas Zeitoun",
+          "Lucas Torroba-Hennigen",
+          "Yoon Kim"
+        ],
+        "n_authors": 3,
+        "primary_category": "cs.LG",
+        "arxiv_comment": null,
+        "identifier_matches_description": "相符",
+        "first_public_date_v1_utc": "2026-04-23T03:46:14Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "3a7396244192bc285f4479a93f0a86a4c9bcff80",
+          "publicationDate": "2026-04-23",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 12,
+        "group": "留出组",
+        "provided_description": "OperLoop",
+        "provided_identifier": "arXiv 2609.37379",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": false,
+        "local_regex_terms": {
+          "R1": [
+            "looped transformers"
+          ],
+          "R2a": [
+            "looped"
+          ],
+          "R2b": [
+            "transformer",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "depth",
+            "recurrent"
+          ],
+          "R3(T)": [
+            "looped"
+          ],
+          "R3d(A)": [
+            "depth",
+            "shared"
+          ],
+          "R4k": [],
+          "R4s": [
+            "loop",
+            "looped",
+            "recurrent"
+          ],
+          "R3b_d2": []
+        },
+        "exists": true,
+        "verified_via": "arXiv id_list",
+        "arxiv_id": "2609.37379",
+        "latest_version": "v1",
+        "title": "Looped Transformers as Optimizers",
+        "authors_first3": [
+          "Yulong Huang",
+          "Chen Jiang",
+          "Zhanpeng Zhou"
+        ],
+        "n_authors": 8,
+        "primary_category": "cs.LG",
+        "arxiv_comment": null,
+        "identifier_matches_description": "标题为\"Looped Transformers as Optimizers\"；摘要中提出OperLoop，相符",
+        "first_public_date_v1_utc": "2026-09-29T12:31:51Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "a8480390d00b2270777e832e89f7f75b837a5b37",
+          "publicationDate": "2026-09-29",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 13,
+        "group": "调试组",
+        "provided_description": "MELT",
+        "provided_identifier": "arXiv 2605.07721",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": false,
+        "local_regex_terms": {
+          "R1": [
+            "looped language models",
+            "looped transformer"
+          ],
+          "R2a": [
+            "looped"
+          ],
+          "R2b": [
+            "attention",
+            "language models",
+            "llm",
+            "llms",
+            "transformer"
+          ],
+          "R2c(A)": [
+            "depth",
+            "iterations",
+            "layer",
+            "recurrent"
+          ],
+          "R3(T)": [
+            "looped"
+          ],
+          "R3d(A)": [
+            "depth",
+            "iterations",
+            "layer",
+            "shared"
+          ],
+          "R4k": [],
+          "R4s": [
+            "iterative",
+            "loop",
+            "looped",
+            "loops",
+            "recurrent"
+          ],
+          "R3b_d2": []
+        },
+        "exists": true,
+        "verified_via": "arXiv id_list",
+        "arxiv_id": "2605.07721",
+        "latest_version": "v3",
+        "title": "Memory-Efficient Looped Transformer: Decoupling Compute from Memory in Looped Language Models",
+        "authors_first3": [
+          "Victor Conchello Vendrell",
+          "Arnau Padres Masdemont",
+          "Niccolò Grillo"
+        ],
+        "n_authors": 6,
+        "primary_category": "cs.CL",
+        "arxiv_comment": "22 pages, 5 figures, 11 tables",
+        "identifier_matches_description": "标题为\"Memory-Efficient Looped Transformer: ...\"，摘要写明缩写MELT，相符",
+        "first_public_date_v1_utc": "2026-05-08T13:25:27Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "2f1d71b9d6a842d8482d5a1d045207345d603cc1",
+          "publicationDate": "2026-05-08",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 14,
+        "group": "留出组",
+        "provided_description": "FlashLoop",
+        "provided_identifier": "arXiv 2609.29812",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": false,
+        "local_regex_terms": {
+          "R1": [
+            "looped transformers"
+          ],
+          "R2a": [
+            "looped",
+            "looping"
+          ],
+          "R2b": [
+            "attention",
+            "transformer",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "depth",
+            "recurrence"
+          ],
+          "R3(T)": [
+            "looped"
+          ],
+          "R3d(A)": [
+            "depth",
+            "shared"
+          ],
+          "R4k": [],
+          "R4s": [
+            "loop",
+            "looped",
+            "looping",
+            "loops",
+            "recurrence"
+          ],
+          "R3b_d2": []
+        },
+        "exists": true,
+        "verified_via": "arXiv id_list",
+        "arxiv_id": "2609.29812",
+        "latest_version": "v2",
+        "title": "FlashLoop: Fast and Memory-Efficient Looped Transformers via Lazy Updates",
+        "authors_first3": [
+          "Wanqi Yang",
+          "Shiwei Liu"
+        ],
+        "n_authors": 2,
+        "primary_category": "cs.LG",
+        "arxiv_comment": "15 pages, 9 figures",
+        "identifier_matches_description": "相符",
+        "first_public_date_v1_utc": "2026-09-24T13:47:03Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "97415bd104fa65efa04311bef0cae046f5d79849",
+          "publicationDate": "2026-09-24",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 15,
+        "group": "调试组",
+        "provided_description": "LoopMTP",
+        "provided_identifier": "arXiv 2608.03624",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": false,
+        "local_regex_terms": {
+          "R1": [
+            "looped transformer",
+            "looped transformers"
+          ],
+          "R2a": [
+            "looped"
+          ],
+          "R2b": [
+            "transformer",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "depth",
+            "iterations",
+            "layers"
+          ],
+          "R3(T)": [
+            "looped"
+          ],
+          "R3d(A)": [
+            "depth",
+            "iterations",
+            "layers"
+          ],
+          "R4k": [],
+          "R4s": [
+            "loop",
+            "looped",
+            "loops",
+            "reusing"
+          ],
+          "R3b_d2": []
+        },
+        "exists": true,
+        "verified_via": "arXiv id_list",
+        "arxiv_id": "2608.03624",
+        "latest_version": "v1",
+        "title": "LoopMTP: A looped transformer guided by latent multi-token prediction",
+        "authors_first3": [
+          "Behzad Shomali",
+          "Markus Frey",
+          "David Berghaus"
+        ],
+        "n_authors": 5,
+        "primary_category": "cs.CL",
+        "arxiv_comment": null,
+        "identifier_matches_description": "相符",
+        "first_public_date_v1_utc": "2026-08-04T13:13:09Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "ed30f8b49273ff553353a7f43a067ce19beff13b",
+          "publicationDate": "2026-08-04",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 16,
+        "group": "留出组",
+        "provided_description": "Saunshi等2025，\"Reasoning with Latent Thoughts: On the Power of Looped Transformers\"",
+        "provided_identifier": "未提供",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": false,
+        "local_regex_terms": {
+          "R1": [
+            "looped model",
+            "looped models",
+            "looped transformers"
+          ],
+          "R2a": [
+            "latent thoughts",
+            "looped",
+            "looping"
+          ],
+          "R2b": [
+            "language model",
+            "language models",
+            "transformer",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "depth",
+            "layer",
+            "layers"
+          ],
+          "R3(T)": [
+            "looped"
+          ],
+          "R3d(A)": [
+            "depth",
+            "layer",
+            "layers"
+          ],
+          "R4k": [],
+          "R4s": [
+            "iterative",
+            "looped",
+            "looping",
+            "loops"
+          ],
+          "R3b_d2": []
+        },
+        "exists": true,
+        "verified_via": "arXiv标题检索（ti:\"…\"）",
+        "arxiv_id": "2502.17416",
+        "latest_version": "v1",
+        "title": "Reasoning with Latent Thoughts: On the Power of Looped Transformers",
+        "authors_first3": [
+          "Nikunj Saunshi",
+          "Nishanth Dikkala",
+          "Zhiyuan Li"
+        ],
+        "n_authors": 5,
+        "primary_category": "cs.CL",
+        "arxiv_comment": "ICLR 2025",
+        "identifier_matches_description": "相符",
+        "first_public_date_v1_utc": "2025-02-24T18:49:05Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "b39e8ff1babf6b5276c0af68ab766c46487e1df7",
+          "publicationDate": "2025-02-24",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1",
+          "SS-2"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 17,
+        "group": "调试组",
+        "provided_description": "Geiping等2025，\"Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach\"",
+        "provided_identifier": "未提供",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": true,
+        "local_regex_terms": {
+          "R1": [
+            "recurrent depth"
+          ],
+          "R2a": [
+            "latent reasoning"
+          ],
+          "R2b": [
+            "language model"
+          ],
+          "R2c(A)": [
+            "depth",
+            "recurrent"
+          ],
+          "R3(T)": [
+            "recurrent"
+          ],
+          "R3d(A)": [
+            "depth"
+          ],
+          "R4k": [],
+          "R4s": [
+            "recurrent"
+          ],
+          "R3b_d2": [
+            "latent reasoning",
+            "test-time compute"
+          ]
+        },
+        "exists": true,
+        "verified_via": "arXiv标题检索（ti:\"…\"）",
+        "arxiv_id": "2502.05171",
+        "latest_version": "v2",
+        "title": "Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach",
+        "authors_first3": [
+          "Jonas Geiping",
+          "Sean McLeish",
+          "Neel Jain"
+        ],
+        "n_authors": 9,
+        "primary_category": "cs.LG",
+        "arxiv_comment": "The model is available at https://huggingface.co/tomg-group-umd/huginn-0125. Code and data recipe can be found at https://github.com/seal-rg/recurrent-pretraining",
+        "identifier_matches_description": "相符",
+        "first_public_date_v1_utc": "2025-02-07T18:55:02Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "cbc1363d0c55abb60aa9c0e5a7ca0798ce86a752",
+          "publicationDate": "2025-02-07",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1",
+          "SS-2",
+          "SS-4"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 18,
+        "group": "留出组",
+        "provided_description": "Fan等2024，\"Looped Transformers for Length Generalization\"",
+        "provided_identifier": "未提供",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": false,
+        "local_regex_terms": {
+          "R1": [
+            "looped transformers"
+          ],
+          "R2a": [
+            "looped"
+          ],
+          "R2b": [
+            "transformer",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "iterations"
+          ],
+          "R3(T)": [
+            "looped"
+          ],
+          "R3d(A)": [
+            "iterations"
+          ],
+          "R4k": [],
+          "R4s": [
+            "iterative",
+            "looped"
+          ],
+          "R3b_d2": []
+        },
+        "exists": true,
+        "verified_via": "arXiv标题检索（ti:\"…\"）",
+        "arxiv_id": "2409.15647",
+        "latest_version": "v5",
+        "title": "Looped Transformers for Length Generalization",
+        "authors_first3": [
+          "Ying Fan",
+          "Yilun Du",
+          "Kannan Ramchandran"
+        ],
+        "n_authors": 4,
+        "primary_category": "cs.LG",
+        "arxiv_comment": "ICLR 2025",
+        "identifier_matches_description": "相符",
+        "first_public_date_v1_utc": "2024-09-24T01:21:17Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": false,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "408295dd8cb6140179fe075ca04a9d80f064bd36",
+          "publicationDate": "2024-09-24",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1"
+        ],
+        "s2_SS3b_hit": false,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 19,
+        "group": "调试组",
+        "provided_description": "Bae等2024，\"Relaxed Recursive Transformers\"",
+        "provided_identifier": "未提供",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": true,
+        "local_regex_terms": {
+          "R1": [
+            "recursive transformer",
+            "recursive transformers",
+            "relaxed recursive"
+          ],
+          "R2a": [
+            "layer tying",
+            "parameter sharing",
+            "shared parameters"
+          ],
+          "R2b": [
+            "language models",
+            "llms",
+            "transformer",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "depth",
+            "layer",
+            "layers",
+            "recursive"
+          ],
+          "R3(T)": [
+            "recursive"
+          ],
+          "R3d(A)": [
+            "depth",
+            "layer",
+            "layers",
+            "shared",
+            "sharing"
+          ],
+          "R4k": [],
+          "R4s": [
+            "loop",
+            "parameter sharing",
+            "recursive"
+          ],
+          "R3b_d2": [
+            "across layers",
+            "depth-wise"
+          ]
+        },
+        "exists": true,
+        "verified_via": "arXiv标题检索（ti:\"…\"）",
+        "arxiv_id": "2410.20672",
+        "latest_version": "v3",
+        "title": "Relaxed Recursive Transformers: Effective Parameter Sharing with Layer-wise LoRA",
+        "authors_first3": [
+          "Sangmin Bae",
+          "Adam Fisch",
+          "Hrayr Harutyunyan"
+        ],
+        "n_authors": 6,
+        "primary_category": "cs.CL",
+        "arxiv_comment": "ICLR 2025; 49 pages, 17 figures, 19 tables",
+        "identifier_matches_description": "标题全称\"Relaxed Recursive Transformers: Effective Parameter Sharing with Layer-wise LoRA\"",
+        "first_public_date_v1_utc": "2024-10-28T02:15:45Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "ff3525bd3b48c325ef3177eb5797cce176357910",
+          "publicationDate": "2024-10-28",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1",
+          "SS-2"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 20,
+        "group": "留出组",
+        "provided_description": "Zhu等2025，\"Scaling Latent Reasoning via Looped Language Models\"（Ouro）",
+        "provided_identifier": "未提供",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2",
+          "R3"
+        ],
+        "local_regex_R3b": true,
+        "local_regex_terms": {
+          "R1": [
+            "looped language models"
+          ],
+          "R2a": [
+            "latent reasoning",
+            "looped"
+          ],
+          "R2b": [
+            "language models",
+            "llm",
+            "llms"
+          ],
+          "R2c(A)": [
+            "depth",
+            "recursive"
+          ],
+          "R3(T)": [
+            "looped"
+          ],
+          "R3d(A)": [
+            "depth"
+          ],
+          "R4k": [],
+          "R4s": [
+            "iterative",
+            "looped",
+            "recursive"
+          ],
+          "R3b_d2": [
+            "latent reasoning"
+          ]
+        },
+        "exists": true,
+        "verified_via": "arXiv标题检索（ti:\"…\"）",
+        "arxiv_id": "2510.25741",
+        "latest_version": "v5",
+        "title": "Scaling Latent Reasoning via Looped Language Models",
+        "authors_first3": [
+          "Rui-Jie Zhu",
+          "Zixuan Wang",
+          "Kai Hua"
+        ],
+        "n_authors": 33,
+        "primary_category": "cs.CL",
+        "arxiv_comment": null,
+        "identifier_matches_description": "摘要3次提到Ouro，相符",
+        "first_public_date_v1_utc": "2025-10-29T17:45:42Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "699182cd5d28248f8a01734a9991c6c147145aa0",
+          "publicationDate": "2025-10-29",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1",
+          "SS-2"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 21,
+        "group": "调试组",
+        "provided_description": "Csordás等2024，\"MoEUT\"",
+        "provided_identifier": "未提供",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R2"
+        ],
+        "local_regex_R3b": true,
+        "local_regex_terms": {
+          "R1": [
+            "recurrence in depth",
+            "universal transformers"
+          ],
+          "R2a": [
+            "layer-sharing",
+            "parameter sharing"
+          ],
+          "R2b": [
+            "attention",
+            "transformer",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "depth",
+            "layer",
+            "layers",
+            "recurrence"
+          ],
+          "R3(T)": [],
+          "R3d(A)": [
+            "depth",
+            "layer",
+            "layers",
+            "shared",
+            "sharing"
+          ],
+          "R4k": [],
+          "R4s": [
+            "layer-sharing",
+            "parameter sharing",
+            "recurrence"
+          ],
+          "R3b_d2": [
+            "across layers",
+            "in depth"
+          ]
+        },
+        "exists": true,
+        "verified_via": "arXiv标题检索（ti:\"…\"）",
+        "arxiv_id": "2405.16039",
+        "latest_version": "v2",
+        "title": "MoEUT: Mixture-of-Experts Universal Transformers",
+        "authors_first3": [
+          "Róbert Csordás",
+          "Kazuki Irie",
+          "Jürgen Schmidhuber"
+        ],
+        "n_authors": 5,
+        "primary_category": "cs.LG",
+        "arxiv_comment": "Accepted to NeurIPS 2024",
+        "identifier_matches_description": "标题全称\"MoEUT: Mixture-of-Experts Universal Transformers\"",
+        "first_public_date_v1_utc": "2024-05-25T03:24:32Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-2",
+          "AX-4"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "75c0b5d451e5f50b0d57b032f47d006eda07628b",
+          "publicationDate": "2024-05-25",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1",
+          "SS-2",
+          "SS-4"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 22,
+        "group": "留出组",
+        "provided_description": "Wang等2024，\"Grokked Transformers are Implicit Reasoners\"",
+        "provided_identifier": "未提供（审查者探测到arXiv 2405.15071）",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R4"
+        ],
+        "local_regex_R3b": false,
+        "local_regex_terms": {
+          "R1": [],
+          "R2a": [],
+          "R2b": [
+            "language models",
+            "transformer",
+            "transformers"
+          ],
+          "R2c(A)": [
+            "layer"
+          ],
+          "R3(T)": [],
+          "R3d(A)": [
+            "layer",
+            "sharing"
+          ],
+          "R4k": [
+            "implicit reasoning"
+          ],
+          "R4s": [
+            "cross-layer"
+          ],
+          "R3b_d2": []
+        },
+        "exists": true,
+        "verified_via": "arXiv标题检索（ti:\"…\"）",
+        "arxiv_id": "2405.15071",
+        "latest_version": "v3",
+        "title": "Grokked Transformers are Implicit Reasoners: A Mechanistic Journey to the Edge of Generalization",
+        "authors_first3": [
+          "Boshi Wang",
+          "Xiang Yue",
+          "Yu Su"
+        ],
+        "n_authors": 4,
+        "primary_category": "cs.CL",
+        "arxiv_comment": "NeurIPS 2024. Code and data: https://github.com/OSU-NLP-Group/GrokkedTransformer",
+        "identifier_matches_description": "审查者给出的2405.15071正确；按标题检索也只返回该编号",
+        "first_public_date_v1_utc": "2024-05-23T21:42:19Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-4"
+        ],
+        "arxiv_AX3b_hit": false,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "5b1120f547d3969afc49b4a094e874d568e53aca",
+          "publicationDate": "2024-05-23",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-4"
+        ],
+        "s2_SS3b_hit": false,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 23,
+        "group": "调试组",
+        "provided_description": "Wang等2025，\"Hierarchical Reasoning Model\"",
+        "provided_identifier": "未提供",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1"
+        ],
+        "local_regex_R3b": false,
+        "local_regex_terms": {
+          "R1": [
+            "hierarchical reasoning model"
+          ],
+          "R2a": [],
+          "R2b": [
+            "language models",
+            "llms"
+          ],
+          "R2c(A)": [
+            "depth",
+            "recurrent"
+          ],
+          "R3(T)": [],
+          "R3d(A)": [
+            "depth"
+          ],
+          "R4k": [],
+          "R4s": [
+            "recurrent"
+          ],
+          "R3b_d2": []
+        },
+        "exists": true,
+        "verified_via": "arXiv标题检索（ti:\"…\"）",
+        "arxiv_id": "2506.21734",
+        "latest_version": "v4",
+        "title": "Hierarchical Reasoning Model",
+        "authors_first3": [
+          "Guan Wang",
+          "Jin Li",
+          "Yuhao Sun"
+        ],
+        "n_authors": 9,
+        "primary_category": "cs.AI",
+        "arxiv_comment": null,
+        "identifier_matches_description": "标题检索返回6条，取完全同名的2506.21734（第一作者Guan Wang）",
+        "first_public_date_v1_utc": "2025-06-26T19:39:54Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a"
+        ],
+        "arxiv_AX3b_hit": true,
+        "s2_present": true,
+        "s2_record": {
+          "paperId": "6242e10282d7c567af87ca3846bb1f4a1d104ad8",
+          "publicationDate": "2025-06-26",
+          "fieldsOfStudy": [
+            "Computer Science"
+          ],
+          "has_abstract": true
+        },
+        "s2_groups_hit": [
+          "SS-1"
+        ],
+        "s2_SS3b_hit": true,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      },
+      {
+        "no": 24,
+        "group": "留出组",
+        "provided_description": "Jolicoeur-Martineau 2025，\"Less is More: Recursive Reasoning with Tiny Networks\"",
+        "provided_identifier": "未提供",
+        "in_db_recall_denominator": true,
+        "local_regex_groups_round0": [
+          "R1",
+          "R3"
+        ],
+        "local_regex_R3b": false,
+        "local_regex_terms": {
+          "R1": [
+            "hierarchical reasoning model",
+            "recursive reasoning",
+            "tiny recursive model"
+          ],
+          "R2a": [],
+          "R2b": [
+            "language models",
+            "llms"
+          ],
+          "R2c(A)": [
+            "layers",
+            "recursive"
+          ],
+          "R3(T)": [
+            "recursive"
+          ],
+          "R3d(A)": [
+            "layers"
+          ],
+          "R4k": [],
+          "R4s": [
+            "recursive"
+          ],
+          "R3b_d2": []
+        },
+        "exists": true,
+        "verified_via": "arXiv标题检索（ti:\"…\"）",
+        "arxiv_id": "2510.04871",
+        "latest_version": "v1",
+        "title": "Less is More: Recursive Reasoning with Tiny Networks",
+        "authors_first3": [
+          "Alexia Jolicoeur-Martineau"
+        ],
+        "n_authors": 1,
+        "primary_category": "cs.LG",
+        "arxiv_comment": null,
+        "identifier_matches_description": "相符",
+        "first_public_date_v1_utc": "2025-10-06T14:58:08Z",
+        "in_window": true,
+        "arxiv_groups_hit": [
+          "AX-1a",
+          "AX-1b",
+          "AX-3"
+        ],
+        "arxiv_AX3b_hit": false,
+        "s2_present": false,
+        "s2_record": null,
+        "s2_groups_hit": [],
+        "s2_SS3b_hit": false,
+        "acl_present": false,
+        "db_hit_round0": true,
+        "s2_note": "S2批量接口arXiv:2510.04871返回null；/paper/search/match按标题返回404（8次429退避后）；不加过滤的bulk检索\"recursive reasoning\"+\"tiny networks\"只返回2条其他论文。判定为S2未收录该记录",
+        "core_criterion": "待第二阶段全文判定",
+        "subquestion3_type": "待第二阶段全文判定"
+      }
+    ]
+  },
+  "appendix_G_verification": [
+    {
+      "ref": "Shamseer L, et al. PRISMA-P 2015 elaboration and explanation. BMJ 2015;349:g7647.",
+      "exists": true,
+      "source": "Crossref 10.1136/bmj.g7647",
+      "verified": "Shamseer L, Moher D, Clarke M, et al.（9位作者）. Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015: elaboration and explanation. BMJ 2015;349:g7647（2015-01-02）",
+      "status": "正确",
+      "suggested_fix": "建议写出完整标题并加doi:10.1136/bmj.g7647"
+    },
+    {
+      "ref": "Page MJ, et al. The PRISMA 2020 statement. BMJ 2021;372:n71.",
+      "exists": true,
+      "source": "Crossref 10.1136/bmj.n71",
+      "verified": "The PRISMA 2020 statement: an updated guideline for reporting systematic reviews. BMJ 2021;372:n71（2021-03-29）",
+      "status": "正确",
+      "suggested_fix": "建议补副标题和doi:10.1136/bmj.n71"
+    },
+    {
+      "ref": "Rethlefsen ML, et al. PRISMA-S ... Systematic Reviews 2021.",
+      "exists": true,
+      "source": "Crossref 10.1186/s13643-020-01542-z",
+      "verified": "Systematic Reviews 2021;10:39（2021-01-26）",
+      "status": "正确，缺卷号",
+      "suggested_fix": "补\"10:39. doi:10.1186/s13643-020-01542-z\""
+    },
+    {
+      "ref": "McGowan J, et al. PRESS ... 2015 guideline statement. Journal of Clinical Epidemiology 2016.",
+      "exists": true,
+      "source": "Crossref 10.1016/j.jclinepi.2016.01.021",
+      "verified": "J Clin Epidemiol 2016;75:40–46",
+      "status": "正确，缺卷页",
+      "suggested_fix": "补\"75:40–46. doi:10.1016/j.jclinepi.2016.01.021\""
+    },
+    {
+      "ref": "Campbell M, et al. SWiM ... BMJ 2020;368:l6890.",
+      "exists": true,
+      "source": "Crossref 10.1136/bmj.l6890",
+      "verified": "Synthesis without meta-analysis (SWiM) in systematic reviews: reporting guideline. BMJ 2020;368:l6890（2020-01-16）",
+      "status": "正确",
+      "suggested_fix": null
+    },
+    {
+      "ref": "Thomson HJ, Thomas S. The effect direction plot ... Research Synthesis Methods 2013.",
+      "exists": true,
+      "source": "Crossref 10.1002/jrsm.1060",
+      "verified": "Res Synth Methods 2013;4(1):95–101（在线2012-10-12）",
+      "status": "正确，缺卷页",
+      "suggested_fix": "补\"4(1):95–101. doi:10.1002/jrsm.1060\""
+    },
+    {
+      "ref": "Boon MH, Thomson H. The effect direction plot revisited ... Research Synthesis Methods 2021.",
+      "exists": true,
+      "source": "Crossref 10.1002/jrsm.1458",
+      "verified": "Res Synth Methods 2021;12(1):29–33（在线2020-10-05）",
+      "status": "正确，缺卷页",
+      "suggested_fix": "补\"12(1):29–33. doi:10.1002/jrsm.1458\""
+    },
+    {
+      "ref": "Higgins JPT, et al. (eds). Cochrane Handbook ..., version 6.x, Chapter 12.",
+      "exists": true,
+      "source": "Cochrane官网第12章页面（2026-10-12读取）；Crossref 10.1002/9781119536604.ch12（2019印刷版）",
+      "verified": "McKenzie JE, Brennan SE. Chapter 12: Synthesizing and presenting findings using other methods [last updated October 2019]. In: Higgins JPT, Thomas J, Chandler J, Cumpston M, Li T, Page MJ, Welch VA (editors). Cochrane Handbook for Systematic Reviews of Interventions version 6.5. Cochrane, 2024",
+      "status": "需更正",
+      "suggested_fix": "写明章节作者McKenzie JE、Brennan SE，版本由\"6.x\"改为具体版本6.5（2024），注明章节最后更新于2019年10月；或引用2019印刷版第2版pp.321–347"
+    },
+    {
+      "ref": "Guyatt GH, et al. GRADE: an emerging consensus ... BMJ 2008.",
+      "exists": true,
+      "source": "Crossref 10.1136/bmj.39489.470347.AD",
+      "verified": "BMJ 2008;336(7650):924–926",
+      "status": "正确，缺卷页",
+      "suggested_fix": "补\"336:924–926\""
+    },
+    {
+      "ref": "Murad MH, et al. Rating the certainty in evidence in the absence of a single estimate of effect. Evidence-Based Medicine 2017.",
+      "exists": true,
+      "source": "Crossref 10.1136/ebmed-2017-110668",
+      "verified": "Evid Based Med 2017;22(3):85–87",
+      "status": "正确，缺卷页",
+      "suggested_fix": "补\"22(3):85–87\""
+    },
+    {
+      "ref": "Clopper CJ, Pearson ES. ... Biometrika 1934.",
+      "exists": true,
+      "source": "Crossref 10.1093/biomet/26.4.404",
+      "verified": "Biometrika 1934;26(4):404–413",
+      "status": "正确，缺卷页",
+      "suggested_fix": "补\"26(4):404–413\""
+    },
+    {
+      "ref": "Byrt T, Bishop J, Carlin JB. Bias, prevalence and kappa. J Clin Epidemiol 1993;46:423–9.",
+      "exists": true,
+      "source": "Crossref 10.1016/0895-4356(93)90018-V",
+      "verified": "J Clin Epidemiol 1993;46(5):423–429",
+      "status": "正确",
+      "suggested_fix": null
+    },
+    {
+      "ref": "Holst D, et al. ... PRISMA-trAIce Checklist. JMIR AI 2025. doi:10.2196/80247.",
+      "exists": true,
+      "source": "Crossref 10.2196/80247",
+      "verified": "Holst D, Moenck K, Koch J, et al.（5位作者）. JMIR AI 2025;4:e80247（2025-12-10）",
+      "status": "正确，缺卷号",
+      "suggested_fix": "补\"4:e80247\""
+    },
+    {
+      "ref": "Wohlin C. Guidelines for snowballing ... EASE 2014.",
+      "exists": true,
+      "source": "Crossref 10.1145/2601248.2601268",
+      "verified": "Proceedings of the 18th International Conference on Evaluation and Assessment in Software Engineering (EASE 2014), pp. 1–10",
+      "status": "正确",
+      "suggested_fix": "可补doi:10.1145/2601248.2601268"
+    },
+    {
+      "ref": "Melis G, Dyer C, Blunsom P. On the state of the art of evaluation in neural language models. ICLR 2018.",
+      "exists": true,
+      "source": "arXiv 1707.05589；Semantic Scholar（DBLP conf/iclr/MelisDB18）",
+      "verified": "ICLR 2018；arXiv v1 2017-07-18",
+      "status": "正确",
+      "suggested_fix": null
+    },
+    {
+      "ref": "Dodge J, et al. Show your work: improved reporting of experimental results. EMNLP 2019.",
+      "exists": true,
+      "source": "Crossref 10.18653/v1/D19-1224",
+      "verified": "EMNLP-IJCNLP 2019, pp. 2185–2194（5位作者）",
+      "status": "正确",
+      "suggested_fix": "可写为EMNLP-IJCNLP 2019并补页码"
+    },
+    {
+      "ref": "Bouthillier X, et al. Accounting for variance in machine learning benchmarks. MLSys 2021.",
+      "exists": true,
+      "source": "arXiv 2103.03098；Semantic Scholar（venue MLSys）",
+      "verified": "MLSys 2021（17位作者）；arXiv v1 2021-03-01",
+      "status": "正确",
+      "suggested_fix": null
+    },
+    {
+      "ref": "Pineau J, et al. Improving reproducibility in machine learning research (...). JMLR 2021.",
+      "exists": true,
+      "source": "arXiv 2003.12206；Semantic Scholar journal字段",
+      "verified": "J Mach Learn Res 2021;22(164):1–20",
+      "status": "正确，缺卷号",
+      "suggested_fix": "补\"22(164):1–20\""
+    },
+    {
+      "ref": "Lipton ZC, Steinhardt J. Troubling trends in machine learning scholarship. 2018/2019.",
+      "exists": true,
+      "source": "Crossref 10.1145/3317287.3328534、10.1145/3316774；arXiv 1807.03341",
+      "verified": "ACM Queue 2019;17(1):45–77；另有转载版Commun ACM 2019;62(6):45–53；arXiv 2018（ICML 2018 Debates）",
+      "status": "需更正（年份与出处不确定）",
+      "suggested_fix": "改为\"Queue 2019;17(1):45–77. doi:10.1145/3317287.3328534\"（可注arXiv:1807.03341）"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I-1",
+      "severity": "执行细节",
+      "topic": "arXiv计数参数",
+      "finding": "arXiv API对max_results=0返回HTTP 500和错误条目（totalResults=1），两次简单查询和一次AX-1a全式均如此；http://export.arxiv.org 被301重定向到https",
+      "action_taken": "计数改用max_results=1，只读opensearch:totalResults，丢弃返回的1条记录不看",
+      "protocol_change": "建议§3.2.1写明\"计数用max_results=1\"，附录A.1接口改为https://export.arxiv.org/api/query"
+    },
+    {
+      "id": "I-2",
+      "severity": "需改协议（小）",
+      "topic": "本地正则与arXiv词干化不一致",
+      "finding": "R4k的\\bcompositional\\s+generali[sz]ation\\b不匹配复数generalizations；第21号MoEUT摘要写\"compositional generalizations\"，arXiv AX-4命中而本地R4未命中（第21号仍由R1命中）",
+      "protocol_change": "R4k改为generali[sz]ations?；同时检查其他短语的复数形式（例如reasoning models已覆盖）"
+    },
+    {
+      "id": "I-3",
+      "severity": "需在§3.3.2说明",
+      "topic": "arXiv短语中的停用词",
+      "finding": "arXiv把短语\"in depth\"当作depth：TA(\"in depth\")与TA(depth)在CAT+DATE下同为7,540条。AX-3b的D2区块因此远宽于SS-3b和R3b（预演中23篇arXiv候选里AX-3b命中19篇，本地R3b命中11篇）；\"recurrence in depth\"等短语同理",
+      "protocol_change": "§3.3.2补一句arXiv会去停用词；\"逐项对应\"改为\"近似对应\"，或把\"in depth\"从AX-3b删去/改写（只影响精度，不影响召回）"
+    },
+    {
+      "id": "I-4",
+      "severity": "待用户决定（精度）",
+      "topic": "AX-1a噪声",
+      "finding": "AX-1a不限分类；looped model(s)/network(s)经词干化等同\"loop model/network\"，单独201条，其中152条不含Transformer区块（含closed-loop model/network 38条，以及电网\"looped network\"等）。AX-1a共503条，190条不在cs.LG/cs.CL/cs.AI/stat.ML",
+      "protocol_change": "可选：把looped model(s)/network(s)移到AX-1b（限分类）或加B区块；预演中所有候选都另有其他短语命中，此改动不影响预演召回"
+    },
+    {
+      "id": "I-5",
+      "severity": "记录",
+      "topic": "零结果短语（§3.3.5）",
+      "finding": "arXiv上\"depthwise recurrence\"=0、\"shared-parameter transformer\"=0；\"depth-wise recurrence\"=1",
+      "protocol_change": "无需改；正式检索时按§3.3.5记录"
+    },
+    {
+      "id": "I-6",
+      "severity": "需在§3.2局限中说明",
+      "topic": "Semantic Scholar覆盖缺口",
+      "finding": "第24号TRM（arXiv 2510.04871，2025-10-06）在S2中查不到（ID批量查询null、标题匹配404、短语检索无此记录），因此SS-1漏检。arXiv检索仍命中",
+      "protocol_change": "§3.2中\"Semantic Scholar覆盖DBLP\"的理由应加注：S2对知名arXiv论文也有缺漏；arXiv仍须为主来源"
+    },
+    {
+      "id": "I-7",
+      "severity": "资源",
+      "topic": "S2无密钥限流",
+      "finding": "4条计数请求中3条先遇429（3/0/3/4次重试，累计等待53.5秒）；候选批量查询重试4次；标题匹配接口8次429后才返回",
+      "protocol_change": "无需改；建议用户决定是否申请免费密钥（§3.2.2已列为可选），引文追踪请求量更大"
+    },
+    {
+      "id": "I-8",
+      "severity": "需改协议（小）",
+      "topic": "ACL BibTeX归一化",
+      "finding": "ACL BibTeX没有keywords字段（K为空）；标题用大括号保护大小写（如{LLM}s）并含LaTeX命令，不先去掉会破坏\\b边界。2024–2026共37,803条，2,240条无摘要",
+      "action_taken": "预检中先删LaTeX命令和大括号、把--/---换成-，再按A.3做NFKC与横线统一",
+      "protocol_change": "A.3归一化步骤补\"去掉BibTeX大括号和LaTeX命令\"；说明K在ACL中为空"
+    },
+    {
+      "id": "I-9",
+      "severity": "需主会话处理",
+      "topic": "冻结记录与git",
+      "finding": ".gitignore第25行\"/docs/*\"忽略了docs/development-artifacts/，protocol.md与precheck.json当前不受git跟踪；§1.2要求的git提交和推送需要git add -f或为本目录加例外",
+      "protocol_change": "§1.2写明冻结文件的入库方式（强制添加或.gitignore例外），或改用其他时间证据"
+    },
+    {
+      "id": "I-10",
+      "severity": "记录",
+      "topic": "第4号候选",
+      "finding": "PDF SHA-256复核一致；标题一致；页眉ICLR 2027在审、匿名；PDF内未见投稿号34319；OpenReview ID vJgG20sjea因403无法核实",
+      "protocol_change": "附录E第4号可注明\"34319仅见于文件名\""
+    },
+    {
+      "id": "I-11",
+      "severity": "记录",
+      "topic": "数量",
+      "finding": "第0轮合并去重前总量8,718条（arXiv 4,798 + S2 3,796 + ACL各组之和124），单条最高AX-2 2,787条；均未超过5,000/10,000阈值。若连同第2轮扩展（AX-3b 551、SS-3b 944、R3b 20）一起算为10,233条，超过10,000，但第2轮按§3.3.4第6条单独计新增量",
+      "protocol_change": "无"
+    },
+    {
+      "id": "I-12",
+      "severity": "记录",
+      "topic": "附录G",
+      "finding": "19条全部存在、作者和年份正确；第8条（Cochrane第12章）缺章节作者且版本不具体，第19条（Lipton & Steinhardt）年份/出处含糊；其余多为缺卷页或DOI",
+      "protocol_change": "按appendix_G_verification的suggested_fix改正（冻结前）"
+    }
+  ],
+  "artifacts": {
+    "scratch_dir": "/tmp/claude-1015/-mnt-disk2-siqizhu4-llm-memory-editability/5eca5f28-22f0-42e3-a184-17909f034893/scratchpad/ltsr_precheck",
+    "note": "原始日志与脚本在会话临时目录，不持久；本文件已收录全部检索式原文与计数"
+  }
+}

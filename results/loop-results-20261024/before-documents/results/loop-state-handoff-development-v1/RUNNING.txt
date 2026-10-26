@@ -1,0 +1,31 @@
+原始两路状态门实验：loop-state-handoff-development-v1
+
+2026-10-22用户授权；sn4622129202控制器PID3084195已提交。
+14:09 UTC已在GPU0正式开训；CUDA环境/初值/梯度、32步短训及33文件重放通过。
+当前训练步数见runtime/artifacts/runs/state-mlp/status.json；尚无150万步终点。
+GPU5/6/8保留旧迁移队列优先级，其他卡也检查实际CUDA进程和容器预约。
+不抢占、不中断旧任务、不重复提交。控制器每30秒检查资源。
+
+设计
+拼接旧状态h和原候选c：1536→16维GELU→1个分数。
+不计算原五个统计量，不增加归一化或门的正确性标签。
+沿用原候选生成/软解码反馈、beta历史聚合、答案/EOS监督与原完整配方。
+输出层零初始化，起步与常数打分ema相同；全部轮次与位置共享打分MLP。
+只新增原世界、原初始化一条150万步；复用invariant/ema/content，不重训。
+
+检查与后续
+826份冻结来源；针对冻结副本的139项CPU契约和Ruff均通过。
+工程证据：engineering/cpu-checks.json及固定镜像容器lsh-1022-frozen-checks-b。
+一次过早启动的冻结检查未找到尚未复制的文件，原退出1日志保留；无GPU执行。
+执行流程：CUDA环境计算/初值与梯度检查→32步短训→独立重载与R4/R8
+端点33文件逐token重放（以上均通过）→正式训练（进行中）→R1–32终点网格
+及端点重放→W&B云端核验。
+CUDA和短训已通过；终点各阶段失败即停并保留证据，不自动重试。
+W&B：https://wandb.ai/zsqzz/llm-memory-editability/runs/lnh319d0600。
+
+恢复
+持久目录：/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-state-handoff-development-v1
+同一目录入口：/ossfs/workspace/llm-memory-editability/loop-state-handoff-development-v1
+先读freeze.json、controller-process.json、controller-state.json，核对execution/阶段
+退出码和artifacts/内各run状态，再核对docker --context lm-memory实际进程。
+冻结来源在source/，模型产物在artifacts/；旧三个训练和记录修复容器ID保持。

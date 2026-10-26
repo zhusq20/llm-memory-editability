@@ -1,0 +1,131 @@
+{
+  "sources": {
+    "src/llm_memory_editability/loop_native_handoff.py": "25efd0e8849903d6055712ff86a6251caf984af011ac47d96c0aa006819f1b69",
+    "src/llm_memory_editability/self_decode_alignment.py": "1bfd5c15da162ea032caa0579eae6b06b7316e497b3e7ccd747c3252212138a3",
+    "configs/loop-native-handoff-development-v1.json": "fb8d6d117539bc1ddc0bc3e3629d26911ab56cb002ff99ce220ee87828ea87bf",
+    "paper/figures/invariant-loop-v8/build_figure.py": "5ba0333501724e5bb55a1060186b2c16b542f578d13ec5dc70f6555ef2a8397e"
+  },
+  "reference": "DiscoLoop v2, Figure 1, https://arxiv.org/abs/2607.00341v2",
+  "diagram": {
+    "orientation": "vertical",
+    "language": "English",
+    "token_positions_shown": 3,
+    "shared_transformer_calls": 2,
+    "full_carry_paths_shown": 3,
+    "carry_paths": [
+      {
+        "token": 1,
+        "from": "h_(t-1,1)",
+        "to": "h_(t,1)",
+        "points": [
+          [
+            1.945,
+            1.25
+          ],
+          [
+            2.52,
+            1.25
+          ],
+          [
+            2.52,
+            5.75
+          ],
+          [
+            2.005,
+            5.75
+          ]
+        ]
+      },
+      {
+        "token": 2,
+        "from": "h_(t-1,2)",
+        "to": "h_(t,2)",
+        "points": [
+          [
+            3.545,
+            1.25
+          ],
+          [
+            4.12,
+            1.25
+          ],
+          [
+            4.12,
+            5.75
+          ],
+          [
+            3.605,
+            5.75
+          ]
+        ]
+      },
+      {
+        "token": 3,
+        "from": "h_(t-1,3)",
+        "to": "h_(t,3)",
+        "points": [
+          [
+            5.145,
+            1.25
+          ],
+          [
+            5.72,
+            1.25
+          ],
+          [
+            5.72,
+            5.75
+          ],
+          [
+            5.205,
+            5.75
+          ]
+        ]
+      }
+    ],
+    "wire_bridges": [],
+    "carry_routing": "one straight local channel beside each token",
+    "layer_representation": "one joint Transformer band with per-token ports",
+    "token_lanes": [
+      [
+        1.58,
+        2.62
+      ],
+      [
+        3.1799999999999997,
+        4.22
+      ],
+      [
+        4.78,
+        5.819999999999999
+      ]
+    ],
+    "caption_only": [
+      "input reinjection",
+      "normalization",
+      "auxiliary recurrent state",
+      "weighting equations",
+      "initialization"
+    ]
+  },
+  "checks": {
+    "text_inside_canvas": "passed",
+    "model_executed": false
+  },
+  "figure_table_trace": [
+    {
+      "artifact_id": "invariant-loop-vertical",
+      "source_data": {
+        "file": "src/llm_memory_editability/loop_native_handoff.py"
+      },
+      "transformation": {
+        "script": "build_figure.py"
+      },
+      "caption_claim": "Shared Transformer calls are connected by per-token soft feedback and aggregation of the previous state and candidate.",
+      "supported_manuscript_claims": [],
+      "limitations": [
+        "Exact equations and auxiliary state are specified in the caption."
+      ]
+    }
+  ]
+}

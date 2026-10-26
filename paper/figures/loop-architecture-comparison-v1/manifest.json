@@ -1,0 +1,50 @@
+{
+  "generated_at_utc": "2026-10-25T00:17:21.032134+00:00",
+  "sources": {
+    "paper/figures/loop-architecture-comparison-v1/build_figures.py": "c28a8354ae6dfc92d49431d2f8ce20ce80e41f91ed43d0c6772cf6bbd656fc53",
+    "paper/figures/invariant-loop-v12/build_figure.py": "471abafcbef1a4a67ede4e332fa9f5d4c9e549db4cdbd4db6337226221f3cff7",
+    "src/llm_memory_editability/loop_native_handoff.py": "25efd0e8849903d6055712ff86a6251caf984af011ac47d96c0aa006819f1b69",
+    "src/llm_memory_editability/self_decode_alignment.py": "1bfd5c15da162ea032caa0579eae6b06b7316e497b3e7ccd747c3252212138a3",
+    "paper/figures/loop-architecture-comparison-v1/reference-status.json": "640258038b99ba5da5441d8d2d1a668cd67436bbf18fc6197ee0c73221aaffb1"
+  },
+  "figure_table_trace": [
+    {
+      "artifact_id": "vanilla-loop",
+      "source": "DiscoLoop v2, Section 3.1, Eq. (2); Kohli et al., Section 4",
+      "claim": "The current block output becomes the next loop's input.",
+      "full_old_state_bypasses": 0
+    },
+    {
+      "artifact_id": "discoloop",
+      "source": "DiscoLoop v2, Section 4, Eqs. (4)-(5); Section 5.1 fixed gate",
+      "claim": "Normalized soft vocabulary feedback is added to the current output.",
+      "full_old_state_bypasses": 0,
+      "gate_variant": "alpha=1, temperature=1 at an intermediate loop boundary"
+    },
+    {
+      "artifact_id": "invariant-loop",
+      "source": "LoopNativeHandoffGPT.aggregate_round, handoff='invariant'; v12 drawing",
+      "claim": "MLP-based weighting aggregates the candidate with its own previous state.",
+      "full_old_state_bypasses": 3,
+      "mlp_input": "five statistics from c_t, h_(t-1), p_t, p_(t-1)",
+      "next_loop_qkv_common_input": "LN_1(h_t+e)"
+    }
+  ],
+  "shared_drawing_choices": {
+    "orientation": "vertical",
+    "language": "English",
+    "token_positions": 3,
+    "highlighted_token": 3,
+    "transformer_calls": 2,
+    "one_figure_per_file": true,
+    "canvas_inches": [
+      8.2,
+      9.0
+    ],
+    "ordinary_transformer_residuals": "inside the abstract F_theta band in all figures"
+  },
+  "checks": {
+    "text_inside_canvas": "passed",
+    "model_executed": false
+  }
+}

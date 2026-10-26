@@ -1,0 +1,145 @@
+{
+  "batch": "ttcd-one-step-training-v1",
+  "authorization": "User explicitly requested one fast-weight update per fact during both training and evaluation, reuse three existing foundations/common readers, compare single/continuous/independent_merge for both edited hops, preserve existing four-step controls, run in parallel when memory permits. User clarified only one continuous one-step training model per architecture, three writing schemes at evaluation only.",
+  "architectures": {
+    "transformer": {
+      "parent_batch": "ttcd-architecture-comparison-v1",
+      "source_directory": "source",
+      "source_manifest": "source-manifest.json",
+      "parent_config": "configs/architecture-transformer.json"
+    },
+    "loop": {
+      "parent_batch": "ttcd-architecture-comparison-v1",
+      "source_directory": "source",
+      "source_manifest": "source-manifest.json",
+      "parent_config": "configs/architecture-loop.json"
+    },
+    "discoloop": {
+      "parent_batch": "ttcd-successful-base-v1",
+      "source_directory": "source-v2",
+      "source_manifest": "source-v2-manifest.json",
+      "parent_config": "configs/experiment.json"
+    }
+  },
+  "task_configs": {
+    "transformer": "configs/ttcd-one-step-training-v1-transformer.json",
+    "loop": "configs/ttcd-one-step-training-v1-loop.json",
+    "discoloop": "configs/ttcd-one-step-training-v1-discoloop.json"
+  },
+  "writer_steps": 1,
+  "training_writer_steps": 1,
+  "training_methods": [
+    "stream"
+  ],
+  "training_steps": 10000,
+  "new_base_parameter_updates": 30000,
+  "new_foundation_updates": 0,
+  "new_common_updates": 0,
+  "methods": [
+    "single",
+    "continuous",
+    "independent_merge"
+  ],
+  "roles": [
+    "first",
+    "second"
+  ],
+  "panel_sha256": "ac6082dcb857fab85fc106d4d3d39a7a3adb67de33976edeb13c4a1bd201c081",
+  "hop_panel_sha256": "0c284243fe03d2f3a269f256433c4454ea92152fe40752c1022d8f85368bc786",
+  "first_hop_panel": {
+    "seed": 20261015,
+    "max_queries_per_fact": 8
+  },
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "cpu_threads": 4,
+    "cpu_sets": {
+      "transformer": [
+        64,
+        65,
+        66,
+        67
+      ],
+      "loop": [
+        68,
+        69,
+        70,
+        71
+      ],
+      "discoloop": [
+        72,
+        73,
+        74,
+        75
+      ]
+    },
+    "gpu_preferences": {
+      "transformer": [
+        5,
+        6
+      ],
+      "loop": [
+        6,
+        5
+      ],
+      "discoloop": [
+        5,
+        6
+      ]
+    },
+    "gpu_excluded": [
+      8
+    ],
+    "allow_own_batch_sharing": true,
+    "minimum_shared_free_mib": 32768,
+    "maximum_own_containers_per_gpu": 3,
+    "memory_gib": 96,
+    "minimum_persistent_free_gib": 400,
+    "gpu_memory_max_mib": 1024,
+    "gpu_utilization_max": 5,
+    "timeout_hours": 48,
+    "wait_timeout_hours": 96,
+    "tracking": "online",
+    "uid": 1015,
+    "gid": 1016,
+    "gpu_allowed": [
+      5,
+      6
+    ]
+  },
+  "comparison": {
+    "primary_t": 32,
+    "primary": "updated second-hop two-hop accuracy, all and A0-baseline-correct with coverage; unedited atomic/composition retention",
+    "controls": {
+      "four_step_train_one_step_eval": "ttcd-merge-hops-v1",
+      "four_step_train_four_step_eval": [
+        "ttcd-architecture-comparison-v1",
+        "ttcd-successful-base-v1"
+      ]
+    },
+    "retention": [
+      "earlier_written_E_by_age",
+      "U_atoms",
+      "U_chains"
+    ],
+    "all_facts": 32,
+    "rotations": 32,
+    "state_records_per_architecture": 2081,
+    "same_facts_replacements_orders_and_U_as_existing_controls": true,
+    "training_methods_are_not_separate_arms": true
+  },
+  "limits": [
+    "Only3 newstream10000 runs. Existing300k foundations andcommon10000 model/optimizer/data/RNG reused without retraining.",
+    "Writer learning_rate0.001 unchanged; every fact produces1 local update in train andeval.",
+    "Native/reader/postwrite atomic/retention supervision unchanged; updated two-hop answers never in training.",
+    "Only stream writer meta-training; test3methods on each identical terminal model.",
+    "All3architectures retained regardless baseline or calibration accuracy; full results and predefined conditional subsets.",
+    "First/second hop role query coverage differs, fixed graph-only sample. Do not attribute cross-role differences solely to position.",
+    "Same observed graph andone initialization, not independent world confirmation or equalcompute/parameterclaim.",
+    "Preserve all original4step runs,failures,source/configs; no restart or retrospective rewrite.",
+    "Local GPT/GELU adaptation, not full author off-policy convolution/projection implementation.",
+    "No extra LR/seed/orthogonal/gating/training-method grid; no engineering shorttraining."
+  ]
+}

@@ -1,0 +1,57 @@
+knowledge-use-coverage-v1 — four-card continuation, 2026-10-25
+
+User explicitly authorized this machine with four GPUs. This supersedes the older
+unanswered GPU3 question and GPU4/6/8-only scheduling restriction.
+Host: sn4622128200. LM Docker context: lm-memory.
+Controller PID:3985499; maximum four cards, one independent stage per card.
+
+Current submitted work:
+- GPU3: development PD A,400384-token checkpoint reload/evaluation.
+- GPU4: development PD B,400384-token checkpoint reload/evaluation.
+- GPU6: development PD C,400384-token checkpoint reload/evaluation.
+- GPU8: previously prepared bounded natural-question development calibration revision.
+All four containers started. Latest startup verification: A/B/C are reading their
+full CPU checkpoints (read bytes increasing); GPU8 is actively generating natural
+calibration questions. Actual CUDA reload/evaluation for A/B/C is not yet verified.
+See four-card-20261025/startup-verification.json. Check runtime/controller-state.json
+and live Docker for completion; running is not a passed evaluation/cloud check.
+
+Scientific progress retained:
+- Original eight-arm factorial COMPLETE8/8 at1489200 exposures, independent reload,
+  evaluation and W&B verification passed. Do not repeat that training.
+- Coverage development PD A/B/C training complete at200192 and400384 main tokens.
+- All200192 nodes passed independent reload, full local evaluation and CPU cloud
+  recovery. Those predictions and existing W&B run identities are reused.
+- Only A's resource-interrupted400384 evaluation is being replaced, under a new
+  container identity. Its original exit137/OOMKilled=false container and logs remain.
+- Formal budget is still unselected. After all development nodes pass, select the
+  earliest common80%-atomic node using the existing rule; formal PD then SFT A/B/C,
+  followed by the six atomic-rewrite arms, retain the full-parameter recipe.
+- Initial natural calibration9/96 structurally valid, semantic review rejected;
+  original270 attempts and cost remain preserved. New calibration requires actual
+  semantic review before natural application. No semantic approval is implied.
+
+Active plan: runtime/launch-plan-full-r4-20261025.json
+Frozen source: runtime/source-full-20261025-r4/
+Archive SHA256:691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c
+Controller log: runtime/four-card-20261025/controller.log
+Current process/state: runtime/controller-process.json, runtime/controller-state.json
+Amendment: runtime/schedule-amendment.json
+Preserved prior process/state, interrupted execution/logs and resource snapshot:
+runtime/four-card-20261025/
+Repository receipts and deployment: four-card-20261025/
+31 launcher tests and Ruff passed. Scientific training/scoring changes:none.
+
+Resource guards remain: actual CUDA processes, both Docker contexts' reservations,
+minimum85000MiB free/maximum512MiB idle usage, fixed per-job and device reserves,
+shared GPU locks, distinct CPU sets, and at most four project GPUs. Do not kill or
+preempt other users. Always recheck current process/state and locks before recovery.
+Never restart original training to repair tracking; no paused Loop work is resumed.
+
+W&B:
+A https://wandb.ai/zsqzz/llm-memory-editability/runs/090d2b9fbfdbd4bc
+B https://wandb.ai/zsqzz/llm-memory-editability/runs/c4f24238acae94c1
+C https://wandb.ai/zsqzz/llm-memory-editability/runs/38844105846f1baf
+Project https://wandb.ai/zsqzz/llm-memory-editability
+Prior resource-block handoff: RUNNING-before-four-card-20261025.txt
+Protocol: ../../docs/development-artifacts/knowledge-use-coverage-v1/four-card-amendment-20261025.md

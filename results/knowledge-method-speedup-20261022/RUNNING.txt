@@ -1,0 +1,21 @@
+LM Knowledge 执行加速，2026-10-22 UTC。
+持久批次 knowledge-method-factorial-1000-v1，sn4622128200，GPU3/6/8。
+18:43 UTC最新宿主控制器PID3640662；原PID2586077退出，首次接管PID3610012在创建容器前因私有目录挂载失败退出。
+失败已保留；现用extension-v3的create-copy-start，只读文件由容器root持有。
+原pd_lora / sft_lora / pd_full训练PID3334713 / 3334639 / 3334762保留。
+新控制器启动时再次逐文件核验冻结源码，随后动态接入原队列，最多每卡两个实验。
+实际阶段以持久区controller-state.json及LM Docker为准，不能仅凭提交记录称训练已开始。
+恢复先读runtime/amendment.json、runtime/handoff-submission-v2.json、父目录schedule-amendment.json、
+controller-process.json、controller-state.json和实际LM Docker，不重启旧入口或重复提交。
+原三条训练继续原保存方式；仅五条尚未开始的训练使用异步完整CPU快照、32MiB/s持久写入。
+本次含原源与扩展共244文件校验通过。
+工程：固定镜像37项测试/Ruff通过，另7项传输/调度/快照回归及实际容器只读复制检查通过，七组最长输入全尺寸CUDA通过；旧pd_full压力证据复用。
+科学配方、八组各372300步、总2978400步、独立重载及评价保持。新增科学预算0。
+W&B：https://wandb.ai/zsqzz/llm-memory-editability
+
+18:45 UTC：六组均已至少完成100次正式更新，原三个训练身份保持。
+GPU3 pd_lora+sft_full；GPU6 sft_lora+pd_down；GPU8 pd_full+sft_down。
+两条down-LoRA继续自动候补。首次正式后台checkpoint尚未到5000步，不冒称已完成该保存。
+
+18:47 UTC六组正式训练核验通过：新sft_full/pd_down/sft_down为300/400/500步，损失/梯度有限；
+六组配置和数据哈希相同，原三个ID/PID/启动时间相同。详见runtime/six-running-verification.json。

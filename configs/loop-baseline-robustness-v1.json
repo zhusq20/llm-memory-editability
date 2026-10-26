@@ -1,0 +1,220 @@
+{
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2",
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "cpu_threads": 2,
+    "memory_gib": 16,
+    "gpu_memory_fraction": 0.16,
+    "minimum_free_gpu_mib": 18000,
+    "maximum_idle_gpu_used_mib": 512,
+    "gpu_candidates": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "maximum_parallel": 4,
+    "cpu_sets": [
+      "78,79",
+      "80,81",
+      "82,83",
+      "84,85"
+    ]
+  },
+  "depth_tiers": [
+    {
+      "name": "full-r256",
+      "rows": null,
+      "rounds": 256
+    },
+    {
+      "name": "sample1024-r1024",
+      "rows": 1024,
+      "rounds": 1024
+    },
+    {
+      "name": "sample256-r16384",
+      "rows": 256,
+      "rounds": 16384
+    }
+  ],
+  "tracking": {
+    "provider": "wandb",
+    "entity": "zsqzz",
+    "project": "llm-memory-editability",
+    "mode": "online"
+  },
+  "batch": "loop-baseline-robustness-v1",
+  "authorization": "User explicitly requested ordinary Loop and ungated DiscoLoop comparisons on 2026-10-21.",
+  "container_prefix": "lbr-v1-",
+  "status": "preparing",
+  "jobs": {
+    "old-invariant": {
+      "kind": "reused",
+      "arm": "invariant",
+      "config": "configs/loop-native-handoff-development-v1.json",
+      "stages": [],
+      "existing_depth": {
+        "container": "lir-v1-old-invariant-depth",
+        "path": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-invariant-robustness-v1/attempt-2/depth/old-invariant"
+      }
+    },
+    "original-loop": {
+      "kind": "new",
+      "condition": "original",
+      "arm": "loop",
+      "config": "configs/loop-baseline-robustness-v1/original.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "init-1-loop": {
+      "kind": "new",
+      "condition": "init-1",
+      "arm": "loop",
+      "config": "configs/loop-baseline-robustness-v1/init-1.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "init-1-discoloop": {
+      "kind": "new",
+      "condition": "init-1",
+      "arm": "discoloop",
+      "config": "configs/loop-baseline-robustness-v1/init-1.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "new-world-loop": {
+      "kind": "new",
+      "condition": "new-world",
+      "arm": "loop",
+      "config": "configs/loop-baseline-robustness-v1/new-world.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "new-world-discoloop": {
+      "kind": "new",
+      "condition": "new-world",
+      "arm": "discoloop",
+      "config": "configs/loop-baseline-robustness-v1/new-world.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "many-to-one-loop": {
+      "kind": "new",
+      "condition": "many-to-one",
+      "arm": "loop",
+      "config": "configs/loop-baseline-robustness-v1/many-to-one.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "many-to-one-discoloop": {
+      "kind": "new",
+      "condition": "many-to-one",
+      "arm": "discoloop",
+      "config": "configs/loop-baseline-robustness-v1/many-to-one.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "init-2-loop": {
+      "kind": "new",
+      "condition": "init-2",
+      "arm": "loop",
+      "config": "configs/loop-baseline-robustness-v1/init-2.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    },
+    "init-2-discoloop": {
+      "kind": "new",
+      "condition": "init-2",
+      "arm": "discoloop",
+      "config": "configs/loop-baseline-robustness-v1/init-2.json",
+      "stages": [
+        "smoke",
+        "smoke-grid",
+        "train",
+        "grid",
+        "depth",
+        "cloud"
+      ]
+    }
+  },
+  "execution_order": [
+    "old-invariant",
+    "original-loop",
+    "init-1-loop",
+    "init-1-discoloop",
+    "new-world-loop",
+    "new-world-discoloop",
+    "many-to-one-loop",
+    "many-to-one-discoloop",
+    "init-2-loop",
+    "init-2-discoloop"
+  ],
+  "budget": {
+    "new_scientific_runs": 9,
+    "steps_per_run": 1500000,
+    "new_updates": 13500000,
+    "smoke_steps_per_run": 32,
+    "reused_original_discoloop": true
+  },
+  "comparisons": {
+    "original_discoloop": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-native-handoff-development-v1/runs/recipe-additive",
+    "original_discoloop_depth_queue": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-invariant-robustness-v1/attempt-3",
+    "invariant_and_ema_conditions": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-invariant-robustness-v1/attempt-3",
+    "historical_fixed_r4_baselines": "results/loop-round-extrapolation-diagnostic-20261019/summary.json"
+  }
+}

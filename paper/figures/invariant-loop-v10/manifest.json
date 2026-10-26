@@ -1,0 +1,43 @@
+{
+  "sources": {
+    "src/llm_memory_editability/loop_native_handoff.py": "25efd0e8849903d6055712ff86a6251caf984af011ac47d96c0aa006819f1b69",
+    "configs/loop-native-handoff-development-v1.json": "fb8d6d117539bc1ddc0bc3e3629d26911ab56cb002ff99ce220ee87828ea87bf",
+    "paper/figures/invariant-loop-v10/build_detail.py": "f5e8ed657a22cf00bae4fe5026c22c6352ec8c04394a83b2c4f54392435e8c88"
+  },
+  "overview": "../invariant-loop-v9/invariant-loop-vertical.pdf",
+  "diagram": {
+    "language": "English",
+    "scope": "one token, one loop boundary",
+    "features": [
+      "entropy",
+      "max_probability",
+      "agreement",
+      "relative_change",
+      "cosine"
+    ],
+    "retained_weight": "beta * D_(t-1)",
+    "candidate_weight": "exp(clamp(MLP(phi),-8,8))",
+    "acceptance": "candidate_weight / (retained_weight + candidate_weight)",
+    "state_update": "h_t = (1-gamma_t)*h_(t-1) + gamma_t*c_t"
+  },
+  "checks": {
+    "text_inside_canvas": "passed",
+    "model_executed": false
+  },
+  "figure_table_trace": [
+    {
+      "artifact_id": "invariant-loop-gamma-detail",
+      "source_data": {
+        "file": "src/llm_memory_editability/loop_native_handoff.py"
+      },
+      "transformation": {
+        "script": "build_detail.py"
+      },
+      "caption_claim": "Five-statistic scoring and retained mass determine the candidate's fraction in a convex hidden-state update.",
+      "supported_manuscript_claims": [],
+      "limitations": [
+        "Architecture detail only; no empirical correctness claim."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "name": "ci3x3pk1",
+  "displayName": "supervised-alignment-development-v1-discoloop",
+  "state": "finished",
+  "config": "{\"arm\": {\"value\": \"discoloop\"}, \"spec\": {\"value\": {\"lr\": 0.0001, \"phi\": 7.2, \"name\": \"supervised-alignment-development-v1\", \"steps\": 300000, \"warmup\": 2000, \"repeats\": 2, \"batch_size\": 512, \"stream_seed\": 792101, \"weight_decay\": 0.1, \"unique_layers\": 4, \"initialization\": 791101}}, \"batch\": {\"value\": \"supervised-alignment-development-v1\"}, \"_wandb\": {\"value\": {\"m\": [], \"t\": {\"3\": [2, 13, 16, 62], \"4\": \"3.10.16\", \"5\": \"0.30.0\", \"12\": \"0.30.0\", \"13\": \"linux-x86_64\"}, \"cli_version\": \"0.30.0\", \"python_version\": \"3.10.16\"}}, \"auxiliary\": {\"value\": {\"kind\": \"none\", \"scope\": \"supervised\", \"discoloop\": true, \"coefficient\": 0, \"discoloop_eps\": 0.000001, \"first_round_kv\": false, \"discoloop_alpha\": 1, \"discoloop_temperature\": 1}}, \"physical_gpu\": {\"value\": 2}, \"freeze_sha256\": {\"value\": \"31d38948eab069e02b5966123b194c49f4206831bc03bbd0591417cc0207c735\"}}",
+  "summaryMetrics": "{\"_runtime\":8123,\"_step\":845,\"_timestamp\":1791763411.8741312,\"_wandb.runtime\":8123,\"atomic_epochs\":489.39375,\"atomic_id/accuracy\":0.9996666666666668,\"atomic_id/answer_accuracy\":0.9996666666666668,\"atomic_id/answer_nll\":0.005934067536145449,\"atomic_id/n\":3000,\"atomic_id/nll\":0.002967642154544592,\"atomic_ood/accuracy\":0.988,\"atomic_ood/answer_accuracy\":0.988,\"atomic_ood/answer_nll\":0.09134821593761444,\"atomic_ood/n\":2000,\"atomic_ood/nll\":0.0456746518611908,\"aux_confidence_sum\":0,\"aux_loss\":0,\"aux_selected_positions\":0,\"aux_valid_positions\":0,\"composition_epochs\":489.3971710526315,\"effective_input_tokens\":594323514,\"estimated_base_matmul_training_flops\":283182052147200000,\"estimated_extra_discoloop_flops\":297061790515200000,\"estimated_extra_kv_attention_flops\":0,\"estimated_extra_projection_flops\":0,\"estimated_matmul_training_flops\":580243842662400000,\"evaluation_seconds\":8.537427388131618,\"evaluation_step\":300000,\"examples\":153474816,\"executed_input_tokens\":614400000,\"execution_state\":\"complete\",\"final_step\":300000,\"gpu/memory_mib\":0,\"gpu/power_watts\":66,\"gpu/utilization_percent\":0,\"gradient_norm\":0.3083844482898712,\"independent_audit_passed\":true,\"loss\":0.006751613225787878,\"main_loss\":0.006751613225787878,\"masked_batch_slots\":125184,\"step\":300000,\"supervised_tokens\":306949632,\"test_ii/accuracy\":0.9993333333333332,\"test_ii/answer_accuracy\":0.9993333333333332,\"test_ii/answer_nll\":0.006399295292794704,\"test_ii/n\":3000,\"test_ii/nll\":0.0031997940968722105,\"test_io/accuracy\":0.9753333333333334,\"test_io/answer_accuracy\":0.9753333333333334,\"test_io/answer_nll\":0.14979128539562225,\"test_io/n\":3000,\"test_io/nll\":0.07489577680826187,\"test_oi/accuracy\":0.993,\"test_oi/answer_accuracy\":0.993,\"test_oi/answer_nll\":0.055240098387002945,\"test_oi/n\":3000,\"test_oi/nll\":0.027620192617177963,\"test_oo/accuracy\":0.9565868263473054,\"test_oo/answer_accuracy\":0.9565868263473054,\"test_oo/answer_nll\":0.27835148572921753,\"test_oo/n\":2004,\"test_oo/nll\":0.1391758918762207,\"train/aux_confidence_sum\":0,\"train/aux_loss\":0,\"train/aux_selected_positions\":0,\"train/aux_valid_positions\":0,\"train/budget\":300000,\"train/gradient_norm\":0.3083844482898712,\"train/loss\":0.006751613225787878,\"train/main_loss\":0.006751613225787878,\"train/step\":300000,\"train/training_seconds\":8060.751234512776,\"train/weighted_aux_loss\":0,\"train_ii/accuracy\":0.999,\"train_ii/answer_accuracy\":0.999,\"train_ii/answer_nll\":0.0034430576488375664,\"train_ii/n\":3000,\"train_ii/nll\":0.001721674925647676,\"training_seconds\":8060.751234512776,\"wall_seconds\":8101.492130048573,\"weighted_aux_loss\":0}",
+  "files": {
+    "edges": [
+      {
+        "node": {
+          "name": "config.yaml",
+          "sizeBytes": 4303,
+          "md5": "4NsKHm9Hbpq2UU18U7IygA=="
+        }
+      },
+      {
+        "node": {
+          "name": "requirements.txt",
+          "sizeBytes": 7256,
+          "md5": "gtao6TdM76WrOY2e/H/evQ=="
+        }
+      },
+      {
+        "node": {
+          "name": "wandb-metadata.json",
+          "sizeBytes": 2560,
+          "md5": "kZA4UaAActgHKKJ/qkhl4A=="
+        }
+      },
+      {
+        "node": {
+          "name": "wandb-summary.json",
+          "sizeBytes": 2573,
+          "md5": "BkyidXkjf7heMXeESUy/Bw=="
+        }
+      }
+    ],
+    "pageInfo": {
+      "endCursor": "YXJyYXljb25uZWN0aW9uOjM=",
+      "hasNextPage": false
+    }
+  }
+}

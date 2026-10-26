@@ -1,0 +1,105 @@
+{
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "heartbeat_steps": 1000,
+  "evaluation_batch_size": 256,
+  "smoke_steps": 4,
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:b7933a57d6a4702700b6b2578fe0cc697f91b2080ef5e18d8fb916443281eacd",
+    "cpu_threads": 2,
+    "cpu_first": 80,
+    "memory_gib": 32,
+    "gpu_memory_fraction": 0.2,
+    "tracking": "online",
+    "poll_seconds": 20,
+    "stage_timeout_hours": 168
+  },
+  "authorization": "2026-10-17 user explicitly approved carrying out the complete proposed extension: long training, independent confirmation, Wang task, and train-two-hop/test-three-four-hop generalization.",
+  "execution_policy": {
+    "pretraining_smoke": false,
+    "posttraining_independent_audit": false,
+    "engineering_correctness_checks": true,
+    "endpoint_inference_grid": true
+  },
+  "batch": "gate-generalization-extension-v1-depth-3",
+  "family": "depth",
+  "position_encoding": "none",
+  "input_root": "/inputs/depth-3",
+  "data": {
+    "world_seed": 20261017103,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000,
+    "kind": "depth_extrapolation"
+  },
+  "training": {
+    "initialization": 20261017203,
+    "stream_seed": 20261017303,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 300000
+  },
+  "dropout_seed": 20261017403,
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000
+  ],
+  "inference_repeats": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    8
+  ],
+  "arms": {
+    "paper": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "update_mode": "full",
+      "initial_update": 0.95
+    },
+    "fixed-update": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "update_mode": "fixed",
+      "initial_update": 0.95
+    },
+    "token-update": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "update_mode": "token",
+      "initial_update": 0.95
+    }
+  },
+  "primary": "Fixed300k R4 graph-B three-hop answer accuracy; paired token-fixed and token-paper, each graph separately then mean. All three/four-hop queries are untrained depths; graph-A results separately isolate depth from graph transfer.",
+  "input_origin": {
+    "world_sha256": "815aa8046989137b61b7e1375fac4efa4ed1507441914f7a31a4b6fd667ada6a",
+    "panels_sha256": "d968d737df321801e872e9b573209cb37aa3706c0db41782ac4979d5b039d474"
+  }
+}

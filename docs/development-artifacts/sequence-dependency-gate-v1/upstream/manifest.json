@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/RobertCsordas/ndr",
+  "commit": "da20530dfb4336deddfbe5e79d62e72d1dc2580e",
+  "license": "MIT",
+  "files": {
+    "LICENSE": "722d0aab6a1052f18145fbfc9efa35bb17f5812cc5db0a69c23f5ad40a76c7cd",
+    "dataset/listops.py": "57506c0991129879ccfdfc5931ed7280e9ce0258795859b49ae33e7af1256931",
+    "dataset/simple_arithmetic.py": "f83e7c7aa549947b6effe5152d985e8b8be045bc082ae53b68b42938a7501502",
+    "dataset/helpers/rejection_sampler.py": "f818a828c16cff9d626c30418496b33d08dedf9f02af4f2468b0daa6ff0dad7f",
+    "tasks/simple/listops_data_mixin.py": "24cbb79215e9b8701d334b26af1c615bf3055a69f6ed7f5f8879ff57be484c1a",
+    "tasks/simple/simple_arithmetics_data_mixin.py": "0ab04fe994be076aa869684f4ac2f097094e91730b545e9b9cc3ea59046e2dc7",
+    "sweeps/transformer_control_flow/listops_big_lowlr_ndr.yaml": "1bf6f13869f9aa15678fff5c0ea9bdfbabb5a299085354c5c72d97d3f7c9becb",
+    "sweeps/transformer_control_flow/listops_big_uni.yaml": "ee15da02802de68d184377ab044f61753bf7112d3fd02e1acb0c75193663e845",
+    "sweeps/transformer_control_flow/simple_arithmetics_geometric_no_norm.yaml": "af8841ead5b530b59fa4de4020b92fe1755d2c5051dea9f4586fee5f7f767a08",
+    "sweeps/transformer_control_flow/simple_arithmetics_universal.yaml": "9c4d5c8b53b25c1637d5e47fa46698dc776f78f631f4a0a9eb808337f5e37cb3"
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "heartbeat_steps": 1000,
+  "evaluation_batch_size": 256,
+  "smoke_steps": 4,
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:fa200da9dd78d3423ffc30572bda8b88a5b1c7e72a25509bf63e6ae4a5a3ef6f",
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "cpu_threads": 2,
+    "cpu_first": 8,
+    "memory_gib": 64,
+    "tracking": "online",
+    "gpu_memory_fraction": 0.6,
+    "stage_timeout_hours": 168,
+    "poll_seconds": 20,
+    "gpu": 5,
+    "gpu_uuid": "GPU-33ea8cd2-7776-c888-b99f-ba45330a36b7",
+    "display_anomaly_user_authorized": true,
+    "base_image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2"
+  },
+  "authorization": "User requested the new joint gate on the original saved Wang data, then explicitly chose to wait for the current GPU5 run to finish before starting this run.",
+  "execution_policy": {
+    "pretraining_smoke": false,
+    "pretraining_reload": false,
+    "posttraining_independent_audit": false,
+    "endpoint_inference_grid": true,
+    "engineering_correctness_checks": true,
+    "reason": "Retain user waiver; run one discarded full-size CUDA engineering update after the GPU5 predecessor completes, then start fresh scientific training."
+  },
+  "batch": "joint-update-gate-wang-v1",
+  "family": "wang",
+  "position_encoding": "learned",
+  "input_root": "/inputs/wang",
+  "data": {
+    "kind": "wang",
+    "source_directory": "/inputs/wang-original",
+    "phi": 7.2
+  },
+  "training": {
+    "initialization": 791101,
+    "stream_seed": 792101,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 1500000
+  },
+  "dropout_seed": 20261017501,
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000,
+    400000,
+    500000,
+    600000,
+    700000,
+    800000,
+    900000,
+    1000000,
+    1100000,
+    1200000,
+    1300000,
+    1400000,
+    1500000
+  ],
+  "inference_repeats": [
+    1,
+    2
+  ],
+  "arms": {
+    "joint-token": {
+      "architecture": "discoloop",
+      "unique_layers": 4,
+      "repeats": 2,
+      "update_mode": "token",
+      "initial_update": 0.95
+    }
+  },
+  "primary": "Fixed1500k R2 OO answer-plus-generated-EOS accuracy; 300k fixed budget secondary, retain raw answer, II/IO/OI and atom scores. First scheduled attainment of 50/75/90/95 percent reported as interval-censored, no interpolation.",
+  "input_origin": {
+    "world_sha256": "e31ec9959ce0a7b25465191a1d9ef8e83ec42163ed967fa56a60605f6ac1c3b4",
+    "panels_sha256": "8655858c0de4646cfb5c7ea1779b5374ef28b492e6ac59bb6eda9e89c7936bf9"
+  },
+  "gate_scope": "continuous_update_and_new_paper_injection",
+  "paired_recipe": {
+    "config": "configs/gate-extension/wang.json",
+    "sha256": "9e1286a1f61de840bbf2ff3562d765ef995aaa0cbdb2a842c43231606790fc41",
+    "baseline_batch": "gate-generalization-extension-v1-wang",
+    "primary_baseline": "token-update",
+    "secondary_baselines": [
+      "paper",
+      "fixed-update"
+    ],
+    "baseline_new_updates": 0
+  },
+  "budget": {
+    "new_scientific_updates": 1500000,
+    "new_scientific_arms": 1,
+    "engineering_restored_updates": 1,
+    "retained_engineering_updates": 0,
+    "repeated_baseline_updates": 0
+  },
+  "dependency": {
+    "batch": "joint-update-gate-multihop-v1",
+    "arm": "joint-token",
+    "budget": 1500000,
+    "image": "sha256:fa200da9dd78d3423ffc30572bda8b88a5b1c7e72a25509bf63e6ae4a5a3ef6f",
+    "freeze_sha256": "e330392b3a5adbd06111e9b958322c084f72b42779e1bcd4422262442f8542e6",
+    "required_stages": [
+      "train",
+      "grid"
+    ],
+    "scheduling": "GPU5 only after both stages complete successfully; no preemption or sharing"
+  },
+  "limits": [
+    "One previously observed synthetic Wang world and initialization, not pretrained natural-language evaluation.",
+    "Same original world/panels bytes, 52463-token vocabulary, four-layer block repeated twice, initial weights, stream and optimizer as the queued Wang token-update arm.",
+    "Change only the nonfinal boundary to jointly gate the new paper re-encoding; final readout remains raw H.",
+    "Local runtime image differs from the archived baseline execution image; package versions match, no cross-hardware bitwise claim.",
+    "Only one new 1.5M-step arm; the three existing Wang baselines are reused and remain under their existing controller."
+  ]
+}

@@ -1,0 +1,155 @@
+{
+  "batch": "ttcd-successful-base-v1",
+  "authorization": "User requested restoring the successful DiscoLoop recipe, verifying foundation composition, then single-fact versus cross-sample continual writing.",
+  "seed": 20261015,
+  "phi": 7.2,
+  "data_dir": "data/ttcd-successful-base-v1",
+  "model_config": "data/ttcd-successful-base-v1/gpt2-config.json",
+  "original_data_dir": "data/discoloop-success-restore-v1/original/data",
+  "original_model_config": "data/discoloop-success-restore-v1/original/reference/gpt2/config.json",
+  "foundation": {
+    "checkpoint": "results/discoloop-success-restore-v1/discoloop/checkpoint-0300000.pt",
+    "gate_receipt": "results/discoloop-success-restore-v1/foundation-gate.json",
+    "step": 300000,
+    "gate_checkpoint_field": "checkpoint_sha256",
+    "required_spec": {
+      "unique_layers": 4,
+      "repeats": 2,
+      "phi": 7.2,
+      "weight_decay": 0.1,
+      "initialization": 791101,
+      "stream_seed": 792101,
+      "lr": 0.0001,
+      "warmup": 2000,
+      "batch_size": 512,
+      "steps": 300000
+    },
+    "original_input_root": "data/discoloop-success-restore-v1/original"
+  },
+  "common": {
+    "steps": 10000,
+    "checkpoint": "results/ttcd-successful-base-v1/common/training/parent.pt",
+    "gate_receipt": "results/ttcd-successful-base-v1/common/gate.json"
+  },
+  "models": {
+    "single": {
+      "checkpoint": "results/ttcd-successful-base-v1/single/training/parent.pt",
+      "step": 10000,
+      "discoloop": true
+    },
+    "stream": {
+      "checkpoint": "results/ttcd-successful-base-v1/stream/training/parent.pt",
+      "step": 10000,
+      "discoloop": true
+    }
+  },
+  "cases": {
+    "seed": 20261015,
+    "calibration_cases": 8,
+    "evaluation_cases": 16,
+    "affected": 8,
+    "controls": 16
+  },
+  "writer": {
+    "teacher_window": 32,
+    "student_window": 16,
+    "gap": 17,
+    "steps": 4,
+    "learning_rate": 0.001
+  },
+  "continual": {
+    "train_length": 8,
+    "eval_length": 32,
+    "rotations": 32,
+    "affected": 8,
+    "controls": 64,
+    "order_seed": 1729,
+    "panel_source_path": "results/ttcd-successful-base-v1/preparation/continual-panel.json",
+    "panel_path": "/frozen/configs/continual-panel.json"
+  },
+  "reading_gate": {
+    "minimum_cases_per_group": 8,
+    "minimum_accuracy": 0.6
+  },
+  "capability_gate": {
+    "minimum_accuracy": {
+      "atomic_id": 0.98,
+      "atomic_ood": 0.98,
+      "train_ii": 0.98,
+      "test_ii": 0.98,
+      "test_io": 0.9,
+      "test_oi": 0.9,
+      "test_oo": 0.9
+    },
+    "maximum_reference_drop": 0.02,
+    "reference": "Same new foundation fixed300k seven-panel audit; no updated two-hop labels/readouts enter training or gate selection"
+  },
+  "training": {
+    "steps": 10000,
+    "native_batch_size": 512,
+    "correction_batch_size": 128,
+    "micro_native": 64,
+    "micro_facts": 32,
+    "learning_rate": 1e-05,
+    "weight_decay": 0.1,
+    "gradient_clip": 1.0,
+    "validation_every": 1000,
+    "evaluation_batch_size": 64,
+    "precision": "bf16",
+    "tf32": false
+  },
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "gpus": {
+      "common": 8,
+      "single": 8,
+      "stream": 9
+    },
+    "cpu_sets": {
+      "common": [
+        24,
+        25,
+        26,
+        27
+      ],
+      "single": [
+        24,
+        25,
+        26,
+        27
+      ],
+      "stream": [
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    "cpu_threads": 4,
+    "memory_gib": 96,
+    "gpu_memory_max_mib": 1024,
+    "gpu_utilization_max": 5,
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "timeout_hours": 24,
+    "wait_timeout_hours": 24,
+    "tracking": "online",
+    "uid": 1015,
+    "gid": 1016,
+    "minimum_persistent_free_gib": 200
+  },
+  "scope_limits": [
+    "Foundation restoration is exactly the original static recipe; common-reader and writer training are explicitly new stages",
+    "Common reader10000 updates plus paired2x10000 updates; total30000 new adaptation updates, independent of foundation rebuilding cost",
+    "Original native mixed CE is retained at macro512; reader/fast-atomic/fast-retention each macro128 with unit mean weights",
+    "Same common complete checkpoint and paired macro examples for K1/K8; inner targets stopped, future outer gradients connected",
+    "All four objectives use answer+EOS labels; no updated two-hop training/query/model selection",
+    "Both evaluation arms write the same one persistent A for32 facts; preserve all1313 states per arm (~46GiB fp32 fast states/arm)",
+    "Fixed development graph and initial model, no new-world or universal advantage claim",
+    "Any foundation/common reading or composition gate failure stops dependent work without retries, extended training or new hyperparameter sweep"
+  ],
+  "engineering_implementation": {
+    "micro_facts_selection": "32 after full-size micro8 engineering: single peak4.04GiB, stream ~7.14s/update (~19.8h/10k). Same macro128; enlarge only complete-stream microbatch, retain full gradient and one optimizer update. Require full-size16-update/micro32 replay before formal execution.",
+    "outcome_selection": false
+  }
+}

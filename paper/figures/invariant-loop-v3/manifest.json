@@ -1,0 +1,39 @@
+{
+  "sources": {
+    "src/llm_memory_editability/loop_native_handoff.py": "2c49b84595707bac69ef38375486c697237b98d6cde844cd8181037114ea53d7",
+    "configs/loop-native-handoff-development-v1.json": "fb8d6d117539bc1ddc0bc3e3629d26911ab56cb002ff99ce220ee87828ea87bf",
+    "paper/figures/invariant-loop-v2/build_figures.py": "73605b271f9b39be6be916f04056518c0aecbbfc7319f7bd86e5651a148be11b",
+    "paper/figures/invariant-loop-v3/build_figure.py": "0e575e9d5ca7683f40931e0101470e97f81caaf525ddc45d277dc2b2a4d1e84d"
+  },
+  "reference": "https://arxiv.org/abs/2607.00341v2",
+  "abstraction": {
+    "feedback": "Decode, probability-weighted embedding, and feedback RMS.",
+    "score": "Five statistics, MLP, score clipping, exp, and mass normalization.",
+    "update": "Exact equivalent convex combination of old state and candidate.",
+    "caption_only": [
+      "N/D recurrence",
+      "auxiliary p and D carry",
+      "initialization"
+    ]
+  },
+  "checks": {
+    "canvas_text_bounds": "passed",
+    "model_executed": false
+  },
+  "figure_table_trace": [
+    {
+      "artifact_id": "invariant-loop",
+      "source_data": {
+        "file": "src/llm_memory_editability/loop_native_handoff.py"
+      },
+      "transformation": {
+        "script": "build_figure.py"
+      },
+      "caption_claim": "The old state and soft-feedback candidate are combined using statistic-based weights between shared Transformer calls.",
+      "supported_manuscript_claims": [],
+      "limitations": [
+        "Auxiliary recurrent state and exact equations are in the caption."
+      ]
+    }
+  ]
+}

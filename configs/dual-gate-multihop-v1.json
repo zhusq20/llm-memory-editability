@@ -1,0 +1,143 @@
+{
+  "batch": "dual-gate-multihop-v1",
+  "authorization": "2026-10-17 user authorized implementation, checks and parallel multi-hop P/G/D/V only, reusing compatible fixed DiscoLoop F; no novel-fact experiment or confirmation worlds.",
+  "input_root": "/inputs",
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 300000
+  },
+  "dropout_seed": 2026101604,
+  "arms": {
+    "paper": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "gate_variant": "paper"
+    },
+    "scalar": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "gate_variant": "scalar"
+    },
+    "dual": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "gate_variant": "dual"
+    },
+    "vector-injection": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "gate_variant": "vector_injection"
+    }
+  },
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000
+  ],
+  "heartbeat_steps": 1000,
+  "evaluation_batch_size": 256,
+  "smoke_steps": 32,
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "gpu_candidates": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "maximum_parallel": 4,
+    "cpu_threads": 2,
+    "cpu_first": 64,
+    "memory_gib": 16,
+    "poll_seconds": 15,
+    "stage_timeout_hours": 24,
+    "waiting_timeout_hours": 168,
+    "minimum_free_gpu_mib": 18000,
+    "maximum_idle_gpu_used_mib": 512,
+    "tracking": "online",
+    "gpu_memory_fraction": 0.16,
+    "same_batch_gpu_sharing": true
+  },
+  "primary": "Fixed300k endpoint graphB three-hop full-vocabulary answer accuracy at inferenceR4; report every panel, answer+EOS, complete R1-4 grid and condition coverage. No selection of best checkpoint/horizon.",
+  "limits": [
+    "One observed development graph and initialization; no independent-world confirmation",
+    "Only P/G/D/V four new 300k arms; fixed DiscoLoop reused, never trained",
+    "No novel-fact writing, no auxiliary/bridge losses, no KV, no added depth/support grid",
+    "Only actually unused GPU admitted; bounded own-batch sharing; no foreign-task sharing or automatic failed-stage retry",
+    "Matrix FLOPs exclude O(d) gate operations, measured time separate; do not claim equal compute"
+  ],
+  "input_origin": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+    "reuse": "Exact existing 40000-example world and 43000-query panels; do not merge with the 25000-example variant"
+  },
+  "baseline": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-unified-v1",
+    "arm": "disco-l1-r4",
+    "run": "/ossfs/workspace/llm-memory-editability/loop-hop-unified-v1/runs/disco-l1-r4",
+    "initial_model_sha256": "39a487823c05311a223db99c3d0e2df3e7a1752498e261337f4298abe0cfa7b0",
+    "files": {
+      "complete.json": "cce19c8641f5c826f1e399c117bc04e4d3b06e62942bbe7f3ad192b7e9aa4a1b",
+      "audit.json": "25f6c557762c68d75d081de0f743ba5bb3f7a70650d5cdc48c081bca02d74ccc",
+      "grid.json": "4ebb4337b10819d7664a5fc764712cfa257885c373002dbee74f01bad05b6288",
+      "grid-audit.json": "77f76b3bc84fd6d057f391726b559d453b632662ff00d57a8ce349425916609c",
+      "exposure.npz": "a88eaeb762b83a9bfdcf053387ad6cb4226bde9ed0dd1f1c7b51ff732dd5577e",
+      "checkpoint-0000000.pt": "3077600ad155cfd745d1c2bc40c626d2c53191035d7f2d6e826cc03b85a99446",
+      "checkpoint-0300000.pt": "e822667ed6849a13ed9a6a7ce0e91667668238c3acc1ba4f2268359245a6c7a8"
+    },
+    "cloud_state": "parent cloud summary failed; local audits passed; new comparison verifies reused canonical files separately without changing parent"
+  },
+  "budget": {
+    "new_scientific_updates": 1200000,
+    "new_scientific_arms": 4,
+    "reused_fixed_baseline_updates": 0,
+    "engineering_smoke_updates": 128,
+    "engineering_restored_preflight_updates": 4,
+    "novel_fact_updates": 0,
+    "confirmation_world_updates": 0
+  }
+}

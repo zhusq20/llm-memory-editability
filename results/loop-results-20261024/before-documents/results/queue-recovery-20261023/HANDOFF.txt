@@ -1,0 +1,61 @@
+2026-10-23 queue recovery
+
+Knowledge: executed locally on sn4622128200.
+New scheduler: knowledge/controller-process.json and controller.log.
+Resource pool: GPUs4/3/6/8, at most four physical GPUs for this user.
+GPU4's table4-gpu4-health-20261005 reservation was explicitly released by the user.
+The container itself is preserved. It is ignored only while never-started created,
+PID0, restart=no. Any transition blocks new admission.
+Existing four training containers are adopted without stopping or restarting.
+Two unstarted down-LoRA arms use the original frozen batch-probe/restore runner.
+The 1489200-exposure target, Adam/RNG restoration, sample order, loss, W&B IDs,
+checkpoint policy and original frozen source remain unchanged.
+SFT-full and SFT-down have reached their exposure targets; only their audit and
+evaluation remain. Training will not be repeated to repair bookkeeping.
+
+Loop: prepared for MANUAL launch by the user; not launched from this machine.
+Target is the existing host sn4622129202 with existing shared persistent paths.
+Run there:
+  bash /mnt/disk2_from_server2/siqizhu4/llm-memory-editability/results/queue-recovery-20261023/start-loop.sh /absolute/path/to/existing/wandb-token-file
+The final argument is a credential FILE PATH, not the token itself. Use the same
+existing local credential as the original controller. LM_LOOP_PYTHON may select
+the existing host interpreter; model execution still uses the fixed LM image.
+This launcher is specific to the existing host. Do not run it on a third host.
+
+Nine unstarted scientific training tasks, each1500000 updates (13500000 total):
+  First: many-to-one-loop, many-to-one-discoloop.
+  Initialization groups last:
+    init-1-ema, init-1-loop, init-1-discoloop;
+    init-2-invariant, init-2-ema, init-2-loop, init-2-discoloop.
+These names are the candidates to place on another machine if desired. Moving
+them to a third host additionally requires exclusive queue ownership, frozen
+dependencies/data, image and CUDA/reload checks; this packet does not silently
+change their original host or GPU assignments.
+
+The prepared recovery keeps the existing pool1/6/3/2, other users' processes and
+reservations, and the four-user-GPU cap. GPU6 remains blocked if occupied.
+It checks existing stage receipts against actual LM Docker before scheduling.
+Completed training is skipped; running stages are adopted; failed or ambiguous
+stages stop rather than being silently restarted. New initialization stays last.
+Successful original-loop/new-world-invariant/many-to-one-invariant phases are
+reused. many-to-one-ema/new-world-loop/new-world-discoloop only need their
+remaining grid/depth/cloud phases. Existing evaluation-only whitelist is kept.
+Source-host init-1-invariant and new-world-ema have both completed training;
+their deferred grid/depth/cloud followups remain separate and MUST NOT retrain.
+
+Operational fixes:
+  Individually inspect only Docker scheduling fields. A deleted container may
+  be ignored only after a fresh active-container list confirms its absence.
+  Unresolved Docker failures block new admission and are retried as READS.
+  An exclusive evaluation waiting for an idle card no longer blocks other
+  unstarted training that safely fits beside known training from the same batch.
+  No original controller, frozen scientific source, checkpoint, or failure
+  receipt was overwritten. Recovery code and adoption history are separate.
+
+Validation:
+  17 targeted CPU tests passed; Ruff check and format passed.
+  Knowledge frozen sources and adopted identities passed the read-only preflight.
+  GPU4 actual matrix multiplication, backward, finite gradients and CUDA sync passed.
+  Loop static frozen-source and pending-task checks passed locally; actual target
+  Docker checks run only when the user launches the entry. No remote launch claim.
+Project: https://wandb.ai/zsqzz/llm-memory-editability

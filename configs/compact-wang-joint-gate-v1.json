@@ -1,0 +1,126 @@
+{
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "heartbeat_steps": 1000,
+  "evaluation_batch_size": 256,
+  "smoke_steps": 4,
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:fa200da9dd78d3423ffc30572bda8b88a5b1c7e72a25509bf63e6ae4a5a3ef6f",
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "cpu_threads": 2,
+    "cpu_first": 24,
+    "memory_gib": 16,
+    "tracking": "online",
+    "gpu_memory_fraction": 0.2,
+    "stage_timeout_hours": 168,
+    "poll_seconds": 20,
+    "gpu": 2,
+    "gpu_uuid": "GPU-9c6ca0d7-11bb-e940-c845-efea3cc49c23",
+    "display_anomaly_user_authorized": false,
+    "base_image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2"
+  },
+  "authorization": "User accepted current one-layer/four-round model with compact Wang vocabulary and explicitly requested GPU2.",
+  "execution_policy": {
+    "pretraining_smoke": false,
+    "pretraining_reload": false,
+    "posttraining_independent_audit": false,
+    "endpoint_inference_grid": true,
+    "engineering_correctness_checks": true,
+    "reason": "Retain existing short-training and independent-audit waiver; one discarded full-size CUDA engineering update on idle GPU2, then fresh scientific training and R1-4 endpoint evaluation."
+  },
+  "batch": "compact-wang-joint-gate-v1",
+  "family": "wang",
+  "position_encoding": "learned",
+  "input_root": "/inputs/wang-compact",
+  "data": {
+    "kind": "wang",
+    "source_directory": "/inputs/wang-source",
+    "phi": 7.2,
+    "vocabulary_variant": "compact-v1"
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 792101,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 1500000
+  },
+  "dropout_seed": 2026101604,
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000,
+    400000,
+    500000,
+    600000,
+    700000,
+    800000,
+    900000,
+    1000000,
+    1100000,
+    1200000,
+    1300000,
+    1400000,
+    1500000
+  ],
+  "inference_repeats": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "arms": {
+    "joint-token": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "update_mode": "token",
+      "initial_update": 0.95
+    }
+  },
+  "primary": "Fixed1500k R4 OO answer-plus-generated-EOS accuracy; raw answer and all seven original pools plus atomic_all retained. 300k secondary. No peak/node selection.",
+  "input_origin": {
+    "world_sha256": "e31ec9959ce0a7b25465191a1d9ef8e83ec42163ed967fa56a60605f6ac1c3b4",
+    "panels_sha256": "8655858c0de4646cfb5c7ea1779b5374ef28b492e6ac59bb6eda9e89c7936bf9",
+    "metadata_sha256": "84c4061ce801fa7179dbab7c8e91558147189fe2db24311a68df18ff2a812de8"
+  },
+  "gate_scope": "continuous_update_and_new_paper_injection",
+  "budget": {
+    "new_scientific_updates": 1500000,
+    "new_scientific_arms": 1,
+    "engineering_restored_updates": 1,
+    "retained_engineering_updates": 0,
+    "repeated_baseline_updates": 0
+  },
+  "limits": [
+    "Original world, all 313600 training examples and seven evaluation pools preserved byte-for-byte; token mapping alone changes data encoding.",
+    "Current joint-gate one-layer/four-round width768 model; vocabulary2203, not exactly the original 8655362 parameter count.",
+    "Removing unused vocabulary competitors changes cross-entropy and differentiable re-encoding; not numerical equivalence to the original vocabulary.",
+    "Both unique layer count/repeats and vocabulary change versus old Wang; not a one-factor causal comparison.",
+    "Fresh initialization; the same seed with different embedding sizes does not guarantee paired trunk weights.",
+    "Single observed graph/initialization; no conclusion about general superiority."
+  ],
+  "architecture_reference": {
+    "config": "configs/joint-update-gate-multihop-v1.json",
+    "sha256": "19b01a341f13762f8c743bde2d565e32b235babc959321ca1e8a41892f43a114"
+  }
+}

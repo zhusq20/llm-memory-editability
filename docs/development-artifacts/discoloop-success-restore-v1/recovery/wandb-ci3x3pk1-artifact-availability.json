@@ -1,0 +1,15 @@
+{
+  "data": {
+    "project": {
+      "run": {
+        "outputArtifacts": {
+          "edges": [],
+          "pageInfo": {
+            "hasNextPage": false,
+            "endCursor": null
+          }
+        }
+      }
+    }
+  }
+}

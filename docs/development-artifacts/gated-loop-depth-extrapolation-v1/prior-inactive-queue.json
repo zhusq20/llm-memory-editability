@@ -1,0 +1,30 @@
+{
+  "utc": "2026-10-17T08:38:01.781756+00:00",
+  "host": "sn4622128200",
+  "predecessor": {
+    "name": "norm-handoff-multihop-v1",
+    "root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/norm-handoff-multihop-v1/sn4622128200/run",
+    "gpus": [
+      4,
+      1,
+      2
+    ],
+    "policy": "active_controller_only",
+    "process_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/norm-handoff-multihop-v1/sn4622128200"
+  },
+  "observed_controller": {
+    "pid": 325899,
+    "utc": "2026-10-17T07:06:40.817391+00:00"
+  },
+  "recorded_state": {
+    "state": "needs_attention",
+    "error": "RuntimeError('Selected GPU 4 is busy or has insufficient memory')",
+    "utc": "2026-10-17T07:36:15.589013+00:00"
+  },
+  "recorded_state_sha256": "c44fdd3484fbb8fb5cae6dfd97a42ae7864e4db38dd7d4eb154ef91922fbaa4d",
+  "matching_controller_alive": false,
+  "running_predecessor_containers": [],
+  "decision": "New user-authorized batch waits for the currently running lr-control lanes and all their audits; failed inactive norm queue is retained without restart and is not an indefinite dependency. Protect GPU4/1/2 if its matching recorded controller resumes; all actual CUDA processes/containers always block.",
+  "old_batch_modified": false,
+  "old_controller_restarted": false
+}

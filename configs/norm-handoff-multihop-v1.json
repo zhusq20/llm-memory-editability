@@ -1,0 +1,150 @@
+{
+  "batch": "norm-handoff-multihop-v1",
+  "authorization": "2026-10-17: implement and package only; user will manually launch on another machine. No local model preflight, smoke or scientific training authorized in this turn.",
+  "input_root": "/inputs",
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 0.00001
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 300000
+  },
+  "dropout_seed": 2026101604,
+  "arms": {
+    "R": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "handoff": "fixed",
+      "residual_scale": 0.25
+    },
+    "N": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "handoff": "normalized",
+      "residual_scale": 1
+    },
+    "A": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "handoff": "additive",
+      "residual_scale": 1
+    },
+    "C": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "handoff": "complementary",
+      "residual_scale": 1
+    }
+  },
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000
+  ],
+  "heartbeat_steps": 1000,
+  "evaluation_batch_size": 256,
+  "smoke_steps": 32,
+  "runtime": {
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "cpu_threads": 2,
+    "gpu_memory_fraction": 0.85,
+    "tracking": "online"
+  },
+  "primary": "Fixed300k endpoint graphB three-hop full-vocabulary answer accuracy at inferenceR4. Preserve every native panel, answer+EOS, premise coverage and R1-4 endpoint grid. No best-node/horizon selection.",
+  "limits": [
+    "Single observed development world and initialization; not independent-world confirmation",
+    "Only R/N/A/C four new 300k arms; fixed F reused with verified identity, never auto-trained",
+    "R uses gamma=.25 on both attention/MLP increments; native q unchanged; no LR compensation",
+    "A/C use identical scalar sigmoid gate inputs and zero initialization; C-A isolates complementary coupling",
+    "N-C compares complete methods; no fixed-half arm, no R-by-N interaction, no coefficient grid, KV or auxiliary loss",
+    "Exclusive manually selected target-machine GPUs; no foreign task preemption, implicit local launch, failed-stage retry or training resume",
+    "Matrix FLOPs exclude normalization/gate pointwise work; report measured time and parameter counts separately"
+  ],
+  "input_origin": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+    "reuse": "Exact existing 40000-example world and 43000-query panels; do not merge with the 25000-example variant"
+  },
+  "baseline": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-unified-v1",
+    "arm": "disco-l1-r4",
+    "run": "/ossfs/workspace/llm-memory-editability/loop-hop-unified-v1/runs/disco-l1-r4",
+    "initial_model_sha256": "39a487823c05311a223db99c3d0e2df3e7a1752498e261337f4298abe0cfa7b0",
+    "files": {
+      "complete.json": "cce19c8641f5c826f1e399c117bc04e4d3b06e62942bbe7f3ad192b7e9aa4a1b",
+      "audit.json": "25f6c557762c68d75d081de0f743ba5bb3f7a70650d5cdc48c081bca02d74ccc",
+      "grid.json": "4ebb4337b10819d7664a5fc764712cfa257885c373002dbee74f01bad05b6288",
+      "grid-audit.json": "77f76b3bc84fd6d057f391726b559d453b632662ff00d57a8ce349425916609c",
+      "exposure.npz": "a88eaeb762b83a9bfdcf053387ad6cb4226bde9ed0dd1f1c7b51ff732dd5577e",
+      "checkpoint-0000000.pt": "3077600ad155cfd745d1c2bc40c626d2c53191035d7f2d6e826cc03b85a99446",
+      "checkpoint-0008000.pt": "3bad457a65bcb968e16574b44a50a70a6f97971ab66c709c671ea09daf440d9c",
+      "checkpoint-0300000.pt": "e822667ed6849a13ed9a6a7ce0e91667668238c3acc1ba4f2268359245a6c7a8"
+    },
+    "cloud_state": "parent cloud summary failed; local audits passed; new comparison verifies reused canonical files separately without changing parent"
+  },
+  "budget": {
+    "new_scientific_runs": 4,
+    "new_scientific_updates": 1200000,
+    "reused_fixed_baseline_updates": 0,
+    "novel_fact_updates": 0,
+    "engineering_smoke_updates": 128,
+    "preflight_discarded_updates": 4,
+    "graph_capture_warmup": "Native capture warmups restore weights/Adam/RNG; engineering work is not scientific exposure."
+  },
+  "diagnostic": {
+    "checkpoint_steps": [0, 8000, 300000],
+    "selection_seed": 2026101701,
+    "examples_per_panel": 128,
+    "batch_size": 32,
+    "dtype": "CPU float32 forward; float64 moment accounting",
+    "scopes": ["causal_query_prefix", "answer_prediction_position", "first_relation_position"],
+    "purpose": "Fixed descriptive activation accounting only; never select a checkpoint, horizon or training configuration from these measurements"
+  },
+  "comparisons": [
+    "R-F: internal residual coefficient only",
+    "N-F: affine-free RMSNorm after native h+q only",
+    "C-A: coupled carry only; matched gate parameters/inputs/initial forward and backbone gradients"
+  ],
+  "handoff": {
+    "eps": 0.000001,
+    "gate_layer_norm_eps": 0.00001,
+    "temperature": 1,
+    "channel_coefficient": 1,
+    "gate_initial_logit": 0,
+    "gate_weight_decay": 0,
+    "normalization": "N forms native rounded h+q before FP32 RMS reduction; A/C mix FP32 h and q then cast once; FP64 retained in numerical contracts."
+  }
+}

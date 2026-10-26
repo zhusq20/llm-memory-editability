@@ -1,0 +1,23 @@
+% Requires graphicx. Paths are relative to a document in paper/.
+% The overview and enlargement are independent figures.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.95\textwidth]{figures/invariant-loop-v9/invariant-loop-vertical.pdf}
+  \caption{Invariant Loop overview. Shared Transformer calls are connected by
+  soft vocabulary feedback and per-token state aggregation. One token is
+  highlighted; the same update applies to every position. The normalized
+  aggregate supplies the common next-loop Q/K/V input. See the separate
+  aggregation detail for the computation and application of $\gamma_t$.}
+  \label{fig:invariant-loop-overview}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/invariant-loop-v10/invariant-loop-gamma-detail.pdf}
+  \caption{Enlarged state-aggregation detail for one token. Five statistics enter
+  a shared MLP. Its score produces candidate weight $w_t$, which is normalized
+  against retained historical mass $\beta D_{t-1}$ to obtain $\gamma_t$.
+  This coefficient and its complement weight the candidate and the previous
+  state in the updated hidden state.}
+  \label{fig:invariant-loop-gamma-detail}
+\end{figure*}

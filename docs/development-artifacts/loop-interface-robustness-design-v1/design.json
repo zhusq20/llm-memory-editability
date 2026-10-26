@@ -1,0 +1,156 @@
+{
+  "id": "loop-interface-robustness-design-v1",
+  "title": "知识调用接口的局部对抗训练",
+  "status": "proposal_only_not_implemented_not_queued",
+  "literature_assessment": "literature-assessment.json: Loop stabilization has practical evidence, but this adversarial inner loop is an optional unverified extension, not an established common or necessary Loop training recipe.",
+  "material_passport": {
+    "Origin Skill": "academic-research-suite:experiment-agent",
+    "Origin Mode": "plan",
+    "Origin Date": "2026-10-22",
+    "Verification Status": "UNVERIFIED: proposed method; no repair training performed",
+    "Version Label": "code_plan_v1"
+  },
+  "authorization": {
+    "current_request": "结合已有实验与论文设计不依赖真实中间实体的接口改进方法",
+    "new_training_updates_authorized_by_this_design": 0,
+    "new_training_updates_executed": 0,
+    "allocated_training_updates": 0,
+    "existing_training_and_queues_modified": false,
+    "entry_command": null
+  },
+  "claim_level": "A falsifiable method-development proposal, extending known adversarial training and the existing calling-interface diagnosis; neither a new training principle nor an established scalable repair.",
+  "question": "Does training the original answer task over local neighborhoods of the post-attention calling state reduce late-training loss of composition ability?",
+  "hypothesis": "The atomic-to-compositional calling mismatch contains a locally fragile component that answer-loss training over internal neighborhoods can reduce.",
+  "evidence": [
+    {
+      "source": "results/loop-state-regression-diagnosis-20261022/science/summary.json",
+      "observation": "At fixed EMA/R8, B4 accuracy falls 71.24% to 5.66% from 256k to 500k while atomic accuracy and A4 remain 100%. At 500k, no final-wrong question was fully answered correctly in rounds 1 through 8.",
+      "interpretation": "This regression is mainly failure to form the correct full answer within R8, rather than later destruction of a previously correct full answer. It does not identify the optimizer root cause."
+    },
+    {
+      "source": "results/loop-state-regression-diagnosis-20261022/interfaces/summary.json",
+      "observation": "At 500k, a true-bridge atomic post-attention donor changes second-hop candidate accuracy from 21.16% to 99.98% and B4 from 5.66% to 27.96%. At 256k the same operation changes B4 from 71.24% to 88.98%.",
+      "interpretation": "The whole post-attention residual is a material bottleneck. This donor is not deployable and does not explain most of the across-checkpoint regression: the donor-conditioned gap remains 61.02 percentage points."
+    },
+    {
+      "source": "results/loop-state-regression-diagnosis-20261022/interfaces/summary.json",
+      "observation": "Input-only B embedding norm rollback gives B4 5.46%, versus native 5.66%.",
+      "interpretation": "Simple input norm restoration did not repair the failure; this is not a proof excluding every normalization mechanism."
+    }
+  ],
+  "history_check": [
+    {
+      "closest_work": "loop-query-control-development-v1 and loop-query-adapter-development-v1",
+      "status": "completed; reload and cloud verification passed",
+      "result": "At 300k, OI plain/control/adapter are 34.30/34.67/34.43%; OO are 3.293/4.192/3.693%. No unique controller advantage was established.",
+      "source": "results/loop-transformer-summary-20261021/evidence/loop-query-control-development-v1/comparison.json",
+      "difference": "Keep function capacity and Q architecture fixed; change the set of internal inputs on which the original answer objective is optimized."
+    },
+    {
+      "closest_work": "self-decode-alignment-development-v1",
+      "status": "completed",
+      "result": "All-position alignment to the model's own decoded embeddings improved OI but harmed IO and OO; self-prediction CE had different, partly positive results and is not conflated with that alignment.",
+      "source": "docs/reports/loop-evidence-history-20261022.md",
+      "difference": "Do not align hidden states to token embeddings or use decoded intermediate entities as targets; optimize original final labels under internal perturbations."
+    },
+    {
+      "closest_work": "supervised-alignment-development-v1 and simplified fixed-reader factual-module replacement",
+      "status": "completed historical evidence",
+      "result": "Oracle intermediate targets are unavailable here. Simplified fixed-reader representation constraints already gave positive results in their own setting; a unified/frozen interface is not a new question.",
+      "source": "docs/reports/knowledge-history-20261022/results.md",
+      "difference": "All model parameters remain trainable; no true intermediate labels, fixed reader, or representation-matching target."
+    },
+    {
+      "closest_work": "norm-handoff-multihop-v1; existing EMA, random segment depths and detached carry",
+      "status": "norm-handoff has engineering needs_attention rather than a formal negative training endpoint; EMA/random depth/detached carry are already in the current training recipe",
+      "source": "docs/loop-history.md",
+      "difference": "Preserve these choices and do not market them as the proposed change."
+    },
+    {
+      "closest_work": "KV recipe extensions and gate grids",
+      "status": "KV recipe expansion ended by user; multiple gate designs already completed or running",
+      "source": "docs/loop-roadmap.md",
+      "difference": "No KV changes, no new gate, no automatic parameter grid."
+    }
+  ],
+  "literature": [
+    {
+      "name": "FreeLB, ICLR 2020",
+      "url": "https://www.microsoft.com/en-us/research/wp-content/uploads/2020/04/freelb_enhanced_adversarial_training_for_natural_language_understanding.pdf",
+      "read_sections": ["3.1-3.3", "4.1-4.3", "Algorithm 1", "Table 4"],
+      "borrow": "Multiple projected perturbation-ascent passes, parameter-gradient averaging followed by one optimizer update, and a fixed dropout mask within the inner loop.",
+      "change": "Move perturbations from input word embeddings to an internal post-attention residual; use sparse attacked updates, per-token relative RMS bounds and the existing two-segment Loop objective.",
+      "boundary": "The original experiments are primarily language-understanding fine-tuning, not large autoregressive pretraining or this composition-regression problem. This proposal is an adaptation, not an original-experiment reproduction."
+    },
+    {
+      "name": "Huginn: Scaling up Test-Time Compute with Latent Reasoning, arXiv:2502.05171v2",
+      "url": "https://arxiv.org/html/2502.05171v2",
+      "read_sections": ["3.1-3.3", "4.1-4.3"],
+      "relevance": "A recurrent-depth model was trained at 3.5B parameters / 800B tokens; norms and initialization mattered at scale. Preliminary additive Gaussian state-noise experiments did not help.",
+      "boundary": "Large-scale recurrence is feasible, but neither this interface perturbation method nor a generic noise benefit is established. Do not bundle Huginn architecture changes into this comparison."
+    }
+  ],
+  "method": {
+    "architecture": "Use the existing state-MLP model, preserving all existing residual, causal attention, LayerNorm, MLP, feedback, handoff and parameter EMA operations. All parameters remain trainable.",
+    "clean_block": "u = x + Dropout_attn(Attention(LN1(x))); H = u + Dropout_mlp(MLP(LN2(u)))",
+    "perturbed_block": "u_tilde[t] = u[t] + sigma[t] * delta[t]; H = u_tilde + Dropout_mlp(MLP(LN2(u_tilde)))",
+    "scale": "sigma[t] = max(RMS(u_clean[t].detach()), 1e-6), fixed within all inner passes; RMS is over hidden dimensions only, never across tokens or samples",
+    "bound": "RMS(delta[t]) <= 0.1 for each eligible token; all ineligible delta entries are zero",
+    "gradient_semantics": "Both the residual branch and LN2-to-MLP input see the perturbation. Scale and attack updates are stop-gradient; normal parameter gradients pass through u. No derivatives through the attack optimizer.",
+    "mask": "For this task, perturb all non-padding prompt positions up to and including positions[:,0], the original first-answer readout position. Exclude the teacher-forced answer token and padding. This boundary uses existing supervision positions, no entity roles, hop labels, graph IDs or true bridges. Preserve answer-and-EOS loss. In dense autoregressive pretraining use non-padding causal positions and the original packed-sequence/loss masks, with no intermediate-entity annotations.",
+    "site": "Select one block invocation uniformly among invocations in the last supervised segment, independently of labels, hop count, graph, prediction and correctness. With the current one-layer core this selects only the loop invocation; deeper models additionally sample a layer.",
+    "attack_frequency": "Every eighth optimizer update, starting at update 8, from step zero training",
+    "ordinary_updates": "The other seven updates use the original unperturbed two-segment answer/EOS objective.",
+    "attacked_update": [
+      "Sample one minibatch and the original two segment lengths once. Save the original dropout RNG state. Select site and initialize delta using independent RNGs.",
+      "Initialize each eligible token delta in an isotropic random direction with RMS 0.05; step size alpha = 0.05; cap epsilon = 0.1. These are proposed development settings, not values inferred from a known semantic radius.",
+      "Perform exactly three complete forward/backward passes, each replaying the same minibatch, original loop schedule and dropout masks. Each pass uses the original mean of the two segment endpoint losses, divided by three for parameter-gradient accumulation. Carry remains detached between segments.",
+      "After passes 1 and 2, update delta by adding alpha times its per-token RMS-normalized loss gradient and project each eligible token to its epsilon RMS ball; stop-gradient and re-leaf delta. A zero-gradient token keeps its previous delta. There is no fourth outer-gradient pass.",
+      "Clip the accumulated parameter gradient once, then perform one AdamW update and one parameter EMA update. Clear all attack buffers before the next minibatch.",
+      "Restore the ordinary dropout RNG to the state after one original complete pass, so the next update's data/schedule/dropout random streams advance exactly as in the comparator. Attack and site RNGs have independent checkpointed states."
+    ],
+    "approximate_objective": "(7/8) E[L_clean] + (1/8) E[(L_delta0 + L_delta1 + L_delta2)/3], where the three delta states form a first-order projected-ascent trajectory under fixed parameters/dropout; not a solved exact minimax objective",
+    "inference": "delta = 0; no extra parameters, tokens, entity lookup, teacher, checkpoint ensemble, or inference FLOPs"
+  },
+  "scaling": {
+    "training_compute": "Idealized complete forward/backward count is 7/8 + 3/8 = 1.25 times the original per optimizer update, plus attack bookkeeping. This is not measured wall-clock speed or an equality of communication cost.",
+    "memory": "Sequentially backward and release each graph. Additional perturbation/gradient storage O(B*T*d); do not retain three activation graphs or copy the model.",
+    "distributed": "For DDP, accumulate without gradient synchronization until the final inner pass when compatible with the existing accumulation schedule. FSDP/checkpoint recomputation and parameter communication costs require separate measurement.",
+    "depth": "A single perturbed invocation per attacked update controls total overhead, but its per-invocation coverage decreases with depth/loop count. Coverage must be reported; fixed 1/8 frequency does not establish scale invariance.",
+    "evidence_needed": "Success in this existing world would be developmental evidence only. Fresh-world/initialization confirmation and ordinary next-token pretraining with compute-matched controls are needed before a large-LLM claim; none is queued or budgeted here."
+  },
+  "proposed_development_comparison": {
+    "status": "not_authorized_for_execution_by_this_design",
+    "baseline": "Reuse original state-MLP step-zero initialization, 0-500k trajectory and full checkpoints. Do not resume historical weights without the matching optimizer/RNG; those historical snapshots do not all contain these states.",
+    "new_arms_if_separately_authorized": [
+      "Same-site random-perturbation control: same 1/8 frequency, three complete passes, initial RMS 0.05, per-token cap 0.1 and step size 0.05; replace each normalized attack gradient with an independent isotropic direction, then project. Record actual RMS distributions: common cap and compute do not imply identical realized radii.",
+      "Proposed interface-adversarial training."
+    ],
+    "pairing": "Start both new arms from exactly the old step-zero weights and same data, initialization, two-segment schedules and dropout streams. Preserve the original AdamW settings and 1.5m-step learning-rate horizon; a 500k development endpoint is not a shortened cosine schedule.",
+    "proposed_new_updates_if_authorized": 1000000,
+    "proposed_new_updates_per_arm_if_authorized": 500000,
+    "matrix_is_not_an_allocation": true,
+    "evaluation_nodes": [0, 1000, 8000, 16000, 32000, 64000, 128000, 256000, 300000, 400000, 500000],
+    "primary": "Native unperturbed EMA/R8 B4 accuracy at the fixed 500k endpoint; report the entire 256k/300k/400k/500k curve and its minimum, without selecting the best checkpoint.",
+    "preservation": "Report both atomic pools, A2-A4, B2-B3, raw and EMA, native answer/EOS NLL, and R8/R16/R32 gains and original-correct losses separately.",
+    "cost": "Report unique examples, repeated exposures/effective tokens, updates, active/total parameters, estimated matrix FLOPs, measured GPU-hours and shared-resource conditions. Random versus adversarial arms match pass count; the reused plain baseline does not. Compare fixed-update behavior and quality versus actual compute separately.",
+    "support": "A higher fixed endpoint with reduced late-curve deterioration and retained atomic/A performance supports development of the method. This known world is already observed; it is not an untouched confirmation test and no population significance claim is planned.",
+    "falsification": "If only perturbed training loss or atomic/noise robustness improves while native B4 still deteriorates, the proposed local-neighborhood repair is unsupported. If random and adversarial controls tie, adversarial direction selection is not supported over that random control. Do not automatically expand radius, gate or world grids.",
+    "mechanism_boundary": "An endpoint gain from end-to-end training does not localize learned changes to the MLP alone. Accuracy improvement does not establish that real compositional states lie inside a 10% neighborhood."
+  },
+  "implementation_validation_if_authorized": [
+    "At epsilon zero and one inner pass, original loss, segment weighting, carry detach, gradients, update and RNG progression agree with the baseline within the appropriate precision tolerance.",
+    "Exactly three complete passes and one clip/AdamW/EMA update on attacked steps; no leaked attack state across minibatches or resumption.",
+    "Per-token bounds, mask, frozen local scales and identical inner-loop dropout/schedules; no cross-example normalization or oracle data access.",
+    "Given a fixed delta, future token changes cannot alter prefix states. This is a causal-forward test, not a claim that a supervised optimized delta is independent of labels.",
+    "Evaluation has no perturbation, bridge construction, conditional correctness selection or added teacher; independent reload reproduces predictions.",
+    "A held-out longer projected-ascent diagnostic and isotropic random perturbations check whether apparent robustness depends on the short training ascent; primary success remains native composition performance."
+  ],
+  "unresolved_risks": [
+    "Real atomic/compositional shifts may be large or structured rather than local perturbations; local smoothness need not align their semantic addresses.",
+    "A radius can cross distinct semantic addresses; 0.1 is an unvalidated development choice. Simultaneous independent token balls allow a total perturbation norm that grows with sequence length.",
+    "Training labels include no B compositions, so the added objective can still be satisfied without learning B composition; end-to-end optimization could learn to ignore the perturbed recurrent state rather than improve reusable calls.",
+    "Perturbing the whole post-attention residual constrains downstream computation jointly, not only MLP calls.",
+    "Long chains, continual knowledge updates and large-scale pretraining are separate unverified capabilities."
+  ]
+}

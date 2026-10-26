@@ -1,0 +1,171 @@
+{
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 1500000
+  },
+  "dropout_seed": 2026101604,
+  "evaluation_batch_size": 256,
+  "heartbeat_steps": 1000,
+  "input_origin": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+    "reuse": "Exact existing 40000-example world and 43000-query panels; do not merge with the 25000-example variant"
+  },
+  "batch": "residual-gate-injection-ablation-v1",
+  "authorization": "2026-10-18 user explicitly confirmed two arms: only-u and fixed-q-plus-u, each 1500000 steps on the existing data with ordinary training; no MLP gate and no short-training or independent-reload expansion.",
+  "input_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+  "arms": {
+    "only-u": {
+      "architecture": "loop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "injection": "none",
+      "update_mode": "token",
+      "initial_update": 0.95
+    },
+    "fixed-q-plus-u": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "injection": "fixed1",
+      "update_mode": "token",
+      "initial_update": 0.95
+    }
+  },
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000,
+    400000,
+    500000,
+    600000,
+    700000,
+    800000,
+    900000,
+    1000000,
+    1100000,
+    1200000,
+    1300000,
+    1400000,
+    1500000
+  ],
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2",
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "cpu_threads": 2,
+    "memory_gib": 16,
+    "tracking": "online",
+    "gpu_memory_fraction": 0.16,
+    "stage_timeout_hours": 168,
+    "poll_seconds": 20
+  },
+  "gate_scope": "continuous_update_only_nonfinal_all_tokens",
+  "primary": "At fixed step1500000 and R4, compare graphB three-hop full-vocabulary answer accuracy for only-u versus ordinary Loop and fixed-q-plus-u versus raw DiscoLoop; compare fixed-q-plus-u versus reused u=.95 plus learned g. Retain all 11 panels, full learning curves, answer+EOS, and endpoint R1-4; do not select a best checkpoint or inference horizon.",
+  "stability_analysis": "Separate variation across training checkpoints from degradation across inference rounds. Report late learning curves and endpoint R1-4 on graphB 2/3-hop together with graphA 4-hop and atomic retention; no claim of improvement from a single selected panel.",
+  "budget": {
+    "new_scientific_arms": 2,
+    "new_scientific_updates": 3000000,
+    "final_steps_per_arm": 1500000,
+    "engineering_smoke_updates": 0,
+    "engineering_restored_preflight_updates": 2,
+    "new_world_updates": 0
+  },
+  "execution_policy": {
+    "pretraining_smoke": false,
+    "pretraining_reload": false,
+    "posttraining_independent_audit": false,
+    "endpoint_inference_grid": true,
+    "cloud_audit": false,
+    "reason": "Preserve the explicit waiver of 32-step smoke training and independent reload. CPU contracts and one discarded CUDA graph engineering update per new architecture precede train then grid. W&B learning-curve tracking remains online."
+  },
+  "paired_recipe": {
+    "config": "configs/paper-update-gate-multihop-u95-v1.json",
+    "sha256": "971ac4204002f1cfa85f2206b5b89d14717c32b3d351aaf3fe550c2cb2862628",
+    "initial_backbone_sha256": "39a487823c05311a223db99c3d0e2df3e7a1752498e261337f4298abe0cfa7b0",
+    "unchanged_source_sha256": {
+      "scripts/run_loop_hop.py": "89ace5fde790a000c3b9b9e8aaad0c43a2cadc5f1daf22e05a41f8dab5913946",
+      "scripts/run_loop_hop_depth.py": "2dd47dce0ce0a78c8d08885f2b167c8e3e96f3e42775cc433835207dc5211e59",
+      "scripts/run_supervised_alignment.py": "7ad4ab4eb8b2c7706aece7ff36a8d5121c034d261483ebea96074ea7e5f73271",
+      "scripts/run_dual_gate.py": "86c17bdae4419246ea5acc683fefa17e1d602c51e85c8b50328ab98ccab4e5fb",
+      "src/llm_memory_editability/supervised_alignment.py": "9c84f60e536d5bd39919a2b3037b7ecc416dc5fc2a9f2da16ae3c5855524ec74",
+      "src/llm_memory_editability/self_decode_alignment.py": "1bfd5c15da162ea032caa0579eae6b06b7316e497b3e7ccd747c3252212138a3",
+      "src/llm_memory_editability/grokking_reproduction.py": "7e3a89d96f6fef7bd4665ac46dd1acb6e7cb461c6878647ecc7c6f425ac31117",
+      "src/llm_memory_editability/loop_hop_data.py": "940efb287f125d1f4b14bc71e72a967d9fd2685723bf41f6e93b632532d64dd6",
+      "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+      "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+      "src/llm_memory_editability/experiment_tracking.py": "2afe9e767123bee16cf56f59c6c2953a100338ecf1f971945c4968a064551866"
+    }
+  },
+  "reused_comparators": {
+    "ordinary-loop": {
+      "run": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/ungated-loop-continuation-v1/runs/loop-l1-r4",
+      "artifacts_sha256": {
+        "run.json": "8d34bfe381960d1faef2385d41ffcbc4055d55eea4bb5cf4154b5969c07aec9f",
+        "complete.json": "249d87d70c1b9b5850ff022b0a4a35d9b83a85251710cdc62255ea029aa7ac49",
+        "learning.json": "1bf4a97daaf050e800daec35059ca69ed2349592e27ede005971eb0660ceba20",
+        "grid.json": "2f50d12e03f8a458e7e8ce08605a077d52d9e5f47daf6ab3851610d709457d3c"
+      }
+    },
+    "raw-discoloop": {
+      "run": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/ungated-loop-continuation-v1/runs/disco-l1-r4",
+      "artifacts_sha256": {
+        "run.json": "205f4766bd3cb52d094f37b9aa8c746334b2b81625738154ea03e21d7de24de4",
+        "complete.json": "82dda3bc37376ef096de43cdc46f4f495c0290f5099281c5b395233c58e00cc1",
+        "learning.json": "f67654f7c6bd0f6db524a554977ad9013f7babad0702c8a4f25a6385f9250471",
+        "grid.json": "e3029a45c0d84dcc86d66220810f8b81ed365ba3d958b306d3c26d3c1bf660b3"
+      }
+    },
+    "u95-plus-learned-g": {
+      "run": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/gate-generalization-extension-v1/execution-v2/cases/continuation/runs/token-update",
+      "artifacts_sha256": {
+        "run.json": "63aa77a32c839cab572b525ee42b2216727b28118ae43c45b88fa6b826218a0d",
+        "complete.json": "805ed57ecf747417de6db5f53c07615507aa3c23e1f58b1ae759dc7942458e00",
+        "learning.json": "8399036caebdea997fc9c9c194d19d540b9bb01f90007fc778aaa2b804e21959",
+        "grid.json": "014aa0522caa261c3c3fc6649b78f1f2c941acdd9934324796496d94010ced46"
+      }
+    }
+  },
+  "limits": [
+    "One previously observed development world and initialization; this is a within-task architecture ablation, not evidence of natural-language generality.",
+    "Both new arms train from the common initial backbone. Historical comparison runs include continuations and different actual hosts/images; matching recipe and exposure does not imply cross-runtime bitwise equivalence.",
+    "only-u removes the whole decoded-feedback computation; fixed-q-plus-u removes only learned injection g and fixes it at one. Both keep the original continuous u definition and share all new-run training settings.",
+    "Compared with a no-u baseline, u0=.95 also changes the initial function. Fixed-u references are engineering checks only; these arms do not isolate learned adaptation from fixed residual damping.",
+    "The reused learned-g arm starts g=.99 rather than fixed1. Its comparison does not isolate learnability at exactly matched initial feedback amplitude.",
+    "u is token-scalar and shared across rounds; the final Transformer output H is read directly. u=0 freezes the handoff only in only-u; fixed-q-plus-u still adds q. No correctness or convergence guarantee follows.",
+    "Removing q reduces vocabulary-projection work. Report actual exposure, tokens, matrix FLOPs, parameters and wall time separately.",
+    "No new fixed-u scientific arm, MLP gate, intermediate loss, curriculum, randomized depth, early exit, seed sweep or new-world training."
+  ]
+}

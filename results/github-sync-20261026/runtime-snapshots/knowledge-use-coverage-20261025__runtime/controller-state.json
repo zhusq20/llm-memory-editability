@@ -1,0 +1,993 @@
+{
+  "batch": "knowledge-use-coverage-v1",
+  "plan_sha256": "585ceb3a1d789d8752c1a34f5fa803d06fb75f96592ab049a8237b2aee7bbde1",
+  "state": "waiting_quality_review",
+  "jobs": {
+    "development-prepare": {
+      "state": "complete",
+      "previous_engineering_attempt": {
+        "state": "needs_attention",
+        "waiting_reasons": [],
+        "job_id": "development-prepare",
+        "lane": {
+          "gpu": 4,
+          "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+          "cpus": "0-9"
+        },
+        "container": "kuc-v1-development-prepare",
+        "source_sha256": "82d0b4b6c269a269391ac6989c82459af7c80d9a848048bc87b3048f1532ac7a",
+        "started_utc": "2026-10-25T02:25:27.549378+00:00",
+        "container_id": "f2f066a8243f9e6d734effec755f957e3b0b7c6c1b63d87a3b3d08315344d60f",
+        "source_copied": true,
+        "credentials_copied": true,
+        "cuda_stage_started_utc": "2026-10-25T02:25:35.520829+00:00",
+        "error": "Original stage failed; no automatic scientific retry",
+        "failed_utc": "2026-10-25T02:26:23.535380+00:00"
+      },
+      "waiting_reasons": [],
+      "job_id": "development-prepare",
+      "lane": {
+        "gpu": 4,
+        "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+        "cpus": "0-9"
+      },
+      "container": "kuc-v1-full-r2-development-prepare",
+      "source_sha256": "e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368",
+      "started_utc": "2026-10-25T02:29:53.885824+00:00",
+      "container_id": "730ba44d071d2a6faa2f8daa93ba3b2ea287fe0f7fff9ccbcd4ab05c4d37f337",
+      "source_copied": true,
+      "credentials_copied": true,
+      "cuda_stage_started_utc": "2026-10-25T02:30:03.201571+00:00",
+      "completed_utc": "2026-10-25T02:30:53.355196+00:00"
+    },
+    "development-preflight": {
+      "state": "complete",
+      "job_id": "development-preflight",
+      "lane": {
+        "gpu": 4,
+        "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+        "cpus": "0-9"
+      },
+      "container": "kuc-v1-full-r2-development-preflight",
+      "source_sha256": "e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368",
+      "started_utc": "2026-10-25T02:30:55.251094+00:00",
+      "container_id": "7f443984c959479061a15cd08ffedd7ea2397889b55dfc06504d523a26634ca7",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T02:31:02.046117+00:00",
+      "completed_utc": "2026-10-25T03:11:06.211395+00:00"
+    },
+    "development-baseline": {
+      "state": "complete",
+      "job_id": "development-baseline",
+      "lane": {
+        "gpu": 4,
+        "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+        "cpus": "0-9"
+      },
+      "container": "kuc-v1-full-r2-development-baseline",
+      "source_sha256": "e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368",
+      "started_utc": "2026-10-25T03:11:07.715604+00:00",
+      "container_id": "86c4a0d0ea0bab6d68554cfd31b281906438a9696feb696c7137715d841b9704",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T03:11:16.046121+00:00",
+      "completed_utc": "2026-10-25T03:19:54.173502+00:00"
+    },
+    "development-pd-A-addition-train": {
+      "state": "complete",
+      "job_id": "development-pd-A-addition-train",
+      "lane": {
+        "gpu": 4,
+        "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+        "cpus": "0-9"
+      },
+      "container": "kuc-v1-full-r2-development-pd-A-addition-train",
+      "source_sha256": "e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368",
+      "started_utc": "2026-10-25T03:19:55.667764+00:00",
+      "container_id": "32e1a7c61d907263c9e39353e6c5a7c1da01047af464325e42ec96de03cfbf72",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T03:20:03.098980+00:00",
+      "completed_utc": "2026-10-25T04:31:22.910150+00:00"
+    },
+    "development-pd-A-addition-evaluate-200192": {
+      "state": "complete",
+      "job_id": "development-pd-A-addition-evaluate-200192",
+      "lane": {
+        "gpu": 4,
+        "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+        "cpus": "0-9"
+      },
+      "container": "kuc-v1-full-r2-development-pd-A-addition-evaluate-200192",
+      "source_sha256": "e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368",
+      "started_utc": "2026-10-25T04:31:25.455201+00:00",
+      "container_id": "5adecd5e76fcf7c1b0bc79616f89d6a0562e7b8c60e199fb92c4c1e10241291e",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T04:31:32.900509+00:00",
+      "error": "Original stage failed; no automatic scientific retry",
+      "failed_utc": "2026-10-25T04:49:49.648517+00:00",
+      "completed_utc": "2026-10-25T07:19:33.745672+00:00",
+      "completion_mode": "original local evaluation plus independent CPU cloud recovery",
+      "previous_attempt": {
+        "state": "needs_attention",
+        "job_id": "development-pd-A-addition-evaluate-200192",
+        "lane": {
+          "gpu": 4,
+          "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+          "cpus": "0-9"
+        },
+        "container": "kuc-v1-full-r2-development-pd-A-addition-evaluate-200192",
+        "source_sha256": "e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368",
+        "started_utc": "2026-10-25T04:31:25.455201+00:00",
+        "container_id": "5adecd5e76fcf7c1b0bc79616f89d6a0562e7b8c60e199fb92c4c1e10241291e",
+        "source_copied": true,
+        "credentials_copied": true,
+        "waiting_reasons": [],
+        "cuda_stage_started_utc": "2026-10-25T04:31:32.900509+00:00",
+        "error": "Original stage failed; no automatic scientific retry",
+        "failed_utc": "2026-10-25T04:49:49.648517+00:00"
+      },
+      "original_exit_code": 1,
+      "cloud_recovery": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1/cloud-recovery-20261025/complete.json"
+    },
+    "development-pd-A-addition-evaluate-400384": {
+      "state": "complete",
+      "previous_attempt": {
+        "state": "needs_attention",
+        "job_id": "development-pd-A-addition-evaluate-400384",
+        "lane": {
+          "gpu": 4,
+          "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+          "cpus": "0-9"
+        },
+        "container": "kuc-v1-full-r3-development-pd-A-addition-evaluate-400384",
+        "source_sha256": "5b2a591d252ed2fd1578543e633d1f7b8cab0db8e2bc49320593412a8ee1efe4",
+        "started_utc": "2026-10-25T07:19:37.015118+00:00",
+        "container_id": "2be7e9e3b2e48bdcbc25aec407ddc084cef8207c0aa358b23085fbb2b706aa8f",
+        "source_copied": true,
+        "credentials_copied": true,
+        "waiting_reasons": [],
+        "cuda_stage_started_utc": "2026-10-25T07:19:44.802044+00:00",
+        "error": "A foreign UID1046 VLLM process acquired GPU4 immediately after a transiently idle admission snapshot. Stopped only the newly admitted LM evaluation and its scheduler; did not change any foreign process.",
+        "exit_code": 137,
+        "oom_killed": false,
+        "interruption_record": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1/recovery-r3-20261025/resource-interruption.json"
+      },
+      "reason": "User-authorized four-card resumption of resource-interrupted evaluation; original checkpoint unchanged",
+      "job_id": "development-pd-A-addition-evaluate-400384",
+      "lane": {
+        "gpu": 3,
+        "gpu_uuid": "GPU-9dc24b81-029c-288b-ced5-ce32b996bae3",
+        "cpus": "70-79"
+      },
+      "container": "kuc-v1-full-r4-development-pd-A-addition-evaluate-400384",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-25T21:21:06.577510+00:00",
+      "container_id": "5a4f70b056c5ef7f8edbcafea02727315c743ee75366ae2378ab3dd4bcbc8a7f",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T21:21:13.898464+00:00",
+      "completed_utc": "2026-10-25T21:53:26.432946+00:00"
+    },
+    "development-pd-B-addition-train": {
+      "state": "complete",
+      "job_id": "development-pd-B-addition-train",
+      "lane": {
+        "gpu": 6,
+        "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+        "cpus": "50-59"
+      },
+      "container": "kuc-v1-full-r2-development-pd-B-addition-train",
+      "source_sha256": "e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368",
+      "started_utc": "2026-10-25T03:20:04.569014+00:00",
+      "container_id": "04e13ef1b9a23e3a5d7fb521353e9cdc1bab247530c53d2e0a0d92fa52ad56d1",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T03:20:14.236299+00:00",
+      "completed_utc": "2026-10-25T04:31:23.217907+00:00"
+    },
+    "development-pd-B-addition-evaluate-200192": {
+      "state": "complete",
+      "job_id": "development-pd-B-addition-evaluate-200192",
+      "lane": {
+        "gpu": 6,
+        "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+        "cpus": "50-59"
+      },
+      "container": "kuc-v1-full-r2-development-pd-B-addition-evaluate-200192",
+      "source_sha256": "e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368",
+      "started_utc": "2026-10-25T04:31:34.958253+00:00",
+      "container_id": "ec36c5b4ea6b442e67684cc3ccae391e0f25354f2d3abf3ceb4261ca8c3132b1",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T04:31:47.253262+00:00",
+      "error": "Original stage failed; no automatic scientific retry",
+      "failed_utc": "2026-10-25T04:49:50.243170+00:00",
+      "completed_utc": "2026-10-25T07:19:33.887740+00:00",
+      "completion_mode": "original local evaluation plus independent CPU cloud recovery",
+      "previous_attempt": {
+        "state": "needs_attention",
+        "job_id": "development-pd-B-addition-evaluate-200192",
+        "lane": {
+          "gpu": 6,
+          "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+          "cpus": "50-59"
+        },
+        "container": "kuc-v1-full-r2-development-pd-B-addition-evaluate-200192",
+        "source_sha256": "e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368",
+        "started_utc": "2026-10-25T04:31:34.958253+00:00",
+        "container_id": "ec36c5b4ea6b442e67684cc3ccae391e0f25354f2d3abf3ceb4261ca8c3132b1",
+        "source_copied": true,
+        "credentials_copied": true,
+        "waiting_reasons": [],
+        "cuda_stage_started_utc": "2026-10-25T04:31:47.253262+00:00",
+        "error": "Original stage failed; no automatic scientific retry",
+        "failed_utc": "2026-10-25T04:49:50.243170+00:00"
+      },
+      "original_exit_code": 1,
+      "cloud_recovery": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1/cloud-recovery-20261025/complete.json"
+    },
+    "development-pd-B-addition-evaluate-400384": {
+      "state": "complete",
+      "job_id": "development-pd-B-addition-evaluate-400384",
+      "lane": {
+        "gpu": 4,
+        "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+        "cpus": "0-9"
+      },
+      "container": "kuc-v1-full-r4-development-pd-B-addition-evaluate-400384",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-25T21:21:15.437050+00:00",
+      "container_id": "1d5a10e26f4498d6a2394d69de569f8d80b295cddd5382d58072d6f7df9e076a",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T21:21:25.226683+00:00",
+      "completed_utc": "2026-10-25T21:52:02.762848+00:00"
+    },
+    "development-pd-C-addition-train": {
+      "state": "complete",
+      "job_id": "development-pd-C-addition-train",
+      "lane": {
+        "gpu": 8,
+        "gpu_uuid": "GPU-237b631e-30d6-9478-6513-e98b8f974f64",
+        "cpus": "60-69"
+      },
+      "container": "kuc-v1-full-r2-development-pd-C-addition-train",
+      "source_sha256": "e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368",
+      "started_utc": "2026-10-25T03:20:16.041468+00:00",
+      "container_id": "4b8834fd1622622a436db3c05f3d208d260b518b0d240c40b274774d0be24d12",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T03:20:24.792199+00:00",
+      "completed_utc": "2026-10-25T04:38:41.001832+00:00"
+    },
+    "development-pd-C-addition-evaluate-200192": {
+      "state": "complete",
+      "job_id": "development-pd-C-addition-evaluate-200192",
+      "lane": {
+        "gpu": 8,
+        "gpu_uuid": "GPU-237b631e-30d6-9478-6513-e98b8f974f64",
+        "cpus": "60-69"
+      },
+      "container": "kuc-v1-full-r2-development-pd-C-addition-evaluate-200192",
+      "source_sha256": "e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368",
+      "started_utc": "2026-10-25T04:38:44.414315+00:00",
+      "container_id": "c979b64f7a3e830270b4f78a54d78b4e7e62c808b5645ac681e6f555cfb7da17",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T04:38:59.410953+00:00",
+      "completed_utc": "2026-10-25T07:19:34.020832+00:00",
+      "completion_mode": "original local evaluation plus independent CPU cloud recovery",
+      "previous_attempt": {
+        "state": "running",
+        "job_id": "development-pd-C-addition-evaluate-200192",
+        "lane": {
+          "gpu": 8,
+          "gpu_uuid": "GPU-237b631e-30d6-9478-6513-e98b8f974f64",
+          "cpus": "60-69"
+        },
+        "container": "kuc-v1-full-r2-development-pd-C-addition-evaluate-200192",
+        "source_sha256": "e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368",
+        "started_utc": "2026-10-25T04:38:44.414315+00:00",
+        "container_id": "c979b64f7a3e830270b4f78a54d78b4e7e62c808b5645ac681e6f555cfb7da17",
+        "source_copied": true,
+        "credentials_copied": true,
+        "waiting_reasons": [],
+        "cuda_stage_started_utc": "2026-10-25T04:38:59.410953+00:00"
+      },
+      "original_exit_code": 1,
+      "cloud_recovery": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1/cloud-recovery-20261025/complete.json"
+    },
+    "development-pd-C-addition-evaluate-400384": {
+      "state": "complete",
+      "job_id": "development-pd-C-addition-evaluate-400384",
+      "lane": {
+        "gpu": 6,
+        "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+        "cpus": "50-59"
+      },
+      "container": "kuc-v1-full-r4-development-pd-C-addition-evaluate-400384",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-25T21:21:27.564876+00:00",
+      "container_id": "8ad6b88bcdc21929238e7533c4f4788f6ad7d78a2b2a3b10667344d5e06102b8",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T21:21:40.694778+00:00",
+      "completed_utc": "2026-10-25T21:52:40.996497+00:00"
+    },
+    "select-budget": {
+      "state": "complete",
+      "started_utc": "2026-10-25T21:53:26.632220+00:00",
+      "selection_sha256": "86747a03c1b9e064a35648b0dc19ce015ecdac07ebb37bc39152884d383e4c61",
+      "completed_utc": "2026-10-25T21:53:26.936659+00:00"
+    },
+    "formal-prepare": {
+      "state": "complete",
+      "previous_engineering_attempt": {
+        "state": "needs_attention",
+        "waiting_reasons": [],
+        "job_id": "formal-prepare",
+        "lane": {
+          "gpu": 6,
+          "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+          "cpus": "50-59"
+        },
+        "container": "kuc-v1-formal-prepare",
+        "source_sha256": "82d0b4b6c269a269391ac6989c82459af7c80d9a848048bc87b3048f1532ac7a",
+        "started_utc": "2026-10-25T02:25:37.100782+00:00",
+        "container_id": "537b51bb3fbcad0668bc46246ab97c4517958f82e6bf6249656b16e925539d06",
+        "source_copied": true,
+        "credentials_copied": true,
+        "cuda_stage_started_utc": "2026-10-25T02:25:44.554663+00:00",
+        "error": "Original stage failed; no automatic scientific retry",
+        "failed_utc": "2026-10-25T02:26:23.919907+00:00"
+      },
+      "waiting_reasons": [],
+      "job_id": "formal-prepare",
+      "lane": {
+        "gpu": 6,
+        "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+        "cpus": "50-59"
+      },
+      "container": "kuc-v1-full-r2-formal-prepare",
+      "source_sha256": "e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368",
+      "started_utc": "2026-10-25T02:30:04.878514+00:00",
+      "container_id": "9fa9aa205d1d8147fc264e500b87645a06e62af0c1d5cab7da0848de15dbca4c",
+      "source_copied": true,
+      "credentials_copied": true,
+      "cuda_stage_started_utc": "2026-10-25T02:30:13.523132+00:00",
+      "completed_utc": "2026-10-25T02:31:33.226662+00:00"
+    },
+    "formal-preflight": {
+      "state": "complete",
+      "job_id": "formal-preflight",
+      "lane": {
+        "gpu": 3,
+        "gpu_uuid": "GPU-9dc24b81-029c-288b-ced5-ce32b996bae3",
+        "cpus": "70-79"
+      },
+      "container": "kuc-v1-full-r4-formal-preflight",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-25T21:53:58.781356+00:00",
+      "container_id": "4c914969f52a2018003ddcda19e6ce2927a3ffb8291c0ce00151b47c18bb95a6",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T21:54:06.169997+00:00",
+      "completed_utc": "2026-10-25T22:34:43.580493+00:00"
+    },
+    "formal-baseline": {
+      "state": "complete",
+      "job_id": "formal-baseline",
+      "lane": {
+        "gpu": 3,
+        "gpu_uuid": "GPU-9dc24b81-029c-288b-ced5-ce32b996bae3",
+        "cpus": "70-79"
+      },
+      "container": "kuc-v1-full-r4-formal-baseline",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-25T22:34:45.084403+00:00",
+      "container_id": "2483d3c56e7a8d63be147f6735272bf80e4a99a9eb861aa326d219347fe2d136",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T22:34:54.451563+00:00",
+      "completed_utc": "2026-10-25T23:05:31.787699+00:00"
+    },
+    "formal-pd-A-addition-train": {
+      "state": "complete",
+      "job_id": "formal-pd-A-addition-train",
+      "lane": {
+        "gpu": 3,
+        "gpu_uuid": "GPU-9dc24b81-029c-288b-ced5-ce32b996bae3",
+        "cpus": "70-79"
+      },
+      "container": "kuc-v1-full-r4-formal-pd-A-addition-train",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-25T23:05:33.389680+00:00",
+      "container_id": "bb3daf912f2142b474eae7a63845ea2d7f6c3956d81967502b83c4dd503d60c4",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T23:05:42.576959+00:00",
+      "completed_utc": "2026-10-26T00:56:45.326213+00:00"
+    },
+    "formal-pd-A-addition-evaluate-formal": {
+      "state": "complete",
+      "job_id": "formal-pd-A-addition-evaluate-formal",
+      "lane": {
+        "gpu": 3,
+        "gpu_uuid": "GPU-9dc24b81-029c-288b-ced5-ce32b996bae3",
+        "cpus": "70-79"
+      },
+      "container": "kuc-v1-full-r4-formal-pd-A-addition-evaluate-formal",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-26T00:56:58.320074+00:00",
+      "container_id": "3dbfe12beeb20d2a3c012ead40059f1232299f7d9f71bb87071b7af41368a65a",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T00:57:23.454270+00:00",
+      "completed_utc": "2026-10-26T01:08:21.352235+00:00"
+    },
+    "formal-pd-B-addition-train": {
+      "state": "complete",
+      "job_id": "formal-pd-B-addition-train",
+      "lane": {
+        "gpu": 4,
+        "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+        "cpus": "0-9"
+      },
+      "container": "kuc-v1-full-r4-formal-pd-B-addition-train",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-25T23:05:44.115647+00:00",
+      "container_id": "cb433c33b6bb0d8892ca06e6d8d955411dad34dfcb8fe92d522d7cc702ca1636",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T23:05:53.523069+00:00",
+      "completed_utc": "2026-10-26T01:06:17.782752+00:00"
+    },
+    "formal-pd-B-addition-evaluate-formal": {
+      "state": "complete",
+      "job_id": "formal-pd-B-addition-evaluate-formal",
+      "lane": {
+        "gpu": 4,
+        "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+        "cpus": "0-9"
+      },
+      "container": "kuc-v1-full-r4-formal-pd-B-addition-evaluate-formal",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-26T01:06:20.716878+00:00",
+      "container_id": "15ab2b8e4bacc87baff8544ca2038446734ff086a706793e3b84bb34e9f88aaf",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T01:06:31.314923+00:00",
+      "completed_utc": "2026-10-26T01:17:34.895145+00:00"
+    },
+    "formal-pd-C-addition-train": {
+      "state": "complete",
+      "job_id": "formal-pd-C-addition-train",
+      "lane": {
+        "gpu": 6,
+        "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+        "cpus": "50-59"
+      },
+      "container": "kuc-v1-full-r4-formal-pd-C-addition-train",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-25T23:05:55.246250+00:00",
+      "container_id": "679690bb4bd6d3e2430b880fcabb2983961f9c66eccca82a5221caf58109dfe3",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T23:06:05.354794+00:00",
+      "completed_utc": "2026-10-26T01:22:52.347796+00:00"
+    },
+    "formal-pd-C-addition-evaluate-formal": {
+      "state": "complete",
+      "job_id": "formal-pd-C-addition-evaluate-formal",
+      "lane": {
+        "gpu": 3,
+        "gpu_uuid": "GPU-9dc24b81-029c-288b-ced5-ce32b996bae3",
+        "cpus": "70-79"
+      },
+      "container": "kuc-v1-full-r4-formal-pd-C-addition-evaluate-formal",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-26T01:22:54.557865+00:00",
+      "container_id": "36a24f8a456cd993690361827e47780f2bd92af333643f6112b1c9e506801679",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T01:23:04.706777+00:00",
+      "completed_utc": "2026-10-26T01:30:38.014760+00:00"
+    },
+    "formal-sft-A-addition-train": {
+      "state": "complete",
+      "job_id": "formal-sft-A-addition-train",
+      "lane": {
+        "gpu": 3,
+        "gpu_uuid": "GPU-9dc24b81-029c-288b-ced5-ce32b996bae3",
+        "cpus": "70-79"
+      },
+      "container": "kuc-v1-full-r4-formal-sft-A-addition-train",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-26T01:30:40.086851+00:00",
+      "container_id": "b44942165cffb3990bfe534d8197cb67f567b6cef97f384e9ff79e0429f6a70e",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T01:30:48.323272+00:00",
+      "completed_utc": "2026-10-26T03:04:09.995641+00:00"
+    },
+    "formal-sft-A-addition-evaluate-formal": {
+      "state": "complete",
+      "job_id": "formal-sft-A-addition-evaluate-formal",
+      "lane": {
+        "gpu": 3,
+        "gpu_uuid": "GPU-9dc24b81-029c-288b-ced5-ce32b996bae3",
+        "cpus": "70-79"
+      },
+      "container": "kuc-v1-full-r4-formal-sft-A-addition-evaluate-formal",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-26T03:04:12.076131+00:00",
+      "container_id": "f42932287030070c7c6d324dc0392d6bd0af660510ac7fbfbbc895b798fc1614",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T03:04:22.209703+00:00",
+      "completed_utc": "2026-10-26T03:23:46.043064+00:00"
+    },
+    "formal-sft-B-addition-train": {
+      "state": "complete",
+      "job_id": "formal-sft-B-addition-train",
+      "lane": {
+        "gpu": 4,
+        "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+        "cpus": "0-9"
+      },
+      "container": "kuc-v1-full-r4-formal-sft-B-addition-train",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-26T01:30:50.105922+00:00",
+      "container_id": "f9dc2393c45179b06d9c5b48fbd9f60739daf5cf2ccda913c202dc8a09e1987b",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T01:30:59.308447+00:00",
+      "completed_utc": "2026-10-26T03:05:07.119724+00:00"
+    },
+    "formal-sft-B-addition-evaluate-formal": {
+      "state": "complete",
+      "job_id": "formal-sft-B-addition-evaluate-formal",
+      "lane": {
+        "gpu": 4,
+        "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+        "cpus": "0-9"
+      },
+      "container": "kuc-v1-full-r4-formal-sft-B-addition-evaluate-formal",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-26T03:05:10.377002+00:00",
+      "container_id": "ebb7a58afd06dd11424a08b2f5be19fb3f20ef365a53b0d087ef08566325a178",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T03:05:22.634301+00:00",
+      "completed_utc": "2026-10-26T03:22:57.764339+00:00"
+    },
+    "formal-sft-C-addition-train": {
+      "state": "complete",
+      "job_id": "formal-sft-C-addition-train",
+      "lane": {
+        "gpu": 6,
+        "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+        "cpus": "50-59"
+      },
+      "container": "kuc-v1-full-r4-formal-sft-C-addition-train",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-26T01:31:01.378018+00:00",
+      "container_id": "56dfcaabce8daa574cfa29b6b65a191e7c1b8c813f79f72ade64c59d611603f0",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T01:31:10.891223+00:00",
+      "completed_utc": "2026-10-26T03:19:12.836753+00:00"
+    },
+    "formal-sft-C-addition-evaluate-formal": {
+      "state": "complete",
+      "job_id": "formal-sft-C-addition-evaluate-formal",
+      "lane": {
+        "gpu": 6,
+        "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+        "cpus": "50-59"
+      },
+      "container": "kuc-v1-full-r4-formal-sft-C-addition-evaluate-formal",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-26T03:19:25.350383+00:00",
+      "container_id": "b477f6e8012e6a14e9a74026ec79095d8175a8205ae762204fefca790e8f0958",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T03:19:51.805478+00:00",
+      "completed_utc": "2026-10-26T03:28:35.870559+00:00"
+    },
+    "formal-pd-A-rewrite-train": {
+      "state": "complete",
+      "job_id": "formal-pd-A-rewrite-train",
+      "lane": {
+        "gpu": 3,
+        "gpu_uuid": "GPU-9dc24b81-029c-288b-ced5-ce32b996bae3",
+        "cpus": "70-79"
+      },
+      "container": "kuc-v1-full-r4-formal-pd-A-rewrite-train",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-26T03:28:37.368227+00:00",
+      "container_id": "75bd92c41a1cfd9079e4beeb661f02a40a3b205299a9b9bf4aee8414adfc2f8c",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T03:28:47.132338+00:00",
+      "completed_utc": "2026-10-26T17:17:15.746764+00:00"
+    },
+    "formal-pd-A-rewrite-evaluate-rewrite": {
+      "state": "complete",
+      "job_id": "formal-pd-A-rewrite-evaluate-rewrite",
+      "lane": {
+        "gpu": 2,
+        "gpu_uuid": "GPU-9c6ca0d7-11bb-e940-c845-efea3cc49c23",
+        "cpus": "70-79"
+      },
+      "container": "kuc-v1-full-c25-formal-pd-A-rewrite-evaluate-rewrite",
+      "source_sha256": "df2b3dd1a26d77f1681169b0848a2e1113791ae0772363b814b6dbaaac86caa3",
+      "started_utc": "2026-10-26T17:26:41.204714+00:00",
+      "container_id": "e4845a7cacc70f91fe0406cc213fce892ab777f4e0a67b30989178bdc67b8520",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T17:26:52.624211+00:00",
+      "completed_utc": "2026-10-26T17:58:11.607799+00:00"
+    },
+    "formal-pd-B-rewrite-train": {
+      "state": "complete",
+      "previous_attempt": {
+        "state": "needs_attention",
+        "job_id": "formal-pd-B-rewrite-train",
+        "lane": {
+          "gpu": 4,
+          "gpu_uuid": "GPU-681ddfc6-46d1-0d48-ce5d-f9ec6cbf278c",
+          "cpus": "0-9"
+        },
+        "container": "kuc-v1-full-r4-formal-pd-B-rewrite-train",
+        "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+        "started_utc": "2026-10-26T03:28:48.627907+00:00",
+        "container_id": "3c5d048985c292147d4ee20b56f35f7f1054b32ed5d265870cf33569d65b235f",
+        "source_copied": true,
+        "credentials_copied": true,
+        "waiting_reasons": [],
+        "cuda_stage_started_utc": "2026-10-26T03:29:00.962291+00:00",
+        "error": "Original stage failed; no automatic scientific retry",
+        "failed_utc": "2026-10-26T04:00:32.488648+00:00"
+      },
+      "reason": "User explicitly authorized one retry after pre-training termination",
+      "job_id": "formal-pd-B-rewrite-train",
+      "lane": {
+        "gpu": 5,
+        "gpu_uuid": "GPU-33ea8cd2-7776-c888-b99f-ba45330a36b7",
+        "cpus": "0-9"
+      },
+      "container": "kuc-v1-full-c25-formal-pd-B-rewrite-train",
+      "source_sha256": "df2b3dd1a26d77f1681169b0848a2e1113791ae0772363b814b6dbaaac86caa3",
+      "started_utc": "2026-10-26T17:26:55.210857+00:00",
+      "container_id": "2489a553751d2a87160b8c40b52e82af8e37efdb8884fd8d0d0afa9a022e49cc",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T17:27:07.491548+00:00",
+      "completed_utc": "2026-10-26T18:19:16.034911+00:00"
+    },
+    "formal-pd-B-rewrite-evaluate-rewrite": {
+      "state": "complete",
+      "job_id": "formal-pd-B-rewrite-evaluate-rewrite",
+      "lane": {
+        "gpu": 5,
+        "gpu_uuid": "GPU-33ea8cd2-7776-c888-b99f-ba45330a36b7",
+        "cpus": "0-9"
+      },
+      "container": "kuc-v1-full-c25-formal-pd-B-rewrite-evaluate-rewrite",
+      "source_sha256": "df2b3dd1a26d77f1681169b0848a2e1113791ae0772363b814b6dbaaac86caa3",
+      "started_utc": "2026-10-26T18:19:18.835435+00:00",
+      "container_id": "2cbfbcc9ce1be28ec2bc1302e85ad8269a1f32db72fa91b055b1bebd4f865bbc",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T18:19:33.079307+00:00",
+      "completed_utc": "2026-10-26T18:31:46.091947+00:00"
+    },
+    "formal-pd-C-rewrite-train": {
+      "state": "complete",
+      "job_id": "formal-pd-C-rewrite-train",
+      "lane": {
+        "gpu": 6,
+        "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+        "cpus": "50-59"
+      },
+      "container": "kuc-v1-full-r4-formal-pd-C-rewrite-train",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-26T03:29:03.351656+00:00",
+      "container_id": "dbe29e313eb698baffb5b0f477bb81bf2b925fd1703b94284ac35e3e300b2dc8",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T03:29:26.977857+00:00",
+      "completed_utc": "2026-10-26T17:17:16.302758+00:00"
+    },
+    "formal-pd-C-rewrite-evaluate-rewrite": {
+      "state": "complete",
+      "job_id": "formal-pd-C-rewrite-evaluate-rewrite",
+      "lane": {
+        "gpu": 6,
+        "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+        "cpus": "50-59"
+      },
+      "container": "kuc-v1-full-c25-formal-pd-C-rewrite-evaluate-rewrite",
+      "source_sha256": "df2b3dd1a26d77f1681169b0848a2e1113791ae0772363b814b6dbaaac86caa3",
+      "started_utc": "2026-10-26T17:35:58.769560+00:00",
+      "container_id": "d850926d0c61d6d1a20a90a8444638255f22b1218b71c27fbbb64759eedf2362",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T17:36:16.616432+00:00",
+      "completed_utc": "2026-10-26T18:00:14.569155+00:00"
+    },
+    "formal-sft-A-rewrite-train": {
+      "state": "complete",
+      "job_id": "formal-sft-A-rewrite-train",
+      "lane": {
+        "gpu": 2,
+        "gpu_uuid": "GPU-9c6ca0d7-11bb-e940-c845-efea3cc49c23",
+        "cpus": "70-79"
+      },
+      "container": "kuc-v1-full-c25-formal-sft-A-rewrite-train",
+      "source_sha256": "df2b3dd1a26d77f1681169b0848a2e1113791ae0772363b814b6dbaaac86caa3",
+      "started_utc": "2026-10-26T17:58:13.996308+00:00",
+      "container_id": "e4c00119a6ece008851104e7cc13473f3245e824258d6581435c29c15799d827",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T17:58:24.236867+00:00",
+      "completed_utc": "2026-10-26T18:47:25.091313+00:00"
+    },
+    "formal-sft-A-rewrite-evaluate-rewrite": {
+      "state": "complete",
+      "job_id": "formal-sft-A-rewrite-evaluate-rewrite",
+      "lane": {
+        "gpu": 2,
+        "gpu_uuid": "GPU-9c6ca0d7-11bb-e940-c845-efea3cc49c23",
+        "cpus": "70-79"
+      },
+      "container": "kuc-v1-full-c25-formal-sft-A-rewrite-evaluate-rewrite",
+      "source_sha256": "df2b3dd1a26d77f1681169b0848a2e1113791ae0772363b814b6dbaaac86caa3",
+      "started_utc": "2026-10-26T18:47:27.084197+00:00",
+      "container_id": "df9ae5702e2839e7c90b91c5b0adc26cf67466c27b0ba36381ca707330f97f30",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T18:47:36.189947+00:00",
+      "completed_utc": "2026-10-26T19:03:23.503316+00:00"
+    },
+    "formal-sft-B-rewrite-train": {
+      "state": "complete",
+      "job_id": "formal-sft-B-rewrite-train",
+      "lane": {
+        "gpu": 6,
+        "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+        "cpus": "50-59"
+      },
+      "container": "kuc-v1-full-c25-formal-sft-B-rewrite-train",
+      "source_sha256": "df2b3dd1a26d77f1681169b0848a2e1113791ae0772363b814b6dbaaac86caa3",
+      "started_utc": "2026-10-26T18:00:17.185682+00:00",
+      "container_id": "0e422c8877d02931f63ead0b32b5befbd4773b92452a31f57ea1cdf694bc62bf",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T18:00:30.283720+00:00",
+      "completed_utc": "2026-10-26T18:52:04.985760+00:00"
+    },
+    "formal-sft-B-rewrite-evaluate-rewrite": {
+      "state": "complete",
+      "job_id": "formal-sft-B-rewrite-evaluate-rewrite",
+      "lane": {
+        "gpu": 6,
+        "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+        "cpus": "50-59"
+      },
+      "container": "kuc-v1-full-c25-formal-sft-B-rewrite-evaluate-rewrite",
+      "source_sha256": "df2b3dd1a26d77f1681169b0848a2e1113791ae0772363b814b6dbaaac86caa3",
+      "started_utc": "2026-10-26T18:52:08.423349+00:00",
+      "container_id": "d9ae5df42b0c6d844e17862c110f0cd55886b1a3ddc8229a3bb5869546c7a085",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T18:52:20.204145+00:00",
+      "completed_utc": "2026-10-26T19:02:37.951532+00:00"
+    },
+    "formal-sft-C-rewrite-train": {
+      "state": "complete",
+      "job_id": "formal-sft-C-rewrite-train",
+      "lane": {
+        "gpu": 5,
+        "gpu_uuid": "GPU-33ea8cd2-7776-c888-b99f-ba45330a36b7",
+        "cpus": "0-9"
+      },
+      "container": "kuc-v1-full-c25-formal-sft-C-rewrite-train",
+      "source_sha256": "df2b3dd1a26d77f1681169b0848a2e1113791ae0772363b814b6dbaaac86caa3",
+      "started_utc": "2026-10-26T18:31:48.677327+00:00",
+      "container_id": "57075f11722e1b48b1fc987ea9e109f805165d40a8598f3d2d26e337334f545a",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T18:31:58.774825+00:00",
+      "completed_utc": "2026-10-26T19:14:13.111745+00:00"
+    },
+    "formal-sft-C-rewrite-evaluate-rewrite": {
+      "state": "complete",
+      "job_id": "formal-sft-C-rewrite-evaluate-rewrite",
+      "lane": {
+        "gpu": 2,
+        "gpu_uuid": "GPU-9c6ca0d7-11bb-e940-c845-efea3cc49c23",
+        "cpus": "70-79"
+      },
+      "container": "kuc-v1-full-c25-formal-sft-C-rewrite-evaluate-rewrite",
+      "source_sha256": "df2b3dd1a26d77f1681169b0848a2e1113791ae0772363b814b6dbaaac86caa3",
+      "started_utc": "2026-10-26T19:14:14.996309+00:00",
+      "container_id": "90051f08a3fe6a999f4460503df10e3a00c0db7124aa85e136715862daba0411",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-26T19:14:23.695346+00:00",
+      "completed_utc": "2026-10-26T19:21:50.739629+00:00"
+    },
+    "natural-calibrate": {
+      "state": "complete",
+      "previous_calibration_attempt": {
+        "state": "complete",
+        "previous_engineering_attempt": {
+          "state": "needs_attention",
+          "waiting_reasons": [],
+          "job_id": "natural-calibrate",
+          "lane": {
+            "gpu": 8,
+            "gpu_uuid": "GPU-237b631e-30d6-9478-6513-e98b8f974f64",
+            "cpus": "60-69"
+          },
+          "container": "kuc-v1-natural-calibrate",
+          "source_sha256": "82d0b4b6c269a269391ac6989c82459af7c80d9a848048bc87b3048f1532ac7a",
+          "started_utc": "2026-10-25T02:25:46.162240+00:00",
+          "container_id": "c4bd7bf8410f853cd8d9663fdcdebde00880fa68f98c1af9bb5ca3f1b615aa47",
+          "source_copied": true,
+          "credentials_copied": true,
+          "cuda_stage_started_utc": "2026-10-25T02:25:52.884126+00:00",
+          "error": "Original stage failed; no automatic scientific retry",
+          "failed_utc": "2026-10-25T02:26:24.262206+00:00"
+        },
+        "waiting_reasons": [],
+        "job_id": "natural-calibrate",
+        "lane": {
+          "gpu": 8,
+          "gpu_uuid": "GPU-237b631e-30d6-9478-6513-e98b8f974f64",
+          "cpus": "60-69"
+        },
+        "container": "kuc-v1-full-r2-natural-calibrate",
+        "source_sha256": "e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368",
+        "started_utc": "2026-10-25T02:30:15.162200+00:00",
+        "container_id": "687212b3caa1e90a68c0db945e603838e67bb9b0a5ef133acb88ee848049e470",
+        "source_copied": true,
+        "credentials_copied": true,
+        "cuda_stage_started_utc": "2026-10-25T02:30:22.732537+00:00",
+        "completed_utc": "2026-10-25T02:40:46.121906+00:00"
+      },
+      "reason": "Initial calibration rejected; one bounded development prompt revision",
+      "job_id": "natural-calibrate",
+      "lane": {
+        "gpu": 8,
+        "gpu_uuid": "GPU-237b631e-30d6-9478-6513-e98b8f974f64",
+        "cpus": "60-69"
+      },
+      "container": "kuc-v1-full-r4-natural-calibrate",
+      "source_sha256": "691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c",
+      "started_utc": "2026-10-25T21:21:43.406830+00:00",
+      "container_id": "39969f4c3cc9ca4e4efabf5dd857f06de67fcba6e4e570c3f5c8272e1a144235",
+      "source_copied": true,
+      "credentials_copied": true,
+      "waiting_reasons": [],
+      "cuda_stage_started_utc": "2026-10-25T21:21:58.195747+00:00",
+      "completed_utc": "2026-10-25T21:28:26.787038+00:00"
+    },
+    "natural-quality-review": {
+      "state": "pending"
+    },
+    "natural-prepare": {
+      "state": "pending"
+    },
+    "natural-preflight": {
+      "state": "pending"
+    },
+    "natural-baseline": {
+      "state": "pending"
+    },
+    "natural-pd-A-addition-train": {
+      "state": "pending"
+    },
+    "natural-pd-A-addition-evaluate-natural": {
+      "state": "pending"
+    },
+    "natural-pd-B-addition-train": {
+      "state": "pending"
+    },
+    "natural-pd-B-addition-evaluate-natural": {
+      "state": "pending"
+    },
+    "natural-pd-C-addition-train": {
+      "state": "pending"
+    },
+    "natural-pd-C-addition-evaluate-natural": {
+      "state": "pending"
+    },
+    "natural-sft-A-addition-train": {
+      "state": "pending"
+    },
+    "natural-sft-A-addition-evaluate-natural": {
+      "state": "pending"
+    },
+    "natural-sft-B-addition-train": {
+      "state": "pending"
+    },
+    "natural-sft-B-addition-evaluate-natural": {
+      "state": "pending"
+    },
+    "natural-sft-C-addition-train": {
+      "state": "pending"
+    },
+    "natural-sft-C-addition-evaluate-natural": {
+      "state": "pending"
+    },
+    "report": {
+      "state": "pending"
+    }
+  },
+  "created_utc": "2026-10-25T01:04:51.877840+00:00",
+  "updated_utc": "2026-10-26T20:59:06.424180+00:00",
+  "previous_plan_sha256": "3889f378ef34e21aec1a056fadf7f92ada3d4035fe0096f157fbf5de9a076bee",
+  "amendment": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1/cuda256-20261026/amendment.json",
+  "gate": {
+    "passed": true,
+    "state": "ready",
+    "factorial_endpoint_weights": {
+      "pd_lora": "fcb99b7df144800d46506b2d30d2b85a051c3ab36b73360b3447301d392771be",
+      "sft_lora": "43d47534fc662feb8ad064754ee427600dd6d9bddc85c7c90dc75d1ba34ccfca",
+      "pd_full": "da02c9f67595f4932e48d9b0a40300a75ad0cca6cd7e98a6df8429558a4cbc8a",
+      "sft_full": "d20b2f3d6054ad0d00f5c1a00432afa1f764b00646dafb25a6f59e7c82c0a8ab",
+      "pd_down": "0bac5b7f1980848f7f890cf98c500a3288e607cada0dd0c8f2888e20c1a0851c",
+      "sft_down": "c40c09b5e35823debb41241203cd3e20b3c8b1a0477d788c873b5995e30d19dd",
+      "pd_down_lora": "e7d0f266b0c414e453c91c4776e3c97fb7c7965e047e21ee67836537758616b0",
+      "sft_down_lora": "2d8b3c415c78f502de7c9231897b5a21ea362c73bedede61b621c9ab42022b13"
+    },
+    "analysis_sha256": "2a2ec91ebe72fcf5b7308a4e8cd4ccfe430e3915fc62ab72ba74f0f48deab4cb",
+    "collector_sha256": "c693d16a7b35805e499a253002e96e34626172aaf708990132cf430287fbd9d0",
+    "cloud_snapshot_sha256": "db834aecba63bdf495215acccaa4e6417511577f9f325cc2c764dc21a0a261f7",
+    "scope_receipt_sha256": "fbabf45fa3a40ee7f159d119325aadbf59d53d5817bed745f2bd9c9ef931a52b",
+    "utc": "2026-10-26T20:59:06.396132+00:00"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "status": "proposal_only",
+  "training_updates_executed": 0,
+  "pdf_pages": 4,
+  "local_sources_exist": true,
+  "new_roadmap_links_exist": true,
+  "pdf_text_checks_passed": true,
+  "sha256": {
+    "design.json": "0d08ea2e67a115ace9ba07d8225b193341f92d8e7bfc3f9f66df8c5e898e8663",
+    "calling-interface-training-design.pdf": "62e978f98e8f551c989c7c589776946f9c9bfd3a415f70359007690c34a4418c",
+    "design-overview.png": "8129faabb86d452d02f1e87a60ceb3ff0dc670aa6ab77fc4f41031de86176d34",
+    "literature-assessment.json": "e2a496fc68a930d81646281d80a8bcf5200a59de51fb9d90df75c0c347b59c83"
+  },
+  "literature_assessment_json_valid": true
+}

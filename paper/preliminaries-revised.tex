@@ -1,0 +1,76 @@
+\section{Preliminaries}\label{sec:preliminaries}
+
+\paragraph{Parametric and contextual memory.}
+We view a Transformer as coupling two retrieval mechanisms:
+parameterized knowledge learned during training and contextual memory constructed in prompts
+\citep{irie2022dual,zhong2025understandingtransformerperspectiveassociative}.
+At layer $\ell$, the MLP processes a normalized hidden state $x\in\mathbb{R}^{d}$:
+\begin{equation}
+    m_\ell(x)=B_\ell\phi_\ell(x),\qquad
+    \phi_\ell(x)=(A_\ell x)\odot\sigma(G_\ell x),
+    \label{eq:mlp_assoc}
+\end{equation}
+where $A_\ell,G_\ell\in\mathbb{R}^{m\times d}$,
+$B_\ell\in\mathbb{R}^{d\times m}$, and $\sigma$ is the
+activation. Equivalently, $m_\ell(x)=\sum_{a=1}^{m}b_{\ell,a}
+\phi_{\ell,a}(x)$, where $b_{\ell,a}$ is a column of $B_\ell$. So $\phi_\ell(x)$ means how an input addresses the
+value vectors in $B_\ell$.
+
+Attention retrieves values associated with the context. Let $q_{\ell,t}$,
+$k_{\ell,s}$, and $v_{\ell,s}$ denote the query, key, and
+output-projected value at token positions $t$ and $s$. Its output is
+\begin{equation}
+ a_{\ell,t}=\sum_{s\le t}\alpha_{\ell,ts}v_{\ell,s},\quad
+ \alpha_{\ell,ts}=
+ \frac{\exp(q_{\ell,t}^{\top}k_{\ell,s}/\sqrt{d_k})}
+ {\sum_{u\le t}\exp(q_{\ell,t}^{\top}k_{\ell,u}/\sqrt{d_k})}.
+ \label{eq:attn_assoc}
+\end{equation}
+The query-key similarity acts as a retrieval kernel,
+while attention determines which earlier tokens can
+contribute to later tokens.
+The attention KV memories vary with the input and position, while
+the MLP parameters persist as knowledge.
+
+\paragraph{Writing and retrieving parameter updates.}
+For a training example, let $\delta_{\ell,s}$ be the loss gradient
+with respect to $m_\ell(x_{\ell,s})$ at position $s$.
+A gradient-descent update of the MLP down-projection has the outer-product form
+\begin{equation}
+ \Delta B_\ell=-\eta\sum_s
+ \delta_{\ell,s}\phi_\ell(x_{\ell,s})^{\top}.
+ \label{eq:assoc_write}
+\end{equation}
+To determine which other inputs can read this update, we can calculate the MLP output delta on the gradient:
+\begin{equation}
+ \Delta m_\ell(x)
+ =-\eta\sum_s\delta_{\ell,s}
+ \underbrace{\phi_\ell(x_{\ell,s})^{\top}\phi_\ell(x)}
+ _{K_\ell^{\mathrm{MLP}}(x_{\ell,s},x)}.
+ \label{eq:assoc_transfer}
+\end{equation}
+It means that a training example changes the MLP output at another input in
+proportion to their feature overlap.  In full-parameter training, evolving representations also change retrieval addresses.
+Consequently, learning a fact does not guarantee its accessibility with a different query.
+
+\paragraph{Compositional reasoning with knowledge updates.}
+Consider two facts $e_2=r_1(e_1)$ and $e_3=r_2(e_2)$.
+We denote the one-hop queries by $q_1=(e_1,r_1)$ and
+$q_2=(e_2,r_2)$, and the two-hop query by
+$q_{12}=(e_1,r_1,r_2)$. Both $q_2$ and $q_{12}$ request $e_3$,
+but only $q_2$ explicitly contains $e_2$.
+One possible compositional path forms a representation of $e_2$ at an
+earlier layer, transports that information through
+higher-layer attention, and activates
+the association for $r_2(e_2)$. This mechanism is supported by studies of multi-hop reasoning
+\citep{wang2024grokked,biran2024hopping}. 
+If the latter association is read by an MLP in layer $j$, we can know whether the multi-hop state $x_j(q_{12})$ activates the same knowledge as the one-hop state $x_j(q_2)$, measured by $K_j^{\mathrm{MLP}}(x_j(q_{12}),x_j(q_2))$. A larger overlap indicates stronger activation of the features associated with the one-hop query, making the corresponding knowledge more accessible to the multi-hop query.
+
+Updating the first fact, $r_1(e_1):e_2\mapsto e'_2$, requires the
+two-hop query to produce $r_2(e'_2)$, assuming the downstream fact is
+available. Updating the second fact, $r_2(e_2):e_3\mapsto e'_3$,
+requires both $q_2$ and $q_{12}$ to produce $e'_3$.
+The former changes the
+intermediate representation supplied to downstream retrieval, whereas
+the latter tests whether different queries reuse the same updated
+association. Ideally, queries unrelated to the edited fact should retain their original answers. In practice, however, parameter updates may interfere with other knowledge, leading to unintended forgetting \citep{zhong2023mquake,cohen2023evaluatingrippleeffectsknowledge}.

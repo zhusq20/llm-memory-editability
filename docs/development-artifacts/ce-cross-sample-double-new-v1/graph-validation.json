@@ -1,0 +1,46 @@
+{
+  "status": "graph_checks_passed_no_model_calls",
+  "pairs_formal": 32,
+  "facts_formal": 64,
+  "pairs_development": 8,
+  "facts_development": 16,
+  "all_80_keys_absent_from_original_40000": true,
+  "all_40_double_new_query_prefixes_absent_from_original_800000": true,
+  "formal_anchor_reference_groups": {
+    "id": 16,
+    "ood": 16
+  },
+  "mixed_query_counts": {
+    "new_old": 256,
+    "old_new": 256
+  },
+  "all_mixed_old_premises_from_unchanged_original_graph": true,
+  "old_pool_sizes": {
+    "atomic_id": 128,
+    "atomic_ood": 128,
+    "train_ii": 128,
+    "test_ii": 128,
+    "test_io": 128,
+    "test_oi": 128,
+    "test_oo": 128
+  },
+  "streams": {
+    "count": 2,
+    "facts_each": 64,
+    "gap_in_positions": 32,
+    "intervening_facts": 31,
+    "opposite_write_order_for_every_pair": true,
+    "sum_of_final_closure_ages_across_orders_per_pair": 31
+  },
+  "reused_A_states_files_exist": {
+    "discoloop": 32,
+    "loop": 32,
+    "transformer": 32
+  },
+  "state_bytes_rehashed_this_turn": false,
+  "checkpoint_bytes_rehashed_this_turn": false,
+  "model_forward_calls": 0,
+  "optimizer_updates": 0,
+  "panel_sha256": "be836b200d5587f3c726cc04fe86797da0a7e97509629393be9716dead8fdda8",
+  "config_sha256": "e429e0545c6d3706b3c7e82f3eaa33d680446f71ad7fd0a73067f78e839e2cff"
+}

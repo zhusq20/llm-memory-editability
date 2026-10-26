@@ -1,0 +1,196 @@
+{
+  "schema": "ce-cross-sample-ablation-v1",
+  "batch": "ce-cross-sample-ablation-v1",
+  "authorization": "User explicitly requested implementation, parallel execution using idle GPUs, independent reload, and W&B verification of minimal one-factor ablations.",
+  "base_plan": "configs/ce-cross-sample-double-new-v1.json",
+  "base_plan_sha256": "e429e0545c6d3706b3c7e82f3eaa33d680446f71ad7fd0a73067f78e839e2cff",
+  "architectures": [
+    "loop",
+    "discoloop"
+  ],
+  "arms": {
+    "loop-lower-lr": {
+      "architecture": "loop",
+      "variant": "lower-lr",
+      "factor": "learning_rate",
+      "optimizer_mode": "fresh_per_fact",
+      "constraint_enabled": true,
+      "learning_rate_candidates": [
+        5e-06,
+        2e-05
+      ]
+    },
+    "loop-carry-adam": {
+      "architecture": "loop",
+      "variant": "carry-adam",
+      "factor": "optimizer_state",
+      "optimizer_mode": "carry_per_stream",
+      "constraint_enabled": true,
+      "learning_rate_candidates": [
+        0.00032
+      ]
+    },
+    "loop-no-bound": {
+      "architecture": "loop",
+      "variant": "no-bound",
+      "factor": "elementwise_constraint",
+      "optimizer_mode": "fresh_per_fact",
+      "constraint_enabled": false,
+      "learning_rate_candidates": [
+        0.00032
+      ]
+    },
+    "discoloop-lower-lr": {
+      "architecture": "discoloop",
+      "variant": "lower-lr",
+      "factor": "learning_rate",
+      "optimizer_mode": "fresh_per_fact",
+      "constraint_enabled": true,
+      "learning_rate_candidates": [
+        2e-05,
+        4e-05
+      ]
+    },
+    "discoloop-carry-adam": {
+      "architecture": "discoloop",
+      "variant": "carry-adam",
+      "factor": "optimizer_state",
+      "optimizer_mode": "carry_per_stream",
+      "constraint_enabled": true,
+      "learning_rate_candidates": [
+        8e-05
+      ]
+    },
+    "discoloop-no-bound": {
+      "architecture": "discoloop",
+      "variant": "no-bound",
+      "factor": "elementwise_constraint",
+      "optimizer_mode": "fresh_per_fact",
+      "constraint_enabled": false,
+      "learning_rate_candidates": [
+        8e-05
+      ]
+    }
+  },
+  "controls": {
+    "loop": {
+      "root": "/ossfs/workspace/llm-memory-editability/ce-cross-sample-double-new-v1/loop/output",
+      "completion_manifest": "/ossfs/workspace/llm-memory-editability/ce-cross-sample-double-new-v1/loop/completion-manifest.json",
+      "completion_manifest_sha256": "66be3f6685126bc732dbe00bd333e26cbd04dfe085171a081baeb9e74e6bcdb8",
+      "evaluate_result_sha256": "222a9d7c42d9e063d7a4c8e19e28ededcd9f47e2874b90cc2774b35a1d540fef"
+    },
+    "discoloop": {
+      "root": "/ossfs/workspace/llm-memory-editability/ce-cross-sample-double-new-v1/discoloop/output",
+      "completion_manifest": "/ossfs/workspace/llm-memory-editability/ce-cross-sample-double-new-v1/discoloop/completion-manifest.json",
+      "completion_manifest_sha256": "6d489e6ddf55f6cbfad5a7d15315979450b41261ae34981cf37f109e3aa65cd9",
+      "evaluate_result_sha256": "62eea15600413d66330522fe26adff2dfda50295e6732f6ca0d4ba559b6a0228"
+    }
+  },
+  "control_batch": "/ossfs/workspace/llm-memory-editability/ce-cross-sample-double-new-v1",
+  "control_report_sha256": "193b00f8f9361070e4513716c0e5cda865dd58b3844179196f9dc7d255b62cd5",
+  "gate": {
+    "development_pairs": 8,
+    "facts_per_stream": 16,
+    "streams": [
+      "forward",
+      "reverse"
+    ],
+    "steps_per_fact": 20,
+    "current_fact_success_threshold": 0.9,
+    "minimum_correct": 29,
+    "total_current_readouts_per_candidate": 32,
+    "median_ce_decrease_strictly_positive": true,
+    "finite_required": true,
+    "selection": "first eligible learning-rate candidate in fixed ascending order; never use retention or composition to select",
+    "maximum_candidates_per_lower_lr_arm": 2
+  },
+  "evaluation": {
+    "read_after_each_fact": true,
+    "reset_context_and_KV_per_query": true,
+    "updates_during_queries": 0,
+    "primary": "mean final double-new accuracy over 32 pairs and both orders, answer plus EOS",
+    "all_prefix_queries": "all 64 atomic facts; all 32 double-new queries; 512 mixed queries; seven fixed old pools of 128 each",
+    "composition_active_only_after_both_facts_supplied": true,
+    "bootstrap_unit": "32 fact pairs, averaging the two orders within each pair",
+    "bootstrap_repetitions": 10000,
+    "bootstrap_seed": 2026101611,
+    "generalization_scope": "one observed graph, one existing initialization per architecture; development evidence"
+  },
+  "budget": {
+    "new_foundation_updates": 0,
+    "new_writer_outer_updates": 0,
+    "main_updates_per_arm": 2560,
+    "main_updates_total_maximum": 15360,
+    "development_updates_per_candidate": 640,
+    "development_updates_total_minimum": 3840,
+    "development_updates_total_maximum": 5120,
+    "engineering_updates_per_architecture": 46,
+    "engineering_updates_total": 92,
+    "optimizer_updates_total_maximum": 20572,
+    "main_saved_states_per_arm": 128,
+    "main_readouts_per_arm": 129,
+    "new_composition_supervision": 0,
+    "independent_audit_updates": 0
+  },
+  "execution": {
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "docker_context": "lm-memory",
+    "persistent_root": "/ossfs/workspace/llm-memory-editability/ce-cross-sample-ablation-v1",
+    "parent_source": "/ossfs/workspace/llm-memory-editability/ce-cross-sample-double-new-v1/source-v2",
+    "parent_source_manifest_sha256": "68bef3953b12e9be33c65e2794b9159417c855dc0e74a79aa146d1a99e86de4f",
+    "parent_source_file_count": 444,
+    "source_revision": "source-v1",
+    "extra_files": [
+      "src/llm_memory_editability/ce_cross_sample_ablation.py",
+      "src/llm_memory_editability/ce_cross_sample_ablation_summary.py",
+      "scripts/run_ce_cross_sample_ablation.py",
+      "scripts/launch_ce_cross_sample_ablation.py",
+      "scripts/report_ce_cross_sample_ablation.py",
+      "tests/test_ce_cross_sample_ablation.py",
+      "tests/test_ce_cross_sample_ablation_summary.py",
+      "tests/test_ce_cross_sample_ablation_controller.py",
+      "configs/ce-cross-sample-ablation-v1.json",
+      "docs/development-artifacts/ce-cross-sample-ablation-v1/protocol.md"
+    ],
+    "contract_tests": [
+      "tests/test_ce_cross_sample_ablation.py",
+      "tests/test_ce_cross_sample_ablation_summary.py",
+      "tests/test_ce_cross_sample_ablation_controller.py",
+      "tests/test_ce_cross_sample.py",
+      "tests/test_ce_scope_editing.py",
+      "tests/test_ce_architecture.py"
+    ],
+    "timeout_seconds_per_arm": 43200,
+    "prepare_timeout_seconds": 43200,
+    "minimum_free_persistent_bytes": 171798691840,
+    "engineering_updates_per_architecture": 46,
+    "resources": {
+      "cpu_sets": {
+        "loop-lower-lr": "80-83",
+        "loop-carry-adam": "84-87",
+        "loop-no-bound": "88-91",
+        "discoloop-lower-lr": "92-95",
+        "discoloop-carry-adam": "0-3",
+        "discoloop-no-bound": "4-7",
+        "loop-prepare": "80-83",
+        "discoloop-prepare": "92-95"
+      },
+      "preferred_gpu_indices": [
+        7,
+        4,
+        6
+      ],
+      "memory": "48g",
+      "minimum_gpu_free_mib": 16384,
+      "resource_wait_seconds": 14400,
+      "minimum_free_temporary_bytes": 2147483648
+    },
+    "failure_policy": "preserve failures; no automatic repeated scientific writes",
+    "tracking": {
+      "enabled": true,
+      "entity": "zhusq20",
+      "project": "llm-memory-editability",
+      "mode": "online"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+knowledge-use-coverage-v1 — full-parameter execution, 2026-10-25 UTC
+
+LATEST USER DECISION (2026-10-24 Chicago): “立即开始，固定全参数”.
+This supersedes waiting for the complete eight-arm analysis and provisional down-only.
+All PD/SFT development, formal addition, atomic rewrite and natural application
+trajectories use full parameters, with an independent frozen teacher.
+
+Current controller: PID1343411, host sn4622128200, GPU4/6/8 only.
+Read runtime/controller-state.json and actual LM Docker; recorded PIDs are snapshots.
+Active plan: runtime/launch-plan-full-r2-20261025.json
+Active source: runtime/source-full-20261025-r2/
+Source archive SHA256: e104e858633bf87fa5088793c197f086acf8bcae1d12de80701bb2d0900c2368
+Explicit source-bound scope decision: runtime/source-ownership-repair-20261025/scope-decision.json
+Scientific config: configs/knowledge-use-coverage-full-v1.json
+Protocol amendment: ../../docs/development-artifacts/knowledge-use-coverage-v1/full-start-amendment-20261025.md
+
+The first three independent GPU stages prepare development answers, prepare
+formal answers and calibrate natural-question generation. Formal evaluation
+and training still require the development-selected budget; natural application
+requires the rewrite comparison and the separate 96-question semantic review.
+Training, independent reload, cloud verification and final analysis remain separate.
+
+02:33 UTC verification: development/formal preparation both complete (800/3200
+unique prompts, both PD/SFT trajectories, no truncation, no evaluation-file reads).
+GPU4 runs full-parameter development preflight; GPU8 runs natural calibration;
+GPU6 is released until the next dependency becomes ready. Scientific training
+has not started yet. Raw natural calibration currently has evidence/identifier
+format failures; preserve all planned attempts and review the final96-question
+quality report before approving generation. No semantic approval has been issued.
+Snapshot: full-start-20261025/latest-verification.json.
+
+Engineering failure retained: three original kuc-v1 preparation containers exited
+before model import because docker cp --archive assigned source files to UID1015.
+No model forwards or optimizer updates occurred in those attempts. Their states,
+exit logs and containers are preserved under runtime/source-ownership-repair-20261025/.
+A no-GPU/no-network check passed for all250 root-owned0444 source files after
+copying source without --archive; private credentials still use --archive.
+The reviewed repair uses new kuc-v1-full-r2-* containers, not restarted originals.
+68 implementation tests passed for the full-start amendment; after the copy fix,
+30 launcher tests plus Ruff passed. Scientific data/config remain unchanged by the repair.
+
+Original PD-LoRA remains the same running container kmb-1022-pd_lora-train,
+PID502768, original start2026-10-22T22:53:35.170118964Z, GPU3. Its controller is
+now PID1329337; plan at the original batch's recovery-full-start-20261025/plan.json.
+The old controllers1098421/1725118 were retired without restarting model training.
+Collector1030907 continues collecting the original eighth endpoint. No eight-arm
+completion or final scope ranking is claimed; seven-arm evidence is frozen separately.
+
+W&B: https://wandb.ai/zsqzz/llm-memory-editability
+No paused Loop experiment is resumed by this authorization.
+
+HISTORICAL PRE-AMENDMENT HANDOFF (superseded timing and scope below):
+
+knowledge-use-coverage-v1 — authorized execution, waiting for the complete eight-arm analysis
+
+User instruction: collect all eight endpoints, analyze gain/retention/cost together,
+then complete the planned use-coverage comparison. No new CUDA phase may precede
+the original eight-arm analysis. Existing training is not restarted.
+
+Persistent batch:
+/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1
+
+Current evidence:
+- Eight-arm read-only collector: ../knowledge-factorial-analysis-20261025/collector-state.json
+- Collector process record: ../knowledge-factorial-analysis-20261025/collector-process.json
+- Unified eight-arm report: ../knowledge-factorial-analysis-20261025/report.md
+- New data audit: runtime/audit.json
+- Preserved pre-training data correction: runtime/data-amendment.json
+- Protocol: ../../docs/development-artifacts/knowledge-use-coverage-v1/protocol.md
+- Scientific configuration: ../../configs/knowledge-use-coverage-v1.json
+- Frozen launch plan: runtime/launch-plan.json
+- Live coverage state and process: runtime/controller-state.json, runtime/controller-process.json
+- Implementation checks: implementation-validation.json (114 tests and Ruff passed)
+
+2026-10-25 01:04 UTC: coverage controller PID1098421 started from the frozen
+249-file source bundle. State waiting_factorial; all 58 preparation/training/
+evaluation/reporting stages pending, new CUDA stages 0. Source archive SHA256:
+c4f8c5f26727cc2c11f70b53d076a4b46720986a5549767e22924d57ea429b2a
+This is a waiting controller, not evidence that the comparison has run.
+
+2026-10-25 01:00 UTC preparation snapshot: original endpoints complete 7/8;
+PD-LoRA continues in its original controller. New experiment has performed no
+Qwen forward pass or scientific update. CPU preparation and contract tests only.
+Development has 32 fact pairs, formal comparison 128 disjoint fact pairs;
+natural application uses the fixed 64-case cohort. A/B/C share facts and a
+supervised-token budget, not necessarily computation or fact exposure.
+
+Recovery order:
+1. Read the live original collector and its logs; do not replace missing results.
+2. Require all eight local endpoints, independent reload, cloud checks and
+   actual evaluation-container exit status before selecting the parameter scope.
+3. Review the full analysis and write a source-bound scope decision only then.
+4. Use the frozen launch plan/controller when present; never submit a second
+   controller or restart an existing scientific attempt. Check actual LM Docker,
+   resource reservations and locks; do not use the snapshot above as live state.
+   Controllers run in the escalated host PID namespace; sandbox /proc or ps
+   cannot establish that a recorded host PID has exited. Check shared heartbeats
+   and the actual host before any recovery.
+5. Development chooses the common formal token budget. Natural-use generation
+   has a separate 96-question development semantic review before application.
+
+W&B destination for newly started trajectories:
+https://wandb.ai/zsqzz/llm-memory-editability
+
+Training, independent reload, cloud verification and final analysis are separate
+completion states. Preserve all failed attempts and old data. This authorization
+does not resume paused Loop experiments or any other historical candidate.

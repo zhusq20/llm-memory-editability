@@ -1,0 +1,7 @@
+{
+  "torch": "2.8.0+cu128",
+  "transformers": "4.57.3",
+  "numpy": "2.2.6",
+  "wandb": "0.30.0",
+  "huggingface-hub": "0.36.0"
+}

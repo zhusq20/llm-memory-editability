@@ -1,0 +1,179 @@
+{
+  "batch": "loop-discoloop-lr-control-v1",
+  "authorization": "User requested six 300k jobs: ordinary Loop and DiscoLoop each at 2e-4,5e-4,1e-3, reusing existing 1e-4 results, preserving original initialization/data stream and controlling cumulative weight decay. This supersedes the earlier lower-LR proposal.",
+  "phase": "One already-observed Wang development graph and initialization; controlled learning-rate behavior, not proof of a unique mechanism.",
+  "input_root": "/inputs/data/discoloop-success-restore-v1/original",
+  "initial_checkpoint": "/inputs/initial/loop.pt",
+  "source_run": "loop-original-initialization",
+  "base_spec": {
+    "unique_layers": 4,
+    "repeats": 2,
+    "phi": 7.2,
+    "weight_decay": 0.1,
+    "initialization": 791101,
+    "stream_seed": 792101,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 300000
+  },
+  "jobs": {
+    "loop-lr2e-4": {
+      "architecture": "loop",
+      "lr": 0.0002,
+      "weight_decay": 0.05
+    },
+    "loop-lr5e-4": {
+      "architecture": "loop",
+      "lr": 0.0005,
+      "weight_decay": 0.02
+    },
+    "loop-lr1e-3": {
+      "architecture": "loop",
+      "lr": 0.001,
+      "weight_decay": 0.01
+    },
+    "discoloop-lr2e-4": {
+      "architecture": "discoloop",
+      "lr": 0.0002,
+      "weight_decay": 0.05
+    },
+    "discoloop-lr5e-4": {
+      "architecture": "discoloop",
+      "lr": 0.0005,
+      "weight_decay": 0.02
+    },
+    "discoloop-lr1e-3": {
+      "architecture": "discoloop",
+      "lr": 0.001,
+      "weight_decay": 0.01
+    }
+  },
+  "dropout_seed": 20261012,
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000
+  ],
+  "checkpoint_nodes": [
+    0,
+    300000
+  ],
+  "heartbeat_steps": 1000,
+  "smoke_steps": 32,
+  "evaluation_batch_size": 256,
+  "audit_loss_atol": 1e-06,
+  "audit_loss_rtol": 1e-06,
+  "baseline_reuse": {
+    "loop": {
+      "batch": "ttcd-architecture-comparison-v1",
+      "folder": "loop/foundation",
+      "training_folder": "loop",
+      "config": "source/configs/foundation-loop.json",
+      "checkpoint": "loop/checkpoint-0300000.pt"
+    },
+    "discoloop": {
+      "batch": "discoloop-success-restore-v1",
+      "folder": "",
+      "training_folder": "discoloop",
+      "config": "source/configs/experiment.json",
+      "checkpoint": "discoloop/checkpoint-0300000.pt"
+    }
+  },
+  "input_sources": {
+    "data": "ttcd-successful-base-v1/input-mount/data/discoloop-success-restore-v1/original",
+    "initial": "ttcd-architecture-comparison-v1/input-mount/initial/loop.pt"
+  },
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "gpu_preference": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      0,
+      1,
+      2,
+      3
+    ],
+    "cpu_sets": {
+      "loop-lr2e-4": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "loop-lr5e-4": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "loop-lr1e-3": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "discoloop-lr2e-4": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "discoloop-lr5e-4": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "discoloop-lr1e-3": [
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    "contracts_cpu_set": [
+      24,
+      25,
+      26,
+      27
+    ],
+    "cpu_threads": 4,
+    "memory_gib": 96,
+    "min_total_gpu_mib": 90000,
+    "min_free_gpu_mib": 80000,
+    "gpu_memory_max_mib": 1024,
+    "gpu_utilization_max": 5,
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "max_parallel": 6,
+    "poll_seconds": 30,
+    "timeout_hours": 12,
+    "wait_timeout_hours": 72,
+    "tracking": "online",
+    "automatic_retry": false,
+    "minimum_persistent_free_gib": 60
+  },
+  "primary": "Fixed 300k test_oi answer+generated-EOS accuracy; all seven original panels and complete scheduled curves retained. No choice of best rate/node or success-only subset as a predeclared result.",
+  "decay_control": "lambda=1e-4*0.1/peak_lr; same zero-first-update warmup2000 and constant schedule thereafter. Match each analytic AdamW multiplier 1-eta_t*lambda and their product; bias/LayerNorm remain zero decay. FP32 factors checked independently.",
+  "scope_limits": [
+    "Exactly six new 300k scientific trajectories (1800000 updates), plus six 32-step engineering runs (192 updates), plus zero-LR capture warmups recorded separately",
+    "Existing 1e-4 native foundations reused; never restart completed historical training",
+    "No change to architecture, initial tensors, graph/panels, merged epoch stream, dropout seed, answer/EOS supervision, clipping1.0, betas/epsilon, precision or scoring",
+    "No LR reduction, retry, new graph/seed, auxiliary loss, KV, longer training or adaptation after a failure",
+    "Equal steps and data are not equal FLOPs: DiscoLoop adds approximately 2.05x matrix training computation; report costs separately",
+    "Analytic matched multiplicative decay does not imply equal regularization relative to the data-gradient step or equal parameter trajectories",
+    "Original 2026-10-12 results retained as history; direct 1e-4 controls use already-audited current-image rebuilds; cross-environment bitwise history not claimed",
+    "Single-update norms are measured outside capture at each 1000-step heartbeat; observation cost is included and no RNG or parameter mutation is added"
+  ]
+}

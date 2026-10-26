@@ -1,0 +1,12 @@
+% Requires graphicx. Paths are relative to a document in paper/.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/invariant-loop-v5/invariant-loop-state-graph.pdf}
+  \caption{Invariant Loop as a graph of shared parameters and recurrent states.
+  Both loop calls use the same Transformer parameters. Soft vocabulary feedback
+  forms a candidate, which is combined with the previous aggregate using weights
+  computed from five statistics and the historical normalization mass.
+  The resulting aggregate enters the next loop. Dashed orange edges denote
+  shared parameters; the dashed green edge denotes a scalar update weight.}
+  \label{fig:invariant-loop-state-graph}
+\end{figure*}

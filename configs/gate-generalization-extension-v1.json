@@ -1,0 +1,304 @@
+{
+  "batch": "gate-generalization-extension-v1",
+  "authorization": "2026-10-17 user explicitly approved carrying out the complete proposed extension: long training, independent confirmation, Wang task, and train-two-hop/test-three-four-hop generalization.",
+  "image": "sha256:b7933a57d6a4702700b6b2578fe0cc697f91b2080ef5e18d8fb916443281eacd",
+  "gpu_candidates": [
+    5,
+    7,
+    4
+  ],
+  "maximum_parallel": 3,
+  "cpus": [
+    80,
+    81,
+    82,
+    83,
+    84,
+    85
+  ],
+  "poll_seconds": 20,
+  "idle_wait_hours": 168,
+  "independent_audits": false,
+  "engineering_receipts": {
+    "engineering/cpu-contracts.json": "89d3fe705cce95f19a1ec90f2651d4e1657c3849e55cb507caa583e11c60ea93",
+    "engineering/data-contracts.json": "d043069c48d2506f79b7bfb2ee6c52059bd76a31b5f45a74a7b1d77d877c581d",
+    "engineering/continuation/checks/fixed-update-resume.json": "d2f27cdd15bc0863ade6993c5f0f9fc8ebe64536c83d043e9397f0c3b7aee24b",
+    "engineering/continuation/checks/token-update-resume.json": "588c659932e781b6e0b998f6239ed09f7bab5ee40bc89f7bca91f2a690c0f811",
+    "engineering/confirmation-1/preflight/fixed-update.json": "2240ae8b6f6846a2e75fcb9d529d787fdc61f7d1faa2eff326f7e24f2fbd76d7",
+    "engineering/confirmation-1/preflight/paper.json": "280a38b3c200e58e0066220896783a7f72c7a1f5522c9c1b4d144b9213cd037a",
+    "engineering/confirmation-1/preflight/token-update.json": "c87ab18d89719c63487e3a61a9ae769998d29630047a0aa074519b389b2af0fe",
+    "engineering/depth-1/preflight/fixed-update.json": "13cc7f41bc25420636897bdb568306e9a65c9e55e374c1ead7293872d2cda626",
+    "engineering/depth-1/preflight/paper.json": "2c759beddef99936065e35ef3052a17c1de63a866363cd1decfffb1650704c3f",
+    "engineering/depth-1/preflight/token-update.json": "bd87366e92b6368c0123a6f24791f79e714e437a25d9670bda20cfaec839fc81",
+    "engineering/wang/preflight/fixed-update.json": "93a93f34dc8fc78511c75ce289cdd9596e7c25021f248706327f91683c19fcfa",
+    "engineering/wang/preflight/paper.json": "6f27b4e4aaefe498d28e6cb04e1f78b4b5cd6ad40e4f67ee7369af2fd34233bd",
+    "engineering/wang/preflight/token-update.json": "1cb041a59381ffa87c91166e6630e04fffafc82b9935272201e76e5bc1bd2cf7",
+    "engineering/report-contracts.json": "b12d23e975505d99c373208ac750cf19796f0b954aa8cfaab8341e8c34efbaac"
+  },
+  "jobs": [
+    {
+      "id": "continuation--fixed-update",
+      "case": "continuation",
+      "family": "continuation",
+      "arm": "fixed-update",
+      "config": "configs/gate-extension/continuation.json",
+      "runner": "scripts/run_gate_extension_continuation.py",
+      "start_step": 300000,
+      "steps": 1500000
+    },
+    {
+      "id": "continuation--token-update",
+      "case": "continuation",
+      "family": "continuation",
+      "arm": "token-update",
+      "config": "configs/gate-extension/continuation.json",
+      "runner": "scripts/run_gate_extension_continuation.py",
+      "start_step": 300000,
+      "steps": 1500000
+    },
+    {
+      "id": "confirmation-1--paper",
+      "case": "confirmation-1",
+      "family": "confirmation",
+      "arm": "paper",
+      "config": "configs/gate-extension/confirmation-1.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "confirmation-1--fixed-update",
+      "case": "confirmation-1",
+      "family": "confirmation",
+      "arm": "fixed-update",
+      "config": "configs/gate-extension/confirmation-1.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "confirmation-1--token-update",
+      "case": "confirmation-1",
+      "family": "confirmation",
+      "arm": "token-update",
+      "config": "configs/gate-extension/confirmation-1.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "confirmation-2--paper",
+      "case": "confirmation-2",
+      "family": "confirmation",
+      "arm": "paper",
+      "config": "configs/gate-extension/confirmation-2.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "confirmation-2--fixed-update",
+      "case": "confirmation-2",
+      "family": "confirmation",
+      "arm": "fixed-update",
+      "config": "configs/gate-extension/confirmation-2.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "confirmation-2--token-update",
+      "case": "confirmation-2",
+      "family": "confirmation",
+      "arm": "token-update",
+      "config": "configs/gate-extension/confirmation-2.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "confirmation-3--paper",
+      "case": "confirmation-3",
+      "family": "confirmation",
+      "arm": "paper",
+      "config": "configs/gate-extension/confirmation-3.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "confirmation-3--fixed-update",
+      "case": "confirmation-3",
+      "family": "confirmation",
+      "arm": "fixed-update",
+      "config": "configs/gate-extension/confirmation-3.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "confirmation-3--token-update",
+      "case": "confirmation-3",
+      "family": "confirmation",
+      "arm": "token-update",
+      "config": "configs/gate-extension/confirmation-3.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "wang--paper",
+      "case": "wang",
+      "family": "wang",
+      "arm": "paper",
+      "config": "configs/gate-extension/wang.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 1500000
+    },
+    {
+      "id": "wang--fixed-update",
+      "case": "wang",
+      "family": "wang",
+      "arm": "fixed-update",
+      "config": "configs/gate-extension/wang.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 1500000
+    },
+    {
+      "id": "wang--token-update",
+      "case": "wang",
+      "family": "wang",
+      "arm": "token-update",
+      "config": "configs/gate-extension/wang.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 1500000
+    },
+    {
+      "id": "depth-1--paper",
+      "case": "depth-1",
+      "family": "depth",
+      "arm": "paper",
+      "config": "configs/gate-extension/depth-1.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "depth-1--fixed-update",
+      "case": "depth-1",
+      "family": "depth",
+      "arm": "fixed-update",
+      "config": "configs/gate-extension/depth-1.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "depth-1--token-update",
+      "case": "depth-1",
+      "family": "depth",
+      "arm": "token-update",
+      "config": "configs/gate-extension/depth-1.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "depth-2--paper",
+      "case": "depth-2",
+      "family": "depth",
+      "arm": "paper",
+      "config": "configs/gate-extension/depth-2.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "depth-2--fixed-update",
+      "case": "depth-2",
+      "family": "depth",
+      "arm": "fixed-update",
+      "config": "configs/gate-extension/depth-2.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "depth-2--token-update",
+      "case": "depth-2",
+      "family": "depth",
+      "arm": "token-update",
+      "config": "configs/gate-extension/depth-2.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "depth-3--paper",
+      "case": "depth-3",
+      "family": "depth",
+      "arm": "paper",
+      "config": "configs/gate-extension/depth-3.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "depth-3--fixed-update",
+      "case": "depth-3",
+      "family": "depth",
+      "arm": "fixed-update",
+      "config": "configs/gate-extension/depth-3.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    },
+    {
+      "id": "depth-3--token-update",
+      "case": "depth-3",
+      "family": "depth",
+      "arm": "token-update",
+      "config": "configs/gate-extension/depth-3.json",
+      "runner": "scripts/run_gate_extension.py",
+      "start_step": 0,
+      "steps": 300000
+    }
+  ],
+  "budget": {
+    "new_jobs": 23,
+    "new_scientific_updates": 12300000,
+    "continuation": 2400000,
+    "confirmation": 2700000,
+    "wang": 4500000,
+    "depth": 2700000
+  },
+  "reused_baseline": {
+    "batch": "paper-update-gate-continuation-v1",
+    "arm": "paper",
+    "root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/paper-update-gate-continuation-v1/execution",
+    "state_at_registration": "pending behind token-update on other host; not a completed baseline yet",
+    "steps": 1500000,
+    "new_updates_in_this_batch": 0
+  },
+  "analysis": {
+    "primary_comparisons": [
+      "token-update minus fixed-update",
+      "token-update minus paper"
+    ],
+    "independent_unit": "knowledge graph plus initialization pair; 3 paired worlds in confirmation and depth, 1 observed old world for Wang and continuation",
+    "fixed_update_initial": 0.95,
+    "checkpoints": "fixed endpoints and all predeclared learning nodes; no best checkpoint or test-selected inference round",
+    "cost": [
+      "examples",
+      "effective and executed tokens",
+      "estimated matrix FLOPs excluding pointwise gate operations",
+      "wall time and GPU resources",
+      "parameter counts"
+    ],
+    "missing_or_failed": "retain and report; no replacing unsuccessful seeds",
+    "old_u90_negative_results": "retained separately; not pooled away"
+  }
+}

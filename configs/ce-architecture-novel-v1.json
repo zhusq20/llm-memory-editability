@@ -1,0 +1,301 @@
+{
+  "checkpoint": "/ossfs/workspace/llm-memory-editability/discoloop-success-restore-v1/discoloop/checkpoint-0300000.pt",
+  "checkpoint_sha256": "56d17cedf29db93c713e7ec118b55955118dfd54085aa5240806aee14401f671",
+  "foundation_gate": "/ossfs/workspace/llm-memory-editability/discoloop-success-restore-v1/foundation-gate.json",
+  "data_dir": "/ossfs/workspace/llm-memory-editability/ttcd-successful-base-v1/input-mount/data/ttcd-successful-base-v1",
+  "model_config": "/ossfs/workspace/llm-memory-editability/ttcd-successful-base-v1/input-mount/data/ttcd-successful-base-v1/gpt2-config.json",
+  "panel": "configs/ttcd-novel-fact-transfer-v1-panel.json",
+  "panel_sha256": "f83857137847db46b519c32dc4961f69426f69752c18d7dc78421dc31183256a",
+  "bound_inputs": {
+    "/ossfs/workspace/llm-memory-editability/discoloop-success-restore-v1/discoloop/checkpoint-0300000.pt": "56d17cedf29db93c713e7ec118b55955118dfd54085aa5240806aee14401f671",
+    "/ossfs/workspace/llm-memory-editability/discoloop-success-restore-v1/foundation-gate.json": "7f179f74702511fa6442cc5f6939f188ed8b060d3d2bc7aeb935544b4cfbbc6c",
+    "/ossfs/workspace/llm-memory-editability/ttcd-successful-base-v1/input-mount/data/ttcd-successful-base-v1/world.npz": "e31ec9959ce0a7b25465191a1d9ef8e83ec42163ed967fa56a60605f6ac1c3b4",
+    "/ossfs/workspace/llm-memory-editability/ttcd-successful-base-v1/input-mount/data/ttcd-successful-base-v1/panels.npz": "8655858c0de4646cfb5c7ea1779b5374ef28b492e6ac59bb6eda9e89c7936bf9",
+    "/ossfs/workspace/llm-memory-editability/ttcd-successful-base-v1/input-mount/data/ttcd-successful-base-v1/complete.json": "c60b3c65e6ab889d78b2b0fa6b17cf82ee8739ce14cb2ae18897fe3b10cfda83",
+    "/ossfs/workspace/llm-memory-editability/ttcd-successful-base-v1/input-mount/data/ttcd-successful-base-v1/gpt2-config.json": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/development/protection.pt": "1ead45eddf00f23f638884a6d2e920cc1907be4dc99e00bdb58307b13bfd831f",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/result.json": "3b671a8115765a4a6bedfd7b7141c7f75b6493f80d6f00d16a8856a66bad4a28",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-000.json": "d3e807c2f58a472e809c05e6564d68b114b728df94800a7b006424f5a8843e83",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-001.json": "5dc26356c0aa6507256dd421b2596e471fc1e2523c9575b511af313c7d487ea5",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-002.json": "cb3dda12090c48bb57f818152528e14f76c375fe4685a4c6ac4345b2536301cb",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-003.json": "18d23520824984572cf7e64e684e41c8a1d9b7b5675f075bfedbb98782286b4b",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-004.json": "7cabfda514104b892409f6efa82a6fd278e35ae7dba7b51f4931b8e4332f972e",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-005.json": "c080c19f411669404215dc2610fbf3304c2366c062c7e8d417010f511d89d31e",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-006.json": "dd0878835cd5106dbfe7365b3568dc86fa138b7f8d04e7def766df8044633473",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-007.json": "c2ff489991a0590413ad558632029301eaf2ced684cf6d8a84e13f2f98405960",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-008.json": "33bb2b68bd6145f197554022f7afa5008fb725e4b3c1e8ced20bf69a01a30be2",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-009.json": "b39a99065ca3a4059957909666a960a587c863ee38319cea466be46485ab8e41",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-010.json": "0922cf4e8c83fbe17cab1f96929678ae8d9036784674a7733b6ce9920e9bd6c5",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-011.json": "184e742c4f715622ee782761aedee8753a81b4fb467e49107bb065ac8e3a3d86",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-012.json": "d0e2adb41a8bc4d17a8c3c05b15642ed32f1be8db2eaa489d20a72fb0edbb186",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-013.json": "18a2fff5f7beedb22da5b93c22c920e7e067c0ae887b567bd8d673f170fb3944",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-014.json": "7f2b3d2b8f369b6e8179d50dc07699910e54e4ffdd73952266d15b5428e60c00",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-015.json": "a9bf164e9a307bf4e06c019e3354718f297d4faf40e0729f27c21cc061605800",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-016.json": "113e5e03fc193aec0949a2e9b508acf171d00a0f12c06eafd0defe11eceb911e",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-017.json": "2c46da2a7cb27ff630d8861c39dddf9ba228dbb5ca015f6ac5777ff84bffeded",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-018.json": "ef96ec111a8390727e1ea71c837b4d9b333a7532027d9feb2c17038d92d24c57",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-019.json": "85673fb6820dd9fbafe9015e680009c100f0b4e743771d65532770b012bef36c",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-020.json": "f3e03543ee692990e835e9c83a32317e283879285b6e6ecf30196deb9bc439a8",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-021.json": "fc8cf4db34fb271ede6d06fe5fec4e5a9f12c4a6e4580640c7d5d2e8ba85d519",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-022.json": "ff81103d8f27d53676776a9aa282469c853402b025515438d549f8a8b5d845b3",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-023.json": "93997cbd8fd73bc774505b00cf7561f1f465ded02c0e13180713ddf823561c42",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-024.json": "1fbbd9ce85ff0dc2846e01995ab51b280afd7b1bc91e314b73861fd847e76126",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-025.json": "34bc6c8a6bd51a41e0e0034becf93743c19ce71c04ef3dcaeae521d15d36d950",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-026.json": "fc6bdf12b53e26aec40b5f7493a537d545fe63562c6ab9512052076f2d81222c",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-027.json": "6e23d2cb13088932f014c7f4c41a240e8667a2ac6fbc1932d345aaa64f9b1ada",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-028.json": "91fac82561c2682ddcc9ccd326020a2b63563b35b32ca6ee4efd9d8daeb4ff41",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-029.json": "86e96d48aa8933a7bdb7022a09b3e892f301d9daea24216dbdb157c574426269",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-030.json": "c5004a68ebd402a931e5e836d15e0215f8ebd0bd7d87d88d5ec4adbf91768257",
+    "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation/evaluation-novel-031.json": "de616f959677351e5a651e917c44c2acc5396c1c45069d5ed145adf3e38b6eec",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/audit-mlp/result.json": "7130dea9734586f716b805ecf19ac5fd1319dd3a94aabac95d59b8658778216e",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/cloud/result.json": "0b6f23ed4ea78678447f60a70ce333014864c37f7fd2c7230fe3d110e08cd8eb",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/result.json": "98894cd41feff595dc5ac81ec2fa413cf9f43c67378a9f1fb11ace1c16f2500c",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-000.json": "3f963c4a39bec143b5e532b51dc07b4872479b09dad264821b7593684fd6c04f",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-001.json": "8a87fcdc00b03b9db25508bc13afe864db107df2b8197fc720436e3fff4cd1ee",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-002.json": "4a8fc629af4cfc5a4bc8eb7f01897269c75e2fa743c2a020c950fc753a4a4f9f",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-003.json": "a55c10736f5739282cd9ec62c360cdd215f3eff536e79ae1c304e49e94fb0963",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-004.json": "0c6f61a57af648abc60785776bf494403dc9068c2e4ef3c704e1646f03186b37",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-005.json": "21514f18671e4fe4cd36f94231be1bb41cc916804d805e57afef35c5f7d5e415",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-006.json": "da1d86994e18d20745b50f8428a811694019b082261a2f1b5d06972fe00749ba",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-007.json": "f4df4ebd06377929d03ee3c89d13f3682328170e57a69b4a3c0da891fb8d63d0",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-008.json": "7b39aaea9e1e2fd3b1b3b4b64ade71c3da77fd0d60c4067be71ac6bc92ba1306",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-009.json": "da10505bc836e8e9c0227a7d21a4e70b4c6fb8835a8bfc9a742ae46eda586085",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-010.json": "f30e5df62ee95318e68f55913d6b9df2eb8bbbadf79f8a046196e99915c4e62f",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-011.json": "26ed47cda2af7317fd8e6fc83711121672019905b31f5203e99bc960f1d99b6d",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-012.json": "9b70f2a43b0f36ba632b6f974abf03978c8aeea3f578b6f66ca669906936925b",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-013.json": "be34eeef66c3a7bd6e2c6ae3d4aa3af005273dfebfc570f0f080af2bb68a1db6",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-014.json": "8754d3860760c801d1c173b68fcfa2088a1a68eeba3ed22382f5284dfe16d619",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-015.json": "1fda53bdd11e6a9e94c7a55f328b4fa938a15629d6abe40b8780d4820d06b600",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-016.json": "cdafb736ae7fdb34da419a4461a0173b6c471677eda442241e099baaa99c84b0",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-017.json": "79bd2aedeb0bcece371f33ca871123a76f5199e3cb3dca5b0d2f1232a144d2c0",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-018.json": "ba25633373125182b8b3083c14ec2ef212689130c41176f2197fae880ba24d92",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-019.json": "231436f2bf090b69155e2b6647a13d889770c1a24f168ae380643c4b5d8984ce",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-020.json": "753c8187e51a320624da67dde4d4f9047ee3dd460f16fe7c169d870de04179ec",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-021.json": "ab9a6a281bbc179280a997dc3ec735d39bc7725711c5851868cc8b40f793ab04",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-022.json": "9d9d30f2c1e528cddd210b2549b3b816400078394b5dec5ab01205e9f3e2c57c",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-023.json": "ad88c94ddfe0cfcd74d52b125f9687bd7d18da9dd75c254a2047351f94a5be57",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-024.json": "8e971af95582e6b752a75feaa459a280c7020efd407f81890fe8f52929115449",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-025.json": "f5450d55fa9c34c972943ad9af257089d118be8593e1f35e3a0d6a2897967810",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-026.json": "ae0b11316333664d3238ba92f69ff0a04801831d1750e494a3eae101b2fd7500",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-027.json": "34f80f408b99f343e8a1b3b0dc2b9ffed20d6f55308cf770f876eec26d83710f",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-028.json": "426df85d033d4e966b5e38b313593677fed448f68bb64ab7e40dc6c81e741390",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-029.json": "b8f996a3b6db17c2a483cc481fe45f0a009691a22ed04366441e42a6c946bfef",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-030.json": "24f324502811495ec9d5682709141dc07e0d9fa2dc3bd3011b7f6305493c5f4b",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp/evaluation-novel-031.json": "2748aeec12e8e3fa5712e63d894772196aa6411cfeb63eaaf90bc89dd472d85e",
+    "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/prepare/old-teachers.pt": "4284c6e9d6fc9790d5fe68d0f2c512af261cdb5354ad7e869bdb3cecd481b7ed"
+  },
+  "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+  "seed": 2026101601,
+  "evaluation_batch_size": 64,
+  "protection": {
+    "seed": 2026101602,
+    "atoms": 4096,
+    "chains": 4096,
+    "nullspace_threshold": 0.02,
+    "formal_per_pool": 128,
+    "development_per_pool": 32,
+    "executions": "all valid positions, both rounds, each shared physical layer",
+    "statistic": "mean uncentered second moment, not sum and not 95% energy truncation"
+  },
+  "statistics": {
+    "bootstrap_seed": 2026101603,
+    "bootstrap_draws": 10000,
+    "unit": "new fact; queries and repeated old tests are clustered within fact",
+    "worlds": 1
+  },
+  "tracking": {
+    "entity": "zhusq20",
+    "project": "llm-memory-editability",
+    "mode": "online"
+  },
+  "schema": "ce-architecture-addition-v1",
+  "batch": "ce-architecture-novel-v1",
+  "scope": "User authorized ordinary Loop and independently initialized D8 Transformer, entire MLP atomic CE, paired to completed DiscoLoop; no new foundation or writer training",
+  "parent_source": "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/source-v6",
+  "parent_source_manifest_sha256": "05500761a6059271a79b7b274707e35f465fe4ae4e607f7aa9cef7ddd1051928",
+  "output_root": "/ossfs/workspace/llm-memory-editability/ce-architecture-novel-v1",
+  "alpha_protection": "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/development/protection.pt",
+  "alpha_evaluation": "/ossfs/workspace/llm-memory-editability/alphaedit-discoloop-novel-v1/output/attempt-5/evaluation",
+  "scopes": [
+    "mlp"
+  ],
+  "learning_rates": [
+    5e-06,
+    2e-05,
+    8e-05,
+    0.00032
+  ],
+  "minimum_development_retention": 0.995,
+  "ce": {
+    "steps": 20,
+    "old_per_kind_per_step": 16,
+    "batch_seed": 2026101604,
+    "kl_factor": 10.0,
+    "norm_constraint": 0.0005,
+    "gradient_clip": 1.0
+  },
+  "resource_wait_seconds": 14400,
+  "stage_timeout_seconds": 7200,
+  "interpretation": "One existing graph and initialization per architecture. Match edits, new/old examples, development opportunities; different foundation capabilities, parameters and compute remain. Reuse all DiscoLoop results; independent edits, no cumulative learning.",
+  "discoloop_evaluation": "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/evaluation-mlp",
+  "discoloop_audit": "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/audit-mlp/result.json",
+  "discoloop_cloud": "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/cloud/result.json",
+  "resources": {
+    "cpu_sets": {
+      "loop": "80-83",
+      "transformer": "84-87"
+    },
+    "memory_bytes": 34359738368,
+    "minimum_disk_free_bytes": 12884901888,
+    "torch_allocator_fraction": 0.2,
+    "gpu": "Idle GPU preferred; otherwise bounded sharing only with the three fixed-identity LM audit containers on GPU7, refusing any outside CUDA PID",
+    "registered_lm_peer_gpu": {
+      "index": 7,
+      "uuid": "GPU-462bb54b-05c2-4014-6be9-70d6afec79d0"
+    },
+    "registered_lm_peers": {
+      "ttcd-merge-hops-v1-transformer-audit": "de5787fc1b7ba917e36f18f5287e304b4338780569b2721bcf960b3e50947198",
+      "ttcd-merge-hops-v1-loop-audit": "a03680376575a86c41244077ca08bc214ec23ea77283d4f6bc5bd446d7a524b1",
+      "ttcd-merge-hops-v1-discoloop-audit": "ee4be97b4fc596805942343fd68abb4ce21b7393a34a4b37ace79380e13a1d85"
+    }
+  },
+  "budget": {
+    "new_foundation_updates": 0,
+    "new_writer_updates": 0,
+    "development_updates_per_arm": 640,
+    "formal_updates_per_arm": 640,
+    "scientific_updates_total": 2560,
+    "engineering_updates_per_arm": 2,
+    "audit_updates": 0,
+    "new_composition_supervision": 0
+  },
+  "architectures": {
+    "loop": {
+      "checkpoint": "/ossfs/workspace/llm-memory-editability/ttcd-architecture-comparison-v1/loop/foundation/loop/checkpoint-0300000.pt",
+      "checkpoint_sha256": "1463eb2e167d368204d46e78eab296fc12594fa8d5e1e6a94d389cbe03c32901",
+      "foundation_gate": "/ossfs/workspace/llm-memory-editability/ttcd-architecture-comparison-v1/loop/foundation/identity.json",
+      "expected_parameters": 69431040,
+      "expected_layers": 4,
+      "expected_repeats": 2,
+      "native_metrics": {
+        "atomic_id": {
+          "n": 3000,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_nll": 1.867465107352473e-05,
+          "nll": 1.499325026088627e-05
+        },
+        "atomic_ood": {
+          "n": 2000,
+          "answer_accuracy": 0.9985,
+          "accuracy": 0.9985,
+          "answer_nll": 0.013707648031413555,
+          "nll": 0.006853823084384203
+        },
+        "train_ii": {
+          "n": 3000,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_nll": 0.0010105468099936843,
+          "nll": 0.0005052734049968421
+        },
+        "test_ii": {
+          "n": 3000,
+          "answer_accuracy": 0.994,
+          "accuracy": 0.994,
+          "answer_nll": 0.01797594130039215,
+          "nll": 0.008987970650196075
+        },
+        "test_io": {
+          "n": 3000,
+          "answer_accuracy": 0.43733333333333335,
+          "accuracy": 0.43733333333333335,
+          "answer_nll": 2.5725326538085938,
+          "nll": 1.2862663269042969
+        },
+        "test_oi": {
+          "n": 3000,
+          "answer_accuracy": 0.343,
+          "accuracy": 0.343,
+          "answer_nll": 4.346144199371338,
+          "nll": 2.17307186126709
+        },
+        "test_oo": {
+          "n": 2004,
+          "answer_accuracy": 0.03293413173652695,
+          "accuracy": 0.03293413173652695,
+          "answer_nll": 9.51709270477295,
+          "nll": 4.758546352386475
+        }
+      }
+    },
+    "transformer": {
+      "checkpoint": "/ossfs/workspace/llm-memory-editability/ttcd-architecture-comparison-v1/transformer/foundation/transformer/checkpoint-0300000.pt",
+      "checkpoint_sha256": "afc0d86caf9c5e173d82e5fceee28835585c414e00a65eda4e0fdf9e426ef26d",
+      "foundation_gate": "/ossfs/workspace/llm-memory-editability/ttcd-architecture-comparison-v1/transformer/foundation/identity.json",
+      "expected_parameters": 97782528,
+      "expected_layers": 8,
+      "expected_repeats": 1,
+      "native_metrics": {
+        "atomic_id": {
+          "n": 3000,
+          "answer_accuracy": 0.9996666666666667,
+          "accuracy": 0.9996666666666667,
+          "answer_nll": 0.0008668420487083495,
+          "nll": 0.00043342102435417473
+        },
+        "atomic_ood": {
+          "n": 2000,
+          "answer_accuracy": 1.0,
+          "accuracy": 1.0,
+          "answer_nll": 0.0016890992410480976,
+          "nll": 0.0008445496205240488
+        },
+        "train_ii": {
+          "n": 3000,
+          "answer_accuracy": 0.9993333333333333,
+          "accuracy": 0.9993333333333333,
+          "answer_nll": 0.0015636116731911898,
+          "nll": 0.0007818058365955949
+        },
+        "test_ii": {
+          "n": 3000,
+          "answer_accuracy": 0.8416666666666667,
+          "accuracy": 0.8416666666666667,
+          "answer_nll": 0.6903174519538879,
+          "nll": 0.34515878558158875
+        },
+        "test_io": {
+          "n": 3000,
+          "answer_accuracy": 0.035,
+          "accuracy": 0.035,
+          "answer_nll": 8.711237907409668,
+          "nll": 4.355618953704834
+        },
+        "test_oi": {
+          "n": 3000,
+          "answer_accuracy": 0.04666666666666667,
+          "accuracy": 0.04666666666666667,
+          "answer_nll": 9.363418579101562,
+          "nll": 4.681709289550781
+        },
+        "test_oo": {
+          "n": 2004,
+          "answer_accuracy": 0.001996007984031936,
+          "accuracy": 0.001996007984031936,
+          "answer_nll": 13.21977424621582,
+          "nll": 6.60988712310791
+        }
+      }
+    }
+  },
+  "architecture_input_hashes": {
+    "loop": {
+      "/ossfs/workspace/llm-memory-editability/ttcd-architecture-comparison-v1/loop/foundation/identity.json": "2cd027b2709bf139844827c2388ab2dc254b475e5f71cd97f45a9a1c479f0b9a"
+    },
+    "transformer": {
+      "/ossfs/workspace/llm-memory-editability/ttcd-architecture-comparison-v1/transformer/foundation/identity.json": "6884a08906561b74e4024dc9e3191c7c88e427cc45f01a5bcce0e229326e2406"
+    }
+  },
+  "discoloop_prepare_teachers": "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/prepare/old-teachers.pt"
+}

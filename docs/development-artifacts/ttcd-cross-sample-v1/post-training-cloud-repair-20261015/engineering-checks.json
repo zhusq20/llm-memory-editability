@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "contracts": [
+    "canonical nested arrays compare in full",
+    "HTTP scalar extraction excludes arrays and nulls covered by canonical",
+    "array value, string, and array representation corruption rejected",
+    "audit results before stage exits are insufficient",
+    "all independent audits and successful exits enable read-only verification",
+    "failed original stage blocks verification without a science rerun"
+  ],
+  "validator_sha256": "4716372d92aef455180540732803dc421d3a014ed81a430cecfd0580f271b75c"
+}

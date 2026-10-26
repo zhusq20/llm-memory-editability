@@ -1,0 +1,25 @@
+{
+  "state": "paused_by_user",
+  "effective_utc": "2026-10-24T20:50:45.750413+00:00",
+  "authorization": "2026-10-24 user explicitly pauses all seven unstarted initialization experiments; collect completed results, especially init-1-invariant, before joint analysis.",
+  "paused_jobs": [
+    "init-1-ema",
+    "init-1-loop",
+    "init-1-discoloop",
+    "init-2-invariant",
+    "init-2-ema",
+    "init-2-loop",
+    "init-2-discoloop"
+  ],
+  "steps_per_job": 1500000,
+  "paused_updates": 10500000,
+  "automatic_resume": false,
+  "resume_requires": "new explicit user authorization; resource availability or cloud-audit repair is not authorization",
+  "allowed_work": [
+    "read and archive completed results",
+    "audit completed models without training",
+    "analyze existing results"
+  ],
+  "new_training_updates": 0,
+  "previous_scheduler": "shared-20261023-v3"
+}

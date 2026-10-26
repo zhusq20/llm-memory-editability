@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="993.6pt" height="900pt" viewBox="0 0 993.6 900" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-24T21:07:51.591587</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 900 
+L 993.6 900 
+L 993.6 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 252 172.8 
+Q 396 172.8 537.875735 172.8 
+" clip-path="url(#p455b43bff0)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 531.875735 169.8 
+L 537.875735 172.8 
+L 531.875735 175.8 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 252 209.52 
+Q 396 209.52 537.875735 209.52 
+" clip-path="url(#p455b43bff0)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 531.875735 206.52 
+L 537.875735 209.52 
+L 531.875735 212.52 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 252 246.24 
+Q 396 246.24 537.875735 246.24 
+" clip-path="url(#p455b43bff0)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 531.875735 243.24 
+L 537.875735 246.24 
+L 531.875735 249.24 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 540 369.36 
+Q 561.6 369.36 581.075735 369.36 
+" clip-path="url(#p455b43bff0)" style="fill: none; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 575.075735 366.36 
+L 581.075735 369.36 
+L 575.075735 372.36 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #008577; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 771.12 408.24 
+Q 771.12 421.56 771.12 432.755735 
+" clip-path="url(#p455b43bff0)" style="fill: none; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 774.12 426.755735 
+L 771.12 432.755735 
+L 768.12 426.755735 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #008577; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 583.2 464.4 
+L 561.6 464.4 
+" clip-path="url(#p455b43bff0)" style="fill: none; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 561.6 464.4 
+L 561.6 606.24 
+" clip-path="url(#p455b43bff0)" style="fill: none; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 561.6 606.24 
+L 633.6 606.24 
+" clip-path="url(#p455b43bff0)" style="fill: none; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 633.6 606.24 
+Q 633.6 615.6 633.6 622.835735 
+" clip-path="url(#p455b43bff0)" style="fill: none; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 636.6 616.835735 
+L 633.6 622.835735 
+L 630.6 616.835735 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #008577; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 771.12 588.96 
+Q 771.12 606.96 771.12 622.835735 
+" clip-path="url(#p455b43bff0)" style="fill: none; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 774.12 616.835735 
+L 771.12 622.835735 
+L 768.12 616.835735 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #008577; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 495.36 744.48 
+Q 495.36 757.08 495.36 767.555735 
+" clip-path="url(#p455b43bff0)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 498.36 761.555735 
+L 495.36 767.555735 
+L 492.36 761.555735 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 37.8 106.92 
+L 246.6 106.92 
+Q 253.08 106.92 253.08 113.4 
+L 253.08 257.4 
+Q 253.08 263.88 246.6 263.88 
+L 37.8 263.88 
+Q 31.32 263.88 31.32 257.4 
+L 31.32 113.4 
+Q 31.32 106.92 37.8 106.92 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #eaf4fa; stroke: #0077bb; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 37.8 326.52 
+L 534.6 326.52 
+Q 541.08 326.52 541.08 333 
+L 541.08 583.56 
+Q 541.08 590.04 534.6 590.04 
+L 37.8 590.04 
+Q 31.32 590.04 31.32 583.56 
+L 31.32 333 
+Q 31.32 326.52 37.8 326.52 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #e6f4ef; stroke: #008577; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 588.6 326.52 
+L 953.64 326.52 
+Q 960.12 326.52 960.12 333 
+L 960.12 402.84 
+Q 960.12 409.32 953.64 409.32 
+L 588.6 409.32 
+Q 582.12 409.32 582.12 402.84 
+L 582.12 333 
+Q 582.12 326.52 588.6 326.52 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #e6f4ef; stroke: #008577; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 588.6 433.8 
+L 953.64 433.8 
+Q 960.12 433.8 960.12 440.28 
+L 960.12 487.8 
+Q 960.12 494.28 953.64 494.28 
+L 588.6 494.28 
+Q 582.12 494.28 582.12 487.8 
+L 582.12 440.28 
+Q 582.12 433.8 588.6 433.8 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #e6f4ef; stroke: #008577; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 599.4 518.04 
+L 953.64 518.04 
+Q 960.12 518.04 960.12 524.52 
+L 960.12 583.56 
+Q 960.12 590.04 953.64 590.04 
+L 599.4 590.04 
+Q 592.92 590.04 592.92 583.56 
+L 592.92 524.52 
+Q 592.92 518.04 599.4 518.04 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #fff2e5; stroke: #b86128; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 37.8 623.88 
+L 953.64 623.88 
+Q 960.12 623.88 960.12 630.36 
+L 960.12 739.08 
+Q 960.12 745.56 953.64 745.56 
+L 37.8 745.56 
+Q 31.32 745.56 31.32 739.08 
+L 31.32 630.36 
+Q 31.32 623.88 37.8 623.88 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #f3f6f8; stroke: #627482; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 37.8 768.6 
+L 953.64 768.6 
+Q 960.12 768.6 960.12 775.08 
+L 960.12 816.84 
+Q 960.12 823.32 953.64 823.32 
+L 37.8 823.32 
+Q 31.32 823.32 31.32 816.84 
+L 31.32 775.08 
+Q 31.32 768.6 37.8 768.6 
+z
+" clip-path="url(#p455b43bff0)" style="fill: #eaf4fa; stroke: #0077bb; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #243746; font: 700 28px 'Noto Sans CJK JP'; text-anchor: start" x="32.4" y="41.71" transform="rotate(-0 32.4 41.71)">Invariant Loop｜跨轮状态与权重计算</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #627482; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="32.4" y="76.098437" transform="rotate(-0 32.4 76.098437)">同一个 token 位置贯穿相邻轮次；每一轮都调用同一套参数。</text>
+   </g>
+   <g id="text_3">
+    <!-- 第 $t$ 轮结束 -->
+    <g style="fill: #243746" transform="translate(91.275 137.881172)">
+     <text>
+      <tspan style="font: 700 21px 'Noto Sans CJK JP'" x="0 20.999985 34.00087 38.767868 59.767853 80.767838" y="-0.984375">第  轮结束</tspan>
+      <tspan style="font: oblique 21px 'DejaVu Sans'" x="25.766983" y="-0.984375">t</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_4">
+    <!-- $h_t$ -->
+    <g style="fill: #0077bb" transform="translate(48.96 172.70875)">
+     <text>
+      <tspan style="font: oblique 20px 'DejaVu Sans'" x="0" y="-0.796875">h</tspan>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="12.675781" y="2.484375">t</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_5">
+    <text style="fill: #627482; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="291.6" y="158.898437" transform="rotate(-0 291.6 158.898437)">更新后状态</text>
+   </g>
+   <g id="text_6">
+    <text style="fill: #243746; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="558" y="177.618437" transform="rotate(-0 558 177.618437)">输入 Transformer；参与打分与聚合</text>
+   </g>
+   <g id="text_7">
+    <!-- $N_t,D_t$ -->
+    <g style="fill: #0077bb" transform="translate(48.96 209.42875)">
+     <text>
+      <tspan style="font: oblique 20px 'DejaVu Sans'" x="0 31.250977" y="-0.421875">ND</tspan>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="14.960938 46.651367" y="2.859375">tt</tspan>
+      <tspan style="font: 20px 'DejaVu Sans'" x="20.99707" y="-0.421875">,</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_8">
+    <text style="fill: #627482; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="291.6" y="195.618437" transform="rotate(-0 291.6 195.618437)">加权和、累计权重</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #243746; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="558" y="214.338437" transform="rotate(-0 558 214.338437)">继续更新加权和与累计权重</text>
+   </g>
+   <g id="text_10">
+    <!-- $p_t$ -->
+    <g style="fill: #0077bb" transform="translate(48.96 246.14875)">
+     <text>
+      <tspan style="font: oblique 20px 'DejaVu Sans'" x="0" y="-0.796875">p</tspan>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="12.695312" y="2.484375">t</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_11">
+    <text style="fill: #627482; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="291.6" y="232.338437" transform="rotate(-0 291.6 232.338437)">本轮块输出的预测分布</text>
+   </g>
+   <g id="text_12">
+    <text style="fill: #243746; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="558" y="251.058437" transform="rotate(-0 558 251.058437)">与下一轮预测分布计算内积</text>
+   </g>
+   <g id="text_13">
+    <!-- 第 $t+1$ 轮使用 -->
+    <g style="fill: #243746" transform="translate(642.345 137.881172)">
+     <text>
+      <tspan style="font: 700 21px 'Noto Sans CJK JP'" x="0 20.999985 73.14003 77.907028 98.907013 119.906998" y="-0.984375">第  轮使用</tspan>
+      <tspan style="font: oblique 21px 'DejaVu Sans'" x="25.766983" y="-0.984375">t</tspan>
+      <tspan style="font: 21px 'DejaVu Sans'" x="38.092178 59.77919" y="-0.984375">+1</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_14">
+    <!-- $h_t=N_t/D_t$。代码保留四元组；$p_t$ 来自块输出 $H_t$，不从聚合状态 $h_t$ 重新计算。 -->
+    <g style="fill: #627482" transform="translate(36 295.995937)">
+     <text>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="0 36.773291 60.34834 231.569247 340.106897 480.828705" y="-0.640625">hNDpHh</tspan>
+      <tspan style="font: oblique 11.9px 'DejaVu Sans'" x="10.774414 49.490088 73.438672 242.360263 352.8901 491.603119" y="2.1484375">tttttt</tspan>
+      <tspan style="font: 17px 'DejaVu Sans'" x="19.217139 54.620801" y="-0.640625">=/</tspan>
+      <tspan style="font: 17px 'Noto Sans CJK JP'" x="78.569385 95.56937 112.569354 129.569339 146.569324 163.569308 180.569293 197.569278 214.569263 247.490976 251.298975 268.298959 285.298944 302.298929 319.298914 336.298898 358.020813 375.020798 392.020782 409.020767 426.020752 443.020737 460.020721 477.020706 496.733832 500.54183 517.541815 534.5418 551.541785 568.541769" y="-0.640625">。代码保留四元组； 来自块输出 ，不从聚合状态  重新计算。</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_15">
+    <text style="fill: #008577; font: 700 21px 'Noto Sans CJK JP'; text-anchor: start" x="52.56" y="359.641172" transform="rotate(-0 52.56 359.641172)">本轮打分只读取五个统计量</text>
+   </g>
+   <g id="text_16">
+    <text style="fill: #243746; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="52.56" y="399.378438" transform="rotate(-0 52.56 399.378438)">预测熵</text>
+   </g>
+   <g id="text_17">
+    <!-- $-\sum_v p_t(v)\log p_t(v)\,/\,\log |V|$ -->
+    <g style="fill: #243746" transform="translate(288 396.005)">
+     <text>
+      <tspan style="font: 17px 'DejaVu Sans'" x="0 45.587744 62.280615 68.912939 73.636084 84.036963 113.509772 130.202643 139.595032 148.082636 152.805781 163.20666 173.997675 191.354609" y="-0.703125">−()log()/log||</tspan>
+      <tspan style="font: 17px 'DejaVu Sans Display'" x="14.244141" y="-0.703125">∑</tspan>
+      <tspan style="font: oblique 11.9px 'DejaVu Sans'" x="19.244141 40.457031 108.379059" y="13.6015625 2.0859375 2.0859375">vtt</tspan>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="29.666016 52.220068 97.588043 120.142096 179.725214" y="-0.703125">pvpvV</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_18">
+    <text style="fill: #243746; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="52.56" y="436.098438" transform="rotate(-0 52.56 436.098438)">最大预测概率</text>
+   </g>
+   <g id="text_19">
+    <!-- $\max_v\ p_t(v)$ -->
+    <g style="fill: #243746" transform="translate(288 432.725)">
+     <text>
+      <tspan style="font: 17px 'DejaVu Sans'" x="0 16.560059 26.977539 61.239844 77.932715" y="-0.09375">max()</tspan>
+      <tspan style="font: oblique 11.9px 'DejaVu Sans'" x="15 53.349066" y="9.8359375 2.6953125">vt</tspan>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="42.55805 67.872168" y="-0.09375">pv</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_20">
+    <text style="fill: #243746; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="52.56" y="472.818438" transform="rotate(-0 52.56 472.818438)">与上一轮的分布内积</text>
+   </g>
+   <g id="text_21">
+    <!-- $p_t^\top p_{t-1}$ -->
+    <g style="fill: #243746" transform="translate(288 473.1)">
+     <text>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="0 27.048561" y="-0.15781249999999858">pp</tspan>
+      <tspan style="font: 11.9px 'DejaVu Sans'" x="13.899294 44.823854 57.113161" y="-6.665625 2.6312500000000014 2.6312500000000014">⊤−1</tspan>
+      <tspan style="font: oblique 11.9px 'DejaVu Sans'" x="10.791016 37.839577" y="4.490625000000001 2.6312500000000014">tt</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_22">
+    <text style="fill: #243746; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="52.56" y="509.538438" transform="rotate(-0 52.56 509.538438)">候选相对旧状态的变化</text>
+   </g>
+   <g id="text_23">
+    <!-- $\|c_t-h_{t-1}\|\,/\,(\|h_{t-1}\|+\epsilon)$ -->
+    <g style="fill: #243746" transform="translate(288 509.3525)">
+     <text>
+      <tspan style="font: 17px 'DejaVu Sans'" x="0 26.289404 81.929541 93.189606 101.67721 108.309534 154.893519 166.70553 193.450648" y="-0.015625">‖−‖/(‖‖+)</tspan>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="8.5 43.845557 116.809534 184.261683" y="-0.015625">chhε</tspan>
+      <tspan style="font: oblique 11.9px 'DejaVu Sans'" x="17.84668 54.619971 127.583948" y="2.7734375">ttt</tspan>
+      <tspan style="font: 11.9px 'DejaVu Sans'" x="61.604248 73.893555 134.568226 146.857532" y="2.7734375">−1−1</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_24">
+    <text style="fill: #243746; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="52.56" y="546.258438" transform="rotate(-0 52.56 546.258438)">候选与旧状态的余弦</text>
+   </g>
+   <g id="text_25">
+    <!-- $\cos(c_t,h_{t-1})$ -->
+    <g style="fill: #243746" transform="translate(288 546.258438)">
+     <text>
+      <tspan style="font: 17px 'DejaVu Sans'" x="0 9.34668 19.747559 28.604492 49.714209 96.514014" y="-0.078125">cos(,)</tspan>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="35.236816 58.430029" y="-0.078125">ch</tspan>
+      <tspan style="font: oblique 11.9px 'DejaVu Sans'" x="44.583496 69.204443" y="2.7109375">tt</tspan>
+      <tspan style="font: 11.9px 'DejaVu Sans'" x="76.188721 88.478027" y="2.7109375">−1</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_26">
+    <text style="fill: #243746; font: 19px 'Noto Sans CJK JP'" transform="translate(714.12 360.54325)">共享打分网络</text>
+    <!-- $s_t=\mathrm{MLP}_{5\to16\to1}(\phi_t)$  ·  GELU -->
+    <g style="fill: #243746" transform="translate(644.2 386.067375)">
+     <text>
+      <tspan style="font: oblique 19px 'DejaVu Sans'" x="0 152.006494" y="-0.5625">sϕ</tspan>
+      <tspan style="font: oblique 13.3px 'DejaVu Sans'" x="9.898926 164.540186" y="2.5546875">tt</tspan>
+      <tspan style="font: 19px 'DejaVu Sans'" x="19.334912 38.956494 55.349561 65.93501 144.593896 170.274512" y="-0.5625">=MLP()</tspan>
+      <tspan style="font: 13.3px 'DejaVu Sans'" x="77.574365 88.627393 102.3625 110.824365 121.877393 135.6125" y="2.5546875">5→16→1</tspan>
+      <tspan style="font: 19px 'Noto Sans CJK JP'" x="177.687109 181.943106 186.199103 196.858099 201.114096 205.370093 218.461081 229.652075 239.969061" y="-0.5625">  ·  GELU</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_27">
+    <!-- 本轮权重  $w_t=\exp(\mathrm{clip}(s_t,-8,8))$ -->
+    <g style="fill: #243746" transform="translate(624.51 469.456875)">
+     <text>
+      <tspan style="font: 18px 'Noto Sans CJK JP'" x="0 18 36 54 72 76.031998" y="-0.84375">本轮权重  </tspan>
+      <tspan style="font: oblique 18px 'DejaVu Sans'" x="80.063995 200.835382" y="-0.84375">ws</tspan>
+      <tspan style="font: oblique 12.6px 'DejaVu Sans'" x="94.785675 210.213312" y="2.109375">tt</tspan>
+      <tspan style="font: 18px 'DejaVu Sans'" x="103.725031 122.313898 133.388116 144.04046 155.466241 162.488702 172.385187 177.386163 182.38714 193.812921 215.645831 228.381183 246.97005 258.422198 267.650714 279.102863 286.125323" y="-0.84375">=exp(clip(,−8,8))</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_28">
+    <text style="fill: #243746; font: 17px 'Noto Sans CJK JP'" transform="translate(674.52 547.02325)">另一个共享参数：历史衰减</text>
+    <!-- $\beta=\sigma(b)$，可学习标量，初值 0.55 -->
+    <g style="fill: #243746" transform="translate(648.255 570.693625)">
+     <text>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="0 31.717285 49.124023" y="-0.640625">βσb</tspan>
+      <tspan style="font: 17px 'DejaVu Sans'" x="14.161133 42.491699 59.915039" y="-0.640625">=()</tspan>
+      <tspan style="font: 17px 'Noto Sans CJK JP'" x="66.547363 83.547348 100.547333 117.547318 134.547302 151.547287 168.547272 185.547256 202.547241 219.547226 223.355225 232.790207 237.516205 246.951187" y="-0.640625">，可学习标量，初值 0.55</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_29">
+    <text style="fill: #243746; font: 700 20px 'Noto Sans CJK JP'; text-anchor: start" x="54" y="654.549688" transform="rotate(-0 54 654.549688)">代码中的状态更新</text>
+   </g>
+   <g id="text_30">
+    <!-- $N_t=\beta N_{t-1}+w_t c_t$ -->
+    <g style="fill: #243746" transform="translate(100.595 702.759063)">
+     <text>
+      <tspan style="font: oblique 23px 'DejaVu Sans'" x="0 52.380029 67.058252 149.444971 175.197559" y="-0.375">NβNwc</tspan>
+      <tspan style="font: oblique 16.1px 'DejaVu Sans'" x="17.205078 84.26333 168.256006 187.843066" y="3.3984375">tttt</tspan>
+      <tspan style="font: 23px 'DejaVu Sans'" x="28.627588 125.692529" y="-0.375">=+</tspan>
+      <tspan style="font: 16.1px 'DejaVu Sans'" x="93.712646 110.339355" y="3.3984375">−1</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_31">
+    <!-- $D_t=\beta D_{t-1}+w_t$ -->
+    <g style="fill: #243746" transform="translate(424.435 702.759063)">
+     <text>
+      <tspan style="font: oblique 23px 'DejaVu Sans'" x="0 52.8854 67.563623 150.455713" y="-0.375">DβDw</tspan>
+      <tspan style="font: oblique 16.1px 'DejaVu Sans'" x="17.710449 85.274072 169.266748" y="3.3984375">ttt</tspan>
+      <tspan style="font: 23px 'DejaVu Sans'" x="29.132959 126.703271" y="-0.375">=+</tspan>
+      <tspan style="font: 16.1px 'DejaVu Sans'" x="94.723389 111.350098" y="3.3984375">−1</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_32">
+    <!-- $h_t=N_t/D_t$ -->
+    <g style="fill: #243746" transform="translate(753.155 702.759063)">
+     <text>
+      <tspan style="font: oblique 23px 'DejaVu Sans'" x="0 49.7521 81.647754" y="-0.53125">hND</tspan>
+      <tspan style="font: oblique 16.1px 'DejaVu Sans'" x="14.577148 66.957178 99.358203" y="3.2421875">ttt</tspan>
+      <tspan style="font: 23px 'DejaVu Sans'" x="25.999658 73.89873" y="-0.53125">=/</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_33">
+    <!-- 保存 $(h_t,N_t,D_t,p_t)$  →  下一轮；终轮仅从 $h_R$ 读出答案 -->
+    <g style="fill: #243746" transform="translate(243.405 802.384688)">
+     <text>
+      <tspan style="font: 21px 'Noto Sans CJK JP'" x="0 20.999985 41.999969 179.260312 183.964307 188.668301 209.668286 214.372281 219.076276 240.07626 261.076245 282.07623 303.076215 324.076199 345.076184 366.076169 387.076154 415.877853 420.581848 441.581833 462.581818 483.581802" y="-0.046875">保存   →  下一轮；终轮仅从  读出答案</tspan>
+      <tspan style="font: 21px 'DejaVu Sans'" x="46.703964 74.544345 107.35787 140.632822 171.067441" y="-0.046875">(,,,)</tspan>
+      <tspan style="font: oblique 21px 'DejaVu Sans'" x="54.896835 85.310947 118.124472 151.399423 391.780148" y="-0.046875">hNDph</tspan>
+      <tspan style="font: oblique 14.7px 'DejaVu Sans'" x="68.206406 101.019931 134.294882 164.729501 405.089719" y="3.3984375">ttttR</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_34">
+    <!-- 初始化：$h_0=N_0=e,\ D_0=1,\ p_0=\mathrm{softmax}(E\,\mathrm{LN}_f(e))$；首轮块输入为 $2e$。 -->
+    <g style="fill: #627482" transform="translate(36 859.755937)">
+     <text>
+      <tspan style="font: 17px 'Noto Sans CJK JP'" x="0 16.999985 33.999969 50.999954 427.176349 444.176333 461.176318 478.176303 495.176288 512.176272 529.176257 546.176242 571.259143" y="-0.65625">初始化：；首轮块输入为 。</tspan>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="67.999939 107.678503 149.299451 173.99422 241.040405 356.314184 403.452716 560.800158" y="-0.65625">hNeDpEee</tspan>
+      <tspan style="font: 11.9px 'DejaVu Sans'" x="78.774353 120.3953 187.084552 251.83142" y="2.1328125">0000</tspan>
+      <tspan style="font: 17px 'DejaVu Sans'" x="90.122351 131.743298 159.758435 198.43255 215.988702 226.80462 263.179418 280.735571 289.592504 299.993383 305.978247 312.643774 329.203832 339.621313 349.68186 369.81546 379.286651 396.820392 413.9117 420.544024 549.98424" y="-0.65625">==,=1,=softmax(LN())2</tspan>
+      <tspan style="font: oblique 11.9px 'DejaVu Sans'" x="392.166144" y="2.1328125">f</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_35">
+    <text style="fill: #627482; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="36" y="886.818437" transform="rotate(-0 36 886.818437)">统计量与聚合逐 token 计算；跨 token 的信息交换由共享 Transformer 的因果注意力完成。</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p455b43bff0">
+   <rect x="0" y="0" width="993.6" height="900"/>
+  </clipPath>
+ </defs>
+</svg>

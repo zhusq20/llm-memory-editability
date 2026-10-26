@@ -1,0 +1,133 @@
+{
+  "schema": "ce-cross-sample-double-new-design-v1",
+  "batch": "ce-cross-sample-double-new-v1",
+  "status": "design_only_not_submitted",
+  "authorization": "design and graph-only preparation; no model training or evaluation started",
+  "architectures": {
+    "transformer": {
+      "checkpoint": "/ossfs/workspace/llm-memory-editability/ttcd-architecture-comparison-v1/transformer/foundation/transformer/checkpoint-0300000.pt",
+      "checkpoint_sha256": "afc0d86caf9c5e173d82e5fceee28835585c414e00a65eda4e0fdf9e426ef26d",
+      "foundation_gate": "/ossfs/workspace/llm-memory-editability/ttcd-architecture-comparison-v1/transformer/foundation/identity.json",
+      "physical_layers": 8,
+      "repeats": 1,
+      "learning_rate": 5e-06,
+      "editable_parameters": 37779456,
+      "old_teacher_file": "/ossfs/workspace/llm-memory-editability/ce-architecture-novel-v1/transformer/output/prepare/old-teachers.pt",
+      "old_teacher_sha256": "357b42a1e925b3cd6036a7db66a7471a81e3ca41bf5fe610f27d8529fa56ba77",
+      "reused_A_only_manifest": "panel.json#/reused_A_only_states/transformer",
+      "historical_retention_selection_passed": false
+    },
+    "loop": {
+      "checkpoint": "/ossfs/workspace/llm-memory-editability/ttcd-architecture-comparison-v1/loop/foundation/loop/checkpoint-0300000.pt",
+      "checkpoint_sha256": "1463eb2e167d368204d46e78eab296fc12594fa8d5e1e6a94d389cbe03c32901",
+      "foundation_gate": "/ossfs/workspace/llm-memory-editability/ttcd-architecture-comparison-v1/loop/foundation/identity.json",
+      "physical_layers": 4,
+      "repeats": 2,
+      "learning_rate": 0.00032,
+      "editable_parameters": 18889728,
+      "old_teacher_file": "/ossfs/workspace/llm-memory-editability/ce-architecture-novel-v1/loop/output/prepare/old-teachers.pt",
+      "old_teacher_sha256": "bc731e61fa2c02dbb2faf1e5861b13db3b1cf679f5ebfca75677c1aa0e919f02",
+      "reused_A_only_manifest": "panel.json#/reused_A_only_states/loop",
+      "historical_retention_selection_passed": false
+    },
+    "discoloop": {
+      "checkpoint": "/ossfs/workspace/llm-memory-editability/discoloop-success-restore-v1/discoloop/checkpoint-0300000.pt",
+      "checkpoint_sha256": "56d17cedf29db93c713e7ec118b55955118dfd54085aa5240806aee14401f671",
+      "foundation_gate": "/ossfs/workspace/llm-memory-editability/discoloop-success-restore-v1/foundation-gate.json",
+      "physical_layers": 4,
+      "repeats": 2,
+      "learning_rate": 8e-05,
+      "editable_parameters": 18889728,
+      "old_teacher_file": "/ossfs/workspace/llm-memory-editability/ce-scope-discoloop-novel-v1/output/attempt-6/prepare/old-teachers.pt",
+      "old_teacher_sha256": "4284c6e9d6fc9790d5fe68d0f2c512af261cdb5354ad7e869bdb3cecd481b7ed",
+      "reused_A_only_manifest": "panel.json#/reused_A_only_states/discoloop",
+      "historical_retention_selection_passed": true
+    }
+  },
+  "panel": "docs/development-artifacts/ce-cross-sample-double-new-v1/panel.json",
+  "panel_sha256": "be836b200d5587f3c726cc04fe86797da0a7e97509629393be9716dead8fdda8",
+  "scope": "all unique physical MLP up/down weights and biases; all other model parameters frozen",
+  "adaptation": {
+    "steps_per_fact": 20,
+    "optimizer": "Adam",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0,
+    "gradient_clip": 1.0,
+    "kl_factor": 10.0,
+    "optimizer_reset": "before every fact; parameters persist within a stream",
+    "parameter_constraint": {
+      "maximum_absolute_element_change": 0.0005,
+      "anchor": "immutable native300k theta0, throughout every stream and isolated pair"
+    },
+    "new_target": "one tail token from the currently supplied symbolic fact; no EOS or intermediate-state loss",
+    "old_protection": "same original 20 teacher batches, 16 old atoms + 16 old trained chains per step, recycled per fact",
+    "new_fact_replay": false,
+    "new_composition_supervision": 0,
+    "dtype": "float32",
+    "model_mode": "eval",
+    "dropout": 0.0,
+    "tf32": false
+  },
+  "main_streams": [
+    "forward",
+    "reverse"
+  ],
+  "facts_per_stream": 64,
+  "intervening_facts_per_pair": 31,
+  "isolated_references": [
+    "theta0",
+    "A_only_reused",
+    "B_only",
+    "A_then_B",
+    "B_then_A"
+  ],
+  "evaluation": {
+    "read_after_each_fact": true,
+    "reset_context_and_KV_per_query": true,
+    "updates_during_queries": 0,
+    "primary": "mean final double-new accuracy over 32 pairs and both orders, answer plus EOS",
+    "all_prefix_queries": "all 64 atomic facts; all 32 double-new queries; 512 mixed queries; seven fixed old pools of 128 each",
+    "composition_active_only_after_both_facts_supplied": true,
+    "bootstrap_unit": "32 fact pairs, averaging the two orders within each pair",
+    "bootstrap_repetitions": 10000,
+    "bootstrap_seed": 2026101611,
+    "generalization_scope": "one observed graph, one existing initialization per architecture; development evidence"
+  },
+  "budget": {
+    "new_foundation_updates": 0,
+    "new_writer_outer_updates": 0,
+    "new_hyperparameter_selection_updates": 0,
+    "main_updates_per_architecture": 2560,
+    "isolated_reference_updates_per_architecture": 1920,
+    "new_scientific_updates_per_architecture": 4480,
+    "new_scientific_updates_total": 13440,
+    "additional_updates_for_reused_A_only": 0,
+    "independent_readout_audit_updates": 0,
+    "new_target_tokens_total": 13440,
+    "old_protection_examples_total": 430080,
+    "new_saved_mlp_states_per_architecture_upper_bound": 224,
+    "saved_mlp_tensor_bytes_total_upper_bound": 67700785152,
+    "engineering_updates": "not run; any future engineering updates counted separately and restored"
+  },
+  "execution": {
+    "implemented_runner": false,
+    "submitted": false,
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "persistent_root": "/ossfs/workspace/llm-memory-editability/ce-cross-sample-double-new-v1",
+    "resources": "check actual LM Docker/GPU/CPU and locks immediately before submission; at most one container per architecture, no preemption",
+    "minimum_free_persistent_bytes": 85899345920,
+    "timeout_seconds_per_architecture": 43200,
+    "failure_policy": "preserve failures; no automatic repeat of scientific writes",
+    "tracking": {
+      "enabled": true,
+      "entity": "zhusq20",
+      "project": "llm-memory-editability",
+      "mode": "online"
+    }
+  }
+}

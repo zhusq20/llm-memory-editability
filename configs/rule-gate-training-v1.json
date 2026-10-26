@@ -1,0 +1,174 @@
+{
+ "data": {
+  "world_seed": 2026101601,
+  "entities_per_graph": 500,
+  "relations": 10,
+  "train_compositions_per_hop": 10000,
+  "evaluation_templates": 10,
+  "training_panel_size": 1000
+ },
+ "model": {
+  "n_embd": 768,
+  "n_head": 12,
+  "n_positions": 1024,
+  "n_ctx": 1024,
+  "activation_function": "gelu_new",
+  "attn_pdrop": 0.1,
+  "embd_pdrop": 0.1,
+  "resid_pdrop": 0.1,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05
+ },
+ "training": {
+  "initialization": 2026101602,
+  "stream_seed": 2026101603,
+  "weight_decay": 0.1,
+  "lr": 0.0001,
+  "warmup": 2000,
+  "batch_size": 512,
+  "steps": 1500000
+ },
+ "dropout_seed": 2026101604,
+ "evaluation_batch_size": 256,
+ "heartbeat_steps": 1000,
+ "input_origin": {
+  "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+  "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+  "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+  "reuse": "Exact existing 40000-example world and 43000-query panels; do not merge with the 25000-example variant"
+ },
+ "input_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+ "evaluation_nodes": [
+  0,
+  1000,
+  8000,
+  16000,
+  32000,
+  64000,
+  128000,
+  256000,
+  300000,
+  400000,
+  500000,
+  600000,
+  700000,
+  800000,
+  900000,
+  1000000,
+  1100000,
+  1200000,
+  1300000,
+  1400000,
+  1500000
+ ],
+ "runtime": {
+  "docker_context": "lm-memory",
+  "image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2",
+  "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+  "cpu_threads": 2,
+  "memory_gib": 16,
+  "tracking": "online",
+  "gpu_memory_fraction": 0.16,
+  "stage_timeout_hours": 168,
+  "poll_seconds": 20
+ },
+ "paired_recipe": {
+  "config": "configs/paper-update-gate-multihop-u95-v1.json",
+  "sha256": "971ac4204002f1cfa85f2206b5b89d14717c32b3d351aaf3fe550c2cb2862628",
+  "initial_backbone_sha256": "39a487823c05311a223db99c3d0e2df3e7a1752498e261337f4298abe0cfa7b0",
+  "unchanged_source_sha256": {
+   "scripts/run_loop_hop.py": "89ace5fde790a000c3b9b9e8aaad0c43a2cadc5f1daf22e05a41f8dab5913946",
+   "scripts/run_loop_hop_depth.py": "2dd47dce0ce0a78c8d08885f2b167c8e3e96f3e42775cc433835207dc5211e59",
+   "scripts/run_supervised_alignment.py": "7ad4ab4eb8b2c7706aece7ff36a8d5121c034d261483ebea96074ea7e5f73271",
+   "scripts/run_dual_gate.py": "86c17bdae4419246ea5acc683fefa17e1d602c51e85c8b50328ab98ccab4e5fb",
+   "src/llm_memory_editability/supervised_alignment.py": "9c84f60e536d5bd39919a2b3037b7ecc416dc5fc2a9f2da16ae3c5855524ec74",
+   "src/llm_memory_editability/self_decode_alignment.py": "1bfd5c15da162ea032caa0579eae6b06b7316e497b3e7ccd747c3252212138a3",
+   "src/llm_memory_editability/grokking_reproduction.py": "7e3a89d96f6fef7bd4665ac46dd1acb6e7cb461c6878647ecc7c6f425ac31117",
+   "src/llm_memory_editability/loop_hop_data.py": "940efb287f125d1f4b14bc71e72a967d9fd2685723bf41f6e93b632532d64dd6",
+   "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+   "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+   "src/llm_memory_editability/experiment_tracking.py": "2afe9e767123bee16cf56f59c6c2953a100338ecf1f971945c4968a064551866",
+   "src/llm_memory_editability/residual_gate_injection.py": "58caa21c8988cbdd4a920d50b52909e0d7750614044b43dcb4a12cab2cd94003",
+   "scripts/run_residual_gate_injection.py": "1cbc41fba897291859210f92412bd73409a2423626e4efb525082def6ed26096"
+  }
+ },
+ "batch": "rule-gate-training-v1",
+ "authorization": "2026-10-19 user explicitly authorized training the two parameter-free decode-rule gate arms (stability, readiness) from scratch, 1500000 steps each, on the existing data with the unchanged ordinary training; existing raw DiscoLoop and fixed-q-plus-u runs are reused as comparators.",
+ "arms": {
+  "stability-u": {
+   "architecture": "discoloop",
+   "unique_layers": 1,
+   "repeats": 4,
+   "injection": "fixed1",
+   "gate_rule": "stability",
+   "tau": 0.1
+  },
+  "readiness-u": {
+   "architecture": "discoloop",
+   "unique_layers": 1,
+   "repeats": 4,
+   "injection": "fixed1",
+   "gate_rule": "readiness",
+   "tau": 0.1
+  }
+ },
+ "gate_scope": "rule_gate_nonfinal_all_tokens_no_gradient",
+ "gate_definition": {
+  "handoff": "X + u(H)(H-X) + q(H) at nonfinal rounds, q = unchanged DiscoLoop decoded feedback at strength one; final round reads raw H",
+  "stability": "u_t(r) = sum_v p_r(t,v) p_{r-1}(t,v); p_r = softmax(E LN_f(H_r)) at token t; p_0 = one-hot input token",
+  "readiness": "c_t(r) = 1 if token t attends to no earlier position with head-mean round-r attention >= tau, else s_t(r) * min over those sources of c_j(r-1); c(0)=1; u=c; attention recomputed in float32 from the shared block Q/K on the round input",
+  "gradient": "gate signals computed under no_grad; no gate parameters; the backbone is unchanged",
+  "source": "src/llm_memory_editability/rule_gate.py; matches the zero-training pre-checks results/loop-decode-stability-gate-test-20261019 and results/loop-readiness-gate-test-20261019"
+ },
+ "primary": "After 1500000 steps, compare graph-B three-hop full-vocabulary answer accuracy at R8 from a post-training R1-16 replay (frozen diagnostic code, zero training) for stability-u and readiness-u versus reused fixed-q-plus-u (learned u) and raw DiscoLoop (no u). R8 is primary because R4 can include the one-round transient documented in the report. Also report R4 from the native grid, graph-A held-out 3/4-hop, graph-B 2/4-hop, atomic retention, all 11 panels, full learning curves and answer+EOS; do not select a best checkpoint or inference horizon.",
+ "reading": {
+  "workable": "A rule gate is a workable entity-agnostic replacement if graph-A held-out 2-4 hop at R8 stay within 2 percentage points of fixed-q-plus-u and graph-B two/three-hop at R8 are not below fixed-q-plus-u.",
+  "readiness_needed": "If stability-u loses graph-A deep hops while readiness-u keeps them, the progress signal is necessary when trained from scratch.",
+  "neither": "If both lose graph-A deep hops or graph-B composition, these entity-agnostic signals are insufficient under this recipe; this does not exclude other progress signals."
+ },
+ "budget": {
+  "new_scientific_arms": 2,
+  "new_scientific_updates": 3000000,
+  "final_steps_per_arm": 1500000,
+  "engineering_smoke_updates": 0,
+  "engineering_restored_preflight_updates": 2,
+  "new_world_updates": 0
+ },
+ "execution_policy": {
+  "pretraining_smoke": false,
+  "pretraining_reload": false,
+  "posttraining_independent_audit": false,
+  "endpoint_inference_grid": true,
+  "posttraining_r1_16_replay": true,
+  "cloud_audit": false,
+  "reason": "Follow the previous gate ablation: CPU contracts and one discarded CUDA graph engineering update per arm precede train then grid. W&B learning-curve tracking online. The R1-16 replay after training is zero-training diagnosis with the frozen replay code."
+ },
+ "reused_comparators": {
+  "raw-discoloop": {
+   "run": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/ungated-loop-continuation-v1/runs/disco-l1-r4",
+   "artifacts_sha256": {
+    "run.json": "205f4766bd3cb52d094f37b9aa8c746334b2b81625738154ea03e21d7de24de4",
+    "complete.json": "82dda3bc37376ef096de43cdc46f4f495c0290f5099281c5b395233c58e00cc1",
+    "learning.json": "f67654f7c6bd0f6db524a554977ad9013f7babad0702c8a4f25a6385f9250471",
+    "grid.json": "e3029a45c0d84dcc86d66220810f8b81ed365ba3d958b306d3c26d3c1bf660b3"
+   }
+  },
+  "fixed-q-plus-u": {
+   "run": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/residual-gate-injection-ablation-v1/attempts/input-manifest-repair-v2/execution/runs/fixed-q-plus-u",
+   "artifacts_sha256": {
+    "run.json": "2de0ece5bc5b2ea22cbef67dda6a9fab7f52304aa6edae21facb7a846ab4a449",
+    "complete.json": "b4264009881cad1528cb17b632f53ec1f7755087397b3ab8404f97d137979920",
+    "learning.json": "de1677e10c6c70859c1ee73f66fc736c8196522ca306ea253388f437c482aa72",
+    "grid.json": "32e38eac6b28ece7c2286ea41fd628556adfd82cd6402ecbc1b085ccd1f00f25"
+   }
+  }
+ },
+ "limits": [
+  "One previously observed development world and initialization; within-task architecture comparison, not evidence of natural-language generality.",
+  "Both new arms start from the same initial backbone as fixed-q-plus-u (no gate parameters). With near-uniform early decodes the stability value is about 1/vocab, so early training passes mostly decoded feedback; this is a property of the rule, not tuned.",
+  "The rule is detached: the model cannot directly optimize the gate signal, only adapt its decodes and attention through the forward effects.",
+  "Comparators were trained earlier on other hosts/runs; matching recipe and exposure does not imply bitwise runtime equivalence.",
+  "Rule computation adds forward-only matrix work (an extra vocabulary decode per boundary; readiness also Q/K/V and QK^T). Report wall time and FLOP estimates separately.",
+  "No learned controller, intermediate loss, curriculum, randomized depth, early exit, seed sweep or new-world training."
+ ]
+}

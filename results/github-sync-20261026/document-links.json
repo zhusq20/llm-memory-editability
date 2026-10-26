@@ -1,0 +1,30 @@
+{
+  "scope": [
+    "README.md",
+    "AGENTS.md",
+    "CONTRIBUTING.md",
+    "docs/roadmap.md",
+    "docs/loop-roadmap.md",
+    "docs/results.md",
+    "docs/loop-history.md"
+  ],
+  "checked_local_links": 512,
+  "missing_local_files": [
+    {
+      "source": "AGENTS.md",
+      "target": "results/history-design-review-20261007/user-reviews.json"
+    },
+    {
+      "source": "AGENTS.md",
+      "target": "docs/development-artifacts/memory-interface-next-v1/container/runtime.json"
+    },
+    {
+      "source": "AGENTS.md",
+      "target": "docs/development-artifacts/memory-interface-next-v1/container/archive-manifest.json"
+    }
+  ],
+  "note": "External archive links and historical snapshots are not proof of live runtime state.",
+  "expected_new_files": [
+    "docs/github-snapshot-20261026.json"
+  ]
+}

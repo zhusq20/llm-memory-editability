@@ -1,0 +1,65 @@
+{
+  "batch": "ttcd-second-hop-development-v1",
+  "authorization": "2026-10-15 user requested code preparation targeting GPUs 8/9; formal launch not performed by code preparation",
+  "phase": "development on one already observed Wang world; not independent-world confirmation",
+  "seed": 20261015,
+  "phi": 7.2,
+  "data_dir": "data/ttcd-second-hop-assets/results/grokking-reproduction-v1/data",
+  "model_config": "data/ttcd-second-hop-assets/results/grokking-reproduction-v1/reference/gpt2/config.json",
+  "models": {
+    "discoloop": {
+      "checkpoint": "checkpoints/ttcd-second-hop/discoloop/checkpoint-0300000.pt",
+      "step": 300000,
+      "discoloop": true
+    },
+    "loop": {
+      "checkpoint": "checkpoints/ttcd-second-hop/loop/checkpoint-0300000.pt",
+      "step": 300000,
+      "discoloop": false
+    }
+  },
+  "methods": ["ttcd", "atomic_ce", "sham"],
+  "cases": {
+    "seed": 20261015,
+    "calibration_cases": 8,
+    "evaluation_cases": 16,
+    "affected": 8,
+    "controls": 16
+  },
+  "reading_gate": {
+    "minimum_cases_per_group": 8,
+    "minimum_accuracy": 0.6,
+    "selection": "Long-window atomic answer accuracy only. No edited two-hop result selects settings or cases. Gate is an initial development choice, not a paper requirement."
+  },
+  "writer": {
+    "teacher_window": 32,
+    "student_window": 16,
+    "gap": 17,
+    "steps": 4,
+    "learning_rate": 0.0001,
+    "variant": "TTCD equation (6), GPT GELU, local shared QKV/residual, first round only, all physical MLP down matrices; no learned conv/projection; not original IP-TTCD-v9 reproduction"
+  },
+  "atomic_ce": {"steps": 20, "learning_rate": 0.0001},
+  "runtime": {
+    "gpus": {"discoloop": 8, "loop": 9},
+    "cpu_threads": 4,
+    "memory_gib": 48,
+    "gpu_memory_max_mib": 1024,
+    "gpu_utilization_max": 5,
+    "tracking": "online",
+    "python": "/mnt/disk2_from_server2/siqizhu4/llm-memory/.venv/bin/python",
+    "execution": "Independent containers using explicit docker --context lm-memory; new CUDA 12.8 image required on Blackwell; missing context is a preflight failure, no default Docker/D157 fallback",
+    "timeout_hours": 12
+  },
+  "scope": [
+    "Reuse existing audited parent; no replacement pretraining or automatic reader adaptation",
+    "Fixed random case bank includes failures; edited facts disjoint between calibration and evaluation",
+    "All D compositions excluded from original phi training support and never used in writes",
+    "Keep only fast-weight correction between independent queries; no text, KV, residual or query carryover",
+    "Evaluate answer and generated EOS jointly; full-case results primary; conditional coverage secondary",
+    "All cases share one previously observed graph; repeated queries are not independent worlds",
+    "TTCD and atomic CE have different exposure and compute; equal efficiency is not claimed",
+    "Long teacher and isolated short-window readouts differ from the local shared-residual write views",
+    "Session fast-weight updates are not permanent backbone edits"
+  ]
+}

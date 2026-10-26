@@ -1,0 +1,120 @@
+2026-10-24最新覆盖：七条初始化训练已由用户明确暂缓，恢复须新的明确授权。
+先读 ../loop-queue-target-20261021/RUNNING.txt 和其runtime/training-hold.json。
+源init-1-invariant及new-world-ema已收集150万步终点、曲线与预测，后续缺口分开记录；不重新训练。
+以下为10-21迁移历史，不能作为当前启动或排队指令。
+
+Loop 实验迁移交接（2026-10-21）
+
+执行状态
+2026-10-21 18:06:50 CDT，源机器 sn4622128200 的两个自动控制器
+3310766 / 3423943 已退出。取消本机尚未开始的 15 条训练和 3 项旧模型评测。
+两个正在训练的 Docker 容器保持原 ID、进程和启动时间，未中断：
+  init-1-invariant（新初始化 1 的完整方法）
+  new-world-ema（新置换世界的常数打分对照）
+这两条结束后的 grid / depth / cloud 未自动接续，需要另行接续；不能重新训练。
+源机器其他项目和任务未改变。本交接尚未在目标机器启动任何任务。
+用户已确认目标为三张 GPU 并行，每张卡运行一个独立实验。
+
+方法含义
+invariant：软解码再编码反馈 + 每轮重新注入输入 + 历史衰减聚合，
+再用预测分布的熵/最大概率/前后分布一致度/状态相对变化/余弦五个量动态打分。
+ema：保留上述聚合结构，打分恒为零，只学习统一的衰减系数。
+所以 invariant 是包含 EMA 式聚合的完整组合方法，ema 是去掉动态打分的对照。
+普通 loop：重复同一个 Transformer 块，直接传递隐藏状态。
+基础 discoloop：每轮加入软解码再编码反馈，alpha=1、temperature=1，无学习 gate。
+所有版本评测时还使用“参数 EMA”；这是模型权重滑动平均，与轮间聚合不同。
+
+15 条待训练任务（每条 1,500,000 更新，共 22,500,000；短训另计）
+原世界原初始化：original-loop。
+原世界新初始化 1：init-1-ema、init-1-loop、init-1-discoloop。
+原世界新初始化 2：init-2-invariant、init-2-ema、init-2-loop、init-2-discoloop。
+新置换世界：new-world-invariant、new-world-loop、new-world-discoloop。
+多对一世界：many-to-one-invariant、many-to-one-ema、many-to-one-loop、many-to-one-discoloop。
+前两组新初始化检验重复性；新置换世界检验换同类型知识图后的效果；多对一
+世界检验对一一对应关系结构的依赖。四种架构在相同条件下作比较。
+tasks.json 给出每个 job 的批次、arm、冻结配置、配置哈希、初始化及数据路径。
+
+优先顺序（三张卡，每张只跑一个独立任务；非三卡分布式训练）
+第一组：new-world-invariant / init-1-ema / original-loop。
+第二组：init-2-invariant / init-2-ema / init-1-loop。
+第三组：many-to-one-invariant / many-to-one-ema / init-1-discoloop。
+第四组：new-world-loop / new-world-discoloop / many-to-one-loop。
+第五组：init-2-loop / init-2-discoloop / many-to-one-discoloop。
+卡空闲即可取下一任务，不要求各组同时完成。先核对目标三张 GPU 的实际
+编号、占用、型号、显存和可用 CPU。
+
+固定科学配方
+单个共享 Transformer 块，宽度 768、12 头；batch 512；150 万更新。
+AdamW，学习率 1e-4，warmup 2000，最终学习率比例 0.1，weight decay 0.1，
+betas=(0.9,0.95)，grad clip 1；参数 EMA decay 0.999。
+每个 batch 两段答案/EOS 监督，首段均匀抽取 4–6 轮，后段 1–4 轮；段间
+截断梯度。不提供桥实体、跳数、图身份或中间推理标签。
+原初始化 2026101602，新初始化 1/2 为 2026102111/2026102112。
+保持冻结的样本流、dropout、轮数抽样、数据真值、划分与评分。
+主要终点是固定 150 万步、参数 EMA、R8 的 B 图两/三/四跳准确率；完整
+11 池、原始权重和全部预定学习曲线均保留，不以最好检查点替代终点。
+
+每条新训练的执行阶段
+smoke -> smoke-grid -> train -> grid -> depth -> cloud。
+前两阶段是独立的 32 步工程短训与新进程重载，不接着短训权重正式训练。
+grid 是正式终点原始权重/参数 EMA 的 R1–32 全池独立重载。
+depth 是全池 R1–256、每池固定最多 1024 题到 R1024、固定最多 256 题到 R16384。
+cloud 是 W&B 终点步数、配置与完成状态的独立核验。
+深度扩展统计修正旧错误和丢失旧正确，不能把仅保持答案不变称为提升。
+新机器先检查真实 CUDA 前向/反向与同步，短训重载、骨干初值哈希及旧模型
+R4/R8 全池重放；新硬件若不能逐 token 一致，保留差异并解释环境修订，
+不要自行放宽门槛后冒称一致。材料的字节校验不等于目标机器运行验证。
+
+3 项无需训练的旧模型深度评测
+old-content：旧 content 模型参数 EMA，三档深度。
+old-recipe-additive：旧基础 DiscoLoop 当前配方参数 EMA，三档深度。
+old-invariant-raw：旧 invariant 原始权重，仅全池 R1–256。
+旧 invariant 参数 EMA 与旧 ema 参数 EMA 的三档深度已完成，直接复用，
+不能因旧控制器里 old-ema 曾是 pending 而重复跑。
+旧固定四轮/raw 的 DiscoLoop 与当前配方/参数 EMA 分开报告，保留旧较强结果。
+
+压缩包与原路径映射
+loop-queue-transfer.tar.gz 内 persistent/ 代表原持久根目录：
+/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability
+包含两批冻结源码（含 invariant source-v3 依赖的原 source）、三个数据集、
+上述三个旧模型的 150 万步终点及完整 grid、已完成的旧深度摘要与重放证明、
+原 freeze/修订文件、停止记录、逐文件 SHA256 和 tasks.json。
+符号链接已展开成真实文件。没有改动科学源码或原配置。
+在容器里把解压后的 persistent/ 只读挂载到上述原绝对路径，即可保留全部
+数据及继承依赖路径，不需要改写科学配置。每个任务另挂独立可写输出到 /output。
+
+完整方法/ema 的 project 源码：
+  persistent/loop-invariant-robustness-v1/source-v3
+  LOOP_PARENT_SOURCE 设为容器内原绝对根下 loop-invariant-robustness-v1/source。
+普通 Loop/基础 DiscoLoop 的 project 源码：
+  persistent/loop-baseline-robustness-v1/source
+各自只读挂到 /project，工作目录 /project；PYTHONPATH=/project/src:/project/scripts。
+单阶段入口（在独立的、GPU 与输出目录均已设置好的容器内）：
+  python -u scripts/run_loop_robustness.py STAGE --plan configs/BATCH.json --job JOB --base /output
+STAGE/BATCH/JOB 按 tasks.json 选择；独立进程或容器执行各阶段，保存日志和退出码。
+不要直接重新运行旧 launch_loop_robustness.py：它仍含原机器 GPU/CPU 候选，
+并且线程池硬编码为四个 worker，只改 maximum_parallel 不会变成三卡调度。
+不要从包里的完整原计划自动入队所有 job；只执行 tasks.json 白名单。
+
+容器环境
+显式使用目标机器配置好的 LM Docker context，不套用其他项目环境。
+原镜像 ID：sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2。
+PyTorch 2.8.0+cu128，Transformers 4.57.3；压缩包不包含 Docker 镜像。
+目标机器没有镜像时，从源机器 docker --context lm-memory image save 导出，
+目标 LM context image load 导入并核对 ID；这不需要重建旧实验容器。
+原任务每进程 2 CPU 线程、16 GiB 主存；旧 CPU 编号不能照搬。
+配置把单进程 GPU 显存限制为整卡的 16%，原机器卡约 96 GB。目标卡若显存
+较小，需要单独记录仅资源限制的迁移修订并重新做全尺寸短训，不能直接
+以16%乘小卡显存推断能运行，也不能通过悄悄缩 batch/模型改变科学比较。
+
+W&B
+团队 zsqzz，项目 llm-memory-editability，正式训练启动时同步在线记录。
+凭据由新机器的凭据文件安全注入 WANDB_API_KEY，禁止写入仓库、命令输出或此包。
+保留批次/配置与任务身份，避免重复创建同一正式训练记录。
+不包含 Docker 镜像或凭据；目标机器资源、环境预检与正式执行尚未进行。
+
+源机器两个在训任务的后续
+它们继续保存训练日志、检查点和 W&B 曲线。等各自训练完成且容器退出码为 0，
+从源机器持久目录 attempt-3/cases/JOB/runs/ARM 读取 complete.json、tracking.json
+及终点。使用原 source-v3 接续 grid/depth/cloud；也可转移终点后在目标机器执行。
+本次停止记录保留原 controller-process.json，原入口不会被当成新批次重新提交。

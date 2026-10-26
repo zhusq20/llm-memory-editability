@@ -1,0 +1,21 @@
+Completed: loop-state-regression-diagnosis-20261022, zero training.
+Main diagnosis container lsrd-1022-diagnosis-v2 exited0: 40 groups / 200000 query-conditions.
+Interface follow-up lsrd-1022-interfaces exited0: 29 groups / 145000 query-conditions.
+Both original parameters and four checkpoint hashes unchanged; validation.json passed.
+All outputs copied to science/ and interfaces/. Report: checkpoint-regression-report.pdf.
+Frozen scripts/protocols: control/. CPU contracts8 and Ruff passed.
+
+Original training container ID67231823dd66885cbada6c41d5fbc59f3aecdbb5955f156636343fe4463d7a5f,
+PID1537704, started2026-10-22T14:09:29.265301335Z; do not restart.
+Diagnostics shared only its existing GPU0 with 6% memory limit, batch256, 2x yielding.
+No queues changed and no extra GPU card used; shared intervals are not efficiency benchmarks.
+
+Initial private NFS bind failure occurred before creation; host permissions unchanged.
+Attempt1/batch64 failed exact saved-prediction replay. Independently isolated batch-shape
+bf16 differences in numerical-replay/: original batch256 matches all saved answers exactly;
+small-batch accuracy differences .04–.12pp cannot explain the main regression.
+Failure containers/artifacts retained. Do not restart completed diagnostics.
+
+Automatic approval rejected extracting W&B credentials from the training container and
+online sync. No credentials were read/copied. All scientific containers used network none,
+W&B offline. Cloud independent verification is not complete; no workaround sync is allowed.

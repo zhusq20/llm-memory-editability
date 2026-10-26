@@ -1,0 +1,33 @@
+ABC各自从150步接续至全局1500000步；首轮e，固定R8。
+核验时间 2026-10-25T22:22:16.662115+00:00
+科学预算新增4499550更新；三组源150步状态保留。
+A末轮CE完整反传；B末轮CE只反传后4轮；C 0.9末轮CE+0.1随机K=1..7同目标CE完整反传。
+原batch512、AdamW、初始化、样本流/计数、dropout RNG、EMA、2000 warmup和1500000余弦时间轴不变。
+
+持久区 /ossfs/workspace/llm-memory-editability/loop-abc-continuation-1500k-v1
+控制器PID 731951；读取runtime/controller-state.json核对实时状态，不重复启动launch.py/recover.py。
+现有其他10个LM容器均保持原Pid/StartedAt；七条暂缓初始化训练没有启动。
+A GPU6；B GPU7；C GPU8；每容器2CPU/16GiB，显存cap0.16，冻结源码root所有0444/0555。
+
+重要科学修订：B原150步的no_grad/autocast缓存使10个参数无梯度；旧判断撤回、原证据保留。
+从151统一cache_enabled=False，真实GPU 21参数梯度与重放一致通过；未回填B缺失的Adam历史。
+A/C第151步Adam21状态均151；B为11状态151、10状态1。该前缀不作为正确B配方验证证据。
+接续工程修复：首轮恢复遗漏EMA转CUDA，各组第151步在optimizer.step后EMA处失败，未保存新权重。
+全部失败容器/日志/源码在failed-attempts/attempt-1保留；共3次丢弃优化器更新与3次额外F/B重放计工程成本。
+修复后CPU17项通过（CUDA项在CPU跳过），真实CUDA EMA恢复项1项通过；第151步重放额外3次F/B不增加优化器更新。
+
+每10步保存训练曲线；所有原150步progress/learning和逐步method-steps保留。
+完整CPU状态每10000更新或1800秒后台32MiB/s原子保存：runs/<arm>/recovery/latest.pt；previous.pt作后备。
+预定节点评测全43000题raw/EMA R4/R8/R16，永久checkpoint与预测留存。
+终点由独立进程grid评R1..32，再云端核验；三组全部exit0后控制器自动输出comparison/*.csv和PNG/PDF报告。
+控制器只监控与汇总，不自动重试训练；故障时保留其他任务，先读pipeline/<arm>/state.json与日志。
+恢复不能直接再次运行旧启动器。先核对latest/previous完整状态、source/config/hash、当前GPU实际资源与源码版本。
+比较按同步数和累计训练时间；训练/评测/保存/恢复验证及失败重算分列。共享GPU耗时不等于独占效率，B旧FLOPs仅全反传上界。
+自然文本有效性尚未验证。
+
+最后本地快照 2026-10-25T22:26:13.570416+00:00；三组均完成1000步全43000题raw/EMA R4/R8/R16评测，仍在训练。
+A: sampled_global_step=2050, url=https://wandb.ai/zsqzz/llm-memory-editability/runs/lnha76e1c00
+B: sampled_global_step=2650, url=https://wandb.ai/zsqzz/llm-memory-editability/runs/lnha76e1c01
+C: sampled_global_step=1580, url=https://wandb.ai/zsqzz/llm-memory-editability/runs/lnha76e1c02
+当前comparison/是运行中快照；持久区在三组终点核验通过后自动刷新最终比较。本地曲线为最后复制时快照，实时查看W&B和持久区。
+分析器修订见runtime/analysis-amendment.json：单列失败墙钟、区分训练与评测步数；冻结训练源码和配置未改。

@@ -1,0 +1,19 @@
+% Requires graphicx; paths are relative to a document in paper/.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.92\textwidth]{figures/invariant-loop-v12/invariant-loop-vertical.pdf}
+  \caption{Invariant Loop. Each column is one token position; both Transformer
+  calls share parameters. One token is highlighted for detail; the same update
+  applies at all positions. Soft vocabulary feedback $f_t$ forms a candidate between
+  successive calls. The MLP input is five statistics of the candidate, previous
+  state, and current and previous predictions. Its dashed $\gamma_t$ control
+  arrow enters the highlighted token's aggregate. MLP-based weighting combines the candidate with its
+  previous state, producing the input to the next loop. Each displayed token has
+  its own direct carry channel, entering the matching aggregate from the right.
+  Token ports belong to one joint Transformer layer. After input reinjection and
+  LayerNorm, $\mathrm{LN}_1(h_t+e)$ supplies the common input to the next-loop
+  Q, K, and V projections. The compact MLP-to-$\gamma_t$ arrow includes scalar
+  score processing and historical-mass normalization, specified in the text
+  together with feedback/candidate RMS and auxiliary recurrent variables.}
+  \label{fig:invariant-loop-vertical}
+\end{figure*}

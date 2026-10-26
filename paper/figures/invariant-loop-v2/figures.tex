@@ -1,0 +1,21 @@
+% Requires graphicx; paths are relative to a document in paper/.
+% Keep these as two independent figures.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/invariant-loop-v2/01-architecture.pdf}
+  \caption{Invariant Loop architecture. Each round applies a shared causal
+  Transformer to the previous aggregate plus the input embedding. Soft vocabulary
+  feedback forms a normalized candidate. Five scalar statistics determine its
+  weight relative to the accumulated history. The final readout uses the aggregate.}
+  \label{fig:invariant-loop-architecture}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/invariant-loop-v2/02-state-handoff.pdf}
+  \caption{Cross-round state and weighting in Invariant Loop. The implementation
+  carries the aggregate, weighted numerator, normalization mass, and the previous
+  block-output probability distribution. A shared five-input MLP supplies the
+  candidate score; a separately learned scalar controls historical decay.}
+  \label{fig:invariant-loop-state-handoff}
+\end{figure*}

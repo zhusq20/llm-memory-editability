@@ -1,0 +1,131 @@
+{
+  "batch": "loop-hop-unified-v1",
+  "authorization": "2026-10-16 user authorized eight Loop/DiscoLoop L1R2/L1R3/L1R4/L2R2 runs and inferenceR1-4 by hop1-4; then specified cuda9 and required consolidating only this multi-hop comparison before unified execution.",
+  "input_root": "/inputs",
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 300000
+  },
+  "dropout_seed": 2026101604,
+  "arms": {
+    "loop-l1-r2": {
+      "architecture": "loop",
+      "unique_layers": 1,
+      "repeats": 2
+    },
+    "disco-l1-r2": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 2
+    },
+    "loop-l1-r3": {
+      "architecture": "loop",
+      "unique_layers": 1,
+      "repeats": 3
+    },
+    "disco-l1-r3": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 3
+    },
+    "loop-l1-r4": {
+      "architecture": "loop",
+      "unique_layers": 1,
+      "repeats": 4
+    },
+    "disco-l1-r4": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4
+    },
+    "loop-l2-r2": {
+      "architecture": "loop",
+      "unique_layers": 2,
+      "repeats": 2
+    },
+    "disco-l2-r2": {
+      "architecture": "discoloop",
+      "unique_layers": 2,
+      "repeats": 2
+    }
+  },
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000
+  ],
+  "heartbeat_steps": 1000,
+  "evaluation_batch_size": 256,
+  "smoke_steps": 32,
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "gpu_candidates": [
+      9
+    ],
+    "maximum_parallel": 8,
+    "cpu_threads": 2,
+    "cpu_first": 64,
+    "memory_gib": 16,
+    "poll_seconds": 15,
+    "stage_timeout_hours": 24,
+    "waiting_timeout_hours": 168,
+    "minimum_free_gpu_mib": 16000,
+    "maximum_idle_gpu_used_mib": 512,
+    "tracking": "online",
+    "gpu_memory_fraction": 0.08,
+    "same_batch_gpu_sharing": true
+  },
+  "primary": "Fixed300k endpoint, full-vocabulary answer accuracy in graphB atomic-only compositions, separately for hops2/3/4 and inference loops1/2/3/4. Also all atomic/ID/training panels, generated EOS, same-budget and common-budget premise subsets and nonrepeated-entity subsets. All predictions retained.",
+  "limits": [
+    "One development world and initialization; no new-world confirmation claim",
+    "Controlled permutation extension; not original DiscoLoop reproduction or original Wang graph",
+    "Fresh training is required because data, architecture and objective do not match old endpoints",
+    "Fixed exposure does not match FLOPs or physical parameters; both are reported",
+    "Training includes all lengths1-4; this is not unseen-length extrapolation",
+    "No history-state, timestep, first-round KV, auxiliary loss, bridge supervision or later architectural grid",
+    "Only same-batch bounded sharing on physical cuda9; no foreign-task sharing, stopping other tasks, automatic retries or extensions"
+  ],
+  "input_origin": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+    "reuse": "Exact existing 40000-example world and 43000-query panels; do not merge with the 25000-example variant"
+  },
+  "supersedes": [
+    "loop-hop-development-v1",
+    "loop-hop-depth-development-v1"
+  ]
+}

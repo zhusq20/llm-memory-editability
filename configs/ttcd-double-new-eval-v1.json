@@ -1,0 +1,38 @@
+{
+  "batch": "ttcd-double-new-eval-v1",
+  "parent_batch": "ttcd-successful-base-v1",
+  "authorization": "User requested composing two newly written facts and checking earlier-fact and old-knowledge retention after continual writes.",
+  "pair_seed": 20261015,
+  "pairs_per_type": 4,
+  "rotations": 32,
+  "primary_t": 32,
+  "runtime": {
+    "docker_context": "lm-memory",
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "cpu_sets": {
+      "single": [32, 33, 34, 35],
+      "stream": [36, 37, 38, 39]
+    },
+    "cpu_threads": 4,
+    "memory_gib": 96,
+    "gpu_memory_max_mib": 1024,
+    "gpu_utilization_max": 5,
+    "timeout_hours": 24,
+    "wait_timeout_hours": 24,
+    "minimum_persistent_free_gib": 200
+  },
+  "scope": [
+    "No training or optimizer updates; original parent training and evaluation remain frozen",
+    "Reuse all 32 correction-heldout evaluation keys; pair into 16 directed chains, II/IO/OI/OO four each",
+    "First new tail becomes second head; second retains its original fixed replacement tail",
+    "Require a legal original query outside native II support and a changed final answer",
+    "Pure graph matching, no checkpoint predictions or correctness filtering",
+    "Both arms write the same 32 facts in the same 32 cyclic orders and only carry fast A across queries",
+    "Baseline, one-fact omission and isolated two-fact writes in both orders are reported",
+    "Primary is all 16 new-new chains after 32 writes; all intermediate times and conditional coverage are retained",
+    "Earlier-fact retention is measured against immediate write success; chain retention against completion success",
+    "Old knowledge includes unedited atoms and chains, full accuracy and baseline-correct retention",
+    "This is supplementary to, not a replacement for, original second-hop and repeated-correction panels"
+  ]
+}

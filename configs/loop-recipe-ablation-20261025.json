@@ -1,0 +1,202 @@
+{
+  "batch": "loop-recipe-ablation-20261025",
+  "status": "authorized_for_256000_updates_per_arm",
+  "authorization": "2026-10-25: user authorized four new groups at 256000 updates each, retaining the 1500000-step learning-rate schedule; resource checks first, never interrupt existing six or resume seven held initialization jobs.",
+  "question": "Separate segment supervision, carry-gradient truncation, their interaction, and shallow endpoint sampling while preserving the current Invariant forward recipe.",
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "schedule_seed": 2026102001,
+    "unique_layers": 1,
+    "evaluation_repeats": 8,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "final_lr_fraction": 0.1,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "grad_clip": 1.0,
+    "ema_decay": 0.999,
+    "batch_size": 512,
+    "steps": 256000,
+    "objective": "terminal_token_mean",
+    "backpropagation": "arm_specific_carry_truncation",
+    "execution": "masked_batch",
+    "depth_sampling": {
+      "distribution": "poisson",
+      "mean": 8.0,
+      "minimum": 1,
+      "maximum": 16,
+      "scope": "sequence",
+      "truncation": "reject"
+    },
+    "lr_schedule_steps": 1500000,
+    "split_sampler": {
+      "algorithm": "numpy.Philox(seed=split_seed,counter=optimizer_step)",
+      "seed": 2026102501,
+      "values": [
+        4,
+        5,
+        6
+      ],
+      "scope": "batch"
+    }
+  },
+  "handoff": {
+    "initial_beta": 0.55,
+    "score_hidden": 16,
+    "score_clip": 8.0,
+    "score_seed": 2026102002,
+    "first_round_input": "embedding"
+  },
+  "dropout_seed": 2026101604,
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000
+  ],
+  "evaluation_rounds": [
+    4,
+    8,
+    16
+  ],
+  "grid_rounds": 32,
+  "grid_joint_rounds": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "evaluation_batch_size": 256,
+  "heartbeat_steps": 100,
+  "smoke_steps": 200,
+  "input_origin": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+    "reuse": "Exact existing 40000-example world and 43000-query panels used by every DiscoLoop/gate multi-hop arm"
+  },
+  "input_root": "/input",
+  "paired_recipe": {
+    "initial_backbone_sha256": "39a487823c05311a223db99c3d0e2df3e7a1752498e261337f4298abe0cfa7b0",
+    "note": "Every arm's backbone at step 0 must equal the reused ungated DiscoLoop's step-0 model; handoff parameters are created without consuming the global RNG."
+  },
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:b7933a57d6a4702700b6b2578fe0cc697f91b2080ef5e18d8fb916443281eacd",
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "cpu_threads": 2,
+    "memory_gib": 16,
+    "gpu_memory_fraction": 0.16,
+    "minimum_free_gpu_mib": 18000,
+    "maximum_idle_gpu_used_mib": 512
+  },
+  "tracking": {
+    "provider": "wandb",
+    "entity": "zsqzz",
+    "project": "llm-memory-editability",
+    "mode": "online"
+  },
+  "arms": {
+    "supervision": {
+      "handoff": "invariant",
+      "supervision": true,
+      "truncate": false,
+      "floor_depth": 1
+    },
+    "truncate": {
+      "handoff": "invariant",
+      "supervision": false,
+      "truncate": true,
+      "floor_depth": 1
+    },
+    "supervision-truncate": {
+      "handoff": "invariant",
+      "supervision": true,
+      "truncate": true,
+      "floor_depth": 1
+    },
+    "floor4": {
+      "handoff": "invariant",
+      "supervision": false,
+      "truncate": false,
+      "floor_depth": 4
+    }
+  },
+  "primary": "At fixed 256000 updates: EMA R8 A-held-out4 and B4 together, with atoms/training composition and B2/B3; full curves and EMA R4/R16 preserved. No claim of eventual failure from early null.",
+  "budget": {
+    "new_scientific_updates_authorized": 1024000,
+    "per_arm_updates": 256000,
+    "arms": 4,
+    "lr_schedule_steps": 1500000,
+    "restarts_of_held_initialization_jobs": 0
+  },
+  "loss": {
+    "normalization": "mean over all valid target tokens; for T>K with supervision, weights 0.5 at K and 0.5 at T; otherwise weight 1 at T",
+    "ignore_index": -100,
+    "supervision": "arm-specific final answer/EOS only; no intermediate entity labels",
+    "execution": "masked whole batch, original e retained; detach h/N/D/p only for T>K in truncate arms; one backward/clip/update",
+    "current_data": "one answer token and one EOS token; masked padding ignored"
+  },
+  "architecture_scope": {
+    "common": "Existing embedding-first Invariant; exact full model initial hash preserved; first F(e), later F(h+e), one embedding dropout draw per trajectory. Only training interventions differ."
+  },
+  "source_references": [
+    {
+      "name": "DiscoLoop symbolic task and equations4-6",
+      "url": "https://arxiv.org/html/2607.00341v2",
+      "implementation_status": "Paper recurrence reproduced on common backbone; no author repository identified in paper or public repository search"
+    },
+    {
+      "name": "InfiLoop released implementation",
+      "url": "https://github.com/pixeli99/InfiLoop/blob/63716a9c46723d3592c8ad4fc5819855f22aaa47/sudoku/model.py",
+      "commit": "63716a9c46723d3592c8ad4fc5819855f22aaa47",
+      "adaptation": "Preserve fixed random initial-state rule, raw candidate, Connection score/start/forward; one stream on causal GPT backbone as confirmed by user"
+    }
+  ],
+  "reused_baseline": {
+    "batch": "loop-fourway-terminal-20261024",
+    "arm": "invariant",
+    "run_id": "lnhf7a03700",
+    "root": "/ossfs/workspace/llm-memory-editability/loop-fourway-terminal-20261024/runs/invariant",
+    "reuse": "Only matching-step results, no baseline retraining"
+  },
+  "checkpoint_recovery": {
+    "depth_rng": "latest.pt schedule_rng",
+    "boundary_rng": "Stateless Philox: reconstruct from frozen split_sampler seed and saved optimizer step. First resumed update uses saved step + 1.",
+    "state": "latest.pt contains parameters, optimizer, EMA, stream, counts, depth RNG, CPU/CUDA RNG; immutable config contains LR horizon and split sampler"
+  },
+  "cost_accounting": {
+    "estimated_matmul_training_flops": "Full-backprop matrix-shape upper bound, including inactive masked rows; truncation may avoid earlier backward and is not claimed as exact FLOPs. Supervision adds one full-batch target-position readout when T>K exists.",
+    "floor4": "Same original Poisson draw then max(T,4); expected valid depth 7.9664437637 to 8.0248272758; no equal-compute claim.",
+    "supervised_tokens": "Unique valid target exposures counted once per update; split loss evaluates some targets twice with weight one-half each."
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "kind": "file-level snapshots; not an atomic checkpoint or live Docker verification",
+  "files": [
+    {
+      "path": "results/github-sync-20261026/runtime-snapshots/loop-queue-target-20261021__runtime/controller-process.json",
+      "source": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-queue-target-20261021/controller-process.json",
+      "source_link": "results/loop-queue-target-20261021/runtime",
+      "bytes": 219,
+      "sha256": "d9f23dd1068474f88bebfc742151032711b2751470c953a9926b15955d0efe91",
+      "copied_at_utc": "2026-10-26T20:57:57.942943+00:00"
+    },
+    {
+      "path": "results/github-sync-20261026/runtime-snapshots/loop-queue-target-20261021__runtime/training-hold.json",
+      "source": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-queue-target-20261021/training-hold.json",
+      "source_link": "results/loop-queue-target-20261021/runtime",
+      "bytes": 868,
+      "sha256": "d5e39e23c3346bf2c44d2a24362eb3d19bb8fd75a8d2698d0a68cc3cc40eb8af",
+      "copied_at_utc": "2026-10-26T20:57:58.623225+00:00"
+    },
+    {
+      "path": "results/github-sync-20261026/runtime-snapshots/loop-queue-target-20261021__runtime/schedule-amendment.json",
+      "source": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-queue-target-20261021/schedule-amendment.json",
+      "source_link": "results/loop-queue-target-20261021/runtime",
+      "bytes": 504,
+      "sha256": "72c1d3182f6c40b14f7cc768fb1e48957167d3e8d572e547d5a19ef15524a2c9",
+      "copied_at_utc": "2026-10-26T20:57:59.472890+00:00"
+    },
+    {
+      "path": "results/github-sync-20261026/runtime-snapshots/loop-queue-target-20261021__runtime/controller-state.json",
+      "source": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-queue-target-20261021/controller-state.json",
+      "source_link": "results/loop-queue-target-20261021/runtime",
+      "bytes": 3779,
+      "sha256": "4b601b027e4fbb32fd377a4ab147b31f0c719bd1dd16777d8c9564337cf0478d",
+      "copied_at_utc": "2026-10-26T20:57:59.739239+00:00"
+    },
+    {
+      "path": "results/github-sync-20261026/runtime-snapshots/knowledge-use-coverage-20261025__runtime/controller-process.json",
+      "source": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1/controller-process.json",
+      "source_link": "results/knowledge-use-coverage-20261025/runtime",
+      "bytes": 268,
+      "sha256": "c8de3df19c1a9a9b063f33759754c05ed590642cf790517a241ad2691add2acc",
+      "copied_at_utc": "2026-10-26T20:59:25.077974+00:00"
+    },
+    {
+      "path": "results/github-sync-20261026/runtime-snapshots/knowledge-use-coverage-20261025__runtime/budget-selection.json",
+      "source": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1/budget-selection.json",
+      "source_link": "results/knowledge-use-coverage-20261025/runtime",
+      "bytes": 1017,
+      "sha256": "86747a03c1b9e064a35648b0dc19ce015ecdac07ebb37bc39152884d383e4c61",
+      "copied_at_utc": "2026-10-26T20:59:25.613133+00:00"
+    },
+    {
+      "path": "results/github-sync-20261026/runtime-snapshots/knowledge-use-coverage-20261025__runtime/schedule-amendment.json",
+      "source": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1/schedule-amendment.json",
+      "source_link": "results/knowledge-use-coverage-20261025/runtime",
+      "bytes": 1130,
+      "sha256": "f0e3b6ca605330ceb833fc87c6322c95bea2d0b3f1a32297fbc47446d22ff13a",
+      "copied_at_utc": "2026-10-26T20:59:27.303087+00:00"
+    },
+    {
+      "path": "results/github-sync-20261026/runtime-snapshots/knowledge-use-coverage-20261025__runtime/controller-state.json",
+      "source": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1/controller-state.json",
+      "source_link": "results/knowledge-use-coverage-20261025/runtime",
+      "bytes": 43893,
+      "sha256": "39e9497ac670cf55d0f211963913e99dad5a70f40377e038b3601354c126ae15",
+      "copied_at_utc": "2026-10-26T20:59:27.626501+00:00"
+    }
+  ],
+  "skipped": [],
+  "symlink_inventory": [
+    {
+      "path": "results/loop-queue-target-20261021/runtime",
+      "target": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-queue-target-20261021",
+      "directory": true
+    },
+    {
+      "path": "results/knowledge-use-coverage-20261025/runtime",
+      "target": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1",
+      "directory": true
+    }
+  ],
+  "selection_note": "Only compact top-level controller, scheduling, hold and budget records for the two projects; bulk runtime data and curves remain local."
+}

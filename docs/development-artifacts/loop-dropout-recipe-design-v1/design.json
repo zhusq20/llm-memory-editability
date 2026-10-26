@@ -1,0 +1,139 @@
+{
+  "id": "loop-dropout-recipe-design-v1",
+  "title": "先核对无dropout的循环训练配方",
+  "status": "proposal_only_not_implemented_not_queued",
+  "material_passport": {
+    "Origin Skill": "academic-research-suite:experiment-agent",
+    "Origin Mode": "plan",
+    "Origin Date": "2026-10-22",
+    "Verification Status": "UNVERIFIED method effect; recipe/source comparison only",
+    "Version Label": "code_plan_v1"
+  },
+  "authorization": {
+    "scope": "Recipe audit and concrete design only",
+    "new_training_updates_authorized": 0,
+    "new_training_updates_allocated": 0,
+    "new_training_updates_executed": 0,
+    "training_code_modified": false,
+    "existing_runs_or_queues_modified": false,
+    "entry_command": null
+  },
+  "positioning": "A standard-recipe adaptation and single-factor extension of the existing Loop stability question, not a new algorithm or an established mechanism repair. Prefer verifying this simple difference before adding the adversarial inner loop; do not automatically stack changes.",
+  "local_sources": [
+    "configs/loop-state-handoff-development-v1.json",
+    "results/loop-state-handoff-development-v1/runtime/source/src/llm_memory_editability/loop_native_handoff.py",
+    "results/loop-state-handoff-development-v1/runtime/source/src/llm_memory_editability/self_decode_alignment.py",
+    "results/loop-state-handoff-development-v1/runtime/source/src/llm_memory_editability/supervised_alignment.py",
+    "results/loop-state-handoff-development-v1/runtime/source/scripts/run_loop_native_handoff.py",
+    "results/loop-state-regression-diagnosis-20261022/science/summary.json",
+    "results/loop-state-regression-diagnosis-20261022/interfaces/summary.json",
+    "results/loop-state-regression-diagnosis-20261022/saved-objective-comparison.json"
+  ],
+  "observations": [
+    "At fixed native EMA/R8, B4 falls 71.24% to 5.66% between 256k and 500k. At R4/R8 both atomic pools and trained A compositions remain mastered; training A4 answer NLL falls from approximately 1.4e-5 to 3e-6 at R8.",
+    "Within the 4189 queries with a correct decoded first bridge at R1 in both checkpoints, second-hop candidate accuracy falls 88.78% to 24.90%. This is a descriptive conditioned subset, not a causal effect estimate. The regression is not solely a first-hop reception problem.",
+    "At 500k, the true-bridge atomic whole-post-attention donor improves second-hop candidate accuracy 21.16% to 99.98%, but final B4 only 5.66% to 27.96%. It demonstrates a material calling-state bottleneck, not its training cause, and does not establish a local perturbation radius.",
+    "Existing evaluation and donor diagnoses already disable dropout. The observed evaluation failure is in the learned weights; changing an evaluation flag cannot undo it."
+  ],
+  "recipe_comparison": [
+    {
+      "aspect": "Task supervision and recurrent gradient horizon",
+      "ours": "Original answer/EOS CE at two segment ends, averaged equally. First segment 4-6 loops, second 1-4; carry detached between segments. Random lengths are already present.",
+      "huginn": "Ordinary language-model endpoint objective over sampled heavy-tailed depths; backpropagation through the final eight iterations. This differs from our two-loss/two-segment objective, not merely a missing switch.",
+      "ouro": "Multi-depth next-token CE weighted by learned exit probabilities, with exit-distribution entropy regularization and a separate gate-training phase.",
+      "decision": "Keep our existing schedule and objective for the first controlled comparison. Do not claim we lack random depth or deep supervision, or add Ouro's exit objective to solve a different problem."
+    },
+    {
+      "aspect": "Dropout and conditioning across one trajectory",
+      "ours": "Attention, residual and embedding dropout all 0.1. Each run() recomputes _embedded(tokens); the second supervised segment injects a freshly sampled dropped embedding while carrying the first segment's state. Attention and residual masks also resample across block calls.",
+      "huginn": "Author-provided dynamic model has no embedding/residual dropout on the checked path. Its supplied 512-node launch selects the tridao backend, whose actual attention call passes dropout_p=0.0.",
+      "ouro": "Official released model config uses attention_dropout=0.0, and the released architecture has no embedding/residual dropout. Complete historical pretraining stage configs were not independently retrieved.",
+      "decision": "Test setting all three current probabilities to zero as the only scientific change. This removes this source of intra-trajectory stochasticity and the segment input-mask change, without claiming that either was already proven harmful."
+    },
+    {
+      "aspect": "Normalization and input adapter",
+      "ours": "Pre-LN Transformer block, normalized feedback/candidate and normalized history aggregation; raw token+position input reinjection. MLP already receives LN2(u).",
+      "huginn": "Post-residual sandwich RMSNorm, trained input-state adapter and scaled input embeddings.",
+      "ouro": "The released block normalizes attention/MLP branch outputs before residual addition; the exact formula differs from Huginn despite the shared sandwich name.",
+      "decision": "A genuine architectural difference, not proof of the observed cause. Do not bundle it into this comparison or claim that our MLP originally sees an unnormalized input. Old norm-handoff changed a different boundary and lacks formal scientific training endpoints."
+    },
+    {
+      "aspect": "Optimizer and learning rate",
+      "ours": "AdamW, betas=(0.9,0.95), weight decay 0.1 with existing exclusions, gradient clip 1, peak LR 1e-4, warmup 2000, cosine horizon 1.5m, EMA 0.999.",
+      "huginn": "The supplied 512-node launch uses ELLISAdam at 4e-5 with update clipping and its own decoupled-decay conventions; raw coefficient values are not directly comparable to ours.",
+      "ouro": "AdamW, the same listed betas/decay/clip family, but its own large-batch, staged LR and loop-depth recipe.",
+      "decision": "No evidence currently identifies gradient explosion as the cause of low-loss composition regression. Retain original optimization; do not copy a numerical LR or decay coefficient across implementations."
+    }
+  ],
+  "hypothesis": {
+    "statement": "Training a single dropout-free recurrent computation may preserve reusable calling behavior better than optimizing over resampled internal masks in this recipe.",
+    "specific_link": "Calls are repeatedly composed. Fresh internal masks, including a newly sampled conditioning embedding between segments, create training trajectories that differ from the dropout-free inference trajectory. Existing observations motivate checking this plausible optimization factor, but do not prove it explains second-hop content mismatch.",
+    "not_a_bug_claim": "Ordinary inverted dropout intentionally differs between train and evaluation. The current implementation is not declared incorrect. Removing dropout also removes regularization and changes the optimization trajectory.",
+    "scope_of_consistency": "The mathematical block has no dropout noise for fixed parameters/input; minibatch sampling, random loop lengths, AdamW and finite-precision kernel behavior remain. This is not bitwise deterministic training or a convergence guarantee."
+  },
+  "proposed_change": {
+    "model.attn_pdrop": 0.0,
+    "model.embd_pdrop": 0.0,
+    "model.resid_pdrop": 0.0,
+    "baseline_values": 0.1,
+    "implementation_note": "Create a new immutable experiment config only after execution authorization. Configure before model construction so GPT-2 MLP dropout modules and functional attention/residual/embedding dropout all receive zero. Do not use model.eval() as a training shortcut.",
+    "preserve": [
+      "Same state-MLP gate, all trainable parameters, tied embeddings, full residual/attention/MLP/LayerNorm, feedback and aggregation",
+      "Original data panels and A-composition/B-atomic exposure; no true intermediate entity, hop identity, graph ID or B-composition labels added",
+      "Two original random segment lengths, answer/EOS CE, equal segment loss weights and carry detach",
+      "Original initialization, data/schedule seeds, batch size, optimizer, LR horizon, clipping, checkpoint protocol and EMA"
+    ],
+    "no_additions": "No adversarial passes, extra loss, teacher model, activation perturbation, replay bank, extra parameters, inferred intermediate label or new inference rule."
+  },
+  "proposed_development_comparison": {
+    "status": "not_queued; future execution requires authorization",
+    "arms": [
+      "Reuse the original dropout=0.1 state-MLP trajectory as the comparator.",
+      "One new dropout=0 training from exactly the original step-zero weights to 500k updates."
+    ],
+    "proposed_new_updates_if_authorized": 500000,
+    "current_allocated_updates": 0,
+    "lr_contract": "Keep the original 1.5m cosine horizon even though development evaluation ends at 500k. Do not shorten the schedule.",
+    "recovery_contract": "Historical 256k snapshots do not contain matching full optimizer/RNG states. Do not claim an exact historical continuation or reuse that curve as an optimizer-reset comparator.",
+    "primary": "Unperturbed EMA/R8 B4 accuracy at the fixed 500k endpoint, plus the full 256k/300k/400k/500k trajectory and its minimum. Improvement must not be inferred from a flatter near-zero curve or a best-checkpoint selection.",
+    "preservation": "Atomic A/B and A2-A4 performance, B2/B3, raw and EMA separately, and fixed R8/R16 behavior with gains/losses of original correct answers. Lower training loss alone is not success.",
+    "diagnosis": "Repeat the existing zero-training second-hop measurements at the fixed endpoints. A first-hop-only gain while the common-bridge second-hop failure persists is not evidence that the main calling regression was repaired. True-bridge interventions remain evaluation-only.",
+    "compute": "Same data and loop schedule imply the same nominal matrix FLOPs and repeated exposures. Track actual tokens, examples, GPU-hours and resource sharing. No extra forward/backward passes; kernel selection and real speed can differ.",
+    "interpretation": "One known world and initialization provide development evidence. A gain estimates the effect of removing the combined dropout recipe, not a uniquely identified effect of operator variation versus conditioning masks versus regularization.",
+    "failure": "If training loss decreases but native B4 still regresses, or removing regularization increases composition overfitting, the proposal fails its purpose. Do not automatically add normalization, shorter-depth supervision, learning-rate changes or an adversarial inner loop."
+  },
+  "validation_before_any_future_run": [
+    "Verify only the three dropout config values differ; original zero-step parameter hashes, data and schedule streams match.",
+    "Verify no active nonzero dropout remains, including the constructed GPT-2 MLP dropout module; fixed-weight/fixed-depth train/eval computations agree within numerical kernel tolerances.",
+    "Preserve causal attention, original answer/EOS masking and two-segment loss/gradient structure. Do not detach the embedding or add new labels.",
+    "Check independent reload and resumable optimizer/data/schedule/RNG/EMA state in the new batch before formal execution."
+  ],
+  "history_check": {
+    "checked": ["docs/loop-history.md", "docs/loop-roadmap.md", "current frozen source/config", "Loop reports/results/protocols searched for dropout controls", "older zero-dropout configurations"],
+    "finding": "Older zero-dropout tasks and recipes exist, with multiple other differences; they are not a controlled comparison for this same state-MLP world and schedule. No clean 0.1-to-0 paired scientific result was found in the checked records.",
+    "boundary": "Do not call dropout-zero a novel algorithm or claim that the entire repository has never used it. Existing gate/KV/position/normalization results remain unchanged."
+  },
+  "scalability": {
+    "new_parameters": 0,
+    "additional_forward_backward_passes": 0,
+    "additional_training_state": 0,
+    "inference_change": "None: inference already disables dropout.",
+    "large_model_requirements": "Ordinary task or next-token supervision suffices. The change introduces no extra teacher, entity labels, inner optimization or depth-dependent storage. It does not remove the underlying recurrence cost.",
+    "unverified": "This establishes low engineering overhead, not improved large-LLM knowledge composition. The tiny, repeatedly exposed dataset may benefit from dropout regularization, so large-corpus precedent is not an effectiveness guarantee here."
+  },
+  "primary_external_sources": [
+    {"name": "Huginn paper", "url": "https://arxiv.org/html/2502.05171v2", "sections": "3.1-3.3, 4.1, 4.3"},
+    {"name": "Huginn supplied training launch", "url": "https://raw.githubusercontent.com/seal-rg/recurrent-pretraining/main/launch_configs/frontier_nebel_512_nodes.yaml"},
+    {"name": "Huginn dynamic model", "url": "https://raw.githubusercontent.com/seal-rg/recurrent-pretraining/main/recpre/model_dynamic.py"},
+    {"name": "Huginn attention backend selection", "url": "https://raw.githubusercontent.com/seal-rg/recurrent-pretraining/main/recpre/attention_backends/interface.py"},
+    {"name": "Huginn selected FlashAttention backend", "url": "https://raw.githubusercontent.com/seal-rg/recurrent-pretraining/main/recpre/attention_backends/cuda_flash_attention.py"},
+    {"name": "Ouro original paper, latest revision checked", "url": "https://arxiv.org/pdf/2510.25741v6", "sections": "3.3-3.4, 4.1, 4.3"},
+    {"name": "Ouro official released model config", "url": "https://huggingface.co/ByteDance/Ouro-1.4B/blob/main/config.json"},
+    {"name": "Ouro official released model implementation", "url": "https://huggingface.co/ByteDance/Ouro-1.4B/blob/main/modeling_ouro.py"}
+  ],
+  "source_limits": [
+    "Huginn author repository main was inspected, not pinned to an independently recovered historical training commit or runtime dump.",
+    "Ouro released configuration is not treated as an independent audit of every historical pretraining stage.",
+    "No training or zero-dropout repair was performed in this design turn."
+  ]
+}

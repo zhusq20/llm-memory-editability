@@ -1,0 +1,27 @@
+{
+  "state": "scientific_training",
+  "status": {
+    "state": "running",
+    "arm": "joint-token",
+    "step": 4000,
+    "budget": 1500000,
+    "training_seconds": 40.41402816190384,
+    "updated_utc": "2026-10-18T04:07:23.475122+00:00",
+    "loss": 2.7933523654937744,
+    "main_loss": 2.7933523654937744,
+    "aux_loss": 0.0,
+    "weighted_aux_loss": 0.0,
+    "gradient_norm": 1.3913638591766357,
+    "aux_valid_positions": 0.0,
+    "aux_selected_positions": 0.0,
+    "aux_confidence_sum": 0.0
+  },
+  "tracking": {
+    "id": "lhef69f000",
+    "url": "https://wandb.ai/zhusq20/llm-memory-editability/runs/lhef69f000"
+  },
+  "controller_pid": 2673104,
+  "cuda_engineering_passed": true,
+  "formal_training_started": true,
+  "no_terminal_scientific_conclusion": true
+}

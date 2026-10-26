@@ -1,0 +1,31 @@
+{
+  "status": {
+    "state": "running",
+    "arm": "candidate-token",
+    "step": 2000,
+    "budget": 1500000,
+    "training_seconds": 22.47020411887206,
+    "updated_utc": "2026-10-18T04:27:05.812721+00:00",
+    "loss": 2.649904251098633,
+    "main_loss": 2.649904251098633,
+    "aux_loss": 0.0,
+    "weighted_aux_loss": 0.0,
+    "gradient_norm": 3.32391095161438,
+    "aux_valid_positions": 0.0,
+    "aux_selected_positions": 0.0,
+    "aux_confidence_sum": 0.0
+  },
+  "tracking": {
+    "id": "lh14e7ae00",
+    "url": "https://wandb.ai/zhusq20/llm-memory-editability/runs/lh14e7ae00"
+  },
+  "controller_pid": 2734490,
+  "fixed_image_scheduling_tests": 14,
+  "cuda_engineering_checks": 17,
+  "engineering_updates_discarded": 1,
+  "existing_directory_permissions_unchanged": true,
+  "frozen_files": 731,
+  "original_files_unchanged": 725,
+  "new_scientific_arms": 0,
+  "endpoint_conclusion": null
+}

@@ -1,0 +1,134 @@
+{
+  "state": "paused_by_user",
+  "host": "sn4622129202",
+  "jobs": {
+    "new-world-invariant": {
+      "state": "complete",
+      "stage": "cloud",
+      "gpu": 1,
+      "container": "lqt-1021-new-world-invariant-cloud",
+      "adopted": true,
+      "previous_gpu": 5,
+      "resumed_from_step": 1100000
+    },
+    "original-loop": {
+      "state": "complete",
+      "stage": "cloud",
+      "gpu": 2,
+      "container": "lqt-1021-original-loop-cloud"
+    },
+    "many-to-one-invariant": {
+      "state": "complete",
+      "stage": "cloud",
+      "gpu": 3,
+      "container": "lqt-1021-many-to-one-invariant-cloud",
+      "adopted": true,
+      "previous_gpu": 8,
+      "resumed_from_step": 1100000
+    },
+    "many-to-one-ema": {
+      "state": "complete",
+      "stage": "cloud",
+      "gpu": 5,
+      "container": "lqt-1021-many-to-one-ema-cloud",
+      "adopted": true
+    },
+    "new-world-loop": {
+      "state": "complete",
+      "stage": "cloud",
+      "gpu": 8,
+      "container": "lqt-1021-new-world-loop-cloud"
+    },
+    "new-world-discoloop": {
+      "state": "complete",
+      "stage": "cloud",
+      "gpu": 8,
+      "container": "lqt-1021-new-world-discoloop-cloud"
+    },
+    "many-to-one-loop": {
+      "state": "failed",
+      "stage": "cloud",
+      "gpu": 4,
+      "container": "lqt-1021-many-to-one-loop-cloud",
+      "error": "lqt-1021-many-to-one-loop-cloud exited 1; retained, no automatic retry"
+    },
+    "many-to-one-discoloop": {
+      "state": "failed",
+      "stage": "cloud",
+      "gpu": 4,
+      "container": "lqt-1021-many-to-one-discoloop-cloud",
+      "error": "lqt-1021-many-to-one-discoloop-cloud exited 1; retained, no automatic retry"
+    },
+    "old-content": {
+      "state": "complete",
+      "stage": "depth",
+      "gpu": 5,
+      "container": "lqt-1021-old-content-depth"
+    },
+    "old-recipe-additive": {
+      "state": "complete",
+      "stage": "depth",
+      "gpu": 8,
+      "container": "lqt-1021-old-recipe-additive-depth"
+    },
+    "old-invariant-raw": {
+      "state": "complete",
+      "stage": "depth",
+      "gpu": 5,
+      "container": "lqt-1021-old-invariant-raw-depth"
+    },
+    "init-1-ema": {
+      "state": "paused_by_user",
+      "automatic_resume": false,
+      "reason": "2026-10-24 explicit user hold"
+    },
+    "init-1-loop": {
+      "state": "paused_by_user",
+      "automatic_resume": false,
+      "reason": "2026-10-24 explicit user hold"
+    },
+    "init-1-discoloop": {
+      "state": "paused_by_user",
+      "automatic_resume": false,
+      "reason": "2026-10-24 explicit user hold"
+    },
+    "init-2-invariant": {
+      "state": "paused_by_user",
+      "automatic_resume": false,
+      "reason": "2026-10-24 explicit user hold"
+    },
+    "init-2-ema": {
+      "state": "paused_by_user",
+      "automatic_resume": false,
+      "reason": "2026-10-24 explicit user hold"
+    },
+    "init-2-loop": {
+      "state": "paused_by_user",
+      "automatic_resume": false,
+      "reason": "2026-10-24 explicit user hold"
+    },
+    "init-2-discoloop": {
+      "state": "paused_by_user",
+      "automatic_resume": false,
+      "reason": "2026-10-24 explicit user hold"
+    }
+  },
+  "updated_utc": "2026-10-24T20:50:45.750413+00:00",
+  "environment_passed": true,
+  "phase": 0,
+  "available_gpu_pool": [
+    4,
+    7,
+    5,
+    8
+  ],
+  "resource_expansion": false,
+  "active_gpus": [],
+  "scheduler_heartbeat_utc": "2026-10-24T14:34:28.822048+00:00",
+  "gpu_migration": true,
+  "scheduler": "shared-20261023-v3",
+  "error": "Phase has failed jobs; later initialization phase stays queued",
+  "previous_state": "failed",
+  "training_hold": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-queue-target-20261021/training-hold.json",
+  "controller_running": false
+}

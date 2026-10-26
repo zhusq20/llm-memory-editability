@@ -1,0 +1,176 @@
+{
+ "batch": "loop-native-handoff-development-v1",
+ "status": "authorized 2026-10-20; training submitted on GPUs 6-9",
+ "authorization": "2026-10-20 user (verbatim): 授权训练，删除那四个旧容器，用GPU 6,7,8,9. Authorizes the four arms x 1500000 steps of this configuration, removal of four never-started LM containers, and GPUs 6, 7, 8, 9 despite other projects' container reservations.",
+ "question": "Under answer/EOS cross-entropy only, does an InfiLoop-style normalized carry with a relabeling-invariant score keep the ungated DiscoLoop's graph-B composition and round stability while removing the 1/r freezing of the additive carry, and does an identity-readable score instead reproduce the graph-specific timetable of the learned u gate?",
+ "data": {
+  "world_seed": 2026101601,
+  "entities_per_graph": 500,
+  "relations": 10,
+  "train_compositions_per_hop": 10000,
+  "evaluation_templates": 10,
+  "training_panel_size": 1000
+ },
+ "model": {
+  "n_embd": 768,
+  "n_head": 12,
+  "n_positions": 1024,
+  "n_ctx": 1024,
+  "activation_function": "gelu_new",
+  "attn_pdrop": 0.1,
+  "embd_pdrop": 0.1,
+  "resid_pdrop": 0.1,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05
+ },
+ "training": {
+  "initialization": 2026101602,
+  "stream_seed": 2026101603,
+  "schedule_seed": 2026102001,
+  "unique_layers": 1,
+  "evaluation_repeats": 4,
+  "weight_decay": 0.1,
+  "lr": 0.0001,
+  "warmup": 2000,
+  "final_lr_fraction": 0.1,
+  "betas": [
+   0.9,
+   0.95
+  ],
+  "eps": 1e-08,
+  "grad_clip": 1.0,
+  "ema_decay": 0.999,
+  "batch_size": 512,
+  "steps": 1500000,
+  "segments": 2,
+  "first_segment_rounds": [
+   4,
+   6
+  ],
+  "later_segment_rounds": [
+   1,
+   4
+  ]
+ },
+ "handoff": {
+  "initial_beta": 0.55,
+  "score_hidden": 16,
+  "score_clip": 8.0,
+  "score_seed": 2026102002
+ },
+ "arms": {
+  "recipe-additive": {
+   "handoff": "additive"
+  },
+  "ema": {
+   "handoff": "ema"
+  },
+  "content": {
+   "handoff": "content"
+  },
+  "invariant": {
+   "handoff": "invariant"
+  }
+ },
+ "dropout_seed": 2026101604,
+ "evaluation_nodes": [
+  0,
+  1000,
+  8000,
+  16000,
+  32000,
+  64000,
+  128000,
+  256000,
+  300000,
+  400000,
+  500000,
+  600000,
+  700000,
+  800000,
+  900000,
+  1000000,
+  1100000,
+  1200000,
+  1300000,
+  1400000,
+  1500000
+ ],
+ "evaluation_rounds": [
+  4,
+  8
+ ],
+ "grid_rounds": 32,
+ "grid_joint_rounds": [
+  4,
+  8,
+  16,
+  32
+ ],
+ "evaluation_batch_size": 256,
+ "heartbeat_steps": 1000,
+ "smoke_steps": 200,
+ "input_origin": {
+  "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+  "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+  "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+  "reuse": "Exact existing 40000-example world and 43000-query panels used by every DiscoLoop/gate multi-hop arm"
+ },
+ "input_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+ "paired_recipe": {
+  "initial_backbone_sha256": "39a487823c05311a223db99c3d0e2df3e7a1752498e261337f4298abe0cfa7b0",
+  "note": "Every arm's backbone at step 0 must equal the reused ungated DiscoLoop's step-0 model; handoff parameters are created without consuming the global RNG."
+ },
+ "reused_comparators": {
+  "A0-discoloop-old-recipe": {
+   "first_300k": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-hop-unified-v1/runs/disco-l1-r4",
+   "continuation_to_1500k": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/ungated-loop-continuation-v1/runs/disco-l1-r4",
+   "r1_16_replay": "results/loop-round-extrapolation-diagnostic-20261019",
+   "recipe": "fixed R=4, final-round answer/EOS CE, constant LR after warmup, AdamW betas (0.9, 0.999), no EMA, CUDA graph"
+  }
+ },
+ "runtime": {
+  "docker_context": "lm-memory",
+  "image": "sha256:b7933a57d6a4702700b6b2578fe0cc697f91b2080ef5e18d8fb916443281eacd",
+  "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+  "cpu_threads": 2,
+  "memory_gib": 16,
+  "gpu_memory_fraction": 0.16,
+  "minimum_free_gpu_mib": 18000,
+  "maximum_idle_gpu_used_mib": 512
+ },
+ "tracking": {
+  "provider": "wandb",
+  "entity": "zsqzz",
+  "project": "llm-memory-editability",
+  "mode": "online"
+ },
+ "primary": "At the 1500000-step endpoint with EMA weights: graph-B two/three/four-hop full-vocabulary answer accuracy at R8 from the R1-32 trace; also R4, R16, R32, graph-A held-out four-hop, all 11 panels, answer+EOS at R4/8/16/32, raw weights, and the full learning curves at R4/R8. No best checkpoint or horizon is selected.",
+ "comparisons": {
+  "recipe": "recipe-additive vs reused A0: InfiLoop-style training (random rounds, deep supervision, cosine LR, beta2 0.95, EMA) with the unchanged DiscoLoop handoff",
+  "carry": "ema vs recipe-additive: normalized convex carry with constant score versus additive carry, same recipe",
+  "content_score": "content vs ema: InfiLoop's identity-readable pseudo-query score",
+  "invariance": "invariant vs content: relabeling-invariant score versus identity-readable score"
+ },
+ "predictions": {
+  "freezing": "If additive accumulation freezes the carry, ema/content/invariant keep the answer-position relative change from decaying as 1/r beyond the trained rounds, and graph-B four-hop or graph-A held-out four-hop can rise with R; recipe-additive keeps the 1/r law. If all four stay flat with R, extra-round failure is not explained by the carry.",
+  "invariance": "If identity-readable acceptance causes graph misalignment, content shows different gamma timetables for graph A and graph B at the same question type and round and lower graph-B composition than invariant; invariant shows matching timetables by construction when decode statistics match.",
+  "recipe_only": "If recipe-additive already removes the +1-round transient and checkpoint drops while keeping graph-B composition, the architecture change is not needed for those properties; this is a valid outcome."
+ },
+ "budget": {
+  "new_scientific_arms": 4,
+  "new_scientific_updates": 6000000,
+  "final_steps_per_arm": 1500000,
+  "engineering_smoke_updates_per_arm": 200,
+  "new_world_updates": 0
+ },
+ "limits": [
+  "One previously observed development world and one initialization; queries, rounds and checkpoints are not independent worlds.",
+  "Learned absolute positions cover only the trained length (sequence 6), so five-hop or longer questions are not tested in this batch; extra rounds on 1-4 hops are.",
+  "The training recipe changes as a package (random rounds, deep supervision, cosine LR, beta2, EMA); recipe-additive isolates the package, not each element.",
+  "Deep supervision sums the segment losses into one update per batch instead of InfiLoop's one update per segment, so update counts and exposures match A0.",
+  "The DiscoLoop decoded feedback is kept in every arm; it relies on next-token decodes being the intermediate entity in this template, which does not hold for natural-language questions.",
+  "Eager execution with random round counts is slower than A0's CUDA graph; wall time is not comparable.",
+  "Computation per update differs between arms and from A0; matrix FLOPs and executed rounds are logged for every update."
+ ]
+}

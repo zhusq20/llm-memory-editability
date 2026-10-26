@@ -1,0 +1,31 @@
+{
+  "credential_scan": "No real credentials found in 10444 reviewed files. Two vendored test files use must-not-reach-child placeholders; one launch receipt contains a path substring mistaken for a key.",
+  "syntax": "1257 current Python files parsed; no syntax errors.",
+  "tests": "97 passed; CPU-only contract tests for knowledge coverage, checkpoints, factorial analysis, Loop terminal training, holds and recipe ablation.",
+  "ruff_check": "50 existing findings; source left unchanged. See ruff-check.log.",
+  "ruff_format": "15 existing files need formatting, 1242 already formatted. See ruff-format.log.",
+  "historical_missing_files": [
+    {
+      "source": "AGENTS.md",
+      "target": "results/history-design-review-20261007/user-reviews.json"
+    },
+    {
+      "source": "AGENTS.md",
+      "target": "docs/development-artifacts/memory-interface-next-v1/container/runtime.json"
+    },
+    {
+      "source": "AGENTS.md",
+      "target": "docs/development-artifacts/memory-interface-next-v1/container/archive-manifest.json"
+    }
+  ],
+  "scope": "Compact repository snapshot only: source, tests, configs, text documents, figure sources, compact status and validation logs. Bulk results, curves, repeated frozen sources and PNG/PDF exports are excluded. No training launched or resumed.",
+  "runtime_snapshot_scan": {
+    "files": 591,
+    "secret_candidates": []
+  },
+  "documentation_anchors": "346 local Markdown anchors checked; no unresolved anchors.",
+  "diff_whitespace_check": {
+    "status": "Existing whitespace findings in preserved imported sources, text reports and historical diffs; not rewritten.",
+    "finding_count": 9783
+  }
+}

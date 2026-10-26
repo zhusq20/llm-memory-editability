@@ -1,0 +1,86 @@
+{
+  "seed": 20261009,
+  "precision": "numpy float64 on CPU",
+  "lemma_28": {
+    "cases": 300,
+    "max_lhs_over_rhs_where_rhs_gt_1e-12": {
+      "deviation": 0.7138508264354827,
+      "jacobian": 0.4690927899421302,
+      "epsilon": 0.2444700822143706
+    }
+  },
+  "linear_memory_29_30": {
+    "orthonormal_bijective": {
+      "noise_0.05": {
+        "atomic_correct_queries": 400,
+        "decodable": 400,
+        "decodable_but_unusable": 0
+      },
+      "noise_0.10": {
+        "atomic_correct_queries": 400,
+        "decodable": 400,
+        "decodable_but_unusable": 0
+      },
+      "noise_0.15": {
+        "atomic_correct_queries": 400,
+        "decodable": 400,
+        "decodable_but_unusable": 0
+      }
+    },
+    "orthonormal_random_answers": {
+      "noise_0.05": {
+        "atomic_correct_queries": 400,
+        "decodable": 400,
+        "decodable_but_unusable": 0
+      },
+      "noise_0.10": {
+        "atomic_correct_queries": 400,
+        "decodable": 400,
+        "decodable_but_unusable": 0
+      },
+      "noise_0.15": {
+        "atomic_correct_queries": 400,
+        "decodable": 400,
+        "decodable_but_unusable": 2
+      }
+    },
+    "superposed_bijective": {
+      "noise_0.05": {
+        "atomic_correct_queries": 291,
+        "decodable": 291,
+        "decodable_but_unusable": 57
+      },
+      "noise_0.10": {
+        "atomic_correct_queries": 278,
+        "decodable": 278,
+        "decodable_but_unusable": 107
+      },
+      "noise_0.15": {
+        "atomic_correct_queries": 278,
+        "decodable": 278,
+        "decodable_but_unusable": 181
+      }
+    },
+    "superposed_random_answers": {
+      "noise_0.05": {
+        "atomic_correct_queries": 293,
+        "decodable": 293,
+        "decodable_but_unusable": 33
+      },
+      "noise_0.10": {
+        "atomic_correct_queries": 284,
+        "decodable": 284,
+        "decodable_but_unusable": 117
+      },
+      "noise_0.15": {
+        "atomic_correct_queries": 299,
+        "decodable": 299,
+        "decodable_but_unusable": 193
+      }
+    }
+  },
+  "alpha_threshold": {
+    "queries": 200,
+    "at_most_one_switch": 200
+  }
+}

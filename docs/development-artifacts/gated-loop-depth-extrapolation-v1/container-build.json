@@ -1,0 +1,59 @@
+{
+  "utc": "2026-10-17T08:39:25.461984+00:00",
+  "docker_context": "lm-memory",
+  "base_image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2",
+  "derived_image": "sha256:bc325b1d554d9bb46cf729ee6532ce40ebc764438da8cac2f8e8f796d70f6f2a",
+  "new_tag": "lm-memory-gated-depth:20261017-plotting-v1",
+  "base_tag_unchanged": true,
+  "old_running_containers_modified": false,
+  "gpu_access_used": false,
+  "build_network": "host",
+  "build_command": [
+    "docker",
+    "--context",
+    "lm-memory",
+    "build",
+    "--network",
+    "host",
+    "--pull=false",
+    "--build-arg",
+    "BASE_IMAGE=sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2",
+    "--tag",
+    "lm-memory-gated-depth:20261017-plotting-v1",
+    "containers/gated-depth"
+  ],
+  "build_environment": {
+    "DOCKER_BUILDKIT": "0"
+  },
+  "dependency_policy": "Only seven missing plotting packages added, precise versions and wheel SHA256; pip --no-deps --require-hashes. Existing scientific dependencies unchanged.",
+  "pip_freeze_added": [
+    "contourpy==1.3.3",
+    "cycler==0.12.1",
+    "fonttools==4.60.1",
+    "kiwisolver==1.4.9",
+    "matplotlib==3.10.7",
+    "pyparsing==3.2.5",
+    "python-dateutil==2.9.0.post0"
+  ],
+  "pip_freeze_removed_or_changed": [],
+  "base_pip_freeze_sha256": "062c7cbdfaf22d0c656391478da6200f2ceadf2ed563504b9795f644978b792f",
+  "derived_pip_freeze_sha256": "6dc384215c49ead20271cc2c6314e2bbc45d0ede1a833507909fda861cd73e16",
+  "pdf_probe": {
+    "passed": true,
+    "matplotlib": "3.10.7",
+    "torch": "2.8.0+cu128",
+    "numpy": "2.2.6",
+    "transformers": "4.57.3",
+    "cuda_initialized": false,
+    "pdf_bytes": 7178,
+    "pdf_sha256": "fec6a50e21dc7fcacaa6c4d5c51f8847f44ab769913fc1ade25e95edc2747485"
+  },
+  "pdf_export_note": "PDF rendered in the container tmpfs; Docker cp could not resolve its tmpfs mount. Exported exact bytes via docker exec cat and verified SHA256. No model execution occurred.",
+  "files": {
+    "containers/gated-depth/Dockerfile": "f286c35bd062e2f806570b0bfaa43410899bf206591671edb7a2644e67075d8e",
+    "containers/gated-depth/requirements-plotting.txt": "bb22cd6efb968bcb6dad22582a805793e4899a9bbf9b400c4ad01c9407c0728f",
+    "docs/development-artifacts/gated-loop-depth-extrapolation-v1/container-plot-probe.pdf": "fec6a50e21dc7fcacaa6c4d5c51f8847f44ab769913fc1ade25e95edc2747485",
+    "docs/development-artifacts/gated-loop-depth-extrapolation-v1/container-build.log": "c18f33c8065d806f33709735b89e4ceecd669a20fa3a72023cfd4e16f2787b8c"
+  },
+  "development_container": "gated-depth-cpu-final-1792226325"
+}

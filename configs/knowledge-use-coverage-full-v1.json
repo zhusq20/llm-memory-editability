@@ -1,0 +1,65 @@
+{
+  "batch": "knowledge-use-coverage-v1",
+  "model": "Qwen/Qwen3-1.7B",
+  "model_revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "model_path": "/hf/hub/models--Qwen--Qwen3-1.7B/snapshots/70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "scope": "full",
+  "scope_status": "fixed_by_user_20261025_immediate_start",
+  "arms": [
+    "pd_full",
+    "sft_full"
+  ],
+  "seed": 20261025,
+  "development_pairs": 32,
+  "formal_pairs": 128,
+  "development_token_nodes": [
+    200192,
+    400384
+  ],
+  "formal_token_nodes": [
+    800768,
+    1601536
+  ],
+  "natural_token_nodes": [
+    800768,
+    1601536
+  ],
+  "main_tokens_per_update": 512,
+  "replay_tokens_per_update": 128,
+  "microbatch_size": 8,
+  "learning_rate": 1e-05,
+  "weight_decay": 0.1,
+  "warmup_token_fraction": 0.02,
+  "max_grad_norm": 1.0,
+  "kl_temperature": 2.0,
+  "retention_kl_weight": 0.2,
+  "gradient_checkpointing": true,
+  "max_sequence_tokens": 2048,
+  "generation_batch_size": 16,
+  "pd_temperature": 1.5,
+  "sft_temperature": 0.25,
+  "generation_max_new_tokens": 96,
+  "eval_batch_size": 16,
+  "eval_max_new_tokens": 96,
+  "rewrite_token_fraction": 0.25,
+  "wandb_entity": "zsqzz",
+  "wandb_project": "llm-memory-editability",
+  "precision": "fp32_parameters_bf16_autocast",
+  "enable_thinking": false,
+  "natural_development_cases": [
+    0,
+    32
+  ],
+  "natural_validation_cases": [
+    32,
+    96
+  ],
+  "calibration": {
+    "selection_data": "development_only",
+    "atomic_recall_target": 0.8,
+    "atomic_recall_group": "atomic_seen/direct",
+    "selection_rule": "earliest common node where all three PD arms reach target on development atomic evaluation; otherwise largest planned node, explicitly report target not attained",
+    "target_is_not_confirmation_exclusion": true
+  },
+  "parallel_preparation": true
+}

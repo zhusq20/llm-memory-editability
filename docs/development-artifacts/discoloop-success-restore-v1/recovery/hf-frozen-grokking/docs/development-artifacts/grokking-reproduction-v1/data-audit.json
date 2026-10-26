@@ -1,0 +1,28 @@
+{
+  "world": 790101,
+  "world_sha256": "e31ec9959ce0a7b25465191a1d9ef8e83ec42163ed967fa56a60605f6ac1c3b4",
+  "panels_sha256": "8655858c0de4646cfb5c7ea1779b5374ef28b492e6ac59bb6eda9e89c7936bf9",
+  "entities": 2000,
+  "relations": 200,
+  "degree": 20,
+  "atomic_id": 38000,
+  "atomic_ood": 2000,
+  "candidate_train_ii": 718004,
+  "full_test_ii": 3668,
+  "panels": {
+    "atomic_id": 3000,
+    "atomic_ood": 2000,
+    "train_ii": 3000,
+    "test_ii": 3000,
+    "test_io": 3000,
+    "test_oi": 3000,
+    "test_oo": 2004
+  },
+  "base_vocabulary": 50257,
+  "vocab_size": 52463,
+  "entity_offset": 50257,
+  "relation_offset": 52257,
+  "end_marker": 52460,
+  "pad_token": 50256,
+  "created_utc": "2026-10-02T02:20:14.696133+00:00"
+}

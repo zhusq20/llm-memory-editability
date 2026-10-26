@@ -1,0 +1,57 @@
+{
+  "schema": "discoloop-step0-reconstruction-v1",
+  "checkpoint": "data/discoloop-success-restore-v1/original/development/loop4x2-phi7.2-wd0.1/checkpoint-0000000.pt",
+  "checkpoint_sha256": "81e95a16656904a511f901b30966a4b4c4f1de708b67b5712d3e8cd2933fe347",
+  "checkpoint_bytes": 277743111,
+  "historical_initial_model_sha256": "ba0af28431d36db482f2676c1e111a725cf51041c3dca9d006dd10d7a7c18518",
+  "reconstructed_initial_model_sha256": "ba0af28431d36db482f2676c1e111a725cf51041c3dca9d006dd10d7a7c18518",
+  "initial_parameters_match_historical_digest": true,
+  "original_checkpoint_file_bytes_restored": false,
+  "original_300k_weights_restored": false,
+  "initialization": 791101,
+  "parameters": 69431040,
+  "spec": {
+    "name": "loop4x2-phi7.2-wd0.1",
+    "unique_layers": 4,
+    "repeats": 2,
+    "phi": 7.2,
+    "weight_decay": 0.1,
+    "initialization": 791101,
+    "stream_seed": 792101,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 300000
+  },
+  "torch": "2.8.0+cu128",
+  "transformers": "4.57.3",
+  "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+  "training_updates": 0,
+  "independent_host_weights_only_reload_passed": true,
+  "source_digest_record": "results/grokking-reproduction-v1/development/loop4x2-phi7.2-wd0.1/run.json at HF 6c580455ce1667274ea592c1c88f5d0fb1e5a190",
+  "initialization_history": [
+    {
+      "stage": "initial_check_container",
+      "status": "import_failed_before_model_initialization",
+      "reason": "root container could not traverse private 700 source directories"
+    },
+    {
+      "stage": "fixed_seed_cpu_check",
+      "status": "passed",
+      "tensor_digest": "ba0af28431d36db482f2676c1e111a725cf51041c3dca9d006dd10d7a7c18518",
+      "weights_saved": false
+    },
+    {
+      "stage": "save_container_bind",
+      "status": "mount_failed_before_model_initialization",
+      "reason": "Docker daemon could not traverse existing private data parent; existing private mode was preserved"
+    },
+    {
+      "stage": "fixed_seed_cpu_save_via_stdout",
+      "status": "passed",
+      "weights_saved": true,
+      "tensor_digest": "ba0af28431d36db482f2676c1e111a725cf51041c3dca9d006dd10d7a7c18518"
+    }
+  ],
+  "scope": "Reconstructed fixed-seed initial tensors match archived historical digest; serialized bytes are newly produced, not the original file; no historical trained endpoint recovered"
+}

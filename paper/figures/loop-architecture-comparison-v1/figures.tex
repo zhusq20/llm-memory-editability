@@ -1,0 +1,40 @@
+% Requires graphicx; paths are relative to a document in paper/.
+% Three separate figures, as requested. Add bibliography keys in the manuscript.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.92\textwidth]{figures/loop-architecture-comparison-v1/vanilla-loop.pdf}
+  \caption{Vanilla Loop, following DiscoLoop Eq.~(2) and Kohli et al. Section~4.
+  Each iteration applies the same Transformer to the previous hidden states.
+  The output is passed directly to the next iteration. The abstract block
+  includes ordinary Transformer residuals and normalization. One token is
+  highlighted; the same rule applies at every position.}
+  \label{fig:loop-comparison-vanilla}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.92\textwidth]{figures/loop-architecture-comparison-v1/discoloop.pdf}
+  \caption{DiscoLoop, following Eqs.~(4)--(5), with the fixed gate
+  $\alpha=1$ and temperature $\tau=1$ from Section~5.1. Normalized soft
+  vocabulary feedback $f_t$ is added to the current block output. The figure
+  shows an intermediate loop boundary; the original method disables feedback
+  at its final readout. Transformer parameters are shared between iterations.}
+  \label{fig:loop-comparison-disco}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.92\textwidth]{figures/loop-architecture-comparison-v1/invariant-loop.pdf}
+  \caption{Invariant Loop, following the implemented update. Soft feedback
+  forms a candidate, and MLP-based weighting combines it with the previous
+  state. Every displayed token has its own carry path. The MLP input consists
+  of five statistics derived from the candidate, previous state, and current
+  and previous predictions. Its dashed $\gamma_t$ arrow reaches the
+  highlighted aggregate. Score processing and historical-mass normalization
+  are included in the compact module. Input reinjection and LayerNorm produce
+  $\mathrm{LN}_1(h_t+e)$, the common source for next-loop Q/K/V projections.
+  Exact normalization and auxiliary state are specified in the accompanying
+  notes. These figures compare architecture; they do not establish a
+  single-variable performance attribution.}
+  \label{fig:loop-comparison-invariant}
+\end{figure*}

@@ -1,0 +1,34 @@
+Loop 当前交接：七条初始化训练由用户暂缓（2026-10-24）
+
+最高优先级：用户明确要求七条先全部暂缓，先收齐已完成结果，尤其新初始化1 invariant，再一起分析。
+暂停名单：init-1-ema、init-1-loop、init-1-discoloop；
+init-2-invariant、init-2-ema、init-2-loop、init-2-discoloop。
+各1500000步，共10500000步暂缓。未开训，不能标成完成；恢复须新的用户明确指令。
+空卡、修复W&B、后续控制器接管、旧授权和历史手动启动命令均不能解除暂缓。
+
+防止自动启动
+runtime/training-hold.json -> runtime/schedule-amendment.json -> runtime/controller-state.json。
+状态为paused_by_user；原PID594327已退出，本次成功取得目标及两个源队列的控制锁；没有活动目标Loop容器。
+目标公共调度控制器control/launch_loop_transfer.py在构造时检查hold文件，阻止共享、迁移和恢复入口运行。
+仓库的transfer和robustness入口也有同样检查；源队列持久根已写hold文件，旧源入口保持退役。
+此修改只涉及调度工程代码；科学源码、配置、权重、run ID、失败记录不改。
+原工程代码和状态保存在runtime/user-hold-20261024/before-*；旧调度哈希不再匹配，禁止绕过核验或回填旧manifest。
+
+已有结果
+目标8条已完成150万步训练、grid和depth；其中6条cloud成功。
+多对一loop/discoloop的cloud失败是configuration=false；finished和step都通过，不能重训来修记录。
+源init-1-invariant和new-world-ema均保存150万步complete、完整learning和终点预测。
+前者EMA/R8 B两/三/四跳92.58/65.28/50.06%；后者94.92/45.82/7.10%。
+本次尚缺源机Docker退出核验、两条终点grid/depth/cloud；源主机名暂无法解析。
+state-MLP150万与dropout=0的50万实验均训练、重载、云端通过。
+旧content、recipe-additive和invariant-raw补充深度评测已完成。
+
+收集与分析
+results/loop-results-20261024/保存结果快照、来源哈希、终点表、全曲线、逐题复算和缺口。
+当前只允许读取/整理既有结果及无训练的核验；不要为了收集恢复整个训练控制器。
+若补缺失模型评测，另建仅评测白名单，核对旧权重、环境、资源与执行锁，不包含smoke或train。
+W&B项目：https://wandb.ai/zsqzz/llm-memory-editability
+源init-1 invariant：https://wandb.ai/zsqzz/llm-memory-editability/runs/lnh7a3a1d00
+
+旧共享调度、迁移和失败日志原样保留于runtime/shared-20261023-v3及runtime/gpu-migration-20261022-13。
+10-23交接已归档至runtime/user-hold-20261024/before-RUNNING.txt；不是新启动指令。

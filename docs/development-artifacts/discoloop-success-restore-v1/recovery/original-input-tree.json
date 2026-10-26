@@ -1,0 +1,26 @@
+{
+  "input_root": "data/discoloop-success-restore-v1/original",
+  "files": [
+    {
+      "path": "data/discoloop-success-restore-v1/original/data/world.npz",
+      "sha256": "e31ec9959ce0a7b25465191a1d9ef8e83ec42163ed967fa56a60605f6ac1c3b4",
+      "bytes": 7445175
+    },
+    {
+      "path": "data/discoloop-success-restore-v1/original/data/panels.npz",
+      "sha256": "8655858c0de4646cfb5c7ea1779b5374ef28b492e6ac59bb6eda9e89c7936bf9",
+      "bytes": 132763
+    },
+    {
+      "path": "data/discoloop-success-restore-v1/original/data/complete.json",
+      "sha256": "c60b3c65e6ab889d78b2b0fa6b17cf82ee8739ce14cb2ae18897fe3b10cfda83",
+      "bytes": 725
+    },
+    {
+      "path": "data/discoloop-success-restore-v1/original/reference/gpt2/config.json",
+      "sha256": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4",
+      "bytes": 665
+    }
+  ],
+  "labels": "No separate label files. Frozen runner derives answer/EOS labels from original graph arrays and metadata."
+}

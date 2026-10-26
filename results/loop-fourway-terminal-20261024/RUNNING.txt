@@ -1,0 +1,33 @@
+Loop四臂统一配方：正式训练运行中
+快照 UTC: 2026-10-25T00:12:13.558332+00:00
+主机: sn4622129202；Docker context: lm-memory；network: host。
+每组1500000优化器步，共6000000步；七条旧初始化训练保持暂缓。
+统一一个共享Transformer block、batch512、逐样本Poisson(8)条件采样1–16、仅终点监督、全程反传。
+InfiLoop为用户确认的单状态统一主干适配；DiscoLoop按原文符号任务公式。
+
+invariant: GPU6；快照步数1300/1500000；云端running。
+  容器: b8bf547da185c638f71ae91c8846fb322cce79d5655fde2930b908612bbc38e3
+  W&B: https://wandb.ai/zsqzz/llm-memory-editability/runs/lnhf7a03700
+  累计纯训练均速: 0.1001秒/步（不含评测、保存与启动）。
+loop: GPU4；快照步数3200/1500000；云端running。
+  容器: e50888e5e14f576e567451b93e34c2144e0c19a5bbc52f8ba8cadde0b8712294
+  W&B: https://wandb.ai/zsqzz/llm-memory-editability/runs/lnhf7a03701
+  累计纯训练均速: 0.0452秒/步（不含评测、保存与启动）。
+discoloop: GPU7；快照步数2100/1500000；云端running。
+  容器: 069a49e3dba1eaa164270c274a9ad2e3a7a29383ab6bb34eb7b0269435885cfa
+  W&B: https://wandb.ai/zsqzz/llm-memory-editability/runs/lnhf7a03702
+  累计纯训练均速: 0.0672秒/步（不含评测、保存与启动）。
+infiloop: GPU8；快照步数1800/1500000；云端running。
+  容器: 1d3d219f06f308d82a5017cb21b6c9c22dc2370dbe7d6c693b97b49f2b14eeda
+  W&B: https://wandb.ai/zsqzz/llm-memory-editability/runs/lnhf7a03703
+  累计纯训练均速: 0.0766秒/步（不含评测、保存与启动）。
+
+持久根: /ossfs/workspace/llm-memory-editability/loop-fourway-terminal-20261024
+各臂实时记录: runs/<arm>/{status.json,tracking.json,learning.json,progress.jsonl,checkpoint-*.pt}。
+冻结配置: config.json；冻结源码: runtime/source.tar；哈希: runtime/source-manifest.json。
+启动记录与实际GPU映射: runtime/launch.json；启动快照: runtime/startup-verification.json。
+不要重复运行launch入口；如进程退出，先查实际容器、日志、检查点与用户授权，再决定恢复。
+原桥接网络无法访问W&B，正式更新0；失败日志在attempts/bridge，各原始停止容器保留。
+host网络修订保留在runtime/network-amendment.json与runtime/relaunch-host-network.py；科学源码和配置未变。
+当前工作区launcher默认host网络；原冻结launcher保留bridge，实际启动命令以launch.json为准。
+10项必要CPU检查通过；四组正式启动的损失与梯度有限，无OOM；这不代替终点与独立重载核验。

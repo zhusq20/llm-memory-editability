@@ -1,0 +1,158 @@
+{
+  "batch": "loop-invariant-robustness-v1",
+  "status": "authorized 2026-10-21; prepared",
+  "authorization": "2026-10-21 user requests stability, changed-data sensitivity and InfiLoop-style depth extension experiments.",
+  "question": "Stability across initialization and data conditions; see registered robustness protocol.",
+  "data": {
+    "world_seed": 2026102103,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "schedule_seed": 2026102001,
+    "unique_layers": 1,
+    "evaluation_repeats": 4,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "final_lr_fraction": 0.1,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "grad_clip": 1.0,
+    "ema_decay": 0.999,
+    "batch_size": 512,
+    "steps": 1500000,
+    "segments": 2,
+    "first_segment_rounds": [
+      4,
+      6
+    ],
+    "later_segment_rounds": [
+      1,
+      4
+    ]
+  },
+  "handoff": {
+    "initial_beta": 0.55,
+    "score_hidden": 16,
+    "score_clip": 8.0,
+    "score_seed": 2026102002
+  },
+  "arms": {
+    "invariant": {
+      "handoff": "invariant"
+    },
+    "ema": {
+      "handoff": "ema"
+    }
+  },
+  "dropout_seed": 2026101604,
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000,
+    400000,
+    500000,
+    600000,
+    700000,
+    800000,
+    900000,
+    1000000,
+    1100000,
+    1200000,
+    1300000,
+    1400000,
+    1500000
+  ],
+  "evaluation_rounds": [
+    4,
+    8
+  ],
+  "grid_rounds": 32,
+  "grid_joint_rounds": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "evaluation_batch_size": 256,
+  "heartbeat_steps": 1000,
+  "smoke_steps": 32,
+  "input_origin": {
+    "world_sha256": "ad2de57aacd95146374489d927c8ccadc1bf4237c49caf3c59e8228474b7c14f",
+    "panels_sha256": "a81b57638952fd2315c1f5c55e987907c09b2b3253967166eba697c53b43cb23",
+    "root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-invariant-robustness-v1/inputs/new-world"
+  },
+  "input_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-invariant-robustness-v1/inputs/new-world",
+  "paired_recipe": {
+    "initial_backbone_sha256": "39a487823c05311a223db99c3d0e2df3e7a1752498e261337f4298abe0cfa7b0",
+    "note": "Paired invariant/ema backbone hash, measured before training."
+  },
+  "reused_comparators": {},
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2",
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "cpu_threads": 2,
+    "memory_gib": 16,
+    "gpu_memory_fraction": 0.16,
+    "minimum_free_gpu_mib": 18000,
+    "maximum_idle_gpu_used_mib": 512,
+    "gpu_candidates": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "maximum_parallel": 4,
+    "cpu_sets": [
+      "70,71",
+      "72,73",
+      "74,75",
+      "76,77"
+    ]
+  },
+  "tracking": {
+    "provider": "wandb",
+    "entity": "zsqzz",
+    "project": "llm-memory-editability",
+    "mode": "online"
+  },
+  "primary": "Fixed 1500000-step endpoint EMA R8 graph-B two/three/four-hop; paired invariant minus ema; all 11 panels and full curves retained.",
+  "budget": {
+    "new_scientific_runs": 2,
+    "new_scientific_updates": 3000000
+  },
+  "condition": "new-world"
+}

@@ -1,0 +1,54 @@
+Loop 目标机共享 GPU 接续（2026-10-23 UTC）
+
+用户明确授权：不必等完全空闲卡，选择四张能容纳完整配方的 GPU，共享运行以下九条。
+主机 sn4622129202；显式 docker --context lm-memory；控制器 PID594327。
+当前入口 runtime/shared-20261023-v3/，旧控制器和旧启动脚本不重启。
+
+资源与顺序
+资源池 GPU4/7/5/8，全机本用户所有批次合计最多四卡，每卡一个本批任务。
+每进程2CPU、16GiB主存；原配置的GPU allocator比例0.16保持，每次创建/启动前至少17710MiB空余。
+其中包含原allocator上限及2048MiB额外CUDA/余量；不以瞬时低显存假定对方会一直低占用。
+GPU4/7约45GiB较稳定，GPU5/8观测约14–77GiB波动；共享耗时不作独占效率结果。
+基线CUDA进程、活动容器与从未启动预约的身份已记录。预约本身保留、不启动、不删除；
+仅在仍为never-started created/PID0/restart=no时忽略。新增进程/预约或旧预约启动会阻止新入场。
+不杀进程、不重启其他项目。准入读取失败只重读，不启动模型。
+
+九条尚未开始的正式训练，各1500000步，总13500000步，是原授权剩余量：
+先 many-to-one-loop、many-to-one-discoloop；
+初始化最后：init-1-ema、init-1-loop、init-1-discoloop；
+init-2-invariant、init-2-ema、init-2-loop、init-2-discoloop。
+原batch512、LR时间轴、AdamW、dropout、数据流、初始化、参数EMA、评价和W&B身份保持。
+没有从已完成模型重新训练；运行阶段以controller与实际Docker为准。
+
+已完成/后续
+original-loop、new-world-invariant、many-to-one-invariant的现有成功阶段直接复用。
+many-to-one-ema、new-world-loop、new-world-discoloop已训练到150万步且容器exit0；
+仅接续尚缺grid/depth/cloud，不能把旧state=running误当作仍在训练。
+原白名单的old-content、old-recipe-additive、old-invariant-raw只做缺失深度评测。
+源机init-1-invariant和new-world-ema已记录训练完成；其另行交接的后续保留，不在本次重训。
+
+验证与失败
+23项针对性CPU检查及Ruff检查/格式通过；四卡实际矩阵乘、反向、同步和W&B访问均通过。
+固定源码create-copy-start，容器root复制0444/0555，执行前清除附加组并降为本用户。
+每个新训练仍经过原32步smoke和独立smoke-grid重载，再从原初值正式训练。
+CUDA峰值及源码权限核验见execution/JOB/STAGE/cuda-peak.json。
+shared-v2曾因并发写latest-resources.json的临时文件冲突而退出，科学训练0；
+日志、两个成功工程检查和两个空入场目录均保留。v3序列化读取/写入，并复用GPU4/7成功检查。
+没有失败训练的自动重试。旧迁移、OOM/137和确认失败记录均保留。
+
+恢复顺序
+runtime/schedule-amendment.json -> runtime/shared-20261023-v3/amendment.json、plan.json ->
+runtime/controller-process.json、controller-state.json -> execution/收据与实际LM Docker。
+源队列锁和本机4张GPU锁由当前控制器持有；禁止重复提交旧入口或共享入口。
+提交、正式开训、终点、独立重载、深度评测和云端核验是不同状态。
+实时W&B链接见cases/JOB/runs/ARM/tracking.json。
+项目 https://wandb.ai/zsqzz/llm-memory-editability
+10-22迁移旧交接完整保留在runtime/shared-20261023-v3/before-RUNNING.txt。
+
+23:40 UTC实际核验：四卡均有本用户CUDA进程；19个原活动容器的ID/PID/启动时间保持。
+GPU4 many-to-one-loop与GPU7 many-to-one-discoloop均正式到1000步，损失和梯度有限；
+GPU5 many-to-one-ema与GPU8 new-world-loop已完成独立grid并进入depth。
+两条新W&B run云端均读回running；云端曲线和最终终点仍须分别核验。
+loop https://wandb.ai/zsqzz/llm-memory-editability/runs/lnh7af6c100
+discoloop https://wandb.ai/zsqzz/llm-memory-editability/runs/lnh7af6c101
+短训PyTorch peak_reserved：loop2544MiB、discoloop2924MiB；它们不是全程峰值。

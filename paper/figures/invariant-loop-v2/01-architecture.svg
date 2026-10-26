@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="993.6pt" height="820.8pt" viewBox="0 0 993.6 820.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-24T21:07:49.483356</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 820.8 
+L 993.6 820.8 
+L 993.6 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 379.8 223.56 
+L 941.4 223.56 
+Q 947.88 223.56 947.88 230.04 
+L 947.88 410.04 
+Q 947.88 416.52 941.4 416.52 
+L 379.8 416.52 
+Q 373.32 416.52 373.32 410.04 
+L 373.32 230.04 
+Q 373.32 223.56 379.8 223.56 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #fafcfd; stroke: #d4dee5; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 219.6 142.56 
+Q 219.6 157.32 219.6 169.955735 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 222.6 163.955735 
+L 219.6 169.955735 
+L 216.6 163.955735 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 158.4 183.6 
+Q 182.88 183.6 205.235735 183.6 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 199.235735 180.6 
+L 205.235735 183.6 
+L 199.235735 186.6 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 219.6 195.12 
+Q 219.6 209.88 219.6 222.515735 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 222.6 216.515735 
+L 219.6 222.515735 
+L 216.6 216.515735 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 219.6 293.76 
+Q 219.6 353.16 219.6 410.435735 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 222.6 404.435735 
+L 219.6 410.435735 
+L 216.6 404.435735 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 219.6 315.36 
+Q 309.6 315.36 397.475735 315.36 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 391.475735 312.36 
+L 397.475735 315.36 
+L 391.475735 318.36 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 604.8 315.36 
+Q 631.8 315.36 656.675735 315.36 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 650.675735 312.36 
+L 656.675735 315.36 
+L 650.675735 318.36 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 786.24 350.64 
+L 786.24 424.08 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: square"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 786.24 424.08 
+Q 509.04 424.08 233.964265 424.08 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 239.964265 427.08 
+L 233.964265 424.08 
+L 239.964265 421.08 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 219.6 435.6 
+Q 219.6 448.2 219.6 458.675735 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 222.6 452.675735 
+L 219.6 458.675735 
+L 216.6 452.675735 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 219.6 520.56 
+Q 219.6 564.84 219.6 606.995735 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 222.6 600.995735 
+L 219.6 606.995735 
+L 216.6 600.995735 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 331.2 490.32 
+L 406.8 490.32 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #008577; stroke-width: 1.9; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 406.8 490.32 
+L 406.8 542.88 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #008577; stroke-width: 1.9; stroke-linecap: square"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 406.8 542.88 
+Q 424.8 542.88 440.675735 542.88 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 434.675735 539.88 
+L 440.675735 542.88 
+L 434.675735 545.88 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #008577; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 632.16 315.36 
+Q 632.16 364.68 632.16 414 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 632.16 433.44 
+Q 632.16 465.48 632.16 495.395735 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 635.16 489.395735 
+L 632.16 495.395735 
+L 629.16 489.395735 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #008577; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 799.2 542.88 
+Q 790.2 542.88 783.324265 542.88 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 789.324265 545.88 
+L 783.324265 542.88 
+L 789.324265 539.88 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #008577; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 612 587.52 
+Q 612 605.88 612 622.115735 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 615 616.115735 
+L 612 622.115735 
+L 609 616.115735 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #008577; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 442.8 658.8 
+Q 403.2 658.8 365.724265 658.8 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 371.724265 661.8 
+L 365.724265 658.8 
+L 371.724265 655.8 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #008577; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 824.4 664.56 
+L 824.4 686.88 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 824.4 686.88 
+Q 802.8 686.88 783.324265 686.88 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 789.324265 689.88 
+L 783.324265 686.88 
+L 789.324265 683.88 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #008577; stroke-dasharray: 7.03,3.04; stroke-dashoffset: 0; stroke: #008577; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 219.6 688.32 
+Q 219.6 704.88 219.6 719.315735 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 222.6 713.315735 
+L 219.6 719.315735 
+L 216.6 713.315735 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 219.6 707.04 
+L 15.84 707.04 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 2.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 15.84 707.04 
+L 15.84 118.8 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 2.2; stroke-linecap: square"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 15.84 118.8 
+Q 61.2 118.8 104.100325 118.8 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 2.2; stroke-linecap: round"/>
+    <path d="M 98.100325 115.8 
+L 104.100325 118.8 
+L 98.100325 121.8 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 2.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 322.56 738 
+Q 382.68 738 440.675735 738 
+" clip-path="url(#pf25a2dce8b)" style="fill: none; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+    <path d="M 434.675735 735 
+L 440.675735 738 
+L 434.675735 741 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #0077bb; stroke: #0077bb; stroke-width: 1.9; stroke-linecap: round"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 37.8 153 
+L 153 153 
+Q 159.48 153 159.48 159.48 
+L 159.48 207.72 
+Q 159.48 214.2 153 214.2 
+L 37.8 214.2 
+Q 31.32 214.2 31.32 207.72 
+L 31.32 159.48 
+Q 31.32 153 37.8 153 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #fff2e5; stroke: #d4dee5; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_23">
+    <path d="M 113.4 223.56 
+L 325.8 223.56 
+Q 332.28 223.56 332.28 230.04 
+L 332.28 288.36 
+Q 332.28 294.84 325.8 294.84 
+L 113.4 294.84 
+Q 106.92 294.84 106.92 288.36 
+L 106.92 230.04 
+Q 106.92 223.56 113.4 223.56 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #f3f6f8; stroke: #627482; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_24">
+    <path d="M 405 278.28 
+L 599.4 278.28 
+Q 605.88 278.28 605.88 284.76 
+L 605.88 345.24 
+Q 605.88 351.72 599.4 351.72 
+L 405 351.72 
+Q 398.52 351.72 398.52 345.24 
+L 398.52 284.76 
+Q 398.52 278.28 405 278.28 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #eaf4fa; stroke: #0077bb; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_25">
+    <path d="M 664.2 278.28 
+L 909 278.28 
+Q 915.48 278.28 915.48 284.76 
+L 915.48 345.24 
+Q 915.48 351.72 909 351.72 
+L 664.2 351.72 
+Q 657.72 351.72 657.72 345.24 
+L 657.72 284.76 
+Q 657.72 278.28 664.2 278.28 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #eaf4fa; stroke: #0077bb; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_26">
+    <path d="M 113.4 459.72 
+L 325.8 459.72 
+Q 332.28 459.72 332.28 466.2 
+L 332.28 515.16 
+Q 332.28 521.64 325.8 521.64 
+L 113.4 521.64 
+Q 106.92 521.64 106.92 515.16 
+L 106.92 466.2 
+Q 106.92 459.72 113.4 459.72 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #eaf4fa; stroke: #0077bb; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_27">
+    <path d="M 448.2 496.44 
+L 775.8 496.44 
+Q 782.28 496.44 782.28 502.92 
+L 782.28 582.12 
+Q 782.28 588.6 775.8 588.6 
+L 448.2 588.6 
+Q 441.72 588.6 441.72 582.12 
+L 441.72 502.92 
+Q 441.72 496.44 448.2 496.44 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #e6f4ef; stroke: #008577; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_28">
+    <path d="M 81 608.04 
+L 358.2 608.04 
+Q 364.68 608.04 364.68 614.52 
+L 364.68 682.92 
+Q 364.68 689.4 358.2 689.4 
+L 81 689.4 
+Q 74.52 689.4 74.52 682.92 
+L 74.52 614.52 
+Q 74.52 608.04 81 608.04 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #e6f4ef; stroke: #008577; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_29">
+    <path d="M 448.2 623.16 
+L 775.8 623.16 
+Q 782.28 623.16 782.28 629.64 
+L 782.28 693.72 
+Q 782.28 700.2 775.8 700.2 
+L 448.2 700.2 
+Q 441.72 700.2 441.72 693.72 
+L 441.72 629.64 
+Q 441.72 623.16 448.2 623.16 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #e6f4ef; stroke: #008577; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_30">
+    <path d="M 448.2 718.92 
+L 940.68 718.92 
+Q 947.16 718.92 947.16 725.4 
+L 947.16 754.2 
+Q 947.16 760.68 940.68 760.68 
+L 448.2 760.68 
+Q 441.72 760.68 441.72 754.2 
+L 441.72 725.4 
+Q 441.72 718.92 448.2 718.92 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #fff2e5; stroke: #d4dee5; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_31">
+    <path d="M 219.6 172.08 
+C 222.65514 172.08 225.58556 173.29382 227.74587 175.45413 
+C 229.90618 177.61444 231.12 180.54486 231.12 183.6 
+C 231.12 186.65514 229.90618 189.58556 227.74587 191.74587 
+C 225.58556 193.90618 222.65514 195.12 219.6 195.12 
+C 216.54486 195.12 213.61444 193.90618 211.45413 191.74587 
+C 209.29382 189.58556 208.08 186.65514 208.08 183.6 
+C 208.08 180.54486 209.29382 177.61444 211.45413 175.45413 
+C 213.61444 173.29382 216.54486 172.08 219.6 172.08 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #ffffff; stroke: #0077bb; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_32">
+    <path d="M 219.6 412.56 
+C 222.65514 412.56 225.58556 413.77382 227.74587 415.93413 
+C 229.90618 418.09444 231.12 421.02486 231.12 424.08 
+C 231.12 427.13514 229.90618 430.06556 227.74587 432.22587 
+C 225.58556 434.38618 222.65514 435.6 219.6 435.6 
+C 216.54486 435.6 213.61444 434.38618 211.45413 432.22587 
+C 209.29382 430.06556 208.08 427.13514 208.08 424.08 
+C 208.08 421.02486 209.29382 418.09444 211.45413 415.93413 
+C 213.61444 413.77382 216.54486 412.56 219.6 412.56 
+z
+" clip-path="url(#pf25a2dce8b)" style="fill: #ffffff; stroke: #0077bb; stroke-width: 1.8; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #243746; font: 700 28px 'Noto Sans CJK JP'; text-anchor: start" x="32.4" y="41.71" transform="rotate(-0 32.4 41.71)">Invariant Loop｜架构总览</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #627482; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="32.4" y="76.098437" transform="rotate(-0 32.4 76.098437)">Transformer 抽象为共享块；展开词表反馈与状态更新。箭头按计算顺序阅读。</text>
+   </g>
+   <g id="text_3">
+    <!-- 上一轮状态  $h_{t-1}$ -->
+    <g style="fill: #243746" transform="translate(142.7 124.46875)">
+     <text>
+      <tspan style="font: 20px 'Noto Sans CJK JP'" x="0 20 40 60 80 100 104.479996" y="-0.125">上一轮状态  </tspan>
+      <tspan style="font: oblique 20px 'DejaVu Sans'" x="108.959991" y="-0.125">h</tspan>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="121.635773" y="3.15625">t</tspan>
+      <tspan style="font: 14px 'DejaVu Sans'" x="129.85257 144.310577" y="3.15625">−1</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_4">
+    <!-- 输入表示  $e$ -->
+    <g style="fill: #243746" transform="translate(52.305 176.99975)">
+     <text>
+      <tspan style="font: 17px 'Noto Sans CJK JP'" x="0 16.999985 33.999969 50.999954 67.999939 71.807938" y="-0.671875">输入表示  </tspan>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="75.615936" y="-0.671875">e</tspan>
+     </text>
+    </g>
+    <text style="fill: #243746; font: 17px 'Noto Sans CJK JP'" transform="translate(44.373437 199.837125)">词嵌入 + 位置</text>
+   </g>
+   <g id="text_5">
+    <text style="fill: #243746; font: 22px 'Noto Sans CJK JP'; text-anchor: middle" x="219.6" y="189.475625" transform="rotate(-0 219.6 189.475625)">+</text>
+   </g>
+   <g id="text_6">
+    <!-- 共享 Transformer  $F_θ$ -->
+    <g style="fill: #243746" transform="translate(133.92 252.2565)">
+     <text>
+      <tspan style="font: 18px 'Noto Sans CJK JP'" x="0 18 36 40.031998 50.813995 57.797989 67.931992 78.911987 87.335983 93.185974 104.093979 111.077972 127.745972 137.717972 144.701965 148.733963" y="-0.859375">共享 Transformer  </tspan>
+      <tspan style="font: oblique 18px 'DejaVu Sans'" x="152.765961" y="-0.859375">F</tspan>
+      <tspan style="font: oblique 12.6px 'DejaVu Sans'" x="163.119476" y="2.09375">θ</tspan>
+     </text>
+    </g>
+    <text style="fill: #243746; font: 18px 'Noto Sans CJK JP'" transform="translate(147.147188 276.43725)">1 个因果 GPT-2 块</text>
+   </g>
+   <g id="text_7">
+    <!-- $H_t$ -->
+    <g style="fill: #243746" transform="translate(237.65 334.119062)">
+     <text>
+      <tspan style="font: oblique 23px 'DejaVu Sans'" x="0" y="-0.234375">H</tspan>
+      <tspan style="font: oblique 16.1px 'DejaVu Sans'" x="17.294922" y="3.5390625">t</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_8">
+    <text style="fill: #627482; font: 17px 'Noto Sans CJK JP'; text-anchor: end" x="108" y="332.418437" transform="rotate(-0 108 332.418437)">本轮块输出</text>
+   </g>
+   <g id="text_9">
+    <text style="fill: #0077bb; font: 19px 'Noto Sans CJK JP'; text-anchor: start" x="392.4" y="253.293906" transform="rotate(-0 392.4 253.293906)">词表反馈：把预测分布转回 embedding</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #243746; font: 16.5px 'Noto Sans CJK JP'" transform="translate(420.575273 308.593875)">共享输出头 + Softmax</text>
+    <!-- $p_t=\mathrm{softmax}(E\,\mathrm{LN}_f(H_t))$ -->
+    <g style="fill: #243746" transform="translate(409.635 330.759563)">
+     <text>
+      <tspan style="font: oblique 16.5px 'DejaVu Sans'" x="0 109.06394 154.816572" y="-0.46875">pEH</tspan>
+      <tspan style="font: oblique 11.55px 'DejaVu Sans'" x="10.473633 143.861567 167.223799" y="2.2406249999999996">tft</tspan>
+      <tspan style="font: 16.5px 'DejaVu Sans'" x="18.668433 35.708228 44.304663 54.399634 60.208472 66.677954 82.750952 92.862036 102.626685 122.16812 131.360747 148.379316 172.203999 178.641255" y="-0.46875">=softmax(LN())</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_11">
+    <!-- $p_t$ -->
+    <g style="fill: #0077bb" transform="translate(621.32 297.98875)">
+     <text>
+      <tspan style="font: oblique 20px 'DejaVu Sans'" x="0" y="-0.796875">p</tspan>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="12.695312" y="2.484375">t</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_12">
+    <text style="fill: #243746; font: 18px 'Noto Sans CJK JP'" transform="translate(714.6 307.1925)">概率加权的词嵌入</text>
+    <!-- $q_t=\mathrm{RMS}(E^\top p_t)$ -->
+    <g style="fill: #243746" transform="translate(717.39 333.01125)">
+     <text>
+      <tspan style="font: oblique 18px 'DejaVu Sans'" x="0 85.439355 114.453223" y="-0.28281250000000036">qEp</tspan>
+      <tspan style="font: oblique 12.6px 'DejaVu Sans'" x="11.425781 125.879004" y="2.6703125000000014">tt</tspan>
+      <tspan style="font: 18px 'DejaVu Sans'" x="20.365137 38.954004 51.46084 66.991113 78.416895 131.311523" y="-0.28281250000000036">=RMS()</tspan>
+      <tspan style="font: 12.6px 'DejaVu Sans'" x="100.530469" y="-7.1734375">⊤</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_13">
+    <text style="fill: #627482; font: 17px 'Noto Sans CJK JP'; text-anchor: middle" x="503.28" y="387.858438" transform="rotate(-0 503.28 387.858438)">全词表软反馈</text>
+   </g>
+   <g id="text_14">
+    <!-- 词表反馈  $q_t$ -->
+    <g style="fill: #0077bb" transform="translate(322.29 412.126875)">
+     <text>
+      <tspan style="font: 18px 'Noto Sans CJK JP'" x="0 18 36 54 72 76.031998" y="-0.875">词表反馈  </tspan>
+      <tspan style="font: oblique 18px 'DejaVu Sans'" x="80.063995" y="-0.875">q</tspan>
+      <tspan style="font: oblique 12.6px 'DejaVu Sans'" x="91.489777" y="2.078125">t</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_15">
+    <text style="fill: #243746; font: 22px 'Noto Sans CJK JP'; text-anchor: middle" x="219.6" y="429.955625" transform="rotate(-0 219.6 429.955625)">+</text>
+   </g>
+   <g id="text_16">
+    <text style="fill: #243746; font: 18px 'Noto Sans CJK JP'" transform="translate(174.6 483.6915)">候选归一化</text>
+    <!-- $c_t=\mathrm{RMS}(H_t+q_t)$ -->
+    <g style="fill: #243746" transform="translate(145.17 507.87225)">
+     <text>
+      <tspan style="font: oblique 18px 'DejaVu Sans'" x="0 83.910059 124.973437" y="-0.34375">cHq</tspan>
+      <tspan style="font: oblique 12.6px 'DejaVu Sans'" x="9.896484 97.445215 136.399219" y="2.609375">ttt</tspan>
+      <tspan style="font: 18px 'DejaVu Sans'" x="18.83584 37.424707 49.931543 65.461816 76.887598 106.38457 141.831738" y="-0.34375">=RMS(+)</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_17">
+    <!-- $c_t$ -->
+    <g style="fill: #243746" transform="translate(176.92 567.835625)">
+     <text>
+      <tspan style="font: oblique 22px 'DejaVu Sans'" x="0" y="-0.671875">c</tspan>
+      <tspan style="font: oblique 15.4px 'DejaVu Sans'" x="12.095703" y="2.9375">t</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_18">
+    <!-- $p_t$ -->
+    <g style="fill: #008577" transform="translate(653.76 463.58875)">
+     <text>
+      <tspan style="font: oblique 20px 'DejaVu Sans'" x="0" y="-0.796875">p</tspan>
+      <tspan style="font: oblique 14px 'DejaVu Sans'" x="12.695312" y="2.484375">t</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_19">
+    <text style="fill: #243746; font: 17px 'Noto Sans CJK JP'" transform="translate(511.877969 524.501062)">五统计量打分（详见图 2）</text>
+    <text style="fill: #243746; font: 17px 'Noto Sans CJK JP'" transform="translate(467.5 547.338438)">熵、峰值、分布内积、相对变化、余弦</text>
+    <!-- $5\ \to\ 16\ \to\ 1\quad\Longrightarrow\quad w_t&gt;0$ -->
+    <g style="fill: #243746" transform="translate(500.99 570.175813)">
+     <text>
+      <tspan style="font: 17px 'DejaVu Sans'" x="0 19.647894 42.724011 53.539929 73.187823 96.263939 126.951928 193.541625 211.097777" y="-0.375">5→16→1⟹&gt;0</tspan>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="171.195092" y="-0.375">w</tspan>
+      <tspan style="font: oblique 11.9px 'DejaVu Sans'" x="185.0989" y="2.4140625">t</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_20">
+    <text style="fill: #627482; font: 17px 'Noto Sans CJK JP'; text-anchor: start" x="795.6" y="526.098438" transform="rotate(-0 795.6 526.098438)">上一轮保存</text>
+   </g>
+   <g id="text_21">
+    <!-- $h_{t-1},\ p_{t-1}$ -->
+    <g style="fill: #008577" transform="translate(795.6 559.065313)">
+     <text>
+      <tspan style="font: oblique 19px 'DejaVu Sans'" x="0 58.475036" y="-0.5625">hp</tspan>
+      <tspan style="font: oblique 13.3px 'DejaVu Sans'" x="12.041992 70.535583" y="2.5546875">tt</tspan>
+      <tspan style="font: 13.3px 'DejaVu Sans'" x="19.847949 33.583057 78.34154 92.076647" y="2.5546875">−1−1</tspan>
+      <tspan style="font: 19px 'DejaVu Sans'" x="42.564453" y="-0.5625">,</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_22">
+    <!-- $w_t$ -->
+    <g style="fill: #008577" transform="translate(645.12 612.061875)">
+     <text>
+      <tspan style="font: oblique 18px 'DejaVu Sans'" x="0" y="-0.15625">w</tspan>
+      <tspan style="font: oblique 12.6px 'DejaVu Sans'" x="14.72168" y="2.796875">t</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_23">
+    <text style="fill: #243746; font: 18px 'Noto Sans CJK JP'" transform="translate(120.6 641.7315)">历史与本轮候选加权平均</text>
+    <!-- $h_t=(1-\gamma_t)h_{t-1}+\gamma_t c_t$ -->
+    <g style="fill: #243746" transform="translate(121.32 665.91225)">
+     <text>
+      <tspan style="font: oblique 18px 'DejaVu Sans'" x="0 79.506738 102.614062 165.033984 181.118848" y="-0.328125">hγhγc</tspan>
+      <tspan style="font: oblique 12.6px 'DejaVu Sans'" x="11.408203 90.159082 114.022266 175.686328 191.015332" y="2.625">ttttt</tspan>
+      <tspan style="font: 18px 'DejaVu Sans'" x="20.347559 38.936426 45.958887 60.917871 95.591602 146.445117" y="-0.328125">=(1−)+</tspan>
+      <tspan style="font: 12.6px 'DejaVu Sans'" x="121.417383 134.42959" y="2.625">−1</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_24">
+    <!-- 接收比例  $\gamma_t=\frac{w_t}{\beta D_{t-1}+w_t}$ -->
+    <g style="fill: #243746" transform="translate(502.275 665.67)">
+     <text>
+      <tspan style="font: 21px 'Noto Sans CJK JP'" x="0 20.999985 41.999969 62.999954 83.999939 88.703934" y="-0.3539062500000014">接收比例  </tspan>
+      <tspan style="font: oblique 21px 'DejaVu Sans'" x="93.407928" y="-0.3539062500000014">γ</tspan>
+      <tspan style="font: oblique 14.7px 'DejaVu Sans'" x="105.835663 137.951923 147.333221 168.951923 200.312079" y="3.0914062499999986 8.278906249999999 8.278906249999999 -11.9609375 8.278906249999999">tβDww</tspan>
+      <tspan style="font: 21px 'DejaVu Sans'" x="116.264911" y="-0.3539062500000014">=</tspan>
+      <tspan style="font: oblique 10.29px 'DejaVu Sans'" x="158.652509 180.974628 212.334784" y="10.690625 -9.54921875 10.690625">ttt</tspan>
+      <tspan style="font: 10.29px 'DejaVu Sans'" x="164.691854 175.31849" y="10.690625">−1</tspan>
+      <tspan style="font: 14.7px 'DejaVu Sans'" x="185.131171" y="8.278906249999999">+</tspan>
+     </text>
+     <rect x="137.951923" y="-5.299219" width="78.819419" height="1.3125"/>
+    </g>
+   </g>
+   <g id="text_25">
+    <text style="fill: #627482; font: 17px 'Noto Sans CJK JP'" transform="translate(813 637.79975)">历史累计权重</text>
+    <!-- $D_{t-1}$ -->
+    <g style="fill: #627482" transform="translate(843.77 660.637125)">
+     <text>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="0" y="-0.609375">D</tspan>
+      <tspan style="font: oblique 11.9px 'DejaVu Sans'" x="13.090332" y="2.1796875">t</tspan>
+      <tspan style="font: 11.9px 'DejaVu Sans'" x="20.074609 32.363916" y="2.1796875">−1</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_26">
+    <!-- 更新后状态  $h_t$ -->
+    <g style="fill: #243746" transform="translate(152.505 743.952188)">
+     <text>
+      <tspan style="font: 21px 'Noto Sans CJK JP'" x="0 20.999985 41.999969 62.999954 83.999939 104.999924 109.703918" y="-0.28125">更新后状态  </tspan>
+      <tspan style="font: oblique 21px 'DejaVu Sans'" x="114.407913" y="-0.28125">h</tspan>
+      <tspan style="font: oblique 14.7px 'DejaVu Sans'" x="127.717484" y="3.1640625">t</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_27">
+    <text style="fill: #0077bb; font: 17px 'Noto Sans CJK JP'" transform="translate(42.978437 474.5) rotate(-90)">送入下一轮</text>
+   </g>
+   <g id="text_28">
+    <!-- $t=R$ -->
+    <g style="fill: #627482" transform="translate(365.48 724.098437)">
+     <text>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="0 27.533691" y="-0.609375">tR</tspan>
+      <tspan style="font: 17px 'DejaVu Sans'" x="9.977539" y="-0.609375">=</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_29">
+    <!-- 共享输出头 $E\,\mathrm{LN}_f(h_R)$  →  答案 / EOS logits -->
+    <g style="fill: #243746" transform="translate(532.94 744.985)">
+     <text>
+      <tspan style="font: 17px 'Noto Sans CJK JP'" x="0 16.999985 33.999969 50.999954 67.999939 84.999924 162.086444 165.894443 169.702442 186.702426 190.510425 194.318424 211.318408 228.318393 232.126392 238.790378 242.598377 252.611362 265.225345 275.357334 279.165332 283.99332 294.295307 303.883289 308.558277 314.967273" y="-0.46875">共享输出头   →  答案 / EOS logits</tspan>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="88.807922 135.946454" y="-0.46875">Eh</tspan>
+      <tspan style="font: 17px 'DejaVu Sans'" x="102.309198 111.78039 129.31413 155.45412" y="-0.46875">LN()</tspan>
+      <tspan style="font: oblique 11.9px 'DejaVu Sans'" x="124.659882 146.720868" y="2.3203125">fR</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_30">
+    <!-- 蓝色实线：表示流。绿色虚线：权重计算。完整跨轮状态 $(h,N,D,p)$ 在图 2 展开。 -->
+    <g style="fill: #627482" transform="translate(32.4 797.115937)">
+     <text>
+      <tspan style="font: 17px 'Noto Sans CJK JP'" x="0 16.999985 33.999969 50.999954 67.999939 84.999924 101.999908 118.999893 135.999878 152.999863 169.999847 186.999832 203.999817 220.999802 237.999786 254.999771 271.999756 288.999741 305.999725 322.99971 339.999695 356.99968 373.999664 390.999649 407.999634 424.999619 515.592285 519.400284 536.400269 553.400253 557.208252 566.643234 570.451233 587.451218 604.451202" y="-0.59375">蓝色实线：表示流。绿色虚线：权重计算。完整跨轮状态  在图 2 展开。</tspan>
+      <tspan style="font: 17px 'DejaVu Sans'" x="428.807617 446.214355 467.646973 489.453125 508.959961" y="-0.59375">(,,,)</tspan>
+      <tspan style="font: oblique 17px 'DejaVu Sans'" x="435.439941 454.930176 476.362793 498.168945" y="-0.59375">hNDp</tspan>
+     </text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf25a2dce8b">
+   <rect x="0" y="0" width="993.6" height="820.8"/>
+  </clipPath>
+ </defs>
+</svg>

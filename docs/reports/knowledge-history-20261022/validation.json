@@ -1,0 +1,1870 @@
+{
+  "scope": "documentation_only",
+  "local_links_checked": 1220,
+  "preexisting_broken_links": [
+    {
+      "source": "AGENTS.md",
+      "line": 45,
+      "target": "docs/development-artifacts/implicit-reasoning-paper-reproduction-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "AGENTS.md",
+      "line": 45,
+      "target": "docs/development-artifacts/implicit-reasoning-paper-reproduction-v2/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "AGENTS.md",
+      "line": 49,
+      "target": "results/path-hop-analysis-v1/completion-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "AGENTS.md",
+      "line": 49,
+      "target": "results/rippleedits-paper-reproduction-v1/audit-scheduling-intervention-20261009/plan.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "AGENTS.md",
+      "line": 53,
+      "target": "docs/development-artifacts/paper-reproductions-parallel-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "AGENTS.md",
+      "line": 57,
+      "target": "results/history-design-review-20261007/catalog.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "AGENTS.md",
+      "line": 57,
+      "target": "results/history-design-review-20261007/user-reviews.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "AGENTS.md",
+      "line": 79,
+      "target": "docs/development-artifacts/memory-interface-next-v1/container/runtime.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "AGENTS.md",
+      "line": 79,
+      "target": "docs/development-artifacts/memory-interface-next-v1/container/archive-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/memory-scaling-theory.md",
+      "line": 411,
+      "target": "docs/development-artifacts/loop-learning-development-v1/verify_loop_kernel.py",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/memory-scaling-theory.md",
+      "line": 411,
+      "target": "docs/development-artifacts/loop-learning-development-v1/verify_loop_kernel.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/memory-scaling-theory.md",
+      "line": 962,
+      "target": "docs/development-artifacts/latent-support-depth-review-v1/hop-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/memory-scaling-theory.md",
+      "line": 1043,
+      "target": "docs/development-artifacts/memory-scaling-theory-v1/README.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/memory-scaling-theory.md",
+      "line": 1055,
+      "target": "docs/development-artifacts/latent-support-v1/design.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/memory-scaling-theory.md",
+      "line": 1114,
+      "target": "docs/development-artifacts/architecture-theory-efficiency-20261007/verify_transformer_algebra.py",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/memory-scaling-theory.md",
+      "line": 1120,
+      "target": "docs/development-artifacts/memory-scaling-theory-v1/source-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1212,
+      "target": "results/zero-training-path-overlap-v3/execution-attempts/audit-tolerance-v1/completion-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1212,
+      "target": "results/zero-training-path-overlap-v3/execution-attempts/audit-tolerance-v1/cloud-verification/receipt.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1216,
+      "target": "results/zero-training-path-overlap-v3/execution-attempts/audit-tolerance-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1223,
+      "target": "results/z1-position-followup-development-v1/completion-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1223,
+      "target": "results/z1-position-followup-development-v1/cloud-verification.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1223,
+      "target": "results/z1-position-followup-development-v1/mechanism-readout.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1241,
+      "target": "results/edit-scope-development-v1/completion-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1241,
+      "target": "results/edit-scope-development-v1/cloud-verification.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1241,
+      "target": "results/edit-scope-development-v1/development-readout-20261011.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1261,
+      "target": "docs/development-artifacts/parallel-readouts-development-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1261,
+      "target": "results/parallel-readouts-development-v1/completion-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1261,
+      "target": "results/parallel-readouts-development-v1/cloud-verification.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1261,
+      "target": "results/parallel-readouts-development-v1/restoration-readout-summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1274,
+      "target": "results/parallel-readouts-development-v1/cloud-verification-attempts/exact-json-v1/receipt.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1274,
+      "target": "results/parallel-readouts-development-v1/supplemental-model-config-dependency-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1281,
+      "target": "results/r1-reading-repair-development-v1/results/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1281,
+      "target": "results/r1-reading-repair-development-v1/postanalysis/status-check-cloud-verification-20261010.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1285,
+      "target": "results/r1-reading-repair-development-v1/postanalysis/mquake-secondary-evidence.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1293,
+      "target": "results/parallel-readouts-development-v1/phrasing-readout-summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1320,
+      "target": "docs/development-artifacts/bios-original-review-v1/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1320,
+      "target": "docs/development-artifacts/bios-original-trajectory-v1/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1320,
+      "target": "docs/development-artifacts/bios-original-diagnostics-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1333,
+      "target": "docs/development-artifacts/bios-same-weight-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1351,
+      "target": "results/capacity-scaling-development-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1351,
+      "target": "docs/development-artifacts/capacity-scaling-full-scan-20261006/amendment.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1363,
+      "target": "results/capacity-recall-controls-v1/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1363,
+      "target": "results/capacity-recall-controls-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1367,
+      "target": "results/capacity-stability-check-v1/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1367,
+      "target": "results/capacity-stability-check-v1/controller-state.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1384,
+      "target": "docs/development-artifacts/storage-composition-v1/confirmation/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1384,
+      "target": "docs/development-artifacts/storage-composition-v1/recovery/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1388,
+      "target": "docs/development-artifacts/storage-stability-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1410,
+      "target": "results/composition-data-curves-v1/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1410,
+      "target": "results/composition-data-curves-v1/report/support-curves.png",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1410,
+      "target": "results/composition-data-curves-v1/report/knowledge-load-curves.png",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1410,
+      "target": "results/composition-data-curves-v1/controller-state.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1410,
+      "target": "docs/development-artifacts/composition-data-curves-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1418,
+      "target": "docs/development-artifacts/perk-paper-reproduction-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1427,
+      "target": "results/perk-paper-reproduction-v1/runs/fticr/audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1427,
+      "target": "results/perk-paper-reproduction-v1/runs/perk/audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1427,
+      "target": "results/perk-paper-reproduction-v1/completion-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1427,
+      "target": "results/perk-paper-reproduction-v1/wandb-cloud-verification.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1434,
+      "target": "docs/development-artifacts/perk-writer-comparison-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1436,
+      "target": "results/perk-writer-comparison-v1/calibration-result.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1436,
+      "target": "results/perk-writer-comparison-v1/controller-state.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1436,
+      "target": "results/perk-writer-comparison-v1/execution/calibration/exit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1450,
+      "target": "docs/development-artifacts/implicit-reasoning-paper-reproduction-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1450,
+      "target": "docs/development-artifacts/implicit-reasoning-paper-reproduction-v2/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1450,
+      "target": "results/implicit-reasoning-paper-reproduction-v2/runs/only_ii-seed42/audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1450,
+      "target": "results/implicit-reasoning-paper-reproduction-v2/runs/ii_plus_id-seed42/audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1450,
+      "target": "docs/development-artifacts/second-hop-paper-reproduction-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1450,
+      "target": "results/second-hop-paper-reproduction-v1/runs/full_atomic-seed42/audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1461,
+      "target": "docs/development-artifacts/grok-usage-v1/report-confirmation/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1461,
+      "target": "docs/development-artifacts/knowledge-use-review-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1472,
+      "target": "docs/development-artifacts/text-structure-v1/confirmation/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1472,
+      "target": "docs/development-artifacts/text-structure-v1/confirmation/secondary-analysis.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1485,
+      "target": "docs/development-artifacts/text-pretrain-v1/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1485,
+      "target": "docs/development-artifacts/text-pretrain-v1/report/mechanism-cells.csv",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1496,
+      "target": "docs/development-artifacts/text-loss-source-v1/followup/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1496,
+      "target": "docs/development-artifacts/text-loss-source-v1/followup/report/weight-cells.csv",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1518,
+      "target": "docs/development-artifacts/representation-alignment-v1/confirmation/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1518,
+      "target": "docs/development-artifacts/representation-alignment-v1/confirmation/state-diagnostics.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1534,
+      "target": "results/independent-alignment-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1534,
+      "target": "results/independent-alignment-v1/report/interpretation.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1534,
+      "target": "results/independent-alignment-v1/tracking-cloud-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1545,
+      "target": "results/bridge-reencoding-confirmation-v1/report-confirmation/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1547,
+      "target": "results/alignment-coverage-confirmation-v1/report-confirmation/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1558,
+      "target": "docs/development-artifacts/grok-depth-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1558,
+      "target": "docs/development-artifacts/grok-depth-v1/completion-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1562,
+      "target": "docs/development-artifacts/grok-depth-extension-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1562,
+      "target": "docs/development-artifacts/grok-multihop-v1/confirmation/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1562,
+      "target": "docs/development-artifacts/grok-multihop-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1566,
+      "target": "docs/development-artifacts/grok-depth-bridge-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1587,
+      "target": "docs/development-artifacts/grok-loop-v1/main-report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1587,
+      "target": "docs/development-artifacts/grok-loop-v1/mechanism-report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1587,
+      "target": "docs/development-artifacts/grok-loop-v1/sensitivity-report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1591,
+      "target": "docs/development-artifacts/grok-loop-continuous-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1595,
+      "target": "docs/development-artifacts/grok-loop-same-bridge-v1/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1599,
+      "target": "docs/development-artifacts/grok-loop-supervision-v1/followup-report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1599,
+      "target": "docs/development-artifacts/grok-loop-supervision-v1/dynamics/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1610,
+      "target": "docs/development-artifacts/latent-scaling-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1614,
+      "target": "docs/development-artifacts/latent-confirmation-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1618,
+      "target": "docs/development-artifacts/latent-support-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1622,
+      "target": "docs/development-artifacts/memory-scaling-theory-v1/README.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1633,
+      "target": "docs/development-artifacts/multihop-scaling-v1/confirmation/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1633,
+      "target": "docs/development-artifacts/multihop-scaling-v1/confirmation/execution-budget-report/execution-budget-summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1638,
+      "target": "results/strict-loop-hop-audit-20261012/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1638,
+      "target": "results/strict-loop-hop-audit-20261012/completion-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1654,
+      "target": "docs/development-artifacts/depth-step-v1/endpoints.csv",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1654,
+      "target": "docs/development-artifacts/depth-step-v1/mechanism-summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1658,
+      "target": "docs/development-artifacts/recurrence-use-v1/followup/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1658,
+      "target": "docs/development-artifacts/recurrence-use-v1/equivalence-note.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1672,
+      "target": "results/loop-block-depth-v1/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1672,
+      "target": "results/loop-block-depth-v1/controller-state.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1672,
+      "target": "docs/development-artifacts/loop-block-depth-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1679,
+      "target": "docs/development-artifacts/grokking-dynamics-v1/assessment.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1692,
+      "target": "docs/development-artifacts/first-principles-review-20261004/data-synthesis/grokking-recount.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1692,
+      "target": "docs/development-artifacts/first-principles-review-20261004/data-synthesis/grokking-all-eight-curves.png",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1692,
+      "target": "docs/development-artifacts/grokking-reproduction-v1/completion-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1703,
+      "target": "docs/development-artifacts/bridge-workspace-v1/comparison/report/endpoints.csv",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1703,
+      "target": "docs/development-artifacts/bridge-workspace-v1/comparison/report/recount-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1703,
+      "target": "results/bridge-workspace-v1/comparison/controller-state.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1731,
+      "target": "docs/development-artifacts/realworld-composition-v1/confirmation/confirmation-summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1731,
+      "target": "docs/development-artifacts/realworld-composition-v1/semantic-review.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1731,
+      "target": "docs/development-artifacts/realworld-composition-v1/development-summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1739,
+      "target": "docs/development-artifacts/realworld-loop-diagnosis-v1/entity-subsets.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1739,
+      "target": "docs/development-artifacts/realworld-loop-addressability-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1747,
+      "target": "results/oo-optimizer-attribution-v1/report.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1747,
+      "target": "docs/development-artifacts/oo-budget-attribution-20261005/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1751,
+      "target": "docs/development-artifacts/parametric-architecture-development-v1/source/docs/development-artifacts/parametric-architecture-execution-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1761,
+      "target": "results/parametric-architecture-main-v1/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1761,
+      "target": "results/parametric-architecture-main-v1/controller-state.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1777,
+      "target": "results/shared-cache-branch-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1777,
+      "target": "results/shared-cache-branch-v1/cloud-final-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1794,
+      "target": "results/residual-cache-comparison-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1794,
+      "target": "results/residual-cache-comparison-v1/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1794,
+      "target": "results/residual-cache-comparison-v1/controller-state.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1806,
+      "target": "docs/development-artifacts/small-lm-composition-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1806,
+      "target": "docs/development-artifacts/small-lm-composition-v2/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1810,
+      "target": "docs/development-artifacts/natural-composition-confirmation-v1/amendment-v2/confirmation/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1817,
+      "target": "docs/development-artifacts/architecture-bridge-toy-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1817,
+      "target": "docs/development-artifacts/architecture-bridge-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1817,
+      "target": "docs/development-artifacts/architecture-bridge-v1/learning-format-review.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1823,
+      "target": "docs/reports/twohop-frozen-v1.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1823,
+      "target": "docs/development-artifacts/twohop-frozen-v1/behavior-summary.csv",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1823,
+      "target": "docs/development-artifacts/twohop-frozen-v1/full-precision-summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1841,
+      "target": "docs/development-artifacts/paper-reproductions-parallel-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1841,
+      "target": "results/mquake-paper-reproduction-v1/runs/gpt-j-6B-rome/audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1841,
+      "target": "results/mquake-paper-reproduction-v1/runs/gpt-j-6B-memit/audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1850,
+      "target": "results/path-hop-analysis-v1/gpt-j-6B-rome.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1850,
+      "target": "results/path-hop-analysis-v1/gpt-j-6B-memit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1866,
+      "target": "results/rippleedits-paper-reproduction-v1/runs/gpt2-xl-rome-recent/audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1866,
+      "target": "results/rippleedits-paper-reproduction-v1/schedule-amendment.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1866,
+      "target": "results/rippleedits-paper-reproduction-v1/audit-scheduling-intervention-20261009/distributed-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1866,
+      "target": "results/path-hop-analysis-v1/gpt2-xl-rome-popular.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1866,
+      "target": "results/path-hop-analysis-v1/gpt2-xl-rome-random.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1866,
+      "target": "results/path-hop-analysis-v1/gpt2-xl-rome-recent.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1866,
+      "target": "results/path-hop-analysis-v1/completion-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1866,
+      "target": "results/path-hop-analysis-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1866,
+      "target": "results/path-hop-analysis-v1/hop-position-summary.png",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1866,
+      "target": "results/path-hop-analysis-v1/hop-position-summary.pdf",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1877,
+      "target": "docs/development-artifacts/hebbian-interface-v1/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1877,
+      "target": "docs/development-artifacts/hebbian-interface-v1/literature-alignment.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1881,
+      "target": "docs/development-artifacts/memory-reuse-v1/confirmation/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1881,
+      "target": "docs/development-artifacts/memory-reuse-v1/confirmation-plan.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1897,
+      "target": "results/interface-editing-confirmation-v1/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1897,
+      "target": "results/interface-editing-confirmation-v1/report/independent-endpoint-review.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1897,
+      "target": "results/interface-editing-development-v1/report/decision.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1929,
+      "target": "results/write-target-confirmation-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1929,
+      "target": "results/write-target-confirmation-v1/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1929,
+      "target": "results/write-target-development-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1929,
+      "target": "docs/development-artifacts/write-target-confirmation-v1/frozen-config.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1929,
+      "target": "docs/development-artifacts/learning-use-20261007/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1963,
+      "target": "results/sequential-transfer-confirmation-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1963,
+      "target": "results/sequential-transfer-confirmation-v1/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1963,
+      "target": "results/sequential-transfer-confirmation-v1/report/sequential-transfer-summary.pdf",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1963,
+      "target": "results/sequential-transfer-confirmation-v1/report/sequential-transfer-summary.png",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1963,
+      "target": "results/sequential-transfer-development-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1963,
+      "target": "results/sequential-transfer-development-v1/development-decision.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1963,
+      "target": "docs/development-artifacts/sequential-transfer-confirmation-v1/frozen-config.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1970,
+      "target": "docs/development-artifacts/sequential-replay-literature-v1/literature.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1972,
+      "target": "docs/development-artifacts/sequential-replay-literature-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1989,
+      "target": "results/sequential-replay-paired-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1989,
+      "target": "results/sequential-replay-paired-v1/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1989,
+      "target": "results/sequential-replay-paired-v1/report/sequential-replay-summary.pdf",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1989,
+      "target": "results/sequential-replay-paired-v1/report/sequential-replay-summary.png",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1989,
+      "target": "results/sequential-replay-development-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1989,
+      "target": "results/sequential-replay-development-v1/development-decision.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1989,
+      "target": "docs/development-artifacts/sequential-replay-paired-v1/frozen-config.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1989,
+      "target": "results/sequential-replay-development-v1/tracking-cloud-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 1989,
+      "target": "results/sequential-replay-paired-v1/tracking-cloud-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2025,
+      "target": "results/loop-learning-development-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2025,
+      "target": "results/loop-learning-development-v1/report/learning-steps.png",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2025,
+      "target": "results/loop-learning-scaling-development-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2025,
+      "target": "results/loop-learning-development-v1/diagnostic-report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2025,
+      "target": "results/loop-learning-scaling-development-v1/diagnostic-report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2025,
+      "target": "docs/development-artifacts/loop-learning-development-v1/verify_loop_kernel.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2025,
+      "target": "results/loop-learning-development-v1/tracking-cloud-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2025,
+      "target": "results/loop-learning-scaling-development-v1/tracking-cloud-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2046,
+      "target": "results/loop-kv-learning-development-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2046,
+      "target": "results/loop-kv-learning-development-v1/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2046,
+      "target": "results/loop-kv-learning-development-v1/report/analysis.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2046,
+      "target": "results/loop-kv-learning-development-v1/completion-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2046,
+      "target": "results/loop-kv-learning-development-v1/tracking-cloud-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2046,
+      "target": "docs/development-artifacts/loop-kv-learning-development-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2046,
+      "target": "results/loop-kv-learning-development-v1/reuse-provenance-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2069,
+      "target": "results/moe-sequential-development-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2069,
+      "target": "results/moe-sequential-development-v1/report/interpretation.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2069,
+      "target": "results/moe-sequential-development-v1/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2069,
+      "target": "results/moe-sequential-development-v1/report/learning-curves.png",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2069,
+      "target": "results/moe-sequential-development-v1/report/learning-curves.pdf",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2069,
+      "target": "results/moe-sequential-development-v1/completion-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2069,
+      "target": "results/moe-sequential-development-v1/tracking-cloud-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2069,
+      "target": "docs/development-artifacts/moe-sequential-development-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2093,
+      "target": "results/knowledge-change-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2093,
+      "target": "results/knowledge-change-v1/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2093,
+      "target": "results/knowledge-change-v1/controller-state.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2093,
+      "target": "results/knowledge-change-v1/cloud-final-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2093,
+      "target": "docs/development-artifacts/knowledge-change-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2101,
+      "target": "docs/development-artifacts/depth-step-v1/mechanism-summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2102,
+      "target": "docs/development-artifacts/depth-step-v1/edit-followup/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2103,
+      "target": "docs/development-artifacts/grokking-dynamics-v1/assessment.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2103,
+      "target": "docs/development-artifacts/grokking-dynamics-v1/balanced-editor/calibration/decision.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2104,
+      "target": "results/shared-cache-branch-v1/report/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2105,
+      "target": "results/residual-cache-comparison-v1/report/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2106,
+      "target": "docs/development-artifacts/small-lm-composition-v2/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2113,
+      "target": "docs/development-artifacts/qwen-constraints-v1",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2115,
+      "target": "docs/development-artifacts/qwen-path-learning-v1",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2115,
+      "target": "docs/development-artifacts/path-learning-reassessment-20260929",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2125,
+      "target": "docs/development-artifacts/organization-v1/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2127,
+      "target": "docs/development-artifacts/cross-v1/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2128,
+      "target": "docs/development-artifacts/cross-scale-v1/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2129,
+      "target": "docs/development-artifacts/mechanism-v1/development-completion-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2129,
+      "target": "docs/development-artifacts/mechanism-v1/ERRATA.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2130,
+      "target": "docs/development-artifacts/shortcut-confirmation-v1/statistics/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2131,
+      "target": "docs/development-artifacts/context-gradient-v1/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2132,
+      "target": "docs/development-artifacts/followup-v1/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2133,
+      "target": "docs/development-artifacts/path-transfer-v1/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2133,
+      "target": "docs/development-artifacts/path-minimal-v1/report.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2134,
+      "target": "docs/development-artifacts/direction-v1",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2134,
+      "target": "docs/development-artifacts/direction-report-v1",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2135,
+      "target": "docs/development-artifacts/relation-response-v1",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2140,
+      "target": "docs/development-artifacts/twohop-hebbian-v1/module-results.csv",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2140,
+      "target": "docs/development-artifacts/twohop-hebbian-v1/completion-audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2142,
+      "target": "docs/development-artifacts/twohop-depth-v1/README.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2149,
+      "target": "docs/development-artifacts/hebbian-learning-v1/resume-execution-status.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2149,
+      "target": "docs/development-artifacts/hebbian-learning-v1/execution-amendments.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2150,
+      "target": "docs/development-artifacts/hebbian-future-v1",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2151,
+      "target": "docs/development-artifacts/hebbian-future-v2",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/results.md",
+      "line": 2162,
+      "target": "results/progress-review-20261007/audit.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/experimental-protocol.md",
+      "line": 5,
+      "target": "docs/development-artifacts/qwen-path-learning-v1/execution-source/docs/experimental-protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/experimental-protocol.md",
+      "line": 52,
+      "target": "docs/development-artifacts/perk-writer-comparison-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/experimental-protocol.md",
+      "line": 123,
+      "target": "docs/development-artifacts/storage-composition-v1/amendment-20261001.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/reports/loop-evidence-history-20261022.md",
+      "line": 340,
+      "target": "results/gate-generalization-extension-v1/execution/controller-state.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/reports/loop-evidence-history-20261022.md",
+      "line": 340,
+      "target": "results/gate-generalization-extension-v1/execution/summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/reports/loop-evidence-history-20261022.md",
+      "line": 363,
+      "target": "results/paper-update-gate-multihop-u95-v1/execution/controller-state.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/reports/loop-evidence-history-20261022.md",
+      "line": 493,
+      "target": "docs/development-artifacts/supervised-alignment-development-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/reports/loop-evidence-history-20261022.md",
+      "line": 493,
+      "target": "results/supervised-alignment-development-v1/completion-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/reports/loop-evidence-history-20261022.md",
+      "line": 493,
+      "target": "results/supervised-alignment-development-v1/factorial-summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/reports/loop-evidence-history-20261022.md",
+      "line": 534,
+      "target": "docs/development-artifacts/self-decode-alignment-development-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/reports/loop-evidence-history-20261022.md",
+      "line": 534,
+      "target": "results/self-decode-alignment-development-v1/completion-manifest.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/reports/loop-evidence-history-20261022.md",
+      "line": 534,
+      "target": "results/self-decode-alignment-development-v1/factorial-summary.json",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/reports/loop-evidence-history-20261022.md",
+      "line": 690,
+      "target": "docs/development-artifacts/supervised-alignment-development-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    },
+    {
+      "source": "docs/reports/loop-evidence-history-20261022.md",
+      "line": 692,
+      "target": "docs/development-artifacts/self-decode-alignment-development-v1/protocol.md",
+      "fragment": "",
+      "reason": "missing_path"
+    }
+  ],
+  "introduced_broken_links": [],
+  "archive_body_preserved_except_relative_links": {
+    "AGENTS.md": true,
+    "docs/roadmap.md": true,
+    "docs/results.md": true,
+    "docs/memory-scaling-theory.md": true
+  },
+  "old_anchor_losses": {
+    "docs/roadmap.md": [],
+    "docs/results.md": [],
+    "docs/memory-scaling-theory.md": []
+  },
+  "duplicate_explicit_ids": {
+    "docs/roadmap.md": [],
+    "docs/results.md": [],
+    "docs/memory-scaling-theory.md": []
+  },
+  "protocol_sections_16_to_18_byte_identical": true,
+  "loop_entry_verbatim_preserved": true,
+  "loop_roadmap_history_and_evidence_unmodified": true,
+  "budget_matches_frozen_config": true,
+  "concurrent_changes_since_snapshot": [],
+  "new_training_or_model_execution": false,
+  "passed": true,
+  "installed_files_match_reviewed_outputs": true,
+  "changed_files": [
+    "docs/reports/knowledge-history-20261022/README.md",
+    "docs/reports/knowledge-history-20261022/agents.md",
+    "docs/reports/knowledge-history-20261022/manifest.json",
+    "docs/reports/knowledge-history-20261022/results.md",
+    "docs/reports/knowledge-history-20261022/roadmap.md",
+    "docs/reports/knowledge-history-20261022/theory.md",
+    ".gitignore",
+    "AGENTS.md",
+    "CONTRIBUTING.md",
+    "README.md",
+    "docs/experimental-protocol.md",
+    "docs/memory-scaling-theory.md",
+    "docs/reports/lm-knowledge-methods-and-memory-20261021.md",
+    "docs/reports/lm-knowledge-progress-review-20261021.md",
+    "docs/results.md",
+    "docs/roadmap.md"
+  ],
+  "checks_note": "Local Markdown paths and anchors; pre-existing missing artifact paths/anchors are listed separately. No network, training, or model inference was performed."
+}

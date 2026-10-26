@@ -1,0 +1,46 @@
+{
+  "batch": "knowledge-method-factorial-1000-v1",
+  "host": "sn4622128200",
+  "cli_reviewed": true,
+  "scientific_config": "configs/knowledge-method-factorial-1000-v1.json",
+  "output": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-method-factorial-1000-v1",
+  "wandb_token_file": "/home/siqizhu4/.cache/lm-memory-ce-ablation/wandb-token",
+  "runtime": {
+    "image": "sha256:8eb44ee1611fe88f5a7113eb271cae9a0894fe0e95c988360b994f79e4017eba",
+    "hf_cache": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-read-interface-development-v1/hf-cache",
+    "maximum_idle_gpu_used_mib": 512,
+    "minimum_free_gpu_mib": 85000,
+    "poll_seconds": 30,
+    "admission_timeout_hours": 336,
+    "deps": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-method-diagnosis-development-v1/deps",
+    "upstream": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-method-diagnosis-development-v1/upstream",
+    "reuse_shared": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-method-diagnosis-development-v1/shared"
+  },
+  "lanes": [
+    {
+      "gpu": 3,
+      "gpu_uuid": "GPU-9dc24b81-029c-288b-ced5-ce32b996bae3",
+      "cpus": "40-49"
+    },
+    {
+      "gpu": 6,
+      "gpu_uuid": "GPU-d1972508-51b0-ae3d-188b-f1613ec33e07",
+      "cpus": "50-59"
+    },
+    {
+      "gpu": 8,
+      "gpu_uuid": "GPU-237b631e-30d6-9478-6513-e98b8f974f64",
+      "cpus": "60-69"
+    }
+  ],
+  "arms": [
+    "pd_lora",
+    "sft_lora",
+    "pd_full",
+    "sft_full",
+    "pd_down",
+    "sft_down",
+    "pd_down_lora",
+    "sft_down_lora"
+  ]
+}

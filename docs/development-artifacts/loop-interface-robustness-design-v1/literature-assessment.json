@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-22",
+  "mode": "academic-research-suite / deep-research / fact-check",
+  "question": "Is the proposed internal adversarial training a natural, common, empirically justified part of training Looped Transformers?",
+  "scope": "Targeted verification of representative primary papers and their training methods; not a systematic census of all Loop literature.",
+  "new_training_updates": 0,
+  "new_training_authorization": 0,
+  "verdicts": {
+    "loop_specific_stabilization_has_empirical_motivation": "SUPPORTED in the checked recurrent-depth language-model reports; not a universal necessity for every task or scale.",
+    "all_loop_training_must_be_complex": "NOT SUPPORTED; simpler successful controlled tasks exist.",
+    "post_attention_adversarial_inner_loop_is_common_loop_training": "NOT ESTABLISHED by these papers; none of the checked methods uses the proposed recipe.",
+    "mechanistic_motivation_for_local_state_robustness": "PLAUSIBLE HYPOTHESIS: errors can propagate through recurrent computations. This does not establish that small internal adversaries cover natural composition or across-checkpoint drift.",
+    "specific_position_radius_pass_count_and_frequency": "UNVERIFIED development choices; no checked Loop paper directly establishes post-attention / RMS 0.1 / three passes / one in eight updates.",
+    "recommended_status": "Retain as an optional, unverified method-development candidate, not a default recipe for scalable Loop pretraining."
+  },
+  "primary_sources": [
+    {
+      "title": "Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach (Huginn)",
+      "url": "https://arxiv.org/html/2502.05171v2",
+      "sections_checked": ["3.1-3.3", "4.3"],
+      "source_type": "Primary model-development report, arXiv version; author-reported runs and architectural experiments.",
+      "observations": "Random training depth, last-eight-iteration backpropagation, sandwich normalization. Failed large runs collapsed token representations or ignored recurrence. Preliminary Gaussian state noise did not help.",
+      "limit": "Successful stabilization changed several settings; it is not a clean isolated proof for each component, and did not use our internal adversarial objective."
+    },
+    {
+      "title": "Scaling Latent Reasoning via Looped Language Models (Ouro)",
+      "url": "https://arxiv.org/pdf/2510.25741v6",
+      "version_date": "2026-10-11",
+      "sections_checked": ["3.3-3.4", "4.3"],
+      "source_type": "Primary preprint; direct training observations and depth-allocation objective.",
+      "observations": "Entropy-regularized multi-depth next-token loss. Eight-loop runs showed loss spikes and gradient oscillations; the recipe reduced loops to four and adjusted batch size, regularization and optimization.",
+      "limit": "Several interventions were made during development. This supports a practical stability concern, not a controlled necessity result or a justification of adversarial interface training."
+    },
+    {
+      "title": "Looped Transformers are Better at Learning Learning Algorithms",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2024/file/b8402301e7f06bdc97a31bfaa653dc32-Paper-Conference.pdf",
+      "sections_checked": ["4-5.1", "Appendix E"],
+      "source_type": "ICLR 2024 proceedings; primary controlled synthetic in-context-learning experiments.",
+      "observations": "Input injection and a late-loop loss window; Adam at 1e-4 without weight decay, clipping or data augmentation. Loop-count scheduling mattered for some tasks, not consistently across tasks.",
+      "limit": "Small synthetic regression and algorithm-learning tasks, not large-language-model pretraining; still a counterexample to universal need for complicated extra optimization."
+    },
+    {
+      "title": "InfiLoop",
+      "url": "https://arxiv.org/html/2610.11570v2",
+      "sections_checked": ["4.2"],
+      "source_type": "Primary reasoning-model preprint; puzzle experiments.",
+      "observations": "Sudoku training uses twelve deep-supervision segments; each executes twenty-one block applications and differentiates through the final seven. Other benchmarks use up to sixteen segments.",
+      "limit": "Puzzle supervision and small-model evidence; segmented supervision is an existing technique here, not evidence for the proposed adversarial perturbations or LLM-scale success."
+    }
+  ],
+  "application_to_this_project": [
+    "Random segment lengths, answer-only deep supervision, detached carry and parameter EMA already exist in our current recipe; do not propose them as a newly discovered repair.",
+    "The current salient failure is low training loss with degraded composition. Literature reports of loss spikes, token collapse or failure to use extra depth are related possibilities, not an identified common cause.",
+    "True-bridge donor interventions establish that a replacement whole residual can improve calling. They do not establish that the required replacement lies in the proposed local norm ball.",
+    "No existing recipe, running job, queue or training budget is changed by this literature assessment."
+  ],
+  "verification": {
+    "source_existence": "Checked through official arXiv pages/PDFs and ICLR proceedings; no claim of independent experimental reproduction.",
+    "ouro_version_handling": "Read accessible v4 HTML and cross-checked the cited stability observations and objective in the latest v6 PDF; v6 HTML was unavailable.",
+    "evidence_grade": "Controlled synthetic experiments and primary author-reported model-development evidence. No meta-analysis, population prevalence estimate, or independent confirmation of the proposed method.",
+    "bias_control": "Included simple successful training and unsuccessful Gaussian-noise results; did not select only reports that could justify the prior proposal.",
+    "independent_review": "A separate native agent checked the distinction between common stabilization and the proposed adversarial method; its conclusion agreed. This is same-family review, not independent experimental validation."
+  }
+}

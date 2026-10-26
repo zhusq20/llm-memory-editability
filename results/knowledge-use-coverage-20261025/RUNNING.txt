@@ -1,0 +1,23 @@
+Knowledge用途覆盖：按用户指定使用CUDA2/5/6
+交接更新：2026-10-26 12:36（America/Chicago）。实际状态以runtime/controller-state.json和LM Docker为准。
+
+用户先指定CUDA2/5，随后明确增加CUDA6。仅更换调度器，保留原CUDA2/5容器PID及启动时间；停止训练进程0。
+当前控制器PID2365716，主机sn4622128200，计划runtime/launch-plan-cuda256-20261026.json。
+GPU2/5原任务继续运行，新增GPU6入场检查通过；每卡一个阶段，保留显存、进程、预约与共享锁守卫。
+新容器前缀kuc-v1-full-c25。科学代码、数据、学习率和预算不变。
+新源码SHA256：df2b3dd1a26d77f1681169b0848a2e1113791ae0772363b814b6dbaaac86caa3；本次保留原容器源码及标签身份；主机调度代码冻结在runtime/cuda256-20261026/control/，32项调度测试和Ruff通过。
+
+执行顺序：GPU2先执行PD A改写终点独立评测，GPU5先执行PD B改写训练；GPU6新增执行C改写终点评测；之后按原依赖执行SFT三组改写及终点评测。
+原八组和正式PD/SFT A/B/C六组新增比较均已完成，重载、评价、云端核验通过，不重训。
+PD A/C改写训练已完成200192监督token，原权重及身份复用。
+B旧尝试退出137/OOMKilled=false，未进入优化器更新；原容器与started/execution记录保留在runtime/rewrite-recovery-20261026/。
+B重试由本次对话前一条用户指令授权，新增科学预算0；原本每组200192监督token预算保持。
+自然问题语义审核仍pending，不写批准记录；这不阻止正式改写队列推进。
+Loop运行及七条暂缓初始化任务均未改动。
+
+实时入口：runtime/controller-process.json、runtime/controller-state.json、runtime/schedule-amendment.json。
+本次材料：runtime/cuda256-20261026/（旧状态、资源、源码、amendment与controller.log）。
+仓库启动核验：cuda256-20261026/startup-verification.json（实际容器状态，不代表终点通过）。
+第一次工程交接因旧调度器持有admission.lock而未执行；等待共享锁释放后完成切换，没有重复提交模型任务。
+不要重复执行deploy.py或启动第二个控制器。
+W&B项目：https://wandb.ai/zsqzz/llm-memory-editability

@@ -1,0 +1,26 @@
+Knowledge用途覆盖：改写调度已恢复，当前等待原授权GPU资源
+核对时间：2026-10-26 12:17（America/Chicago）。实时状态以runtime/controller-state.json和实际LM Docker为准。
+
+用户本次明确要求启动停滞的原子改写。已启动恢复控制器PID2173032，主机sn4622128200。
+计划：runtime/launch-plan-rewrite-recovery-20261026.json。
+冻结科学源码沿用r4，SHA256 691fbef7f2cad74bb1787e3d71795b56d533b62846363e44873e2f433c709e9c。
+新提交容器前缀kuc-v1-full-r5；已完成的原容器、权重、评测和云端身份不变。
+
+进度：
+- 原八组训练、独立重载、终点评测及云端核验已完成，不重训。
+- 正式PD/SFT A/B/C六组新增训练与评测全部完成，独立重载与云端核验均通过。
+- 正式PD A/C原子改写训练均退出0，200192监督token终点通过原冻结完成契约；等待独立评测。
+- PD B原改写退出137，OOMKilled=false。只留下started.json，尚未创建run.json或tracker；按冻结执行顺序，优化器更新为0。
+- B终止来源未确定；Docker保留事件仅die。控制器因不自动重试规则退出，导致后续未调度。
+- 本次保留B原容器，将其运行与执行记录归档，授权一次新容器重试；SFT三组改写及六组评测继续按原依赖排队。
+
+资源：GPU3/4/6/8当前均有其他CUDA进程，GPU6还有default容器预约。
+恢复控制器沿用原空闲、显存、预约、共享锁及最多四卡守卫，资源满足时自动推进；当前不能称训练已经重新开跑。
+不抢占其他任务，不使用未纳入原计划的卡，不恢复Loop暂缓任务。
+
+恢复材料：runtime/rewrite-recovery-20261026/（旧controller状态、失败容器、旧B目录、资源快照、执行脚本、amendment和controller.log）。
+当前进程：runtime/controller-process.json；授权修订：runtime/schedule-amendment.json。
+不要再次执行deploy.py或重复提交控制器。
+自然问题语义审核仍pending；本次没有写批准记录。
+W&B项目：https://wandb.ai/zsqzz/llm-memory-editability
+原四卡启动交接保留在rewrite-recovery-20261026/previous-RUNNING.txt。

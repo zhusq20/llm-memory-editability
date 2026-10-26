@@ -1,0 +1,54 @@
+knowledge-use-coverage-v1 — current handoff, 2026-10-25 07:23 UTC
+
+Original eight-arm factorial: COMPLETE 8/8, 1489200 exposures each. Independent
+reload, final local grading, W&B identity/config/counters and evaluation-container
+exit0 checks passed. Final analysis: ../knowledge-factorial-analysis-20261025/report.md.
+User-specified full-parameter scope remains unchanged; it is not a best-scope claim.
+
+Coverage scientific progress:
+- Development PD A/B/C training complete at 200192 and400384 main tokens.
+- All three 200192 nodes: independent reload, full local evaluation, exact output
+  contract and independent W&B readback now verified. Cloud fields were serialized
+  as dotted keys, causing three original exit1 evaluations; their local outputs
+  were reused after CPU recovery, with no repeated model work or training.
+- Development 400384 evaluations, formal PD/SFT addition, atomic rewrite and
+  natural application remain incomplete. No formal budget has yet been selected.
+- Initial natural calibration retained96 requests/270 attempts,9 structurally valid.
+  Actual semantic review rejected it for application. One bounded development
+  prompt revision is prepared, but its new calibration has not run and no semantic
+  approval exists. The initial generation cost is preserved separately.
+
+CURRENT RESOURCE BLOCK:
+GPU4/6/8 are occupied by other users. During a transient idle window, the revised
+controller admitted A's400384 evaluation on GPU4; another user's VLLM service then
+reacquired it. Stopped only our new evaluation and controller. That container exited
+137 after our stop timeout, OOMKilled=false; no new training occurred and no complete
+new evaluation was produced. Partial model-load/forward cost is unknown. Do not
+interpret this as scientific failure or restart the original training.
+
+Controller3945797 has exited. runtime/controller-state.json is needs_attention,
+resource_blocked=true. No coverage GPU stage is currently running. The user was
+asked whether the newly released GPU3 may be used; NO REPLY/AUTHORIZATION YET.
+Do not use GPU3 or weaken the resource guard on the basis of an unanswered question.
+Before any restart inspect actual host processes, both Docker contexts and
+reservations. GPU4/6 service restart gaps are not evidence of a stable free lane.
+
+Ready source and reviewed recovery:
+- runtime/launch-plan-full-r3-20261025.json (GPU4/6/8)
+- runtime/source-full-20261025-r3/
+- source archive SHA256:5b2a591d252ed2fd1578543e633d1f7b8cab0db8e2bc49320593412a8ee1efe4
+- runtime/recovery-r3-20261025/scope-decision.json binds the final complete8 analysis
+- runtime/recovery-r3-20261025/resource-interruption.json records the actual stop
+- runtime/recovery-r3-20261025/overhead-ledger.json preserves failed calibration cost
+- runtime/cloud-recovery-20261025/complete.json verifies all three first-node cloud results
+- recovery-r3-20261025/live-sdk-validation.json verifies the actual W&B SDK readback
+- recovery-r3-20261025/recovered-output-validation.json verifies all first-node contracts
+- 60 relevant tests and Ruff passed; no scientific training or scoring changes.
+
+Restore only pending evaluation/preparation stages after resolving resources;
+retain the interrupted r3 evaluation and give any replacement a distinct identity.
+Original r2/r3 frozen files, attempts, checkpoints and protocol history are retained.
+Full-start historical handoff: RUNNING-before-recovery-r3.txt.
+Protocol amendment: ../../docs/development-artifacts/knowledge-use-coverage-v1/recovery-amendment-20261025.md
+W&B: https://wandb.ai/zsqzz/llm-memory-editability
+No paused Loop or other historical experiment is resumed by this task.

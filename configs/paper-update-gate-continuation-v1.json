@@ -1,0 +1,185 @@
+{
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 1500000
+  },
+  "dropout_seed": 2026101604,
+  "heartbeat_steps": 1000,
+  "evaluation_batch_size": 256,
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2",
+    "cpu_threads": 2,
+    "memory_gib": 16,
+    "tracking": "online",
+    "gpu_memory_fraction": 0.16,
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "poll_seconds": 15,
+    "stage_timeout_hours": 24
+  },
+  "input_origin": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+    "reuse": "Exact existing 40000-example world and 43000-query panels; do not merge with the 25000-example variant"
+  },
+  "batch": "paper-update-gate-continuation-v1",
+  "authorization": "2026-10-17 user authorized carrying out the continuation and update-gate learning-rate plan; four continuations reuse completed 300k states, never restart old entrances.",
+  "input_root": "/inputs/world",
+  "continuation": {
+    "start_step": 300000,
+    "preserve_optimizer": true,
+    "preserve_stream_and_rng": true,
+    "new_warmup": false,
+    "gate_lr_factor_half": 0.5
+  },
+  "arms": {
+    "paper": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "update_mode": "full",
+      "initial_update": 0.9,
+      "parent": "paper",
+      "update_gate_lr_factor": 1.0
+    },
+    "fixed-update": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "update_mode": "fixed",
+      "initial_update": 0.9,
+      "parent": "fixed-update",
+      "update_gate_lr_factor": 1.0
+    },
+    "token-update": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "update_mode": "token",
+      "initial_update": 0.9,
+      "parent": "token-update",
+      "update_gate_lr_factor": 1.0
+    },
+    "token-update-half-lr": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "update_mode": "token",
+      "initial_update": 0.9,
+      "parent": "token-update",
+      "update_gate_lr_factor": 0.5
+    }
+  },
+  "parents": {
+    "paper": {
+      "root": "/inputs/parents/paper",
+      "original_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/dual-gate-multihop-v1/attempts/preflight-repair-v2/runs/paper",
+      "source_image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+      "files": {
+        "latest.pt": "8c0392b3d5ed460306b338be8e36d7b80a1796c13a0763633f4b9f8f363a30b0",
+        "complete.json": "54ba8585b7e5076b9b144093c9d682fc243cde200ec0e72a3ef392ef3eed0b80",
+        "run.json": "c300701a418fae56dcd7c685ff8c91da8a4100aa5b8b16e5e89a0840a681ad30",
+        "learning.json": "d7f0aae8edd75fa2527a11c06bb66fa387ce2f3cc2d7d88ca1c0b0563e69d456",
+        "exposure.npz": "a88eaeb762b83a9bfdcf053387ad6cb4226bde9ed0dd1f1c7b51ff732dd5577e",
+        "config.json": "608e048478fee37ede13c5ad4c07c92e63a7d2b8984f57d9997706b74ed30f34"
+      },
+      "model_sha256": "1c96eddb2dfae4d6c5a6e06f0128a75dc18fe6c711c33e3a9961a837c619bc6a"
+    },
+    "fixed-update": {
+      "root": "/inputs/parents/fixed-update",
+      "original_root": "/mnt/disk2_from_server2/siqizhu4/llm-memory-editability/results/paper-update-gate-multihop-v1/execution/runs/fixed-update",
+      "source_image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2",
+      "files": {
+        "latest.pt": "ccb7f1ad134c9587cf26ee66e39174efd263a77227f964feb42fa13d8e0cc43c",
+        "complete.json": "6bdc600f06fedf33f3c79770039108bbae470686c4f9e9ba43c0508aa1695f8c",
+        "run.json": "d560d16955beb0bef31eaac33fdb4f6e3a903f73255a9cbeaa0234c0af5d672b",
+        "learning.json": "64e2381591101474d636ab8b0577f49449fe41a69b247adc636dc15ab4505722",
+        "exposure.npz": "a88eaeb762b83a9bfdcf053387ad6cb4226bde9ed0dd1f1c7b51ff732dd5577e",
+        "config.json": "9336ab3cfb837e94926671cab034e3ced4ba80da32e7ff5f92e4a9243433433e"
+      },
+      "model_sha256": "a47db49fef8aebdd3e66eb18a662c449ce733807bd1541827807d2053080dd23"
+    },
+    "token-update": {
+      "root": "/inputs/parents/token-update",
+      "original_root": "/mnt/disk2_from_server2/siqizhu4/llm-memory-editability/results/paper-update-gate-multihop-v1/execution/runs/token-update",
+      "source_image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2",
+      "files": {
+        "latest.pt": "0995a8e7d6d1256a583e12a495b1c876299945d99c4c4ac6070cafaa1fc47783",
+        "complete.json": "dac75b10f9703edaf1d91e75ce6eeecbf647ae0b725536c26ba1c668dc58b259",
+        "run.json": "6042cbbc8dbd25fc062a8337583998f1bd2da16207528bf82f5ce24087c84a9b",
+        "learning.json": "d63407a808d792ec8aa3959f2f06d562dc92f7cdb4c89e9a8c37f98c1669817f",
+        "exposure.npz": "a88eaeb762b83a9bfdcf053387ad6cb4226bde9ed0dd1f1c7b51ff732dd5577e",
+        "config.json": "9336ab3cfb837e94926671cab034e3ced4ba80da32e7ff5f92e4a9243433433e"
+      },
+      "model_sha256": "21c00f109db8188145553810cd8923a24f4ec8eef4f390feb48758b88a0a265d"
+    }
+  },
+  "evaluation_nodes": [
+    300000,
+    400000,
+    500000,
+    600000,
+    700000,
+    800000,
+    900000,
+    1000000,
+    1100000,
+    1200000,
+    1300000,
+    1400000,
+    1500000
+  ],
+  "budget": {
+    "new_scientific_arms": 4,
+    "new_scientific_updates": 4800000,
+    "reused_unique_parent_updates": 900000,
+    "final_steps_per_arm": 1500000,
+    "novel_fact_updates": 0,
+    "confirmation_world_updates": 0,
+    "engineering_discarded_effective_updates": 10,
+    "engineering_restored_graph_preparation_updates": 28
+  },
+  "primary": "Graph-B three-hop full-vocabulary answer accuracy at total step1500000 and inference R4. Compare token-half minus token (same 300k state), token minus fixed, and each minus P. Retain absolute-step trajectories and every panel; no best-checkpoint selection.",
+  "limits": [
+    "One previously observed development world and initialization; conditional continuation intervention selected after observing 300k results.",
+    "Half gate LR begins at step300001; this cannot test smaller learning rate from initialization or undo irreversible earlier optimization.",
+    "Warmup is not restarted. Backbone LR and AdamW decay unchanged; only gate_update_weight and gate_update_bias use half LR; the original paper injection gate keeps full LR.",
+    "P parent used a different image. All four new continuations share the existing u90 image; do not claim uninterrupted cross-runtime bitwise equivalence.",
+    "A/B evaluation templates do not overlap at each hop; cross-graph gaps are not a template-matched graph-transfer comparison.",
+    "Long training tests delayed learning under this recipe, not asymptotic capacity. No new graph, seed, global LR/weight-decay grid, u95 continuation or data redesign.",
+    "Do not equate steps with tokens, exposures, FLOPs or elapsed cost; record each separately."
+  ],
+  "execution_policy": {
+    "pretraining_smoke": false,
+    "posttraining_independent_audit": false,
+    "endpoint_inference_grid": true,
+    "resume_correctness_check": "Discarded targeted exact optimizer/RNG/sampler and CUDA graph continuation checks only; no scientific short-training rerun.",
+    "reason": "Prior explicit waiver of short training and independent reload remains in force; new continuation machinery requires state-correctness validation."
+  }
+}

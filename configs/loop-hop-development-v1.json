@@ -1,0 +1,85 @@
+{
+  "batch": "loop-hop-development-v1",
+  "authorization": "2026-10-16 user authorized the proposed four structures (1x2, 1x3, 1x4, 2x2), jointly comparing DiscoLoop and vanilla Loop using the existing task/training framework.",
+  "input_root": "/inputs/data",
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 0.00001
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 300000
+  },
+  "dropout_seed": 2026101604,
+  "arms": {
+    "loop-l1-r2": {"architecture": "loop", "unique_layers": 1, "repeats": 2},
+    "discoloop-l1-r2": {"architecture": "discoloop", "unique_layers": 1, "repeats": 2},
+    "loop-l1-r3": {"architecture": "loop", "unique_layers": 1, "repeats": 3},
+    "discoloop-l1-r3": {"architecture": "discoloop", "unique_layers": 1, "repeats": 3},
+    "loop-l1-r4": {"architecture": "loop", "unique_layers": 1, "repeats": 4},
+    "discoloop-l1-r4": {"architecture": "discoloop", "unique_layers": 1, "repeats": 4},
+    "loop-l2-r2": {"architecture": "loop", "unique_layers": 2, "repeats": 2},
+    "discoloop-l2-r2": {"architecture": "discoloop", "unique_layers": 2, "repeats": 2}
+  },
+  "evaluation_nodes": [0, 1000, 8000, 16000, 32000, 64000, 128000, 256000, 300000],
+  "evaluation_batch_size": 256,
+  "heartbeat_steps": 1000,
+  "smoke_steps": 32,
+  "trace_examples_per_hop": 256,
+  "primary": "Fixed 300k endpoint full-vocabulary answer accuracy on graphB atomic-only compositions, separately at 2/3/4 hops; retain full curves, graphA heldout results, generatedEOS and premise coverage.",
+  "comparisons": [
+    "Paired DiscoLoop-minus-Loop at each of four structures",
+    "L1R2 versus L1R3 versus L1R4: fixed unique layer parameters, varying executed depth",
+    "L1R4 versus L2R2: equal executed layer count; parameters and channel count differ"
+  ],
+  "runtime": {
+    "launch_revision": 2,
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "gpu_preference": [7, 5, 4, 8, 9, 0, 1, 2, 3, 6],
+    "cpu_threads": 4,
+    "cpu_slots": [[32,33,34,35],[36,37,38,39],[40,41,42,43],[44,45,46,47],[48,49,50,51],[52,53,54,55],[56,57,58,59],[60,61,62,63]],
+    "utility_cpus": [64,65],
+    "memory_gib": 32,
+    "maximum_parallel": 8,
+    "idle_gpu_max_used_mib": 512,
+    "idle_gpu_max_utilization": 5,
+    "wait_timeout_hours": 72,
+    "stage_timeout_hours": 24,
+    "tracking": "online",
+    "uid": 1015,
+    "gid": 1016
+  },
+  "scope_limits": [
+    "One newly generated development world and one initialization; no independent-world confirmation claim",
+    "Eight new scientific runs x300000 =2400000 updates; eight32-step engineering smokes =256 discarded updates; each CUDA preflight has one discarded update",
+    "Permutation double-graph extension using dedicated symbolic vocabulary; not the exact original Wang graph or literal DiscoLoop appendixA2 reproduction",
+    "Retain existing native GPT causal attention, MLP, preLN/residuals, learned positions, dropout, bf16, AdamW, merged sampling and answer+EOS objective",
+    "Same exposure is primary; account for actual padded tokens, active/total parameters, base and vocabulary-channel FLOPs separately",
+    "All original atoms are trained; no intermediate-entity supervision, CoT, KV augmentation, query adapter or test-time extra loops",
+    "No automatic new seeds, larger grid, interface-location arms, editing experiments or budget extensions",
+    "Explicit running GPU allocations in other projects are respected even when device memory is currently idle; no task is stopped or preempted"
+  ]
+}

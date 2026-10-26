@@ -1,0 +1,89 @@
+{
+  "batch": "ttcd-architecture-comparison-v1",
+  "authorization": "User explicitly requested ordinary Transformer, Loop and DiscoLoop TTCD controls, reuse checkpoints first, then confirmed rebuilding both missing foundations with the same original recipe, parallel GPU8/9.",
+  "input_root": "/inputs/data/discoloop-success-restore-v1/original",
+  "source_run": "transformer-original-initialization",
+  "initial_checkpoint": "/inputs/initial/transformer.pt",
+  "spec": {
+    "name": "ttcd-architecture-comparison-v1-transformer-native",
+    "unique_layers": 8,
+    "repeats": 1,
+    "phi": 7.2,
+    "weight_decay": 0.1,
+    "initialization": 791101,
+    "stream_seed": 792101,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 300000
+  },
+  "dropout_seed": 20261012,
+  "arms": {
+    "transformer": {
+      "kind": "none",
+      "coefficient": 0.0,
+      "scope": "supervised",
+      "first_round_kv": false,
+      "discoloop": false,
+      "discoloop_alpha": 1.0,
+      "discoloop_temperature": 1.0,
+      "discoloop_eps": 1e-06
+    }
+  },
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000
+  ],
+  "checkpoint_nodes": [
+    0,
+    300000
+  ],
+  "heartbeat_steps": 1000,
+  "smoke_steps": 32,
+  "evaluation_batch_size": 256,
+  "audit_loss_atol": 1e-06,
+  "audit_loss_rtol": 1e-06,
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "gpus": {
+      "transformer": 8,
+      "loop": 9
+    },
+    "cpu_sets": {
+      "transformer": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "loop": [
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    "cpu_threads": 4,
+    "memory_gib": 96,
+    "gpu_memory_max_mib": 1024,
+    "gpu_utilization_max": 5,
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "timeout_hours": 48,
+    "wait_timeout_hours": 24,
+    "tracking": "online",
+    "uid": 1015,
+    "gid": 1016,
+    "minimum_persistent_free_gib": 400
+  },
+  "architecture_name": "transformer",
+  "initial_model_sha256": "11b1c7254c2c277676239094ab835bb3dca302a9d7197cec4e98380308d7fa3f",
+  "parameters": 97782528
+}

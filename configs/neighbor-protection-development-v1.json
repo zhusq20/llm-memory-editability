@@ -1,0 +1,43 @@
+{
+ "schema": "neighbor-protection-design-v1",
+ "batch": "neighbor-protection-development-v1",
+ "status": "authorized_development",
+ "authorization": "2026-10-20 user authorized the next experiments listed in roadmap section 4",
+ "question": "Sequential-write damage lands on old facts that share the subject or relation with the written fact. Does protecting those address neighbours, instead of random old samples, keep new facts, double-new composition and old knowledge at the same time?",
+ "base_plan": "configs/ce-cross-sample-double-new-v1.json",
+ "reused_controls": {
+  "discoloop": "ce-cross-sample-ablation-v1/discoloop-no-bound (random protection, otherwise identical)",
+  "loop": "ce-cross-sample-ablation-v1/loop-no-bound (random protection, otherwise identical)"
+ },
+ "arms": {
+  "discoloop-neighbor": {"architecture": "discoloop", "neighbor_per_kind_per_step": 16},
+  "discoloop-mixed": {"architecture": "discoloop", "neighbor_per_kind_per_step": 8},
+  "loop-neighbor": {"architecture": "loop", "neighbor_per_kind_per_step": 16},
+  "loop-mixed": {"architecture": "loop", "neighbor_per_kind_per_step": 8}
+ },
+ "adaptation": {
+  "steps_per_fact": 20,
+  "learning_rate": "base plan per architecture (discoloop 8e-5, loop 3.2e-4)",
+  "optimizer_mode": "fresh_per_fact",
+  "constraint_enabled": false,
+  "kl_factor": 10.0,
+  "gradient_clip": 1.0,
+  "scope": "all unique physical MLP parameters"
+ },
+ "protection": {
+  "examples_per_kind_per_step": 16,
+  "kinds": ["atoms", "chains"],
+  "teacher": "native300k theta0 output distribution at answer and EOS positions, same as the original teachers",
+  "neighbor_atoms": "old graph atoms with the written subject (half) or the written relation (half); all from the relation pool when the subject has none",
+  "neighbor_chains": "phi7.2 trained chains whose first entity or bridge is the written subject (half), or whose first or second relation is the written relation (half)",
+  "random_fill": "mixed arms fill the remaining slots with the first rows of the original random teacher batch of the same step",
+  "excluded": "every row of the seven old evaluation pools and every mixed-query old companion",
+  "sampling": "per fact, deterministic from seed + fact index; without replacement until a pool is exhausted, then reshuffled",
+  "seed": 2026102011
+ },
+ "evaluation": "identical read_state after every write and two-step reference at each stream end; summarized by summarize_streams and the address-grouped interference analysis",
+ "budget": {"scientific_updates_per_arm": 2560, "arms": 4, "scientific_updates_total": 10240},
+ "tracking": {"entity": "zsqzz", "project": "llm-memory-editability"},
+ "runtime": {"image": "lm-memory-ce-ablation:20261017", "cpus": 8, "memory_gib": 48},
+ "verification": "per user preference: CPU contract tests and ruff only; no source freeze, hash manifest or separate CUDA preflight"
+}

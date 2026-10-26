@@ -1,0 +1,12 @@
+% Requires graphicx; paths are relative to a document in paper/.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/invariant-loop-v6/invariant-loop-vertical.pdf}
+  \caption{Invariant Loop. Each column is one token position; both Transformer
+  calls share parameters. Soft vocabulary feedback forms a candidate between
+  successive calls. Five-statistic weighting combines the candidate with its
+  previous state, producing the input to the next loop. One old-state bypass is
+  drawn in full; the same aggregation applies to every token. Input reinjection,
+  normalization, and auxiliary recurrent variables are omitted for clarity.}
+  \label{fig:invariant-loop-vertical}
+\end{figure*}

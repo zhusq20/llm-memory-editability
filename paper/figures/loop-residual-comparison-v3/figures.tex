@@ -1,0 +1,35 @@
+% Requires graphicx. Paths are relative to a manuscript in paper/.
+% The middle figure is an adapted control design, not an implemented method.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/loop-residual-comparison-v3/vanilla-loop.pdf}
+  \caption{Vanilla Loop, retained as an overall architectural reference.
+  The shared Transformer's raw output is passed directly to the next iteration.
+  This reference does not use the matched soft-feedback candidate of the other two figures.}
+  \label{fig:matched-highway-vanilla}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/loop-residual-comparison-v3/highway-loop.pdf}
+  \caption{Highway-gated Loop (adapted), a proposed mechanism control.
+  A shared linear-plus-sigmoid gate reads the previous recurrent state and
+  mixes it with the new candidate. Candidate computation, input reinjection,
+  soft feedback and RMS normalization match Invariant Loop. Both the Transformer
+  and gate parameters are reused across loops. The gate follows Highway Networks;
+  the shared-Transformer adaptation is not an architecture specified by that paper.
+  Each displayed token has a local carry; only one gate is expanded.}
+  \label{fig:matched-highway-control}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/loop-residual-comparison-v3/invariant-loop.pdf}
+  \caption{Invariant Loop, following the implementation. The common candidate
+  path adds soft feedback and normalizes the result. Five statistics feed an MLP;
+  historical-mass normalization yields scalar $\gamma_t$ for each token.
+  The two aggregation diagrams differ in the aggregation module as a whole,
+  including gate input, dimensionality and normalization. They do not establish
+  separate causal contributions of these choices.}
+  \label{fig:matched-highway-invariant}
+\end{figure*}

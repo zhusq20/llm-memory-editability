@@ -14,19 +14,22 @@ dist/
 .coverage
 htmlcov/
 
-# GitHub stores code, configuration, development instructions and current research documents.
-# Experiment data and research artifacts are archived on Hugging Face.
+# GitHub stores both projects' code, research documents and selected evidence snapshots.
+# Raw data, model state and unselected runtime artifacts remain outside Git.
 /data/
 /results/
 /checkpoints/
 /array-archives/
 /ARRAY_ARCHIVES.json
 /ARCHIVE_MANIFEST.json
-/docs/*
-!/docs/experimental-protocol.md
-!/docs/roadmap.md
-!/docs/results.md
-!/docs/memory-scaling-theory.md
+# Selected results are explicitly added after size and credential review.
+# Keep this default so live outputs and large tracking exports are not added accidentally.
+/docs/**/*.png
+/docs/**/*.pdf
+**/hf-repository-file-list.json
+/docs/development-artifacts/ce-cross-sample-double-new-v1/panel.json
+/paper/**/*.png
+/paper/**/*.pdf
 *.npy
 *.npz
 # Model/optimizer states and Docker image archives remain local.

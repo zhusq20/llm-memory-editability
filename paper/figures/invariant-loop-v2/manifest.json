@@ -1,0 +1,51 @@
+{
+  "implementation": "LoopNativeHandoffGPT(handoff=\"invariant\")",
+  "sources": {
+    "src/llm_memory_editability/loop_native_handoff.py": "2c49b84595707bac69ef38375486c697237b98d6cde844cd8181037114ea53d7",
+    "src/llm_memory_editability/self_decode_alignment.py": "1bfd5c15da162ea032caa0579eae6b06b7316e497b3e7ccd747c3252212138a3",
+    "src/llm_memory_editability/supervised_alignment.py": "9c84f60e536d5bd39919a2b3037b7ecc416dc5fc2a9f2da16ae3c5855524ec74",
+    "configs/loop-native-handoff-development-v1.json": "fb8d6d117539bc1ddc0bc3e3629d26911ab56cb002ff99ce220ee87828ea87bf"
+  },
+  "generator_sha256": "73605b271f9b39be6be916f04056518c0aecbbfc7319f7bd86e5651a148be11b",
+  "papers": [
+    "https://arxiv.org/abs/2607.00341v2",
+    "https://arxiv.org/abs/2610.11570v2"
+  ],
+  "figure_table_trace": [
+    {
+      "artifact_id": "01-architecture",
+      "source_data": {
+        "file": "src/llm_memory_editability/loop_native_handoff.py"
+      },
+      "transformation": {
+        "script": "build_figures.py"
+      },
+      "caption_claim": "Soft vocabulary feedback and statistic-based weighting update the recurrent state.",
+      "supported_manuscript_claims": [],
+      "limitations": [
+        "Architecture diagram; does not establish performance or whole-model invariance."
+      ]
+    },
+    {
+      "artifact_id": "02-state-handoff",
+      "source_data": {
+        "file": "src/llm_memory_editability/loop_native_handoff.py"
+      },
+      "transformation": {
+        "script": "build_figures.py"
+      },
+      "caption_claim": "The implementation carries h, N, D and the previous block-output distribution.",
+      "supported_manuscript_claims": [],
+      "limitations": [
+        "Architecture diagram; does not establish performance or whole-model invariance."
+      ]
+    }
+  ],
+  "checks": {
+    "canvas_text_bounds": "passed",
+    "model_executed": false,
+    "training_updates": 0,
+    "png_dpi": 300,
+    "minimum_font_pt_at_6_9_in_width": 8.25
+  }
+}

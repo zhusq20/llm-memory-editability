@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-26T17:35:50.832968+00:00",
+  "authorization": "cuda 6页空了，可以跑",
+  "gpu_lanes": [
+    2,
+    5,
+    6
+  ],
+  "previous_amendment": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1/cuda256-20261026/previous-schedule-amendment.json",
+  "container_source_sha256": "df2b3dd1a26d77f1681169b0848a2e1113791ae0772363b814b6dbaaac86caa3",
+  "container_source_changed": false,
+  "host_scheduler": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/knowledge-use-coverage-v1/cuda256-20261026/control/launch_knowledge_use_coverage.py",
+  "host_scheduler_hashes": {
+    "launch_knowledge_use_coverage.py": "7bdfbc37d363f1b10bc7c7cd533ea3f0657263f683d7713bc8970c533e88e77f",
+    "lm_resource_snapshot.py": "c44aafc776766c17fdc3e9035628110293e78f8a876580dd7e376ef9df430717"
+  },
+  "scientific_changes": [],
+  "training_processes_stopped": 0,
+  "old_controller_pid": 2264355,
+  "tests": "32 launcher tests and Ruff passed",
+  "guards": "Original GPU memory, process, reservation, shared locks and cap retained"
+}

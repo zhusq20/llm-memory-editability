@@ -1,0 +1,198 @@
+{
+  "batch": "sequence-dependency-gate-v1",
+  "authorization": "2026-10-18 user confirmed evaluation of the learned cross-Loop residual gate on reused datasets with sequence-level logical dependencies. The two-task, four-arm, 100k-step development matrix is the implementation scope selected for that request; not a user-specified numerical budget.",
+  "source": {
+    "repository": "https://github.com/RobertCsordas/ndr",
+    "commit": "da20530dfb4336deddfbe5e79d62e72d1dc2580e",
+    "paper": "https://arxiv.org/abs/2110.07732",
+    "license": "MIT",
+    "reuse": "Original expression grammar, operators, generator functions and depth/length settings; deterministic split seeds and explicit cross-split exclusion. Causal LM adaptation, not NDR score reproduction."
+  },
+  "arms": {
+    "loop": {
+      "architecture": "loop",
+      "unique_layers": 1,
+      "injection": "none",
+      "update_mode": "full",
+      "initial_update": 0.95
+    },
+    "only-u": {
+      "architecture": "loop",
+      "unique_layers": 1,
+      "injection": "none",
+      "update_mode": "token",
+      "initial_update": 0.95
+    },
+    "disco": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "injection": "fixed1",
+      "update_mode": "full",
+      "initial_update": 0.95
+    },
+    "fixed-q-plus-u": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "injection": "fixed1",
+      "update_mode": "token",
+      "initial_update": 0.95
+    }
+  },
+  "gate_scope": "continuous_update_only_nonfinal_all_tokens",
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2",
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "cpu_threads": 2,
+    "cpu_first": 8,
+    "memory_gib": 48,
+    "tracking": "online",
+    "gpu_memory_fraction": 0.65,
+    "stage_timeout_hours": 168,
+    "poll_seconds": 20
+  },
+  "budget": {
+    "new_scientific_arms": 8,
+    "steps_per_arm": 100000,
+    "new_scientific_updates": 800000,
+    "engineering_restored_updates": 8,
+    "engineering_smoke_updates": 0
+  },
+  "evaluation_policy": {
+    "during_training": [
+      "train_sample",
+      "valid_iid",
+      "valid_depth"
+    ],
+    "endpoint_only": [
+      "test_iid",
+      "test_depth"
+    ],
+    "primary": "Fixed 100k endpoint at the training loop count; paired gate-minus-no-gate answer accuracy and answer+EOS exact match on IID and held-out greater depths, all rows retained.",
+    "secondary": "Predeclared inference-round grid and stratification by dependency depth, syntactic depth, sequence length, joins and sibling depth imbalance. These strata are evaluations, never model inputs.",
+    "selection": "No best-checkpoint or best-inference-depth selection on test pools.",
+    "independent_reload_audit": false,
+    "cloud_endpoint_audit": false
+  },
+  "limits": [
+    "One data realization and initialization per task: development evidence, not seed-robust or natural-language generality.",
+    "u=.95 changes initial residual damping; no fixed-u scientific control, so learned adaptation is not isolated from initial damping.",
+    "ListOps selected-value dependency depth does not mean unselected operands can be ignored a priori.",
+    "Arithmetic retains author right-branch growth and multiplication-by-zero shortcuts; syntactic depth is not guaranteed effective dependency.",
+    "Both tasks keep the original length cap; report exact positional coverage and overlapping length strata before calling a depth effect.",
+    "Compared with NDR: causal GPT blocks, learned absolute positions, final answer+EOS CE, uniform recipe across four arms, fixed endpoint; no geometric attention, gate-specific dropout or ACT loss."
+  ],
+  "tasks": {
+    "listops": {
+      "input_root": "/inputs/listops",
+      "model": {
+        "n_embd": 256,
+        "n_head": 4,
+        "n_positions": 64,
+        "n_ctx": 64,
+        "activation_function": "gelu_new",
+        "attn_pdrop": 0.1,
+        "embd_pdrop": 0.1,
+        "resid_pdrop": 0.1,
+        "initializer_range": 0.02,
+        "layer_norm_epsilon": 1e-05,
+        "n_inner": 1024
+      },
+      "training": {
+        "initialization": 2026101801,
+        "stream_seed": 2026101802,
+        "weight_decay": 0.05,
+        "lr": 0.0002,
+        "warmup": 2000,
+        "batch_size": 512,
+        "steps": 100000
+      },
+      "dropout_seed": 2026101803,
+      "repeats": 20,
+      "inference_repeats": [
+        1,
+        4,
+        8,
+        12,
+        20,
+        24
+      ],
+      "evaluation_nodes": [
+        0,
+        1000,
+        5000,
+        10000,
+        25000,
+        50000,
+        75000,
+        100000
+      ],
+      "evaluation_batch_size": 128,
+      "heartbeat_steps": 1000,
+      "recipe_source": "Shared ordinary AdamW/CE development recipe informed by NDR Tables8/9; fixed across all four arms, no architecture-specific search. Width256/MLP1024, sufficient repeat budget; not exact author training reproduction.",
+      "input_origin": {
+        "world_sha256": "f11e1d32fd6a24d9459ceb17cba391f8f9f795d98e245cc7441399fb37cc6ec4",
+        "panels_sha256": "1d6c5c559e013491ac97d38b93e7f7c15b4700b348687944862057970f4af680",
+        "audit_sha256": "6ef8eaedb750ae4f7fd096b2474e92b756b6f78648f8ecd091fad380df908051",
+        "train_majority_token": 4,
+        "training_examples": 1000000,
+        "source_commit": "da20530dfb4336deddfbe5e79d62e72d1dc2580e"
+      }
+    },
+    "arithmetic": {
+      "input_root": "/inputs/arithmetic",
+      "model": {
+        "n_embd": 256,
+        "n_head": 4,
+        "n_positions": 64,
+        "n_ctx": 64,
+        "activation_function": "gelu_new",
+        "attn_pdrop": 0.1,
+        "embd_pdrop": 0.1,
+        "resid_pdrop": 0.1,
+        "initializer_range": 0.02,
+        "layer_norm_epsilon": 1e-05,
+        "n_inner": 1024
+      },
+      "training": {
+        "initialization": 2026101811,
+        "stream_seed": 2026101812,
+        "weight_decay": 0.01,
+        "lr": 0.00015,
+        "warmup": 2000,
+        "batch_size": 512,
+        "steps": 100000
+      },
+      "dropout_seed": 2026101813,
+      "repeats": 15,
+      "inference_repeats": [
+        1,
+        4,
+        8,
+        15,
+        20
+      ],
+      "evaluation_nodes": [
+        0,
+        1000,
+        5000,
+        10000,
+        25000,
+        50000,
+        75000,
+        100000
+      ],
+      "evaluation_batch_size": 128,
+      "heartbeat_steps": 1000,
+      "recipe_source": "Shared ordinary AdamW/CE development recipe informed by NDR Tables8/9; fixed across all four arms, no architecture-specific search. Width256/MLP1024, sufficient repeat budget; not exact author training reproduction.",
+      "input_origin": {
+        "world_sha256": "b56c6f0f081cb722b45e7379ba58999860215391f3c1d7c344c1ff6ad0a09b89",
+        "panels_sha256": "56baa7c2323f0ba2b4e113fa4a429617aa394094c9cf03ba27295e59cbf789e8",
+        "audit_sha256": "8341d824355a8d36a0477009f4e7f6370e60ae680fc3ed0711f387a8024b2ae0",
+        "train_majority_token": 4,
+        "training_examples": 100200,
+        "source_commit": "da20530dfb4336deddfbe5e79d62e72d1dc2580e"
+      }
+    }
+  }
+}

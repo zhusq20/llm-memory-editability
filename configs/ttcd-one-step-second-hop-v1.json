@@ -1,0 +1,65 @@
+{
+  "batch": "ttcd-one-step-second-hop-v1",
+  "authorization": "User requested reusing existing Transformer, Loop and DiscoLoop models; one fast-weight update per fact; independent single-fact and sequential multi-fact evaluation; prioritize edited second-hop composition and old-knowledge retention.",
+  "new_base_parameter_updates": 0,
+  "parent_phase": "stream",
+  "writer_steps": 1,
+  "parent_writer_steps": 4,
+  "architectures": {
+    "transformer": {
+      "parent_batch": "ttcd-architecture-comparison-v1",
+      "source_directory": "source",
+      "source_manifest": "source-manifest.json",
+      "parent_config": "configs/architecture-transformer.json",
+      "endpoint_directory": "transformer/stream"
+    },
+    "loop": {
+      "parent_batch": "ttcd-architecture-comparison-v1",
+      "source_directory": "source",
+      "source_manifest": "source-manifest.json",
+      "parent_config": "configs/architecture-loop.json",
+      "endpoint_directory": "loop/stream"
+    },
+    "discoloop": {
+      "parent_batch": "ttcd-successful-base-v1",
+      "source_directory": "source-v2",
+      "source_manifest": "source-v2-manifest.json",
+      "parent_config": "configs/experiment.json",
+      "endpoint_directory": "stream"
+    }
+  },
+  "panel_sha256": "ac6082dcb857fab85fc106d4d3d39a7a3adb67de33976edeb13c4a1bd201c081",
+  "primary": {
+    "single": "new two-hop answer after editing only its second-hop fact, conditional on the same question being correct before writing, with coverage",
+    "continuous_t": 32,
+    "continuous": "same second-hop questions after all32 facts, earlier-written fact retention and unedited atomic/composition retention",
+    "common_subset": "intersection of baseline-correct two-hop questions across all3 architectures, report empty sets and denominators"
+  },
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "cpu_threads": 4,
+    "cpu_sets": {"transformer": [12,13,14,15], "loop": [16,17,18,19], "discoloop": [20,21,22,23]},
+    "gpu_preferences": {"transformer": [0,1,2], "loop": [1,2,0], "discoloop": [2,0,1]},
+    "memory_gib": 96,
+    "minimum_persistent_free_gib": 250,
+    "gpu_memory_max_mib": 1024,
+    "gpu_utilization_max": 5,
+    "timeout_hours": 48,
+    "wait_timeout_hours": 48,
+    "tracking": "online",
+    "uid": 1015,
+    "gid": 1016
+  },
+  "limits": [
+    "Evaluation-only: original four-step training and all parent controllers/configurations remain unchanged",
+    "Fixed audited stream10000 endpoints, no best-checkpoint selection or new training",
+    "One-step inference after four-step writer meta-training is an explicit deployment-budget change",
+    "Reuse all32 facts,32 rotations, single states, baseline and repeated-correction branches;1313 independently replayed states per architecture",
+    "Only second-hop facts edited; first-hop facts excluded from the complete edited set; all selected chains untrained",
+    "Baseline composition and first-hop correctness reported before conditioning; no model or query exclusion from full results",
+    "No additional merge, orthogonal, learning-rate or seed arms are authorized by this batch",
+    "One-step local GPT/GELU adaptation of TTCD equation6; not full off-policy/convolution/projection author implementation"
+  ]
+}

@@ -1,0 +1,13 @@
+% Requires graphicx. Path is relative to a document in paper/.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/invariant-loop-v4/invariant-loop-nodes.pdf}
+  \caption{Two adjacent iterations of Invariant Loop. Blue nodes represent
+  recurrent states, and orange nodes represent newly computed candidates.
+  Each iteration retains a path from its old state and computes a new candidate
+  using the shared Transformer and soft vocabulary feedback. The two paths meet
+  at a weighted merge. The central blue node is both the result of the first
+  iteration and the old state of the next. Mixing proportions depend on five
+  scalar statistics and accumulated historical weight.}
+  \label{fig:invariant-loop-nodes}
+\end{figure*}

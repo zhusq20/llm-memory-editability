@@ -1,0 +1,7 @@
+# file: results
+# owner: siqizhu4
+# group: siqizhu4
+user::rwx
+group::---
+other::---
+

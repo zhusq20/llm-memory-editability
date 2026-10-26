@@ -1,0 +1,154 @@
+{
+  "batch": "loop-baseline-robustness-v1",
+  "status": "Authorized matched ungated baselines; frozen before baseline outcomes",
+  "authorization": "2026-10-21 user requests comparison to the most basic ungated DiscoLoop and ordinary Loop.",
+  "question": "Does invariant outperform ordinary Loop and fixed-alpha=1 DiscoLoop with identical training and data, including new initializations, changed data and extra inference rounds?",
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "training": {
+    "initialization": 2026102112,
+    "stream_seed": 2026101603,
+    "schedule_seed": 2026102001,
+    "unique_layers": 1,
+    "evaluation_repeats": 4,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "final_lr_fraction": 0.1,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "grad_clip": 1.0,
+    "ema_decay": 0.999,
+    "batch_size": 512,
+    "steps": 1500000,
+    "segments": 2,
+    "first_segment_rounds": [
+      4,
+      6
+    ],
+    "later_segment_rounds": [
+      1,
+      4
+    ]
+  },
+  "handoff": {
+    "initial_beta": 0.55,
+    "score_hidden": 16,
+    "score_clip": 8.0,
+    "score_seed": 2026102122
+  },
+  "arms": {
+    "loop": {
+      "handoff": "plain"
+    },
+    "discoloop": {
+      "handoff": "additive"
+    }
+  },
+  "dropout_seed": 2026101604,
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000,
+    400000,
+    500000,
+    600000,
+    700000,
+    800000,
+    900000,
+    1000000,
+    1100000,
+    1200000,
+    1300000,
+    1400000,
+    1500000
+  ],
+  "evaluation_rounds": [
+    4,
+    8
+  ],
+  "grid_rounds": 32,
+  "grid_joint_rounds": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "evaluation_batch_size": 256,
+  "heartbeat_steps": 1000,
+  "smoke_steps": 32,
+  "input_origin": {
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+    "root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data"
+  },
+  "input_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+  "paired_recipe": {
+    "initial_backbone_sha256": "86c1ab1691bf156ee43d735f200a6f1de495ef07f0e3cc357e27940adaf7eb63",
+    "note": "Reuse the invariant condition backbone, data, sample stream and random-round sequence; only recurrence changes."
+  },
+  "reused_comparators": {},
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2",
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "cpu_threads": 2,
+    "memory_gib": 16,
+    "gpu_memory_fraction": 0.16,
+    "minimum_free_gpu_mib": 18000,
+    "maximum_idle_gpu_used_mib": 512,
+    "gpu_candidates": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "maximum_parallel": 4,
+    "cpu_sets": [
+      "70,71",
+      "72,73",
+      "74,75",
+      "76,77"
+    ]
+  },
+  "tracking": {
+    "provider": "wandb",
+    "entity": "zsqzz",
+    "project": "llm-memory-editability",
+    "mode": "online"
+  },
+  "primary": "Fixed 1500000-step endpoint EMA R8 graph-B two/three/four-hop; paired invariant minus ema; all 11 panels and full curves retained.",
+  "condition": "init-2"
+}

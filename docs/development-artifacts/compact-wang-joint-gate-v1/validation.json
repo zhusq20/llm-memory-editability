@@ -1,0 +1,27 @@
+{
+  "workflow": "ARS experiment-agent/run",
+  "execution": "inline; separate read-only implementation review",
+  "fixed_image_cpu_tests": {
+    "passed": true,
+    "count": 25
+  },
+  "full_data_mapping": {
+    "passed": true,
+    "checks": 45,
+    "training_examples": 313600,
+    "original_evaluation_queries": 19004
+  },
+  "ruff_check": "passed",
+  "model_parameters": 9569282,
+  "vocabulary_size": 2203,
+  "gpu_engineering": {
+    "passed": true,
+    "checks": 16,
+    "discarded_updates": 1,
+    "retained_updates": 0
+  },
+  "independent_endpoint_audit": "not requested; existing waiver retained",
+  "ruff_format_check": "passed",
+  "frozen_files": 1029,
+  "scientific_updates_at_launch_verification": 4000
+}

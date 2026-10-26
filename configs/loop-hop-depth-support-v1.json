@@ -1,0 +1,182 @@
+{
+  "batch": "loop-hop-depth-support-v1",
+  "authorization": "2026-10-17 user requested Loop2x2/2x3/2x4/3x2/3x3/3x4 and investigation of insufficient depth versus insufficient data. Continue paired ordinary Loop/DiscoLoop; reuse existing2x2; minimal nested-support factorial at L2/L3,R2. Prior physical cuda9 instruction persists.",
+  "input_root": "/inputs",
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 300000
+  },
+  "dropout_seed": 2026101604,
+  "arms": {
+    "loop-l3-r2-base": {
+      "architecture": "loop",
+      "unique_layers": 3,
+      "repeats": 2,
+      "data_condition": "base"
+    },
+    "disco-l3-r2-base": {
+      "architecture": "discoloop",
+      "unique_layers": 3,
+      "repeats": 2,
+      "data_condition": "base"
+    },
+    "loop-l2-r2-more": {
+      "architecture": "loop",
+      "unique_layers": 2,
+      "repeats": 2,
+      "data_condition": "more"
+    },
+    "disco-l2-r2-more": {
+      "architecture": "discoloop",
+      "unique_layers": 2,
+      "repeats": 2,
+      "data_condition": "more"
+    },
+    "loop-l3-r2-more": {
+      "architecture": "loop",
+      "unique_layers": 3,
+      "repeats": 2,
+      "data_condition": "more"
+    },
+    "disco-l3-r2-more": {
+      "architecture": "discoloop",
+      "unique_layers": 3,
+      "repeats": 2,
+      "data_condition": "more"
+    },
+    "loop-l2-r3-base": {
+      "architecture": "loop",
+      "unique_layers": 2,
+      "repeats": 3,
+      "data_condition": "base"
+    },
+    "disco-l2-r3-base": {
+      "architecture": "discoloop",
+      "unique_layers": 2,
+      "repeats": 3,
+      "data_condition": "base"
+    },
+    "loop-l2-r4-base": {
+      "architecture": "loop",
+      "unique_layers": 2,
+      "repeats": 4,
+      "data_condition": "base"
+    },
+    "disco-l2-r4-base": {
+      "architecture": "discoloop",
+      "unique_layers": 2,
+      "repeats": 4,
+      "data_condition": "base"
+    },
+    "loop-l3-r3-base": {
+      "architecture": "loop",
+      "unique_layers": 3,
+      "repeats": 3,
+      "data_condition": "base"
+    },
+    "disco-l3-r3-base": {
+      "architecture": "discoloop",
+      "unique_layers": 3,
+      "repeats": 3,
+      "data_condition": "base"
+    },
+    "loop-l3-r4-base": {
+      "architecture": "loop",
+      "unique_layers": 3,
+      "repeats": 4,
+      "data_condition": "base"
+    },
+    "disco-l3-r4-base": {
+      "architecture": "discoloop",
+      "unique_layers": 3,
+      "repeats": 4,
+      "data_condition": "base"
+    }
+  },
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000
+  ],
+  "heartbeat_steps": 1000,
+  "evaluation_batch_size": 256,
+  "smoke_steps": 32,
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "gpu_candidates": [
+      9
+    ],
+    "maximum_parallel": 8,
+    "cpu_threads": 2,
+    "cpu_first": 32,
+    "memory_gib": 16,
+    "poll_seconds": 15,
+    "stage_timeout_hours": 24,
+    "waiting_timeout_hours": 168,
+    "minimum_free_gpu_mib": 16000,
+    "maximum_idle_gpu_used_mib": 512,
+    "tracking": "online",
+    "gpu_memory_fraction": 0.08,
+    "same_batch_gpu_sharing": true
+  },
+  "primary": "Fixed300k graphB1-4hop by inference1-4rounds. Main depth vs support factorial L2/L3,R2 x10000/30000 unique A compositions per hop x ordinary Loop/DiscoLoop. Reuse two existing low-support L2R2 endpoints after their independent audits.",
+  "limits": [
+    "One original development world and initialization; no new-world confirmation",
+    "Two existing L2R2 baselines reused, never restarted",
+    "Only physical cuda9; new GPU phases wait for verified parent completion and global lock; no sharing across batches or preemption",
+    "300k per new run,14new runs,4200000 new updates;32discarded engineering steps each",
+    "Nested support preserves all original facts, all original training queries and exact original43000-query panel bytes",
+    "Original category/query-slot stream retained; atoms/dummy/category/token exposure matched batchwise, high support changes unique composition diversity",
+    "Depth comparisons change parameter count and FLOPs; report both; no representational impossibility claim from negative training",
+    "No auxiliary losses, history-state, timestep conditions, KV augmentation or intermediate truth",
+    "No learning-rate/weight-decay search, longer runs, extra graph or further model grid"
+  ],
+  "parent": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-unified-v1",
+    "freeze_sha256": "71aa3f424bff94fc777a88c13629333e7780a63f3b948032a962a8a8b66edb95",
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468"
+  },
+  "supports": {
+    "base": 10000,
+    "more": 30000
+  },
+  "support_expansion_seed": 2026101702,
+  "reuse_baselines": [
+    "loop-l2-r2",
+    "disco-l2-r2"
+  ]
+}

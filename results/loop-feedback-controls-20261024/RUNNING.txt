@@ -1,0 +1,26 @@
+Loop两组软反馈对照：正式训练运行中
+快照 UTC: 2026-10-25T02:35:22.734535+00:00
+主机: sn4622129202；Docker context: lm-memory；network: host。
+每组1500000优化器步，共新增3000000步；与现有四组共享GPU，七条旧初始化仍暂缓。
+统一batch512、逐样本Poisson(8)重抽1–16、终点监督、全程反传；从配对原始初值开始。
+
+infiloop-feedback: GPU4；快照步数2800/1500000；云端running。
+  容器: e356a52ea72f1bc5ab3e26b874f58ca1251b10513f099b7da80842a67222c64a
+  W&B: https://wandb.ai/zsqzz/llm-memory-editability/runs/lnhb013ae00
+invariant-no-feedback: GPU8；快照步数2500/1500000；云端running。
+  容器: 16c19154d505c5be02f8b480438d42512e383fe95901597035e8cc0fec59af8d
+  W&B: https://wandb.ai/zsqzz/llm-memory-editability/runs/lnhb013ae01
+
+CUDA预检：每组6次临时更新，共12次；不保存或复用临时权重。
+最长输入/16轮、首轮梯度和EMA/R32检查通过；峰值预留显存4992/5458 MiB。
+原四组PID和启动时间未变，步数持续增加；原任务无重启或中断。
+每任务2 CPU、16 GiB主存、allocator fraction 0.16；源码root所有0444/0555。
+Docker复制属主修正仅调整新容器元数据，源码哈希未变、训练未重启，见runtime/ownership-amendment.json。
+
+持久根: /ossfs/workspace/llm-memory-editability/loop-feedback-controls-20261024
+实时记录: runs/<arm>/{status.json,tracking.json,learning.json,progress.jsonl,latest.pt,checkpoint-*.pt}。
+冻结配置: config.json；冻结源码: runtime/source.tar；哈希: runtime/source-manifest.json。
+授权与资源: runtime/authorization.json、resource-before.json、resource-after-start.json。
+启动: runtime/launch.json；核验: runtime/startup-verification.json、cloud-training-verification.json。
+不要重复运行launch入口；任何恢复先检查容器、日志、完整检查点和现有授权，不能为修W&B重启训练。
+最终150万步、独立重载和终点云端审计尚未完成。

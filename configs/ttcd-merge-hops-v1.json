@@ -1,0 +1,44 @@
+{
+  "batch": "ttcd-merge-hops-v1",
+  "authorization": "User requested adding independently computed one-step per-fact fast increments merged by addition, versus continuous one-step writing; same Transformer/Loop/DiscoLoop models and facts; evaluate edits in both hops, prioritize second-hop updated two-hop accuracy and old knowledge retention.",
+  "parent_batch": "ttcd-one-step-second-hop-v1",
+  "new_base_parameter_updates": 0,
+  "writer_steps": 1,
+  "parent_writer_steps": 4,
+  "parent_phase": "stream",
+  "methods": ["continuous", "independent_merge"],
+  "roles": ["first", "second"],
+  "architectures": {
+    "transformer": {"source_directory": "transformer/source", "source_manifest": "transformer/source-manifest.json", "parent_config": "configs/architecture-transformer.json", "evaluation_directory": "transformer/evaluation"},
+    "loop": {"source_directory": "loop/source", "source_manifest": "loop/source-manifest.json", "parent_config": "configs/architecture-loop.json", "evaluation_directory": "loop/evaluation"},
+    "discoloop": {"source_directory": "discoloop/source", "source_manifest": "discoloop/source-manifest.json", "parent_config": "configs/experiment.json", "evaluation_directory": "discoloop/evaluation"}
+  },
+  "panel_sha256": "ac6082dcb857fab85fc106d4d3d39a7a3adb67de33976edeb13c4a1bd201c081",
+  "first_hop_panel": {"seed": 20261015, "max_queries_per_fact": 8, "preserve_all_32_facts_and_replacements": true, "empty_query_facts": "retain with explicit zero coverage"},
+  "comparison": {"primary_t": 32, "single_fact_reference": true, "prefixes": "all1..32", "rotations": 32, "common_baseline_correct_subset": true, "retain_original_second_hop_panel": true, "merge_rule": "sum each immutable A_i computed once from A0; never average, rescale, or add base weights", "continuous_reuse": "reuse audited parent A states and second-hop/E/U predictions, add first-hop reads; no repeat training or continuous write trajectory"},
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "cpu_threads": 4,
+    "cpu_sets": {"transformer": [48,49,50,51], "loop": [52,53,54,55], "discoloop": [56,57,58,59]},
+    "gpu_preferences": {"transformer": [3,0,5], "loop": [5,1,6], "discoloop": [6,2,7]},
+    "memory_gib": 96,
+    "minimum_persistent_free_gib": 200,
+    "gpu_memory_max_mib": 1024,
+    "gpu_utilization_max": 5,
+    "timeout_hours": 48,
+    "wait_timeout_hours": 96,
+    "tracking": "online",
+    "uid": 1015,
+    "gid": 1016
+  },
+  "limits": [
+    "Existing audited stream10000 endpoints and existing one-step donor/continuous states only; no new training",
+    "Original32 fact keys and replacement tails fixed for both hop roles and both methods",
+    "First-hop query requires both old/new successor facts present and unedited, changed final answer and untrained original chain; retain coverage gaps",
+    "Read-only original parents and immutable increments; save one merged A per prefix shared by both role readouts",
+    "Independent per-fact writing approximates the off-policy principle, not complete original TTCD implementation",
+    "No orthogonal, gating, rescaling, learning-rate, seed or model-selection arms"
+  ]
+}

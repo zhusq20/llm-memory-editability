@@ -1,0 +1,146 @@
+{
+  "batch": "ttcd-architecture-comparison-v1",
+  "authorization": "User explicitly requested ordinary Transformer, Loop and DiscoLoop TTCD controls, reuse checkpoints first, then confirmed rebuilding both missing foundations with the same original recipe, parallel GPU8/9.",
+  "seed": 20261015,
+  "phi": 7.2,
+  "data_dir": "/inputs/data/ttcd-successful-base-v1",
+  "model_config": "/inputs/data/ttcd-successful-base-v1/gpt2-config.json",
+  "original_data_dir": "/inputs/data/discoloop-success-restore-v1/original/data",
+  "original_model_config": "/inputs/data/discoloop-success-restore-v1/original/reference/gpt2/config.json",
+  "foundation": {
+    "checkpoint": "results/ttcd-architecture-comparison-v1/transformer/foundation/transformer/checkpoint-0300000.pt",
+    "gate_receipt": "results/ttcd-architecture-comparison-v1/transformer/foundation/identity.json",
+    "step": 300000,
+    "gate_checkpoint_field": "checkpoint_sha256",
+    "required_spec": {
+      "unique_layers": 8,
+      "repeats": 1,
+      "phi": 7.2,
+      "weight_decay": 0.1,
+      "initialization": 791101,
+      "stream_seed": 792101,
+      "lr": 0.0001,
+      "warmup": 2000,
+      "batch_size": 512,
+      "steps": 300000
+    }
+  },
+  "common": {
+    "steps": 10000,
+    "checkpoint": "results/ttcd-architecture-comparison-v1/transformer/common/training/parent.pt",
+    "gate_receipt": "results/ttcd-architecture-comparison-v1/transformer/common/gate.json"
+  },
+  "models": {
+    "stream": {
+      "checkpoint": "results/ttcd-architecture-comparison-v1/transformer/stream/training/parent.pt",
+      "step": 10000,
+      "discoloop": false
+    }
+  },
+  "cases": {
+    "seed": 20261015,
+    "calibration_cases": 8,
+    "evaluation_cases": 16,
+    "affected": 8,
+    "controls": 16
+  },
+  "writer": {
+    "teacher_window": 32,
+    "student_window": 16,
+    "gap": 17,
+    "steps": 4,
+    "learning_rate": 0.001
+  },
+  "continual": {
+    "train_length": 8,
+    "eval_length": 32,
+    "rotations": 32,
+    "affected": 8,
+    "controls": 64,
+    "order_seed": 1729,
+    "panel_source_path": "results/ttcd-architecture-comparison-v1/preparation/continual-panel.json",
+    "panel_path": "/frozen/configs/continual-panel.json"
+  },
+  "reading_gate": {
+    "minimum_cases_per_group": 8,
+    "minimum_accuracy": 0.6
+  },
+  "capability_gate": {
+    "minimum_accuracy": {
+      "atomic_id": 0.98,
+      "atomic_ood": 0.98,
+      "train_ii": 0.98,
+      "test_ii": 0.98,
+      "test_io": 0.9,
+      "test_oi": 0.9,
+      "test_oo": 0.9
+    },
+    "maximum_reference_drop": 0.02,
+    "reference": "Same new foundation fixed300k seven-panel audit; no updated two-hop labels/readouts enter training or gate selection"
+  },
+  "training": {
+    "steps": 10000,
+    "native_batch_size": 512,
+    "correction_batch_size": 128,
+    "micro_native": 64,
+    "micro_facts": 32,
+    "learning_rate": 1e-05,
+    "weight_decay": 0.1,
+    "gradient_clip": 1.0,
+    "validation_every": 1000,
+    "evaluation_batch_size": 64,
+    "precision": "bf16",
+    "tf32": false
+  },
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "gpus": {
+      "transformer": 8,
+      "loop": 9
+    },
+    "cpu_sets": {
+      "transformer": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "loop": [
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    "cpu_threads": 4,
+    "memory_gib": 96,
+    "gpu_memory_max_mib": 1024,
+    "gpu_utilization_max": 5,
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "timeout_hours": 48,
+    "wait_timeout_hours": 24,
+    "tracking": "online",
+    "uid": 1015,
+    "gid": 1016,
+    "minimum_persistent_free_gib": 400
+  },
+  "scope_limits": [
+    "Full fixed-budget architecture pipeline comparison, one graph/initialization; no universal advantage assumed",
+    "Shared original data, correction train exclusions, macro512/128, inner4, K8/BPTT, learning rates and two adaptation10k stages",
+    "Updated compositions do not enter training, calibration selection or checkpoint choice",
+    "Standard D8 has8 independently initialized layers and8 physical fast matrices; Loop4x2 has4 and shares them across both rounds; report parameter/fast capacity/compute differences",
+    "Common reader and native composition quality is advisory; identity and exact independent reload remain mandatory",
+    "DiscoLoop uses the existing frozen successful-base stream and its supplementary two-new evaluation, not a new run"
+  ],
+  "engineering_implementation": {
+    "micro_facts_selection": "32 after full-size micro8 engineering: single peak4.04GiB, stream ~7.14s/update (~19.8h/10k). Same macro128; enlarge only complete-stream microbatch, retain full gradient and one optimizer update. Require full-size16-update/micro32 replay before formal execution.",
+    "outcome_selection": false
+  },
+  "architecture": {
+    "name": "transformer",
+    "unique_layers": 8,
+    "repeats": 1,
+    "discoloop": false
+  }
+}

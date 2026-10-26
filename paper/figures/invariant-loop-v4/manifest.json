@@ -1,0 +1,40 @@
+{
+  "sources": {
+    "src/llm_memory_editability/loop_native_handoff.py": "2c49b84595707bac69ef38375486c697237b98d6cde844cd8181037114ea53d7",
+    "paper/figures/invariant-loop-v2/build_figures.py": "73605b271f9b39be6be916f04056518c0aecbbfc7319f7bd86e5651a148be11b",
+    "paper/figures/invariant-loop-v4/build_figure.py": "0c16f0c561d28b0d5abad160f88a1bc96c616b9f8c8ee48ab606f9b67bbb4166"
+  },
+  "diagram": {
+    "aggregate_nodes": 3,
+    "candidate_nodes": 2,
+    "adjacent_rounds": 2,
+    "boxes": 0,
+    "arrow_width_meaning": "Visual grouping only; no measured weights.",
+    "caption_only": [
+      "input reinjection",
+      "N/D recursion",
+      "p carry",
+      "initialization"
+    ]
+  },
+  "checks": {
+    "canvas_text_bounds": "passed",
+    "model_executed": false
+  },
+  "figure_table_trace": [
+    {
+      "artifact_id": "invariant-loop-nodes",
+      "source_data": {
+        "file": "src/llm_memory_editability/loop_native_handoff.py"
+      },
+      "transformation": {
+        "script": "build_figure.py"
+      },
+      "caption_claim": "Each round combines its old aggregate and new candidate; the result is the next round's old state.",
+      "supported_manuscript_claims": [],
+      "limitations": [
+        "Conceptual state flow; auxiliary recurrent variables are in the caption."
+      ]
+    }
+  ]
+}

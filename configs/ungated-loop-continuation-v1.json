@@ -1,0 +1,170 @@
+{
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 1500000
+  },
+  "dropout_seed": 2026101604,
+  "heartbeat_steps": 1000,
+  "evaluation_batch_size": 256,
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2",
+    "cpu_threads": 2,
+    "memory_gib": 16,
+    "tracking": "online",
+    "gpu_memory_fraction": 0.16,
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "poll_seconds": 15,
+    "stage_timeout_hours": 24,
+    "cpu_first": 0,
+    "maximum_parallel": 2,
+    "waiting_timeout_hours": 168,
+    "gpu_uuids": {
+      "1": "GPU-364f0e00-7f5f-e6a7-9fea-03eb31c0bb3b",
+      "2": "GPU-9c6ca0d7-11bb-e940-c845-efea3cc49c23"
+    }
+  },
+  "input_origin": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+    "reuse": "Exact existing 40000-example world and 43000-query panels; do not merge with the 25000-example variant"
+  },
+  "batch": "ungated-loop-continuation-v1",
+  "authorization": "2026-10-17 user requested scheduling ungated DiscoLoop and ordinary Loop to 1.5M steps as controls; continue existing full 300k checkpoints.",
+  "input_root": "/inputs/multihop",
+  "continuation": {
+    "start_step": 300000,
+    "new_warmup": false
+  },
+  "arms": {
+    "disco-l1-r4": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "parent": "disco-l1-r4",
+      "update_gate_lr_factor": 1.0
+    },
+    "loop-l1-r4": {
+      "architecture": "loop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "parent": "loop-l1-r4",
+      "update_gate_lr_factor": 1.0
+    }
+  },
+  "parents": {
+    "disco-l1-r4": {
+      "root": "/inputs/parents/disco-l1-r4",
+      "original_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-hop-unified-v1/runs/disco-l1-r4",
+      "source_image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+      "files": {
+        "complete.json": "cce19c8641f5c826f1e399c117bc04e4d3b06e62942bbe7f3ad192b7e9aa4a1b",
+        "config.json": "034bfc281aad3bfddc2d489b22be0b0974672406f9f1b40956868d99358d7e19",
+        "exposure.npz": "a88eaeb762b83a9bfdcf053387ad6cb4226bde9ed0dd1f1c7b51ff732dd5577e",
+        "latest.pt": "c7ce3f9f968ad27192e7c6ddd8812c1730a59b57b6a978e3d969a8ec8dabc72c",
+        "learning.json": "90b2c5038ac190cd64c9326536a05cbf6f8c85803245854cdf71dd7612aa3922",
+        "run.json": "82217e4224461adaf7dc4749ef352961a4a3bb94a3b3028701c75e7cc0257a0b"
+      },
+      "model_sha256": "3982e826f921cd8e386f4175eb97b94565f8cd7ab020e727fdc1390e6712e86a"
+    },
+    "loop-l1-r4": {
+      "root": "/inputs/parents/loop-l1-r4",
+      "original_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-hop-unified-v1/runs/loop-l1-r4",
+      "source_image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+      "files": {
+        "complete.json": "212daf60e7deee745a8646dc6abc72486c1f4ea8caf631eee28358b02bd5c0c6",
+        "config.json": "034bfc281aad3bfddc2d489b22be0b0974672406f9f1b40956868d99358d7e19",
+        "exposure.npz": "a88eaeb762b83a9bfdcf053387ad6cb4226bde9ed0dd1f1c7b51ff732dd5577e",
+        "latest.pt": "e8567dfecac38314425541b47a148714d78544b71678f154c2983f2c8e1fe1f5",
+        "learning.json": "e2483853bddb9beaf950d28530a842ee7798f1db245b615dd536759f38e61215",
+        "run.json": "390614700de1cbe221eca9cbbe958632e3b738c96fc7308d776fe8eeb6d97e9d"
+      },
+      "model_sha256": "9732a2dcde1e9754ecde2eaceecb4c09b35eca7205b4e2f62a0ce4868a418fc8"
+    }
+  },
+  "evaluation_nodes": [
+    300000,
+    400000,
+    500000,
+    600000,
+    700000,
+    800000,
+    900000,
+    1000000,
+    1100000,
+    1200000,
+    1300000,
+    1400000,
+    1500000
+  ],
+  "budget": {
+    "new_scientific_arms": 2,
+    "new_scientific_updates": 2400000,
+    "reused_unique_parent_updates": 600000,
+    "final_steps_per_arm": 1500000,
+    "engineering_discarded_effective_updates": 4,
+    "retained_engineering_updates": 0
+  },
+  "primary": "Fixed total1500k R4 graph-B three-hop full-vocabulary answer accuracy; retain two/four-hop, all11 pools, answer+EOS, curves at every100k, R1-4 endpoint grid. Compare to existing gated runs at identical steps, not best checkpoints.",
+  "limits": [
+    "One observed development graph and initialization; not a new-world confirmation or original Wang task.",
+    "Only training duration changes from parent. Fixed Discoloop alpha=1, no learned injection/update gates; ordinary Loop has no re-encoding channel.",
+    "Parent image differs from current local image. Exact restored checkpoint/Adam/RNG checks do not prove cross-hardware trajectory equivalence.",
+    "No new learning-rate, depth, graph, seed or gate grid.",
+    "Steps and data exposure do not equate FLOPs or wall time.",
+    "Parent scientific endpoints and independent reloads passed; historical parent cloud closeout failure remains recorded."
+  ],
+  "execution_policy": {
+    "pretraining_smoke": false,
+    "posttraining_independent_audit": false,
+    "endpoint_inference_grid": true,
+    "resume_correctness_check": "Two independent restored CUDA one-step copies per arm, discarded; scientific training admitted only on exact model/Adam/sampler match.",
+    "reason": "Existing user waiver of scientific short-training and independent endpoint audits retained; required resume engineering checks are separate."
+  },
+  "dependencies": {
+    "disco-l1-r4": {
+      "root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/paper-update-gate-continuation-v1/execution",
+      "arm": "token-update",
+      "config_sha256": "af4e6b763c9ad411170c3d58691c5c64acb89ef3a92455133c7383a9f43d1cf5",
+      "required_stages": [
+        "train",
+        "grid"
+      ]
+    },
+    "loop-l1-r4": {
+      "root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/paper-update-gate-continuation-v1/execution",
+      "arm": "token-update-half-lr",
+      "config_sha256": "af4e6b763c9ad411170c3d58691c5c64acb89ef3a92455133c7383a9f43d1cf5",
+      "required_stages": [
+        "train",
+        "grid"
+      ]
+    }
+  }
+}

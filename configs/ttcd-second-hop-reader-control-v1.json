@@ -1,0 +1,153 @@
+{
+  "batch": "ttcd-second-hop-reader-control-v1",
+  "authorization": "User explicitly authorized branching each model from its own 20k checkpoint, continuing 10k ordinary reader-only updates on GPU8/9 concurrently with unchanged parent training.",
+  "scratch": {
+    "version": 1
+  },
+  "phase": "Paired 20k->30k reader-only controls: omit fast_atomic and fast_retention outer losses; retained ordinary losses and original global LR/data stream.",
+  "seed": 20261015,
+  "phi": 2.0,
+  "data_dir": "data/ttcd-second-hop-scratch-v1",
+  "model_config": "data/ttcd-second-hop-scratch-v1/gpt2-config.json",
+  "world": {
+    "seed": 20261015,
+    "entities": 256,
+    "relations": 32,
+    "degree": 8,
+    "holdout": 0.1
+  },
+  "model": {
+    "width": 128,
+    "heads": 4,
+    "unique_layers": 2,
+    "repeats": 2,
+    "intermediate": 512,
+    "positions": 64
+  },
+  "models": {
+    "discoloop": {
+      "checkpoint": "results/ttcd-second-hop-reader-control-v1/discoloop/training/parent.pt",
+      "step": 30000,
+      "discoloop": true
+    },
+    "loop": {
+      "checkpoint": "results/ttcd-second-hop-reader-control-v1/loop/training/parent.pt",
+      "step": 30000,
+      "discoloop": false
+    }
+  },
+  "training": {
+    "warmup_steps": 20000,
+    "adaptation_steps": 10000,
+    "batch_size": 128,
+    "learning_rate": 0.001,
+    "minimum_learning_rate": 1e-05,
+    "lr_warmup_steps": 200,
+    "weight_decay": 0.1,
+    "gradient_clip": 1.0,
+    "validation_every": 1000,
+    "validation_panel_size": 256,
+    "loss_weights": {
+      "atoms": 1.0,
+      "chains": 1.0,
+      "reader": 1.0,
+      "fast_atomic": 1.0,
+      "fast_retention": 1.0
+    },
+    "selection": "Fixed final step only; retain failures. No edited two-hop labels/readouts select training settings or checkpoint. Budgets and learning rates are unvalidated development starting values."
+  },
+  "methods": [
+    "ttcd",
+    "atomic_ce",
+    "sham"
+  ],
+  "cases": {
+    "seed": 20261015,
+    "calibration_cases": 8,
+    "evaluation_cases": 16,
+    "affected": 8,
+    "controls": 16
+  },
+  "reading_gate": {
+    "minimum_cases_per_group": 8,
+    "minimum_accuracy": 0.6,
+    "selection": "Held-out correction facts, long-window atomic answer accuracy only. Gate failure is preserved; no automatic retraining."
+  },
+  "writer": {
+    "teacher_window": 32,
+    "student_window": 16,
+    "gap": 17,
+    "steps": 4,
+    "learning_rate": 0.001,
+    "variant": "TTCD equation (6) in GPT GELU; local shared QKV/residual, first round only, all physical MLP down matrices. Per-example fast states in outer training. No original v9 conv/projection/normalization."
+  },
+  "atomic_ce": {
+    "steps": 20,
+    "learning_rate": 0.0001
+  },
+  "runtime": {
+    "gpus": {
+      "discoloop": 8,
+      "loop": 9
+    },
+    "cpu_threads": 4,
+    "memory_gib": 48,
+    "gpu_memory_max_mib": 1024,
+    "gpu_utilization_max": 5,
+    "tracking": "online",
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "python": "/mnt/disk2_from_server2/siqizhu4/llm-memory/.venv/bin/python",
+    "execution": "Explicit user-authorized shared GPU8/9 admission with only whitelisted parent processes, disjoint CPUs, independent LM Docker containers, immutable parent, own persistent outputs",
+    "timeout_hours": 12,
+    "cpu_sets": {
+      "discoloop": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "loop": [
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    "shared_gpu_min_free_mib": 8192,
+    "shared_gpu_allowlist": {
+      "discoloop": [
+        "ttcd-second-hop-scratch-v1-discoloop-train-restart1"
+      ],
+      "loop": [
+        "ttcd-second-hop-scratch-v1-loop-train"
+      ]
+    }
+  },
+  "scope": [
+    "One new control for each parent architecture, same graph/initialization and held-out correction facts.",
+    "Restore each original complete 20k checkpoint: weights, AdamW moments/step, data RNG, Torch/CUDA RNG, global 30k cosine LR horizon.",
+    "For global steps20001..30000 train only old atomic answers, old ordinary II answers and long-window corrected atomic context reading.",
+    "Omit both fast_atomic and fast_retention outer losses; no differentiable TTCD writes in branch optimization.",
+    "No corrected two-hop labels or corrected composite queries during training; fixed terminal step30000.",
+    "All original calibration/evaluation groups, teacher/student windows, test-time TTCD/atomic_ce/sham methods and audit gates retained.",
+    "Equal global updates and ordinary sample stream, not equal supervision or compute; two new arms add only20000 updates.",
+    "Inherited 20k exposure/time/compute is reported separately from new 10k cost, never charged as duplicate new training.",
+    "GPU sharing with explicitly whitelisted parent containers authorized by user; CPUs and writable output mounts disjoint.",
+    "One development world/initialization: estimate the combined effect of the two extra outer losses, not universal efficacy or efficiency."
+  ],
+  "branch": {
+    "parent_batch": "ttcd-second-hop-scratch-v1",
+    "parent_source_dir": "/parent-frozen",
+    "parent_manifest_path": "/parent-source-manifest.json",
+    "parent_manifest_sha256": "7a13ab65c2c41d296c681746958c7370d90864b5376dcd7ec115140e7f019d10",
+    "parent_config_sha256": "2225cfff7a781268f86760c9521f8dafb5ee762c04a1961160a3002a2077b29c",
+    "parent_image_sha256": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "checkpoint_step": 20000,
+    "steps": 10000,
+    "objective": "old_atoms_old_chains_context_reader_only",
+    "checkpoints": {
+      "discoloop": "results/ttcd-second-hop-scratch-v1/discoloop/training/checkpoint-0020000.pt",
+      "loop": "results/ttcd-second-hop-scratch-v1/loop/training/checkpoint-0020000.pt"
+    }
+  }
+}

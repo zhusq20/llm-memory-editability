@@ -1,0 +1,54 @@
+{
+  "status": "complete",
+  "target_met": true,
+  "selection_group": "atomic_seen/direct",
+  "selection_data": "development_only",
+  "development_selected_tokens": 200192,
+  "formal_selected_tokens": 800768,
+  "rewrite_selected_tokens": 200192,
+  "nodes": [
+    {
+      "tokens": 200192,
+      "arms": {
+        "A": {
+          "n": 64,
+          "correct": 64,
+          "accuracy": 1.0
+        },
+        "B": {
+          "n": 64,
+          "correct": 64,
+          "accuracy": 1.0
+        },
+        "C": {
+          "n": 64,
+          "correct": 64,
+          "accuracy": 1.0
+        }
+      }
+    },
+    {
+      "tokens": 400384,
+      "arms": {
+        "A": {
+          "n": 64,
+          "correct": 64,
+          "accuracy": 1.0
+        },
+        "B": {
+          "n": 64,
+          "correct": 64,
+          "accuracy": 1.0
+        },
+        "C": {
+          "n": 64,
+          "correct": 64,
+          "accuracy": 1.0
+        }
+      }
+    }
+  ],
+  "problems": [],
+  "target": 0.8,
+  "selected_index": 0
+}

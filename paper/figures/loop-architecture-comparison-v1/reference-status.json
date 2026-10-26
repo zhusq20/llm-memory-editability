@@ -1,0 +1,45 @@
+{
+  "scope": "Primary-source checks for architecture comparison; acceptance and mechanism are checked separately.",
+  "records": [
+    {
+      "title": "DiscoLoop: Looping Discrete Embeddings and Continuous Hidden States for Multi-hop Reasoning",
+      "status": "Accepted: NeurIPS 2026 Poster",
+      "status_source": "https://neurips.cc/virtual/2026/poster/155886",
+      "status_evidence": {
+        "page_title_prefix": "NeurIPS Poster DiscoLoop",
+        "structured_creditText": "NeurIPS 2026",
+        "structured_datePublished": "2026-09-25",
+        "linked_openreview": "https://openreview.net/forum?id=26R1JkrIyI",
+        "verification": "Read the official NeurIPS poster HTML; its dated structured data and Poster label identify the accepted conference entry."
+      },
+      "method_source": "https://arxiv.org/html/2607.00341v2",
+      "method_locations": ["Section 3.1, Eq. (2)", "Section 4, Eqs. (4)-(6)", "Section 5.1"],
+      "figure_role": "Primary published comparison, plus its vanilla-loop baseline",
+      "figure_variant": "Fixed alpha=1 and temperature=1, intermediate boundary; not the learned-alpha variant or Figure 2 hard-token intervention."
+    },
+    {
+      "title": "Loop, Think, & Generalize: Implicit Reasoning in Recurrent-Depth Transformers",
+      "status": "COLM 2026, identified by the authors' official repository",
+      "status_source": "https://github.com/OSU-NLP-Group/Loop-Think-Generalize",
+      "status_evidence": {
+        "readme_title_prefix": "[COLM '26]",
+        "repository_description": "Code for COLM '26 paper",
+        "verification_limit": "Conference decision page not independently retrieved; venue identification is from the authors."
+      },
+      "method_source": "https://arxiv.org/html/2604.07822v2",
+      "method_locations": ["Figure 1 caption", "Section 4"],
+      "figure_role": "Additional attribution for the plain shared-block recurrence"
+    },
+    {
+      "title": "Scaling to Tens of Thousands of Test-Time Iterations with Loop-Native Attention Residuals",
+      "short_name": "InfiLoop",
+      "status": "Preprint verified; formal acceptance not verified",
+      "status_sources": ["https://arxiv.org/abs/2610.11570", "https://github.com/pixeli99/InfiLoop"],
+      "status_evidence": {
+        "arxiv_versions": "v1 2026-10-08; v2 2026-10-16",
+        "verification_limit": "No primary acceptance record was found in the checked paper and author repository; this is not evidence of rejection."
+      },
+      "figure_role": "Closest historical aggregation reference, retained in the notes with its verified status"
+    }
+  ]
+}

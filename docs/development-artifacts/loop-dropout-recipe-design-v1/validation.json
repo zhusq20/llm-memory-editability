@@ -1,0 +1,22 @@
+{
+  "status": "design_validated_method_unverified",
+  "training_updates_executed": 0,
+  "json_valid": true,
+  "local_inputs_exist": true,
+  "original_three_dropout_values": {
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1
+  },
+  "local_source_sha256": {
+    "configs/loop-state-handoff-development-v1.json": "319d0694e288512f52f43074f6aa101a3fd4cac3af4956e4eca5bf362c81bd45",
+    "results/loop-state-handoff-development-v1/runtime/source/src/llm_memory_editability/loop_native_handoff.py": "2c49b84595707bac69ef38375486c697237b98d6cde844cd8181037114ea53d7",
+    "results/loop-state-handoff-development-v1/runtime/source/src/llm_memory_editability/self_decode_alignment.py": "1bfd5c15da162ea032caa0579eae6b06b7316e497b3e7ccd747c3252212138a3",
+    "results/loop-state-handoff-development-v1/runtime/source/src/llm_memory_editability/supervised_alignment.py": "9c84f60e536d5bd39919a2b3037b7ecc416dc5fc2a9f2da16ae3c5855524ec74",
+    "results/loop-state-handoff-development-v1/runtime/source/scripts/run_loop_native_handoff.py": "7b100f2e99888381c5483776b5331c2d1aee562103060a4f775f8e15bb434a1b",
+    "results/loop-state-regression-diagnosis-20261022/science/summary.json": "8e55d7f58aef5d5919fd05880ec634359f5f61982286ec33074b0ca54d078b47",
+    "results/loop-state-regression-diagnosis-20261022/interfaces/summary.json": "8c28284a595a8fce3bf7492562cdca46f543737128d07276ea3d0e8e49b75359",
+    "results/loop-state-regression-diagnosis-20261022/saved-objective-comparison.json": "7d786538db04e980ca9731240d2a8d49062435e810db1cc8662680672645b2bf"
+  },
+  "design_sha256": "a5eaa5740b70dcab0a954726cc07c38e1a165cfc3398a8a7f72e7b3b3c3d22d1"
+}

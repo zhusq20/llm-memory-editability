@@ -1,0 +1,16 @@
+Would reformat: scripts/diagnose_dual_gate_variance.py
+Would reformat: scripts/launch_ce_down_novel.py
+Would reformat: scripts/launch_continuation_handoff.py
+Would reformat: scripts/launch_zero_training_maps.py
+Would reformat: scripts/reschedule_paper_update_continuation.py
+Would reformat: scripts/resume_ttcd_pending_stages.py
+Would reformat: scripts/run_bios_address.py
+Would reformat: scripts/run_ce_down_novel.py
+Would reformat: scripts/run_ttcd_speedup.py
+Would reformat: src/llm_memory_editability/ce_down_projection.py
+Would reformat: src/llm_memory_editability/ica_knowledge_data.py
+Would reformat: tests/test_ce_down_projection.py
+Would reformat: tests/test_continuation_scheduling_handoff.py
+Would reformat: tests/test_ttcd_pending_stages.py
+Would reformat: tests/test_ttcd_speedup_entry.py
+15 files would be reformatted, 1242 files already formatted

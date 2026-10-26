@@ -2,7 +2,7 @@
   "enabled": true,
   "provider": "wandb",
   "sdk_version": "0.30.0",
-  "entity": "zhusq20",
+  "entity": "zsqzz",
   "project": "llm-memory-editability",
   "mode": "online",
   "poll_seconds": 15,

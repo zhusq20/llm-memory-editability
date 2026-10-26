@@ -1,0 +1,34 @@
+% Requires graphicx. Paths are relative to a manuscript in paper/.
+% Three independent figures; add the manuscript's bibliography keys as needed.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/loop-residual-comparison-v2/vanilla-loop.pdf}
+  \caption{Vanilla Loop. The shared Transformer output is passed directly to
+  the next iteration. One token is highlighted; the same rule applies at every position.}
+  \label{fig:highway-comparison-vanilla}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/loop-residual-comparison-v2/highway.pdf}
+  \caption{Highway Networks, following Section~2 of Training Very Deep Networks
+  (NeurIPS 2015). The layer input feeds a nonlinear transform and a linear-plus-sigmoid
+  gate. Vector $g_\ell$ mixes the transformed candidate with the carried input.
+  Every displayed position has its own carry, and gate control reaches the
+  highlighted mixture. Layers use distinct transforms $H_\ell$ and $H_{\ell+1}$;
+  weight sharing and a Transformer backbone are not assumed. Position lanes
+  align the update mechanism with the other two schematics.}
+  \label{fig:highway-comparison-highway}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/loop-residual-comparison-v2/invariant-loop.pdf}
+  \caption{Invariant Loop. Soft feedback forms a candidate. Five statistics feed
+  an MLP; the processed score is normalized against retained historical mass to
+  obtain scalar $\gamma_t$. Every token retains its own state through a local carry.
+  After reinjection and LayerNorm, $\mathrm{LN}_1(h_t+e)$ supplies the common
+  next-loop Q/K/V input. Exact score processing and recurrent state are specified
+  in the accompanying notes. Soft feedback follows DiscoLoop.}
+  \label{fig:highway-comparison-invariant}
+\end{figure*}

@@ -1,0 +1,163 @@
+{
+  "batch": "ttcd-cross-sample-v1",
+  "authorization": "User adopted the paired proposal and requested execution; subsequently specified parallel GPU8/9.",
+  "scratch": {
+    "version": 1
+  },
+  "phase": "Paired single-fact vs 8-fact cumulative outer training, fixed DiscoLoop; edited composition evaluation only.",
+  "seed": 20261015,
+  "phi": 2.0,
+  "data_dir": "data/ttcd-second-hop-scratch-v1",
+  "model_config": "data/ttcd-second-hop-scratch-v1/gpt2-config.json",
+  "world": {
+    "seed": 20261015,
+    "entities": 256,
+    "relations": 32,
+    "degree": 8,
+    "holdout": 0.1
+  },
+  "model": {
+    "width": 128,
+    "heads": 4,
+    "unique_layers": 2,
+    "repeats": 2,
+    "intermediate": 512,
+    "positions": 64
+  },
+  "models": {
+    "single": {
+      "checkpoint": "results/ttcd-cross-sample-v1/single/training/parent.pt",
+      "step": 30000,
+      "discoloop": true
+    },
+    "stream": {
+      "checkpoint": "results/ttcd-cross-sample-v1/stream/training/parent.pt",
+      "step": 30000,
+      "discoloop": true
+    }
+  },
+  "training": {
+    "warmup_steps": 20000,
+    "adaptation_steps": 10000,
+    "batch_size": 128,
+    "learning_rate": 0.001,
+    "minimum_learning_rate": 1e-05,
+    "lr_warmup_steps": 200,
+    "weight_decay": 0.1,
+    "gradient_clip": 1.0,
+    "validation_every": 1000,
+    "validation_panel_size": 256,
+    "loss_weights": {
+      "atoms": 1.0,
+      "chains": 1.0,
+      "reader": 1.0,
+      "fast_atomic": 1.0,
+      "fast_retention": 1.0
+    },
+    "selection": "Fixed final step only; retain failures. No edited two-hop labels/readouts select training settings or checkpoint. Budgets and learning rates are unvalidated development starting values."
+  },
+  "methods": [
+    "ttcd",
+    "atomic_ce",
+    "sham"
+  ],
+  "cases": {
+    "seed": 20261015,
+    "calibration_cases": 8,
+    "evaluation_cases": 16,
+    "affected": 8,
+    "controls": 16
+  },
+  "reading_gate": {
+    "minimum_cases_per_group": 8,
+    "minimum_accuracy": 0.6,
+    "selection": "Held-out correction facts, long-window atomic answer accuracy only. Gate failure is preserved; no automatic retraining."
+  },
+  "writer": {
+    "teacher_window": 32,
+    "student_window": 16,
+    "gap": 17,
+    "steps": 4,
+    "learning_rate": 0.001,
+    "variant": "TTCD equation (6) in GPT GELU; local shared QKV/residual, first round only, all physical MLP down matrices. Per-example fast states in outer training. No original v9 conv/projection/normalization."
+  },
+  "atomic_ce": {
+    "steps": 20,
+    "learning_rate": 0.0001
+  },
+  "runtime": {
+    "gpus": {
+      "single": 8,
+      "stream": 9
+    },
+    "cpu_threads": 4,
+    "memory_gib": 48,
+    "gpu_memory_max_mib": 1024,
+    "gpu_utilization_max": 5,
+    "tracking": "online",
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "python": "/mnt/disk2_from_server2/siqizhu4/llm-memory/.venv/bin/python",
+    "execution": "Independent explicit lm-memory Docker context; frozen source and pinned image; no default Docker fallback",
+    "timeout_hours": 12,
+    "cpu_sets": {
+      "single": [
+        16,
+        17,
+        18,
+        19
+      ],
+      "stream": [
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    "shared_gpu_min_free_mib": 16384,
+    "shared_gpu_allowlist": {
+      "single": [
+        "ttcd-second-hop-scratch-v1-discoloop-train-restart1"
+      ],
+      "stream": [
+        "ttcd-second-hop-scratch-v1-loop-train"
+      ]
+    },
+    "docker_inspection_contexts": [
+      "lm-memory"
+    ],
+    "resource_wait_timeout_hours": 12
+  },
+  "scope": [
+    "Shared original 20k warmup and complete AdamW state; two new 10k branches only.",
+    "Identical grouped correction stream, labels, ordinary losses and union-excluded retention queries.",
+    "Single: each fact own state; stream: eight successive facts, all independent atomic reads from final state.",
+    "All edited two-hop targets remain evaluation only; deployment both arms carry one fast state.",
+    "One observed development world and initialization; no universal mechanism or efficiency claim."
+  ],
+  "continual": {
+    "train_length": 8,
+    "eval_length": 32,
+    "rotations": 32,
+    "affected": 8,
+    "controls": 64,
+    "order_seed": 1729,
+    "panel_source_path": "configs/ttcd-cross-sample-v1-panel.json",
+    "panel_path": "/frozen/configs/continual-panel.json"
+  },
+  "parent": {
+    "parent_batch": "ttcd-second-hop-scratch-v1",
+    "parent_model": "discoloop",
+    "parent_source_dir": "/parent-frozen",
+    "parent_manifest_path": "/parent-source-manifest.json",
+    "parent_manifest_sha256": "7a13ab65c2c41d296c681746958c7370d90864b5376dcd7ec115140e7f019d10",
+    "parent_config_sha256": "2225cfff7a781268f86760c9521f8dafb5ee762c04a1961160a3002a2077b29c",
+    "parent_image_sha256": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "checkpoint_step": 20000,
+    "steps": 10000,
+    "checkpoints": {
+      "single": "results/ttcd-second-hop-scratch-v1/discoloop/training/checkpoint-0020000.pt",
+      "stream": "results/ttcd-second-hop-scratch-v1/discoloop/training/checkpoint-0020000.pt"
+    },
+    "checkpoint_sha256": "32ee1439fb514164c1a12c1b36347acd4ff9beda1d4a99cc6297420539de900f"
+  }
+}

@@ -1,0 +1,587 @@
+E501 Line too long (110 > 100)
+  --> scripts/launch_ce_down_novel.py:74:101
+   |
+72 |     shutil.copyfile(plan_path, target)
+73 |     files = {str(p.relative_to(source)): sha(p) for p in sorted(source.rglob("*")) if p.is_file()}
+74 |     manifest = {"batch": BATCH, "files": files, "parent_manifest_sha256": sha(plan["parent_source_manifest"]),
+   |                                                                                                     ^^^^^^^^^^
+75 |                 "engineering": plan["engineering"], "scientific_base_updates": 0}
+76 |     write(source / "source-manifest.json", manifest)
+   |
+
+E501 Line too long (106 > 100)
+  --> scripts/launch_ce_down_novel.py:96:101
+   |
+94 | def idle_gpu():
+95 |     result = subprocess.run(["nvidia-smi", "--query-gpu=index,uuid,memory.used,utilization.gpu",
+96 |                              "--format=csv,noheader,nounits"], check=True, capture_output=True, text=True)
+   |                                                                                                     ^^^^^^
+97 |     rows = [tuple(v.strip() for v in line.split(",")) for line in result.stdout.splitlines()]
+98 |     processes = subprocess.run(["nvidia-smi", "--query-compute-apps=gpu_uuid,pid", "--format=csv,noheader,nounits"],
+   |
+
+E501 Line too long (116 > 100)
+   --> scripts/launch_ce_down_novel.py:98:101
+    |
+ 96 |                              "--format=csv,noheader,nounits"], check=True, capture_output=True, text=True)
+ 97 |     rows = [tuple(v.strip() for v in line.split(",")) for line in result.stdout.splitlines()]
+ 98 |     processes = subprocess.run(["nvidia-smi", "--query-compute-apps=gpu_uuid,pid", "--format=csv,noheader,nounits"],
+    |                                                                                                     ^^^^^^^^^^^^^^^^
+ 99 |                                check=True, capture_output=True, text=True).stdout
+100 |     for index, uuid, memory, utilization in rows:
+    |
+
+E501 Line too long (138 > 100)
+   --> scripts/launch_ce_down_novel.py:122:101
+    |
+120 | …env", "PYTHONPATH=/frozen/src:/frozen/scripts",
+121 | …ifest_sha}", "--env", "HOME=/tmp/home",
+122 | …pace/llm-memory-editability,target=/ossfs/workspace/llm-memory-editability,readonly",
+    |                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+123 | …rget=/out",
+124 | …u4/.cache/llm-memory-ttcd/wandb-token,target=/run/secrets/wandb,readonly",
+    |
+
+E501 Line too long (127 > 100)
+   --> scripts/launch_ce_down_novel.py:124:101
+    |
+122 |             "--mount", "type=bind,source=/ossfs/workspace/llm-memory-editability,target=/ossfs/workspace/llm-memory-editability,reado…
+123 |             "--mount", f"type=bind,source={output},target=/out",
+124 |             "--mount", "type=bind,source=/home/siqizhu4/.cache/llm-memory-ttcd/wandb-token,target=/run/secrets/wandb,readonly",
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+125 |             "--workdir", "/frozen"]
+126 |     if stage != "cloud":
+    |
+
+E501 Line too long (108 > 100)
+   --> scripts/launch_ce_down_novel.py:140:101
+    |
+138 |     while True:
+139 |         state = json.loads(docker("inspect", "--format", "{{json .State}}", name).stdout)
+140 |         write(batch / "controller-state.json", {"stage": stage, "container": name, "container_state": state,
+    |                                                                                                     ^^^^^^^^
+141 |                                                "elapsed_seconds": time.monotonic() - started, "gpu": gpu})
+142 |         if not state["Running"]:
+    |
+
+E501 Line too long (106 > 100)
+   --> scripts/launch_ce_down_novel.py:141:101
+    |
+139 |         state = json.loads(docker("inspect", "--format", "{{json .State}}", name).stdout)
+140 |         write(batch / "controller-state.json", {"stage": stage, "container": name, "container_state": state,
+141 |                                                "elapsed_seconds": time.monotonic() - started, "gpu": gpu})
+    |                                                                                                     ^^^^^^
+142 |         if not state["Running"]:
+143 |             (batch / f"{stage}.log").write_bytes(docker("logs", name).stdout)
+    |
+
+E501 Line too long (107 > 100)
+   --> scripts/launch_ce_down_novel.py:168:101
+    |
+166 |         source, manifest_sha = freeze(batch, args.plan)
+167 |         write(batch / "controller-process.json", {"pid": os.getpid(), "executed": args.execute,
+168 |                                                   "manifest_sha256": manifest_sha, "scope": plan["scope"]})
+    |                                                                                                     ^^^^^^^
+169 |         if not args.execute:
+170 |             return
+    |
+
+E501 Line too long (103 > 100)
+   --> scripts/launch_ce_down_novel.py:176:101
+    |
+174 |                 gpu, lock = idle_gpu()
+175 |                 if gpu is None:
+176 |                     write(batch / "controller-state.json", {"state": "waiting_for_exclusive_idle_gpu"})
+    |                                                                                                     ^^^
+177 |                     if time.monotonic() - waiting > plan["resource_wait_seconds"]:
+178 |                         raise TimeoutError("No exclusive idle GPU became available")
+    |
+
+E501 Line too long (101 > 100)
+   --> scripts/launch_ce_down_novel.py:182:101
+    |
+180 |             for stage in ("development", "evaluation", "audit", "cloud"):
+181 |                 run_stage(batch, plan, source, manifest_sha, stage, gpu)
+182 |             write(batch / "completion-manifest.json", {"passed": True, "source_sha256": manifest_sha,
+    |                                                                                                     ^
+183 |                                                        "base_parameter_updates": 0,
+184 |                                                        "stages": ["development", "evaluation", "audit", "cloud"]})
+    |
+
+E501 Line too long (114 > 100)
+   --> scripts/launch_ce_down_novel.py:184:101
+    |
+182 |             write(batch / "completion-manifest.json", {"passed": True, "source_sha256": manifest_sha,
+183 |                                                        "base_parameter_updates": 0,
+184 |                                                        "stages": ["development", "evaluation", "audit", "cloud"]})
+    |                                                                                                     ^^^^^^^^^^^^^^
+185 |             write(batch / "controller-state.json", {"state": "complete", "passed": True, "gpu": gpu})
+186 |         except BaseException as error:
+    |
+
+E501 Line too long (101 > 100)
+   --> scripts/launch_ce_down_novel.py:185:101
+    |
+183 |                                                        "base_parameter_updates": 0,
+184 |                                                        "stages": ["development", "evaluation", "audit", "cloud"]})
+185 |             write(batch / "controller-state.json", {"state": "complete", "passed": True, "gpu": gpu})
+    |                                                                                                     ^
+186 |         except BaseException as error:
+187 |             write(batch / "controller-failure.json", {"error": repr(error)})
+    |
+
+E501 Line too long (181 > 100)
+   --> scripts/reschedule_paper_update_continuation.py:207:101
+    |
+205 | …
+206 | …
+207 | … two identical remote GPUs, then clarified manual remote execution and that local GPUs 3/4 are occupied.",
+    |                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+208 | …
+209 | …
+    |
+
+B904 Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling
+   --> scripts/reschedule_paper_update_continuation.py:407:21
+    |
+405 |               except BlockingIOError:
+406 |                   if time.monotonic() > deadline:
+407 | /                     raise RuntimeError(
+408 | |                         "Old scheduler still owns the lock; no new work launched"
+409 | |                     )
+    | |_____________________^
+410 |                   time.sleep(0.2)
+411 |           common.write(
+    |
+
+B023 Function definition does not bind loop variable `out`
+   --> scripts/resume_ttcd_pending_stages.py:152:24
+    |
+151 |             def exit_path(stage):
+152 |                 return out / f"exit-{stage}.json"
+    |                        ^^^
+153 |
+154 |             def result_path(stage):
+    |
+
+B023 Function definition does not bind loop variable `out`
+   --> scripts/resume_ttcd_pending_stages.py:155:24
+    |
+154 |             def result_path(stage):
+155 |                 return out / f"result-{stage}.json"
+    |                        ^^^
+156 |         else:
+157 |             out = ctx.batch / arm
+    |
+
+B023 Function definition does not bind loop variable `out`
+   --> scripts/resume_ttcd_pending_stages.py:163:24
+    |
+162 |             def exit_path(stage):
+163 |                 return out / "stages" / stage / "exit.json"
+    |                        ^^^
+164 |
+165 |             def result_path(stage):
+    |
+
+B023 Function definition does not bind loop variable `out`
+   --> scripts/resume_ttcd_pending_stages.py:166:24
+    |
+165 |             def result_path(stage):
+166 |                 return out / "stages" / stage / "result.json"
+    |                        ^^^
+167 |
+168 |         completed = successful_prefix(stages, exit_path, result_path)
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> scripts/run_ce_down_novel.py:19:1
+   |
+17 |   sys.path.insert(0, str(ROOT / "scripts"))
+18 |
+19 | / import numpy as np  # noqa: E402
+20 | | import torch  # noqa: E402
+21 | | from transformers import GPT2Config  # noqa: E402
+22 | |
+23 | | import run_ttcd_novel_fact_transfer as readouts  # noqa: E402
+24 | | from llm_memory_editability.ce_down_projection import (  # noqa: E402
+25 | |     atomic_ce_write,
+26 | |     basis_from_covariance,
+27 | |     choose_learning_rate,
+28 | |     collect_covariances,
+29 | | )
+30 | | from llm_memory_editability.grok_depth import utc, write_json  # noqa: E402
+31 | | from llm_memory_editability.grokking_reproduction import encode_rows, model_digest  # noqa: E402
+32 | | from llm_memory_editability.path_overlap import World  # noqa: E402
+33 | | from llm_memory_editability.supervised_alignment import SupervisedAlignmentGPT  # noqa: E402
+34 | | from llm_memory_editability.ttcd_editing import TTCDReader, tensor_digest  # noqa: E402
+   | |_________________________________________________________________________^
+35 |
+36 |   METHODS = ("atomic_ce", "projected_ce")
+   |
+help: Organize imports
+
+E501 Line too long (106 > 100)
+  --> scripts/run_ce_down_novel.py:92:101
+   |
+90 |         arrays = encode_rows(world.atoms[panel["U_atoms"][:8]], world.metadata)
+91 |         tokens, positions, _ = (torch.as_tensor(a, device=device) for a in arrays)
+92 |         if not torch.equal(reader(tokens, positions, fast=reader.empty_fast()), model(tokens, positions)):
+   |                                                                                                     ^^^^^^
+93 |             raise AssertionError("Zero down increments changed native logits")
+94 |     return reader, world, panel
+   |
+
+E501 Line too long (104 > 100)
+   --> scripts/run_ce_down_novel.py:101:101
+    |
+ 99 |     reserved_atoms, reserved_chains = set(panel["U_atoms"]), set(panel["U_chains"])
+100 |     candidates = np.setdiff1d(np.arange(len(world.atoms)), list(reserved_atoms))
+101 |     chosen = rng.choice(candidates, settings["atoms"] + settings["development_controls"], replace=False)
+    |                                                                                                     ^^^^
+102 |     chain_candidates = np.setdiff1d(np.flatnonzero(world.support(7.2)), list(reserved_chains))
+103 |     chains = rng.choice(chain_candidates, settings["chains"] + settings["development_controls"], replace=False)
+    |
+
+E501 Line too long (111 > 100)
+   --> scripts/run_ce_down_novel.py:103:101
+    |
+101 |     chosen = rng.choice(candidates, settings["atoms"] + settings["development_controls"], replace=False)
+102 |     chain_candidates = np.setdiff1d(np.flatnonzero(world.support(7.2)), list(reserved_chains))
+103 |     chains = rng.choice(chain_candidates, settings["chains"] + settings["development_controls"], replace=False)
+    |                                                                                                     ^^^^^^^^^^^
+104 |     return {
+105 |         "protection_atoms": chosen[: settings["atoms"]].tolist(),
+    |
+
+E501 Line too long (103 > 100)
+   --> scripts/run_ce_down_novel.py:130:101
+    |
+128 |     bases, geometry = {}, {}
+129 |     for layer, covariance in covariances.items():
+130 |         bases[layer], geometry[layer] = basis_from_covariance(covariance, plan["protection"]["energy"])
+    |                                                                                                     ^^^
+131 |     torch.save({"bases": bases, "geometry": geometry, "counts": counts, "split": split}, out / "protection.pt")
+132 |     write_json(out / "geometry.json", {"layers": geometry, "counts": counts})
+    |
+
+E501 Line too long (111 > 100)
+   --> scripts/run_ce_down_novel.py:131:101
+    |
+129 |     for layer, covariance in covariances.items():
+130 |         bases[layer], geometry[layer] = basis_from_covariance(covariance, plan["protection"]["energy"])
+131 |     torch.save({"bases": bases, "geometry": geometry, "counts": counts, "split": split}, out / "protection.pt")
+    |                                                                                                     ^^^^^^^^^^^
+132 |     write_json(out / "geometry.json", {"layers": geometry, "counts": counts})
+133 |     del covariances
+    |
+
+E501 Line too long (109 > 100)
+   --> scripts/run_ce_down_novel.py:134:101
+    |
+132 |     write_json(out / "geometry.json", {"layers": geometry, "counts": counts})
+133 |     del covariances
+134 |     bases = {k: v.to(device=next(reader.parameters()).device, dtype=torch.float32) for k, v in bases.items()}
+    |                                                                                                     ^^^^^^^^^
+135 |     controls = (world.atoms[split["development_atoms"]], world.chains[split["development_chains"]])
+136 |     baseline = [readouts.greedy_rows(reader, None, rows, world.metadata) for rows in controls]
+    |
+
+E501 Line too long (102 > 100)
+   --> scripts/run_ce_down_novel.py:146:101
+    |
+144 |                 state, info = atomic_ce_write(reader, fact["novel_fact"], world.metadata, rate,
+145 |                                               bases=bases if method == "projected_ce" else None,
+146 |                                               steps=plan["writer_steps"], stop_loss=plan["stop_loss"],
+    |                                                                                                     ^^
+147 |                                               max_relative_update=plan["max_relative_update"])
+148 |                 atom = readouts.greedy_rows(reader, state, [fact["novel_fact"]], world.metadata)
+    |
+
+E501 Line too long (107 > 100)
+   --> scripts/run_ce_down_novel.py:159:101
+    |
+157 |                       "old_retention": kept / denominator if denominator else 0.0}
+158 |             results[method].append(record)
+159 |             write_json(out / f"development-{method}-{rate}.json", {"selection": record, "facts": per_fact})
+    |                                                                                                     ^^^^^^^
+160 |             log(writes, {"method": method, "fast_updates": writes, **record})
+161 |         selected[method] = choose_learning_rate(results[method], plan["minimum_development_retention"])
+    |
+
+E501 Line too long (103 > 100)
+   --> scripts/run_ce_down_novel.py:161:101
+    |
+159 |             write_json(out / f"development-{method}-{rate}.json", {"selection": record, "facts": per_fact})
+160 |             log(writes, {"method": method, "fast_updates": writes, **record})
+161 |         selected[method] = choose_learning_rate(results[method], plan["minimum_development_retention"])
+    |                                                                                                     ^^^
+162 |     return {"passed": True, "selected": selected, "grid": results, "geometry": geometry,
+163 |             "new_composition_queries": 0, "base_parameter_updates": 0, "fast_updates": writes}
+    |
+
+E501 Line too long (101 > 100)
+   --> scripts/run_ce_down_novel.py:168:101
+    |
+166 | def evaluate(plan, out, root, reader, world, panel, log, *, audit=False):
+167 |     development = json.loads((root / "development/result.json").read_text())
+168 |     protected = torch.load(root / "development/protection.pt", map_location="cpu", weights_only=True)
+    |                                                                                                     ^
+169 |     device = next(reader.parameters()).device
+170 |     bases = {k: v.to(device=device, dtype=torch.float32) for k, v in protected["bases"].items()}
+    |
+
+E501 Line too long (102 > 100)
+   --> scripts/run_ce_down_novel.py:195:101
+    |
+193 |                 state = saved["fast"]
+194 |             else:
+195 |                 torch.save({"fast": {k: v.cpu() for k, v in state.items()}, "fact": fact}, state_path)
+    |                                                                                                     ^^
+196 |             record = normalize({"fact": fact, "write_info": info,
+197 |                                 "before": readouts.evaluate_state(reader, baseline, fact, world, panel),
+    |
+
+E501 Line too long (104 > 100)
+   --> scripts/run_ce_down_novel.py:197:101
+    |
+195 |                 torch.save({"fast": {k: v.cpu() for k, v in state.items()}, "fact": fact}, state_path)
+196 |             record = normalize({"fact": fact, "write_info": info,
+197 |                                 "before": readouts.evaluate_state(reader, baseline, fact, world, panel),
+    |                                                                                                     ^^^^
+198 |                                 "after": readouts.evaluate_state(reader, state, fact, world, panel),
+199 |                                 "fast_digest": tensor_digest(state)})
+    |
+
+E501 Line too long (118 > 100)
+   --> scripts/run_ce_down_novel.py:200:101
+    |
+198 |                                 "after": readouts.evaluate_state(reader, state, fact, world, panel),
+199 |                                 "fast_digest": tensor_digest(state)})
+200 |             if audit and record != json.loads((root / "evaluation" / method / f"{fact['case_id']}.json").read_text()):
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^
+201 |                 raise AssertionError("Independent saved-state readout differs")
+202 |             write_json(directory / f"{fact['case_id']}.json", record)
+    |
+
+E501 Line too long (117 > 100)
+   --> scripts/run_ce_down_novel.py:210:101
+    |
+208 |     paired = {}
+209 |     for kind in ("novel_atom", "first_hop", "second_hop"):
+210 |         differences = [float(np.mean(b["after"][kind]["final_correct"]) - np.mean(a["after"][kind]["final_correct"]))
+    |                                                                                                     ^^^^^^^^^^^^^^^^^
+211 |                        for a, b in zip(all_records["atomic_ce"], all_records["projected_ce"], strict=True)]
+212 |         paired[kind] = readouts.bootstrap(differences, plan["statistics"])
+    |
+
+E501 Line too long (107 > 100)
+   --> scripts/run_ce_down_novel.py:211:101
+    |
+209 |     for kind in ("novel_atom", "first_hop", "second_hop"):
+210 |         differences = [float(np.mean(b["after"][kind]["final_correct"]) - np.mean(a["after"][kind]["final_correct"]))
+211 |                        for a, b in zip(all_records["atomic_ce"], all_records["projected_ce"], strict=True)]
+    |                                                                                                     ^^^^^^^
+212 |         paired[kind] = readouts.bootstrap(differences, plan["statistics"])
+213 |     return {"passed": True, "methods": result, "projected_minus_plain": paired,
+    |
+
+E501 Line too long (119 > 100)
+   --> scripts/run_ce_down_novel.py:214:101
+    |
+212 |         paired[kind] = readouts.bootstrap(differences, plan["statistics"])
+213 |     return {"passed": True, "methods": result, "projected_minus_plain": paired,
+214 |             "base_parameter_updates": 0, "fast_updates": writes, "maximum_writer_steps_per_fact": plan["writer_steps"],
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^
+215 |             "independent_rewrite_and_saved_state_replay": audit, "new_composition_supervision": 0}
+    |
+
+E501 Line too long (115 > 100)
+   --> scripts/run_ce_down_novel.py:286:101
+    |
+284 |                     result = develop(plan, out, reader, world, panel, log)
+285 |                 else:
+286 |                     result = evaluate(plan, out, args.root, reader, world, panel, log, audit=args.stage == "audit")
+    |                                                                                                     ^^^^^^^^^^^^^^^
+287 |                 if before != tensor_digest(reader.backbone.state_dict()):
+288 |                     raise AssertionError("Frozen backbone changed")
+    |
+
+E501 Line too long (110 > 100)
+   --> scripts/run_ce_down_novel.py:292:101
+    |
+290 |                     if digest(path) != expected:
+291 |                         raise AssertionError("Immutable scientific input changed")
+292 |                 result.update(backbone_unchanged=True, model_digest=before, input_hashes=plan["bound_inputs"],
+    |                                                                                                     ^^^^^^^^^^
+293 |                               compute=dict(reader.compute),
+294 |                               peak_cuda_allocated_bytes=torch.cuda.max_memory_allocated(args.device)
+    |
+
+E501 Line too long (137 > 100)
+   --> scripts/run_ce_down_novel.py:296:101
+    |
+294 | …es=torch.cuda.max_memory_allocated(args.device)
+295 | …rtswith("cuda") else None)
+296 | …nds=time.monotonic() - started, source_sha256=digest(ROOT / "source-manifest.json"))
+    |                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+297 | …
+298 | …
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> scripts/run_ttcd_foundation_novel_facts.py:7:1
+   |
+ 5 |   """
+ 6 |
+ 7 | / from __future__ import annotations
+ 8 | |
+ 9 | | import json
+10 | |
+11 | | import run_ttcd_novel_fact_transfer as experiment
+12 | | import torch
+13 | | from llm_memory_editability.grokking_reproduction import encode_rows
+14 | | from llm_memory_editability.ttcd_verified_base import foundation_inputs
+   | |_______________________________________________________________________^
+   |
+help: Organize imports
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> scripts/run_ttcd_novel_fact_transfer.py:7:1
+   |
+ 5 |   """
+ 6 |
+ 7 | / from __future__ import annotations
+ 8 | |
+ 9 | | import argparse
+10 | | import json
+11 | | import time
+12 | | from pathlib import Path
+13 | |
+14 | | import numpy as np
+15 | | import torch
+16 | | from check_discoloop_edit_rounds import inspect_rows, save_json, sha256
+17 | | from llm_memory_editability.grokking_reproduction import encode_rows
+18 | | from llm_memory_editability.ttcd_editing import load_fast, save_fast, tensor_digest
+19 | | from llm_memory_editability.ttcd_verified_base import load_reader
+   | |_________________________________________________________________^
+   |
+help: Organize imports
+
+B008 Do not perform function call `range` in argument defaults; instead, perform the call within the function, or read the default from a module-level singleton variable
+   --> src/llm_memory_editability/bios_original_data.py:163:47
+    |
+163 | def render_sentences(p, templates, ids, order=range(6)):
+    |                                               ^^^^^^^^
+164 |     fields = dict(
+165 |         birthday=date(p),
+    |
+
+E501 Line too long (101 > 100)
+  --> src/llm_memory_editability/ce_down_projection.py:62:101
+   |
+61 |         def observe(module, args, layer=layer):
+62 |             features = args[0][:, : valid_length[0]].detach().reshape(-1, args[0].shape[-1]).double()
+   |                                                                                                     ^
+63 |             covariances[layer].add_(features.T @ features)
+64 |             counts[layer]["calls"] += 1
+   |
+
+E501 Line too long (104 > 100)
+   --> src/llm_memory_editability/ce_down_projection.py:105:101
+    |
+103 |         with torch.enable_grad():
+104 |             fast = {k: v.detach().requires_grad_() for k, v in fast.items()}
+105 |             loss = F.cross_entropy(reader(tokens, positions, fast=fast).flatten(0, 1), labels.flatten())
+    |                                                                                                     ^^^^
+106 |             if not torch.isfinite(loss):
+107 |                 raise FloatingPointError("Nonfinite new-fact CE")
+    |
+
+E501 Line too long (109 > 100)
+   --> src/llm_memory_editability/ce_down_projection.py:119:101
+    |
+117 |             updated[layer] = (state - learning_rate * direction).detach()
+118 |             if max_relative_update is not None:
+119 |                 maximum = max_relative_update * reader.backbone.transformer.h[layer].mlp.c_proj.weight.norm()
+    |                                                                                                     ^^^^^^^^^
+120 |                 scale = (maximum / updated[layer].norm().clamp_min(1e-30)).clamp(max=1)
+121 |                 updated[layer] = updated[layer] * scale
+    |
+
+E501 Line too long (110 > 100)
+  --> tests/test_ce_down_projection.py:40:101
+   |
+38 |     gradient = torch.randn(7, 5, dtype=torch.double)
+39 |     projected = project_gradient(gradient, basis)
+40 |     torch.testing.assert_close(basis.T @ projected, torch.zeros(3, 5, dtype=torch.double), atol=1e-14, rtol=0)
+   |                                                                                                     ^^^^^^^^^^
+41 |     old_features = torch.randn(6, 3, dtype=torch.double) @ basis.T
+42 |     weights = torch.randn_like(gradient)
+   |
+
+E501 Line too long (120 > 100)
+  --> tests/test_ce_down_projection.py:76:101
+   |
+74 |     for layer, (weight, old) in enumerate(zip(weights, original, strict=True)):
+75 |         torch.testing.assert_close(actual[layer], weight.detach() - old, atol=1e-12, rtol=1e-10)
+76 |     torch.testing.assert_close(reader(tokens, positions, fast=actual), model(tokens, positions), atol=1e-12, rtol=1e-10)
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^^^
+77 |     assert info["steps"] == steps and len(info["history"]) == steps
+78 |     assert tensor_digest(reader.backbone.state_dict()) == before
+   |
+
+E501 Line too long (130 > 100)
+  --> tests/test_ce_down_projection.py:87:101
+   |
+85 |     state, info = atomic_ce_write(reader, [1, 2, 4], META, 0.01, bases=bases, steps=3)
+86 |     for layer, delta in state.items():
+87 |         torch.testing.assert_close(bases[layer].T @ delta, torch.zeros(5, delta.shape[1], dtype=torch.double), atol=1e-14, rtol=0)
+   |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+88 |     assert all(v["protected_subspace_relative_residual"] < 1e-12
+89 |                for step in info["history"] for v in step["layers"].values())
+   |
+
+E501 Line too long (130 > 100)
+   --> tests/test_ce_down_projection.py:114:101
+    |
+112 |                               max_relative_update=0.001)
+113 |     for layer, delta in state.items():
+114 |         torch.testing.assert_close(bases[layer].T @ delta, torch.zeros(5, delta.shape[1], dtype=torch.double), atol=1e-14, rtol=0)
+    |                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+115 |         assert delta.norm() <= 0.001 * reader.backbone.transformer.h[layer].mlp.c_proj.weight.norm() * (1 + 1e-12)
+    |
+
+E501 Line too long (114 > 100)
+   --> tests/test_ce_down_projection.py:115:101
+    |
+113 |     for layer, delta in state.items():
+114 |         torch.testing.assert_close(bases[layer].T @ delta, torch.zeros(5, delta.shape[1], dtype=torch.double), atol=1e-14, rtol=0)
+115 |         assert delta.norm() <= 0.001 * reader.backbone.transformer.h[layer].mlp.c_proj.weight.norm() * (1 + 1e-12)
+    |                                                                                                     ^^^^^^^^^^^^^^
+    |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests/test_ttcd_novel_fact_transfer.py:3:1
+   |
+ 1 |   """Contracts that distinguish absent-key addition from answer replacement."""
+ 2 |
+ 3 | / import importlib.util
+ 4 | | import sys
+ 5 | | from pathlib import Path
+ 6 | | from types import SimpleNamespace
+ 7 | |
+ 8 | | import numpy as np
+ 9 | | import pytest
+10 | | import torch
+11 | | from llm_memory_editability.supervised_alignment import SupervisedAlignmentGPT
+12 | | from llm_memory_editability.ttcd_editing import TTCDReader, load_fast, save_fast, tensor_digest
+13 | | from transformers import GPT2Config
+   | |___________________________________^
+14 |
+15 |   SCRIPTS = Path(__file__).resolve().parents[1] / "scripts"
+   |
+help: Organize imports
+
+Found 50 errors.
+[*] 4 fixable with the `--fix` option.

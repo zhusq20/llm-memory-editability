@@ -1,0 +1,119 @@
+{
+  "batch": "rule-gate-round-evaluation-v1",
+  "authorization": "2026-10-19 user authorized evaluating beneficial properties of stability/readiness rules relative to ungated DiscoLoop; fixed final endpoints; no new training.",
+  "checkpoint_step": 1500000,
+  "rounds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "primary": {
+    "round": 8,
+    "panel": "ood_3",
+    "score": "answer_accuracy",
+    "reference": "disco"
+  },
+  "reference_round": 4,
+  "panels": [
+    "atomic_id",
+    "atomic_ood",
+    "train_2",
+    "train_3",
+    "train_4",
+    "id_2",
+    "id_3",
+    "id_4",
+    "ood_2",
+    "ood_3",
+    "ood_4"
+  ],
+  "input_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+  "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+  "parent_execution": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/rule-gate-training-v1/execution",
+  "image": "sha256:27b3ab677fb92aaf4e4cd953e3a87e953c4b164a0d4d4c4785dc9779851c11d2",
+  "batch_size": 256,
+  "poll_seconds": 30,
+  "benchmark_panel": "ood_3",
+  "benchmark_warmup": 3,
+  "benchmark_repeats": 7,
+  "tracking": {
+    "enabled": true,
+    "provider": "wandb",
+    "sdk_version": "0.30.0",
+    "entity": "zsqzz",
+    "project": "llm-memory-editability",
+    "mode": "online",
+    "poll_seconds": 15,
+    "system_metrics": true,
+    "scope": "Future experiment batches; do not attach to existing frozen runs without a request"
+  },
+  "credential_file": "/home/siqizhu4/.cache/lm-memory-ce-ablation/wandb-token",
+  "training_updates": 0,
+  "arms": {
+    "stability-u": {
+      "source": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/rule-gate-training-v1/execution/runs/stability-u",
+      "rule": "stability",
+      "wandb_id": "rgreval20261019s"
+    },
+    "readiness-u": {
+      "source": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/rule-gate-training-v1/execution/runs/readiness-u",
+      "rule": "readiness",
+      "wandb_id": "rgreval20261019r"
+    },
+    "disco": {
+      "source": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/ungated-loop-continuation-v1/runs/disco-l1-r4",
+      "rule": null,
+      "wandb_id": "rgreval20261019d"
+    }
+  },
+  "lanes": [
+    {
+      "gpu": 0,
+      "uuid": "GPU-6c83a5d2-553d-3ce1-ecde-765b185856fc",
+      "cpus": "12,13",
+      "parent_arm": "stability-u",
+      "arms": [
+        "stability-u",
+        "disco"
+      ]
+    },
+    {
+      "gpu": 1,
+      "uuid": "GPU-364f0e00-7f5f-e6a7-9fea-03eb31c0bb3b",
+      "cpus": "14,15",
+      "parent_arm": "readiness-u",
+      "arms": [
+        "readiness-u"
+      ]
+    }
+  ],
+  "scope": "One observed world/initialization; no best-round selection, no adaptive stopping policy; all first-correct statistics are retrospective. Native generated-answer EOS scoring. Saved native grid equality is part of evaluator correctness, not an added independent training audit. Existing training source/config unchanged; no source freezing or hash preflight.",
+  "report_cpus": "18,19",
+  "report_environment": "Existing host Python /home/siqizhu4/miniconda3/bin/python with NumPy and Matplotlib; CPU-only postprocessing"
+}

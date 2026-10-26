@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "arm": "single",
+  "terminal_training_step": 30000,
+  "additional_updates_verified": 10000,
+  "local_audit_states": 1313,
+  "local_audit_queries": 366900,
+  "stage_runs": [
+    {
+      "stage": "train",
+      "run_id": "g8e5avtb",
+      "url": "https://wandb.ai/zhusq20/llm-memory-editability/runs/g8e5avtb",
+      "state": "finished",
+      "canonical_result_matches_original": true,
+      "canonical_md5": "ftoh5YOlyEaz4gIgHg0UCg==",
+      "canonical_sha256": "0681124b73d7c7f95272f1d98036f2b7f08e44522da706793ce41c1f8f22763d",
+      "original_result_sha256": "50a76db42fc122ef9c90a54fb19ad4a0ff6e1ee934bd847c0d98202b5c2b72a7",
+      "HTTP_scalar_fields_matched": 148
+    },
+    {
+      "stage": "train-audit",
+      "run_id": "wcr0f16s",
+      "url": "https://wandb.ai/zhusq20/llm-memory-editability/runs/wcr0f16s",
+      "state": "finished",
+      "canonical_result_matches_original": true,
+      "canonical_md5": "8bY8g0p5N1jX97oXLjQ77Q==",
+      "canonical_sha256": "9f29164723875672a4dfc43603b535e1fa692fb85198650c2284e16f9ff981e7",
+      "original_result_sha256": "5baeb7fd551126e9e2908380e3153c7715e0fdc7b9e94770ef685ce4304cca18",
+      "HTTP_scalar_fields_matched": 116
+    },
+    {
+      "stage": "calibrate",
+      "run_id": "gstzxnio",
+      "url": "https://wandb.ai/zhusq20/llm-memory-editability/runs/gstzxnio",
+      "state": "finished",
+      "canonical_result_matches_original": true,
+      "canonical_md5": "sKALfKMigGnSkrikxJ3/4g==",
+      "canonical_sha256": "726592a975c093f2a75887b0d9042f2fcf25c99fafecfc6985de1c9551928dc6",
+      "original_result_sha256": "23bad91e1e9d87eea23f8d81703f98bbb49c6f97d1c76058ce4712b0cdb7e417",
+      "HTTP_scalar_fields_matched": 115
+    },
+    {
+      "stage": "evaluate",
+      "run_id": "v9noylht",
+      "url": "https://wandb.ai/zhusq20/llm-memory-editability/runs/v9noylht",
+      "state": "finished",
+      "canonical_result_matches_original": true,
+      "canonical_md5": "Q284LlhoE/vYt1t5VjMooA==",
+      "canonical_sha256": "3c41bdee0da0c395abdcd1c748f0629da4b7efaa35c5c2d87ff554b950e4e55c",
+      "original_result_sha256": "713f987f4fe989199be400b9c582df82b88ca8ce20ab821cad0f023596a2648b",
+      "HTTP_scalar_fields_matched": 3698
+    },
+    {
+      "stage": "audit",
+      "run_id": "ycr04nfa",
+      "url": "https://wandb.ai/zhusq20/llm-memory-editability/runs/ycr04nfa",
+      "state": "finished",
+      "canonical_result_matches_original": true,
+      "canonical_md5": "MhNdRK91rxUXzazwz2c7WA==",
+      "canonical_sha256": "5df3e17632748127485a5a1dd70dfe6c9c4078300bb76809261d280f1e90e177",
+      "original_result_sha256": "af6b2ac4243be0e06b32332562426fd21e5eb268ec2eddb3381f218540870d9d",
+      "HTTP_scalar_fields_matched": 113
+    }
+  ],
+  "repair_receipt": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/ttcd-cross-sample-v1/post-training-cloud-repair-20261015/single/cloud-audit.json",
+  "read_only": true,
+  "GPU_used": false,
+  "stream": {
+    "pid": 2373566,
+    "arm": "stream",
+    "utc": "2026-10-15T06:17:07.895446+00:00",
+    "validator_sha256": "4716372d92aef455180540732803dc421d3a014ed81a430cecfd0580f271b75c",
+    "config_sha256": "40c8d7629cc126a067557967c74344bd692c6f66b6f8505efdbe1c291dd53705",
+    "old_batch": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/ttcd-cross-sample-v1",
+    "new_results": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/ttcd-cross-sample-v1/post-training-cloud-repair-20261015",
+    "wait_for_local_independent_audit": true,
+    "GPU_used": false,
+    "state": "waiting_for_original_local_independent_audit"
+  },
+  "stream_waiter_replacement_record": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/ttcd-cross-sample-v1/post-training-cloud-repair-20261015/stream-waiter-v1-replacement.json"
+}

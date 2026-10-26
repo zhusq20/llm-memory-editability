@@ -1,0 +1,22 @@
+% Requires \usepackage{graphicx}; paths are relative to the paper/ directory.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/invariant-loop-v1/invariant-loop.pdf}
+  \caption{Architecture of Invariant Loop.
+  (a) A shared GPT-2 pre-LN causal block is reused for $R$ rounds, with the input
+  embedding $e$ re-injected at every round.
+  (b) The block output $H_t$ is decoded over the full vocabulary and softly
+  re-encoded to form $c_t=\mathrm{RMS}(H_t+\mathrm{RMS}(E^\top p_t))$.
+  (c) Five scalar statistics feed a shared $5\!\to\!16\!\to\!1$ GELU scorer.
+  Positive scores and a learned decay $\beta$ control the exact streaming
+  aggregation $N_t=\beta N_{t-1}+w_t c_t$,
+  $D_t=\beta D_{t-1}+w_t$, and $h_t=N_t/D_t$.
+  The full carry is $S_t=(h_t,N_t,D_t,p_t)$, initialized with
+  $h_0=N_0=e$, $D_0=1$, and $p_0=\mathrm{softmax}(E\,\mathrm{LN}_f(e))$.
+  Intermediate and final decoding share $E$ and $\mathrm{LN}_f$; the final logits
+  are $E\,\mathrm{LN}_f(h_R)$.
+  RMS normalizations have no learned affine parameters.
+  Invariance refers to the scorer's statistics under matched vocabulary
+  relabeling and hidden-state rotation.}
+  \label{fig:invariant-loop}
+\end{figure*}

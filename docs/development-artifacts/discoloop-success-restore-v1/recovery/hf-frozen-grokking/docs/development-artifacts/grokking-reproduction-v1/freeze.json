@@ -1,0 +1,18 @@
+{
+  "frozen_utc": "2026-10-02T02:42:06.319970+00:00",
+  "files": {
+    "src/llm_memory_editability/grokking_reproduction.py": "7e3a89d96f6fef7bd4665ac46dd1acb6e7cb461c6878647ecc7c6f425ac31117",
+    "scripts/run_grokking_reproduction.py": "848bd91ebf39914b282c12a8d52fcfa793b110c68690dd6753de56826907055a",
+    "tests/test_grokking_reproduction.py": "c52ce68c0bcb418aea482f75e1a5f6721a4ab220ec96ec5c754d5170b2d2a34e",
+    "configs/grokking-reproduction-development-v1.json": "e4047fa84a5f0174c59f10a00a1b013e25ce3292a5c78fc8a25f499e81cd0a10",
+    "docs/development-artifacts/grokking-reproduction-v1/design.md": "78aca83e0fee42250c3113a9792f883bc60e8766ef1354e7f826d3b3f6b9d5eb",
+    "src/llm_memory_editability/__init__.py": "84e6bb4a97b68f67f3256135c2b5fc35d9a83ceb04914a6cf3d38d926b015f7f",
+    "src/llm_memory_editability/grok_depth.py": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26",
+    "src/llm_memory_editability/bios_model.py": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d",
+    "src/llm_memory_editability/experiments.py": "e575aceb2e3804956655d91710809818aec04c0b16a22edb441f5757629371d1",
+    "src/llm_memory_editability/low_rank.py": "e1ddb5714d492311a43af2d5fd3dd5f578d8144db0b3d860ca71e3b603d018e1"
+  },
+  "git_commit": "12aa41ee7ce8e61cd2a594e2a1620ce45ed5a1c9",
+  "world_sha256": "e31ec9959ce0a7b25465191a1d9ef8e83ec42163ed967fa56a60605f6ac1c3b4",
+  "policy": "Frozen development; eight fixed 1.5M runs; all outcomes retained."
+}

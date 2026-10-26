@@ -1,0 +1,57 @@
+{
+  "batch": "untied-discoloop-development-v1",
+  "authorization": "2026-10-20 user authorized 'standard Transformer + vocabulary handoff' as the main paper's own depth-wrong/form-right architecture cell",
+  "question": "With DiscoLoop's vocabulary handoff but no parameter sharing, can facts learned only atomically serve as the second hop?",
+  "input_root": "/inputs/data/discoloop-success-restore-v1/original",
+  "source_run": "transformer-original-initialization",
+  "initial_checkpoint": "/inputs/initial/transformer.pt",
+  "initial_model_sha256": "11b1c7254c2c277676239094ab835bb3dca302a9d7197cec4e98380308d7fa3f",
+  "spec": {
+    "name": "untied-discoloop-development-v1",
+    "unique_layers": 8,
+    "repeats": 1,
+    "phi": 7.2,
+    "weight_decay": 0.1,
+    "initialization": 791101,
+    "stream_seed": 792101,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 300000
+  },
+  "dropout_seed": 20261012,
+  "arms": {
+    "untied_discoloop": {
+      "kind": "none",
+      "coefficient": 0.0,
+      "scope": "supervised",
+      "first_round_kv": false,
+      "discoloop": true,
+      "discoloop_alpha": 1.0,
+      "discoloop_temperature": 1.0,
+      "discoloop_eps": 1e-06,
+      "discoloop_split": 4
+    }
+  },
+  "references": {
+    "standard_transformer_8x1": "ttcd-architecture-comparison-v1/transformer/foundation (same initial checkpoint, same recipe, no channel)",
+    "discoloop_4x2": "discoloop-success-restore-v1 (shared blocks, same channel)",
+    "plain_loop_4x2": "ttcd-architecture-comparison-v1/loop/foundation"
+  },
+  "evaluation_nodes": [0, 1000, 8000, 16000, 32000, 64000, 128000, 256000, 300000],
+  "checkpoint_nodes": [0, 300000],
+  "heartbeat_steps": 1000,
+  "smoke_steps": 32,
+  "evaluation_batch_size": 256,
+  "audit_loss_atol": 1e-06,
+  "audit_loss_rtol": 1e-06,
+  "tracking": {"entity": "zsqzz", "project": "llm-memory-editability"},
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "lm-memory-ce-ablation:20261017",
+    "gpu": 2,
+    "cpus": 8,
+    "memory_gib": 48,
+    "cpu_threads": 4
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "highway_loop": {
+    "label": "Highway-gated Loop (adapted)",
+    "status": "Proposed mechanism control; not implemented or trained in this repository",
+    "source_method": "Training Very Deep Networks, NeurIPS 2015, Section 2 Eq. (3) and Section 2.2",
+    "source_url": "https://proceedings.neurips.cc/paper/2015/file/215a71a12769b056c3c32e7299f1c5ed-Paper.pdf",
+    "adaptation": "Apply the Highway transform gate to the recurrent carry, with the same shared GPT Transformer and the same candidate computation as Invariant Loop.",
+    "gate": "g_t=sigmoid(W_g h_previous+b_g), one vector per token; W_g,b_g shared across loops",
+    "aggregation": "h_t=(1-g_t) elementwise_mul h_previous + g_t elementwise_mul c_t",
+    "candidate_matching": ["first-round F(e)", "later-round F(h_previous+e)", "same soft feedback", "same candidate RMS normalization", "same initial hidden state e"],
+    "scope": "The adaptation is not a published Highway Transformer architecture or a reproduction of an existing experiment."
+  },
+  "vanilla": {
+    "source_url": "https://arxiv.org/html/2607.00341v2#S3.SS1",
+    "recurrence": "h_t=F_theta(h_previous)",
+    "scope": "Overall architectural reference; it retains its ordinary raw-output recurrence and is not matched for the soft-feedback candidate."
+  },
+  "invariant": {
+    "source": "src/llm_memory_editability/loop_native_handoff.py",
+    "methods": ["LoopNativeHandoffGPT.features", "LoopNativeHandoffGPT.score", "LoopNativeHandoffGPT.aggregate_round"],
+    "scope": "Actual implemented model",
+    "existing_state_mlp": "The existing state-mlp handoff retains mass normalization, so it is not the proposed sigmoid Highway control."
+  }
+}

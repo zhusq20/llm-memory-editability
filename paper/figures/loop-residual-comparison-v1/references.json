@@ -1,0 +1,28 @@
+{
+  "ndr": {
+    "title": "The Neural Data Router: Adaptive Control Flow in Transformers Improves Systematic Generalization",
+    "authors": ["Róbert Csordás", "Kazuki Irie", "Jürgen Schmidhuber"],
+    "publication": "ICLR 2022 Poster",
+    "acceptance_record": "https://iclr.cc/virtual/2022/poster/6053",
+    "method_source": "https://arxiv.org/pdf/2110.07732v4",
+    "method_locations": ["Section 2.1, Eqs. (1)-(5)", "Figure 5, PDF page 19"],
+    "original_code": "https://github.com/RobertCsordas/ndr",
+    "gate_input": "a_t=LayerNorm(MultiHeadAttention(h_previous,H_previous,H_previous)+h_previous)",
+    "gate": "g_t=sigmoid(FFN_gate(a_t)), a vector with one entry per channel",
+    "candidate": "u_t=LayerNorm(FFN_data(a_t))",
+    "aggregation": "h_t=(1-g_t) elementwise_mul h_previous + g_t elementwise_mul u_t",
+    "scope": "Published encoder architecture; geometric attention and candidate computation remain abstract inside the shared NDR layer."
+  },
+  "vanilla": {
+    "source": "https://arxiv.org/html/2607.00341v2#S3.SS1",
+    "location": "Section 3.1, Eq. (2)",
+    "recurrence": "H_t=F_theta(h_previous); h_t=H_t",
+    "additional_source": "https://arxiv.org/html/2604.07822v2#S4"
+  },
+  "invariant": {
+    "source": "src/llm_memory_editability/loop_native_handoff.py",
+    "methods": ["LoopNativeHandoffGPT.features", "LoopNativeHandoffGPT.score", "LoopNativeHandoffGPT.aggregate_round"],
+    "feedback_source": "https://arxiv.org/html/2607.00341v2#S4",
+    "earlier_drawing": "paper/figures/invariant-loop-v12/README.md"
+  }
+}

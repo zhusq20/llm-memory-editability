@@ -1,0 +1,38 @@
+% Requires graphicx. Paths are relative to a manuscript in paper/.
+% Three independent figures; add the manuscript's bibliography keys as needed.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/loop-residual-comparison-v1/vanilla-loop.pdf}
+  \caption{Vanilla Loop. The shared Transformer output is passed directly to
+  the next iteration. Ordinary internal residuals remain inside the block.
+  One token is highlighted; the same rule applies at every position.}
+  \label{fig:residual-comparison-vanilla}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/loop-residual-comparison-v1/ndr.pdf}
+  \caption{Neural Data Router (NDR; ICLR 2022), following Section~2.1 and
+  Figure~5. A post-attention state $a_t$ feeds an MLP and sigmoid, producing a
+  vector gate $g_t$. The candidate and previous state are mixed channel by
+  channel. Every token has its own complete carry path. Geometric attention
+  and the candidate FFN are abstracted within the shared NDR layer; its
+  original encoder architecture is retained in this schematic.}
+  \label{fig:residual-comparison-ndr}
+\end{figure*}
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/loop-residual-comparison-v1/invariant-loop.pdf}
+  \caption{Invariant Loop, following the implementation. Soft feedback $f_t$
+  forms the candidate $c_t$. An MLP reads five statistics of the candidate,
+  previous state and current/previous predictions. Its processed score is
+  normalized against retained historical mass $\beta D_{t-1}$ to obtain the
+  scalar $\gamma_t$. This mass enters normalization, not the MLP. Dashed
+  control reaches the highlighted aggregate; solid carry paths preserve each
+  token's own state. After reinjection and LayerNorm,
+  $\mathrm{LN}_1(h_t+e)$ supplies the common next-loop Q/K/V input.
+  Exact score processing and auxiliary recurrent state are specified in
+  the accompanying notes. The soft-feedback component follows DiscoLoop.}
+  \label{fig:residual-comparison-invariant}
+\end{figure*}

@@ -1,0 +1,26 @@
+% Concept proposal, not yet inserted into the manuscript.
+% Requires graphicx. Include from a document whose working directory is paper/.
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=\textwidth]{figures/central-concept-v1/central-concept.pdf}
+  \caption{\textbf{From a learned answer to reusable knowledge.}
+  (a) A representative pre-norm Transformer layer combines contextual retrieval
+  with a persistent MLP mapping, retaining both residual paths.
+  (b) The one-hop query $q_2=(e_2,r_2)$ and the two-hop query
+  $q_{12}=(e_1,r_1,r_2)$ request the same answer but can reach different
+  retrieval states. Reusing an association requires access to the learned
+  parameters and a compatible input; subsequent computation determines the
+  behavioral effect. The illustrated activation strips are conceptual, not
+  measured features or an embedding projection.
+  (c) Editing the first fact changes the intermediate entity; editing the
+  second tests reuse of an updated association across queries. The arrows
+  indicate desired dependency changes, not guaranteed update propagation.
+  (d) Entity-centered addressing and re-entering compatible computation are
+  two routes by which knowledge can become reusable. Architectural access and
+  handoff form are distinct requirements. The displayed update is one SGD
+  step on the MLP down-projection; its direct readout identity fixes the
+  features and does not describe the full effect of arbitrary multi-step
+  training. The schematic does not assign knowledge and reasoning to fixed
+  layer regions.}
+  \label{fig:knowledge-reuse-concept-proposal}
+\end{figure*}

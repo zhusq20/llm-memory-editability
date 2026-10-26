@@ -1,0 +1,154 @@
+{
+  "batch": "loop-abc-method-check-150-v1",
+  "status": "authorized_150_updates_per_arm",
+  "authorization": "User explicitly requested A/B/C on previous multihop dataset, 150 optimizer updates each; all use first-round e.",
+  "question": "Train the invariant carry with one terminal supervised-token-mean loss, independent per-sequence Poisson depth and full backpropagation.",
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "schedule_seed": 2026102001,
+    "unique_layers": 1,
+    "evaluation_repeats": 8,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "final_lr_fraction": 0.1,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "grad_clip": 1.0,
+    "ema_decay": 0.999,
+    "batch_size": 512,
+    "steps": 150,
+    "objective": "terminal_token_mean",
+    "backpropagation": "full",
+    "execution": "masked_batch",
+    "depth_sampling": {
+      "distribution": "fixed",
+      "value": 8,
+      "maximum": 8
+    },
+    "auxiliary_seed": 2026102502
+  },
+  "handoff": {
+    "initial_beta": 0.55,
+    "score_hidden": 16,
+    "score_clip": 8.0,
+    "score_seed": 2026102002,
+    "first_round_input": "embedding"
+  },
+  "dropout_seed": 2026101604,
+  "evaluation_nodes": [
+    0,
+    150
+  ],
+  "evaluation_rounds": [
+    8
+  ],
+  "grid_rounds": 8,
+  "grid_joint_rounds": [
+    4,
+    8
+  ],
+  "evaluation_batch_size": 256,
+  "heartbeat_steps": 10,
+  "smoke_steps": 200,
+  "input_origin": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+    "reuse": "Exact existing 40000-example world and 43000-query panels used by every DiscoLoop/gate multi-hop arm"
+  },
+  "input_root": "/input",
+  "paired_recipe": {
+    "initial_backbone_sha256": "39a487823c05311a223db99c3d0e2df3e7a1752498e261337f4298abe0cfa7b0",
+    "note": "Every arm's backbone at step 0 must equal the reused ungated DiscoLoop's step-0 model; handoff parameters are created without consuming the global RNG."
+  },
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:b7933a57d6a4702700b6b2578fe0cc697f91b2080ef5e18d8fb916443281eacd",
+    "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+    "cpu_threads": 2,
+    "memory_gib": 16,
+    "gpu_memory_fraction": 0.16,
+    "minimum_free_gpu_mib": 18000,
+    "maximum_idle_gpu_used_mib": 512
+  },
+  "tracking": {
+    "provider": "wandb",
+    "entity": "zsqzz",
+    "project": "llm-memory-editability",
+    "mode": "online"
+  },
+  "arms": {
+    "A": {
+      "handoff": "invariant"
+    },
+    "B": {
+      "handoff": "invariant"
+    },
+    "C": {
+      "handoff": "invariant"
+    }
+  },
+  "primary": "Bounded method execution validation, not a test of eventual generalization.",
+  "budget": {
+    "per_arm_updates": 150,
+    "total_updates": 450,
+    "extra_optimizer_updates": 0
+  },
+  "loss": {
+    "normalization": "valid supervised token mean",
+    "supervision": "existing answer/EOS targets only; no hop/bridge labels",
+    "first_round": "e for every arm",
+    "learning_rate": "retain 2000-update warmup and 1500000-update cosine axis; this check remains in warmup"
+  },
+  "infiloop_state_seed": 2026102401,
+  "architecture_scope": {
+    "common": "GPT2 shared block, width768, heads12, one layer, tied embeddings/readout, causal attention, dropout0.1",
+    "invariant": "Latest embedding-first, invariant scorer, decoded feedback and normalized history",
+    "loop": "Carry raw block output; first input e; no per-round e injection",
+    "discoloop": "Paper symbolic-task fixed alpha=1, tau=1; add RMS-normalized soft embedding only between active rounds; read raw final block output",
+    "infiloop": "User-approved single-stream common-backbone adaptation: fixed random initial_h buffer, scored initial N/D, raw F(h+e) candidate, original content query/RMS score and learned beta; no DiscoLoop feedback or candidate normalization; original outer reset is no_grad"
+  },
+  "source_references": [
+    {
+      "name": "DiscoLoop symbolic task and equations4-6",
+      "url": "https://arxiv.org/html/2607.00341v2",
+      "implementation_status": "Paper recurrence reproduced on common backbone; no author repository identified in paper or public repository search"
+    },
+    {
+      "name": "InfiLoop released implementation",
+      "url": "https://github.com/pixeli99/InfiLoop/blob/63716a9c46723d3592c8ad4fc5819855f22aaa47/sudoku/model.py",
+      "commit": "63716a9c46723d3592c8ad4fc5819855f22aaa47",
+      "adaptation": "Preserve fixed random initial-state rule, raw candidate, Connection score/start/forward; one stream on causal GPT backbone as confirmed by user"
+    }
+  ],
+  "method": {
+    "A": "terminal loss, full backward",
+    "B": "terminal loss, last4 backward",
+    "C": "0.9 terminal plus 0.1 random intermediate loss, full backward"
+  }
+}

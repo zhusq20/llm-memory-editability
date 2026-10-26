@@ -1,0 +1,28 @@
+关闭dropout：单条state-MLP配对实验，2026-10-22用户明确授权。
+
+新增科学预算500000更新；原1500000步LR时间轴、数据、样本/段深顺序、模型与完整初值不变。
+三处dropout由0.1改0；复用旧state-MLP对照，不增加对照训练。
+重点：固定EMA/R8的B四跳，256000/300000/400000/500000匹配曲线与50万减25.6万百分点差。
+
+2026-10-22 23:09 UTC：160项固定镜像CPU契约、完整初值逐参数和格式检查通过；控制器PID29935（sn4622129202）已提交，state=waiting_resource、stage=environment，新增科学更新0。本机10卡均有CUDA工作，本用户已用GPU0/1/2/3四卡。未创建本批GPU容器。
+工程第1次因Docker复制改写源码UID被权限断言拦截（无GPU）；完整保留于runtime/engineering/attempt-v1。v2创建阶段以root复制源码，执行前清除附加组并降为1015:1016，160项检查通过。旧任务ID/PID/启动时间一致证据：runtime/engineering/existing-tasks-unchanged.json。
+
+状态以runtime/controller-state.json为准；恢复先读runtime/freeze.json、engineering/cpu-checks.json、controller-process.json、controller-state.json与实际LM Docker。
+持久目录：/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-dropout-development-v1
+固定源码：runtime/source，原state-MLP冻结副本整体复用，仅新增薄适配器与新队列代码。
+
+入口：scripts/launch_loop_dropout.py。不要重复提交或重启旧控制器。
+控制器等待真实空闲、无CUDA进程、无显式容器预约的GPU，且本机该用户全部批次合计不超过4卡。
+旧队列动态资源池和旧state-MLP GPU0保留至它们的审计/云端完整结束；GPU3不参与本新队列。
+连续两次空闲，创建前及启动前再查；无卡只等待，不创建GPU容器、不共卡、不抢占。
+2CPU（84,85）、16GiB内存；create-copy-start的容器源码root所有0444/0555。输入只读、独立output及tmp。
+
+工程顺序：CPU契约/完整初值检查通过→等待资源→实际CUDA初值/梯度/零dropout重放检查→32步短训→独立重载→50万正式训练→深度/独立审计→W&B核验。
+失败无自动重试，保留失败/退出证据；只能经严格身份核对释放本批从未启动的自建预约。
+W&B：zsqzz/llm-memory-editability，正式训练开始后实际链接写在runtime/artifacts/runs/state-mlp/tracking.json。
+
+原任务受保护身份：
+GPU0 lsh-1022-state-mlp-train，ID67231823dd66885cbada6c41d5fbc59f3aecdbb5955f156636343fe4463d7a5f，PID1537704，start2026-10-22T14:09:29.265301335Z。
+GPU1 lqt-1022-new-world-invariant-gpu1-resume，ID6594370b34ca27e57c8f98aa1bfeb0897e74f93ea2a10ec24688980170cac85e，PID3442770，start2026-10-22T20:41:07.454743386Z。
+GPU2 lqt-1021-many-to-one-ema-train，IDf09585b59e1696829b0d3eab031f96bf4ba2ac742c0c8e4113ec22e6217d8afa，PID2667369，start2026-10-22T18:11:08.237107852Z。
+GPU3 lqt-1022-many-to-one-invariant-gpu3-resume，ID144213921e1a25c2906aa8b96751a09b2fd53d19c4c347b3c8e2fe8dbc6f07bc，PID3443064，start2026-10-22T20:41:09.641669389Z。

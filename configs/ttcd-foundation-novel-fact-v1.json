@@ -1,0 +1,130 @@
+{
+  "schema": "ttcd-novel-fact-transfer-design-v1",
+  "batch": "ttcd-foundation-novel-fact-v1",
+  "status": "User-authorized direct300k foundation evaluation; no common or writer adaptation",
+  "authorization_scope": "User requested skipping both10000-update adaptations and applying TTCD directly to the existing300k foundation, updating only MLP down projections",
+  "parent": {
+    "batch": "discoloop-success-restore-v1",
+    "arm": "foundation",
+    "step": 300000,
+    "checkpoint": "/ossfs/workspace/llm-memory-editability/discoloop-success-restore-v1/discoloop/checkpoint-0300000.pt",
+    "checkpoint_sha256": "56d17cedf29db93c713e7ec118b55955118dfd54085aa5240806aee14401f671",
+    "checkpoint_identity_source": "/ossfs/workspace/llm-memory-editability/discoloop-success-restore-v1/foundation-gate.json",
+    "source": "/ossfs/workspace/llm-memory-editability/ttcd-successful-base-v1/source-v2",
+    "data_dir": "/ossfs/workspace/llm-memory-editability/ttcd-successful-base-v1/input-mount/data/ttcd-successful-base-v1",
+    "common_steps_loaded": 0,
+    "writer_steps_loaded": 0,
+    "architecture": {
+      "unique_layers": 4,
+      "repeats": 2,
+      "discoloop": true
+    },
+    "baseline_fast_state": "Fresh zeros belonging to this300k backbone, never load320k fast state"
+  },
+  "panel": {
+    "path": "configs/ttcd-novel-fact-transfer-v1-panel.json",
+    "sha256": "f83857137847db46b519c32dc4961f69426f69752c18d7dc78421dc31183256a",
+    "development_facts": 8,
+    "evaluation_facts": 32,
+    "evaluation_first_hop_queries": 256,
+    "evaluation_second_hop_queries": 253,
+    "novelty": "Original graph lookup[head,relation] == -1; absent from original atomic, chain and correction keys. Existing entity/relation vocabulary only.",
+    "paired_roles": "One novel fact and one final fast state per case, evaluated in both hop positions",
+    "historical_match": "Same head and new tail as historical overwrite; replace the relation with an absent key. Preserve all original second-hop query prefixes."
+  },
+  "writer": {
+    "slow_parameter_updates": 0,
+    "steps_per_fact": 4,
+    "learning_rate": 0.001,
+    "teacher_window": 32,
+    "student_window": 16,
+    "gap": 17,
+    "state_initialization": "Fresh zero A0 for300k backbone per fact; other parameters and original checkpoint unchanged",
+    "packet": "[head+entity_offset, relation+relation_offset, tail+entity_offset, EOS] + PAD*17 + [head+entity_offset, relation+relation_offset]",
+    "packet_old_tail": null,
+    "no_composite_query_or_answer_to_writer": true,
+    "query_context": "Fresh native query with fast state only; no record, previous hidden state or previous KV cache"
+  },
+  "comparison": [
+    "Direct300k A0",
+    "Direct300k after4 TTCD updates of absent key, MLP down only",
+    "Direct300k record-visible teacher at A0",
+    "Existing audited320k addition results on identical facts and queries, read-only reference"
+  ],
+  "evaluation": {
+    "primary": [
+      "Novel atomic first-round entity readout",
+      "Novel atomic final answer and EOS",
+      "New-to-old two-hop final answer and EOS",
+      "Old-to-new two-hop final answer and EOS"
+    ],
+    "stage_readouts": [
+      "round1_end",
+      "actual_round2_input",
+      "round2_layer1",
+      "round2_layer2",
+      "round2_layer3",
+      "round2_layer4"
+    ],
+    "readout_positions": {
+      "atomic_answer": 1,
+      "two_hop_bridge": 1,
+      "two_hop_answer": 2
+    },
+    "readout_head": "Original tied output embedding and final LayerNorm; full-vocabulary argmax, top5, truth probability and rank",
+    "explicit_two_step_reference": "Use the model's own first atomic final answer as the next head; same A4, no oracle substitution; record non-entity output as failure",
+    "prerequisites": "Read every known companion atomic fact at A0 and A4; also read the actual bridge inside each two-hop query",
+    "retention": {
+      "inherited_U_atoms": 64,
+      "inherited_U_chains": 64,
+      "matched_old_atomic_fact_per_case": 1,
+      "matched_old_second_hop_queries": 253
+    },
+    "conditional_subsets": "Report full panel first, then subsets with A0-correct companion, A4-correct companion, atomic-final-correct, atomic-round1-correct and actual-bridge-correct. Report each intersection and its coverage; zero denominator is NA.",
+    "statistics": {
+      "primary_unit": "novel fact",
+      "primary_aggregation": "Mean per-fact accuracy; also report pooled numerator/denominator",
+      "bootstrap_unit": "Paired fact cluster",
+      "bootstrap_draws": 10000,
+      "bootstrap_seed": 20261018,
+      "confidence": 0.95,
+      "independent_worlds": 1
+    },
+    "outcome_based_exclusions": false,
+    "baseline_spontaneously_correct_facts": "Retain and report separately; absence of training exposure does not imply the unedited model cannot guess correctly"
+  },
+  "budget": {
+    "planned_foundation_updates": 0,
+    "planned_writer_training_updates": 0,
+    "planned_development_fast_updates": 32,
+    "planned_evaluation_fast_updates": 128,
+    "performed_fast_updates": 0,
+    "performed_model_forwards": 0,
+    "continuous_writing": false,
+    "merge": false,
+    "new_architecture_or_hyperparameter_grid": false
+  },
+  "execution_preparation": {
+    "runner_status": "scripts/run_ttcd_foundation_novel_facts.py delegates unchanged paired evaluation to earlier frozen runner",
+    "engineering_development": "Packet visibility, model freeze, readout isolation, source/weight identity and save/reload checks on eight development keys; no formal-query selection or parameter tuning",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "docker_context": "lm-memory",
+    "preferred_device": "CPU FP32; actual available CPU/memory checked before execution; no GPU reservation at design stage",
+    "hard_timeout_hours": 2,
+    "tracking_when_run": {
+      "entity": "zhusq20",
+      "project": "llm-memory-editability",
+      "mode": "online"
+    },
+    "output_root": "results/ttcd-foundation-novel-fact-v1",
+    "persistent_root_when_run": "/ossfs/workspace/llm-memory-editability/ttcd-foundation-novel-fact-v1",
+    "auto_retry": false,
+    "poor_scientific_outcome": "Retain and report, including premise failures; never retrain foundation or expand write budget automatically"
+  },
+  "comparison_reference": {
+    "batch": "ttcd-novel-fact-transfer-v1",
+    "summary": "results/ttcd-novel-fact-transfer-v1/evaluation/summary.json",
+    "comparison_variable": "Checkpoint300k versus300k+common10000+single10000; all writing and scoring settings unchanged",
+    "no_parameter_tuning": true
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "highway": {
+    "title": "Training Very Deep Networks",
+    "authors": ["Rupesh Kumar Srivastava", "Klaus Greff", "Jürgen Schmidhuber"],
+    "publication": "NeurIPS (NIPS) 2015",
+    "publication_record": "https://proceedings.neurips.cc/paper/2015/hash/215a71a12769b056c3c32e7299f1c5ed-Abstract.html",
+    "method_source": "https://proceedings.neurips.cc/paper/2015/file/215a71a12769b056c3c32e7299f1c5ed-Paper.pdf",
+    "method_locations": ["Section 2, Eqs. (2)-(3)", "Section 2.2, transform gate"],
+    "gate_input": "The layer input h_(ell-1), directly",
+    "gate": "g_ell = T(h_(ell-1)) = sigmoid(W_T,ell^T h_(ell-1) + b_T,ell)",
+    "candidate": "u_ell = H_ell(h_(ell-1))",
+    "aggregation": "h_ell = (1-g_ell) elementwise_mul h_(ell-1) + g_ell elementwise_mul u_ell",
+    "weight_sharing": "Not assumed across depth; H_ell and H_(ell+1) are distinct layer transforms",
+    "scope": "Original highway layer mechanism in aligned state-vector lanes. It is not labeled as a published shared-weight looped Transformer."
+  },
+  "vanilla": {
+    "source": "https://arxiv.org/html/2607.00341v2#S3.SS1",
+    "location": "Section 3.1, Eq. (2)",
+    "recurrence": "H_t = F_theta(h_previous); h_t = H_t",
+    "weight_sharing": "Shared Transformer across loops"
+  },
+  "invariant": {
+    "source": "src/llm_memory_editability/loop_native_handoff.py",
+    "methods": ["LoopNativeHandoffGPT.features", "LoopNativeHandoffGPT.score", "LoopNativeHandoffGPT.aggregate_round"],
+    "feedback_source": "https://arxiv.org/html/2607.00341v2#S4",
+    "earlier_drawing": "paper/figures/loop-residual-comparison-v1/README.md",
+    "weight_sharing": "Shared Transformer and scoring network across loops"
+  }
+}

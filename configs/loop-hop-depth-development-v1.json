@@ -1,0 +1,76 @@
+{
+  "batch": "loop-hop-depth-development-v1",
+  "authorization": "2026-10-16 user authorized code and parallel launch of plainLoop and DiscoLoop at L1R2/L1R3/L1R4/L2R2, endpoint inference R1-4 and hop1-4, prioritize atomic-only compositions; no history state or timestep conditioning.",
+  "input_root": "/inputs",
+  "data": {
+    "entities_per_graph": 500,
+    "relations": 10,
+    "world_seed": 2026101601,
+    "train_compositions_per_hop": 5000,
+    "evaluation_templates": 4,
+    "training_panel_size": 512
+  },
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 16,
+    "n_ctx": 16,
+    "activation_function": "gelu_new",
+    "resid_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "attn_pdrop": 0.1,
+    "layer_norm_epsilon": 0.00001,
+    "initializer_range": 0.02,
+    "tie_word_embeddings": true
+  },
+  "training": {
+    "steps": 300000,
+    "batch_size": 512,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "weight_decay": 0.1,
+    "initialization": 2026101602,
+    "stream_seed": 2026101603
+  },
+  "dropout_seed": 2026101604,
+  "arms": {
+    "loop-l1-r2": {"architecture": "loop", "unique_layers": 1, "repeats": 2},
+    "disco-l1-r2": {"architecture": "discoloop", "unique_layers": 1, "repeats": 2},
+    "loop-l1-r3": {"architecture": "loop", "unique_layers": 1, "repeats": 3},
+    "disco-l1-r3": {"architecture": "discoloop", "unique_layers": 1, "repeats": 3},
+    "loop-l1-r4": {"architecture": "loop", "unique_layers": 1, "repeats": 4},
+    "disco-l1-r4": {"architecture": "discoloop", "unique_layers": 1, "repeats": 4},
+    "loop-l2-r2": {"architecture": "loop", "unique_layers": 2, "repeats": 2},
+    "disco-l2-r2": {"architecture": "discoloop", "unique_layers": 2, "repeats": 2}
+  },
+  "evaluation_nodes": [0, 1000, 8000, 16000, 32000, 64000, 128000, 256000, 300000],
+  "heartbeat_steps": 1000,
+  "evaluation_batch_size": 256,
+  "smoke_steps": 32,
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "gpu_candidates": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "maximum_parallel": 8,
+    "cpu_threads": 2,
+    "cpu_first": 64,
+    "memory_gib": 16,
+    "poll_seconds": 15,
+    "stage_timeout_hours": 24,
+    "waiting_timeout_hours": 168,
+    "minimum_free_gpu_mib": 16000,
+    "maximum_idle_gpu_used_mib": 512,
+    "tracking": "online"
+  },
+  "primary": "Fixed300k endpoint, full-vocabulary answer accuracy in graphB atomic-only compositions, separately for hops2/3/4 and inference loops1/2/3/4. Also all atomic/ID/training panels, generated EOS, same-budget and common-budget premise subsets and nonrepeated-entity subsets. All predictions retained.",
+  "limits": [
+    "One development world and initialization; no new-world confirmation claim",
+    "Controlled permutation extension; not original DiscoLoop reproduction or original Wang graph",
+    "Fresh training is required because data, architecture and objective do not match old endpoints",
+    "Fixed exposure does not match FLOPs or physical parameters; both are reported",
+    "Training includes all lengths1-4; this is not unseen-length extrapolation",
+    "No history-state, timestep, first-round KV, auxiliary loss, bridge supervision or later architectural grid",
+    "No external GPU sharing, stopping other tasks, or automatic scientific retry/extension"
+  ]
+}

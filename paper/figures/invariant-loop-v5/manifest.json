@@ -1,0 +1,42 @@
+{
+  "sources": {
+    "src/llm_memory_editability/loop_native_handoff.py": "2c49b84595707bac69ef38375486c697237b98d6cde844cd8181037114ea53d7",
+    "src/llm_memory_editability/self_decode_alignment.py": "1bfd5c15da162ea032caa0579eae6b06b7316e497b3e7ccd747c3252212138a3",
+    "configs/loop-native-handoff-development-v1.json": "fb8d6d117539bc1ddc0bc3e3629d26911ab56cb002ff99ce220ee87828ea87bf",
+    "paper/figures/invariant-loop-v2/build_figures.py": "73605b271f9b39be6be916f04056518c0aecbbfc7319f7bd86e5651a148be11b",
+    "paper/figures/invariant-loop-v5/build_figure.py": "a935bfe0ae6a88c9c4e69e04888a3a5a915c8429973e9083f9feb60e7a300ab0"
+  },
+  "reference": "DiscoLoop v2, Figure 1, https://arxiv.org/abs/2607.00341v2",
+  "diagram": {
+    "primary_representation": "hidden states and shared loop parameters as nodes",
+    "adjacent_loop_calls": 2,
+    "parameter_nodes": [
+      "theta"
+    ],
+    "caption_only": [
+      "previous p and D inputs to weighting",
+      "N/D update",
+      "initialization"
+    ]
+  },
+  "checks": {
+    "canvas_text_bounds": "passed",
+    "model_executed": false
+  },
+  "figure_table_trace": [
+    {
+      "artifact_id": "invariant-loop-state-graph",
+      "source_data": {
+        "file": "src/llm_memory_editability/loop_native_handoff.py"
+      },
+      "transformation": {
+        "script": "build_figure.py"
+      },
+      "caption_claim": "A shared loop produces a soft-feedback candidate, which is combined with the old state before the next shared loop call.",
+      "supported_manuscript_claims": [],
+      "limitations": [
+        "Auxiliary history variables and the exact equations are in the caption."
+      ]
+    }
+  ]
+}

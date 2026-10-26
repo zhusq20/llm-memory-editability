@@ -1,0 +1,121 @@
+{
+  "batch": "discoloop-success-restore-v1",
+  "authorization": "User requested restoring the successful DiscoLoop recipe, verifying foundation composition, then single-fact versus cross-sample continual writing.",
+  "input_root": "data/discoloop-success-restore-v1/original",
+  "source_run": "loop4x2-phi7.2-wd0.1",
+  "initial_checkpoint": "data/discoloop-success-restore-v1/original/development/loop4x2-phi7.2-wd0.1/checkpoint-0000000.pt",
+  "spec": {
+    "name": "discoloop-success-restore-v1",
+    "unique_layers": 4,
+    "repeats": 2,
+    "phi": 7.2,
+    "weight_decay": 0.1,
+    "initialization": 791101,
+    "stream_seed": 792101,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 300000
+  },
+  "dropout_seed": 20261012,
+  "arms": {
+    "discoloop": {
+      "kind": "none",
+      "coefficient": 0.0,
+      "scope": "supervised",
+      "first_round_kv": false,
+      "discoloop": true,
+      "discoloop_alpha": 1.0,
+      "discoloop_temperature": 1.0,
+      "discoloop_eps": 1e-06
+    }
+  },
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000
+  ],
+  "checkpoint_nodes": [
+    0,
+    300000
+  ],
+  "heartbeat_steps": 1000,
+  "smoke_steps": 32,
+  "evaluation_batch_size": 256,
+  "audit_loss_atol": 1e-06,
+  "audit_loss_rtol": 1e-06,
+  "restore": {
+    "mode": "rebuild",
+    "expected_initial_model_sha256": "ba0af28431d36db482f2676c1e111a725cf51041c3dca9d006dd10d7a7c18518",
+    "expected_parameters": 69431040,
+    "original_batch": "supervised-alignment-development-v1",
+    "original_run_id": "ci3x3pk1",
+    "original_run_url": "https://wandb.ai/zhusq20/llm-memory-editability/runs/ci3x3pk1",
+    "original_freeze_sha256": "31d38948eab069e02b5966123b194c49f4206831bc03bbd0591417cc0207c735",
+    "original_config_sha256": "8e435fd5e490b6e6176b86e0e03c6e9ece7da774721cbb5c1fd9ff9c42540c7c",
+    "original_image": "sha256:0087c5381ef5286d30b022825ab773f044fa15c161e5999ff5b47fbab681b18a",
+    "original_checkpoint_recovered": false,
+    "interpretation": "Original data and exact initial model tensors restored; successful 300k weights are unavailable. This is a new rebuild using the original recipe, never a restart of the completed historical batch."
+  },
+  "capability_gate": {
+    "minimum_accuracy": {
+      "atomic_id": 0.98,
+      "atomic_ood": 0.98,
+      "train_ii": 0.98,
+      "test_ii": 0.98,
+      "test_io": 0.9,
+      "test_oi": 0.9,
+      "test_oo": 0.9
+    },
+    "reference_accuracy": {
+      "test_io": 0.9753333333333334,
+      "test_oi": 0.993,
+      "test_oo": 0.9565868263473054
+    },
+    "maximum_reference_drop": 0.02,
+    "selection": "Fixed 300k endpoint only; independent seven-panel replay must pass. If any capability gate fails, retain results and stop before common reader and writing; no budget extension or hyperparameter search."
+  },
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "gpu_preference": [
+      8,
+      9
+    ],
+    "cpu_set": [
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "cpu_threads": 8,
+    "intraop_threads": 4,
+    "memory_gib": 96,
+    "min_total_gpu_mib": 90000,
+    "min_free_gpu_mib": 80000,
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "timeout_hours": 12,
+    "wait_timeout_hours": 24,
+    "dependency_batch": "ttcd-cross-sample-v1",
+    "tracking": "online",
+    "uid": 1015,
+    "gid": 1016
+  },
+  "scope_limits": [
+    "Only one restored successful recipe and original development graph/initialization; no new architecture or parameter grid",
+    "Preserve original 0.1 dropout, bf16 AMP, TF32 enabled, fused/capturable grouped AdamW, warmup2000 then constant1e-4, merged partial-epoch sample stream, and final300k supervision",
+    "Current PyTorch2.8/cu128 and Transformers4.57.3 differ from original environment; exact initial tensor digest was checked, but complete bitwise trajectory is not claimed",
+    "Old completed batch, current tiny cross-sample tasks, other projects and credentials remain untouched",
+    "Downstream common-reader and paired writing require this actual capability gate, then a second capability and reading gate"
+  ]
+}

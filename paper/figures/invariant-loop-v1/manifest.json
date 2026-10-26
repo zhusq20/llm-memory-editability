@@ -1,0 +1,88 @@
+{
+  "figure": "Invariant Loop architecture",
+  "version": "2026-10-24-v1",
+  "scope": "LoopNativeHandoffGPT(handoff='invariant'); inference and one recurrent round",
+  "new_model_execution": false,
+  "contract": {
+    "features_in_code_order": [
+      "entropy",
+      "max_probability",
+      "agreement",
+      "relative_change",
+      "cosine"
+    ],
+    "unique_blocks": 1,
+    "width": 768,
+    "heads": 12,
+    "score_hidden": 16,
+    "score_clip": 8.0,
+    "initial_beta": 0.55,
+    "dropout": {
+      "embd_pdrop": 0.1,
+      "attn_pdrop": 0.1,
+      "resid_pdrop": 0.1
+    },
+    "source_sha256": {
+      "src/llm_memory_editability/loop_native_handoff.py": "2c49b84595707bac69ef38375486c697237b98d6cde844cd8181037114ea53d7",
+      "src/llm_memory_editability/self_decode_alignment.py": "1bfd5c15da162ea032caa0579eae6b06b7316e497b3e7ccd747c3252212138a3",
+      "src/llm_memory_editability/supervised_alignment.py": "9c84f60e536d5bd39919a2b3037b7ecc416dc5fc2a9f2da16ae3c5855524ec74",
+      "src/llm_memory_editability/grokking_reproduction.py": "7e3a89d96f6fef7bd4665ac46dd1acb6e7cb461c6878647ecc7c6f425ac31117",
+      "scripts/run_loop_native_handoff.py": "7b100f2e99888381c5483776b5331c2d1aee562103060a4f775f8e15bb434a1b",
+      "configs/loop-native-handoff-development-v1.json": "fb8d6d117539bc1ddc0bc3e3629d26911ab56cb002ff99ce220ee87828ea87bf"
+    }
+  },
+  "builder_sha256": "f925dc2e417c6ed85db5fcd762e2cafc4f8466b19ba3b1bc697607a614e07501",
+  "outputs": [
+    {
+      "language": "en",
+      "files": [
+        "paper/figures/invariant-loop-v1/invariant-loop.pdf",
+        "paper/figures/invariant-loop-v1/invariant-loop.svg",
+        "paper/figures/invariant-loop-v1/invariant-loop.png"
+      ],
+      "text_within_canvas": true,
+      "module_labels_within_boxes": true,
+      "minimum_font_points_at_6_9_inch_width": 8.1,
+      "raster_dpi": 300
+    },
+    {
+      "language": "zh",
+      "files": [
+        "paper/figures/invariant-loop-v1/invariant-loop-zh.pdf",
+        "paper/figures/invariant-loop-v1/invariant-loop-zh.svg",
+        "paper/figures/invariant-loop-v1/invariant-loop-zh.png"
+      ],
+      "text_within_canvas": true,
+      "module_labels_within_boxes": true,
+      "minimum_font_points_at_6_9_inch_width": 8.1,
+      "raster_dpi": 300
+    }
+  ],
+  "figure_table_trace": [
+    {
+      "artifact_id": "invariant-loop-architecture",
+      "source_data": {
+        "files": [
+          "src/llm_memory_editability/loop_native_handoff.py",
+          "src/llm_memory_editability/self_decode_alignment.py",
+          "src/llm_memory_editability/supervised_alignment.py",
+          "src/llm_memory_editability/grokking_reproduction.py",
+          "scripts/run_loop_native_handoff.py",
+          "configs/loop-native-handoff-development-v1.json"
+        ],
+        "kind": "implementation and frozen recipe config"
+      },
+      "transformation": {
+        "script": "paper/figures/invariant-loop-v1/build_figure.py",
+        "sha256": "f925dc2e417c6ed85db5fcd762e2cafc4f8466b19ba3b1bc697607a614e07501"
+      },
+      "caption_claim": "The diagram depicts the implemented shared pre-LN causal block, tied vocabulary feedback, five-feature scorer, and exact N/D streaming carry.",
+      "supported_manuscript_claims": [],
+      "limitations": [
+        "Architecture only; arrows encode no measured strength or performance.",
+        "Invariant describes score inputs under matched vocabulary relabeling / state rotation, not distribution invariance of the whole model.",
+        "Training segment sampling, segment-boundary detach, and parameter EMA are described in README rather than drawn as inference modules."
+      ]
+    }
+  ]
+}

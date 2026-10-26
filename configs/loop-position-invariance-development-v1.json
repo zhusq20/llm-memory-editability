@@ -1,0 +1,211 @@
+{
+ "batch": "loop-position-invariance-development-v1",
+ "status": "authorized 2026-10-20",
+ "authorization": "2026-10-20 user (verbatim): 把这套校正写进docs/loop-roadmap.md，并为第1项准备协议和代码.授权训练 — item 1 = the three-arm position-invariance comparison proposed in the same conversation.",
+ "question": "Is the loss of composition at later hop positions (graph-B 3/4-hop, A/B shift asymmetry, failure at answer positions >= 5) caused by learned absolute positions binding fact lookups to the trained position, and does the convex carry alone, without the loop-native recipe, induce the one-hop-per-round solution?",
+ "data": {
+  "world_seed": 2026101601,
+  "entities_per_graph": 500,
+  "relations": 10,
+  "train_compositions_per_hop": 10000,
+  "evaluation_templates": 10,
+  "training_panel_size": 1000
+ },
+ "model": {
+  "n_embd": 768,
+  "n_head": 12,
+  "n_positions": 1024,
+  "n_ctx": 1024,
+  "activation_function": "gelu_new",
+  "attn_pdrop": 0.1,
+  "embd_pdrop": 0.1,
+  "resid_pdrop": 0.1,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05
+ },
+ "training": {
+  "initialization": 2026101602,
+  "stream_seed": 2026101603,
+  "schedule_seed": 2026102001,
+  "unique_layers": 1,
+  "evaluation_repeats": 4,
+  "weight_decay": 0.1,
+  "lr": 0.0001,
+  "warmup": 2000,
+  "final_lr_fraction": 0.1,
+  "betas": [
+   0.9,
+   0.95
+  ],
+  "eps": 1e-08,
+  "grad_clip": 1.0,
+  "ema_decay": 0.999,
+  "batch_size": 512,
+  "steps": 1500000,
+  "segments": 2,
+  "first_segment_rounds": [
+   4,
+   6
+  ],
+  "later_segment_rounds": [
+   1,
+   4
+  ]
+ },
+ "handoff": {
+  "initial_beta": 0.55,
+  "score_hidden": 16,
+  "score_clip": 8.0,
+  "score_seed": 2026102002
+ },
+ "rope_base": 10000.0,
+ "arms": {
+  "ema-rope": {
+   "handoff": "ema",
+   "position": "rope",
+   "training_overrides": {}
+  },
+  "disco-rope-old": {
+   "handoff": "additive",
+   "position": "rope",
+   "training_overrides": {
+    "segments": 1,
+    "first_segment_rounds": [
+     4,
+     4
+    ],
+    "later_segment_rounds": [
+     1,
+     4
+    ],
+    "final_lr_fraction": 1.0,
+    "betas": [
+     0.9,
+     0.999
+    ]
+   }
+  },
+  "ema-absolute-old": {
+   "handoff": "ema",
+   "position": "absolute",
+   "training_overrides": {
+    "segments": 1,
+    "first_segment_rounds": [
+     4,
+     4
+    ],
+    "later_segment_rounds": [
+     1,
+     4
+    ],
+    "final_lr_fraction": 1.0,
+    "betas": [
+     0.9,
+     0.999
+    ]
+   }
+  }
+ },
+ "dropout_seed": 2026101604,
+ "evaluation_nodes": [
+  0,
+  1000,
+  8000,
+  16000,
+  32000,
+  64000,
+  128000,
+  256000,
+  300000,
+  400000,
+  500000,
+  600000,
+  700000,
+  800000,
+  900000,
+  1000000,
+  1100000,
+  1200000,
+  1300000,
+  1400000,
+  1500000
+ ],
+ "evaluation_rounds": [
+  4,
+  8
+ ],
+ "grid_rounds": 32,
+ "grid_joint_rounds": [
+  4,
+  8,
+  16,
+  32
+ ],
+ "evaluation_batch_size": 256,
+ "heartbeat_steps": 1000,
+ "smoke_steps": 200,
+ "input_origin": {
+  "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+  "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+  "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+  "reuse": "Exact existing 40000-example world and 43000-query panels used by every DiscoLoop/gate multi-hop arm"
+ },
+ "input_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+ "paired_recipe": {
+  "initial_backbone_sha256": "39a487823c05311a223db99c3d0e2df3e7a1752498e261337f4298abe0cfa7b0",
+  "note": "Every arm's backbone at step 0 must equal the reused ungated DiscoLoop's step-0 model; handoff parameters are created without consuming the global RNG."
+ },
+ "reused_comparators": {
+  "A0-discoloop-absolute-old": {
+   "first_300k": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-hop-unified-v1/runs/disco-l1-r4",
+   "continuation_to_1500k": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/ungated-loop-continuation-v1/runs/disco-l1-r4",
+   "r1_16_replay": "results/loop-round-extrapolation-diagnostic-20261019",
+   "recipe": "fixed R=4, final-round answer/EOS CE, constant LR after warmup, AdamW betas (0.9, 0.999), no EMA, CUDA graph"
+  },
+  "ema-absolute-new": {
+   "run": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-native-handoff-development-v1/runs/ema",
+   "batch": "loop-native-handoff-development-v1"
+  },
+  "beyond-four-hops": "results/loop-beyond-four-hops-20261020"
+ },
+ "runtime": {
+  "docker_context": "lm-memory",
+  "image": "sha256:b7933a57d6a4702700b6b2578fe0cc697f91b2080ef5e18d8fb916443281eacd",
+  "persistent_root": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability",
+  "cpu_threads": 2,
+  "memory_gib": 16,
+  "gpu_memory_fraction": 0.16,
+  "minimum_free_gpu_mib": 18000,
+  "maximum_idle_gpu_used_mib": 512
+ },
+ "tracking": {
+  "provider": "wandb",
+  "entity": "zsqzz",
+  "project": "llm-memory-editability",
+  "mode": "online"
+ },
+ "comparisons": {
+  "position_new_recipe": "ema-rope vs reused ema (absolute, loop-native recipe)",
+  "position_old_recipe": "disco-rope-old vs reused A0 (absolute, old recipe)",
+  "carry_vs_recipe": "ema-absolute-old vs reused ema (same carry and positions, recipe differs) and vs A0 (same recipe and positions, carry differs)"
+ },
+ "primary": "1500000-step endpoint, EMA shadow weights for every arm (raw also reported): graph-B two/three/four-hop and graph-A held-out four-hop answer accuracy at R8 from the R1-32 trace, the round at which each k-hop pool first reaches its endpoint accuracy, and 5-8 hop accuracy from the zero-training beyond-four-hop evaluation (run after training with the frozen panels and seed 2026102101). No best checkpoint or horizon is selected.",
+ "predictions": {
+  "position": "If absolute positions bind lookups to the trained position, ema-rope's graph-B three/four-hop at R8 exceed ema's (54.1/10.8 at 1.5M, EMA, R8 of the endpoint trace) by at least 15 percentage points each, and disco-rope-old's graph-B four-hop exceeds A0's 0%. If neither rises, the graph-B gap is not a position effect.",
+  "beyond": "If the per-round operator is hop-invariant once positions are relative, ema-rope answers k-hop questions (k=5..8) above 5% at R16 with accuracy appearing from round k on; failure with RoPE means the operator does not extend beyond trained hop counts.",
+  "carry_vs_recipe": "If the convex carry alone induces one hop per round, ema-absolute-old reaches graph-A held-out four-hop near 100% with k-hop formed at round k; if it memorizes trained chains in round 1 like the additive arms, the loop-native recipe is necessary."
+ },
+ "budget": {
+  "new_scientific_arms": 3,
+  "new_scientific_updates": 4500000,
+  "final_steps_per_arm": 1500000,
+  "engineering_smoke_updates_per_arm": 200,
+  "new_world_updates": 0
+ },
+ "limits": [
+  "One previously observed development world and one initialization.",
+  "RoPE removes learned absolute positions entirely; it also changes the attention computation, so a RoPE effect is the effect of relative positions as implemented, not of any single property.",
+  "Old-recipe arms keep an EMA shadow for evaluation only; training is unchanged by it.",
+  "The decoded-feedback channel relies on next-token decodes being intermediate entities in this template."
+ ]
+}

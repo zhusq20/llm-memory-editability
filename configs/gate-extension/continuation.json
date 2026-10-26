@@ -1,0 +1,144 @@
+{
+  "model": {
+    "n_embd": 768,
+    "n_head": 12,
+    "n_positions": 1024,
+    "n_ctx": 1024,
+    "activation_function": "gelu_new",
+    "attn_pdrop": 0.1,
+    "embd_pdrop": 0.1,
+    "resid_pdrop": 0.1,
+    "initializer_range": 0.02,
+    "layer_norm_epsilon": 1e-05
+  },
+  "heartbeat_steps": 1000,
+  "evaluation_batch_size": 256,
+  "smoke_steps": 4,
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:b7933a57d6a4702700b6b2578fe0cc697f91b2080ef5e18d8fb916443281eacd",
+    "cpu_threads": 2,
+    "cpu_first": 80,
+    "memory_gib": 16,
+    "gpu_memory_fraction": 0.16,
+    "tracking": "online",
+    "poll_seconds": 20,
+    "stage_timeout_hours": 168
+  },
+  "authorization": "2026-10-17 user explicitly approved carrying out the complete proposed extension: long training, independent confirmation, Wang task, and train-two-hop/test-three-four-hop generalization.",
+  "execution_policy": {
+    "pretraining_smoke": false,
+    "posttraining_independent_audit": false,
+    "engineering_correctness_checks": true,
+    "endpoint_inference_grid": true
+  },
+  "batch": "gate-generalization-extension-v1-continuation",
+  "family": "continuation",
+  "position_encoding": "learned",
+  "data": {
+    "world_seed": 2026101601,
+    "entities_per_graph": 500,
+    "relations": 10,
+    "train_compositions_per_hop": 10000,
+    "evaluation_templates": 10,
+    "training_panel_size": 1000
+  },
+  "training": {
+    "initialization": 2026101602,
+    "stream_seed": 2026101603,
+    "weight_decay": 0.1,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 1500000
+  },
+  "dropout_seed": 2026101604,
+  "input_root": "/inputs/continuation-world",
+  "input_origin": {
+    "root": "/ossfs/workspace/llm-memory-editability/loop-hop-development-v1/inputs/data",
+    "world_sha256": "e132eaf6bba5786bbf05f6f36c1b7383f698e93ee0dee313f568f6d50a77026f",
+    "panels_sha256": "c991cebeeeec05639be87d981cd20031016f47965c43fed8bf5cc55579c3b468",
+    "reuse": "Exact existing 40000-example world and 43000-query panels; do not merge with the 25000-example variant"
+  },
+  "continuation": {
+    "start_step": 300000,
+    "preserve_optimizer": true,
+    "preserve_stream_and_rng": true,
+    "new_warmup": false
+  },
+  "evaluation_nodes": [
+    300000,
+    400000,
+    500000,
+    600000,
+    700000,
+    800000,
+    900000,
+    1000000,
+    1100000,
+    1200000,
+    1300000,
+    1400000,
+    1500000
+  ],
+  "inference_repeats": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "arms": {
+    "fixed-update": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "update_mode": "fixed",
+      "initial_update": 0.95,
+      "parent": "fixed-update",
+      "update_gate_lr_factor": 1.0
+    },
+    "token-update": {
+      "architecture": "discoloop",
+      "unique_layers": 1,
+      "repeats": 4,
+      "update_mode": "token",
+      "initial_update": 0.95,
+      "parent": "token-update",
+      "update_gate_lr_factor": 1.0
+    }
+  },
+  "parents": {
+    "fixed-update": {
+      "root": "/inputs/parents/fixed-update",
+      "original_root": "/ossfs/workspace/llm-memory-editability/paper-update-gate-multihop-u95-v1/runs/fixed-update",
+      "source_image": "sha256:b7933a57d6a4702700b6b2578fe0cc697f91b2080ef5e18d8fb916443281eacd",
+      "files": {
+        "complete.json": "ba3156c69b165d3971642d4eea714c200fbc8b098e447e06fddf0fb6ad93c37f",
+        "config.json": "8fd9260bcbfd9fe98e95a25dd0874f7552dfb01afeaf514456b672fdb9016afa",
+        "exposure.npz": "a88eaeb762b83a9bfdcf053387ad6cb4226bde9ed0dd1f1c7b51ff732dd5577e",
+        "latest.pt": "85baf317814da1dd77b611b30372d1bf9cb6ca46fc3f8293692b4c8e4710fc0d",
+        "learning.json": "92357bfa67f9536aeaedbf41616cef06f9e9c17e7c6fa5ab7b907561c413f1bb",
+        "run.json": "2ddcf6fd2e25fcc9e807da6b856b880dcdd7af45117ae93287ee6149fc33469a"
+      },
+      "model_sha256": "9e8e7c3f9e0c8178aa3828b001c437231d4f79481048908a8abe124aa6bb8cec"
+    },
+    "token-update": {
+      "root": "/inputs/parents/token-update",
+      "original_root": "/ossfs/workspace/llm-memory-editability/paper-update-gate-multihop-u95-v1/runs/token-update",
+      "source_image": "sha256:b7933a57d6a4702700b6b2578fe0cc697f91b2080ef5e18d8fb916443281eacd",
+      "files": {
+        "complete.json": "3c414a2e5b9b7ed92f600aa90b83009664a21e9ff6defd5daa378a23e6647214",
+        "config.json": "8fd9260bcbfd9fe98e95a25dd0874f7552dfb01afeaf514456b672fdb9016afa",
+        "exposure.npz": "a88eaeb762b83a9bfdcf053387ad6cb4226bde9ed0dd1f1c7b51ff732dd5577e",
+        "latest.pt": "7b8fcff729cd3e055923cd3757941836e57b975627dc92e93a16484e99ae479f",
+        "learning.json": "a4c9e2c38d4502730eaf2689df984732a1304ea2786262ba14953be3403cc5b0",
+        "run.json": "0a9df53311a0e84a2123083c6125a7d11576b2fc7476b0c5dd0ff6514fdc9fe5"
+      },
+      "model_sha256": "bf389a7339de4ed3787726046a983f52ef8627cab3987b8d6b436764741412a8"
+    }
+  },
+  "budget": {
+    "new_scientific_arms": 2,
+    "new_scientific_updates": 2400000
+  }
+}

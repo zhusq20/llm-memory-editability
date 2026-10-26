@@ -1,0 +1,637 @@
+{
+  "repository": "zsqzz/llm-memory-editability",
+  "revision": "6c580455ce1667274ea592c1c88f5d0fb1e5a190",
+  "script": "scripts/plot_paper_figures_draft.py",
+  "sources_sha256": {
+    "docs/development-artifacts/bios-original-review-v1/overall.csv": "c34fa930b16de6b7e531967a88b45630a02c66323c5f2bd8283202b560ffffd9",
+    "docs/development-artifacts/bios-same-weight-v1/summary.json": "564b398e5903ef96b1d52b98fc7af50a0cf4cbebc1b915927c1bf83399454b94",
+    "docs/development-artifacts/bridge-workspace-v1/comparison/report/endpoints.csv": "1c7cc260e73696313b61ede4e2399bfec7e6e269fc19c58d5033db46fdc3e765",
+    "docs/development-artifacts/grok-usage-v1/report-confirmation/summary.json": "cec0f2607293875366edf2107956b2ede8033c883fb3fe67bb1d45f29bb86316",
+    "results/bridge-reencoding-confirmation-v1/report-confirmation/summary.json": "633426aec999091616a626db11c81cffb52ebd319b576caacd9ff43b9b2370e7",
+    "results/composition-data-curves-v1/report/all-learning-nodes.csv": "8ae9501308aeec1bdbcdd2cc4fdc0c9095a81fc721b2d23c7b23b21848d98088",
+    "results/composition-data-curves-v1/report/budget-points.csv": "4ed180e1e34b1cf97719f7205cd508ed557cef7df85638c35ada0b656ec34e65",
+    "results/grokking-reproduction-v1/development/loop4x2-phi12.6-wd0.1/learning.json": "5ec2979a7d81bfcf71c8d009b410f06b39b9053fb1282a1a5c65e266290edcfd",
+    "results/grokking-reproduction-v1/development/loop4x2-phi3.6-wd0.1/learning.json": "95a44a719606c3d43a8323a5813b8c22f48a0ce88cf57ee2378fef7cdcdabf01",
+    "results/grokking-reproduction-v1/development/loop4x2-phi7.2-wd0.1/learning.json": "05a659a625d60c606dd15e45c48269ff58d5e000f6c5e30eb15d43a56eb78b35",
+    "results/grokking-reproduction-v1/development/loop4x2-phi7.2-wd0.3/learning.json": "265aa27765acb98a17db0af0e304d23436be75cf88a0cbf7f71d802eebdc431b",
+    "results/grokking-reproduction-v1/development/standard8-phi12.6-wd0.1/learning.json": "8e021c7007ecf13ff4ecbfc723ac7d6bc2ab00bfa6b1e75a27fcd80410df64f3",
+    "results/grokking-reproduction-v1/development/standard8-phi3.6-wd0.1/learning.json": "d81a7441a5dd2d877216e50e9ea9378f9b270e282caf7b08d54b71fb9f34f8ab",
+    "results/grokking-reproduction-v1/development/standard8-phi7.2-wd0.1/learning.json": "5848e79a0890de6ef91960475c86665446ffea3d651eb88c7206af6bf10a27f2",
+    "results/grokking-reproduction-v1/development/standard8-phi7.2-wd0.3/learning.json": "bcc0087f153515d71d6f1ff2ce51b0c14d41d054b320c959d76f27017e9be893",
+    "results/independent-alignment-v1/report/summary.json": "ec03373ecc25e805f76ded86493b180c7b2db30bd7a0682b386926e2aab8cc6b",
+    "results/interface-editing-confirmation-v1/report/summary.json": "2ecc9d604ed48147c1e95cccdf3208cbe3cf0470c09e7168c19110c9397b0a14",
+    "results/realworld-loop-addressability-v1/development/loop4x2-shared/endpoint.json": "cdf89111e2342ab0d6bb3a91d7742d855352245b2210cc3087e9d777fa076437",
+    "results/realworld-loop-addressability-v1/development/loop4x2-unique/endpoint.json": "77388eac8d81f48a166a187bf2ed7a9a9d0eaad28ddee26908175b4a4191d368",
+    "results/realworld-loop-addressability-v1/development/standard8-shared/endpoint.json": "6b812f0ab55d97676a81263e8bbdb8ac243f8d74d6445f49ed15916496209148",
+    "results/realworld-loop-addressability-v1/development/standard8-unique/endpoint.json": "8435af565ee3fbcd6db9f85c3645b0675a45854e4fba71c7fb5d602c7d3285e3",
+    "results/sequential-replay-paired-v1/report/summary.json": "ce2cdf458e4a1014cc4b1aa13c2e7776c07c7673afb6ba437e363a937516860d",
+    "results/sequential-transfer-confirmation-v1/report/summary.json": "8536558f66a6ca045aa3caf5ebfc48895cb683051cc48808fe4aa7ba205a9cde",
+    "results/write-target-confirmation-v1/report/summary.json": "0344cf737f8e350197ce44c1a963be214dc6d9348502694df2f870ed8c24d149"
+  },
+  "panels": {
+    "F2a": {
+      "source": [
+        "docs/development-artifacts/bios-original-review-v1/overall.csv"
+      ],
+      "computed": "adapt/test/no-CoT six_attributes, mean of 2 worlds"
+    },
+    "F2b": {
+      "source": [
+        "docs/development-artifacts/bios-same-weight-v1/summary.json"
+      ],
+      "computed": "birth date; pretrain/adapt endpoints"
+    },
+    "F2c": {
+      "transcribed": "mquake_question_preview"
+    },
+    "F2d": {
+      "source": [
+        "results/composition-data-curves-v1/report/budget-points.csv"
+      ],
+      "computed": "confirmation load runs + support phi=7.2 (N=128), mean of 3 worlds at 'exposure'/'compute' budgets"
+    },
+    "F2e": {
+      "source": [
+        "results/composition-data-curves-v1/report/all-learning-nodes.csv"
+      ],
+      "computed": "all nodes, same runs; band = world range"
+    },
+    "F3a": {
+      "source": [
+        "docs/development-artifacts/grok-usage-v1/report-confirmation/summary.json"
+      ],
+      "computed": "128k endpoint, equal cohorts, 3 worlds"
+    },
+    "F3b": {
+      "transcribed": "ye_second_hop"
+    },
+    "F3c": {
+      "source": [
+        "results/grokking-reproduction-v1/development/standard8-phi3.6-wd0.1/learning.json",
+        "results/grokking-reproduction-v1/development/standard8-phi7.2-wd0.1/learning.json",
+        "results/grokking-reproduction-v1/development/standard8-phi12.6-wd0.1/learning.json",
+        "results/grokking-reproduction-v1/development/standard8-phi7.2-wd0.3/learning.json",
+        "results/grokking-reproduction-v1/development/loop4x2-phi3.6-wd0.1/learning.json",
+        "results/grokking-reproduction-v1/development/loop4x2-phi7.2-wd0.1/learning.json",
+        "results/grokking-reproduction-v1/development/loop4x2-phi12.6-wd0.1/learning.json",
+        "results/grokking-reproduction-v1/development/loop4x2-phi7.2-wd0.3/learning.json"
+      ],
+      "computed": "every evaluation node (3000-query panels)"
+    },
+    "F3d": {
+      "source": [
+        "results/realworld-loop-addressability-v1/development/standard8-shared/endpoint.json",
+        "results/realworld-loop-addressability-v1/development/standard8-unique/endpoint.json",
+        "results/realworld-loop-addressability-v1/development/loop4x2-shared/endpoint.json",
+        "results/realworld-loop-addressability-v1/development/loop4x2-unique/endpoint.json"
+      ],
+      "computed": "endpoint answer_accuracy via reanalyze_history_20261010.address"
+    },
+    "F4a": {
+      "source": [
+        "results/bridge-reencoding-confirmation-v1/report-confirmation/summary.json"
+      ],
+      "computed": "norm_matched, alpha=1, world-equal"
+    },
+    "F4b": {
+      "source": [
+        "results/independent-alignment-v1/report/summary.json"
+      ],
+      "computed": "confirmation means"
+    },
+    "F4c": {
+      "source": [
+        "docs/development-artifacts/bridge-workspace-v1/comparison/report/endpoints.csv"
+      ],
+      "computed": "reanalyze_history_20261010.bridge"
+    },
+    "F5a": {
+      "source": [
+        "results/interface-editing-confirmation-v1/report/summary.json"
+      ],
+      "computed": "node 512, mean of 4 D cells (first/second x familiar/strict), world-equal"
+    },
+    "F5b": {
+      "source": [
+        "results/write-target-confirmation-v1/report/summary.json"
+      ],
+      "computed": "pooled counts per objective"
+    },
+    "F5c": {
+      "source": [
+        "results/write-target-confirmation-v1/report/summary.json"
+      ],
+      "computed": "reanalyze_history_20261010.write_target flip groups"
+    },
+    "F5d": {
+      "source": [
+        "results/write-target-confirmation-v1/report/summary.json"
+      ],
+      "computed": "world-equal U_strict retention"
+    },
+    "F5e": {
+      "transcribed": "mquake_hop"
+    },
+    "F6a-c": {
+      "source": [
+        "results/sequential-transfer-confirmation-v1/report/summary.json",
+        "results/sequential-replay-paired-v1/report/summary.json"
+      ],
+      "computed": "split-equal means of initialization means; joint has no A-only stage, so no 'before' bar"
+    }
+  },
+  "transcribed": {
+    "ye_second_hop": {
+      "anchor": "docs/results.md#second-hop-paper-reproduction-v1",
+      "reason": "HF archive holds only training loss up to step ~591k; no evaluation",
+      "values": {
+        "only_ii": {
+          "test_ii": [
+            2877,
+            3000
+          ],
+          "test_ii_sr": [
+            2,
+            3000
+          ]
+        },
+        "full_atomic": {
+          "test_ii": [
+            2987,
+            3000
+          ],
+          "test_ii_sr": [
+            2,
+            3000
+          ],
+          "atomic_id": [
+            2996,
+            3000
+          ],
+          "atomic_ood": [
+            1993,
+            2000
+          ]
+        }
+      }
+    },
+    "mquake_hop": {
+      "anchor": "docs/results.md#path-hop-analysis-v1",
+      "reason": "results/path-hop-analysis-v1 is not on the HF archive",
+      "values": {
+        "ROME": {
+          "direct": [
+            25.34,
+            20.89,
+            29.67
+          ],
+          "cot": [
+            17.0,
+            11.75,
+            22.2
+          ],
+          "shrink": [
+            8.34,
+            2.9,
+            13.71
+          ]
+        },
+        "MEMIT": {
+          "direct": [
+            24.15,
+            19.87,
+            28.34
+          ],
+          "cot": [
+            24.15,
+            19.22,
+            29.02
+          ],
+          "shrink": [
+            0.003,
+            -5.13,
+            5.05
+          ]
+        }
+      }
+    },
+    "mquake_question_preview": {
+      "anchor": "docs/roadmap.md#path-consistency (table row 'answer'); docs/roadmap.md#pretraining-continual",
+      "reason": "partial-record preview (ROME cases 1-1709, MEMIT 1-1791); not a frozen analysis, no reproducible script in the repository; formal value pending S1",
+      "values": {
+        "ROME": 87.8,
+        "MEMIT": 54.3,
+        "MEMIT_later_hop": 37.7
+      }
+    }
+  },
+  "consistency_checks": [
+    {
+      "check": "bios_canonical",
+      "key": "S",
+      "computed": 5.0687,
+      "results_md": 5.07,
+      "match": true
+    },
+    {
+      "check": "bios_canonical",
+      "key": "M",
+      "computed": 35.6458,
+      "results_md": 35.65,
+      "match": true
+    },
+    {
+      "check": "bios_canonical",
+      "key": "MP",
+      "computed": 99.9604,
+      "results_md": 99.96,
+      "match": true
+    },
+    {
+      "check": "bios_heldout",
+      "key": "S",
+      "computed": 0.5729,
+      "results_md": 0.57,
+      "match": true
+    },
+    {
+      "check": "bios_heldout",
+      "key": "M",
+      "computed": 14.0621,
+      "results_md": 14.06,
+      "match": true
+    },
+    {
+      "check": "bios_heldout",
+      "key": "MP",
+      "computed": 32.8967,
+      "results_md": 32.9,
+      "match": true
+    },
+    {
+      "check": "load_exposure_atomic",
+      "key": "256",
+      "computed": 99.9674,
+      "results_md": 99.97,
+      "match": true
+    },
+    {
+      "check": "load_exposure_atomic",
+      "key": "512",
+      "computed": 92.2689,
+      "results_md": 92.27,
+      "match": true
+    },
+    {
+      "check": "load_exposure_atomic",
+      "key": "1024",
+      "computed": 60.8561,
+      "results_md": 60.86,
+      "match": true
+    },
+    {
+      "check": "load_exposure_atomic",
+      "key": "2048",
+      "computed": 25.1465,
+      "results_md": 25.15,
+      "match": true
+    },
+    {
+      "check": "load_exposure_atomic",
+      "key": "4096",
+      "computed": 2.4089,
+      "results_md": 2.41,
+      "match": true
+    },
+    {
+      "check": "load_compute_atomic",
+      "key": "256",
+      "computed": 98.1283,
+      "results_md": 98.13,
+      "match": true
+    },
+    {
+      "check": "load_compute_atomic",
+      "key": "512",
+      "computed": 69.2057,
+      "results_md": 69.21,
+      "match": true
+    },
+    {
+      "check": "load_compute_atomic",
+      "key": "1024",
+      "computed": 23.6165,
+      "results_md": 23.62,
+      "match": true
+    },
+    {
+      "check": "load_compute_atomic",
+      "key": "2048",
+      "computed": 7.8125,
+      "results_md": 7.81,
+      "match": true
+    },
+    {
+      "check": "load_compute_atomic",
+      "key": "4096",
+      "computed": 3.0436,
+      "results_md": 3.04,
+      "match": true
+    },
+    {
+      "check": "usage",
+      "key": "experience",
+      "computed": 100.0,
+      "results_md": 100.0,
+      "match": true
+    },
+    {
+      "check": "usage",
+      "key": "matched_repetition",
+      "computed": 25.0101,
+      "results_md": 25.01,
+      "match": true
+    },
+    {
+      "check": "usage",
+      "key": "other_repetition",
+      "computed": 6.9892,
+      "results_md": 6.99,
+      "match": true
+    },
+    {
+      "check": "usage",
+      "key": "base_only",
+      "computed": 3.0079,
+      "results_md": 3.01,
+      "match": true
+    },
+    {
+      "check": "grok_oo_endpoint",
+      "key": "('standard8', '3.6', '0.1')",
+      "computed": 0.3992,
+      "results_md": 0.4,
+      "match": true
+    },
+    {
+      "check": "grok_oo_endpoint",
+      "key": "('standard8', '7.2', '0.1')",
+      "computed": 0.1996,
+      "results_md": 0.2,
+      "match": true
+    },
+    {
+      "check": "grok_oo_endpoint",
+      "key": "('standard8', '12.6', '0.1')",
+      "computed": 0.0,
+      "results_md": 0.0,
+      "match": true
+    },
+    {
+      "check": "grok_oo_endpoint",
+      "key": "('standard8', '7.2', '0.3')",
+      "computed": 0.0,
+      "results_md": 0.0,
+      "match": true
+    },
+    {
+      "check": "grok_oo_endpoint",
+      "key": "('loop4x2', '3.6', '0.1')",
+      "computed": 25.6487,
+      "results_md": 25.65,
+      "match": true
+    },
+    {
+      "check": "grok_oo_endpoint",
+      "key": "('loop4x2', '7.2', '0.1')",
+      "computed": 53.2934,
+      "results_md": 53.29,
+      "match": true
+    },
+    {
+      "check": "grok_oo_endpoint",
+      "key": "('loop4x2', '12.6', '0.1')",
+      "computed": 66.1677,
+      "results_md": 66.17,
+      "match": true
+    },
+    {
+      "check": "grok_oo_endpoint",
+      "key": "('loop4x2', '7.2', '0.3')",
+      "computed": 81.3373,
+      "results_md": 81.34,
+      "match": true
+    },
+    {
+      "check": "reencode_strict",
+      "key": "('baseline', 'baseline')",
+      "computed": 1.3021,
+      "results_md": 1.3,
+      "match": true
+    },
+    {
+      "check": "reencode_strict",
+      "key": "('bridge_ce', 'baseline')",
+      "computed": 12.5977,
+      "results_md": 12.6,
+      "match": true
+    },
+    {
+      "check": "reencode_strict",
+      "key": "('aligned', 'baseline')",
+      "computed": 92.3177,
+      "results_md": 92.32,
+      "match": true
+    },
+    {
+      "check": "reencode_strict",
+      "key": "('baseline', 'self_decode')",
+      "computed": 1.3346,
+      "results_md": 1.33,
+      "match": true
+    },
+    {
+      "check": "reencode_strict",
+      "key": "('bridge_ce', 'self_decode')",
+      "computed": 46.3542,
+      "results_md": 46.35,
+      "match": true
+    },
+    {
+      "check": "reencode_strict",
+      "key": "('aligned', 'self_decode')",
+      "computed": 92.3828,
+      "results_md": 92.38,
+      "match": true
+    },
+    {
+      "check": "reencode_strict",
+      "key": "('baseline', 'wrong_entity')",
+      "computed": 1.1393,
+      "results_md": 1.14,
+      "match": true
+    },
+    {
+      "check": "reencode_strict",
+      "key": "('bridge_ce', 'wrong_entity')",
+      "computed": 1.888,
+      "results_md": 1.89,
+      "match": true
+    },
+    {
+      "check": "reencode_strict",
+      "key": "('aligned', 'wrong_entity')",
+      "computed": 1.3997,
+      "results_md": 1.4,
+      "match": true
+    },
+    {
+      "check": "reencode_strict",
+      "key": "('baseline', 'oracle')",
+      "computed": 1.5951,
+      "results_md": 1.6,
+      "match": true
+    },
+    {
+      "check": "independent",
+      "key": "('bridge_ce', 'familiar_test')",
+      "computed": 16.7586,
+      "results_md": 16.76,
+      "match": true
+    },
+    {
+      "check": "independent",
+      "key": "('bridge_ce', 'strict_test')",
+      "computed": 2.9622,
+      "results_md": 2.96,
+      "match": true
+    },
+    {
+      "check": "independent",
+      "key": "('aligned', 'familiar_test')",
+      "computed": 55.879,
+      "results_md": 55.88,
+      "match": true
+    },
+    {
+      "check": "independent",
+      "key": "('aligned', 'strict_test')",
+      "computed": 5.2734,
+      "results_md": 5.27,
+      "match": true
+    },
+    {
+      "check": "interface_D",
+      "key": "aligned",
+      "computed": 4.0799,
+      "results_md": 4.08,
+      "match": true
+    },
+    {
+      "check": "interface_coverage",
+      "key": "aligned",
+      "computed": 93.7153,
+      "results_md": 93.72,
+      "match": true
+    },
+    {
+      "check": "interface_D",
+      "key": "bridge_ce",
+      "computed": 9.375,
+      "results_md": 9.38,
+      "match": true
+    },
+    {
+      "check": "interface_coverage",
+      "key": "bridge_ce",
+      "computed": 25.6944,
+      "results_md": 25.69,
+      "match": true
+    },
+    {
+      "check": "write_D",
+      "key": "final_ce",
+      "computed": 3.125,
+      "results_md": 3.13,
+      "match": true
+    },
+    {
+      "check": "write_D",
+      "key": "early_ce",
+      "computed": 68.75,
+      "results_md": 68.75,
+      "match": true
+    },
+    {
+      "check": "write_D",
+      "key": "early_ce_align",
+      "computed": 85.4167,
+      "results_md": 85.42,
+      "match": true
+    },
+    {
+      "check": "write_U_strict_retention",
+      "key": "final_ce",
+      "computed": 96.4723,
+      "results_md": 96.47,
+      "match": true
+    },
+    {
+      "check": "write_U_strict_retention",
+      "key": "early_ce",
+      "computed": 92.4219,
+      "results_md": 92.42,
+      "match": true
+    },
+    {
+      "check": "write_U_strict_retention",
+      "key": "early_ce_align",
+      "computed": 89.8356,
+      "results_md": 89.84,
+      "match": true
+    },
+    {
+      "check": "sequential_BB",
+      "key": "sequential_composition",
+      "computed": 20.5729,
+      "results_md": 20.57,
+      "match": true
+    },
+    {
+      "check": "sequential_BB",
+      "key": "sequential_atomic",
+      "computed": 3.125,
+      "results_md": 3.13,
+      "match": true
+    },
+    {
+      "check": "sequential_BB",
+      "key": "joint",
+      "computed": 23.1771,
+      "results_md": 23.18,
+      "match": true
+    },
+    {
+      "check": "sequential_BB",
+      "key": "sequential_composition_sham",
+      "computed": 9.8958,
+      "results_md": 9.9,
+      "match": true
+    },
+    {
+      "check": "replay_BB",
+      "key": "atom_replay",
+      "computed": 4.9479,
+      "results_md": 4.95,
+      "match": true
+    },
+    {
+      "check": "replay_BB",
+      "key": "full_replay",
+      "computed": 20.8333,
+      "results_md": 20.83,
+      "match": true
+    }
+  ],
+  "all_checks_match": true
+}

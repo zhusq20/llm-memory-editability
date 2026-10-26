@@ -1,0 +1,7 @@
+{
+  "latest": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-queue-target-20261021/user-hold-20261024/amendment.json",
+  "state": "paused_by_user",
+  "training_hold": "/mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability/loop-queue-target-20261021/training-hold.json",
+  "automatic_resume": false,
+  "previous_latest": "/ossfs/workspace/llm-memory-editability/loop-queue-target-20261021/shared-20261023-v3/amendment.json"
+}

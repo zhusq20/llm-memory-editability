@@ -1,0 +1,123 @@
+{
+  "repo": "zsqzz/llm-memory-editability",
+  "revision": "6c580455ce1667274ea592c1c88f5d0fb1e5a190",
+  "array_index_sha256": "cecad5789708edaaabe496233b1e3e5530c62081c2e7c3f0dbfa4794ab5d844a",
+  "archive_manifest_sha256": "9d42f701a0bdf54d5021861ad29a77520668dcaaf40c54da0730cd1e59465cd3",
+  "array_archive": {
+    "path": "array-archives/results--grokking-reproduction-v1.tar.gz",
+    "bytes": 873212794,
+    "sha256": "0dfe4eedc158032690546dd85a2e11663a9922e5470a084dc20b89414e16786b"
+  },
+  "archive_verified_from_existing_cache": "data/ttcd-second-hop-assets/hf-cache/datasets--zsqzz--llm-memory-editability/blobs/0dfe4eedc158032690546dd85a2e11663a9922e5470a084dc20b89414e16786b",
+  "restored": [
+    {
+      "path": "data/discoloop-success-restore-v1/results/grokking-reproduction-v1/data/panels.npz",
+      "source": "results/grokking-reproduction-v1/data/panels.npz",
+      "bytes": 132763,
+      "sha256": "8655858c0de4646cfb5c7ea1779b5374ef28b492e6ac59bb6eda9e89c7936bf9"
+    },
+    {
+      "path": "data/discoloop-success-restore-v1/results/grokking-reproduction-v1/data/world.npz",
+      "source": "results/grokking-reproduction-v1/data/world.npz",
+      "bytes": 7445175,
+      "sha256": "e31ec9959ce0a7b25465191a1d9ef8e83ec42163ed967fa56a60605f6ac1c3b4"
+    },
+    {
+      "path": "data/discoloop-success-restore-v1/results/grokking-reproduction-v1/data/complete.json",
+      "source": "results/grokking-reproduction-v1/data/complete.json",
+      "bytes": 725,
+      "sha256": "c60b3c65e6ab889d78b2b0fa6b17cf82ee8739ce14cb2ae18897fe3b10cfda83"
+    },
+    {
+      "path": "data/discoloop-success-restore-v1/results/grokking-reproduction-v1/reference/gpt2/config.json",
+      "source": "results/grokking-reproduction-v1/reference/gpt2/config.json",
+      "bytes": 665,
+      "sha256": "0daed7749b4f02b8f76240d5444551d7b08712dab4d0adb8239c56ba823bb7b4"
+    },
+    {
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/hf-frozen-grokking/docs/development-artifacts/grokking-reproduction-v1/freeze.json",
+      "source": "docs/development-artifacts/grokking-reproduction-v1/freeze.json",
+      "bytes": 1488,
+      "sha256": "58f1d24a379b6831549e3a23fc187581c1c22c9c62c1da959ba47a2537834c0f"
+    },
+    {
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/hf-frozen-grokking/docs/development-artifacts/grokking-reproduction-v1/environment.json",
+      "source": "docs/development-artifacts/grokking-reproduction-v1/environment.json",
+      "bytes": 11951,
+      "sha256": "e5b445635fbdfe031da4dd4c53ea96a75878bafe6d393c684b7f8fd24265f7ff"
+    },
+    {
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/hf-frozen-grokking/docs/development-artifacts/grokking-reproduction-v1/data-audit.json",
+      "source": "docs/development-artifacts/grokking-reproduction-v1/data-audit.json",
+      "bytes": 725,
+      "sha256": "c60b3c65e6ab889d78b2b0fa6b17cf82ee8739ce14cb2ae18897fe3b10cfda83"
+    },
+    {
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/hf-frozen-grokking/docs/development-artifacts/grokking-reproduction-v1/source/configs/grokking-reproduction-development-v1.json",
+      "source": "docs/development-artifacts/grokking-reproduction-v1/source/configs/grokking-reproduction-development-v1.json",
+      "bytes": 8332,
+      "sha256": "e4047fa84a5f0174c59f10a00a1b013e25ce3292a5c78fc8a25f499e81cd0a10"
+    },
+    {
+      "path": "data/discoloop-success-restore-v1/results/grokking-reproduction-v1/development/loop4x2-phi7.2-wd0.1/run.json",
+      "source": "results/grokking-reproduction-v1/development/loop4x2-phi7.2-wd0.1/run.json",
+      "bytes": 759,
+      "sha256": "46c6a2e5aaa17363b778072faf5f6a220a5928dbd8f2c3c4b425c939247ad369"
+    },
+    {
+      "path": "data/discoloop-success-restore-v1/results/grokking-reproduction-v1/development/loop4x2-phi7.2-wd0.1/audit.json",
+      "source": "results/grokking-reproduction-v1/development/loop4x2-phi7.2-wd0.1/audit.json",
+      "bytes": 203,
+      "sha256": "d73502af55e85398a3b99ce69fc9d5b55c88bcc1fd4d5335f55a6a726cb88a81"
+    },
+    {
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/hf-frozen-grokking/docs/development-artifacts/grokking-reproduction-v1/source/scripts/run_grokking_reproduction.py",
+      "source": "docs/development-artifacts/grokking-reproduction-v1/source/scripts/run_grokking_reproduction.py",
+      "bytes": 21681,
+      "sha256": "848bd91ebf39914b282c12a8d52fcfa793b110c68690dd6753de56826907055a"
+    },
+    {
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/hf-frozen-grokking/docs/development-artifacts/grokking-reproduction-v1/source/src/llm_memory_editability/__init__.py",
+      "source": "docs/development-artifacts/grokking-reproduction-v1/source/src/llm_memory_editability/__init__.py",
+      "bytes": 409,
+      "sha256": "84e6bb4a97b68f67f3256135c2b5fc35d9a83ceb04914a6cf3d38d926b015f7f"
+    },
+    {
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/hf-frozen-grokking/docs/development-artifacts/grokking-reproduction-v1/source/src/llm_memory_editability/bios_model.py",
+      "source": "docs/development-artifacts/grokking-reproduction-v1/source/src/llm_memory_editability/bios_model.py",
+      "bytes": 4389,
+      "sha256": "99efb7feeeb15f33dd3f08174c1190f4aa470e3877d8ac6692b2d43fed4c5f4d"
+    },
+    {
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/hf-frozen-grokking/docs/development-artifacts/grokking-reproduction-v1/source/src/llm_memory_editability/experiments.py",
+      "source": "docs/development-artifacts/grokking-reproduction-v1/source/src/llm_memory_editability/experiments.py",
+      "bytes": 1588,
+      "sha256": "e575aceb2e3804956655d91710809818aec04c0b16a22edb441f5757629371d1"
+    },
+    {
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/hf-frozen-grokking/docs/development-artifacts/grokking-reproduction-v1/source/src/llm_memory_editability/grok_depth.py",
+      "source": "docs/development-artifacts/grokking-reproduction-v1/source/src/llm_memory_editability/grok_depth.py",
+      "bytes": 16504,
+      "sha256": "7d6d5af38a5dc4438b1e7ff44df8e833169d500f0d60d8933932bdb8822aca26"
+    },
+    {
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/hf-frozen-grokking/docs/development-artifacts/grokking-reproduction-v1/source/src/llm_memory_editability/grokking_reproduction.py",
+      "source": "docs/development-artifacts/grokking-reproduction-v1/source/src/llm_memory_editability/grokking_reproduction.py",
+      "bytes": 23341,
+      "sha256": "7e3a89d96f6fef7bd4665ac46dd1acb6e7cb461c6878647ecc7c6f425ac31117"
+    },
+    {
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/hf-frozen-grokking/docs/development-artifacts/grokking-reproduction-v1/source/src/llm_memory_editability/low_rank.py",
+      "source": "docs/development-artifacts/grokking-reproduction-v1/source/src/llm_memory_editability/low_rank.py",
+      "bytes": 5940,
+      "sha256": "e1ddb5714d492311a43af2d5fd3dd5f578d8144db0b3d860ca71e3b603d018e1"
+    },
+    {
+      "path": "docs/development-artifacts/discoloop-success-restore-v1/recovery/hf-frozen-grokking/docs/development-artifacts/grokking-reproduction-v1/source/tests/test_grokking_reproduction.py",
+      "source": "docs/development-artifacts/grokking-reproduction-v1/source/tests/test_grokking_reproduction.py",
+      "bytes": 7998,
+      "sha256": "c52ce68c0bcb418aea482f75e1a5f6721a4ab220ec96ec5c754d5170b2d2a34e"
+    }
+  ],
+  "weights_restored": false
+}

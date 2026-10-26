@@ -1,0 +1,53 @@
+Loop recipe ablation — RUNNING
+Updated audit: 2026-10-25T21:42:22.343735+00:00
+
+User authorization: four new arms, each 256000 optimizer updates; cosine LR horizon 1500000; explicitly CUDA4/6/7/8. Total new scientific budget1024000. Existing six must remain running; seven held initialization jobs remain paused.
+State: all four formal training processes are running and have actual optimizer updates. This is startup verification, not training completion or final scientific results.
+
+Assignments and startup snapshot:
+- supervision-truncate: CUDA4, verified step100, container ef5b6fb7b9f39c032d49c86c237092517b3e5d4c3ef4cd840575057f9c1df287, host pipeline PID478730
+  https://wandb.ai/zsqzz/llm-memory-editability/runs/lnh1b02e202
+- supervision: CUDA6, verified step300, container 43fd39e9cfed32acc4ada67807150e19599ba6d7b75ac42bf773472f1e0838a2, host pipeline PID476129
+  https://wandb.ai/zsqzz/llm-memory-editability/runs/lnh1b02e200
+- truncate: CUDA7, verified step300, container 830c8250943867536177e1aedd8a357d7745ac2a01e7921211c912841887e428, host pipeline PID477368
+  https://wandb.ai/zsqzz/llm-memory-editability/runs/lnh1b02e201
+- floor4: CUDA8, verified step100, container 3441f7d162e233965581d124ec56655f5baec0e93a0887339b513cef0d1733ee, host pipeline PID480080
+  https://wandb.ai/zsqzz/llm-memory-editability/runs/lnh1b02e203
+
+Shared controlled recipe:
+  supervision: add 0.5 CE at K and 0.5 at T only when T>K.
+  truncate: detach continuing h/N/D/p at K; keep original embedding e live.
+  supervision-truncate: both interventions.
+  floor4: use original draw T then max(T,4); no segment supervision/truncation.
+  K is independent per-batch Philox(seed2026102501,counter=optimizer step), uniform4/5/6.
+  Same world/panels, original initialization, data stream, depth RNG, dropout and optimizers. Existing current Invariant is reused as baseline.
+  All four initial full model hashes equal baseline: e21786e7b99df9fe0353a1df79ab549046d625a3a350703c2df3c930b998bd02.
+
+Validation:
+  Fixed image CPU suite82 passed; after adding reload-output verification,10 resource/pipeline tests passed (83 unique tests total). Ruff check/format passed.
+  All four CUDA preflights exited0:6 scratch updates each,24 total; no saved/reused scratch weights. Matrix backward, mixed Poisson and longest input at16 rounds, finite parameters/Adam, EMA32 rounds verified.
+  Peak reserved GPU memory5900–5920MiB per task; cap15560MiB, leaving more than6GiB within cap.2 CPUs/16GiB host RAM per task. Cards still had79710–85707MiB free in startup snapshot.
+  All248 source files in each formal container hash-verified, root-owned0444; directories0555. Inputs read-only.
+  W&B four runs independently queried: all running, full remote experiment config exact, first training curves present.
+  Original six PID/StartedAt unchanged and all advanced; old seven hold SHA unchanged. See runtime/startup-verification.json.
+
+Frozen artifacts:
+  Config SHA256:1b02e23fa46a71d4362568393e62fbdcb9bb192e8d89c05ac6adb5cf3d180ef4
+  Active bundle:runtime/source-v2.tar SHA256:0e0b7e71918a7c8b458859b3031266b2e35cc769aa0bfcdb117999572dfd8f93
+  v1 source.tar and original manifest retained. Before any GPU work, source-amendment.json added endpoint-vs-reload numerical verification only; scientific config unchanged.
+  baseline-source-review.json/diff.txt record previously authorized feedback-control support changes; default Invariant numerical branch unchanged.
+
+Preserved scheduling interruption:
+  During preflight submission, the first completed GPU check disappeared from Docker after GPU PID collection, triggering a safe foreign-process false positive. First two exited0, last two were still never-started created containers. After fresh admission, only those two were started; no repeated updates, no retraining. Original partial preflight-launch.json retained; continuation and final successful states in preflight-admission-continuation.json and preflight-verification.json.
+
+Persistent output root:
+  /ossfs/workspace/llm-memory-editability/loop-recipe-ablation-20261025
+  Runtime mounts resolve via /mnt/disk2_from_server2/siqizhu4/lm-memory-persistent/workspace/llm-memory-editability on sn4622129202.
+  runs/<arm>/{run,tracking,status,learning,complete,grid,cloud-verification}.json; latest.pt and immutable checkpoint files; predictions/ and grid/ raw artifacts.
+  pipeline/<arm>/state.json and train.log/grid.log. Native training runs in its own subprocess; after256000 updates it exits, then a new process independently reloads the endpoint and evaluates raw/EMA R1–32. Pipeline then checks reload-vs-endpoint outputs, checkpoint identity, exact W&B config and endpoint metrics.
+  Each stage submitted once; no automatic retry, no automatic extension beyond256000. Failure remains needs_attention with original artifacts retained. Never rerun launcher to resume blindly.
+
+Read-only recovery order:
+  Read this file, runtime/launch.json, pipeline states, runs status; then inspect actual LM Docker container IDs and live CUDA processes. Completion, reload success and cloud verification are separate states.
+  Keep results/loop-queue-target-20261021/runtime/training-hold.json unchanged; this batch gives no authority to resume its seven old jobs.
+  Current planning entry: docs/loop-roadmap.md#recipe-ablation. Scientific contract: protocol.md.

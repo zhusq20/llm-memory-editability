@@ -1,0 +1,102 @@
+{
+  "batch": "loop-query-adapter-development-v1",
+  "authorization": "2026-10-16 user explicitly requested adding one near-parameter-matched ordinary Q adapter control, 300000 steps, identical data and training recipe, to compare with the independent32-dimensional control state.",
+  "input_root": "/inputs/data/discoloop-success-restore-v1/original",
+  "source_run": "loop-original-initialization",
+  "initial_checkpoint": "/inputs/initial/loop.pt",
+  "spec": {
+    "name": "loop-query-adapter-development-v1",
+    "unique_layers": 4,
+    "repeats": 2,
+    "phi": 7.2,
+    "weight_decay": 0.1,
+    "initialization": 791101,
+    "stream_seed": 792101,
+    "lr": 0.0001,
+    "warmup": 2000,
+    "batch_size": 512,
+    "steps": 300000
+  },
+  "dropout_seed": 20261012,
+  "arms": {
+    "query_adapter": {
+      "kind": "none",
+      "coefficient": 0.0,
+      "scope": "supervised",
+      "first_round_kv": false,
+      "discoloop": false,
+      "adapter_dim": 48,
+      "adapter_seed": 20261016
+    }
+  },
+  "evaluation_nodes": [
+    0,
+    1000,
+    8000,
+    16000,
+    32000,
+    64000,
+    128000,
+    256000,
+    300000
+  ],
+  "checkpoint_nodes": [
+    0,
+    300000
+  ],
+  "heartbeat_steps": 1000,
+  "evaluation_batch_size": 256,
+  "audit_loss_atol": 1e-06,
+  "audit_loss_rtol": 1e-06,
+  "runtime": {
+    "docker_context": "lm-memory",
+    "image": "sha256:9643a7d6aeda1b4c9ac2ac50c2d84474b082d649a87e423bc6e0bdc0994097ee",
+    "gpu": 4,
+    "cpu_set": [
+      84,
+      85,
+      86,
+      87
+    ],
+    "cpu_threads": 4,
+    "memory_gib": 96,
+    "persistent_root": "/ossfs/workspace/llm-memory-editability",
+    "timeout_hours": 12,
+    "wait_timeout_hours": 24,
+    "tracking": "online",
+    "uid": 1015,
+    "gid": 1016,
+    "shared_gpu_peer_batch": "loop-query-control-development-v1",
+    "shared_gpu_peer_containers": [
+      "loop-query-control-development-v1-train-capture-v3",
+      "loop-query-control-development-v1-audit-capture-v3"
+    ],
+    "minimum_free_gpu_mib": 16000,
+    "peer_max_gpu_memory_mib": 16000,
+    "minimum_persistent_free_gib": 20,
+    "comparison_wait_hours": 24
+  },
+  "phase": "One observed development graph and initialization; controlled architecture behavior, not causal mechanism proof",
+  "baseline_reuse": {
+    "batch": "ttcd-architecture-comparison-v1",
+    "arm": "loop",
+    "step": 300000,
+    "checkpoint": "loop/foundation/loop/checkpoint-0300000.pt",
+    "train_result": "loop/foundation/result-train.json",
+    "audit_result": "loop/foundation/result-audit.json",
+    "training_restarted": false
+  },
+  "primary": "Fixed 300000 endpoint paired difference in test_oi answer+generated EOS accuracy: query_control minus query_adapter; also all seven panels, full curves, exposure, params, estimated FLOPs. No best-checkpoint selection.",
+  "scope_limits": [
+    "One additional300k adapter run; no restarting the controller or plainLoop foundation",
+    "Shared nonlinear bottleneck48, recomputed from each current pre-attention LN(hidden); no independent recurrent state, input skip, DiscoLoop, KV or auxiliary labels",
+    "Additional parameters73728 vs control74752, difference1024 (1.37% of added params); full model counts69504768 vs69505792",
+    "Parameter and update budgets matched approximately; compute, input access and update cadence differ, so this does not isolate persistence alone",
+    "GPU4 may co-locate only with the named same-project control containers; no other owner or project allowed; separate CPUs; shared timing is not an exclusive throughput benchmark",
+    "No short scientific training or automatic retries/extensions/task grid"
+  ],
+  "paired_control": {
+    "batch": "loop-query-control-development-v1",
+    "initial_source_sha256": "81e95a16656904a511f901b30966a4b4c4f1de708b67b5712d3e8cd2933fe347"
+  }
+}
